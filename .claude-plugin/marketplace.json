@@ -1,0 +1,23 @@
+{
+  "name": "wuming-skills",
+  "owner": {
+    "name": "WuMing (悟鸣)",
+    "email": "605283073@qq.com"
+  },
+  "metadata": {
+    "description": "WuMing's original skills for prompt engineering and AI interaction optimization",
+    "version": "1.0.0",
+    "license": "CC BY-NC-SA 4.0"
+  },
+  "plugins": [
+    {
+      "name": "prompt-engineering-skills",
+      "description": "Collection of prompt engineering tools featuring 57 proven frameworks for crafting optimized AI prompts across various domains including marketing, decision analysis, education, product development, creative writing, and complex reasoning",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/prompt-optimizer"
+      ]
+    }
+  ]
+}
