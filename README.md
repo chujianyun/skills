@@ -1,5 +1,5 @@
 ## Skills 
-This project provides WuMing's（悟鸣） original Skills for personal learning and research purposes.
+This project provides Skills for personal learning and research purposes.
 
 ## Directory Structure
 
