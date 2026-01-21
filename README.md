@@ -35,7 +35,7 @@ openskills install chujianyun/skills --global
 
 ## Contact
 
-![](https://mingmingruyue-hz.oss-cn-hangzhou.aliyuncs.com/2025/20260121123314733.jpg)
+![](https://mingmingruyue-hz.oss-cn-hangzhou.aliyuncs.com/2025/20260121123942301.png)
 
 ## License
 

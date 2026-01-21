@@ -11,7 +11,15 @@ A comprehensive prompt engineering skill that helps users craft high-quality, ef
 
 ## Workflow
 
-When a user requests prompt optimization, follow these steps:
+Copy this checklist and track your progress:
+- [ ] Step 1: Analyze User Input
+- [ ] Step 2: Match Scenario and Select Framework
+- [ ] Step 3: Load Framework Details
+- [ ] Step 4: Clarify Ambiguities
+- [ ] Step 5: Generate Optimized Prompt
+- [ ] Step 6: Present and Iterate
+
+When a user requests create or prompt optimization, follow these steps:
 
 ### Step 1: Analyze User Input
 
