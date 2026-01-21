@@ -18,11 +18,15 @@ This project provides WuMing's（悟鸣） original Skills for personal learning
 ```
 
 2. Install skills
+install `prompt-optimizer`
 ```
 /plugin install prompt-engineering-skills@chujianyun/skills
+
+```
+install `sync-skills`
+```
 /plugin install sync-skills@chujianyun/skills
 ```
-
 ### Method 2: Using [openskills](https://github.com/numman-ali/openskills)
 
 ```
