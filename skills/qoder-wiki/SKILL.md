@@ -41,5 +41,5 @@ docs/
 | Skills 使用 | docs/拓展能力/Skills.md |
 | 自定义规则 | docs/上下文/规则.md |
 | 快捷键 | docs/配置/快捷键.md |
-| 定价方案 | docs/账户/定价.md, docs/账户/价格.md |
+| 定价方案 | docs/账户/定价.md, docs/账户/价格.md (两个文件都要看！)|
 | 故障排查 | docs/支持/FAQ.md, docs/支持/故障排查指南.md |
