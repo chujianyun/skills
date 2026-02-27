@@ -767,6 +767,12 @@
   margin: 0;
 }
 
+/* Light mode: use a lighter background so hljs comment colors stay readable */
+body.theme-light .claudian-code-wrapper pre,
+body.theme-light .claudian-message-content pre {
+  background: rgba(0, 0, 0, 0.08);
+}
+
 /* Code blocks without language - wrap content */
 .claudian-code-wrapper:not(.has-language) pre {
   white-space: pre-wrap;
@@ -2651,6 +2657,10 @@
   color: var(--interactive-accent);
 }
 
+.claudian-mention-item.vault-folder .claudian-mention-icon {
+  color: var(--text-muted);
+}
+
 .claudian-mention-text {
   display: flex;
   flex-direction: column;
@@ -2693,12 +2703,12 @@
 
 /* Context folder filter items in @-mention dropdown */
 .claudian-mention-item.context-folder .claudian-mention-icon {
-  color: var(--claudian-brand);
+  color: var(--text-muted);
 }
 
 .claudian-mention-name-folder {
-  color: var(--claudian-brand);
-  font-weight: 600;
+  color: var(--text-normal);
+  font-weight: 500;
 }
 
 .claudian-mention-name-context {
