@@ -1,0 +1,11 @@
+# IDE and editor configuration
+.claude/
+.obsidian/
+.DS_Store
+.vscode/
+.idea/
+
+# Temporary files
+*.log
+*.tmp
+.cache/

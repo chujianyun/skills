@@ -9,6 +9,7 @@ This project provides WuMing's（悟鸣） original Skills for personal learning
 | [qoder-wiki](skills/qoder-wiki/SKILL.md) | Qoder 官方文档知识库，包含产品介绍、用户指南、功能配置、扩展能力、账户定价和故障排查。当用户询问 Qoder 相关问题（如安装、使用、功能、定价、快捷键、MCP、Skills、Quest Mode、Repo Wiki 等）时使用此 skill。 |
 | [openclaw-wiki](skills/openclaw-wiki/SKILL.md) | OpenClaw 官方文档知识库，多渠道 AI Agent 网关。当用户询问 OpenClaw 相关问题（如安装、Gateway、WhatsApp/Telegram/Discord 等渠道连接、Sessions、Tools、故障排查等）时使用此 skill。 |
 | [sync-skills](skills/sync-skills/README.md) | Automatically sync skills from multiple sources (Local, GitHub, skillsmp.com) to all installed AI coding tool directories (Claude Code, Cursor, Windsurf, etc.). |
+| [openclaw-ops](skills/openclaw-ops/SKILL.md) | OpenClaw 运维助手，提供命令参考和故障排查修复流程。当用户需要执行 OpenClaw 命令、诊断服务问题、修复 Gateway 或渠道连接故障、查看日志、管理渠道或 Agent 时使用此 skill。 |
 | [claudian-installer](skills/claudian-installer/SKILL.md) | Install Claudian Obsidian plugin which embeds Claude Code as an AI collaborator in your vault. Use when the user wants to install Claudian plugin to their Obsidian vault. |
 
 ## Usage
@@ -44,6 +45,11 @@ install `sync-skills`
 install `claudian-installer`
 ```
 /plugin install claudian-installer@chujianyun/skills
+```
+
+install `openclaw-ops`
+```
+/plugin install openclaw-ops@chujianyun/skills
 ```
 ### Method 2: Using [openskills](https://github.com/numman-ali/openskills)
 
