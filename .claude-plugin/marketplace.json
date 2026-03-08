@@ -44,6 +44,13 @@
       "source": "./",
       "strict": false,
       "skills": ["./skills/claudian-installer"]
+    },
+    {
+      "name": "copaw-ops",
+      "description": "CoPaw 运维助手，提供服务启停、配置管理、模型与渠道管理、定时任务巡检、日志排查和故障恢复流程。当用户提到 copaw 运维、服务无响应、渠道断连、MCP 失败、模型调用失败、cron 不执行、Docker 部署或重置恢复时使用此技能。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/copaw-ops"]
     }
   ]
 }
