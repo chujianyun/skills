@@ -1,6 +1,6 @@
 ---
 name: sync-skills
-description: Use when syncing skills from local folders, GitHub URLs, or skillsmp.com pages to multiple AI coding tool directories
+description: Skills 同步助手。适用于用户想把本地 skill 目录、GitHub 仓库或 skillsmp.com 页面同步到多个 AI 编码工具目录时使用。会先识别来源类型，再列出目标目录并执行同步，且必须包含 ~/.agents/skills。
 ---
 
 # Sync Skills
@@ -11,6 +11,13 @@ Automatically sync skills from multiple sources to all installed AI coding tool 
 > **🚨 CRITICAL REQUIREMENT:** All sync operations **MUST** include `~/.agents/skills` as the primary target. This universal skill directory is used by multiple AI coding tools and is **non-negotiable**. If the directory doesn't exist, it will be created automatically.
 
 ## When to Use
+
+开始前先确认同步范围：
+- 来源是什么（本地目录 / GitHub / skillsmp.com）
+- 是同步到所有已存在目标，还是只同步到指定目录
+- 是否允许覆盖已有同名 skill
+
+如果用户没有特别指定，默认先列出目标目录并等待确认，不要直接覆盖。
 
 ```dot
 digraph when_sync {

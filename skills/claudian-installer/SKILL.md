@@ -1,6 +1,6 @@
 ---
 name: claudian-installer
-description: Install Claudian Obsidian plugin which embeds Claude Code as an AI collaborator in your vault. Use when the user wants to install Claudian plugin to their Obsidian vault, or mentions "Claudian", "Claude Code in Obsidian", or "install Claudian plugin".
+description: Claudian 安装助手。适用于用户想在 Obsidian 仓库中安装 Claudian 插件，或提到“Claudian”“Claude Code in Obsidian”“install Claudian plugin”时使用。会把插件文件复制到目标 vault 并引导用户启用插件。
 ---
 
 # Claudian Installer
@@ -8,6 +8,15 @@ description: Install Claudian Obsidian plugin which embeds Claude Code as an AI 
 Install Claudian - an Obsidian plugin that embeds Claude Code as an AI collaborator in your vault, giving it full agentic capabilities: file read/write, search, bash commands, and multi-step workflows.
 
 ## Installation Workflow
+
+### Step 0: 先确认安装目标（必须先做）
+
+开始前先确认：
+- 要安装到哪个 Obsidian vault
+- 是否允许在目标 vault 下写入 `.obsidian/plugins/claudian`
+- 用户是否知道安装后还需要在 Obsidian 里手动启用插件
+
+如果用户已经明确给了 vault 路径，也可以直接继续，但要在回复里说明默认使用该路径。
 
 ### Step 1: Confirm Vault Path
 
