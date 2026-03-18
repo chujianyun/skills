@@ -96,6 +96,28 @@
 5. **能脚本化的重复动作，尽量不要只写成文字说明**
 6. **持续沉淀 Gotchas，降低误触发和翻车概率**
 
+### 新增 skill 时建议遵循的规范
+
+如果后面继续往这个仓库加新 skill，建议统一按这套来：
+
+- **frontmatter 只保留 `name` 和 `description`**
+- `description` 要同时写清：
+  - 做什么
+  - 什么时候触发
+  - 必要时写一句不适用场景
+- `SKILL.md` 优先写：
+  - 适用边界
+  - 设计模式（如 Tool Wrapper / Generator / Reviewer / Inversion / Pipeline）
+  - Gotchas
+  - 工作流
+  - 输出要求
+- 如果 skill 逻辑较长，优先拆到：
+  - `references/`：规范、模板、清单、补充文档
+  - `scripts/`：可执行脚本
+  - `assets/`：固定模板、示例资源
+- 如果 skill 涉及高影响动作、自动复查、定时任务、外部写操作，要明确写出**确认门槛**
+- 如果 skill 只是审查或规划类，默认遵循：**先审查 / 诊断，再出计划，确认后再修改**
+
 ---
 
 ## 安装
