@@ -1,352 +1,286 @@
 ---
 name: sync-skills
-description: Skills 同步助手。适用于用户想把本地 skill 目录、GitHub 仓库或 skillsmp.com 页面同步到多个 AI 编码工具目录时使用。会先识别来源类型，再列出目标目录并等待确认后执行同步；同步目标必须包含 ~/.agents/skills。
+description: Skills 同步助手。将本地目录、GitHub 仓库或 skillsmp.com 页面的 skill 同步到用户选择的 AI 编码工具目录。使用 AskUserQuestion 选择目标（支持多选和自定义路径），展示同步计划后执行，同名 skill 会被覆盖。必须包含 ~/.agents/skills 作为同步目标。
 ---
 
 # Sync Skills
 
-将一个 skill 从本地目录、GitHub 仓库或 skillsmp.com 页面同步到多个 AI 编码工具目录。
+将 skill 从本地目录、GitHub 仓库或 skillsmp.com 页面同步到多个 AI 编码工具目录。
 
-## 设计模式
-
-本 skill 主要采用：
-- **Pipeline**：按“识别来源 → 检查目标 → 列出计划 → 等待确认 → 执行同步”的顺序执行
-- **Tool Wrapper**：封装不同来源类型和不同工具目录的同步规则
-- **Inversion（轻度）**：同步前先确认目标范围和覆盖策略
-
-## Gotchas
-
-- `~/.agents/skills` 是强制目标，不能漏掉
-- 不要在未确认前直接覆盖已有 skill
-- 不要假设所有目标目录都存在，要先检查
-- 不要把“同步到所有目录”和“只同步到指定目录”混成一个默认动作
-- GitHub 仓库和 skillsmp.com 页面不一定直接对应 skill 根目录，要先判断结构
-
-## Overview
-Automatically sync skills from multiple sources to all installed AI coding tool directories. Lists all existing target directories for user confirmation before syncing.
-
-> **🚨 CRITICAL REQUIREMENT:** All sync operations **MUST** include `~/.agents/skills` as the primary target. This universal skill directory is used by multiple AI coding tools and is **non-negotiable**. If the directory doesn't exist, it will be created automatically.
+> **🚨 核心要求**：
+> 1. **必须包含 `~/.agents/skills`** 作为同步目标（不存在则自动创建）
+> 2. **必须使用 AskUserQuestion** 让用户选择目标目录
+> 3. **展示同步计划** 并等待用户最终确认
+> 4. 同名 skill 直接覆盖，不单独提示
 
 ## When to Use
 
-开始前先确认同步范围：
-- 来源是什么（本地目录 / GitHub / skillsmp.com）
-- 是同步到所有已存在目标，还是只同步到指定目录
-- 是否允许覆盖已有同名 skill
+**触发场景：**
+- 用户提供本地 skill 文件夹路径
+- 用户提供 GitHub 仓库 URL
+- 用户提供 skillsmp.com skill 页面 URL
+- 需要将 skill 分发到多个 AI 工具目录
 
-如果用户没有特别指定，默认先列出目标目录并等待确认，不要直接覆盖。
-
-```dot
-digraph when_sync {
-    "Need to sync skill?" [shape=diamond];
-    "Source type?" [shape=diamond];
-    "Local folder" [shape=box];
-    "GitHub URL" [shape=box];
-    "skillsmp.com URL" [shape=box];
-
-    "Need to sync skill?" -> "Source type?";
-    "Source type?" -> "Local folder" [label="Local path"];
-    "Source type?" -> "GitHub URL" [label="github.com"];
-    "Source type?" -> "skillsmp.com URL" [label="skillsmp.com"];
-}
+**工作流程：**
+```
+用户输入 → 识别来源类型 → 收集目标目录 → 用户选择目标 → 展示计划 → 用户确认 → 执行同步 → 报告结果
 ```
 
-Use when:
-- User provides local skill folder path
-- User provides GitHub repository URL
-- User provides skillsmp.com skill detail page URL
-- Need to distribute skill across multiple AI tools
+## Workflow
 
-**How it works:**
-1. Auto-detect source type from input
-2. Prepare skill content based on source
-3. Check all target directories (only existing ones)
-4. **List existing targets for user confirmation**
-5. Copy/clone to each confirmed target
-
-## Target Directories
-
-Checks these paths in order, only syncs if directory exists:
-
-| Tool               | Project Level      | User Level                     |
-| ------------------ | ------------------ | ------------------------------ |
-| **Agents (Universal)** ⭐ | `.agents/skills`   | `~/.agents/skills` **[REQUIRED]** |
-| Claude Code        | `.claude/skills`   | `~/.claude/skills`             |
-| GitHub Copilot     | `.github/skills`   | `~/.copilot/skills`            |
-| Google Antigravity | `.agents/skills`   | `~/.gemini/antigravity/skills` |
-| Cursor             | `.cursor/skills`   | `~/.cursor/skills`             |
-| OpenCode           | `.opencode/skill`  | `~/.config/opencode/skill`     |
-| OpenAI Codex       | `.codex/skills`    | `~/.codex/skills`              |
-| Gemini CLI         | `.gemini/skills`   | `~/.gemini/skills`             |
-| Windsurf           | `.windsurf/skills` | `~/.codeium/windsurf/skills`   |
-| Qwen Code          | `.qwen/skills`     | `~/.qwen/skills`               |
-| Qoder              | `.qoder/skills`    | `~/.qoder/skills`              |
-| OpenClaw           | `.openclaw/skills` | `~/.openclaw/skills`           |
-
-> **⚠️ CRITICAL:** `~/.agents/skills` is a **MANDATORY** sync target. This universal skill directory is used by multiple AI coding tools and **MUST ALWAYS** be included in sync operations. Never skip this directory.
-
-## Quick Reference
-
-**Basic Usage:**
-```bash
-./sync-skill.sh <source>
-```
-
-**Examples:**
-```bash
-# Local folder
-./sync-skill.sh /Users/user/skills/my-skill
-
-# GitHub repository
-./sync-skill.sh https://github.com/user/skill-repo
-
-# skillsmp.com page
-./sync-skill.sh https://skillsmp.com/skills/skill-name
-```
-
-### Source Type Detection
+### Step 1: 识别来源类型
 
 ```bash
-# Local folder
-/Users/user/skills/my-skill
-./skills/my-skill
-~/skills/my-skill
-
-# GitHub URL
-https://github.com/user/skill-repo
-https://github.com/user/skill-repo.git
-git@github.com:user/skill-repo.git
-
-# skillsmp.com URL
-https://skillsmp.com/skills/skill-name
-https://www.skillsmp.com/skills/skill-name
+# 判断输入类型
+if [[ "$input" =~ ^(/|~/|\./) ]]; then
+    SOURCE_TYPE="local"
+    SOURCE_PATH="$input"
+elif [[ "$input" =~ github\.com ]]; then
+    SOURCE_TYPE="github"
+    SOURCE_URL="${input%.git}"
+elif [[ "$input" =~ skillsmp\.com ]]; then
+    SOURCE_TYPE="skillsmp"
+    SOURCE_URL="$input"
+else
+    echo "❌ 无法识别来源类型"
+    exit 1
+fi
 ```
 
-### Sync Commands by Source Type
-
-**Local folder:**
-```bash
-# MANDATORY: Always sync to ~/.agents/skills first
-cp -r /path/to/skill-name ~/.agents/skills/
-cp -r /path/to/skill-name ~/.claude/skills/
-cp -r /path/to/skill-name ~/.qoder/skills/
-# ... for each existing target
-```
-
-**GitHub:**
-```bash
-# Clone to temp
-git clone https://github.com/user/skill-repo.git /tmp/skill-sync
-
-# Copy skill folder (might be in subdirectory)
-# MANDATORY: Always sync to ~/.agents/skills first
-cp -r /tmp/skill-sync/skill-name ~/.agents/skills/
-cp -r /tmp/skill-sync/skill-name ~/.claude/skills/
-# ... for each existing target
-
-# Cleanup
-rm -rf /tmp/skill-sync
-```
-
-**skillsmp.com:**
-```bash
-# Fetch page content
-curl -s https://skillsmp.com/skills/skill-name > /tmp/skill-page.html
-
-# Parse and download skill files
-# Extract skill content from page
-# Create skill directory structure
-# Copy to each target
-```
-
-## Implementation
-
-**Executable script:** See `sync-skill.sh` in this skill directory.
-
-**Features:**
-- Auto-detects source type (local, GitHub, skillsmp.com)
-- Checks all target directories for existence
-- **Lists existing targets and waits for user confirmation before syncing**
-- Only syncs to user-confirmed directories
-- Overwrites existing skills without prompting
-- Cleans up temporary files after use
-- Provides clear output with emoji indicators
-
-**Exit codes:**
-- 0: Success
-- 1: Error (missing source, clone failure, etc.)
-
-**Using from AI assistant:**
-When user asks to sync a skill, invoke the script with appropriate source:
+### Step 2: 收集目标目录
 
 ```bash
-# User says: "Sync the skill at /path/to/my-skill"
-./sync-skill.sh /path/to/my-skill
-
-# User says: "Sync this GitHub repo: https://github.com/user/skill"
-./sync-skill.sh https://github.com/user/skill
-```
-
-### Source Detection
-
-```javascript
-function detectSource(input) {
-  // Local folder
-  if (input.startsWith('/') || input.startsWith('./') || input.startsWith('~')) {
-    return { type: 'local', path: input };
-  }
-
-  // GitHub URL
-  if (input.includes('github.com')) {
-    const url = input.replace(/\.git$/, '');
-    return { type: 'github', url };
-  }
-
-  // skillsmp.com URL
-  if (input.includes('skillsmp.com')) {
-    return { type: 'skillsmp', url: input };
-  }
-
-  throw new Error(`Unknown source type: ${input}`);
-}
-```
-
-### Directory Existence Check and Confirmation
-
-```bash
-# Check if directory exists and collect for confirmation
-check_and_sync() {
-  local source=$1
-  local skill_name=$2
-
-  # Array of all target directories
-  # IMPORTANT: ~/.agents/skills is MANDATORY and must be first
-  local targets=(
-    "$HOME/.agents/skills"     # MANDATORY - Universal skill directory
+# 定义所有可能的目标目录
+ALL_TARGETS=(
+    "$HOME/.agents/skills"      # MANDATORY
     "$HOME/.claude/skills"
     "$HOME/.qoder/skills"
     "$HOME/.copilot/skills"
-    # ... all others
-  )
+    "$HOME/.cursor/skills"
+    "$HOME/.gemini/skills"
+    "$HOME/.codex/skills"
+    "$HOME/.config/opencode/skill"
+    "$HOME/.codeium/windsurf/skills"
+    "$HOME/.qwen/skills"
+    "$HOME/.openclaw/skills"
+)
 
-  local existing_targets=()
+# 确保 ~/.agents/skills 存在
+mkdir -p "$HOME/.agents/skills"
 
-  # First pass: collect existing directories
-  # MANDATORY: ~/.agents/skills must exist for sync to proceed
-  local agents_dir="$HOME/.agents/skills"
-  if [ ! -d "$agents_dir" ]; then
-    echo "⚠️  Creating mandatory directory: $agents_dir"
-    mkdir -p "$agents_dir"
-  fi
-  existing_targets+=("$agents_dir")
+# 收集已存在的目录
+EXISTING_TARGETS=("$HOME/.agents/skills")
+for target in "${ALL_TARGETS[@]:1}"; do
+    [ -d "$target" ] && EXISTING_TARGETS+=("$target")
+done
+```
 
-  # Collect other existing directories
-  for target in "${targets[@]:1}"; do
-    if [ -d "$target" ]; then
-      existing_targets+=("$target")
+### Step 3: 使用 AskUserQuestion 让用户选择目标
+
+```xml
+<parameter name="questions">[
+  {
+    "question": "选择要同步到的目标目录（可多选）",
+    "header": "目标目录",
+    "multiSelect": true,
+    "options": [
+      {
+        "label": "~/.agents/skills",
+        "description": "通用技能目录（所有工具共用）",
+        "markdown": "✅ **必选**"
+      },
+      {
+        "label": "~/.claude/skills",
+        "description": "Claude Code 技能目录"
+      },
+      {
+        "label": "~/.qoder/skills",
+        "description": "Qoder 技能目录"
+      }
+      // ... 根据实际存在的目录动态生成
+    ]
+  }
+]</parameter>
+```
+
+**关键点：**
+- `~/.agents/skills` 始终作为第一个选项并标记为必选
+- 支持多选
+- 用户可通过 "Other" 输入自定义路径
+
+### Step 4: 准备 skill 内容
+
+```bash
+case "$SOURCE_TYPE" in
+    local)
+        SKILL_NAME=$(basename "$SOURCE_PATH")
+        SKILL_SOURCE="$SOURCE_PATH"
+        ;;
+    github)
+        TEMP_DIR=$(mktemp -d)
+        git clone -q "$SOURCE_URL" "$TEMP_DIR"
+        # 查找 SKILL.md 位置
+        if [ -f "$TEMP_DIR/SKILL.md" ]; then
+            SKILL_NAME=$(basename "$SOURCE_URL")
+            SKILL_SOURCE="$TEMP_DIR"
+        elif find "$TEMP_DIR" -name "SKILL.md" -quit; then
+            SKILL_SOURCE=$(find "$TEMP_DIR" -name "SKILL.md" -printf "%h" -quit)
+            SKILL_NAME=$(basename "$SKILL_SOURCE")
+        fi
+        ;;
+    skillsmp)
+        # 抓取并解析页面内容
+        TEMP_DIR=$(mktemp -d)
+        # ... 解析逻辑 ...
+        ;;
+esac
+```
+
+### Step 5: 展示同步计划并等待确认
+
+**将同步计划以清晰格式展示给用户：**
+
+```
+📋 同步计划：
+
+来源：$SOURCE_TYPE
+Skill：$SKILL_NAME
+
+目标目录（共 $SELECTED_COUNT 个）：
+  1. ~/.agents/skills [新建]
+  2. ~/.claude/skills [覆盖已有]
+  3. ~/custom/skills [新建]
+
+⚠️  同名 skill 将被直接覆盖，不会备份
+
+确认执行？(Y/n)
+```
+
+### Step 6: 执行同步
+
+```bash
+for target in "${SELECTED_TARGETS[@]}"; do
+    # 创建目标目录（如不存在）
+    mkdir -p "$target"
+
+    # 删除同名 skill
+    if [ -d "$target/$SKILL_NAME" ]; then
+        echo "  → 覆盖: $target/$SKILL_NAME"
+        rm -rf "$target/$SKILL_NAME"
+    else
+        echo "  → 新建: $target/$SKILL_NAME"
     fi
-  done
 
-  # List existing targets and ask for confirmation
-  if [ ${#existing_targets[@]} -eq 0 ]; then
-    echo "❌ No target directories found. Please install at least one AI coding tool."
-    exit 1
-  fi
-
-  echo "📋 Found ${#existing_targets[@]} existing target directory(s):"
-  echo ""
-  for i in "${!existing_targets[@]}"; do
-    echo "  $((i+1)). ${existing_targets[$i]}"
-  done
-  echo ""
-  read -p "✅ Sync to these directories? (y/N): " confirm
-
-  if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
-    echo "❌ Sync cancelled by user."
-    exit 1
-  fi
-
-  echo ""
-  echo "🚀 Starting sync..."
-
-  # Second pass: sync to confirmed targets
-  for target in "${existing_targets[@]}"; do
-    echo "  → Syncing to $target..."
-    # Perform sync
-  done
-}
-```
-
-### GitHub Repository Handling
-
-```bash
-# Clone to temp directory
-git clone https://github.com/user/repo.git /tmp/skill-sync-XXXXX
-
-# Find skill folder (might be root or subdirectory)
-if [ -f /tmp/skill-sync-XXXXX/SKILL.md ]; then
-  skill_folder="/tmp/skill-sync-XXXXX"
-elif [ -d /tmp/skill-sync-XXXXx/skills/* ]; then
-  skill_folder="/tmp/skill-sync-XXXXx/skills/*"
-fi
-
-# Copy to each existing target
-for target in "${existing_targets[@]}"; do
-  cp -r "$skill_folder" "$target/"
+    # 复制 skill
+    cp -r "$SKILL_SOURCE" "$target/"
 done
 
-# Cleanup
-rm -rf /tmp/skill-sync-XXXXX
+# 清理临时目录
+[ -n "$TEMP_DIR" ] && rm -rf "$TEMP_DIR"
 ```
 
-### skillsmp.com Page Handling
+### Step 7: 报告结果
+
+```
+✅ 同步完成！
+
+已成功同步到 $SUCCESS_COUNT 个目录：
+  ✓ ~/.agents/skills
+  ✓ ~/.claude/skills
+  ✓ ~/custom/skills
+
+❌ 失败 $FAIL_COUNT 个目录：
+  ✗ ~/.qoder/skills (权限拒绝)
+```
+
+## Reference
+
+### 支持的目标目录
+
+| Tool | User Level |
+|------|------------|
+| **Agents (Universal)** ⭐ | `~/.agents/skills` **[必选]** |
+| Claude Code | `~/.claude/skills` |
+| GitHub Copilot | `~/.copilot/skills` |
+| Cursor | `~/.cursor/skills` |
+| Qoder | `~/.qoder/skills` |
+| Gemini CLI | `~/.gemini/skills` |
+| OpenAI Codex | `~/.codex/skills` |
+| Windsurf | `~/.codeium/windsurf/skills` |
+| Qwen Code | `~/.qwen/skills` |
+| OpenClaw | `~/.openclaw/skills` |
+| OpenCode | `~/.config/opencode/skill` |
+
+### 来源类型识别
 
 ```bash
-# Fetch page
-url="https://skillsmp.com/skills/skill-name"
-curl -s "$url" > /tmp/skill-page.html
+# 本地目录
+/path/to/skill
+./skill
+~/skill
 
-# Extract skill name and files
-skill_name=$(grep -o '<h1[^>]*>.*</h1>' /tmp/skill-page.html | sed 's/<[^>]*>//g')
+# GitHub URL
+https://github.com/user/repo
+https://github.com/user/repo.git
+git@github.com:user/repo.git
 
-# Download or extract skill content
-# This depends on skillsmp.com's structure
-# Might need to parse JSON, download files, etc.
-
-# Create skill directory
-mkdir -p "/tmp/$skill_name"
-
-# Save content to SKILL.md
-# ... parsing logic ...
-
-# Sync to targets
-for target in "${existing_targets[@]}"; do
-  cp -r "/tmp/$skill_name" "$target/"
-done
+# skillsmp.com URL
+https://skillsmp.com/skills/skill-name
 ```
 
-## Common Mistakes
+### AskUserQuestion 完整示例
 
-| Mistake | Fix |
-|---------|-----|
-| **⚠️ Skipping ~/.agents/sync** | **CRITICAL: NEVER skip this directory. It's MANDATORY for all sync operations** |
-| Syncing without user confirmation | Always list targets and wait for `y/N` confirmation |
-| Syncing to non-existent directories | Always check `-d` before copying (except ~/.agents/skills - create if missing) |
-| Leaving temp files | Always cleanup `/tmp/skill-sync-*` after use |
-| GitHub subdirectory confusion | Check for SKILL.md in root and subdirectories |
-| Not handling .git suffix | Strip `.git` from URLs before cloning |
-| skillsmp.com parsing failures | Inspect page structure first, adapt parsing |
-| Forgetting to show skill name | Always display skill name in confirmation prompt |
+```xml
+<function_calls>
+<invoke name="AskUserQuestion">
+<parameter name="questions">[
+  {
+    "question": "选择要同步到的目标目录（可多选，或选择「其他」输入自定义路径）：",
+    "header": "目标目录选择",
+    "multiSelect": true,
+    "options": [
+      {
+        "label": "~/.agents/skills",
+        "description": "通用技能目录（所有工具共用）",
+        "markdown": "✅ **必选** - 多个 AI 工具共享"
+      },
+      {
+        "label": "~/.claude/skills",
+        "description": "Claude Code 技能目录"
+      },
+      {
+        "label": "~/.qoder/skills",
+        "description": "Qoder 技能目录"
+      }
+    ]
+  },
+  {
+    "question": "同名 skill 将被直接覆盖，是否继续？",
+    "header": "覆盖策略确认",
+    "multiSelect": false,
+    "options": [
+      {"label": "继续执行", "description": "直接覆盖同名 skill"},
+      {"label": "取消操作", "description": "取消本次同步"}
+    ]
+  }
+]</parameter>
+</invoke>
+</function_calls>
+```
 
-> **🚨 CRITICAL:** The most serious mistake is **skipping ~/.agents/skills**. This directory is used by multiple AI coding tools and must always be included in every sync operation.
+## Gotchas
 
-## Conflict Handling
+| 错误 | 正确做法 |
+|------|----------|
+| 跳过 `~/.agents/skills` | **始终包含**，不存在则创建 |
+| 不使用 AskUserQuestion | **必须使用**让用户选择目标 |
+| 不展示同步计划 | **必须展示**并等待用户确认 |
+| 同步到不存在的目录 | 先检查 `-d`，不存在则创建 |
+| GitHub 仓库结构判断错误 | 先查找 SKILL.md 位置 |
+| 忘记清理临时文件 | 始终 `rm -rf /tmp/skill-sync-*` |
+| GitHub URL 带 .git 后缀 | 先用 `${url%.git}` 去除 |
+| 不处理用户自定义路径 | 通过 "Other" 选项支持 |
 
-**Policy: Always overwrite existing skills**
-
-If a skill with the same name exists in a target directory:
-- Overwrite without prompting
-- Log what was overwritten: `"Overwriting existing skill at $target/$skill_name"`
-- No backup (user should use git if they need history)
-
-**Rationale:** Sync operations are expected to update content. If user wants to preserve local changes, they should manage version control separately.
+> **🚨 最常见错误**：
+> 1. 跳过 `~/.agents/skills` - **这是严重错误**
+> 2. 不展示同步计划直接执行 - **用户体验差**
