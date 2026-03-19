@@ -58,6 +58,41 @@
       "source": "./",
       "strict": false,
       "skills": ["./skills/openclaw-ops"]
+    },
+    {
+      "name": "paper-interpreter",
+      "description": "论文解读助手。适用于用户发送 arXiv 论文链接，并希望下载论文、解读论文、生成读书笔记或输出详细报告时使用。会在工作目录创建论文文件夹、下载 PDF 与 TeX Source（如有）、生成中文 Markdown 报告。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/paper-interpreter"]
+    },
+    {
+      "name": "skill-optimizer",
+      "description": "优化和重构现有 skill。用于检查目标 skill 的触发描述、SKILL.md 工作流、确认门槛、渐进式披露，以及 references/scripts/assets 的组织方式。当用户提到优化 skill、检查 skill 质量、改进某个 skill 或重构技能说明时使用。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/skill-optimizer"]
+    },
+    {
+      "name": "claude-config-advisor",
+      "description": "审查或设计 Claude Code 项目配置。用于用户提到 .claude、CLAUDE.md、Claude 配置文件、项目级 Claude 自定义配置、配置结构是否合理、该创建哪些配置文件，或希望从零规划 Claude 配置时使用。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/claude-config-advisor"]
+    },
+    {
+      "name": "github-code-interpreter",
+      "description": "GitHub 源码解读助手。适用于用户提供 GitHub 仓库链接，并希望解读源码、理解原理、分析架构、生成学习报告或快速上手文档时使用。会生成源码解读报告和快速上手文档，适合学习项目设计与实现。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/github-code-interpreter"]
+    },
+    {
+      "name": "opendataloader-pdf",
+      "description": "PDF 数据提取工具。基准测试第一的 PDF 解析器，支持本地模式（快速、确定）和混合 AI 模式（复杂表格、扫描件、公式），输出 Markdown、JSON（带边界框）、HTML。适用于需要从 PDF 提取结构化数据用于 RAG/LLM pipeline，或批量处理 PDF 文档的场景。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/opendataloader-pdf"]
     }
   ]
 }

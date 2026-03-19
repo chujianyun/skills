@@ -39,6 +39,7 @@
 |---|---|---|
 | [github-code-interpreter](skills/github-code-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 GitHub 仓库链接，希望解读源码、分析架构、生成学习报告或快速上手文档 |
 | [paper-interpreter](skills/paper-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 arXiv 链接，希望下载论文、解读论文、生成读书笔记或详细报告 |
+| [opendataloader-pdf](skills/opendataloader-pdf/SKILL.md) | Tool Wrapper / Pipeline | PDF 提取、PDF 转 Markdown/JSON/HTML、RAG 数据准备、批量 PDF 处理 |
 
 **这类 skill 的共同特点：**
 - 默认以本地文件为主交付
@@ -184,6 +185,11 @@ Install `github-code-interpreter`
 Install `paper-interpreter`
 ```bash
 /plugin install paper-interpreter@chujianyun/skills
+```
+
+Install `opendataloader-pdf`
+```bash
+/plugin install opendataloader-pdf@chujianyun/skills
 ```
 
 ### Method 2: Using [openskills](https://github.com/numman-ali/openskills)
