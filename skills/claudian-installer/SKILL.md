@@ -7,6 +7,10 @@ description: Claudian 安装助手。适用于用户想在 Obsidian 仓库中安
 
 Install Claudian - an Obsidian plugin that embeds Claude Code as an AI collaborator in your vault, giving it full agentic capabilities: file read/write, search, bash commands, and multi-step workflows.
 
+## Bundled Version
+
+Current bundled Claudian version: 1.3.72
+
 ## Installation Workflow
 
 ### Step 0: 先确认安装目标（必须先做）
