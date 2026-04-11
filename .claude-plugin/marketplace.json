@@ -100,6 +100,27 @@
       "source": "./",
       "strict": false,
       "skills": ["./skills/agent-optimizer"]
+    },
+    {
+      "name": "hermes-ops",
+      "description": "运维 Hermes Agent 的实战 skill。适用于用户提到"运维 hermes""排查 hermes 问题""gateway 异常""平台掉线""cron 不执行""profile 配置混乱""skills 或 tools 不生效""想让其他 agent 帮忙维护 hermes"时使用。基于 hermes-agent 源码和官方命令入口，优先做检查、定位、修复、验证四步，不凭感觉瞎改。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/hermes-ops"]
+    },
+    {
+      "name": "hermes-qq",
+      "description": "当用户想在 Hermes Agent 正式版 main 分支上补充 QQ platform 支持，或明确提到"给 hermes main 增加 QQ 渠道""把 QQ support 作为 skill 安装到 Hermes""让正式版 Hermes 支持 QQ 和文件发送"时使用。这个技能会把当前仓库补成支持 QQ Bot、QQ 文件发送、QQ 平台配置和工具集接线的版本。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/hermes-qq"]
+    },
+    {
+      "name": "sync-skills",
+      "description": "Skills 同步助手。将本地目录、GitHub 仓库或 skillsmp.com 页面的 skill 同步到用户选择的 AI 编码工具目录。使用 AskUserQuestion 选择目标（支持多选和自定义路径），展示同步计划后执行，同名 skill 会被覆盖。必须包含 ~/.agents/skills 作为同步目标。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/sync-skills"]
     }
   ]
 }
