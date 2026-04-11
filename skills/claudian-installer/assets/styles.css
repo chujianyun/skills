@@ -14,6 +14,17 @@
   --claudian-compact: #5bc0de;
 }
 
+/* Provider-specific brand overrides */
+body.theme-dark .claudian-container[data-provider="codex"] {
+  --claudian-brand: #d0d0d0;
+  --claudian-brand-rgb: 208, 208, 208;
+}
+
+body.theme-light .claudian-container[data-provider="codex"] {
+  --claudian-brand: #000000;
+  --claudian-brand-rgb: 0, 0, 0;
+}
+
 
 /* ============================================
    base/container.css
@@ -113,6 +124,7 @@
 .claudian-logo {
   display: flex;
   align-items: center;
+  color: var(--claudian-brand);
 }
 
 /* Header actions (end side - always stays at end via margin-inline-start: auto) */
@@ -1198,10 +1210,20 @@ body.theme-light .claudian-message-content pre {
   margin-bottom: 2px;
 }
 
+.claudian-tool-patch-section + .claudian-tool-patch-section {
+  margin-top: 10px;
+}
+
+.claudian-tool-patch-header {
+  font-family: var(--font-monospace);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
 .claudian-tool-result-item:last-child {
   margin-bottom: 0;
 }
-
 
 
 /* ============================================
@@ -1848,16 +1870,43 @@ body.theme-light .claudian-message-content pre {
   background: var(--background-modifier-hover);
 }
 
-/* Message Queue Indicator (shown below flavor text in thinking indicator) */
-.claudian-queue-indicator {
+/* Composer queue status row (queued follow-up preview + steer action) */
+.claudian-input-queue-row {
   display: none;
   font-size: 12px;
   color: var(--text-muted);
   font-style: normal;
-  margin-top: 2px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 2px 8px 2px;
+}
+
+.claudian-queue-indicator-text {
+  min-width: 0;
+  flex: 1 1 auto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.claudian-queue-indicator-action {
+  flex: 0 0 auto;
+  padding: 1px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--interactive-accent);
+  font: inherit;
+  cursor: pointer;
+}
+
+.claudian-queue-indicator-action:hover {
+  text-decoration: underline;
+}
+
+.claudian-queue-indicator-action[disabled] {
+  color: var(--text-faint);
+  cursor: default;
+  text-decoration: none;
 }
 
 /* Light blue border when instruction mode is active */
@@ -1974,13 +2023,8 @@ body.theme-light .claudian-message-content pre {
   padding: 4px 8px;
   border-radius: 4px;
   cursor: pointer;
-  color: var(--text-muted);
-  font-size: 12px;
-  transition: color 0.2s ease;
-}
-
-.claudian-model-btn.ready {
   color: var(--claudian-brand);
+  font-size: 12px;
 }
 
 .claudian-model-label {
@@ -2022,7 +2066,31 @@ body.theme-light .claudian-message-content pre {
   visibility: visible;
 }
 
+.claudian-model-group {
+  padding: 3px 8px;
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+.claudian-model-group:not(:first-child) {
+  margin-top: 4px;
+  border-top: 1px solid var(--background-modifier-border);
+  padding-top: 6px;
+}
+
+.claudian-model-provider-icon {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
 .claudian-model-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   padding: 4px 8px;
   cursor: pointer;
   font-size: 12px;
@@ -2190,6 +2258,50 @@ body.theme-light .claudian-message-content pre {
 .claudian-toggle-switch.active::after {
   transform: translateX(14px);
   background: var(--claudian-brand);
+}
+
+
+/* ============================================
+   toolbar/service-tier-toggle.css
+   ============================================ */
+/* Codex fast-mode / service-tier toggle */
+.claudian-service-tier-toggle {
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+}
+
+.claudian-service-tier-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.claudian-service-tier-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.claudian-service-tier-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.claudian-service-tier-button:hover {
+  background: var(--background-modifier-hover);
+}
+
+.claudian-service-tier-button.active {
+  color: var(--claudian-brand);
 }
 
 
@@ -4496,6 +4608,53 @@ code .claudian-file-link:hover {
 /* ============================================
    settings/base.css
    ============================================ */
+/* ── Settings tab navigation ── */
+
+.claudian-settings-tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  margin-bottom: 16px;
+}
+
+.claudian-settings-tab {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  margin-bottom: -1px;
+}
+
+.claudian-settings-tab:hover {
+  color: var(--text-normal);
+}
+
+.claudian-settings-tab--active {
+  color: var(--text-normal);
+  border-bottom-color: var(--interactive-accent);
+}
+
+.claudian-settings-tab-content {
+  display: none;
+}
+
+.claudian-settings-tab-content--active {
+  display: block;
+}
+
+/* Codex placeholder */
+.claudian-settings-codex-placeholder {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
 /* Settings page - remove separator lines from setting items */
 .claudian-settings .setting-item {
   border-top: none;

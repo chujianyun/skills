@@ -9,8 +9,7 @@ Install Claudian - an Obsidian plugin that embeds Claude Code as an AI collabora
 
 ## Bundled Version
 
-Current bundled Claudian version: 1.3.72
-
+Current bundled Claudian version: 2.0.2
 ## Installation Workflow
 
 ### Step 0: 先确认安装目标（必须先做）
