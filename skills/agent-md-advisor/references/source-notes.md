@@ -13,16 +13,23 @@ These notes summarize the local materials used to build this skill. Do not quote
 - `/Users/liuwangyang/Downloads/CLAUDE/Writing a good CLAUDE.md  HumanLayer Blog.md`
 - `/Users/liuwangyang/Downloads/CLAUDE/claude-code-best-practiceCLAUDE.md at main · shanraisshanclaude-code-best-practice.md`
 
+## Article Notes
+
+- `https://x.com/zodchiii/status/2048683276194185640` - darkzodchi article distilled through WuMing's Chinese translation, emphasizing `CLAUDE.md` as a technical brief rather than a persona prompt.
+
 ## Distilled Claims
 
 - `AGENTS.md` is best treated as a tool-neutral README for agents, while `CLAUDE.md` is Claude Code project memory.
 - The highest-value content is exact operational context: commands, structure, non-default conventions, testing, safety, and known gotchas.
-- Concision matters because these files are loaded into the agent context. Long, irrelevant, or generic instructions reduce adherence.
+- Concision matters because these files are loaded into the agent context. Long, irrelevant, or generic instructions reduce adherence; for `CLAUDE.md`, prefer roughly 80-120 high-signal lines when possible.
 - Use progressive disclosure: root files should route to deeper docs, nested instruction files, rules, commands, skills, or hooks when needed.
+- Split guidance across global, project, and local layers so shared files do not mix project facts with personal habits.
+- Reserve emphasized critical rules for a small number of constraints that prevent specific repeated mistakes.
 - Prefer deterministic tools for formatting, linting, type checking, secret scanning, and repeatable validation.
 - Mature setups evolve from absent/basic files to scoped, structured, path-aware, maintained, and adaptive systems.
 - Security guidance should describe where secrets live and how to access them safely, never include the values.
 - Effective files are maintained like code: reviewed, pruned, updated when commands or architecture change, and improved after repeated agent mistakes.
+- A useful maintenance loop is to add rules after the agent repeatedly makes a concrete mistake, not to pre-fill a giant rulebook on day one.
 
 ## Tensions In The Sources
 

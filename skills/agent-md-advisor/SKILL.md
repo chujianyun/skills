@@ -18,12 +18,13 @@ description: AGENTS.md / CLAUDE.md 最佳实践顾问。用于用户询问 agent
 ## Gotchas
 
 - 不要把 `AGENTS.md` / `CLAUDE.md` 写成项目百科、README 复制品或完整 API 文档
+- 不要把 `AGENTS.md` / `CLAUDE.md` 写成人设说明书、口号墙或愿望清单；它应该像给资深工程师的技术简报
 - 不要把 linter、formatter、类型检查器能确定执行的规则改写成大量自然语言
 - 不要写实际密钥、token、生产连接串、客户数据或内部安全细节；只写密钥位置和访问方式
 - 不要凭空发明命令；先看 `package.json`、`pyproject.toml`、`Makefile`、CI workflow、README 等可验证来源
 - 不要默认建议复杂 `.claude/agents`、hooks、MCP、skills；先判断项目是否真的需要
 - 如果用户只要求诊断，不要直接改文件；如果用户说“优化、重写、创建、执行”，可以落地修改
-- 保持文件短而可执行：`AGENTS.md` 理想上 150 行以内，`CLAUDE.md` 目标 200 行以内，超过 300 行通常要拆分
+- 保持文件短而可执行：`AGENTS.md` 理想上 150 行以内，`CLAUDE.md` 优先压到 80-120 行，超过 200 行要强烈考虑拆分
 
 ## 工作模式
 
@@ -53,7 +54,9 @@ description: AGENTS.md / CLAUDE.md 最佳实践顾问。用于用户询问 agent
 
 - 跨工具、Codex、Copilot、Cursor、通用 AI coding agent：优先 `AGENTS.md`
 - Claude Code 项目记忆、Claude 专属规则：优先 `CLAUDE.md`
-- 个人本地偏好：优先 `CLAUDE.local.md` 或用户级配置，不要提交到团队共享文件
+- 每个项目都会重复的工作偏好：优先放 global/user 级配置
+- 当前项目、技术栈、架构和命令：优先放 repo 内 `AGENTS.md` / `CLAUDE.md`
+- 个人本地偏好：优先 `CLAUDE.local.md` 或用户级 memory，不要提交到团队共享文件
 - Monorepo 或多技术栈：考虑根目录文件 + 子目录嵌套文件
 
 如果用户没有指定文件名：
@@ -135,6 +138,7 @@ description: AGENTS.md / CLAUDE.md 最佳实践顾问。用于用户询问 agent
 - 删除空泛、重复、过期、过细、容易从代码推断的信息
 - 把长 SOP、API 文档、风格指南改成“Read when”引用
 - 把命令改成可复制的真实命令
+- 把硬规则压缩成能阻止具体错误的清单，`MUST` / `MUST NOT` 只留给少数关键约束
 - 把安全边界和高风险操作写清楚
 
 完成后说明改了什么，并建议用户实际跑一次常见任务来验证。
@@ -148,8 +152,8 @@ description: AGENTS.md / CLAUDE.md 最佳实践顾问。用于用户询问 agent
 - 项目一句话上下文
 - 技术栈
 - 常用命令
-- 项目结构 / 代码放置规则
-- 非默认约定
+- 架构地图 / 代码放置规则
+- 硬规则和非默认约定
 - 测试和完成标准
 - 安全和权限边界
 - 参考文档及 Read when 触发条件
@@ -161,5 +165,7 @@ description: AGENTS.md / CLAUDE.md 最佳实践顾问。用于用户询问 agent
 - 用精确命令替代“运行测试”“正常构建”等模糊说法
 - 用文件路径和好/坏示例指向真实代码模式
 - 用渐进披露承载长内容：根文件只做路由和关键约束
+- 把 Global / Project / Local 三层分开，避免把个人习惯和项目事实混在同一个共享文件里
+- 在 agent 反复犯同一种错误后再补规则，避免一开始写成巨型说明书
 - 把确定性检查交给工具，把策略、边界和例外写给 agent
 - Treat instruction files as code：随项目变化审查、修剪和提交

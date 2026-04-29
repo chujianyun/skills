@@ -2,7 +2,7 @@
 
 ## Core Mental Model
 
-`AGENTS.md` and `CLAUDE.md` are context injection files for AI coding agents. They are not README replacements, API manuals, style encyclopedias, or generic “be careful” reminders.
+`AGENTS.md` and `CLAUDE.md` are context injection files for AI coding agents. They are not README replacements, API manuals, style encyclopedias, generic “be careful” reminders, persona prompts, or motivational posters.
 
 Use them to tell an otherwise stateless coding agent:
 
@@ -10,7 +10,7 @@ Use them to tell an otherwise stateless coding agent:
 - **WHAT** the stack, architecture, and important directories are
 - **HOW** to work safely: commands, tests, conventions, permissions, and done criteria
 
-The best files are short, accurate, and operational. Every line should earn its place.
+The best files read like a technical handoff brief for a capable engineer: short, accurate, and operational. Every line should earn its place by preventing a concrete mistake.
 
 ## File Choice
 
@@ -34,6 +34,14 @@ Recommended placement:
 - Nested `CLAUDE.md` for subproject-specific guidance
 - `CLAUDE.local.md` or user-level memory for personal, unshared preferences
 
+For Claude Code, keep three layers distinct:
+
+- **Global**: preferences or workflow rules repeated across every project
+- **Project**: this repository's commands, architecture, constraints, and safety boundaries
+- **Local**: personal habits, machine-specific paths, and unshared preferences
+
+Shared `CLAUDE.md` files should focus on the project layer. Put personal preferences in `CLAUDE.local.md`, user-level memory, or an equivalent local mechanism.
+
 ### Compatibility
 
 If the same content should serve multiple tools, prefer `AGENTS.md` as the source of truth and use a `CLAUDE.md` companion or symlink only when that fits the team's tooling. Do not maintain two diverging copies unless there is a real tool-specific difference.
@@ -42,10 +50,10 @@ If the same content should serve multiple tools, prefer `AGENTS.md` as the sourc
 
 - Starter file: 20-30 lines
 - `AGENTS.md`: aim for under 150 lines
-- `CLAUDE.md`: aim for under 200 lines
+- `CLAUDE.md`: prefer 80-120 lines when possible; treat 200 lines as a soft ceiling
 - Over 300 lines: usually split into references, nested files, rules, commands, or skills
 
-Shorter is better when it remains specific. Long files reduce instruction-following reliability and bury important constraints.
+Shorter is better when it remains specific. Long files reduce instruction-following reliability and bury important constraints. If a rule does not change agent behavior when removed, it is probably noise.
 
 ## What Belongs
 
@@ -55,6 +63,7 @@ Include:
 - Exact setup, build, lint, typecheck, and test commands
 - File-scoped commands for fast feedback
 - Major directory map and “where new code goes” rules
+- Critical rules the agent would otherwise violate, especially `MUST` / `MUST NOT` constraints
 - Non-default conventions the agent cannot infer reliably
 - Safety boundaries and operations requiring approval
 - Testing requirements and done criteria
@@ -67,6 +76,7 @@ Include:
 Avoid:
 
 - Long project history or marketing copy
+- Persona instructions such as “act like a senior engineer”
 - Full API docs, database schemas, or tutorials
 - Standard language conventions the model already knows
 - Linter/formatter rules that tools enforce deterministically
@@ -84,11 +94,12 @@ Use this order unless the project strongly suggests otherwise:
 2. Tech stack: frameworks, package managers, runtime versions, forbidden alternatives
 3. Commands: exact commands, especially fast file-scoped checks
 4. Project structure: important directories and placement rules
-5. Conventions: only non-default patterns
-6. Testing and quality bar: what to test, how to verify, done criteria
-7. Safety and permissions: what is allowed, what needs confirmation
-8. Reference documents: “Read when” triggers for deeper docs
-9. Good examples / avoid: real paths showing preferred and deprecated patterns
+5. Critical rules: a short list of constraints that prevent repeated mistakes
+6. Conventions: only non-default patterns
+7. Testing and quality bar: what to test, how to verify, done criteria
+8. Safety and permissions: what is allowed, what needs confirmation
+9. Reference documents: “Read when” triggers for deeper docs
+10. Good examples / avoid: real paths showing preferred and deprecated patterns
 
 ## Commands
 
@@ -124,6 +135,16 @@ Keep the root file as a router plus critical constraints. Move long or task-spec
 
 Prefer pointers to copies. Link to authoritative files rather than pasting long snippets that will rot.
 
+## Critical Rules
+
+Reserve `IMPORTANT`, `MUST`, and `MUST NOT` for high-impact constraints. A good critical rule names a specific failure mode:
+
+- Good: `MUST NOT commit .env files or generated secrets.`
+- Good: `MUST run pnpm vitest run <file> before finishing changes to tested TypeScript modules.`
+- Weak: `MUST write clean, high-quality code.`
+
+As a rule of thumb, keep critical rules under 15 items. More than that usually means some rules should move to nested files, references, tools, or deterministic checks.
+
 ## Safety And Security
 
 Instruction files are often committed and may be widely visible. Treat them as public unless proven otherwise.
@@ -147,6 +168,8 @@ Treat agent instruction files like code:
 - Remove stale or unused rules
 - Keep them synchronized with README and CI
 - Audit periodically for length, secrets, and drift
+
+For Claude Code, inspect existing memory before duplicating learned facts into `CLAUDE.md`. Use project or local memory for details that are personal, transient, or learned through repeated work; keep the committed file for stable project facts and high-value constraints.
 
 ## Capability Levels
 

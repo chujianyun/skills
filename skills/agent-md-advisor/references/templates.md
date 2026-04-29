@@ -107,7 +107,7 @@ Ask before:
 ```md
 # CLAUDE.md
 
-This file gives Claude Code project-specific context for this repository.
+This file is a short technical brief for Claude Code. Keep only stable project context that prevents concrete mistakes.
 
 ## Project
 [One sentence project description and stack.]
@@ -136,7 +136,7 @@ This file gives Claude Code project-specific context for this repository.
 ```md
 # CLAUDE.md
 
-This file gives Claude Code the stable context needed for every session. Keep it short; load detailed docs only when relevant.
+This file gives Claude Code the stable project context needed for every session. Keep it short; put personal preferences in local/user memory and load detailed docs only when relevant.
 
 ## Project
 [One or two lines: product, users, stack, what matters most.]
@@ -158,6 +158,8 @@ This file gives Claude Code the stable context needed for every session. Keep it
 - MUST NOT [critical forbidden action].
 - Prefer [project-specific choice] over [alternative].
 - Ask before changing [risky area].
+
+Keep this section under about 15 items. Each rule should prevent a specific mistake.
 
 ## Reference Documents
 - `@[path]` - Read when [trigger]. Covers [summary].

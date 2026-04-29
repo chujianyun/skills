@@ -5,12 +5,13 @@ Use this rubric to diagnose `AGENTS.md`, `CLAUDE.md`, `CLAUDE.local.md`, and rel
 ## Review Procedure
 
 1. Identify scope: tool-neutral, Claude-specific, personal, team-shared, repo-root, or subdirectory.
-2. Count rough length and scan for low-signal sections.
+2. Count rough length and scan for low-signal sections, persona prompts, and motivational language.
 3. Verify commands against project files before recommending them.
 4. Check whether rules are project-specific, stable, and actionable.
-5. Check whether long task-specific content should be split into references, commands, skills, rules, or hooks.
-6. Check for secrets, risky operations, and missing permission boundaries.
-7. Assign a maturity level and prioritize fixes.
+5. Ask whether each important line prevents a concrete mistake the agent would otherwise make.
+6. Check whether long task-specific content should be split into references, commands, skills, rules, or hooks.
+7. Check for secrets, risky operations, and missing permission boundaries.
+8. Assign a maturity level and prioritize fixes.
 
 ## Maturity Level
 
@@ -81,8 +82,10 @@ Fix:
 
 Symptoms:
 
+- “Act like a senior engineer”
 - “Write clean code”
 - “Follow best practices”
+- “Think step by step”
 - Long language basics
 
 Fix:
@@ -90,6 +93,34 @@ Fix:
 - Remove obvious rules
 - Keep only project-specific conventions and forbidden alternatives
 - Point to linters/formatters for mechanical style
+
+### Persona prompt instead of technical brief
+
+Symptoms:
+
+- The file mostly describes attitude, tone, or intelligence
+- The file lacks commands, architecture, safety boundaries, and done criteria
+- Rules sound inspiring but do not prevent a named failure mode
+
+Fix:
+
+- Replace persona language with exact commands, architecture map, and hard constraints
+- Keep only rules that answer: “What mistake does this prevent?”
+- Add examples using real paths when behavior is hard to infer
+
+### Overloaded critical rules
+
+Symptoms:
+
+- Dozens of `MUST` / `MUST NOT` bullets
+- Every preference is marked as critical
+- Important safety constraints are buried among generic quality advice
+
+Fix:
+
+- Keep critical rules under about 15 items
+- Reserve emphasis for safety, data loss, forbidden tools, and repeated project-specific mistakes
+- Move normal conventions to a separate section or deterministic tooling
 
 ### Duplicated documentation
 
@@ -125,12 +156,14 @@ Symptoms:
 
 - Small repo has a complex agent/rules/hooks system
 - Large monorepo has one huge root file
+- Personal preferences are committed into team-shared files
 
 Fix:
 
 - For small projects: compress to one simple file
 - For monorepos: split by domain or directory
 - Add skills/hooks only when repeated workflow justifies them
+- Keep global, project, and local guidance in separate files or memory layers
 
 ## Diagnostic Output Template
 
@@ -169,6 +202,7 @@ Before editing, decide:
 - What should move to references or nested files?
 - Which commands are verified?
 - Which rules are project-specific and stable?
+- Which rules prevent a concrete known mistake?
 - Which personal preferences should stay local?
 - Which risky operations need explicit approval?
 
@@ -177,5 +211,6 @@ After editing, verify:
 - File is shorter and more actionable
 - No secrets or private values were introduced
 - Commands match real project scripts
+- Critical rules are few enough to stay salient
 - References point to existing files, or are clearly marked as proposed
 - The result answers what a new AI teammate needs to know before the first change
