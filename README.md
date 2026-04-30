@@ -137,20 +137,30 @@
 
 ## 安装
 
-### Method 1: Install directly in Claude Code
+### Method 1: Claude Code plugin marketplace
 
-1. Add plugin marketplace
+在 Claude Code 中先添加这个仓库作为 plugin marketplace：
+
 ```bash
 /plugin marketplace add chujianyun/skills
 ```
 
-2. Install skills
+然后通过 `/plugin` 交互界面浏览并安装需要的 plugin，或直接安装某个 plugin：
 
-安装所有，发送: "安装 https://github.com/chujianyun/skills" 所有 skills
+```bash
+/plugin install mermaid@wuming-skills
+```
 
-安装某个，发送: "安装 https://github.com/chujianyun/skills" 中的 xx skill
+这里安装的是 Claude Code plugin。每个 plugin 会携带对应的 skill；Claude Code 目前按 plugin 逐个安装，不是通过自然语言“安装某个 skill”。
 
-### Method 2: Using [openskills](https://github.com/numman-ali/openskills)
+### Method 2: Ask a skill installer agent
+
+如果你使用的 Agent 内置了 skill 安装器，可以直接发送类似指令：
+
+- 安装全部：`安装 https://github.com/chujianyun/skills 所有 skills`
+- 安装某个：`安装 https://github.com/chujianyun/skills 中的 mermaid skill`
+
+### Method 3: Using [openskills](https://github.com/numman-ali/openskills)
 
 ```bash
 openskills install chujianyun/skills --global
