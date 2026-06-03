@@ -69,7 +69,17 @@
 
 ---
 
-### 6. 下载 / 采集工具类（Tool Wrapper / Pipeline）
+### 6. 音频 / 转写工具类（Tool Wrapper / Pipeline）
+
+这类 skill 适合把本地音频、录音或视频中的语音转成可继续处理的文本。
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [local-audio-transcriber](skills/local-audio-transcriber/SKILL.md) | Tool Wrapper / Pipeline | 用户发送已有录音、音频或视频文件，希望本地转写成文本、Markdown、字幕或结构化 JSON |
+
+---
+
+### 7. 下载 / 采集工具类（Tool Wrapper / Pipeline）
 
 这类 skill 适合把特定网站的资源下载流程固化成可重复执行的脚本化工作流。
 
@@ -80,7 +90,7 @@
 
 ---
 
-### 7. 运维 / 排障类（Runbook / Tool Wrapper）
+### 8. 运维 / 排障类（Runbook / Tool Wrapper）
 
 这类 skill 适合处理“系统坏了、服务挂了、渠道断了、命令不会用”的场景。
 
@@ -98,7 +108,7 @@
 
 ---
 
-### 8. 安装类（Pipeline）
+### 9. 安装类（Pipeline）
 
 这类 skill 偏工具链管理，负责把能力装上去。
 
@@ -117,6 +127,7 @@
 - **想把流程、结构、时序整理成图** → 用 `mermaid` skill
 - **想让已有文章更自然、更像终稿** → 用 `remove-ai-flavor` skill
 - **想把论文 / 仓库整理成报告** → 用解读生成类 skill
+- **想把录音、音频或视频转成文字** → 用 `local-audio-transcriber` skill
 - **想批量下载摄影相册原图** → 用下载 / 采集工具类 skill
 - **服务出问题、命令不会用、要排障** → 用运维类 skill
 - **要把能力装到工具里、同步到多个目录** → 用安装同步类 skill

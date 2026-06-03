@@ -1,0 +1,7 @@
+interface:
+  display_name: "Local Audio Transcriber"
+  short_description: "本地录音、音频和视频转文字"
+  default_prompt: "Use $local-audio-transcriber to transcribe this local recording into Chinese text."
+
+policy:
+  allow_implicit_invocation: true

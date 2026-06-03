@@ -102,6 +102,13 @@
       "skills": ["./skills/opendataloader-pdf"]
     },
     {
+      "name": "local-audio-transcriber",
+      "description": "本地录音转文字工具。当用户发送已有录音、音频或视频文件，并希望把语音直接转成文字、会议逐字稿、采访文字稿、字幕 SRT/VTT 或 Markdown 记录时使用。Apple Silicon 优先用 MLX/Apple GPU 和 whisper-large-v3-turbo-q4，本地转写，不用于现场临时录音，也不默认调用云端语音识别服务。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/local-audio-transcriber"]
+    },
+    {
       "name": "agent-optimizer",
       "description": "Agent 设计顾问与审查工具。基于 12-Factor AgentOps 最佳实践，用于探讨 Agent 架构设计方案，或审查现有 Agent/Skill/工作流的设计，发现问题并给出改进建议。触发词：审查我的 agent、帮我分析这个 skill、agent 设计、agent 优化、帮我 review 这个工作流。",
       "source": "./",
