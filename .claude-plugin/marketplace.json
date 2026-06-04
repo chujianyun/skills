@@ -103,7 +103,7 @@
     },
     {
       "name": "local-audio-transcriber",
-      "description": "本地录音转文字工具。当用户发送已有录音、音频或视频文件，并希望把语音直接转成文字、会议逐字稿、采访文字稿、字幕 SRT/VTT 或 Markdown 记录时使用。Apple Silicon 优先用 MLX/Apple GPU 和 whisper-large-v3-turbo-q4，本地转写，不用于现场临时录音，也不默认调用云端语音识别服务。",
+      "description": "本地录音转文字工具。当用户发送已有录音、音频或视频文件，并希望把语音转成 Markdown 文稿和 SRT 字幕时使用。Apple Silicon 优先用 MLX/Apple GPU 和 whisper-large-v3-turbo-q4，本地转写，不生成 txt/json/vtt，不用于现场临时录音，也不默认调用云端语音识别服务。",
       "source": "./",
       "strict": false,
       "skills": ["./skills/local-audio-transcriber"]

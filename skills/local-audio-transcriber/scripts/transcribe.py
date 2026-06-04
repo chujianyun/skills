@@ -2,10 +2,9 @@
 from __future__ import annotations
 
 import argparse
-import json
 import platform
 import sys
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Literal
 
@@ -77,8 +76,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--formats",
-        default="txt,md",
-        help="Comma-separated output formats: txt, md, srt, vtt, json. Default: txt,md.",
+        default="md,srt",
+        help="Comma-separated output formats: md, srt. Default: md,srt.",
     )
     parser.add_argument(
         "--output-dir",
@@ -217,11 +216,11 @@ def choose_device_and_compute_type(device: str, compute_type: str) -> tuple[str,
 
 def parse_formats(raw: str) -> list[str]:
     formats = [item.strip().lower() for item in raw.split(",") if item.strip()]
-    allowed = {"txt", "md", "srt", "vtt", "json"}
+    allowed = {"md", "srt"}
     unknown = sorted(set(formats) - allowed)
     if unknown:
         raise SystemExit(f"Unsupported output format(s): {', '.join(unknown)}")
-    return formats or ["txt", "md"]
+    return formats or ["md", "srt"]
 
 
 def resolve_inputs(inputs: Iterable[str]) -> list[Path]:
@@ -267,20 +266,6 @@ def render_srt(segments: list[TranscriptSegment]) -> str:
                 [
                     str(index),
                     f"{timestamp(segment.start)} --> {timestamp(segment.end)}",
-                    segment.text.strip(),
-                ]
-            )
-        )
-    return "\n\n".join(blocks) + "\n"
-
-
-def render_vtt(segments: list[TranscriptSegment]) -> str:
-    blocks = ["WEBVTT\n"]
-    for segment in segments:
-        blocks.append(
-            "\n".join(
-                [
-                    f"{timestamp(segment.start, '.')} --> {timestamp(segment.end, '.')}",
                     segment.text.strip(),
                 ]
             )
@@ -338,7 +323,6 @@ def write_outputs(
     duration = getattr(info, "duration", None)
 
     payloads = {
-        "txt": text + "\n",
         "md": render_md(
             input_path,
             model_name,
@@ -348,21 +332,6 @@ def write_outputs(
             segments,
         ),
         "srt": render_srt(segments),
-        "vtt": render_vtt(segments),
-        "json": json.dumps(
-            {
-                "input": str(input_path),
-                "model": model_name,
-                "language": language,
-                "language_probability": language_probability,
-                "duration": duration,
-                "text": text,
-                "segments": [asdict(segment) for segment in segments],
-            },
-            ensure_ascii=False,
-            indent=2,
-        )
-        + "\n",
     }
 
     for output_format in formats:

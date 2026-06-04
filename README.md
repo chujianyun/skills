@@ -75,7 +75,7 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [local-audio-transcriber](skills/local-audio-transcriber/SKILL.md) | Tool Wrapper / Pipeline | 用户发送已有录音、音频或视频文件，希望本地转写成文本、Markdown、字幕或结构化 JSON |
+| [local-audio-transcriber](skills/local-audio-transcriber/SKILL.md) | Tool Wrapper / Pipeline | 用户发送已有录音、音频或视频文件，希望本地转写成 Markdown 文稿和 SRT 字幕 |
 
 ---
 

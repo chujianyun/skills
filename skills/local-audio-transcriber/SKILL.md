@@ -1,11 +1,11 @@
 ---
 name: local-audio-transcriber
-description: 本地录音转文字工具。当用户发送已有录音、音频或视频文件，并希望把语音直接转成文字、会议逐字稿、采访文字稿、字幕 SRT/VTT 或 Markdown 记录时使用。Apple Silicon 优先用 MLX/Apple GPU 和 whisper-large-v3-turbo-q4，本地转写，不用于现场临时录音，也不默认调用云端语音识别服务。
+description: 本地录音转文字工具。当用户发送已有录音、音频或视频文件，并希望把语音转成 Markdown 文稿和 SRT 字幕时使用。Apple Silicon 优先用 MLX/Apple GPU 和 whisper-large-v3-turbo-q4，本地转写，不生成 txt/json/vtt，不用于现场临时录音，也不默认调用云端语音识别服务。
 ---
 
 # Local Audio Transcriber
 
-把用户提供的本地录音、音频或视频文件转成文字。核心目标是：用户发来音频后，直接返回转写文本；同时在本地保存可复用的转写文件。
+把用户提供的本地录音、音频或视频文件转成文字。核心目标是：用户发来音频后，直接返回转写文本；同时在本地保存 Markdown 文稿和 SRT 字幕。
 
 ## 适用边界
 
@@ -47,32 +47,32 @@ python3 -m pip install -U faster-whisper
 5. 运行转写脚本，中文录音优先指定 `--language zh`；不确定语言时省略语言参数：
 
 ```bash
-/tmp/local-audio-transcriber-mlx/bin/python {skill_dir}/scripts/transcribe.py "input.m4a" --language zh --formats txt,md,json --print-text
+/tmp/local-audio-transcriber-mlx/bin/python {skill_dir}/scripts/transcribe.py "input.m4a" --language zh --print-text
 ```
 
 6. 向用户直接发送转写文本。文本很长时，优先交付本地文件路径，并贴出开头和关键说明。
-7. 如用户要求字幕，补充 `--formats srt,vtt`。
+7. 默认只保存 `.md` 和 `.srt` 文件；不要生成 `txt`、`json` 或 `vtt`。
 
 ## 常用命令
 
 ```bash
 # Apple Silicon 中文长录音：优先使用 MLX + Apple GPU + turbo-q4
-/tmp/local-audio-transcriber-mlx/bin/python {skill_dir}/scripts/transcribe.py "recording.m4a" --language zh --formats txt,md,json,srt,vtt --print-text
+/tmp/local-audio-transcriber-mlx/bin/python {skill_dir}/scripts/transcribe.py "recording.m4a" --language zh --print-text
 
 # 明确指定 MLX 和模型
-/tmp/local-audio-transcriber-mlx/bin/python {skill_dir}/scripts/transcribe.py "recording.m4a" --engine mlx --model mlx-community/whisper-large-v3-turbo-q4 --language zh --formats txt,md,json,srt,vtt --print-text
+/tmp/local-audio-transcriber-mlx/bin/python {skill_dir}/scripts/transcribe.py "recording.m4a" --engine mlx --model mlx-community/whisper-large-v3-turbo-q4 --language zh --print-text
 
 # 非 Apple Silicon / CUDA / CPU：使用 faster-whisper
-python3 {skill_dir}/scripts/transcribe.py "recording.m4a" --engine faster-whisper --model small --language zh --formats txt,md --print-text
+python3 {skill_dir}/scripts/transcribe.py "recording.m4a" --engine faster-whisper --model small --language zh --print-text
 
-# 自动识别语言，生成字幕
-python3 {skill_dir}/scripts/transcribe.py "video.mp4" --formats txt,srt,vtt --print-text
+# 自动识别语言，生成 Markdown 和 SRT
+python3 {skill_dir}/scripts/transcribe.py "video.mp4" --print-text
 
 # 多个文件批量转写到指定目录
-python3 {skill_dir}/scripts/transcribe.py *.m4a --language zh --output-dir ./transcripts --formats txt,md,json
+python3 {skill_dir}/scripts/transcribe.py *.m4a --language zh --output-dir ./transcripts
 
 # faster-whisper 质量更高但更慢
-python3 {skill_dir}/scripts/transcribe.py "meeting.m4a" --engine faster-whisper --model medium --language zh --formats txt,md --print-text
+python3 {skill_dir}/scripts/transcribe.py "meeting.m4a" --engine faster-whisper --model medium --language zh --print-text
 ```
 
 ## 参数取舍
@@ -95,6 +95,7 @@ python3 {skill_dir}/scripts/transcribe.py "meeting.m4a" --engine faster-whisper 
 
 - 用户明确要“转文字”时，最终回复应包含转写正文，不要只给文件路径。
 - 用户要“整理成会议纪要/文章/字幕”时，先完成转写，再按用户目标继续加工。
+- 转写文件只保留 Markdown 和 SRT 两种格式，不生成 txt/json/vtt。
 - 对隐私敏感录音，只说明本地处理和输出位置，不复述无关敏感信息。
 
 ## 故障处理
