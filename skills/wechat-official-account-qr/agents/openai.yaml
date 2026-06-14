@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信公众号二维码"
+  short_description: "根据公众号 ID 生成可在聊天中显示的关注二维码"
+  default_prompt: "请使用 $wechat-official-account-qr 帮我根据公众号 ID 生成可在聊天中显示的关注二维码图片。"
