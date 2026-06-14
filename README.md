@@ -215,7 +215,7 @@ openskills install chujianyun/skills --global
 
 ## Contact
 
-![AI 实战课程二维码](assets/ai-practice-course-qr.png)
+![联系方式二维码](https://mingmingruyue-hz.oss-cn-hangzhou.aliyuncs.com/2025/codex-clipboard-cb9bcaae-e6b9-410f-b50c-088af145c41b.png)
 
 ---
 
