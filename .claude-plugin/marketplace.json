@@ -156,6 +156,27 @@
       "source": "./",
       "strict": false,
       "skills": ["./skills/wechat-official-account-qr"]
+    },
+    {
+      "name": "p7-advisor",
+      "description": "Alibaba-style P7 capability advisor for evaluating, coaching, and giving career advice against a P7 technical/product/expert profile. Use when the user asks for P7-level assessment, promotion readiness, capability gaps, resume/project review, interview preparation, or concrete growth advice based on Alibaba P7 expectations.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/p7-advisor"]
+    },
+    {
+      "name": "p8-advisor",
+      "description": "Alibaba-style P8 capability advisor for evaluating, coaching, and giving career advice against a P8 senior expert, architect, or domain-owner profile. Use when the user asks for P8-level assessment, promotion readiness, capability gaps, project or resume review, interview preparation, or growth advice based on Alibaba P8 expectations.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/p8-advisor"]
+    },
+    {
+      "name": "p9-advisor",
+      "description": "Alibaba-style P9 capability advisor for evaluating, coaching, and giving career advice against a P9 senior expert, director, or business/organization-level leader profile. Use when the user asks for P9-level assessment, promotion readiness, executive capability gaps, strategic project review, resume positioning, interview preparation, or growth advice based on Alibaba P9 expectations.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/p9-advisor"]
     }
   ]
 }

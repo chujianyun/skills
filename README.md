@@ -32,7 +32,19 @@
 
 ---
 
-### 3. 图示 / 可视化类（Generator）
+### 3. 职业能力 / 成长评估类（Advisor / Reviewer）
+
+这类 skill 适合把抽象的岗位能力模型，转成具体的评估、建议、简历表达和成长路径。
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [p7-advisor](skills/p7-advisor/SKILL.md) | Advisor / Reviewer | 按阿里风格 P7“团队级专家”能力模型，评估晋升准备度、项目证据、简历表达、面试准备和成长短板 |
+| [p8-advisor](skills/p8-advisor/SKILL.md) | Advisor / Reviewer | 按阿里风格 P8“领域级负责人”能力模型，评估领域战略、跨团队影响、机制建设、梯队培养和 P7 到 P8 的差距 |
+| [p9-advisor](skills/p9-advisor/SKILL.md) | Advisor / Reviewer | 按阿里风格 P9“业务/组织级负责人”能力模型，评估战略判断、资源整合、组织建设、高层影响力和 P8 到 P9 的差距 |
+
+---
+
+### 4. 图示 / 可视化类（Generator）
 
 这类 skill 的核心是：**把抽象结构、流程和关系，稳定转成可直接渲染的图**。
 
@@ -42,7 +54,7 @@
 
 ---
 
-### 4. 写作 / 表达优化类（Pipeline / Generator）
+### 5. 写作 / 表达优化类（Pipeline / Generator）
 
 这类 skill 的核心是：**保留作者原意，把已有文本改成更自然、更可发布的表达**。
 
@@ -52,7 +64,7 @@
 
 ---
 
-### 5. 解读 / 报告生成类（Pipeline / Generator）
+### 6. 解读 / 报告生成类（Pipeline / Generator）
 
 这类 skill 的核心是：**把原始资料落到本地，再生成结构化文档交付**。
 
@@ -69,7 +81,7 @@
 
 ---
 
-### 6. 音频 / 转写工具类（Tool Wrapper / Pipeline）
+### 7. 音频 / 转写工具类（Tool Wrapper / Pipeline）
 
 这类 skill 适合把本地音频、录音或视频中的语音转成可继续处理的文本。
 
@@ -79,7 +91,7 @@
 
 ---
 
-### 7. 下载 / 采集工具类（Tool Wrapper / Pipeline）
+### 8. 下载 / 采集工具类（Tool Wrapper / Pipeline）
 
 这类 skill 适合把特定网站的资源下载流程固化成可重复执行的脚本化工作流。
 
@@ -90,7 +102,7 @@
 
 ---
 
-### 8. 微信工具类（Tool Wrapper / Generator）
+### 9. 微信工具类（Tool Wrapper / Generator）
 
 这类 skill 适合把微信生态里的固定规则、入口和操作路径固化成可复用流程。
 
@@ -100,7 +112,7 @@
 
 ---
 
-### 9. 运维 / 排障类（Runbook / Tool Wrapper）
+### 10. 运维 / 排障类（Runbook / Tool Wrapper）
 
 这类 skill 适合处理“系统坏了、服务挂了、渠道断了、命令不会用”的场景。
 
@@ -118,7 +130,7 @@
 
 ---
 
-### 10. 安装类（Pipeline）
+### 11. 安装类（Pipeline）
 
 这类 skill 偏工具链管理，负责把能力装上去。
 
@@ -134,6 +146,7 @@
 
 - **问产品文档 / 官方资料** → 先看 wiki 类 skill
 - **想优化 Prompt / 配置 / skill 本身** → 先看审查优化类 skill
+- **想评估 P7/P8/P9 能力、晋升准备度或简历项目表达** → 用职业能力 / 成长评估类 skill
 - **想把流程、结构、时序整理成图** → 用 `mermaid` skill
 - **想让已有文章更自然、更像终稿** → 用 `remove-ai-flavor` skill
 - **想把论文 / 仓库整理成报告** → 用解读生成类 skill

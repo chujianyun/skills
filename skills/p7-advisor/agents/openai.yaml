@@ -1,0 +1,4 @@
+interface:
+  display_name: "P7 Advisor"
+  short_description: "Evaluate Alibaba-style P7 readiness and growth gaps"
+  default_prompt: "Use $p7-advisor to evaluate my current capability against an Alibaba-style P7 profile and suggest next steps."
