@@ -1,4 +1,4 @@
 interface:
   display_name: "P8 Advisor"
-  short_description: "Evaluate Alibaba-style P8 readiness and growth gaps"
-  default_prompt: "Use $p8-advisor to evaluate my current capability against an Alibaba-style P8 profile and suggest next steps."
+  short_description: "Evaluate first-tier tech P8 readiness and growth gaps"
+  default_prompt: "Use $p8-advisor to evaluate my current capability against a first-tier tech company P8 profile and suggest next steps."

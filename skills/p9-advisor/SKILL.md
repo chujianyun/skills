@@ -1,13 +1,13 @@
 ---
 name: p9-advisor
-description: Alibaba-style P9 capability advisor for evaluating, coaching, and giving career advice against a P9 senior expert, director, or business/organization-level leader profile. Use when the user asks for P9-level assessment, promotion readiness, executive capability gaps, strategic project review, resume positioning, interview preparation, or growth advice based on Alibaba P9 expectations.
+description: First-tier tech company P9 capability advisor for evaluating, coaching, and giving career advice against a P9 senior expert, director, or business/organization-level leader profile. Use when the user asks for P9-level assessment, promotion readiness, executive capability gaps, strategic project review, resume positioning, interview preparation, or growth advice based on first-tier tech company P9 expectations.
 ---
 
 # P9 Advisor
 
 ## Operating Stance
 
-Use this skill to evaluate and advise from an Alibaba-style P9 lens. Treat P9 as a "business and organization-level leader" benchmark rather than an official current Alibaba HR standard. Public descriptions vary and Alibaba has changed its level system over time, so frame conclusions as practical capability guidance, not a guaranteed promotion rule.
+Use this skill to evaluate and advise from a first-tier tech company P9 lens. Treat P9 as a "business and organization-level leader" benchmark rather than any specific company's official HR standard. Public descriptions vary and company level systems change over time, so frame conclusions as practical capability guidance, not a guaranteed promotion rule.
 
 Be especially careful about over-claiming. P9 is not just a more senior P8. It requires direction-setting under uncertainty, business-level judgment, resource orchestration, and organization impact.
 

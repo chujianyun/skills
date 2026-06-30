@@ -38,9 +38,9 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [p7-advisor](skills/p7-advisor/SKILL.md) | Advisor / Reviewer | 按阿里风格 P7“团队级专家”能力模型，评估晋升准备度、项目证据、简历表达、面试准备和成长短板 |
-| [p8-advisor](skills/p8-advisor/SKILL.md) | Advisor / Reviewer | 按阿里风格 P8“领域级负责人”能力模型，评估领域战略、跨团队影响、机制建设、梯队培养和 P7 到 P8 的差距 |
-| [p9-advisor](skills/p9-advisor/SKILL.md) | Advisor / Reviewer | 按阿里风格 P9“业务/组织级负责人”能力模型，评估战略判断、资源整合、组织建设、高层影响力和 P8 到 P9 的差距 |
+| [p7-advisor](skills/p7-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P7“团队级专家”能力模型，评估晋升准备度、项目证据、简历表达、面试准备和成长短板 |
+| [p8-advisor](skills/p8-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P8“领域级负责人”能力模型，评估领域战略、跨团队影响、机制建设、梯队培养和 P7 到 P8 的差距 |
+| [p9-advisor](skills/p9-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P9“业务/组织级负责人”能力模型，评估战略判断、资源整合、组织建设、高层影响力和 P8 到 P9 的差距 |
 
 ---
 
