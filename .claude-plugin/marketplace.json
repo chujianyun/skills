@@ -60,11 +60,11 @@
       "skills": ["./skills/paper-interpreter"]
     },
     {
-      "name": "article-translator",
-      "description": "英文技术文章翻译工具，专注 AI 领域内容的本地化。当用户需要翻译英文技术文章、博客、论文时使用此技能。支持从 URL 抓取内容并翻译为地道中文，输出符合科技期刊标准的译文。",
+      "name": "article-interpreter",
+      "description": "文章解读助手。对用户提供的文章（URL、Markdown、PDF、粘贴文本）进行结构化解读，输出包含总览、关键要点、个人启发、批判性思考和延伸思考的 Markdown 报告。触发词：文章解读、解读文章、帮我解读、读一下这篇、分析这篇文章、article interpretation。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/article-translator"]
+      "skills": ["./skills/article-interpreter"]
     },
     {
       "name": "skill-optimizer",
