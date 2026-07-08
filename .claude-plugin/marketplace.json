@@ -60,6 +60,13 @@
       "skills": ["./skills/paper-interpreter"]
     },
     {
+      "name": "article-translator",
+      "description": "英文技术文章翻译工具，专注 AI 领域内容的本地化。当用户需要翻译英文技术文章、博客、论文时使用此技能。支持从 URL 抓取内容并翻译为地道中文，输出符合科技期刊标准的译文。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/article-translator"]
+    },
+    {
       "name": "skill-optimizer",
       "description": "审查并优化现有 skill 的触发语义、工作流、确认门槛和资源组织。当用户提到优化 skill、检查 skill 质量、改进某个 skill 或重构技能说明时使用。默认先审查并给计划，只有在用户明确确认开始修改后才实施。",
       "source": "./",

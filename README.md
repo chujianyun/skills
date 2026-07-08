@@ -54,12 +54,13 @@
 
 ---
 
-### 5. 写作 / 表达优化类（Pipeline / Generator）
+### 5. 写作 / 翻译 / 表达优化类（Pipeline / Generator）
 
-这类 skill 的核心是：**保留作者原意，把已有文本改成更自然、更可发布的表达**。
+这类 skill 的核心是：**保留作者原意，把已有文本改成更自然、更可发布的表达，或把外文内容本地化成中文稿**。
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
+| [article-translator](skills/article-translator/SKILL.md) | Pipeline / Generator | 用户需要翻译英文技术文章、博客或论文，尤其是 AI 领域内容，并希望输出地道中文译文、候选标题和摘要 |
 | [remove-ai-flavor](skills/remove-ai-flavor/SKILL.md) | Pipeline / Generator / Reviewer | 识别并改写文章、公众号稿、自媒体稿、口播稿、演讲稿、课程稿、产品文案中的 AI 痕迹、模板腔、资料味和翻译腔 |
 
 ---
@@ -148,6 +149,7 @@
 - **想优化 Prompt / 配置 / skill 本身** → 先看审查优化类 skill
 - **想评估 P7/P8/P9 能力、晋升准备度或简历项目表达** → 用职业能力 / 成长评估类 skill
 - **想把流程、结构、时序整理成图** → 用 `mermaid` skill
+- **想翻译英文技术文章 / 博客 / 论文** → 用 `article-translator` skill
 - **想让已有文章更自然、更像终稿** → 用 `remove-ai-flavor` skill
 - **想把论文 / 仓库整理成报告** → 用解读生成类 skill
 - **想把录音、音频或视频转成文字** → 用 `local-audio-transcriber` skill
