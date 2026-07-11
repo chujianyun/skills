@@ -8,13 +8,28 @@
 
 ## Skill 地图
 
+仓库采用 `skills/<category>/<skill-name>/` 三级目录。物理分类由 [`config/skill-categories.json`](config/skill-categories.json) 统一管理：
+
+| 分类 | 主要职责 |
+|---|---|
+| `knowledge` | 产品文档、知识库、领域资料 |
+| `review` | Prompt、Agent、配置和 Skill 审查优化 |
+| `career` | 职级评估、晋升与职业建议 |
+| `content` | 文章、论文、源码解读与文本加工 |
+| `visual` | 图示、视觉资产与二维码 |
+| `media` | 音频、PDF、图片下载与媒体处理 |
+| `operations` | 服务运维、故障排查与平台接入 |
+| `distribution` | 安装、同步、发布与分发 |
+
+README 的能力地图可以按使用场景细分展示，但新 Skill 的物理目录只能选择上述八类之一。
+
 ### 1. 文档 / 知识库类（Tool Wrapper）
 
 这类 skill 的核心价值，是把某个产品、系统或知识域的资料包装成可按需触发的上下文。
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [qoder-wiki](skills/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |
+| [qoder-wiki](skills/knowledge/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |
 
 ---
 
@@ -24,11 +39,11 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [prompt-optimizer](skills/prompt-optimizer/SKILL.md) | Reviewer / Generator | 优化 Prompt、改进 AI 指令、为特定任务挑选提示词框架 |
-| [agent-md-advisor](skills/agent-md-advisor/SKILL.md) | Advisor / Reviewer / Generator | 回答 AGENTS.md / CLAUDE.md 最佳实践，诊断并优化 AI agent 指令文件 |
-| [claude-config-advisor](skills/claude-config-advisor/SKILL.md) | Reviewer / Inversion | 审查或设计 `.claude`、`CLAUDE.md`、Claude Code 项目配置 |
-| [skill-optimizer](skills/skill-optimizer/SKILL.md) | Reviewer / Inversion | 审查并优化已有 skill 的触发语义、工作流、确认门槛和资源组织 |
-| [agent-optimizer](skills/agent-optimizer/SKILL.md) | Reviewer / Consultant | 基于 12-Factor AgentOps 框架，提供 Agent 设计咨询、审查现有 Agent/Skill/工作流设计，发现问题并给出改进建议 |
+| [prompt-optimizer](skills/review/prompt-optimizer/SKILL.md) | Reviewer / Generator | 优化 Prompt、改进 AI 指令、为特定任务挑选提示词框架 |
+| [agent-md-advisor](skills/review/agent-md-advisor/SKILL.md) | Advisor / Reviewer / Generator | 回答 AGENTS.md / CLAUDE.md 最佳实践，诊断并优化 AI agent 指令文件 |
+| [claude-config-advisor](skills/review/claude-config-advisor/SKILL.md) | Reviewer / Inversion | 审查或设计 `.claude`、`CLAUDE.md`、Claude Code 项目配置 |
+| [skill-optimizer](skills/review/skill-optimizer/SKILL.md) | Reviewer / Inversion | 审查并优化已有 skill 的触发语义、工作流、确认门槛和资源组织 |
+| [agent-optimizer](skills/review/agent-optimizer/SKILL.md) | Reviewer / Consultant | 基于 12-Factor AgentOps 框架，提供 Agent 设计咨询、审查现有 Agent/Skill/工作流设计，发现问题并给出改进建议 |
 
 ---
 
@@ -38,9 +53,9 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [p7-advisor](skills/p7-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P7“团队级专家”能力模型，评估晋升准备度、项目证据、简历表达、面试准备和成长短板 |
-| [p8-advisor](skills/p8-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P8“领域级负责人”能力模型，评估领域战略、跨团队影响、机制建设、梯队培养和 P7 到 P8 的差距 |
-| [p9-advisor](skills/p9-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P9“业务/组织级负责人”能力模型，评估战略判断、资源整合、组织建设、高层影响力和 P8 到 P9 的差距 |
+| [p7-advisor](skills/career/p7-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P7“团队级专家”能力模型，评估晋升准备度、项目证据、简历表达、面试准备和成长短板 |
+| [p8-advisor](skills/career/p8-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P8“领域级负责人”能力模型，评估领域战略、跨团队影响、机制建设、梯队培养和 P7 到 P8 的差距 |
+| [p9-advisor](skills/career/p9-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P9“业务/组织级负责人”能力模型，评估战略判断、资源整合、组织建设、高层影响力和 P8 到 P9 的差距 |
 
 ---
 
@@ -50,7 +65,7 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [mermaid](skills/mermaid/SKILL.md) | Generator / Reviewer | 用户要求绘制 Mermaid 流程图、架构图、时序图、状态图、甘特图、ER 图、类图、旅程图等 |
+| [mermaid](skills/visual/mermaid/SKILL.md) | Generator / Reviewer | 用户要求绘制 Mermaid 流程图、架构图、时序图、状态图、甘特图、ER 图、类图、旅程图等 |
 
 ---
 
@@ -60,7 +75,7 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [remove-ai-flavor](skills/remove-ai-flavor/SKILL.md) | Pipeline / Generator / Reviewer | 识别并改写文章、公众号稿、自媒体稿、口播稿、演讲稿、课程稿、产品文案中的 AI 痕迹、模板腔、资料味、翻译腔和内容空心问题 |
+| [remove-ai-flavor](skills/content/remove-ai-flavor/SKILL.md) | Pipeline / Generator / Reviewer | 识别并改写文章、公众号稿、自媒体稿、口播稿、演讲稿、课程稿、产品文案中的 AI 痕迹、模板腔、资料味、翻译腔和内容空心问题 |
 
 ---
 
@@ -70,10 +85,10 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [article-interpreter](skills/article-interpreter/SKILL.md) | Pipeline / Generator | 用户提供文章 URL、Markdown、PDF 或粘贴文本，希望生成包含总览、关键要点、个人启发、批判性思考和延伸思考的结构化解读报告 |
-| [github-code-interpreter](skills/github-code-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 GitHub 仓库链接，希望解读源码、分析架构、生成学习报告或快速上手文档 |
-| [paper-interpreter](skills/paper-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 arXiv 链接，希望下载论文、解读论文、生成读书笔记或详细报告 |
-| [opendataloader-pdf](skills/opendataloader-pdf/SKILL.md) | Tool Wrapper / Pipeline | PDF 提取、PDF 转 Markdown/JSON/HTML、RAG 数据准备、批量 PDF 处理 |
+| [article-interpreter](skills/content/article-interpreter/SKILL.md) | Pipeline / Generator | 用户提供文章 URL、Markdown、PDF 或粘贴文本，希望生成包含总览、关键要点、个人启发、批判性思考和延伸思考的结构化解读报告 |
+| [github-code-interpreter](skills/content/github-code-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 GitHub 仓库链接，希望解读源码、分析架构、生成学习报告或快速上手文档 |
+| [paper-interpreter](skills/content/paper-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 arXiv 链接，希望下载论文、解读论文、生成读书笔记或详细报告 |
+| [opendataloader-pdf](skills/media/opendataloader-pdf/SKILL.md) | Tool Wrapper / Pipeline | PDF 提取、PDF 转 Markdown/JSON/HTML、RAG 数据准备、批量 PDF 处理 |
 
 **这类 skill 的共同特点：**
 - 默认以本地文件为主交付
@@ -88,7 +103,7 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [local-audio-transcriber](skills/local-audio-transcriber/SKILL.md) | Tool Wrapper / Pipeline | 用户发送已有录音、音频或视频文件，希望本地转写成 Markdown 文稿和 SRT 字幕 |
+| [local-audio-transcriber](skills/media/local-audio-transcriber/SKILL.md) | Tool Wrapper / Pipeline | 用户发送已有录音、音频或视频文件，希望本地转写成 Markdown 文稿和 SRT 字幕 |
 
 ---
 
@@ -98,8 +113,8 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [alltuu-downloader](skills/alltuu-downloader/SKILL.md) | Tool Wrapper / Pipeline | 用户提供 alltuu.com / m.alltuu.com 喔图云摄影相册链接，希望批量下载原图 |
-| [photoplus-downloader](skills/photoplus-downloader/SKILL.md) | Tool Wrapper / Pipeline | 用户提供 photoplus.cn/live/ PhotoPlus 相册链接，希望批量下载原图 |
+| [alltuu-downloader](skills/media/alltuu-downloader/SKILL.md) | Tool Wrapper / Pipeline | 用户提供 alltuu.com / m.alltuu.com 喔图云摄影相册链接，希望批量下载原图 |
+| [photoplus-downloader](skills/media/photoplus-downloader/SKILL.md) | Tool Wrapper / Pipeline | 用户提供 photoplus.cn/live/ PhotoPlus 相册链接，希望批量下载原图 |
 
 ---
 
@@ -109,7 +124,7 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [wechat-official-account-qr](skills/wechat-official-account-qr/SKILL.md) | Tool Wrapper / Generator | 根据公众号 ID / `gh_...` 生成关注二维码，并提供微信内获取公众号 ID 的引导图 |
+| [wechat-official-account-qr](skills/visual/wechat-official-account-qr/SKILL.md) | Tool Wrapper / Generator | 根据公众号 ID / `gh_...` 生成关注二维码，并提供微信内获取公众号 ID 的引导图 |
 
 ---
 
@@ -119,11 +134,11 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [openclaw-ops](skills/openclaw-ops/SKILL.md) | Tool Wrapper / Runbook | OpenClaw 状态检查、日志排查、Gateway/渠道/Agent 故障处理 |
-| [openclaw-session-cleaner](skills/openclaw-session-cleaner/SKILL.md) | Tool Wrapper / Runbook | 清理 OpenClaw 膨胀的 session 文件、删除旧 cron session、重建 `sessions.json` 引用 |
-| [copaw-ops](skills/copaw-ops/SKILL.md) | Tool Wrapper / Runbook | CoPaw 服务状态检查、配置排障、模型问题、cron 异常、渠道故障 |
-| [hermes-ops](skills/hermes-ops/SKILL.md) | Tool Wrapper / Runbook | Hermes Agent 运维、故障排查、gateway 异常、平台掉线、cron 不执行、profile 配置问题 |
-| [hermes-qq](skills/hermes-qq/SKILL.md) | Pipeline | 为 Hermes Agent 正式版 main 分支补充 QQ 平台支持、QQ Bot 接入、QQ 文件发送 |
+| [openclaw-ops](skills/operations/openclaw-ops/SKILL.md) | Tool Wrapper / Runbook | OpenClaw 状态检查、日志排查、Gateway/渠道/Agent 故障处理 |
+| [openclaw-session-cleaner](skills/operations/openclaw-session-cleaner/SKILL.md) | Tool Wrapper / Runbook | 清理 OpenClaw 膨胀的 session 文件、删除旧 cron session、重建 `sessions.json` 引用 |
+| [copaw-ops](skills/operations/copaw-ops/SKILL.md) | Tool Wrapper / Runbook | CoPaw 服务状态检查、配置排障、模型问题、cron 异常、渠道故障 |
+| [hermes-ops](skills/operations/hermes-ops/SKILL.md) | Tool Wrapper / Runbook | Hermes Agent 运维、故障排查、gateway 异常、平台掉线、cron 不执行、profile 配置问题 |
+| [hermes-qq](skills/operations/hermes-qq/SKILL.md) | Pipeline | 为 Hermes Agent 正式版 main 分支补充 QQ 平台支持、QQ Bot 接入、QQ 文件发送 |
 
 **这类 skill 的共同原则：**
 - 先做状态检查，再决定是否修复
@@ -137,7 +152,7 @@
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [claudian-installer](skills/claudian-installer/SKILL.md) | Pipeline | 安装 Claudian Obsidian 插件，把 Claude Code 接进 Obsidian |
+| [claudian-installer](skills/distribution/claudian-installer/SKILL.md) | Pipeline | 安装 Claudian Obsidian 插件，把 Claude Code 接进 Obsidian |
 
 ---
 
@@ -170,27 +185,30 @@
 5. **能脚本化的重复动作，尽量不要只写成文字说明**
 6. **持续沉淀 Gotchas，降低误触发和翻车概率**
 
-### 新增 skill 时建议遵循的规范
+### 新增与发布 Skill
 
-如果后面继续往这个仓库加新 skill，建议统一按这套来：
+团队统一执行这条流水线：
 
-- **frontmatter 只保留 `name` 和 `description`**
-- `description` 要同时写清：
-  - 做什么
-  - 什么时候触发
-  - 必要时写一句不适用场景
-- `SKILL.md` 优先写：
-  - 适用边界
-  - 设计模式（如 Tool Wrapper / Generator / Reviewer / Inversion / Pipeline）
-  - Gotchas
-  - 工作流
-  - 输出要求
-- 如果 skill 逻辑较长，优先拆到：
-  - `references/`：规范、模板、清单、补充文档
-  - `scripts/`：可执行脚本
-  - `assets/`：固定模板、示例资源
-- 如果 skill 涉及高影响动作、自动复查、定时任务、外部写操作，要明确写出**确认门槛**
-- 如果 skill 只是审查或规划类，默认遵循：**先审查 / 诊断，再出计划，确认后再修改**
+1. 先在 `config/skill-categories.json` 匹配唯一分类。
+2. 创建 `skills/<category>/<skill-name>/`，同步注册 README 和 marketplace。
+3. 使用 `skill-optimizer` 自动扫描并修复新 Skill 的触发、流程、异常、安全和资源组织问题。
+4. 运行 `python3 scripts/validate_skill.py <skill-name>`。
+5. 审查和校验通过后，记录与当前文件内容绑定的 optimizer 凭证。
+6. 运行 `/publish-skill <skill-name>`，先上传企业内部 Skills 市场，成功后再提交并推送当前分支。
+
+内部市场上传器通过环境变量配置：
+
+```bash
+export SKILLS_MARKET_PUBLISHER=/absolute/path/to/company-skills-publisher
+```
+
+上传器需要支持以下参数协议：
+
+```text
+<publisher> --skill-dir <absolute-path> --name <skill-name> --category <category>
+```
+
+没有配置上传器、优化凭证过期、校验失败或市场返回非零退出码时，流程会停止，不会继续 Git commit / push。完整团队规范见 [`AGENTS.md`](AGENTS.md)。
 
 ---
 
