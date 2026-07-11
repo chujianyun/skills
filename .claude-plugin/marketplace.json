@@ -15,175 +15,175 @@
       "description": "Collection of prompt engineering tools featuring 57 proven frameworks for crafting optimized AI prompts across various domains including marketing, decision analysis, education, product development, creative writing, and complex reasoning",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/prompt-optimizer"]
+      "skills": ["./skills/review/prompt-optimizer"]
     },
     {
       "name": "qoder-wiki",
       "description": "Qoder 官方文档知识库，包含产品介绍、用户指南、功能配置、扩展能力、账户定价和故障排查",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/qoder-wiki"]
+      "skills": ["./skills/knowledge/qoder-wiki"]
     },
     {
       "name": "claudian-installer",
       "description": "Install Claudian Obsidian plugin which embeds Claude Code as an AI collaborator in your vault. Your vault becomes Claude's working directory, giving it full agentic capabilities: file read/write, search, bash commands, and multi-step workflows.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/claudian-installer"]
+      "skills": ["./skills/distribution/claudian-installer"]
     },
     {
       "name": "copaw-ops",
       "description": "CoPaw 运维助手，提供服务启停、配置管理、模型与渠道管理、定时任务巡检、日志排查和故障恢复流程。当用户提到 copaw 运维、服务无响应、渠道断连、MCP 失败、模型调用失败、cron 不执行、Docker 部署或重置恢复时使用此技能。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/copaw-ops"]
+      "skills": ["./skills/operations/copaw-ops"]
     },
     {
       "name": "openclaw-ops",
       "description": "OpenClaw 运维助手，提供命令参考和故障排查修复流程。当用户需要执行 OpenClaw 命令、诊断服务问题、修复 Gateway 或渠道连接故障、查看日志、管理渠道或 Agent 时使用此技能。触发词包括：openclaw、小龙虾、gateway、渠道连接、消息发送失败、服务不可达等。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/openclaw-ops"]
+      "skills": ["./skills/operations/openclaw-ops"]
     },
     {
       "name": "openclaw-session-cleaner",
       "description": "OpenClaw session 清理助手。用于清理 ~/.openclaw/agents/main/sessions/ 下膨胀的旧 session 文件、删除旧 cron session、缩小并重建 sessions.json 引用。当用户提到清理 OpenClaw sessions、删除旧 cron session、重建 sessions.json 或排查 session 文件膨胀时使用。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/openclaw-session-cleaner"]
+      "skills": ["./skills/operations/openclaw-session-cleaner"]
     },
     {
       "name": "paper-interpreter",
       "description": "论文解读助手。适用于用户发送 arXiv 论文链接，并希望下载论文、解读论文、生成读书笔记或输出详细报告时使用。会在工作目录创建论文文件夹、下载 PDF 与 TeX Source（如有）、生成中文 Markdown 报告。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/paper-interpreter"]
+      "skills": ["./skills/content/paper-interpreter"]
     },
     {
       "name": "article-interpreter",
       "description": "文章解读助手。对用户提供的文章（URL、Markdown、PDF、粘贴文本）进行结构化解读，输出包含总览、关键要点、个人启发、批判性思考和延伸思考的 Markdown 报告。触发词：文章解读、解读文章、帮我解读、读一下这篇、分析这篇文章、article interpretation。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/article-interpreter"]
+      "skills": ["./skills/content/article-interpreter"]
     },
     {
       "name": "skill-optimizer",
       "description": "审查并优化现有 skill 的触发语义、工作流、确认门槛和资源组织。当用户提到优化 skill、检查 skill 质量、改进某个 skill 或重构技能说明时使用。默认先审查并给计划，只有在用户明确确认开始修改后才实施。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/skill-optimizer"]
+      "skills": ["./skills/review/skill-optimizer"]
     },
     {
       "name": "mermaid",
       "description": "Mermaid 图绘制助手。适用于用户明确要求绘制 Mermaid 图，或提到流程图、架构图、时序图、状态图、甘特图、ER 图、用户旅程图、类图，并希望直接输出 Mermaid 代码块时使用。会先判断最合适的图类型，再生成可渲染、结构清晰的 Mermaid 代码。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/mermaid"]
+      "skills": ["./skills/visual/mermaid"]
     },
     {
       "name": "claude-config-advisor",
       "description": "审查或设计 Claude Code 项目配置。用于用户提到 .claude、CLAUDE.md、Claude 配置文件、项目级 Claude 自定义配置、配置结构是否合理、该创建哪些配置文件，或希望从零规划 Claude 配置时使用。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/claude-config-advisor"]
+      "skills": ["./skills/review/claude-config-advisor"]
     },
     {
       "name": "agent-md-advisor",
       "description": "AGENTS.md / CLAUDE.md 最佳实践顾问。用于询问 AI coding agent 指令文件格式、结构和最佳实践，也用于审查、诊断、重写、优化或从零创建 AGENTS.md、CLAUDE.md、CLAUDE.local.md、.claude/rules 等 agent 指令文件。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/agent-md-advisor"]
+      "skills": ["./skills/review/agent-md-advisor"]
     },
     {
       "name": "github-code-interpreter",
       "description": "GitHub 源码解读助手。适用于用户提供 GitHub 仓库链接，并希望解读源码、理解原理、分析架构、生成学习报告或快速上手文档时使用。会生成源码解读报告和快速上手文档，适合学习项目设计与实现。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/github-code-interpreter"]
+      "skills": ["./skills/content/github-code-interpreter"]
     },
     {
       "name": "opendataloader-pdf",
       "description": "PDF 数据提取工具。基准测试第一的 PDF 解析器，支持本地模式（快速、确定）和混合 AI 模式（复杂表格、扫描件、公式），输出 Markdown、JSON（带边界框）、HTML。适用于需要从 PDF 提取结构化数据用于 RAG/LLM pipeline，或批量处理 PDF 文档的场景。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/opendataloader-pdf"]
+      "skills": ["./skills/media/opendataloader-pdf"]
     },
     {
       "name": "local-audio-transcriber",
       "description": "本地录音转文字工具。当用户发送已有录音、音频或视频文件，并希望把语音转成 Markdown 文稿和 SRT 字幕时使用。Apple Silicon 优先用 MLX/Apple GPU 和 whisper-large-v3-turbo-q4，本地转写，不生成 txt/json/vtt，不用于现场临时录音，也不默认调用云端语音识别服务。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/local-audio-transcriber"]
+      "skills": ["./skills/media/local-audio-transcriber"]
     },
     {
       "name": "agent-optimizer",
       "description": "Agent 设计顾问与审查工具。基于 12-Factor AgentOps 最佳实践，用于探讨 Agent 架构设计方案，或审查现有 Agent/Skill/工作流的设计，发现问题并给出改进建议。触发词：审查我的 agent、帮我分析这个 skill、agent 设计、agent 优化、帮我 review 这个工作流。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/agent-optimizer"]
+      "skills": ["./skills/review/agent-optimizer"]
     },
     {
       "name": "hermes-ops",
       "description": "运维 Hermes Agent 的实战 skill。适用于用户提到“运维 hermes”“排查 hermes 问题”“gateway 异常”“平台掉线”“cron 不执行”“profile 配置混乱”“skills 或 tools 不生效”“想让其他 agent 帮忙维护 hermes”时使用。基于 hermes-agent 源码和官方命令入口，优先做检查、定位、修复、验证四步，不凭感觉瞎改。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/hermes-ops"]
+      "skills": ["./skills/operations/hermes-ops"]
     },
     {
       "name": "hermes-qq",
       "description": "当用户想在 Hermes Agent 正式版 main 分支上补充 QQ platform 支持，或明确提到“给 hermes main 增加 QQ 渠道”“把 QQ support 作为 skill 安装到 Hermes”“让正式版 Hermes 支持 QQ 和文件发送”时使用。这个技能会把当前仓库补成支持 QQ Bot、QQ 文件发送、QQ 平台配置和工具集接线的版本。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/hermes-qq"]
+      "skills": ["./skills/operations/hermes-qq"]
     },
     {
       "name": "remove-ai-flavor",
       "description": "去除 AI 味道的文章风格优化技能。用于识别并改写文章、公众号稿、自媒体稿、口播稿、演讲稿、课程稿、产品文案中的 AI 痕迹、模板腔、资料味、翻译腔、空洞大词、过度金句、破折号滥用、bullet 堆叠、动不动加粗等问题。不用于事实核查、从零选题策划、论文转公众号、纯标题生成或追求 AI 检测器通过率。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/remove-ai-flavor"]
+      "skills": ["./skills/content/remove-ai-flavor"]
     },
     {
       "name": "alltuu-downloader",
       "description": "喔图(alltuu.com)云摄影相册批量下载工具。当用户需要从 alltuu.com / m.alltuu.com 相册批量下载原图时使用此技能。支持下载原图（6720x4480 级别），自动处理签名URL，并发下载。适用于 alltuu.com/album/ 相册链接。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/alltuu-downloader"]
+      "skills": ["./skills/media/alltuu-downloader"]
     },
     {
       "name": "photoplus-downloader",
       "description": "PhotoPlus相册批量下载原图工具。当用户需要从 photoplus.cn/live/ 相册批量下载原图时使用此技能。适用于 photoplus.cn 相册链接，支持多线程并发、自动跳过已下载文件。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/photoplus-downloader"]
+      "skills": ["./skills/media/photoplus-downloader"]
     },
     {
       "name": "wechat-official-account-qr",
       "description": "微信公众号关注二维码生成助手。当用户要根据公众号 ID、微信号、原始 ID 或 gh_... 生成公众号二维码、下载成本地图片并在 Agent/Codex 聊天里显示，或不知道如何在微信里找到公众号 ID、需要操作引导图时使用此技能。只适用于微信公众号二维码，不用于小程序码、个人微信二维码或企业微信二维码。",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/wechat-official-account-qr"]
+      "skills": ["./skills/visual/wechat-official-account-qr"]
     },
     {
       "name": "p7-advisor",
       "description": "First-tier tech company P7 capability advisor for evaluating, coaching, and giving career advice against a P7 technical/product/expert profile. Use when the user asks for P7-level assessment, promotion readiness, capability gaps, resume/project review, interview preparation, or concrete growth advice based on first-tier tech company P7 expectations.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/p7-advisor"]
+      "skills": ["./skills/career/p7-advisor"]
     },
     {
       "name": "p8-advisor",
       "description": "First-tier tech company P8 capability advisor for evaluating, coaching, and giving career advice against a P8 senior expert, architect, or domain-owner profile. Use when the user asks for P8-level assessment, promotion readiness, capability gaps, project or resume review, interview preparation, or growth advice based on first-tier tech company P8 expectations.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/p8-advisor"]
+      "skills": ["./skills/career/p8-advisor"]
     },
     {
       "name": "p9-advisor",
       "description": "First-tier tech company P9 capability advisor for evaluating, coaching, and giving career advice against a P9 senior expert, director, or business/organization-level leader profile. Use when the user asks for P9-level assessment, promotion readiness, executive capability gaps, strategic project review, resume positioning, interview preparation, or growth advice based on first-tier tech company P9 expectations.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/p9-advisor"]
+      "skills": ["./skills/career/p9-advisor"]
     }
   ]
 }

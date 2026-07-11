@@ -1,0 +1,69 @@
+{
+  "categories": {
+    "knowledge": {
+      "description": "产品文档、知识库和领域资料封装",
+      "skills": [
+        "qoder-wiki"
+      ]
+    },
+    "review": {
+      "description": "Prompt、Agent、配置和 Skill 的审查与优化",
+      "skills": [
+        "agent-md-advisor",
+        "agent-optimizer",
+        "claude-config-advisor",
+        "prompt-optimizer",
+        "skill-optimizer"
+      ]
+    },
+    "career": {
+      "description": "职级能力评估、晋升和职业建议",
+      "skills": [
+        "p7-advisor",
+        "p8-advisor",
+        "p9-advisor"
+      ]
+    },
+    "content": {
+      "description": "文章、论文、源码解读和文本加工",
+      "skills": [
+        "article-interpreter",
+        "github-code-interpreter",
+        "paper-interpreter",
+        "remove-ai-flavor"
+      ]
+    },
+    "visual": {
+      "description": "图示、可视化和二维码等视觉输出",
+      "skills": [
+        "mermaid",
+        "wechat-official-account-qr"
+      ]
+    },
+    "media": {
+      "description": "音频、PDF、图片下载与媒体处理",
+      "skills": [
+        "alltuu-downloader",
+        "local-audio-transcriber",
+        "opendataloader-pdf",
+        "photoplus-downloader"
+      ]
+    },
+    "operations": {
+      "description": "服务运维、故障排查、会话清理和平台接入",
+      "skills": [
+        "copaw-ops",
+        "hermes-ops",
+        "hermes-qq",
+        "openclaw-ops",
+        "openclaw-session-cleaner"
+      ]
+    },
+    "distribution": {
+      "description": "安装、同步、分发和技能市场相关能力",
+      "skills": [
+        "claudian-installer"
+      ]
+    }
+  }
+}
