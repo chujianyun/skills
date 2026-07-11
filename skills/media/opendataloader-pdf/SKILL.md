@@ -1,7 +1,6 @@
 ---
 name: opendataloader-pdf
 description: PDF 数据提取工具。当用户提到"PDF 提取"、"PDF 转 Markdown"、"PDF 解析"、"提取 PDF 内容"、"PDF 转 JSON"、"RAG PDF"时使用。OpenDataLoader PDF 是目前基准测试第一的 PDF 解析器，支持本地模式（快速、确定）和混合 AI 模式（复杂表格、扫描件、公式），输出 Markdown、JSON（带边界框）、HTML。适用于需要从 PDF 提取结构化数据用于 RAG/LLM pipeline，或需要批量处理 PDF 文档的场景。
-updated_at: 2026-03-19
 ---
 
 # OpenDataLoader PDF

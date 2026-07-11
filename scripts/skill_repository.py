@@ -10,7 +10,7 @@ from pathlib import Path
 FRONTMATTER_KEYS = {"name", "description"}
 MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 SECRET_PATTERNS = (
-    re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
+    re.compile(r"(?<![A-Za-z0-9_-])sk-[A-Za-z0-9_-]{20,}"),
     re.compile(r"AKIA[0-9A-Z]{16}"),
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     re.compile(r"(?i)(?:api[_-]?key|access[_-]?token|secret)\s*[:=]\s*['\"][^'\"]{12,}['\"]"),
@@ -108,7 +108,7 @@ def _local_reference_errors(skill_file: Path) -> list[str]:
         if any(marker in target for marker in ("<", ">", "{", "}")):
             continue
         path_text = target.split("#", 1)[0]
-        if path_text and not (skill_file.parent / path_text).exists():
+        if path_text and not Path(path_text).is_absolute() and not (skill_file.parent / path_text).exists():
             errors.append(f"missing local reference: {target}")
     return errors
 
@@ -139,12 +139,12 @@ def _marketplace_errors(root: Path, name: str, category: str) -> list[str]:
     matches = [
         plugin
         for plugin in plugins
-        if isinstance(plugin, dict) and plugin.get("name") == name
+        if isinstance(plugin, dict) and expected in plugin.get("skills", [])
     ]
     if len(matches) != 1:
-        return [f"marketplace must contain exactly one plugin named '{name}'"]
-    if matches[0].get("skills") != [expected]:
-        return [f"marketplace path for '{name}' must be '{expected}'"]
+        return [
+            f"marketplace must contain '{expected}' in exactly one plugin skills list"
+        ]
     return []
 
 
@@ -191,4 +191,3 @@ def validate_skill(root: Path, name: str) -> list[str]:
         if legacy.search(readme.read_text(encoding="utf-8")):
             errors.append(f"legacy README path remains for Skill '{name}'")
     return errors
-

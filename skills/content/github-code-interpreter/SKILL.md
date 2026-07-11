@@ -1,8 +1,6 @@
 ---
 name: github-code-interpreter
 description: GitHub 源码解读助手。适用于用户提供 GitHub 仓库链接，并希望解读源码、理解原理、分析架构、生成学习报告或快速上手文档时使用。会在 working 目录下生成源码解读和快速上手两份文档。默认先交付初稿，不自动复查；如果用户明确同意，再安排后续复查。不适用于仅克隆仓库或只要一句简介的场景。
-source: public
-visibility: public
 ---
 
 # GitHub 源码解读助手
@@ -107,7 +105,7 @@ python3 scripts/bootstrap_github_analysis.py <github_url> ~/Documents/working
 - 核心原理 / 关键数据流 / 关键算法
 - 设计思想与值得借鉴的点
 - 必要术语解释
-- 按需调用 [`mermaid`](../mermaid/SKILL.md) skill 生成图
+- 按需调用 [`mermaid`](../../visual/mermaid/SKILL.md) skill 生成图
 
 #### 快速上手文档
 至少包括：

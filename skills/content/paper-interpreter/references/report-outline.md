@@ -105,5 +105,5 @@ sequenceDiagram
 
 - 中文表达优先自然、准确，不写“AI 味”空话
 - 对公式和算法步骤，优先从 `TeX Source` 核对
-- 如需调用 [`mermaid`](../../mermaid/SKILL.md) skill 出图，只画关键链路，不画装饰图
+- 如需调用 [`mermaid`](../../../visual/mermaid/SKILL.md) skill 出图，只画关键链路，不画装饰图
 - 不能确认的地方要显式标注不确定性

@@ -308,7 +308,7 @@ npm run example:full
 - 补充常见问题
 ```
 
-## 使用 [`mermaid`](../../mermaid/SKILL.md) skill 的图示建议
+## 使用 [`mermaid`](../../../visual/mermaid/SKILL.md) skill 的图示建议
 
 ### 架构图
 

@@ -56,9 +56,9 @@ class SkillRepositoryTest(unittest.TestCase):
         )
         return skill_dir
 
-    def write_marketplace(self, skill_path):
+    def write_marketplace(self, skill_path, plugin_name="example-skill"):
         plugin = {
-            "name": "example-skill",
+            "name": plugin_name,
             "description": "example",
             "source": "./",
             "strict": False,
@@ -118,6 +118,12 @@ class SkillRepositoryTest(unittest.TestCase):
         errors = validate_skill(self.root, "example-skill")
         self.assertTrue(any("marketplace" in error for error in errors), errors)
 
+    def test_marketplace_plugin_name_may_differ_from_skill_name(self):
+        self.write_marketplace(
+            "./skills/knowledge/example-skill", plugin_name="example-skill-bundle"
+        )
+        self.assertEqual([], validate_skill(self.root, "example-skill"))
+
     def test_legacy_readme_link_is_reported(self):
         (self.root / "README.md").write_text(
             "[example](skills/example-skill/SKILL.md)\n", encoding="utf-8"
@@ -132,6 +138,17 @@ class SkillRepositoryTest(unittest.TestCase):
         )
         errors = validate_skill(self.root, "example-skill")
         self.assertTrue(any("possible secret" in error for error in errors), errors)
+
+    def test_sk_substring_inside_identifier_is_not_a_secret(self):
+        skill_dir = self.root / "skills" / "knowledge" / "example-skill"
+        (skill_dir / "styles.css").write_text(
+            ".task-approval-blocked-path { color: red; }\n", encoding="utf-8"
+        )
+        self.assertEqual([], validate_skill(self.root, "example-skill"))
+
+    def test_absolute_example_output_link_is_not_a_repository_reference(self):
+        self.write_skill(body="![output](/Users/example/Downloads/output.png)\n")
+        self.assertEqual([], validate_skill(self.root, "example-skill"))
 
 
 if __name__ == "__main__":
