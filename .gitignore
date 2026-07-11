@@ -1,5 +1,8 @@
 # IDE and editor configuration
-.claude/
+.claude/*
+!.claude/commands/
+.claude/commands/*
+!.claude/commands/publish-skill.md
 .obsidian/
 .DS_Store
 .vscode/
@@ -9,3 +12,5 @@
 *.log
 *.tmp
 .cache/
+__pycache__/
+.skill-publish/
