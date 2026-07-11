@@ -58,17 +58,17 @@ If two categories seem plausible, classify by the Skill's primary output, not by
 - `README.md` inside a Skill is optional and human-facing; it must not duplicate the AI execution contract in `SKILL.md`.
 - Include `agents/openai.yaml` when the Skill should have curated UI metadata.
 
-## New Skill Workflow
+## New Skill Checklist
 
-Follow this sequence; publication is blocked if any gate fails.
+Copy this checklist into the task progress before creating or publishing a Skill. Complete it from top to bottom; do not mark a later item complete while an earlier item is still open. Publication is blocked if any item fails.
 
-1. **Classify** — select one category from `config/skill-categories.json`.
-2. **Create** — add `skills/<category>/<skill-name>/` and register it in the taxonomy, README, and marketplace.
-3. **Optimize** — use `skill-optimizer` to scan triggering, workflow, failure handling, confirmation gates, output contract, progressive disclosure, dependencies, sensitive data, and high-impact operations.
-4. **Fix** — apply safe optimizer findings inside the new Skill. Creating and publishing a new Skill is authorization for these in-scope fixes; high-risk or out-of-scope changes still require approval.
-5. **Validate** — run `python3 scripts/validate_skill.py <skill-name>` until it passes.
-6. **Attest** — only after semantic review and validation pass, record the content-bound optimizer report.
-7. **Publish** — run `/publish-skill <skill-name>`; the enterprise market must confirm success before Git commit and push.
+- [ ] **Classify** — select exactly one category from `config/skill-categories.json`.
+- [ ] **Create** — add `skills/<category>/<skill-name>/` and register it in the taxonomy, README, and marketplace.
+- [ ] **Optimize** — use `skill-optimizer` to scan triggering, workflow, failure handling, confirmation gates, output contract, progressive disclosure, dependencies, sensitive data, and high-impact operations.
+- [ ] **Fix** — apply safe optimizer findings inside the new Skill. Creating and publishing a new Skill is authorization for these in-scope fixes; high-risk or out-of-scope changes still require approval.
+- [ ] **Validate** — run `python3 scripts/validate_skill.py <skill-name>` until it passes.
+- [ ] **Attest** — only after semantic review and validation pass, record the content-bound optimizer report.
+- [ ] **Publish** — run `/publish-skill <skill-name>`; confirm the enterprise market upload succeeded before considering Git commit and push complete.
 
 For an existing Skill, `skill-optimizer` keeps its normal review → plan → explicit confirmation → modification workflow.
 
