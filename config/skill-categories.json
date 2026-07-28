@@ -56,7 +56,8 @@
         "hermes-ops",
         "hermes-qq",
         "openclaw-ops",
-        "openclaw-session-cleaner"
+        "openclaw-session-cleaner",
+        "will-codex-quota-reset"
       ]
     },
     "distribution": {

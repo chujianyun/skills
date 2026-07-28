@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Quota Reset Forecast"
+  short_description: "Check Codex quota reset probability and timing"
+  default_prompt: "Use $will-codex-quota-reset to check the latest Codex quota reset forecast."

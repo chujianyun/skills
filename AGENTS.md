@@ -2,7 +2,7 @@
 
 ## Project
 
-This repository is WuMing's public collection of reusable Agent Skills. Skills are grouped by domain, validated as independent capability folders, and distributed through the Claude plugin marketplace plus an optional enterprise Skills market.
+This repository is WuMing's public collection of reusable Agent Skills. Skills are grouped by domain, validated as independent capability folders, and registered in the Claude plugin marketplace.
 
 ## Commands
 
@@ -11,9 +11,6 @@ This repository is WuMing's public collection of reusable Agent Skills. Skills a
 - Run repository tests: `python3 -m unittest discover -s tests -v`
 - Validate marketplace JSON: `python3 -m json.tool .claude-plugin/marketplace.json >/dev/null`
 - Validate taxonomy JSON: `python3 -m json.tool config/skill-categories.json >/dev/null`
-- Record completed optimizer review: `python3 scripts/record_optimizer_review.py <skill-name> --status passed`
-- Publish one Skill: `/publish-skill <skill-name>`
-- Publishing backend: `python3 scripts/publish_skill.py <skill-name>`
 
 ## Repository Map
 
@@ -24,8 +21,7 @@ This repository is WuMing's public collection of reusable Agent Skills. Skills a
 - `skills/<category>/<skill-name>/agents/openai.yaml` — optional Codex UI metadata.
 - `config/skill-categories.json` — category source of truth.
 - `.claude-plugin/marketplace.json` — public Claude plugin registrations.
-- `.claude/commands/publish-skill.md` — Agent-facing publication workflow.
-- `scripts/` — validation, optimizer attestation, and publishing tools.
+- `scripts/` — validation and repository governance tools.
 - `tests/` — standard-library unit tests for repository governance.
 
 ## Category Routing
@@ -60,29 +56,13 @@ If two categories seem plausible, classify by the Skill's primary output, not by
 
 ## New Skill Checklist
 
-Copy this checklist into the task progress before creating or publishing a Skill. Complete it from top to bottom; do not mark a later item complete while an earlier item is still open. Publication is blocked if any item fails.
+Copy this checklist into the task progress before creating a Skill. Complete it from top to bottom; do not mark a later item complete while an earlier item is still open.
 
-- [ ] **Classify** — select exactly one category from `config/skill-categories.json`.
-- [ ] **Create** — add `skills/<category>/<skill-name>/` and register it in the taxonomy, README, and marketplace.
-- [ ] **Optimize** — use `skill-optimizer` to scan triggering, workflow, failure handling, confirmation gates, output contract, progressive disclosure, dependencies, sensitive data, and high-impact operations.
-- [ ] **Fix** — apply safe optimizer findings inside the new Skill. Creating and publishing a new Skill is authorization for these in-scope fixes; high-risk or out-of-scope changes still require approval.
-- [ ] **Validate** — run `python3 scripts/validate_skill.py <skill-name>` until it passes.
-- [ ] **Attest** — only after semantic review and validation pass, record the content-bound optimizer report.
-- [ ] **Publish** — run `/publish-skill <skill-name>`; confirm the enterprise market upload succeeded before considering Git commit and push complete.
+- [ ] **Classify and create** — select exactly one category from `config/skill-categories.json`, add `skills/<category>/<skill-name>/`, and register it in the taxonomy, README, and marketplace.
+- [ ] **Optimize and validate** — use `skill-optimizer` to automatically review and fix triggering, workflow, failure handling, confirmation gates, output contract, progressive disclosure, dependencies, sensitive data, and high-impact operations; then run `python3 scripts/validate_skill.py <skill-name>` until it passes.
+- [ ] **Commit and push** — stage only the new Skill and its taxonomy, README, and marketplace registrations; commit and push the current non-main branch to `origin`.
 
-For an existing Skill, `skill-optimizer` keeps its normal review → plan → explicit confirmation → modification workflow.
-
-## Enterprise Market Contract
-
-`SKILLS_MARKET_PUBLISHER` must point to an executable maintained by the enterprise market team. The repository invokes:
-
-```text
-<publisher> --skill-dir <absolute-path> --name <skill-name> --category <category>
-```
-
-Exit code `0` means the market confirmed upload. Missing configuration, timeout, or any nonzero exit code is a hard failure. Credentials belong in the adapter's environment or secret manager, never in this repository.
-
-Invoking `/publish-skill <skill-name>` explicitly authorizes market upload, a scoped commit, and pushing the current non-main branch for that Skill. It does not authorize unrelated files, destructive cleanup, force push, publishing from `main`, or bypassing a failed gate.
+Creating a new Skill authorizes safe, in-scope optimizer fixes plus a path-limited commit and push after validation. High-risk or out-of-scope changes still require approval. For an existing Skill, `skill-optimizer` keeps its normal review → plan → explicit confirmation → modification workflow.
 
 ## Verification And Done Criteria
 
@@ -94,11 +74,11 @@ A Skill change is complete only when:
 - `python3 -m unittest discover -s tests -v` passes after governance-script changes.
 - `python3 -m json.tool .claude-plugin/marketplace.json >/dev/null` passes.
 - `git diff --check` passes.
-- Market publication and Git push are reported separately; neither is implied when an adapter is unavailable.
+- The scoped commit is pushed successfully to the current non-main branch.
 
 ## Safety
 
 - Never commit secrets, tokens, cookies, private keys, production credentials, private market URLs, or machine-specific overrides.
 - Preserve unrelated and untracked user files; use path-limited staging.
-- Ask before deleting Skills, rewriting many existing Skills, changing license or marketplace owner metadata, changing remotes, force pushing, or publishing outside `/publish-skill`.
-- Do not claim success when optimizer review, validation, market upload, commit, or push has failed.
+- Ask before deleting Skills, rewriting many existing Skills, changing license or marketplace owner metadata, changing remotes, or force pushing.
+- Do not claim success when optimizer review, validation, commit, or push has failed.
