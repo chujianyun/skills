@@ -186,30 +186,15 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 5. **能脚本化的重复动作，尽量不要只写成文字说明**
 6. **持续沉淀 Gotchas，降低误触发和翻车概率**
 
-### 新增与发布 Skill
+### 新增 Skill
 
 团队统一执行这条流水线：
 
-1. 先在 `config/skill-categories.json` 匹配唯一分类。
-2. 创建 `skills/<category>/<skill-name>/`，同步注册 README 和 marketplace。
-3. 使用 `skill-optimizer` 自动扫描并修复新 Skill 的触发、流程、异常、安全和资源组织问题。
-4. 运行 `python3 scripts/validate_skill.py <skill-name>`。
-5. 审查和校验通过后，记录与当前文件内容绑定的 optimizer 凭证。
-6. 运行 `/publish-skill <skill-name>`，先上传企业内部 Skills 市场，成功后再提交并推送当前分支。
+1. 在 `config/skill-categories.json` 选择唯一分类，创建 `skills/<category>/<skill-name>/`，并同步注册 taxonomy、README 和 marketplace。
+2. 使用 `skill-optimizer` 自动审查并修复新 Skill 的触发、流程、异常、安全和资源组织问题，然后运行 `python3 scripts/validate_skill.py <skill-name>` 直到通过。
+3. 只提交新 Skill 及其索引变更，推送当前非主分支到远端。
 
-内部市场上传器通过环境变量配置：
-
-```bash
-export SKILLS_MARKET_PUBLISHER=/absolute/path/to/company-skills-publisher
-```
-
-上传器需要支持以下参数协议：
-
-```text
-<publisher> --skill-dir <absolute-path> --name <skill-name> --category <category>
-```
-
-没有配置上传器、优化凭证过期、校验失败或市场返回非零退出码时，流程会停止，不会继续 Git commit / push。完整团队规范见 [`AGENTS.md`](AGENTS.md)。
+不需要上传企业 Skills 市场，也不需要 optimizer attestation 或 `/publish-skill` 门禁。完整团队规范见 [`AGENTS.md`](AGENTS.md)。
 
 ---
 
