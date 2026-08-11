@@ -17,8 +17,9 @@
       ]
     },
     "career": {
-      "description": "职级能力评估、晋升和职业建议",
+      "description": "职业能力、思维提升、晋升和职业建议",
       "skills": [
+        "five-perspective-analysis",
         "p7-advisor",
         "p8-advisor",
         "p9-advisor"

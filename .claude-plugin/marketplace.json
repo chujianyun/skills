@@ -172,6 +172,13 @@
       "skills": ["./skills/visual/wechat-official-account-qr"]
     },
     {
+      "name": "five-perspective-analysis",
+      "description": "从用户、业务负责人、一线执行者、技术负责人、公司经营者五种角色视角交叉分析问题，识别各方目标、约束、风险和冲突，并综合成有优先级的判断与行动建议。适用于产品决策、技术方案、项目复盘、业务难题、职业判断，以及用户要求换几个视角、考虑得更全面或用五种视角分析时。不用于单纯事实查询、只需单一专业结论或必须由真实利益相关者参与的正式调研。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/career/five-perspective-analysis"]
+    },
+    {
       "name": "p7-advisor",
       "description": "First-tier tech company P7 capability advisor for evaluating, coaching, and giving career advice against a P7 technical/product/expert profile. Use when the user asks for P7-level assessment, promotion readiness, capability gaps, resume/project review, interview preparation, or concrete growth advice based on first-tier tech company P7 expectations.",
       "source": "./",

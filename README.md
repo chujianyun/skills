@@ -47,12 +47,13 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 ---
 
-### 3. 职业能力 / 成长评估类（Advisor / Reviewer）
+### 3. 职业能力 / 成长与思维提升类（Advisor / Reviewer）
 
-这类 skill 适合把抽象的岗位能力模型，转成具体的评估、建议、简历表达和成长路径。
+这类 skill 适合把抽象的岗位能力与思维框架，转成具体的评估、判断、建议和成长路径。
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
+| [five-perspective-analysis](skills/career/five-perspective-analysis/SKILL.md) | Advisor / Reviewer | 从用户、业务、一线执行、技术和公司经营五种角色交叉分析产品、技术、项目、业务与职业问题，形成有取舍的综合判断 |
 | [p7-advisor](skills/career/p7-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P7“团队级专家”能力模型，评估晋升准备度、项目证据、简历表达、面试准备和成长短板 |
 | [p8-advisor](skills/career/p8-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P8“领域级负责人”能力模型，评估领域战略、跨团队影响、机制建设、梯队培养和 P7 到 P8 的差距 |
 | [p9-advisor](skills/career/p9-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P9“业务/组织级负责人”能力模型，评估战略判断、资源整合、组织建设、高层影响力和 P8 到 P9 的差距 |

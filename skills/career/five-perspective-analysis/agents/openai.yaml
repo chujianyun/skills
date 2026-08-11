@@ -1,0 +1,4 @@
+interface:
+  display_name: "五视角分析"
+  short_description: "用五类角色视角交叉分析问题，形成综合判断与行动建议"
+  default_prompt: "请使用 $five-perspective-analysis 从五种角色视角分析这个问题，并给出综合判断与行动建议。"
