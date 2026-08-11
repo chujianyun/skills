@@ -1,0 +1,4 @@
+interface:
+  display_name: "照片与证书水印"
+  short_description: "为照片、证书扫描件和 PDF 安全添加可追溯用途水印"
+  default_prompt: "使用 $add-photo-certificate-watermarks 为这些照片或证书添加用途水印，并先生成预览。"

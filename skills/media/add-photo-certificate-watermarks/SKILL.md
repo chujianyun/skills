@@ -1,0 +1,142 @@
+---
+name: add-photo-certificate-watermarks
+description: 为照片、证书扫描件和 PDF 添加本地文字水印。用户提出照片加版权水印、证书/身份证明/资质文件添加“仅限某用途”水印、批量加水印、生成水印预览或避让头像、二维码、印章时使用。支持 JPEG、PNG、WebP 和 PDF，默认先预览、保留原件并清除图片元数据。不用于去除水印、伪造或篡改证书，也不用于仅设计 Logo 水印素材。
+---
+
+# 照片与证书水印
+
+使用随 Skill 提供的本地脚本生成可复现的文字水印。先预览，再批量输出；绝不覆盖原件。
+
+## 工作流
+
+复制并跟踪：
+
+```text
+水印进度：
+- [ ] 1. 确认输入与用途
+- [ ] 2. 选择预设与水印文案
+- [ ] 3. 检查依赖并生成预览
+- [ ] 4. 审核可读性和避让区域
+- [ ] 5. 批量输出并交付
+```
+
+### 1. 确认输入与用途
+
+- 解析用户给出的文件或目录；只接受 JPEG、PNG、WebP、PDF。
+- 判断是照片版权标记还是证书用途限制；不确定时只问用途这一项。
+- 若请求去水印、修改证书内容或制造误导性材料，停止并说明不能执行。
+- 创建独立输出目录。不要写回输入路径，不要删除原件。
+
+### 2. 选择预设与文案
+
+- 照片：使用 `--preset photo`，默认右下角单点水印，适合作者名、品牌名或版权声明。
+- 证书：使用 `--preset certificate`，默认斜向平铺，适合“仅用于……，再次复印无效”等用途限制。
+- 水印文案必须具体、短且与真实用途一致。不要擅自写身份证号、电话、住址等新的个人信息。
+- 需要文案建议、参数说明或避让原则时，读取 [references/presets-and-safety.md](references/presets-and-safety.md)。
+
+### 3. 检查依赖并生成预览
+
+先检查：
+
+```bash
+python3 -c "from PIL import Image; import fitz; print('watermark dependencies OK')"
+```
+
+缺少依赖时，说明将安装到哪个 Python 环境并征得用户同意，再执行：
+
+```bash
+python3 -m pip install --upgrade Pillow PyMuPDF
+```
+
+先对第一个输入生成预览：
+
+```bash
+python3 scripts/add_watermark.py INPUT \
+  --output-dir OUTPUT_DIR \
+  --text "仅用于办理示例业务，其他用途无效" \
+  --preset certificate \
+  --preview-only
+```
+
+照片示例：
+
+```bash
+python3 scripts/add_watermark.py PHOTO.jpg \
+  --output-dir OUTPUT_DIR \
+  --text "© Example Studio" \
+  --preset photo \
+  --preview-only
+```
+
+在实际使用时，从当前 Skill 目录解析 `scripts/add_watermark.py` 的绝对路径，不要假设调用者的工作目录就是 Skill 目录。
+
+### 4. 审核预览
+
+必须检查预览，不能仅以命令成功作为通过：
+
+- 水印清晰但不遮挡主体信息。
+- 证书水印至少穿过部分正文区域，不能只落在可裁掉的空白边缘。
+- 二维码、头像、印章、签名和证书编号仍可辨认。
+- 文字没有被裁切，中文没有显示成方框。
+
+需要避让时，使用一个或多个归一化矩形；格式为 `左,上,右,下`，取值均为 0 到 1：
+
+```bash
+python3 scripts/add_watermark.py CERT.pdf \
+  --output-dir OUTPUT_DIR \
+  --text "仅用于供应商资质审核，其他用途无效" \
+  --preset certificate \
+  --exclude 0.72,0.06,0.94,0.25 \
+  --exclude 0.62,0.68,0.90,0.92 \
+  --preview-only
+```
+
+脚本不会自动识别敏感区域。根据预览调整 `--opacity`、`--font-size`、`--layout`、`--angle` 或 `--exclude`，直到通过。
+
+### 5. 批量输出并交付
+
+移除 `--preview-only`，保持已确认的参数不变：
+
+```bash
+python3 scripts/add_watermark.py INPUT_OR_DIRECTORY \
+  --output-dir OUTPUT_DIR \
+  --text "仅用于办理示例业务，其他用途无效" \
+  --preset certificate \
+  --recursive
+```
+
+- 输出文件默认追加 `_watermarked`；已存在同名文件时停止，不覆盖。
+- 输出目录位于输入目录内部时，递归扫描会自动排除该输出目录，避免结果被再次加水印。
+- 图片默认移除 EXIF 等元数据；只有用户明确需要保留时才使用 `--keep-metadata`，并提醒其可能包含拍摄时间、设备或位置。
+- 对一批同版式文件，至少抽查首个、最后一个和一个中间结果。不同版式不要共用未经复核的避让坐标。
+- 最终交付输出目录、文件数量、使用的文案和预设，并明确原件未修改。不要在回复中展示证书正文或其他私人信息。
+
+## 失败处理
+
+- 文件损坏、加密 PDF、零页 PDF或格式不支持：停止该文件，报告文件名和原因，不生成假成功结果。
+- 字体缺失或中文显示异常：要求用户提供支持该文字的 `.ttf` / `.otf` / `.ttc`，再用 `--font` 指定；不要把未授权字体打包进 Skill。
+- 输出文件已存在：改用新的输出目录或文件名；不要自动删除或覆盖。
+- PDF 处理失败：保留原件和已成功输出，报告失败项；不要把 PDF 静默转成图片冒充原格式。
+
+## Gotchas
+
+- 水印不是密码学保护，仍可能被裁剪、修复或重绘；不要承诺“绝对防盗用”。
+- 过浅的水印失去限制用途的意义，过深则影响核验；必须以预览为准。
+- 同一组 `--exclude` 坐标只适合同版式页面。PDF 每页布局不同就逐页检查或拆开处理。
+- `--keep-metadata` 可能保留 GPS、设备和拍摄时间，默认不要启用。
+- 不要在公开日志、临时目录名或交付说明里写证件号码和其他敏感内容。
+
+## 输出契约
+
+交付时简要说明：
+
+```text
+水印处理完成
+- 输出目录：<绝对路径>
+- 结果：<成功数> 个；<失败数> 个
+- 预设 / 布局：<photo|certificate> / <corner|tile|center>
+- 水印文案：<文案>
+- 原件：未修改
+- 元数据：已移除 / 按用户要求保留
+- 复核：<抽查范围与结论>
+```

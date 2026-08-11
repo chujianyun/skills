@@ -108,7 +108,17 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 ---
 
-### 8. 下载 / 采集工具类（Tool Wrapper / Pipeline）
+### 8. 图片 / 证书处理工具类（Tool Wrapper / Pipeline）
+
+这类 skill 在本地处理含版权或个人信息的图片与 PDF，重点是保护原件、预览复核和隐私边界。
+
+| Skill | 模式 | 适用场景 |
+|---|---|---|
+| [add-photo-certificate-watermarks](skills/media/add-photo-certificate-watermarks/SKILL.md) | Tool Wrapper / Pipeline | 给照片添加版权水印，或给证书扫描件、资质文件和 PDF 添加限定用途水印 |
+
+---
+
+### 9. 下载 / 采集工具类（Tool Wrapper / Pipeline）
 
 这类 skill 适合把特定网站的资源下载流程固化成可重复执行的脚本化工作流。
 
@@ -119,7 +129,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 ---
 
-### 9. 微信工具类（Tool Wrapper / Generator）
+### 10. 微信工具类（Tool Wrapper / Generator）
 
 这类 skill 适合把微信生态里的固定规则、入口和操作路径固化成可复用流程。
 
@@ -129,7 +139,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 ---
 
-### 10. 运维 / 排障类（Runbook / Tool Wrapper）
+### 11. 运维 / 排障类（Runbook / Tool Wrapper）
 
 这类 skill 适合处理“系统坏了、服务挂了、渠道断了、命令不会用”的场景。
 
@@ -148,7 +158,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 ---
 
-### 11. 安装类（Pipeline）
+### 12. 安装类（Pipeline）
 
 这类 skill 偏工具链管理，负责把能力装上去。
 
@@ -169,6 +179,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 - **想让已有文章更自然、更像终稿** → 用 `remove-ai-flavor` skill
 - **想把文章 / 论文 / 仓库整理成报告** → 用解读生成类 skill
 - **想把录音、音频或视频转成文字** → 用 `local-audio-transcriber` skill
+- **想给照片或证书添加版权 / 限定用途水印** → 用 `add-photo-certificate-watermarks` skill
 - **想批量下载摄影相册原图** → 用下载 / 采集工具类 skill
 - **想根据公众号 ID 生成关注二维码** → 用 `wechat-official-account-qr` skill
 - **服务出问题、命令不会用、要排障** → 用运维类 skill

@@ -116,6 +116,13 @@
       "skills": ["./skills/media/opendataloader-pdf"]
     },
     {
+      "name": "add-photo-certificate-watermarks",
+      "description": "为照片、证书扫描件和 PDF 添加本地文字水印。适用于照片版权标记、证书或资质文件限定用途、批量加水印、生成水印预览，以及手动避让头像、二维码、印章等区域；默认保留原件并移除图片元数据。不用于去水印、伪造或篡改证书。",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/media/add-photo-certificate-watermarks"]
+    },
+    {
       "name": "local-audio-transcriber",
       "description": "本地录音转文字工具。当用户发送已有录音、音频或视频文件，并希望把语音转成 Markdown 文稿和 SRT 字幕时使用。Apple Silicon 优先用 MLX/Apple GPU 和 whisper-large-v3-turbo-q4，本地转写，不生成 txt/json/vtt，不用于现场临时录音，也不默认调用云端语音识别服务。",
       "source": "./",
