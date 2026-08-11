@@ -108,13 +108,13 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 ---
 
-### 8. 图片 / 证书处理工具类（Tool Wrapper / Pipeline）
+### 8. 图片 / 证件处理工具类（Tool Wrapper / Pipeline）
 
 这类 skill 在本地处理含版权或个人信息的图片与 PDF，重点是保护原件、预览复核和隐私边界。
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [add-photo-certificate-watermarks](skills/media/add-photo-certificate-watermarks/SKILL.md) | Tool Wrapper / Pipeline | 给照片添加版权水印，或给证书扫描件、资质文件和 PDF 添加限定用途水印 |
+| [add-photo-certificate-watermarks](skills/media/add-photo-certificate-watermarks/SKILL.md) | Tool Wrapper / Pipeline | 给照片添加版权水印，或给身份证、护照、学历证书、资质文件和 PDF 添加限定用途水印 |
 
 ---
 
@@ -179,7 +179,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 - **想让已有文章更自然、更像终稿** → 用 `remove-ai-flavor` skill
 - **想把文章 / 论文 / 仓库整理成报告** → 用解读生成类 skill
 - **想把录音、音频或视频转成文字** → 用 `local-audio-transcriber` skill
-- **想给照片或证书添加版权 / 限定用途水印** → 用 `add-photo-certificate-watermarks` skill
+- **想给照片、身份证、学历证书或资质文件添加版权 / 限定用途水印** → 用 `add-photo-certificate-watermarks` skill
 - **想批量下载摄影相册原图** → 用下载 / 采集工具类 skill
 - **想根据公众号 ID 生成关注二维码** → 用 `wechat-official-account-qr` skill
 - **服务出问题、命令不会用、要排障** → 用运维类 skill
