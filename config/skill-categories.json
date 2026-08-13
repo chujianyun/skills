@@ -3,6 +3,7 @@
     "knowledge": {
       "description": "产品文档、知识库和领域资料封装",
       "skills": [
+        "llama-index-wiki",
         "qoder-wiki"
       ]
     },

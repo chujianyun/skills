@@ -29,6 +29,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
+| [llama-index-wiki](skills/knowledge/llama-index-wiki/SKILL.md) | Tool Wrapper | 检索 LlamaIndex Python 用户文档，回答 RAG、索引、检索、Agent、Workflow、集成、评估、部署与 LlamaParse 问题 |
 | [qoder-wiki](skills/knowledge/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |
 
 ---

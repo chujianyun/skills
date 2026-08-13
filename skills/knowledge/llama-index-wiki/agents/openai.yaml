@@ -1,0 +1,4 @@
+interface:
+  display_name: "LlamaIndex Wiki"
+  short_description: "离线检索 LlamaIndex 官方用户文档并回答开发问题"
+  default_prompt: "Use $llama-index-wiki to answer my LlamaIndex question with documentation-backed guidance."

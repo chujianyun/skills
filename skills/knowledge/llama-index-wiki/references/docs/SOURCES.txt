@@ -1,0 +1,13 @@
+Source: https://developers.llamaindex.ai/python/framework/
+Sitemap: https://developers.llamaindex.ai/sitemap.xml
+Downloaded: 2026-08-12 (Asia/Shanghai)
+Pages: 455
+
+Path mapping:
+  https://developers.llamaindex.ai/python/framework/<path>/
+  -> docs/<path>/index.md
+
+Method:
+  454 pages were read from their official index.md endpoints with Dokobot local mode.
+  The 437,907-byte changelog exceeded Dokobot's 300-second local bridge timeout and
+  was fetched from the same official index.md endpoint as a single-file fallback.

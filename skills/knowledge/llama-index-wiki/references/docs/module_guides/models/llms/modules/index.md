@@ -1,0 +1,6 @@
+# developers.llamaindex.ai/python/framework/module_guides/models/llms/modules/index.md
+> https://developers.llamaindex.ai/python/framework/module_guides/models/llms/modules/index.md
+
+--- title: Available LLM integrations | Developer Documentation ---
+We support integrations with OpenAI, Anthropic, Google, Hugging Face, and more.
+- AI21 - Apertis - Anthropic - AnyScale - ASI - Azure OpenAI - Baseten - Bedrock - Clarifai - Cleanlab - Cohere - CometAPI - Dashscope - Dashscope Multi-Modal - EverlyAI - Featherless AI - Fireworks - Friendli - Google Gen AI - Gradient - Gradient Model Adapter - Groq - Heroku - HuggingFace Camel-7B - HuggingFace StableLM - HuggingFace Llama2 - Konko - LangChain - LiteLLM - Llama API - Llama CPP - LocalAI - MariTalk - MistralAI - Modelscope - MonsterAPI - MyMagic - NeutrinoAI - Nebius AI - Nvidia TensorRT-LLM - Nvidia Triton - Ollama - OpenAI - OpenRouter - Perplexity - Pipeshift - PremAI - Portkey - Predibase - Replicate Llama2 - Replicate Vicuna - Replicate Vector Index Llama2 - RunGPT - SageMaker - SambaNova Systems - Together.ai - Upstage - Vercel AI Gateway - vLLM - Xorbits Inference - Yi

@@ -25,6 +25,13 @@
       "skills": ["./skills/knowledge/qoder-wiki"]
     },
     {
+      "name": "llama-index-wiki",
+      "description": "LlamaIndex 官方用户文档离线知识库，用于检索并回答 RAG、索引、检索、Agent、Workflow、集成、评估、部署和 LlamaParse 等问题",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/knowledge/llama-index-wiki"]
+    },
+    {
       "name": "claudian-installer",
       "description": "Install Claudian Obsidian plugin which embeds Claude Code as an AI collaborator in your vault. Your vault becomes Claude's working directory, giving it full agentic capabilities: file read/write, search, bash commands, and multi-step workflows.",
       "source": "./",
