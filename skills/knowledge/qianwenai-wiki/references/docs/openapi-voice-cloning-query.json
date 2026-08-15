@@ -1,0 +1,146 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "声音复刻 API — 查询克隆音色",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dashscope.aliyuncs.com/api/v1"
+    }
+  ],
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/services/audio/tts/customization": {
+      "post": {
+        "operationId": "queryVoiceCloning",
+        "summary": "查询克隆音色",
+        "description": "查询指定克隆音色的详情，包括状态、创建时间和原始音频 URL。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "查询成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "bash",
+            "label": "cURL",
+            "source": "curl -X POST https://dashscope.aliyuncs.com/api/v1/services/audio/tts/customization \\\n-H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\n  \"model\": \"voice-enrollment\",\n  \"input\": {\n    \"action\": \"query_voice\",\n    \"voice_id\": \"cosyvoice-v3-plus-myvoice-xxxxxx\"\n  }\n}'"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "QueryRequest": {
+        "type": "object",
+        "required": ["model", "input"],
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "固定为 `voice-enrollment`。",
+            "enum": ["voice-enrollment"],
+            "example": "voice-enrollment"
+          },
+          "input": {
+            "type": "object",
+            "required": ["action", "voice_id"],
+            "properties": {
+              "action": {
+                "type": "string",
+                "description": "固定为 `query_voice`。",
+                "enum": ["query_voice"],
+                "example": "query_voice"
+              },
+              "voice_id": {
+                "type": "string",
+                "description": "要查询的音色 ID。",
+                "example": "cosyvoice-v3-plus-myvoice-xxxxxx"
+              }
+            }
+          }
+        }
+      },
+      "QueryResponse": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "object",
+            "properties": {
+              "gmt_create": {
+                "type": "string",
+                "description": "音色创建时间。",
+                "example": "2024-12-11 13:38:02"
+              },
+              "gmt_modified": {
+                "type": "string",
+                "description": "最后修改时间。",
+                "example": "2024-12-11 13:38:02"
+              },
+              "resource_link": {
+                "type": "string",
+                "description": "用于克隆的原始音频文件 URL。",
+                "example": "https://yourAudioFileUrl"
+              },
+              "target_model": {
+                "type": "string",
+                "description": "绑定到此音色的语音合成模型。",
+                "example": "cosyvoice-v3-plus"
+              },
+              "status": {
+                "type": "string",
+                "description": "音色状态：`DEPLOYING`（审核中）、`OK`（已通过，可使用）或 `UNDEPLOYED`（未通过）。",
+                "enum": ["DEPLOYING", "OK", "UNDEPLOYED"],
+                "example": "OK"
+              }
+            }
+          },
+          "usage": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "integer",
+                "description": "固定为 `1`。",
+                "example": 1
+              }
+            }
+          },
+          "request_id": {
+            "type": "string",
+            "description": "请求 ID，用于问题排查。",
+            "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "DashScope API Key。前往[获取 API Key](/api-reference/preparation/api-key)。"
+      }
+    }
+  }
+}

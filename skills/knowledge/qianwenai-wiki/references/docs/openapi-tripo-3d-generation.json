@@ -1,0 +1,460 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Tripo 3D 模型生成 API",
+    "description": "使用 Tripo 模型通过文本、单张图像或多张图像生成 3D 模型。异步提交任务后，通过 `GET /tasks/{task_id}` 轮询获取结果。",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dashscope.aliyuncs.com/api/v1",
+      "description": "北京"
+    }
+  ],
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/services/aigc/video-generation/3d-generation": {
+      "post": {
+        "operationId": "createTripo3DGeneration",
+        "summary": "提交 3D 模型生成任务",
+        "description": "提交 3D 模型生成任务，返回 `task_id` 用于轮询查询。支持文生 3D 模型、单图生 3D 模型、多图生 3D 模型。",
+        "parameters": [
+          {
+            "name": "X-DashScope-Async",
+            "in": "header",
+            "required": true,
+            "description": "必须设置为 `enable`，表示异步提交任务。",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "enable"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tripo3DRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "任务提交成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncTaskSubmitResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "label": "cURL - 文生 3D 模型（有贴图）",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/3d-generation' \\\n  -H 'X-DashScope-Async: enable' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"Tripo/Tripo-P1.0\",\n  \"input\": {\n    \"prompt\": \"一只可爱的猫\"\n  },\n  \"parameters\": {\n    \"texture_quality\": \"standard\"\n  }\n}'"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 单图生 3D 模型（有贴图）",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/3d-generation' \\\n  -H 'X-DashScope-Async: enable' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"Tripo/Tripo-P1.0\",\n  \"input\": {\n    \"image\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260424/cfbxhg/tripo-single.jpg\"\n  },\n  \"parameters\": {\n    \"texture_quality\": \"standard\"\n  }\n}'"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 多图生 3D 模型（4张图）",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/3d-generation' \\\n  -H 'X-DashScope-Async: enable' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"Tripo/Tripo-P1.0\",\n  \"input\": {\n    \"images\": [\n      { \"type\": \"png\", \"file_token\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260424/liafix/tripo-images-1.png\" },\n      { \"type\": \"png\", \"file_token\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260424/slgluy/tripo-images-2.png\" },\n      { \"type\": \"png\", \"file_token\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260424/zjqhyn/tripo-images-3.png\" },\n      { \"type\": \"png\", \"file_token\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260424/mqfzww/tripo-images-4.png\" }\n    ]\n  },\n  \"parameters\": {\n    \"texture_quality\": \"standard\"\n  }\n}'"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 多图生 3D 模型（2张图）",
+            "source": "# 图片顺序为前、左、后、右，不需要的视角传入空对象 {} 即可\ncurl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/3d-generation' \\\n  -H 'X-DashScope-Async: enable' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"Tripo/Tripo-P1.0\",\n  \"input\": {\n    \"images\": [\n      { \"type\": \"png\", \"file_token\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260424/liafix/tripo-images-1.png\" },\n      {},\n      { \"type\": \"png\", \"file_token\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260424/zjqhyn/tripo-images-3.png\" },\n      {}\n    ]\n  },\n  \"parameters\": {\n    \"texture_quality\": \"standard\"\n  }\n}'"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 无贴图生成",
+            "source": "# 需同时将 texture 和 pbr 设为 false\ncurl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/3d-generation' \\\n  -H 'X-DashScope-Async: enable' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"Tripo/Tripo-P1.0\",\n  \"input\": {\n    \"prompt\": \"一只可爱的猫\"\n  },\n  \"parameters\": {\n    \"texture\": false,\n    \"pbr\": false\n  }\n}'"
+          }
+        ]
+      }
+    },
+    "/tasks/{task_id}": {
+      "get": {
+        "operationId": "getTripo3DTaskStatus",
+        "summary": "查询 3D 模型生成任务结果",
+        "description": "轮询任务状态，任务成功后获取 3D 模型下载链接。",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "description": "提交任务时返回的任务 ID。",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "任务状态查询成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tripo3DTaskStatusResponse"
+                },
+                "examples": {
+                  "SUCCEEDED": {
+                    "summary": "任务执行成功",
+                    "value": {
+                      "request_id": "c11018a8-3f83-9591-a636-xxxxxx",
+                      "output": {
+                        "task_id": "051c7b40-b2c5-4341-aee4-xxxxxx",
+                        "task_status": "SUCCEEDED",
+                        "submit_time": "2026-04-26 14:13:14.373",
+                        "scheduled_time": "2026-04-26 14:13:14.419",
+                        "end_time": "2026-04-26 14:14:13.679",
+                        "results": [
+                          {
+                            "pbr_model_url": "https://openapi.cdn.tripo3d.com/xxxx.glb?auth_key=xxxx",
+                            "rendered_image_url": "https://openapi.cdn.tripo3d.com/xxxx.webp?auth_key=xxxx"
+                          }
+                        ]
+                      },
+                      "usage": {
+                        "3d_task_type": "text-to-3d",
+                        "count": 1,
+                        "texture_quality": "standard"
+                      }
+                    }
+                  },
+                  "FAILED": {
+                    "summary": "任务执行失败",
+                    "value": {
+                      "request_id": "e5d70b02-ebd3-98ce-9fe8-xxxxxx",
+                      "output": {
+                        "task_id": "86ecf553-d340-4e21-af6e-xxxxxx",
+                        "task_status": "FAILED",
+                        "code": "InvalidParameter",
+                        "message": "The parameter is invalid xxxxxx"
+                      }
+                    }
+                  },
+                  "RUNNING": {
+                    "summary": "任务执行中",
+                    "value": {
+                      "request_id": "c1209113-8437-424f-a386-xxxxxx",
+                      "output": {
+                        "task_id": "051c7b40-b2c5-4341-aee4-xxxxxx",
+                        "task_status": "RUNNING",
+                        "submit_time": "2026-04-26 14:13:14.373",
+                        "scheduled_time": "2026-04-26 14:13:14.419"
+                      }
+                    }
+                  },
+                  "UNKNOWN": {
+                    "summary": "任务查询过期",
+                    "value": {
+                      "request_id": "a4de7c32-7057-9f82-8581-xxxxxx",
+                      "output": {
+                        "task_id": "051c7b40-b2c5-4341-aee4-xxxxxx",
+                        "task_status": "UNKNOWN"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "label": "cURL - 查询任务结果",
+            "source": "# 将 {task_id} 替换为提交任务时返回的实际任务 ID\ncurl -X GET 'https://dashscope.aliyuncs.com/api/v1/tasks/{task_id}' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\""
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。"
+      }
+    },
+    "schemas": {
+      "Tripo3DRequest": {
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "模型名称。可选值：\n- `Tripo/Tripo-H3.1`：高精度 3D 模型生成，输出产物最高 200 万面。对应 Tripo 官方 API 版本 `v3.1-20260211`。\n- `Tripo/Tripo-P1.0`：专业 3D 模型生成，输出产物最高 2 万面，速度更快。对应 Tripo 官方 API 版本 `P1-20260311`。",
+            "enum": [
+              "Tripo/Tripo-H3.1",
+              "Tripo/Tripo-P1.0"
+            ],
+            "example": "Tripo/Tripo-P1.0"
+          },
+          "input": {
+            "type": "object",
+            "description": "输入信息。`prompt`、`image`、`images` 三者互斥，仅能选择其中一种输入方式。同时传入多个将会报错。",
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "description": "文本提示词，用于描述期望生成的 3D 模型。仅在文生 3D 模型时必填。支持多语言（中文、英文等），每个字符均计为 1 个字符，最大长度 1024 个字符。",
+                "example": "一只可爱的猫"
+              },
+              "image": {
+                "type": "string",
+                "format": "uri",
+                "description": "单张图像的 URL。仅在单图生 3D 模型时必填。格式：JPEG、PNG。分辨率：宽和高的范围为 [20, 6000] 像素，建议边长大于 256 像素。文件大小：不超过 20 MB。支持 HTTP 和 HTTPS 协议。"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "图像格式。",
+                      "enum": ["jpeg", "png"]
+                    },
+                    "file_token": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "图像的公网 URL。"
+                    }
+                  }
+                },
+                "description": "多张图像的对象列表。仅在多图生 3D 模型时必填。数组长度固定为 4，对应图片顺序为**前、左、后、右**。如果某个视角不需要传入图片，传入空对象 `{}` 即可。实际传入的有效图片数量为 2~4 张。每张图像的限制与 `image` 参数相同。多张图像的分辨率和宽高比不要求一致。",
+                "minItems": 4,
+                "maxItems": 4
+              }
+            }
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/Tripo3DParameters"
+          }
+        }
+      },
+      "Tripo3DParameters": {
+        "type": "object",
+        "description": "3D 模型生成参数。",
+        "properties": {
+          "texture_quality": {
+            "type": "string",
+            "description": "贴图质量。贴图是覆盖在 3D 模型表面的纹理图像，决定了模型的外观细节和视觉效果。可选值：\n- `standard`（默认）：标清贴图。\n- `detailed`：高清贴图。",
+            "enum": [
+              "standard",
+              "detailed"
+            ],
+            "default": "standard"
+          },
+          "geometry_quality": {
+            "type": "string",
+            "description": "几何精度。仅 `Tripo/Tripo-H3.1` 支持。可选值：\n- `standard`（默认）：标准版，生成的 3D 模型最高 150 万面。\n- `ultra`：超清版，生成的 3D 模型最高 200 万面。",
+            "enum": [
+              "standard",
+              "ultra"
+            ],
+            "default": "standard"
+          },
+          "pbr": {
+            "type": "boolean",
+            "description": "是否生成 PBR 材质模型。默认值：`true`。当 `pbr` 为 `true` 时，会强制启用贴图（即 `texture` 也会被设为 `true`），返回结果中包含 `pbr_model_url`。",
+            "default": true
+          },
+          "texture": {
+            "type": "boolean",
+            "description": "是否生成贴图。默认值：`true`。如需生成无贴图模型，需同时设置 `texture` 和 `pbr` 为 `false`，返回结果中包含 `base_model_url`。",
+            "default": true
+          }
+        }
+      },
+      "AsyncTaskSubmitResponse": {
+        "type": "object",
+        "description": "异步任务提交响应。",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "请求唯一标识，用于链路追踪和问题排查。",
+            "example": "4909100c-7b5a-9f92-bfe5-xxxxxx"
+          },
+          "output": {
+            "type": "object",
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "description": "任务 ID，用于后续轮询查询任务状态。配合 `GET /tasks/{task_id}` 使用。",
+                "example": "0385dc79-5ff8-4d82-bcb6-xxxxxx"
+              },
+              "task_status": {
+                "type": "string",
+                "description": "初始任务状态，通常为 `PENDING`。",
+                "enum": [
+                  "PENDING",
+                  "RUNNING",
+                  "SUCCEEDED",
+                  "FAILED"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "Tripo3DTaskStatusResponse": {
+        "type": "object",
+        "description": "Tripo 3D 模型生成任务状态响应。",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "请求唯一标识。联系技术支持时请提供此 ID。"
+          },
+          "output": {
+            "type": "object",
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "description": "任务 ID。提交后 24 小时内可查询。"
+              },
+              "task_status": {
+                "type": "string",
+                "description": "任务状态流转：`PENDING` -> `RUNNING` -> `SUCCEEDED` 或 `FAILED`。手动取消为 `CANCELED`，过期为 `UNKNOWN`。",
+                "enum": [
+                  "PENDING",
+                  "RUNNING",
+                  "SUCCEEDED",
+                  "FAILED",
+                  "CANCELED",
+                  "UNKNOWN"
+                ]
+              },
+              "submit_time": {
+                "type": "string",
+                "description": "任务提交时间（UTC+8，`YYYY-MM-DD HH:mm:ss.SSS`）。"
+              },
+              "scheduled_time": {
+                "type": "string",
+                "description": "任务开始执行时间（UTC+8，`YYYY-MM-DD HH:mm:ss.SSS`）。"
+              },
+              "end_time": {
+                "type": "string",
+                "description": "任务结束时间（UTC+8）。仅在 `SUCCEEDED` 或 `FAILED` 时返回。"
+              },
+              "results": {
+                "type": "array",
+                "description": "生成结果列表。仅在 `task_status` 为 `SUCCEEDED` 时返回。",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "pbr_model_url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "PBR 材质模型（GLB 格式）的下载 URL。当请求参数中 `pbr` 为 `true`（默认）时返回。链接有效期 2 小时，请及时下载。"
+                    },
+                    "base_model_url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "无贴图基础模型（GLB 格式）的下载 URL。当请求参数中 `texture` 和 `pbr` 均为 `false` 时返回。链接有效期 2 小时，请及时下载。"
+                    },
+                    "rendered_image_url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "3D 模型预览渲染图的 URL（1 张）。链接有效期 2 小时，请及时下载。"
+                    }
+                  }
+                }
+              },
+              "code": {
+                "type": "string",
+                "description": "错误码。仅在 `task_status` 为 `FAILED` 时返回。"
+              },
+              "message": {
+                "type": "string",
+                "description": "错误信息。仅在 `task_status` 为 `FAILED` 时返回。"
+              }
+            }
+          },
+          "usage": {
+            "type": "object",
+            "description": "资源消耗统计。仅在 `task_status` 为 `SUCCEEDED` 时返回。",
+            "properties": {
+              "3d_task_type": {
+                "type": "string",
+                "description": "3D 模型生成任务类型。枚举值：`text-to-3d`（文生 3D 模型）、`image-to-3d`（单图生 3D 模型）、`multi-image-to-3d`（多图生 3D 模型）。",
+                "enum": [
+                  "text-to-3d",
+                  "image-to-3d",
+                  "multi-image-to-3d"
+                ]
+              },
+              "count": {
+                "type": "integer",
+                "description": "生成的 3D 模型数量。"
+              },
+              "texture_quality": {
+                "type": "string",
+                "description": "贴图质量。"
+              }
+            }
+          }
+        }
+      },
+      "DashScopeErrorResponse": {
+        "type": "object",
+        "description": "DashScope API 错误响应。",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "请求唯一标识，用于链路追踪和问题排查。"
+          },
+          "code": {
+            "type": "string",
+            "description": "错误码（如 `InvalidParameter`、`Throttling`、`Unauthorized`）。",
+            "example": "InvalidParameter"
+          },
+          "message": {
+            "type": "string",
+            "description": "错误描述信息。",
+            "example": "Invalid model name"
+          }
+        }
+      }
+    }
+  }
+}

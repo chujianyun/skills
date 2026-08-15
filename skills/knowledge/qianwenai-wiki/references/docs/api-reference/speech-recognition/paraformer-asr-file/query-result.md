@@ -1,0 +1,321 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Paraformer 录音文件识别 RESTful API — 查询结果
+
+> 查询 Paraformer 录音文件识别任务的状态和结果
+
+<Note>
+  请先[获取 API Key](/api-reference/preparation/api-key) 并[设置为环境变量](/api-reference/preparation/export-api-key-env)。
+</Note>
+
+## 识别结果下载
+
+任务成功后，每个文件对应一个 `transcription_url`，**有效期 24 小时**，请及时下载。下载内容为 JSON 文件，字段说明参见[提交任务 — 识别结果说明](/api-reference/speech-recognition/paraformer-asr-file/create-task#识别结果说明)。
+
+## OpenAPI
+
+````yaml get /tasks/{task_id}
+openapi: 3.1.0
+info:
+  title: Paraformer 录音文件识别 API
+  description: Paraformer 录音文件识别 RESTful API。采用异步任务模式——先提交任务，再轮询查询结果。
+  version: 1.0.0
+servers:
+  - url: https://dashscope.aliyuncs.com/api/v1
+    description: DashScope API 服务器
+security:
+  - BearerAuth: []
+paths:
+  /tasks/{task_id}:
+    get:
+      operationId: getParaformerAsrTaskStatus
+      summary: 查询任务结果
+      description: 查询录音文件识别任务的状态和结果。
+      parameters:
+        - name: task_id
+          in: path
+          required: true
+          description: 提交任务接口返回的任务 ID。
+          schema:
+            type: string
+      responses:
+        "200":
+          description: 成功获取任务状态
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AsrTaskStatusResponse"
+              examples:
+                SUCCEEDED:
+                  summary: 任务成功
+                  value:
+                    request_id: f9e1afad-94d3-997e-a83b-xxxxxxxxxxxx
+                    output:
+                      task_id: f86ec806-4d73-485f-a24f-xxxxxxxxxxxx
+                      task_status: SUCCEEDED
+                      submit_time: 2024-09-12 15:11:40.041
+                      scheduled_time: 2024-09-12 15:11:40.071
+                      end_time: 2024-09-12 15:11:40.903
+                      results:
+                        - file_url: https://dashscope.oss-cn-beijing.aliyuncs.com/samples/audio/paraformer/hello_world_female2.wav
+                          transcription_url: https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/prod/paraformer-v2/20240912/xxxx
+                          subtask_status: SUCCEEDED
+                        - file_url: https://dashscope.oss-cn-beijing.aliyuncs.com/samples/audio/paraformer/hello_world_male2.wav
+                          transcription_url: https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/prod/paraformer-v2/20240912/yyyy
+                          subtask_status: SUCCEEDED
+                      task_metrics:
+                        TOTAL: 2
+                        SUCCEEDED: 2
+                        FAILED: 0
+                    usage:
+                      duration: 9
+                FAILED:
+                  summary: 部分子任务失败（整体任务仍为 SUCCEEDED）
+                  value:
+                    request_id: c1209113-8437-424f-a386-xxxxxxxxxxxx
+                    output:
+                      task_id: 7bac899c-06ec-4a79-8875-xxxxxxxxxxxx
+                      task_status: SUCCEEDED
+                      submit_time: 2024-12-16 16:30:59.170
+                      scheduled_time: 2024-12-16 16:30:59.204
+                      end_time: 2024-12-16 16:31:02.375
+                      results:
+                        - file_url: https://dashscope.oss-cn-beijing.aliyuncs.com/samples/audio/sensevoice/long_audio_demo_cn.mp3
+                          transcription_url: https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/prod/paraformer-v2/20241216/xxxx
+                          subtask_status: SUCCEEDED
+                        - file_url: https://dashscope.oss-cn-beijing.aliyuncs.com/samples/audio/sensevoice/rich_text_exaple_1.wav
+                          code: InvalidFile.DownloadFailed
+                          message: The audio file cannot be downloaded.
+                          subtask_status: FAILED
+                      task_metrics:
+                        TOTAL: 2
+                        SUCCEEDED: 1
+                        FAILED: 1
+                RUNNING:
+                  summary: 任务运行中
+                  value:
+                    request_id: c1209113-8437-424f-a386-xxxxxxxxxxxx
+                    output:
+                      task_id: 7bac899c-06ec-4a79-8875-xxxxxxxxxxxx
+                      task_status: RUNNING
+                      task_metrics:
+                        TOTAL: 2
+                        SUCCEEDED: 0
+                        FAILED: 0
+        "400":
+          description: 请求参数无效
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashScopeErrorResponse"
+      x-codeSamples:
+        - lang: curl
+          label: cURL
+          source: |-
+            # 将 {task_id} 替换为提交响应中返回的实际任务 ID
+            curl -X GET 'https://dashscope.aliyuncs.com/api/v1/tasks/{task_id}' \
+              -H "Authorization: Bearer $DASHSCOPE_API_KEY"
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+  schemas:
+    AsrTaskRequest:
+      type: object
+      required:
+        - model
+        - input
+      properties:
+        model:
+          type: string
+          description: 模型名称。可用模型：`paraformer-v2`（推荐，支持多语言）、`paraformer-8k-v2`（8kHz 采样率优化）、`paraformer-v1`、`paraformer-8k-v1`、`paraformer-mtl-v1`（多语言）。
+          enum:
+            - paraformer-v2
+            - paraformer-8k-v2
+            - paraformer-v1
+            - paraformer-8k-v1
+            - paraformer-mtl-v1
+          example: paraformer-v2
+        input:
+          type: object
+          required:
+            - file_urls
+          description: 识别任务的输入数据。
+          properties:
+            file_urls:
+              type: array
+              items:
+                type: string
+                format: uri
+              description: 音频或视频文件的 HTTP/HTTPS 公网访问 URL 列表。不支持 Base64 编码或本地文件。单次最多 100 个 URL。
+              example:
+                - https://dashscope.oss-cn-beijing.aliyuncs.com/samples/audio/paraformer/hello_world_female2.wav
+        parameters:
+          type: object
+          description: 识别参数（可选）。
+          properties:
+            vocabulary_id:
+              type: string
+              description: 热词 ID。将自定义热词应用于当前任务。参见[自定义热词](/developer-guides/speech/improve-recognition-accuracy)。
+            resource_id:
+              type: string
+              description: 定制模型的资源 ID。与 `resource_type` 配合使用。
+            resource_type:
+              type: string
+              description: 定制资源类型，固定值 `asr_resource`。
+              enum:
+                - asr_resource
+            channel_id:
+              type: array
+              items:
+                type: integer
+              description: 多音轨文件中要识别的音轨索引（从 0 开始）。例如 `[0]` 识别第一音轨，`[0, 1]` 识别前两个音轨。**注意：每个音轨单独计费。**
+              default:
+                - 0
+              example:
+                - 0
+            disfluency_removal_enabled:
+              type: boolean
+              description: 是否开启去除语气词功能（如「嗯」「啊」等）。默认 `false`。
+              default: false
+            timestamp_alignment_enabled:
+              type: boolean
+              description: 是否开启时间戳校准功能。启用后，识别结果与语音播放同步。默认 `false`。
+              default: false
+            special_word_filter:
+              type: string
+              description: 敏感词处理配置（JSON 字符串）。支持 `filter_with_signed`（替换为等长星号）、`filter_with_empty`（删除）、`system_reserved_filter`（使用系统预设规则）。
+            language_hints:
+              type: array
+              items:
+                type: string
+              description: 识别语言提示。未设置时模型自动检测语言。`paraformer-v2` 支持 `zh`、`en`、`ja`、`ko`、`yue` 等。
+              example:
+                - zh
+                - en
+            diarization_enabled:
+              type: boolean
+              description: 是否开启说话人分离。启用后，结果中包含 `speaker_id` 字段。仅支持单声道音频。默认 `false`。
+              default: false
+            speaker_count:
+              type: integer
+              description: 说话人数量参考值（2 到 100）。仅在 `diarization_enabled` 为 `true` 时生效。默认自动检测。
+              minimum: 2
+              maximum: 100
+    AsyncTaskSubmitResponse:
+      type: object
+      description: 异步任务提交的响应结果。
+      properties:
+        request_id:
+          type: string
+          description: 请求的唯一标识符。
+          example: 77ae55ae-be17-97b8-9942-xxxxxxxxxxxx
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 任务 ID，用于轮询 `GET /tasks/{task_id}`。
+              example: c2e5d63b-96e1-4607-bb91-xxxxxxxxxxxx
+            task_status:
+              type: string
+              description: 任务初始状态，通常为 `PENDING`。
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+    AsrTaskStatusResponse:
+      type: object
+      description: 查询录音文件识别任务状态的响应结果。
+      properties:
+        request_id:
+          type: string
+          description: 请求的唯一标识符。
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 任务 ID。
+            task_status:
+              type: string
+              description: 当前任务状态。
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+            submit_time:
+              type: string
+              description: 任务提交时间。
+            scheduled_time:
+              type: string
+              description: 任务调度时间。
+            end_time:
+              type: string
+              description: 任务结束时间。
+            results:
+              type: array
+              description: 各子任务识别结果列表。
+              items:
+                type: object
+                properties:
+                  file_url:
+                    type: string
+                    description: 对应的音频文件 URL。
+                  transcription_url:
+                    type: string
+                    description: 识别结果 JSON 文件的下载链接，**有效期 24 小时**。仅在 `subtask_status` 为 `SUCCEEDED` 时返回。
+                  subtask_status:
+                    type: string
+                    description: 子任务状态：`SUCCEEDED` 或 `FAILED`。
+                    enum:
+                      - SUCCEEDED
+                      - FAILED
+                  code:
+                    type: string
+                    description: 错误码。仅在 `subtask_status` 为 `FAILED` 时返回。
+                  message:
+                    type: string
+                    description: 错误信息。仅在 `subtask_status` 为 `FAILED` 时返回。
+            task_metrics:
+              type: object
+              description: 任务结果统计。
+              properties:
+                TOTAL:
+                  type: integer
+                  description: 子任务总数。
+                SUCCEEDED:
+                  type: integer
+                  description: 成功子任务数。
+                FAILED:
+                  type: integer
+                  description: 失败子任务数。
+        usage:
+          type: object
+          description: 用量统计（仅任务成功时返回）。
+          properties:
+            duration:
+              type: integer
+              description: 识别的语音总时长（秒）。仅计算语音片段，非语音片段不计费。
+    DashScopeErrorResponse:
+      type: object
+      description: DashScope API 错误响应。
+      properties:
+        request_id:
+          type: string
+          description: 请求的唯一标识符。
+        code:
+          type: string
+          description: 错误代码。
+          example: InvalidParameter
+        message:
+          type: string
+          description: 错误信息。
+          example: Invalid model name
+````

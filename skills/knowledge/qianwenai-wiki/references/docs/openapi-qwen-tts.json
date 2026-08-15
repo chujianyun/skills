@@ -1,0 +1,369 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Qwen-TTS 语音合成 API",
+    "description": "Qwen 语音合成模型（Qwen-TTS、Qwen3-TTS-Flash、Qwen3-TTS-Instruct-Flash）的 API 参考文档，支持流式和非流式输出。",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dashscope.aliyuncs.com",
+      "description": "中国（北京）"
+    }
+  ],
+  "security": [
+    {
+      "bearer": []
+    }
+  ],
+  "paths": {
+    "/api/v1/services/aigc/multimodal-generation/generation": {
+      "post": {
+        "operationId": "createTTSSpeech",
+        "summary": "语音合成（Qwen-TTS）",
+        "description": "通过 DashScope API 调用 Qwen 语音合成模型，支持 Qwen-TTS、Qwen3-TTS-Flash 和 Qwen3-TTS-Instruct-Flash 系列模型。如需通过 HTTP 实现流式输出，请在请求头中设置 `X-DashScope-SSE: enable`。",
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-DashScope-SSE",
+            "in": "header",
+            "required": false,
+            "description": "设置为 `enable` 可通过 HTTP 实现流式输出。Python SDK 使用 `stream` 参数代替此设置；Java SDK 使用 `streamCall` 接口代替此设置。",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "enable"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TTSRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功响应",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TTSResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "python",
+            "label": "非流式",
+            "source": "# 安装最新版本的 DashScope SDK\nimport os\nimport dashscope\n\ndashscope.base_http_api_url = 'https://dashscope.aliyuncs.com/api/v1'\n\ntext = \"Let me recommend a T-shirt to everyone. This one is really super nice. The color is very elegant, and it's also a perfect item to match. Everyone can buy it without hesitation. It's truly beautiful and very forgiving on the figure. No matter what body type you have, it will look great. I recommend everyone to place an order.\"\n# SpeechSynthesizer 接口用法：dashscope.audio.qwen_tts.SpeechSynthesizer.call(...)\nresponse = dashscope.MultiModalConversation.call(\n  # 如需使用指令控制功能，请将模型替换为 qwen3-tts-instruct-flash\n  model=\"qwen3-tts-flash\",\n  # 如果未配置环境变量，请将以下行替换为您的 API 密钥：api_key=\"sk-xxx\"\n  api_key=os.getenv(\"DASHSCOPE_API_KEY\"),\n  text=text,\n  voice=\"Cherry\"\n  # 如需使用指令控制功能，请取消以下行的注释，并将模型替换为 qwen3-tts-instruct-flash\n  # instructions='Fast speech rate, with a clear rising intonation, suitable for introducing fashion products.',\n  # optimize_instructions=True\n)\nprint(response)"
+          },
+          {
+            "lang": "python",
+            "label": "流式",
+            "source": "# DashScope SDK 版本 1.24.5 或更高版本\nimport os\nimport dashscope\n\ndashscope.base_http_api_url = 'https://dashscope.aliyuncs.com/api/v1'\ntext = \"Let me recommend a T-shirt to you. This one is truly stunning. Its color highlights your elegance and makes it an ideal match for any outfit. You can buy it without hesitation - it looks great on everyone. It flatters all body types. Whether you're tall, short, slim, or curvy, this T-shirt suits you perfectly. We highly recommend ordering it.\"\n# SpeechSynthesizer 接口用法：dashscope.audio.qwen_tts.SpeechSynthesizer.call(...)\nresponse = dashscope.MultiModalConversation.call(\n  # 如需使用指令控制功能，请将模型设置为 qwen3-tts-instruct-flash\n  model=\"qwen3-tts-flash\",\n  # 如果未设置环境变量，请将以下行替换为：api_key=\"sk-xxx\"\n  api_key=os.getenv(\"DASHSCOPE_API_KEY\"),\n  text=text,\n  voice=\"Cherry\",\n  # 如需使用指令控制功能，请取消以下行的注释，并将模型设置为 qwen3-tts-instruct-flash\n  # instructions='Speak quickly with a clear rising intonation, suitable for promoting fashion items.',\n  # optimize_instructions=True,\n  stream=True\n)\nfor chunk in response:\n  print(chunk)"
+          },
+          {
+            "lang": "java",
+            "label": "非流式",
+            "source": "// 安装最新版本的 DashScope SDK\nimport com.alibaba.dashscope.aigc.multimodalconversation.AudioParameters;\nimport com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversation;\nimport com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversationParam;\nimport com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversationResult;\nimport com.alibaba.dashscope.exception.ApiException;\nimport com.alibaba.dashscope.exception.NoApiKeyException;\nimport com.alibaba.dashscope.exception.UploadFileException;\nimport com.alibaba.dashscope.utils.JsonUtils;\nimport com.alibaba.dashscope.utils.Constants;\n\npublic class Main {\n  // 如需使用指令控制功能，请将 MODEL 替换为 qwen3-tts-instruct-flash\n  private static final String MODEL = \"qwen3-tts-flash\";\n  public static void call() throws ApiException, NoApiKeyException, UploadFileException {\n    MultiModalConversation conv = new MultiModalConversation();\n    MultiModalConversationParam param = MultiModalConversationParam.builder()\n        .model(MODEL)\n        // 如果未配置环境变量，请将以下行替换为您的 API 密钥：apiKey(\"sk-xxx\")\n        .apiKey(System.getenv(\"DASHSCOPE_API_KEY\"))\n        .text(\"Today is a wonderful day to build something people love!\")\n        .voice(AudioParameters.Voice.CHERRY)\n        .parameter(\"language_type\", \"English\")\n        // 如需使用指令控制功能，请取消以下行的注释，并将模型替换为 qwen3-tts-instruct-flash\n        // .parameter(\"instructions\",\"Fast speech rate, with a clear rising intonation, suitable for introducing fashion products.\")\n        // .parameter(\"optimize_instructions\",true)\n        .build();\n    MultiModalConversationResult result = conv.call(param);\n    System.out.println(JsonUtils.toJson(result));\n  }\n  public static void main(String[] args) {\n    Constants.baseHttpApiUrl = \"https://dashscope.aliyuncs.com/api/v1\";\n    try {\n      call();\n    } catch (ApiException | NoApiKeyException | UploadFileException e) {\n      System.out.println(e.getMessage());\n    }\n    System.exit(0);\n  }\n}"
+          },
+          {
+            "lang": "java",
+            "label": "流式",
+            "source": "// DashScope SDK 版本 2.19.0 或更高版本\nimport com.alibaba.dashscope.aigc.multimodalconversation.AudioParameters;\nimport com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversation;\nimport com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversationParam;\nimport com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversationResult;\nimport com.alibaba.dashscope.exception.ApiException;\nimport com.alibaba.dashscope.exception.NoApiKeyException;\nimport com.alibaba.dashscope.exception.UploadFileException;\nimport com.alibaba.dashscope.utils.JsonUtils;\nimport io.reactivex.Flowable;\nimport com.alibaba.dashscope.utils.Constants;\n\npublic class Main {\n  // 如需使用指令控制功能，请将 MODEL 设置为 qwen3-tts-instruct-flash\n  private static final String MODEL = \"qwen3-tts-flash\";\n  public static void streamCall() throws ApiException, NoApiKeyException, UploadFileException {\n    MultiModalConversation conv = new MultiModalConversation();\n    MultiModalConversationParam param = MultiModalConversationParam.builder()\n        .model(MODEL)\n        // 如果未设置环境变量，请将以下行替换为：.apiKey(\"sk-xxx\")\n        .apiKey(System.getenv(\"DASHSCOPE_API_KEY\"))\n        .text(\"Today is a wonderful day to build something people love!\")\n        .voice(AudioParameters.Voice.CHERRY)\n        .parameter(\"language_type\", \"English\")\n        // 如需使用指令控制功能，请取消以下行的注释，并将模型设置为 qwen3-tts-instruct-flash\n        // .parameter(\"instructions\",\"Speak quickly with a clear rising intonation, suitable for promoting fashion items.\")\n        // .parameter(\"optimize_instructions\",true)\n        .build();\n    Flowable<MultiModalConversationResult> result = conv.streamCall(param);\n    result.blockingForEach(r -> {System.out.println(JsonUtils.toJson(r));\n    });\n  }\n  public static void main(String[] args) {\n    Constants.baseHttpApiUrl = \"https://dashscope.aliyuncs.com/api/v1\";\n    try {\n      streamCall();\n    } catch (ApiException | NoApiKeyException | UploadFileException e) {\n      System.out.println(e.getMessage());\n    }\n    System.exit(0);\n  }\n}"
+          },
+          {
+            "lang": "bash",
+            "label": "非流式",
+            "source": "curl -X POST 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation' \\\n-H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n-H 'Content-Type: application/json' \\\n-d '{\n  \"model\": \"qwen3-tts-flash\",\n  \"input\": {\n    \"text\": \"Let me recommend a T-shirt to everyone. This one is really super nice. The color is very elegant, and it'\\''s also a perfect item to match. Everyone can buy it without hesitation. It'\\''s truly beautiful and very forgiving on the figure. No matter what body type you have, it will look great. I recommend everyone to place an order.\",\n    \"voice\": \"Cherry\"\n  }\n}'"
+          },
+          {
+            "lang": "bash",
+            "label": "流式",
+            "source": "curl -X POST 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation' \\\n-H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n-H 'Content-Type: application/json' \\\n-H 'X-DashScope-SSE: enable' \\\n-d '{\n  \"model\": \"qwen3-tts-flash\",\n  \"input\": {\n    \"text\": \"Let me recommend a T-shirt to you. This one is truly stunning. Its color highlights your elegance and makes it an ideal match for any outfit. You can buy it without hesitation - it looks great on everyone. It flatters all body types. Whether you'\\''re tall, short, slim, or curvy, this T-shirt suits you perfectly. We highly recommend ordering it.\",\n    \"voice\": \"Cherry\"\n  }\n}'"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。"
+      }
+    },
+    "schemas": {
+      "TTSRequest": {
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "模型名称。",
+            "examples": [
+              "qwen3-tts-flash",
+              "qwen3-tts-instruct-flash"
+            ]
+          },
+          "input": {
+            "type": "object",
+            "required": [
+              "text",
+              "voice"
+            ],
+            "description": "语音合成的输入参数。",
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "待合成的文本内容，支持多语言混合输入。Qwen-TTS 最大支持 512 tokens 输入，其他模型最大支持 600 个字符。"
+              },
+              "voice": {
+                "type": "string",
+                "description": "使用的音色。请参阅[支持的音色列表](/api-reference/speech-synthesis/qwen-tts/voice-list)。"
+              },
+              "language_type": {
+                "type": "string",
+                "description": "指定合成音频的语言类型。默认值：`Auto`。当输入文本为单一语言时，明确指定语言类型可显著提升合成质量。",
+                "default": "Auto",
+                "enum": [
+                  "Auto",
+                  "Chinese",
+                  "English",
+                  "German",
+                  "Italian",
+                  "Portuguese",
+                  "Spanish",
+                  "Japanese",
+                  "Korean",
+                  "French",
+                  "Russian"
+                ]
+              },
+              "instructions": {
+                "type": "string",
+                "description": "提供指令以引导语音合成效果。默认值为 `None`。长度限制：不超过 1600 tokens。仅支持中文和英文。本功能仅适用于 Qwen3-TTS-Instruct-Flash 系列模型。"
+              },
+              "optimize_instructions": {
+                "type": "boolean",
+                "description": "对 `instructions` 进行优化，以提升语音合成的自然度和表现力。默认值：`false`。设置为 `true` 时，系统会对 `instructions` 的内容进行语义增强和改写，生成更适合语音合成的内部指令。如需高质量、细粒度的语音表达，建议开启此功能。本参数依赖于 `instructions` 的设置，且仅适用于 Qwen3-TTS-Instruct-Flash 系列模型。",
+                "default": false
+              },
+              "stream": {
+                "type": "boolean",
+                "description": "是否开启流式输出。默认值：`false`。设置为 `false` 时，模型生成完成后返回音频文件的 URL；设置为 `true` 时，实时输出 Base64 编码的音频数据。\n\n**注意：**`stream` 参数仅 Python SDK 支持。Java SDK 请调用 `streamCall` 接口实现流式输出；HTTP 请在请求头中将 `X-DashScope-SSE` 设置为 `enable`。",
+                "default": false
+              }
+            }
+          }
+        }
+      },
+      "TTSResponse": {
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "type": "integer",
+            "description": "HTTP 状态码。示例：`200`（成功）、`400`（客户端错误）、`401`（未授权）、`404`（未找到）、`500`（服务器错误）。",
+            "example": 200
+          },
+          "request_id": {
+            "type": "string",
+            "description": "本次请求的唯一 ID，可用于定位和排查问题。",
+            "example": "5c63c65c-cad8-4bf4-959d-xxxxxxxxxxxx"
+          },
+          "code": {
+            "type": "string",
+            "description": "请求失败时显示错误码。请参阅[错误码说明](/api-reference/preparation/error-messages)。",
+            "example": ""
+          },
+          "message": {
+            "type": "string",
+            "description": "请求失败时显示错误信息。请参阅[错误码说明](/api-reference/preparation/error-messages)。",
+            "example": ""
+          },
+          "output": {
+            "type": "object",
+            "description": "模型的输出结果。",
+            "properties": {
+              "text": {
+                "type": "string",
+                "nullable": true,
+                "description": "始终为 null，请忽略此字段。",
+                "example": null
+              },
+              "choices": {
+                "nullable": true,
+                "description": "始终为 null，请忽略此字段。",
+                "example": null
+              },
+              "finish_reason": {
+                "type": "string",
+                "description": "生成过程中为 `null`；当模型输出自然结束或触发停止条件时，值为 `\"stop\"`。",
+                "enum": [
+                  "stop",
+                  null
+                ],
+                "example": "stop"
+              },
+              "audio": {
+                "type": "object",
+                "description": "模型输出的音频信息。流式模式下，API 返回多个 chunk：中间 chunk 的 `data` 包含 Base64 编码的音频片段，`url` 为空；最后一个 chunk 的 `data` 为空字符串，`url` 包含完整音频文件的 OSS 地址。非流式模式下，`url` 直接返回完整音频文件地址。",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "模型输出的完整音频文件 URL，有效期 24 小时。",
+                    "example": "https://example.oss.aliyuncs.com/audio-result.wav?Expires=1766113409&OSSAccessKeyId=LTAIxxxx&Signature=xxxx"
+                  },
+                  "data": {
+                    "type": "string",
+                    "description": "Base64 编码的音频数据。非流式输出和流式输出的中间 chunk 中返回 Base64 编码的音频片段；流式输出的最后一个 chunk 中该字段为空字符串，音频通过同级的 url 字段获取。",
+                    "example": ""
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "模型输出的音频信息对应的 ID。",
+                    "example": "audio_5c63c65c-cad8-4bf4-959d-xxxxxxxxxxxx"
+                  },
+                  "expires_at": {
+                    "type": "integer",
+                    "description": "URL 过期时的 UNIX 时间戳。",
+                    "example": 1766113409
+                  }
+                }
+              }
+            }
+          },
+          "usage": {
+            "type": "object",
+            "description": "Token 或字符消耗信息。Qwen-TTS 返回 token 消耗量，Qwen3-TTS-Flash 返回字符消耗量。",
+            "properties": {
+              "input_tokens": {
+                "type": "integer",
+                "description": "输入文本消耗的 token 数量。Qwen3-TTS-Flash 返回时该字段始终为 0。",
+                "example": 0
+              },
+              "output_tokens": {
+                "type": "integer",
+                "description": "输出音频消耗的 token 数量。Qwen3-TTS-Flash 返回时该字段始终为 0。",
+                "example": 0
+              },
+              "total_tokens": {
+                "type": "integer",
+                "description": "本次请求消耗的 token 总量。仅 Qwen-TTS 返回此字段。",
+                "example": 1121
+              },
+              "characters": {
+                "type": "integer",
+                "description": "输入文本的字符数量。Qwen3-TTS-Flash 返回实际字符数；Qwen-TTS 返回时该字段始终为 0。",
+                "example": 195
+              },
+              "input_tokens_details": {
+                "type": "object",
+                "description": "输入文本的 token 消耗详情。仅 Qwen-TTS 返回此字段。",
+                "properties": {
+                  "text_tokens": {
+                    "type": "integer",
+                    "description": "输入文本消耗的 token 数量。",
+                    "example": 76
+                  }
+                }
+              },
+              "output_tokens_details": {
+                "type": "object",
+                "description": "输出内容的 token 消耗详情。仅 Qwen-TTS 返回此字段。",
+                "properties": {
+                  "audio_tokens": {
+                    "type": "integer",
+                    "description": "输出音频消耗的 token 数量。",
+                    "example": 1045
+                  },
+                  "text_tokens": {
+                    "type": "integer",
+                    "description": "输出文本消耗的 token 数量（当前固定为 0）。",
+                    "example": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "summary": "Qwen3-TTS-Flash 响应示例",
+            "value": {
+              "status_code": 200,
+              "request_id": "5c63c65c-cad8-4bf4-959d-xxxxxxxxxxxx",
+              "code": "",
+              "message": "",
+              "output": {
+                "text": null,
+                "finish_reason": "stop",
+                "choices": null,
+                "audio": {
+                  "data": "",
+                  "url": "https://example.oss.aliyuncs.com/audio-result.wav?Expires=1766113409&OSSAccessKeyId=LTAIxxxx&Signature=xxxx",
+                  "id": "audio_5c63c65c-cad8-4bf4-959d-xxxxxxxxxxxx",
+                  "expires_at": 1766113409
+                }
+              },
+              "usage": {
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "characters": 195
+              }
+            }
+          },
+          {
+            "summary": "Qwen-TTS 响应示例",
+            "value": {
+              "status_code": 200,
+              "request_id": "f4e8139b-3203-4887-92cb-xxxxxxxxxxxx",
+              "code": "",
+              "message": "",
+              "output": {
+                "text": null,
+                "finish_reason": "stop",
+                "choices": null,
+                "audio": {
+                  "data": "",
+                  "url": "https://example.oss.aliyuncs.com/audio-result.wav?Expires=1766116806&OSSAccessKeyId=LTAIxxxx&Signature=xxxx",
+                  "id": "audio_f4e8139b-3203-4887-92cb-xxxxxxxxxxxx",
+                  "expires_at": 1766116806
+                }
+              },
+              "usage": {
+                "input_tokens": 76,
+                "output_tokens": 1045,
+                "characters": 0,
+                "input_tokens_details": {
+                  "text_tokens": 76
+                },
+                "output_tokens_details": {
+                  "audio_tokens": 1045,
+                  "text_tokens": 0
+                },
+                "total_tokens": 1121
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

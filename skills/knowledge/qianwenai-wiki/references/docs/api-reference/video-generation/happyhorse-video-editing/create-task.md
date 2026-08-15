@@ -1,0 +1,273 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# HappyHorse -- 视频编辑
+
+> 提交 HappyHorse 视频编辑任务
+
+输入视频与参考图，结合文本指令完成风格变换、局部替换等编辑任务。支持 720P/1080P 分辨率，输入视频时长 3\~60 秒，输出视频上限 15 秒。
+
+## OpenAPI
+
+````yaml post /services/aigc/video-generation/video-synthesis
+openapi: 3.1.0
+info:
+  title: HappyHorse 视频编辑 API
+  description: 使用 HappyHorse 模型通过文本指令和参考图片编辑视频。异步提交任务后，通过 `GET /tasks/{task_id}` 轮询获取结果。
+  version: 1.0.0
+servers:
+  - url: https://dashscope.aliyuncs.com/api/v1
+    description: 华北2（北京）
+security:
+  - BearerAuth: []
+paths:
+  /services/aigc/video-generation/video-synthesis:
+    post:
+      operationId: createHappyHorseVideoEditing
+      summary: 提交视频编辑任务
+      description: 提交视频编辑任务，返回 `task_id` 用于轮询查询。
+      parameters:
+        - name: X-DashScope-Async
+          in: header
+          required: true
+          description: 必须设置为 `enable`，表示异步提交任务。
+          schema:
+            type: string
+            enum:
+              - enable
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/HappyHorseVideoEditingRequest"
+      responses:
+        "200":
+          description: 任务提交成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AsyncTaskSubmitResponse"
+        "400":
+          description: 请求参数无效
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashScopeErrorResponse"
+      x-codeSamples:
+        - lang: curl
+          label: cURL - 视频编辑（指令+参考图）
+          source: |-
+            curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \
+              -H 'X-DashScope-Async: enable' \
+              -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+              -H 'Content-Type: application/json' \
+              -d '{
+              "model": "happyhorse-1.0-video-edit",
+              "input": {
+                "prompt": "让视频中的马头人身角色穿上图片中的条纹毛衣",
+                "media": [
+                  {
+                    "type": "video",
+                    "url": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260409/dozxak/Wan_Video_Edit_33_1.mp4"
+                  },
+                  {
+                    "type": "reference_image",
+                    "url": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260415/hynnff/wan-video-edit-clothes.webp"
+                  }
+                ]
+              },
+              "parameters": {
+                "resolution": "720P"
+              }
+            }'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+  schemas:
+    HappyHorseVideoEditingRequest:
+      type: object
+      required:
+        - model
+        - input
+      properties:
+        model:
+          type: string
+          description: 模型名称。固定值：`happyhorse-1.0-video-edit`。
+          enum:
+            - happyhorse-1.0-video-edit
+          example: happyhorse-1.0-video-edit
+        input:
+          type: object
+          required:
+            - prompt
+            - media
+          description: 输入的基本信息，包括待编辑的视频、参考图片和提示词。
+          properties:
+            prompt:
+              type: string
+              description: 文本提示词，用来描述对视频的编辑意图，如风格转换、局部替换等。支持任何语言输入，长度不超过5000个非中文字符或2500个中文字符，超过部分会自动截断。
+              example: 让视频中的马头人身角色穿上图片中的条纹毛衣
+            media:
+              type: array
+              description: 媒体素材列表。必须包含1个 `video` 类型元素；可选包含 0~5 个 `reference_image` 类型元素。
+              items:
+                type: object
+                required:
+                  - type
+                  - url
+                properties:
+                  type:
+                    type: string
+                    description: 媒体素材类型：`video`（必传，待编辑的视频）或 `reference_image`（可选，参考图像）。
+                    enum:
+                      - video
+                      - reference_image
+                  url:
+                    type: string
+                    format: uri
+                    description: |-
+                      媒体素材的 URL 地址或 Base64 编码数据。
+
+                      **视频**（`type=video`）：MP4、MOV（建议 H.264 编码）。时长：3~60 秒。分辨率：长边不超过 2160 像素，短边不小于 320 像素。宽高比：1:2.5 ~ 2.5:1。文件大小：不超过 100 MB。帧率：8~60 fps（若输入可变帧率视频，需保证帧率变化均在此范围内）。输出视频时长上限 15 秒（超出部分从头自动截取）。
+
+                      **图像**（`type=reference_image`）：JPEG、JPG、PNG、WEBP。分辨率：宽高不小于 300 像素。宽高比：1:2.5 ~ 2.5:1。文件大小：不超过 20 MB。支持公网 URL（HTTP/HTTPS）或 Base64 编码（格式：`data:{MIME_type};base64,{base64_data}`）。
+        parameters:
+          $ref: "#/components/schemas/HappyHorseVideoEditingParameters"
+    HappyHorseVideoEditingParameters:
+      type: object
+      description: 视频编辑参数。
+      properties:
+        resolution:
+          type: string
+          description: 生成视频的分辨率档位。
+          enum:
+            - 720P
+            - 1080P
+          default: 1080P
+        watermark:
+          type: boolean
+          description: 是否在生成的视频上添加水印标识。水印位于视频右下角，文案固定为"Happy Horse"。`true`（默认）：添加水印。`false`：不添加水印。
+          default: true
+        audio_setting:
+          type: string
+          description: 声音控制。
+          enum:
+            - auto
+            - origin
+          default: auto
+          x-enumDescriptions:
+            auto: 由模型自行控制。
+            origin: 保留输入视频的原始声音。
+        seed:
+          type: integer
+          description: 随机数种子。相同的种子和参数会生成相似（但不完全相同）的结果。
+          minimum: 0
+          maximum: 2147483647
+    AsyncTaskSubmitResponse:
+      type: object
+      description: 异步任务提交响应。
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识，用于链路追踪和问题排查。
+          example: 4909100c-7b5a-9f92-bfe5-xxxxxx
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 任务 ID，用于后续轮询查询任务状态。配合 `GET /tasks/{task_id}` 使用。
+              example: 0385dc79-5ff8-4d82-bcb6-xxxxxx
+            task_status:
+              type: string
+              description: 初始任务状态，通常为 `PENDING`。
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+    HappyHorseVideoEditTaskStatusResponse:
+      type: object
+      description: HappyHorse 视频编辑任务状态响应。
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识。联系技术支持时请提供此 ID。
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 任务 ID。提交后 24 小时内可查询。
+            task_status:
+              type: string
+              description: 任务状态流转：`PENDING` -> `RUNNING` -> `SUCCEEDED` 或 `FAILED`。手动取消为 `CANCELED`，过期为 `UNKNOWN`。
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+                - CANCELED
+                - UNKNOWN
+            submit_time:
+              type: string
+              description: 任务提交时间（UTC+8，`YYYY-MM-DD HH:mm:ss.SSS`）。
+            scheduled_time:
+              type: string
+              description: 任务开始执行时间（UTC+8，`YYYY-MM-DD HH:mm:ss.SSS`）。
+            end_time:
+              type: string
+              description: 任务结束时间（UTC+8）。仅在 `SUCCEEDED` 或 `FAILED` 时返回。
+            orig_prompt:
+              type: string
+              description: 原始提示词文本。
+            video_url:
+              type: string
+              format: uri
+              description: 生成视频的 URL（MP4，H.264 编码）。仅在 `task_status` 为 `SUCCEEDED` 时返回。**链接有效期 24 小时**，请及时下载。
+            code:
+              type: string
+              description: 错误码。仅在 `task_status` 为 `FAILED` 时返回。
+            message:
+              type: string
+              description: 错误信息。仅在 `task_status` 为 `FAILED` 时返回。
+        usage:
+          type: object
+          description: 资源消耗统计。仅在 `task_status` 为 `SUCCEEDED` 时返回。
+          properties:
+            duration:
+              type: number
+              description: 总的视频时长，用于计费，单位为秒。
+            input_video_duration:
+              type: number
+              description: 输入视频的时长，单位秒。
+            output_video_duration:
+              type: number
+              description: 输出视频的时长，单位秒。
+            video_count:
+              type: integer
+              description: 输出视频数量。固定为 1。
+            SR:
+              type: integer
+              description: 输出视频的分辨率档位（如 720 表示 720P，1080 表示 1080P）。
+    DashScopeErrorResponse:
+      type: object
+      description: DashScope API 错误响应。
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识，用于链路追踪和问题排查。
+        code:
+          type: string
+          description: 错误码（如 `InvalidParameter`、`Throttling`、`Unauthorized`）。
+          example: InvalidParameter
+        message:
+          type: string
+          description: 错误描述信息。
+          example: Invalid model name
+````

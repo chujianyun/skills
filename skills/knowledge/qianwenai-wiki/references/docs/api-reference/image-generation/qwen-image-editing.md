@@ -1,0 +1,655 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Qwen
+
+> 通过文本编辑图片
+
+<Note>
+  先[获取 API Key](/api-reference/preparation/api-key) 并[配置为环境变量](/api-reference/preparation/export-api-key-env)。如果使用 SDK，还需[安装 SDK](/api-reference/preparation/install-sdk)。
+</Note>
+
+## OpenAPI
+
+````yaml post /services/aigc/multimodal-generation/generation
+openapi: 3.1.0
+info:
+  title: Qwen-Image 图像编辑 API
+  description: Qwen-Image 图像编辑 API，支持单图编辑、多图融合、风格迁移、文字编辑、元素操控等多种图像处理功能。
+  version: 1.0.0
+servers:
+  - url: https://dashscope.aliyuncs.com/api/v1
+    description: DashScope
+security:
+  - BearerAuth: []
+paths:
+  /services/aigc/multimodal-generation/generation:
+    post:
+      operationId: createQwenImageEdit
+      summary: 使用 Qwen-Image 编辑图像
+      description: |-
+        使用 Qwen-Image 模型编辑图像，支持单图编辑、多图融合（最多 3 张输入图像）、风格迁移、文字编辑、元素操控、姿态迁移和细节增强。
+
+        纯文本生成图像（无输入图像）请参阅 [Qwen-Image 文生图](/api-reference/image-generation/qwen-text-to-image)。
+
+        ## 模型概览
+
+        | 模型 | 说明 | 输出 |
+        |-------|-------------|--------|
+        | qwen-image-3.0-pro（推荐） | 3.0 系列。支持长文本输入与复杂版面生成，10 像素小字精准渲染，12 国语言与 20+ 字体。也支持[文生图](/api-reference/image-generation/qwen-text-to-image)。 | 宽高各 512–2048 像素，不指定时由模型自动推荐分辨率。PNG 格式，1-6 张。 |
+        | qwen-image-3.0（推荐） | 3.0 系列标准版。兼顾质量与速度。也支持[文生图](/api-reference/image-generation/qwen-text-to-image)。 | 宽高各 512–2048 像素，不指定时由模型自动推荐分辨率。PNG 格式，1-6 张。 |
+        | qwen-image-2.0-pro | Pro 系列。增强了文字渲染、真实感和语义遵从度。也支持[文生图](/api-reference/image-generation/qwen-text-to-image)。 | 宽高各 512–2048 像素，默认与输入图像相同。PNG 格式，1-6 张。 |
+        | qwen-image-2.0 | 加速版本，兼顾质量与速度。也支持[文生图](/api-reference/image-generation/qwen-text-to-image)。 | 宽高各 512–2048 像素，默认与输入图像相同。PNG 格式，1-6 张。 |
+        | qwen-image-edit-max | Max 系列。增强了工业设计、几何推理和人物一致性。 | 宽高各 512–2048 像素，默认约 1024×1024（与输入图像宽高比相近）。PNG 格式，1-6 张。 |
+        | qwen-image-edit-plus | Plus 系列。支持多图输出和自定义分辨率。 | 宽高各 512–2048 像素，默认约 1024×1024（与输入图像宽高比相近）。PNG 格式，1-6 张。 |
+        | qwen-image-edit | 支持单图编辑和多图融合。 | 仅默认分辨率。PNG 格式，1 张。 |
+
+        ## 注意事项
+
+        - 生成的图像 URL 有效期为 **24 小时**，请及时下载。
+        - 仅支持单轮对话，`messages` 数组必须包含且仅包含一条消息。
+        - 每次请求可提供 1 到 3 张输入图像。
+        - 多图输入时，图像按位置引用（图像 1、图像 2、图像 3），输出图像的宽高比由最后一张图像决定。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/QwenImageEditRequest"
+      responses:
+        "200":
+          description: 图像编辑成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QwenImageEditResponse"
+        "400":
+          description: 请求参数无效
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashScopeErrorResponse"
+      x-codeSamples:
+        - lang: curl
+          label: cURL（单图）
+          source: |-
+            curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation' \
+            --header 'Content-Type: application/json' \
+            --header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            --data '{
+              "model": "qwen-image-3.0-pro",
+              "input": {
+                "messages": [
+                  {
+                    "role": "user",
+                    "content": [
+                      {
+                        "image": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/fpakfo/image36.webp"
+                      },
+                      {
+                        "text": "Generate an image that matches the depth map, following this description: A dilapidated red bicycle is parked on a muddy path with a dense primeval forest in the background."
+                      }
+                    ]
+                  }
+                ]
+              },
+              "parameters": {
+                "n": 2,
+                "negative_prompt": " ",
+                "prompt_extend": true,
+                "watermark": false,
+                "size": "1536*1024"
+              }
+            }'
+        - lang: curl
+          label: cURL（多图融合）
+          source: |-
+            curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation' \
+            --header 'Content-Type: application/json' \
+            --header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            --data '{
+              "model": "qwen-image-3.0-pro",
+              "input": {
+                "messages": [
+                  {
+                    "role": "user",
+                    "content": [
+                      {
+                        "image": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/thtclx/input1.png"
+                      },
+                      {
+                        "image": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/iclsnx/input2.png"
+                      },
+                      {
+                        "image": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/gborgw/input3.png"
+                      },
+                      {
+                        "text": "Make the girl from Image 1 wear the black dress from Image 2 and sit in the pose from Image 3."
+                      }
+                    ]
+                  }
+                ]
+              },
+              "parameters": {
+                "n": 2,
+                "negative_prompt": " ",
+                "prompt_extend": true,
+                "watermark": false,
+                "size": "1024*1536"
+              }
+            }'
+        - lang: python
+          label: Python（DashScope SDK）
+          source: |-
+            import os
+            import dashscope
+            from dashscope import MultiModalConversation
+
+            dashscope.base_http_api_url = 'https://dashscope.aliyuncs.com/api/v1'
+
+            # 模型支持输入 1 到 3 张图像
+            messages = [
+              {
+                "role": "user",
+                "content": [
+                  {"image": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/thtclx/input1.png"},
+                  {"image": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/iclsnx/input2.png"},
+                  {"image": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/gborgw/input3.png"},
+                  {"text": "Make the girl from Image 1 wear the black dress from Image 2 and sit in the pose from Image 3."}
+                ]
+              }
+            ]
+
+            api_key = os.getenv("DASHSCOPE_API_KEY")
+
+            response = MultiModalConversation.call(
+              api_key=api_key,
+              model="qwen-image-3.0-pro",
+              messages=messages,
+              stream=False,
+              n=2,
+              watermark=False,
+              negative_prompt=" ",
+              prompt_extend=True,
+              size="1024*1536",
+            )
+
+            if response.status_code == 200:
+              for i, content in enumerate(response.output.choices[0].message.content):
+                print(f"URL of output image {i+1}: {content['image']}")
+            else:
+              print(f"HTTP status code: {response.status_code}")
+              print(f"Error code: {response.code}")
+              print(f"Error message: {response.message}")
+        - lang: java
+          label: Java（DashScope SDK）
+          source: |-
+            import com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversation;
+            import com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversationParam;
+            import com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversationResult;
+            import com.alibaba.dashscope.common.MultiModalMessage;
+            import com.alibaba.dashscope.common.Role;
+            import com.alibaba.dashscope.utils.Constants;
+
+            import java.util.*;
+
+            public class QwenImageEdit {
+              static {
+                Constants.baseHttpApiUrl = "https://dashscope.aliyuncs.com/api/v1";
+              }
+
+              static String apiKey = System.getenv("DASHSCOPE_API_KEY");
+
+              public static void main(String[] args) throws Exception {
+                MultiModalConversation conv = new MultiModalConversation();
+
+                // 模型支持输入 1 到 3 张图像
+                MultiModalMessage userMessage = MultiModalMessage.builder()
+                  .role(Role.USER.getValue())
+                  .content(Arrays.asList(
+                    Collections.singletonMap("image", "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/thtclx/input1.png"),
+                    Collections.singletonMap("image", "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/iclsnx/input2.png"),
+                    Collections.singletonMap("image", "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/gborgw/input3.png"),
+                    Collections.singletonMap("text", "Make the girl from Image 1 wear the black dress from Image 2 and sit in the pose from Image 3.")
+                  )).build();
+
+                Map<String, Object> parameters = new HashMap<>();
+                parameters.put("watermark", false);
+                parameters.put("negative_prompt", " ");
+                parameters.put("n", 2);
+                parameters.put("prompt_extend", true);
+                parameters.put("size", "1024*1536");
+
+                MultiModalConversationParam param = MultiModalConversationParam.builder()
+                  .apiKey(apiKey)
+                  .model("qwen-image-3.0-pro")
+                  .messages(Collections.singletonList(userMessage))
+                  .parameters(parameters)
+                  .build();
+
+                MultiModalConversationResult result = conv.call(param);
+                List<Map<String, Object>> contentList = result.getOutput().getChoices().get(0).getMessage().getContent();
+                int imageIndex = 1;
+                for (Map<String, Object> content : contentList) {
+                  if (content.containsKey("image")) {
+                    System.out.println("URL of output image " + imageIndex + ": " + content.get("image"));
+                    imageIndex++;
+                  }
+                }
+              }
+            }
+        - lang: python
+          label: Python（Base64 输入）
+          source: |-
+            import os
+            import dashscope
+            from dashscope import MultiModalConversation
+            import base64
+            import mimetypes
+
+            dashscope.base_http_api_url = 'https://dashscope.aliyuncs.com/api/v1'
+
+            # --- Base64 编码 ---
+            # 格式：data:{mime_type};base64,{base64_data}
+            def encode_file(file_path):
+              mime_type, _ = mimetypes.guess_type(file_path)
+              if not mime_type or not mime_type.startswith("image/"):
+                raise ValueError("Unsupported or unrecognized image format")
+
+              try:
+                with open(file_path, "rb") as image_file:
+                  encoded_string = base64.b64encode(
+                    image_file.read()).decode('utf-8')
+                return f"data:{mime_type};base64,{encoded_string}"
+              except IOError as e:
+                raise IOError(f"Error reading file: {file_path}, Error: {str(e)}")
+
+            # 获取图像的 Base64 编码
+            # 将 "/path/to/your/image.png" 替换为本地图像文件路径
+            image = encode_file("/path/to/your/image.png")
+
+            messages = [
+              {
+                "role": "user",
+                "content": [
+                  {"image": image},
+                  {"text": "Generate an image that matches the depth map, following this description: A dilapidated red bicycle is parked on a muddy path with a dense primeval forest in the background."}
+                ]
+              }
+            ]
+
+            api_key = os.getenv("DASHSCOPE_API_KEY")
+
+            response = MultiModalConversation.call(
+              api_key=api_key,
+              model="qwen-image-3.0-pro",
+              messages=messages,
+              stream=False,
+              n=2,
+              watermark=False,
+              negative_prompt=" ",
+              prompt_extend=True,
+              size="1536*1024",
+            )
+
+            if response.status_code == 200:
+              for i, content in enumerate(response.output.choices[0].message.content):
+                print(f"URL of output image {i+1}: {content['image']}")
+            else:
+              print(f"HTTP status code: {response.status_code}")
+              print(f"Error code: {response.code}")
+              print(f"Error message: {response.message}")
+        - lang: java
+          label: Java（Base64 输入）
+          source: |-
+            import com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversation;
+            import com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversationParam;
+            import com.alibaba.dashscope.aigc.multimodalconversation.MultiModalConversationResult;
+            import com.alibaba.dashscope.common.MultiModalMessage;
+            import com.alibaba.dashscope.common.Role;
+            import com.alibaba.dashscope.exception.ApiException;
+            import com.alibaba.dashscope.exception.NoApiKeyException;
+            import com.alibaba.dashscope.exception.UploadFileException;
+            import com.alibaba.dashscope.utils.Constants;
+
+            import java.io.IOException;
+            import java.nio.file.Files;
+            import java.nio.file.Path;
+            import java.nio.file.Paths;
+            import java.util.Arrays;
+            import java.util.Base64;
+            import java.util.Collections;
+            import java.util.HashMap;
+            import java.util.Map;
+            import java.util.List;
+
+            public class QwenImageEditBase64 {
+
+              static {
+                Constants.baseHttpApiUrl = "https://dashscope.aliyuncs.com/api/v1";
+              }
+
+              static String apiKey = System.getenv("DASHSCOPE_API_KEY");
+
+              public static void call() throws ApiException, NoApiKeyException, UploadFileException, IOException {
+
+                // 将 "/path/to/your/image.png" 替换为本地图像文件路径
+                String image = encodeFile("/path/to/your/image.png");
+
+                MultiModalConversation conv = new MultiModalConversation();
+
+                MultiModalMessage userMessage = MultiModalMessage.builder().role(Role.USER.getValue())
+                    .content(Arrays.asList(
+                        Collections.singletonMap("image", image),
+                        Collections.singletonMap("text", "Generate an image that matches the depth map, following this description: A dilapidated red bicycle is parked on a muddy path with a dense primeval forest in the background.")
+                    )).build();
+
+                Map<String, Object> parameters = new HashMap<>();
+                parameters.put("watermark", false);
+                parameters.put("negative_prompt", " ");
+                parameters.put("n", 2);
+                parameters.put("prompt_extend", true);
+                parameters.put("size", "1536*1024");
+
+                MultiModalConversationParam param = MultiModalConversationParam.builder()
+                    .apiKey(apiKey)
+                    .model("qwen-image-3.0-pro")
+                    .messages(Collections.singletonList(userMessage))
+                    .parameters(parameters)
+                    .build();
+
+                MultiModalConversationResult result = conv.call(param);
+                List<Map<String, Object>> contentList = result.getOutput().getChoices().get(0).getMessage().getContent();
+                int imageIndex = 1;
+                for (Map<String, Object> content : contentList) {
+                  if (content.containsKey("image")) {
+                    System.out.println("URL of output image " + imageIndex + ": " + content.get("image"));
+                    imageIndex++;
+                  }
+                }
+              }
+
+              /**
+                 * 将文件编码为 Base64 字符串。
+                 * @param filePath 文件路径。
+                 * @return Base64 字符串，格式为：data:{mime_type};base64,{base64_data}
+                 */
+              public static String encodeFile(String filePath) {
+                Path path = Paths.get(filePath);
+                if (!Files.exists(path)) {
+                  throw new IllegalArgumentException("File does not exist: " + filePath);
+                }
+                String mimeType = null;
+                try {
+                  mimeType = Files.probeContentType(path);
+                } catch (IOException e) {
+                  throw new IllegalArgumentException("Unable to detect file type: " + filePath);
+                }
+                if (mimeType == null || !mimeType.startsWith("image/")) {
+                  throw new IllegalArgumentException("Unsupported or unrecognized image format");
+                }
+                byte[] fileBytes = null;
+                try {
+                  fileBytes = Files.readAllBytes(path);
+                } catch (IOException e) {
+                  throw new IllegalArgumentException("Unable to read file content: " + filePath);
+                }
+
+                String encodedString = Base64.getEncoder().encodeToString(fileBytes);
+                return "data:" + mimeType + ";base64," + encodedString;
+              }
+
+              public static void main(String[] args) {
+                try {
+                  call();
+                } catch (ApiException | NoApiKeyException | UploadFileException | IOException e) {
+                  System.out.println(e.getMessage());
+                }
+              }
+            }
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+  schemas:
+    QwenImageEditRequest:
+      type: object
+      required:
+        - model
+        - input
+      properties:
+        model:
+          type: string
+          description: 模型名称。
+          enum:
+            - qwen-image-3.0-pro
+            - qwen-image-3.0
+            - qwen-image-2.0-pro
+            - qwen-image-2.0-pro-2026-06-22
+            - qwen-image-2.0-pro-2026-04-22
+            - qwen-image-2.0-pro-2026-03-03
+            - qwen-image-2.0
+            - qwen-image-2.0-2026-03-03
+            - qwen-image-edit-max
+            - qwen-image-edit-max-2026-01-16
+            - qwen-image-edit-plus
+            - qwen-image-edit-plus-2025-12-15
+            - qwen-image-edit-plus-2025-10-30
+            - qwen-image-edit
+          example: qwen-image-3.0-pro
+        input:
+          type: object
+          required:
+            - messages
+          description: 包含 messages 数组的输入数据。
+          properties:
+            messages:
+              type: array
+              description: 仅支持单轮对话，messages 数组必须包含且仅包含一条 role 为 `user` 的消息。
+              minItems: 1
+              maxItems: 1
+              items:
+                $ref: "#/components/schemas/QwenImageEditMessage"
+        parameters:
+          $ref: "#/components/schemas/QwenImageEditParameters"
+    QwenImageEditMessage:
+      type: object
+      required:
+        - role
+        - content
+      properties:
+        role:
+          type: string
+          enum:
+            - user
+          description: 必须为 `user`。
+        content:
+          type: array
+          description: 消息内容数组，须包含 1 到 3 个图像对象和恰好 1 个文本对象。多图输入时，图像按位置引用（图像 1、图像 2、图像 3），输出图像的宽高比由最后一张图像决定。
+          minItems: 2
+          maxItems: 4
+          items:
+            $ref: "#/components/schemas/QwenImageEditContentPart"
+    QwenImageEditContentPart:
+      type: object
+      description: 图像或文本内容部分。
+      properties:
+        image:
+          type: string
+          description: 输入图像，支持公开可访问的 URL（HTTP/HTTPS）或 Base64 编码字符串（格式：`data:{mime_type};base64,{data}`）。支持的格式：JPG、JPEG、PNG、BMP、TIFF、WEBP、GIF（仅第一帧）。建议图像宽高在 384 到 3072 像素之间以获得最佳效果。最大文件大小：10 MB。
+          example: https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250925/fpakfo/image36.webp
+        text:
+          type: string
+          description: 图像编辑指令，描述期望输出图像包含的元素和视觉特征。支持中英文，qwen-image-3.0 系列推荐不超过 4500 Token；qwen-image-2.0 系列上限为 1300 Token；其他模型为 800 Token。超出部分将自动截断。仅支持传入一条文本输入，不传或传入多条将报错。
+          example: "Generate an image that matches the depth map, following this description: A dilapidated red bicycle is parked on a muddy path with a dense primeval forest in the background."
+    QwenImageEditParameters:
+      type: object
+      description: 图像编辑参数。
+      properties:
+        n:
+          type: integer
+          description: |-
+            生成图像的数量。默认值：1。
+
+            - **qwen-image-3.0 / qwen-image-2.0 / qwen-image-edit-max / qwen-image-edit-plus 系列**：1-6 张。
+            - **qwen-image-edit**：仅支持 1 张。
+          minimum: 1
+          maximum: 6
+          default: 1
+        negative_prompt:
+          type: string
+          description: 描述不希望出现在图像中的内容。支持中英文，最多 500 个字符，超出部分自动截断。
+          maxLength: 500
+        size:
+          type: string
+          description: |-
+            输出分辨率，格式为 `宽*高`。
+
+            - **qwen-image-3.0 系列**：总像素在 512\*512 到 2048\*2048 之间，宽高比在 1:8 到 8:1 之间，不指定时由模型根据提示词自动推荐分辨率。
+            - **qwen-image-2.0 系列**：总像素在 512\*512 到 2048\*2048 之间，默认与输入图像相同（多图请求以最后一张图像为准）。
+            - **qwen-image-edit-max/plus**：宽和高均在 [512, 2048] 范围内，默认约 1024\*1024，宽高比与输入图像相近，自动调整为最近的 16 的倍数。
+            - **qwen-image-edit**：不支持此参数。
+
+            推荐尺寸：`1024*1024`（1:1）、`768*1152` / `1024*1536`（2:3）、`1152*768` / `1536*1024`（3:2）、`720*1280` / `1080*1920`（9:16）、`1280*720` / `1920*1080`（16:9）。
+          example: 1024*1536
+        prompt_extend:
+          type: boolean
+          description: 启用提示词优化。开启后模型将对编辑指令进行优化，当提示词描述不够详细时效果提升显著；qwen-image-3.0 系列按 `prompt_extend_mode` 指定的方式改写。`qwen-image-edit` 不支持此参数。
+          default: true
+        prompt_extend_mode:
+          type: string
+          description: |-
+            提示词改写方式。仅 qwen-image-3.0 系列支持。
+
+            - `direct`（默认）：直接提示词增强（DPE），适用于大多数场景。
+            - `agent`：智能体提示词增强（APE），仅文生图支持；图像编辑场景传入将返回 400 错误。
+          enum:
+            - direct
+            - agent
+          default: direct
+        watermark:
+          type: boolean
+          description: 在图像右下角添加 "Qwen-Image" 水印。
+          default: false
+        seed:
+          type: integer
+          description: 随机数种子，范围：[0, 2147483647]。相同的种子可生成较为一致（但不完全相同）的结果。不指定时使用随机种子。
+          minimum: 0
+          maximum: 2147483647
+    QwenImageEditResponse:
+      type: object
+      description: Qwen-Image 图像编辑响应。
+      example:
+        output:
+          rewrite_status: not_use
+          choices:
+            - finish_reason: stop
+              message:
+                content:
+                  - image: https://dashscope-result-sz.oss-cn-shenzhen.aliyuncs.com/xxx.png?Expires=xxx
+                  - image: https://dashscope-result-sz.oss-cn-shenzhen.aliyuncs.com/xxx.png?Expires=xxx
+                role: assistant
+        usage:
+          output_height: 1024
+          output_width: 1536
+          input_image_count: 1
+          input_image_type: qima_input_1k
+          output_image_count: 2
+          output_image_type: qima_output_1k
+        request_id: bf37ca26-0abe-98e4-8065-xxxxxx
+      properties:
+        output:
+          type: object
+          properties:
+            rewrite_status:
+              type: string
+              description: 提示词改写状态。具体取值由请求是否开启改写以及改写执行结果决定。
+            choices:
+              type: array
+              description: 生成结果列表。
+              items:
+                $ref: "#/components/schemas/QwenImageEditChoice"
+        usage:
+          type: object
+          description: 用量统计（仅统计成功结果）。字段随模型系列不同：qwen-image-3.0 系列返回 `output_*` / `input_*` 字段，其他系列返回 `image_count` / `width` / `height`。
+          properties:
+            output_width:
+              type: integer
+              description: 最终输出图片的宽度（像素）。仅 qwen-image-3.0 系列返回。
+            output_height:
+              type: integer
+              description: 最终输出图片的高度（像素）。仅 qwen-image-3.0 系列返回。
+            input_image_count:
+              type: integer
+              description: 请求中输入图片的数量。文生图为 0，图像编辑按实际输入图片数返回。仅 qwen-image-3.0 系列返回。
+            input_image_type:
+              type: string
+              description: 输入图片计量档位，按输出分辨率像素面积判断：面积不大于 2,250,000 为 `qima_input_1k`，大于 2,250,000 为 `qima_input_2k`。仅 qwen-image-3.0 系列返回。
+            output_image_count:
+              type: integer
+              description: 实际返回的输出图片数量。仅 qwen-image-3.0 系列返回。
+            output_image_type:
+              type: string
+              description: 输出图片计量档位，按输出分辨率像素面积判断：面积不大于 2,250,000 为 `qima_output_1k`，大于 2,250,000 为 `qima_output_2k`。仅 qwen-image-3.0 系列返回。
+            image_count:
+              type: integer
+              description: 已生成的图像数量。qwen-image-3.0 系列不返回此字段，改用 `output_image_count`。
+            width:
+              type: integer
+              description: 生成图像的宽度（像素）。qwen-image-3.0 系列不返回此字段，改用 `output_width`。
+            height:
+              type: integer
+              description: 生成图像的高度（像素）。qwen-image-3.0 系列不返回此字段，改用 `output_height`。
+        request_id:
+          type: string
+          description: 请求的唯一标识符，用于追踪和排查问题。
+          example: bf37ca26-0abe-98e4-8065-xxxxxx
+    QwenImageEditChoice:
+      type: object
+      properties:
+        finish_reason:
+          type: string
+          description: "`stop` 表示正常完成。"
+          example: stop
+        message:
+          type: object
+          properties:
+            role:
+              type: string
+              description: 固定为 `assistant`。
+              enum:
+                - assistant
+            content:
+              type: array
+              description: 包含生成图像 URL 的响应内容数组。
+              items:
+                $ref: "#/components/schemas/QwenImageEditResponseContentPart"
+    QwenImageEditResponseContentPart:
+      type: object
+      properties:
+        image:
+          type: string
+          description: 生成图像的 URL（PNG 格式）。**有效期 24 小时**，请及时下载。
+    DashScopeErrorResponse:
+      type: object
+      description: DashScope API 错误响应。
+      example:
+        request_id: 31f808fd-8eef-9004-xxxxx
+        code: InvalidApiKey
+        message: Invalid API-key provided.
+      properties:
+        request_id:
+          type: string
+          description: 请求的唯一标识符。
+        code:
+          type: string
+          description: 错误码（例如 `InvalidParameter`、`Throttling`、`InvalidApiKey`）。
+          example: InvalidApiKey
+        message:
+          type: string
+          description: 可读的错误信息。
+          example: Invalid API-key provided.
+````

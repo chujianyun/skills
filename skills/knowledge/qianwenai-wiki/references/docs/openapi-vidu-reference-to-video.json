@@ -1,0 +1,495 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Vidu-参考生视频 API",
+    "description": "Vidu-参考生视频模型支持传入参考图片和文本提示词，将图片中的主体角色融合到提示词描述的场景中，生成流畅的视频内容。API 采用异步调用模式，包含\"创建任务\"和\"查询结果\"两个步骤。",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dashscope.aliyuncs.com/api/v1",
+      "description": "千问AI平台"
+    }
+  ],
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/services/aigc/video-generation/video-synthesis": {
+      "post": {
+        "operationId": "createViduReferenceToVideoTask",
+        "summary": "创建参考生视频任务",
+        "description": "提交参考生视频生成任务，支持传入参考图像（或视频）和文本提示词。该接口为异步接口，提交后需轮询查询结果。",
+        "parameters": [
+          {
+            "name": "X-DashScope-Async",
+            "in": "header",
+            "required": true,
+            "description": "异步处理配置参数。HTTP 请求只支持异步，必须设置为 `enable`。\n\n> 缺少此请求头将报错：\"current user api does not support synchronous calls\"。",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "enable"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ViduReferenceToVideoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "任务提交成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncTaskSubmitResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "label": "cURL - 仅参考图像",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \\\n  -H 'X-DashScope-Async: enable' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"vidu/viduq2_reference2video\",\n  \"input\": {\n    \"media\": [\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260320/knsple/wan-r2v-role-frame.jpg\"\n      },\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/qpzxps/wan-r2v-object4.png\"\n      },\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/wfjikw/wan-r2v-backgroud5.png\"\n      }\n    ],\n    \"prompt\": \"男人坐在靠窗的椅子上，手持吉他，在咖啡厅旁演奏一首舒缓的美国乡村民谣\"\n  },\n  \"parameters\": {\n    \"duration\": 5,\n    \"size\": \"1280*720\",\n    \"resolution\": \"720P\",\n    \"watermark\": true\n  }\n}'"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 参考图像+视频",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \\\n  -H 'X-DashScope-Async: enable' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"vidu/viduq2-pro_reference2video\",\n  \"input\": {\n    \"media\": [\n      {\n        \"type\": \"video\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/qigswt/wan-r2v-role2.mp4\"\n      },\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/qpzxps/wan-r2v-object4.png\"\n      },\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/wfjikw/wan-r2v-backgroud5.png\"\n      }\n    ],\n    \"prompt\": \"男人坐在靠窗的椅子上，手持吉他，在咖啡厅旁演奏一首舒缓的美国乡村民谣\"\n  },\n  \"parameters\": {\n    \"duration\": 5,\n    \"size\": \"1280*720\",\n    \"resolution\": \"720P\",\n    \"watermark\": true\n  }\n}'"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 广告参考生视频",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \\\n  -H 'X-DashScope-Async: enable' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"vidu/viduq3-ad_reference2video\",\n  \"input\": {\n    \"media\": [\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260320/knsple/wan-r2v-role-frame.jpg\"\n      },\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/qpzxps/wan-r2v-object4.png\"\n      },\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/wfjikw/wan-r2v-backgroud5.png\"\n      }\n    ],\n    \"prompt\": \"产品广告展示，镜头从近景推向远景，产品细节清晰可见\"\n  },\n  \"parameters\": {\n    \"duration\": 5,\n    \"resolution\": \"720P\",\n    \"watermark\": true\n  }\n}'"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 精品剧参考生视频",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \\\n  -H 'X-DashScope-Async: enable' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"vidu/viduq3-drama_reference2video\",\n  \"input\": {\n    \"media\": [\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260320/knsple/wan-r2v-role-frame.jpg\"\n      },\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/qpzxps/wan-r2v-object4.png\"\n      },\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/wfjikw/wan-r2v-backgroud5.png\"\n      },\n      {\n        \"type\": \"image\",\n        \"url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20260129/wfjikw/wan-r2v-backgroud5.png\"\n      }\n    ],\n    \"prompt\": \"角色走进房间，缓缓坐下，表情凝重，灯光从窗外洒落\"\n  },\n  \"parameters\": {\n    \"duration\": 5,\n    \"resolution\": \"1080P\",\n    \"watermark\": true\n  }\n}'"
+          }
+        ]
+      }
+    },
+    "/tasks/{task_id}": {
+      "get": {
+        "operationId": "getViduReferenceToVideoTaskStatus",
+        "summary": "查询任务结果",
+        "description": "根据任务 ID 查询参考生视频任务的状态和结果。建议设置合理的查询间隔（如 15 秒）进行轮询。",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "description": "创建任务接口返回的任务 ID。查询有效期为 24 小时。",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "查询成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskStatusResponse"
+                },
+                "examples": {
+                  "SUCCEEDED": {
+                    "summary": "任务执行成功",
+                    "value": {
+                      "request_id": "8f240644-efe8-43bf-86ff-xxxxxx",
+                      "output": {
+                        "task_id": "b7e05baa-c318-440d-b293-xxxxxx",
+                        "task_status": "SUCCEEDED",
+                        "submit_time": "2026-03-27 15:10:42.723",
+                        "scheduled_time": "2026-03-27 15:10:42.754",
+                        "end_time": "2026-03-27 15:11:17.388",
+                        "orig_prompt": "男人坐在靠窗的椅子上，手持吉他，在咖啡厅旁演奏一首舒缓的美国乡村民谣",
+                        "video_url": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/xxx.mp4?xxx"
+                      },
+                      "usage": {
+                        "duration": 5,
+                        "size": "960*528",
+                        "output_video_duration": 5,
+                        "fps": 24,
+                        "audio": false,
+                        "SR": "540",
+                        "video_count": 1,
+                        "reference_type": "image,video"
+                      }
+                    }
+                  },
+                  "FAILED": {
+                    "summary": "任务执行失败",
+                    "value": {
+                      "request_id": "e5d70b02-ebd3-98ce-9fe8-759d7d7b107d",
+                      "output": {
+                        "task_id": "86ecf553-d340-4e21-af6e-a0c6a421c010",
+                        "task_status": "FAILED",
+                        "code": "InvalidParameter",
+                        "message": "The size is not match xxxxxx"
+                      }
+                    }
+                  },
+                  "RUNNING": {
+                    "summary": "任务处理中",
+                    "value": {
+                      "request_id": "7574ee8f-38a3-4b1e-9280-xxxxxx",
+                      "output": {
+                        "task_id": "a8532587-fa8c-4ef8-82be-xxxxxx",
+                        "task_status": "RUNNING"
+                      }
+                    }
+                  },
+                  "UNKNOWN": {
+                    "summary": "任务不存在或已过期",
+                    "value": {
+                      "request_id": "a4de7c32-7057-9f82-8581-xxxxxx",
+                      "output": {
+                        "task_id": "502a00b1-19d9-4839-a82f-xxxxxx",
+                        "task_status": "UNKNOWN"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dashscope.aliyuncs.com/api/v1/tasks/{task_id} \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\""
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。"
+      }
+    },
+    "schemas": {
+      "ViduReferenceToVideoRequest": {
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "模型名称。\n\n| 模型 | 参考输入 | 最大时长 |\n|------|---------|--------|\n| `vidu/viduq2_reference2video` | 1～7 张图像 | 10 秒 |\n| `vidu/viduq2-pro_reference2video` | 1～4 张图像 + 0～2 个视频 | 10 秒 |\n| `vidu/viduq3-ad_reference2video` | 广告视频场景 | 15 秒 |\n| `vidu/viduq3-drama_reference2video` | 精品剧/AI漫剧场景 | 15 秒 |\n\n**如何选择模型：**\n- 广告视频：选择 `viduq3-ad_reference2video`\n- 精品剧/AI漫剧：选择 `viduq3-drama_reference2video`\n- 通用场景：选择 `viduq2-pro_reference2video` 或 `viduq2_reference2video`（viduq3-mix）\n- 追求速度与性价比：选择 `viduq2_reference2video`（viduq3-turbo）",
+            "enum": [
+              "vidu/viduq2_reference2video",
+              "vidu/viduq2-pro_reference2video",
+              "vidu/viduq3-ad_reference2video",
+              "vidu/viduq3-drama_reference2video"
+            ],
+            "example": "vidu/viduq2_reference2video"
+          },
+          "input": {
+            "type": "object",
+            "required": [
+              "media",
+              "prompt"
+            ],
+            "description": "输入的基本信息，包括参考图片和提示词。",
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "description": "文本提示词。用来描述生成视频中期望包含的元素和视觉特点。\n\n- 支持中英文\n- 不超过 5000 个字符，超过部分会自动截断\n\n示例值：男人坐在靠窗的椅子上，手持吉他，在咖啡厅旁演奏一首舒缓的美国乡村民谣。\n\n提示词编写请参见Vidu视频生成Prompt指南。",
+                "example": "男人坐在靠窗的椅子上，手持吉他，在咖啡厅旁演奏一首舒缓的美国乡村民谣"
+              },
+              "media": {
+                "type": "array",
+                "description": "媒体素材列表，用于指定视频生成所需的参考图像或参考视频。\n\n**vidu/viduq2_reference2video 模型：**\n- 仅支持图像，数量为 1～7 张。\n- type 固定为 `image`。\n\n**vidu/viduq2-pro_reference2video 模型：**\n- 图像：必选，数量为 1～4 张。\n- 视频：可选，数量为 1～2 个。\n- 仅参考图像时，图像数量为 1～7 张。\n- 参考图像和视频同时使用时，图像数量为 1～4 张，视频数量为 1～2 个。\n\n**图像限制：**\n- 格式：JPEG、JPG、PNG、WEBP\n- 宽高比：1:4～4:1\n- 文件大小：不超过 50MB\n\n**视频限制（仅 pro 模型）：**\n- 格式：mp4、avi、mov\n- 分辨率：总像素值不小于 128×128\n- 宽高比：1:4～4:1\n- 时长：1～5 秒\n- 文件大小：不超过 50MB",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "type",
+                    "url"
+                  ],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "媒体素材类型。可选值与模型有关：\n- `image`：参考图像\n- `video`：参考视频（仅 viduq2-pro_reference2video 模型支持）",
+                      "enum": [
+                        "image",
+                        "video"
+                      ],
+                      "example": "image"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "媒体素材 URL，必须为公网可访问的 URL，支持 HTTP 或 HTTPS 协议。\n\n示例值：https://xxx/xxx.png",
+                      "example": "https://example.com/character.jpg"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/ViduReferenceToVideoParameters"
+          }
+        }
+      },
+      "ViduReferenceToVideoParameters": {
+        "type": "object",
+        "description": "视频生成参数。用于设置视频分辨率、时长等。",
+        "properties": {
+          "resolution": {
+            "type": "string",
+            "description": "生成视频的分辨率。\n\n> resolution 直接影响费用，请在调用前确认模型价格。\n\n可选值：\n- `540P`\n- `720P`：默认值\n- `1080P`\n\n各模型默认值：\n- `vidu/viduq3-ad_reference2video`：可选720P、1080P。默认值为720P\n- `vidu/viduq3-drama_reference2video`：可选720P、1080P。默认值为1080P",
+            "enum": [
+              "540P",
+              "720P",
+              "1080P"
+            ],
+            "default": "720P",
+            "example": "720P"
+          },
+          "size": {
+            "type": "string",
+            "description": "生成视频的分辨率，格式为 宽*高 的像素值。\n\n默认值根据 resolution 而定：\n- resolution=540P 时，size 默认为 960*528\n- resolution=720P 时，size 默认为 1280*720\n- resolution=1080P 时，size 默认为 1920*1080\n\n各模型支持的宽高比有所不同：\n- vidu/viduq3-drama_reference2video：仅支持 16:9 和 9:16。\n- 其他模型：支持 16:9、4:3、1:1、3:4、9:16。\n\n> 推荐 resolution 和 size 同时传入，以精准控制生成视频的宽高比。\n\n**各分辨率档位下 size 的取值：**\n\n| 分辨率 | 宽高比 | size 取值 |\n|--------|--------|----------|\n| 540P | 16:9 | 960*540 |\n| 540P | 4:3 | 720*540 |\n| 540P | 1:1 | 540*540 |\n| 540P | 3:4 | 540*720 |\n| 540P | 9:16 | 540*960 |\n| 720P | 16:9 | 1280*720 |\n| 720P | 4:3 | 960*720 |\n| 720P | 1:1 | 720*720 |\n| 720P | 3:4 | 720*960 |\n| 720P | 9:16 | 720*1280 |\n| 1080P | 16:9 | 1920*1080 |\n| 1080P | 4:3 | 1440*1080 |\n| 1080P | 1:1 | 1080*1080 |\n| 1080P | 3:4 | 1080*1440 |\n| 1080P | 9:16 | 1080*1920 |",
+            "example": "1280*720"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "生成视频的时长，单位为秒。\n\n> duration 直接影响费用，按秒计费，请在调用前确认模型价格。\n\n**vidu/viduq2-pro_reference2video：**\n- 取值为 [1, 10] 之间的整数，默认值为 5\n- 支持设置为 0，表示自动规划时长，上限不超过 10 秒\n- 若上传 1 个参考视频：生成视频时长通常等于该参考视频时长\n- 若上传 2 个参考视频：生成视频时长通常等于\"主要参考视频\"的时长\n\n**vidu/viduq2_reference2video：**\n- 取值为 [1, 10] 之间的整数，默认值为 5\n\n**vidu/viduq3-ad_reference2video：**\n- 取值为[3, 15]之间的整数，默认值为5\n\n**vidu/viduq3-drama_reference2video：**\n- 取值为[2, 15]之间的整数，默认值为5",
+            "minimum": 0,
+            "maximum": 15,
+            "default": 5,
+            "example": 5
+          },
+          "watermark": {
+            "type": "boolean",
+            "description": "是否添加水印标识，水印位于视频右下角，文案固定为\"内容由 AI 生成\"。\n\n- `false`：默认值，不添加水印\n- `true`：添加水印",
+            "default": false,
+            "example": false
+          },
+          "seed": {
+            "type": "integer",
+            "description": "随机数种子，取值范围为 [0, 2147483647]。\n\n未指定时，系统自动生成随机种子。若需提升生成结果的可复现性，建议固定 seed 值。\n\n> 由于模型生成具有概率性，即使使用相同 seed，也不能保证每次生成结果完全一致。\n\n示例值：12345",
+            "minimum": 0,
+            "maximum": 2147483647,
+            "example": 12345
+          },
+          "sound_effect": {
+            "type": "boolean",
+            "description": "是否为生成的视频添加 AI 音效。\n\n- `false`：默认值，输出无声视频\n- `true`：输出有声视频\n\n**支持的模型：** `vidu/viduq3-ad_reference2video`。\n\n> `vidu/viduq3-drama_reference2video` 默认生成有声视频，不支持此参数。",
+            "default": false,
+            "example": false
+          }
+        }
+      },
+      "AsyncTaskSubmitResponse": {
+        "type": "object",
+        "description": "异步任务提交响应。",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "请求唯一标识。可用于请求明细溯源和问题排查。",
+            "example": "4909100c-7b5a-9f92-bfe5-xxxxxx"
+          },
+          "output": {
+            "type": "object",
+            "description": "任务输出信息。",
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "description": "任务 ID。查询有效期 24 小时。用于后续调用 GET /tasks/{task_id} 查询任务状态。",
+                "example": "0385dc79-5ff8-4d82-bcb6-xxxxxx"
+              },
+              "task_status": {
+                "type": "string",
+                "description": "任务状态。初始状态通常为 `PENDING`。",
+                "enum": [
+                  "PENDING",
+                  "RUNNING",
+                  "SUCCEEDED",
+                  "FAILED",
+                  "UNKNOWN"
+                ],
+                "example": "PENDING"
+              }
+            }
+          }
+        }
+      },
+      "TaskStatusResponse": {
+        "type": "object",
+        "description": "任务状态查询响应。",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "请求唯一标识。可用于请求明细溯源和问题排查。",
+            "example": "8f240644-efe8-43bf-86ff-xxxxxx"
+          },
+          "output": {
+            "type": "object",
+            "description": "任务输出信息。",
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "description": "任务 ID。查询有效期 24 小时。",
+                "example": "b7e05baa-c318-440d-b293-xxxxxx"
+              },
+              "task_status": {
+                "type": "string",
+                "description": "任务状态。\n\n- `PENDING`：任务排队中\n- `RUNNING`：任务处理中\n- `SUCCEEDED`：任务执行成功\n- `FAILED`：任务执行失败\n- `CANCELED`：任务已取消\n- `UNKNOWN`：任务不存在或状态未知\n\n状态流转：PENDING → RUNNING → SUCCEEDED/FAILED",
+                "enum": [
+                  "PENDING",
+                  "RUNNING",
+                  "SUCCEEDED",
+                  "FAILED",
+                  "CANCELED",
+                  "UNKNOWN"
+                ]
+              },
+              "submit_time": {
+                "type": "string",
+                "description": "任务提交时间。格式为 YYYY-MM-DD HH:mm:ss.SSS。",
+                "example": "2026-03-27 15:10:42.723"
+              },
+              "scheduled_time": {
+                "type": "string",
+                "description": "任务执行时间。格式为 YYYY-MM-DD HH:mm:ss.SSS。",
+                "example": "2026-03-27 15:10:42.754"
+              },
+              "end_time": {
+                "type": "string",
+                "description": "任务完成时间。格式为 YYYY-MM-DD HH:mm:ss.SSS。",
+                "example": "2026-03-27 15:11:17.388"
+              },
+              "orig_prompt": {
+                "type": "string",
+                "description": "原始输入的 prompt，对应请求参数 prompt。",
+                "example": "男人坐在靠窗的椅子上，手持吉他，在咖啡厅旁演奏一首舒缓的美国乡村民谣"
+              },
+              "video_url": {
+                "type": "string",
+                "description": "视频 URL。仅在 task_status 为 SUCCEEDED 时返回。\n\n视频格式为 MP4（H.264 编码）。视频链接有效期 24 小时，请及时下载。",
+                "example": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/xxx.mp4?xxx"
+              },
+              "code": {
+                "type": "string",
+                "description": "请求失败的错误码。请求成功时不会返回此参数。"
+              },
+              "message": {
+                "type": "string",
+                "description": "请求失败的详细信息。请求成功时不会返回此参数。"
+              }
+            }
+          },
+          "usage": {
+            "type": "object",
+            "description": "输出信息统计。只对成功的结果计数。",
+            "properties": {
+              "duration": {
+                "type": "integer",
+                "description": "生成视频的总视频时长，用于计费。",
+                "example": 5
+              },
+              "size": {
+                "type": "string",
+                "description": "生成视频的分辨率。示例值：960*528。",
+                "example": "960*528"
+              },
+              "output_video_duration": {
+                "type": "integer",
+                "description": "生成视频的实际时长（秒）。",
+                "example": 5
+              },
+              "fps": {
+                "type": "integer",
+                "description": "生成视频的帧率。固定为 24。",
+                "example": 24
+              },
+              "audio": {
+                "type": "boolean",
+                "description": "生成视频是否为有声视频。",
+                "example": false
+              },
+              "SR": {
+                "type": "string",
+                "description": "生成视频的分辨率档位。示例值：540。",
+                "example": "540"
+              },
+              "video_count": {
+                "type": "integer",
+                "description": "生成视频的数量。固定为 1。",
+                "example": 1
+              },
+              "reference_type": {
+                "type": "string",
+                "description": "参考素材类型。示例值：image,video。",
+                "example": "image,video"
+              }
+            }
+          }
+        }
+      },
+      "DashScopeErrorResponse": {
+        "type": "object",
+        "description": "DashScope API 错误响应。",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "请求唯一标识。"
+          },
+          "code": {
+            "type": "string",
+            "description": "错误码，例如 `InvalidApiKey`、`InvalidParameter`。",
+            "example": "InvalidApiKey"
+          },
+          "message": {
+            "type": "string",
+            "description": "错误详情。",
+            "example": "No API-key provided."
+          }
+        }
+      }
+    }
+  }
+}

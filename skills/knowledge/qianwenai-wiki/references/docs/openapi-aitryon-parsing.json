@@ -1,0 +1,274 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AI试衣-图片分割 API",
+    "version": "1.0.0",
+    "description": "从模特图或AI试衣图中分割出服装区域，支持上装、下装、连衣裙等类型。"
+  },
+  "servers": [
+    {
+      "url": "https://dashscope.aliyuncs.com/api/v1"
+    }
+  ],
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/services/vision/image-process/process": {
+      "post": {
+        "summary": "Segment garments",
+        "operationId": "segmentGarments",
+        "description": "从模特图或 AI 试衣图中分割出服装区域，返回分割图片 URL 和边界框坐标。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AitryonParsingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AitryonParsingResponse"
+                },
+                "examples": {
+                  "SuccessWithClothes": {
+                    "summary": "成功响应（存在对应类型服饰）",
+                    "value": {
+                      "output": {
+                        "bbox": [
+                          [
+                            331,
+                            239,
+                            641,
+                            637
+                          ]
+                        ],
+                        "parsing_img_url": [
+                          "http://dashscope-result-sh.oss-cn-shanghai.aliyuncs.com/example_parsing_img.png?Expires=xxxx"
+                        ],
+                        "crop_img_url": [
+                          "http://dashscope-result-sh.oss-cn-shanghai.aliyuncs.com/example_crop_img.jpg?Expires=xxxx"
+                        ]
+                      },
+                      "usage": {
+                        "image_count": 1
+                      },
+                      "request_id": "b68147d6-e7d0-920f-b889-xxxxxx"
+                    }
+                  },
+                  "SuccessWithoutClothes": {
+                    "summary": "成功响应（不存在对应类型服饰）",
+                    "value": {
+                      "output": {
+                        "bbox": [
+                          null
+                        ],
+                        "parsing_img_url": [
+                          null
+                        ],
+                        "crop_img_url": [
+                          null
+                        ]
+                      },
+                      "usage": {
+                        "image_count": 1
+                      },
+                      "request_id": "c56f62df-724e-9c19-96bd-308627cf5262"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeErrorResponse"
+                },
+                "example": {
+                  "request_id": "1d075a37-3768-9bc9-b781-xxxx",
+                  "code": "InvalidParameter.ClothesType",
+                  "message": "The request parameter is invalid, please check the request parameter."
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "认证失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeErrorResponse"
+                },
+                "example": {
+                  "code": "InvalidApiKey",
+                  "message": "No API-key provided.",
+                  "request_id": "7438d53d-6eb8-4596-8835-xxxxxx"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "请求频率超限",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeErrorResponse"
+                },
+                "example": {
+                  "code": "Throttling",
+                  "message": "Requests throttling triggered.",
+                  "request_id": "7438d53d-6eb8-4596-8835-xxxxxx"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/vision/image-process/process' \\\n  --header 'Content-Type: application/json' \\\n  --header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  --data '{\n    \"model\": \"aitryon-parsing-v1\",\n    \"input\": {\n        \"image_url\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250630/bakbqz/aitryon_parse_model.png\"\n    },\n    \"parameters\": {\n        \"clothes_type\": [\"upper\"]\n    }\n}'"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AitryonParsingRequest": {
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "enum": [
+              "aitryon-parsing-v1"
+            ],
+            "description": "模型名称，固定为 `aitryon-parsing-v1`。"
+          },
+          "input": {
+            "type": "object",
+            "required": [
+              "image_url"
+            ],
+            "properties": {
+              "image_url": {
+                "type": "string",
+                "description": "待分割的模特图公网 URL。要求：图像文件 5KB～5MB；图像边长 150～4096 px；支持格式 jpg、png、jpeg、bmp、heic；图片中有且仅有一个完整的人；仅支持 HTTP/HTTPS 链接。"
+              }
+            }
+          },
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "clothes_type": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "upper",
+                    "lower",
+                    "dress"
+                  ]
+                },
+                "default": [
+                  "upper"
+                ],
+                "description": "指定需要分割的服饰类型。默认为 `[\"upper\"]`（上装）。列表的长度和顺序决定了输出结果中 URL 列表的长度和顺序。可选值：`[\"upper\"]` 分割上装；`[\"lower\"]` 分割下装；`[\"dress\"]` 分割连衣裙或连体衣或全身穿搭；`[\"upper\", \"lower\"]` 同时分割上装和下装。"
+              }
+            }
+          }
+        }
+      },
+      "AitryonParsingResponse": {
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "本次请求的唯一 ID。"
+          },
+          "output": {
+            "type": "object",
+            "properties": {
+              "parsing_img_url": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "description": "分割区域的可视化图片 URL 列表（RGBA PNG 格式）。长度和顺序与入参 `clothes_type` 一致。如果未检测到对应服饰，则该位置为 null。URL 有效期为 24 小时，请及时下载保存。"
+              },
+              "crop_img_url": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "description": "分割出的服饰图片 URL 列表（RGB 格式）。长度和顺序与入参 `clothes_type` 一致。如果未找到对应服饰，则该位置为 null。URL 有效期为 24 小时，请及时下载保存。"
+              },
+              "bbox": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  },
+                  "nullable": true
+                },
+                "description": "分割区域在原图中的坐标列表。按照入参 `clothes_type` 中指定的顺序排列。每个 bbox 为 `[x1, y1, x2, y2]`，以输入原图左上角为坐标原点，分别代表左上角和右下角坐标。如果未检测到对应服饰，则该位置为 null。"
+              }
+            }
+          },
+          "usage": {
+            "type": "object",
+            "properties": {
+              "image_count": {
+                "type": "integer",
+                "description": "本次请求处理的图片张数。"
+              }
+            }
+          }
+        }
+      },
+      "DashScopeErrorResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "错误码。"
+          },
+          "message": {
+            "type": "string",
+            "description": "错误信息。"
+          },
+          "request_id": {
+            "type": "string",
+            "description": "请求唯一标识。"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。"
+      }
+    }
+  }
+}

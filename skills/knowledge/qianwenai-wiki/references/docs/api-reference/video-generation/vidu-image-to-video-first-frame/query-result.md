@@ -1,0 +1,311 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Vidu — 查询图生视频任务结果（基于首帧）
+
+> 查询 Vidu 图生视频（基于首帧）任务状态，获取生成的视频
+
+查询任务状态并获取生成的视频。
+
+## 轮询策略
+
+1. 调用[提交图生视频任务（基于首帧）](/api-reference/video-generation/vidu-image-to-video-first-frame/create-task)接口获取 `task_id`。
+2. 每 **15 秒**轮询一次，直到 `task_status` 为 `SUCCEEDED` 或 `FAILED`。
+3. 任务成功后，从 `output.video_url` 获取视频。
+
+## 注意事项
+
+- **URL 有效期**：视频 URL 在任务完成后 **24 小时**过期，请及时下载保存。
+- **视频格式**：生成的视频为 MP4 格式，编码为 H.264。
+- **状态流转**：`PENDING` → `RUNNING` → `SUCCEEDED` 或 `FAILED`。`CANCELED`：任务已被取消。`UNKNOWN` 表示任务不存在或已过期（超过 24 小时）。
+
+## OpenAPI
+
+````yaml get /api/v1/tasks/{task_id}
+openapi: 3.1.0
+info:
+  title: Vidu 图生视频（基于首帧）API
+  version: 1.0.0
+  description: 基于首帧图片，使用 Vidu 模型生成视频。
+servers:
+  - url: https://dashscope.aliyuncs.com
+    description: 千问AI平台
+security:
+  - BearerAuth: []
+paths:
+  /api/v1/tasks/{task_id}:
+    get:
+      summary: 查询图生视频任务结果（基于首帧）
+      description: 查询 Vidu 图生视频（基于首帧）任务状态，任务成功后返回生成的视频 URL。
+      operationId: getViduI2VFirstFrameTaskStatus
+      parameters:
+        - name: task_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: 提交任务时返回的 `task_id`。
+      responses:
+        "200":
+          description: 查询成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ViduQueryResponse"
+              examples:
+                SUCCEEDED:
+                  summary: 任务成功
+                  value:
+                    request_id: 3606f9f4-b833-44ec-8385-xxxxxx
+                    output:
+                      task_id: 2846881f-0496-4288-947f-xxxxxx
+                      task_status: SUCCEEDED
+                      submit_time: 2026-03-27 14:25:32.057
+                      scheduled_time: 2026-03-27 14:25:32.084
+                      end_time: 2026-03-27 14:28:29.600
+                      orig_prompt: 镜头从海龟下方缓缓上移，海龟悠然游动，腹部细节清晰可见。
+                      video_url: https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/xxx.mp4?xxxx
+                    usage:
+                      duration: 5
+                      size: 988*932
+                      output_video_duration: 5
+                      fps: 24
+                      video_count: 1
+                      audio: false
+                      SR: "720"
+                FAILED:
+                  summary: 任务失败
+                  value:
+                    request_id: e5d70b02-ebd3-98ce-9fe8-759d7d7b107d
+                    output:
+                      task_id: 86ecf553-d340-4e21-af6e-a0c6a421c010
+                      task_status: FAILED
+                      code: InvalidParameter
+                      message: The size is not match xxxxxx
+                RUNNING:
+                  summary: 任务处理中
+                  value:
+                    request_id: 7574ee8f-38a3-4b1e-9280-xxxxxxxxxxxx
+                    output:
+                      task_id: 0385dc79-5ff8-4d82-bcb6-xxxxxx
+                      task_status: RUNNING
+                      submit_time: 2026-03-27 14:25:32.057
+                      scheduled_time: 2026-03-27 14:25:32.084
+                UNKNOWN:
+                  summary: 任务不存在或已过期
+                  value:
+                    request_id: a4de7c32-7057-9f82-8581-xxxxxx
+                    output:
+                      task_id: 502a00b1-19d9-4839-a82f-xxxxxx
+                      task_status: UNKNOWN
+        "401":
+          description: 认证失败
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashScopeErrorResponse"
+      x-codeSamples:
+        - lang: curl
+          label: cURL
+          source: |-
+            curl -X GET 'https://dashscope.aliyuncs.com/api/v1/tasks/{task_id}' \
+              --header "Authorization: Bearer $DASHSCOPE_API_KEY"
+components:
+  schemas:
+    ViduI2VFirstFrameRequest:
+      type: object
+      required:
+        - model
+        - input
+      properties:
+        model:
+          type: string
+          enum:
+            - vidu/viduq3-pro_img2video
+            - vidu/viduq3-pro-fast_img2video
+            - vidu/viduq3-turbo_img2video
+            - vidu/viduq2-pro_img2video
+            - vidu/viduq2-turbo_img2video
+          description: |-
+            模型名称。可选值：
+            - `vidu/viduq3-pro_img2video`：q3 旗舰版，最高 1080P，最长 16 秒
+            - `vidu/viduq3-pro-fast_img2video`：q3 旗舰极速版，最高 1080P，最长 16 秒
+            - `vidu/viduq3-turbo_img2video`：q3 快速版，最高 1080P，最长 16 秒
+            - `vidu/viduq2-pro_img2video`：q2 旗舰版，最高 1080P，最长 10 秒
+            - `vidu/viduq2-turbo_img2video`：q2 快速版，最高 1080P，最长 10 秒
+        input:
+          type: object
+          required:
+            - media
+          properties:
+            media:
+              type: array
+              description: 输入图片列表，必须包含且仅包含 **1** 张图片，作为视频的首帧。
+              minItems: 1
+              maxItems: 1
+              items:
+                type: object
+                required:
+                  - type
+                  - url
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - image
+                    description: 媒体类型，固定为 `image`。
+                  url:
+                    type: string
+                    description: |-
+                      图片的公网 URL。
+
+                      **图片要求**：
+                      - **格式**：JPG、PNG、WEBP
+                      - **宽高比**：1:4 到 4:1（即宽/高在 0.25 到 4 之间）
+                      - **文件大小**：不超过 50 MB
+                      - **URL 类型**：HTTP/HTTPS 公网可访问地址
+            prompt:
+              type: string
+              description: |-
+                视频内容的文字描述，引导模型生成特定风格或动作的视频。
+
+                提示词编写请参见Vidu视频生成Prompt指南。
+        parameters:
+          type: object
+          properties:
+            duration:
+              type: integer
+              description: |-
+                生成视频的时长（秒）。
+
+                - **q3 模型**（viduq3-pro、viduq3-turbo）：1–16 秒
+                - **q2 模型**（viduq2-pro、viduq2-turbo）：1–10 秒
+
+                各模型取值范围：
+                - `vidu/viduq3-pro-fast_img2video`：取值为[1, 16]之间的整数，默认值为5
+            resolution:
+              type: string
+              enum:
+                - 540P
+                - 720P
+                - 1080P
+              description: |-
+                生成视频的分辨率。
+
+                - **q3 模型**：支持 540P、720P、1080P
+                - **q2 模型**：支持 720P、1080P
+
+                各模型默认值：
+                - `vidu/viduq3-pro-fast_img2video`：可选值：720P、1080P。默认值为 720P
+            watermark:
+              type: boolean
+              default: true
+              description: 是否在视频中添加水印。默认为 `true`。
+            audio:
+              type: boolean
+              default: false
+              description: 是否为生成的视频添加 AI 背景音效。默认为 `false`。**仅 q3 模型支持**（viduq3-pro、viduq3-pro-fast、viduq3-turbo）。
+    ViduSubmitResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: 本次请求的唯一 ID。
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 异步任务 ID，用于查询任务状态。
+            task_status:
+              type: string
+              enum:
+                - PENDING
+              description: 任务初始状态，值为 `PENDING`。
+    ViduQueryResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: 本次请求的唯一 ID。
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 异步任务 ID。
+            task_status:
+              type: string
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+                - CANCELED
+                - UNKNOWN
+              description: 任务状态。`PENDING`：排队中；`RUNNING`：处理中；`SUCCEEDED`：成功；`FAILED`：失败；`CANCELED`：已取消；`UNKNOWN`：任务不存在或已过期（超过 24 小时）。
+            submit_time:
+              type: string
+              description: 任务提交时间。
+            scheduled_time:
+              type: string
+              description: 任务开始调度时间。
+            end_time:
+              type: string
+              description: 任务结束时间（成功或失败时返回）。
+            orig_prompt:
+              type: string
+              description: 原始提示词（任务成功时返回）。
+            video_url:
+              type: string
+              description: 生成视频的 URL，有效期 24 小时，请及时下载保存。视频格式为 MP4，编码为 H.264。
+            code:
+              type: string
+              description: 任务失败时的错误码。
+            message:
+              type: string
+              description: 任务失败时的错误信息。
+        usage:
+          type: object
+          description: 任务成功时返回的用量信息。
+          properties:
+            duration:
+              type: integer
+              description: 请求的视频时长（秒）。
+            output_video_duration:
+              type: integer
+              description: 实际生成的视频时长（秒）。
+            size:
+              type: string
+              description: 生成视频的分辨率，格式为 `宽*高`，例如 `988*932`。
+            fps:
+              type: integer
+              description: 生成视频的帧率。
+            video_count:
+              type: integer
+              description: 生成的视频数量。
+            audio:
+              type: boolean
+              description: 生成的视频是否包含音频。
+            SR:
+              type: string
+              description: 分辨率档位，例如 `720`（720P）。
+    DashScopeErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          description: 错误码。
+        message:
+          type: string
+          description: 错误信息。
+        request_id:
+          type: string
+          description: 请求唯一标识。
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+````

@@ -1,0 +1,381 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# 爱诗 PixVerse — 创建任务
+
+> 提交爱诗 PixVerse 文生视频异步任务
+
+<Note>
+  请先[获取 API Key](/api-reference/preparation/api-key) 并[配置为环境变量](/api-reference/preparation/export-api-key-env)。
+</Note>
+
+## 模型概览
+
+| 模型名                        | 说明                                              |
+| -------------------------- | ----------------------------------------------- |
+| pixverse/pixverse-c1-t2v   | 旗舰动作与特效模型，适合动态镜头、打光等复杂运动场景；通过提示词格式指定镜头类型实现多镜头模式 |
+| pixverse/pixverse-v6-t2v   | 通用高质量模型，适合人像、风景等多种主题；通过 `shot_type` 参数开启多镜头模式   |
+| pixverse/pixverse-v5.6-t2v | 旧版模型，最大分辨率 720P，支持时长 5、8、10 秒                   |
+
+## 分辨率与时长
+
+**c1 / v6 模型**
+
+| 档位    | 支持分辨率                                                                                  | 时长     |
+| ----- | -------------------------------------------------------------------------------------- | ------ |
+| 360P  | 640\*360、640\*480、640\*640、480\*640、360\*640、640\*432、432\*640、640\*288                | 1–15 秒 |
+| 540P  | 1024\*576、1024\*768、1024\*1024、768\*1024、576\*1024、1024\*688、688\*1024、1024\*448       | 1–15 秒 |
+| 720P  | 1280\*720、1108\*832、960\*960、832\*1108、720\*1280、1200\*800、800\*1200、1280\*560         | 1–15 秒 |
+| 1080P | 1920\*1080、1664\*1248、1440\*1440、1248\*1664、1080\*1920、1776\*1184、1184\*1776、1920\*832 | 1–15 秒 |
+
+**v5.6 模型**
+
+| 档位    | 支持分辨率                                                  | 时长       |
+| ----- | ------------------------------------------------------ | -------- |
+| 360P  | 640\*360、640\*480、640\*640、480\*640、360\*640           | 5、8、10 秒 |
+| 540P  | 1024\*576、1024\*768、1024\*1024、768\*1024、576\*1024     | 5、8、10 秒 |
+| 720P  | 1280\*720、1280\*960、1280\*1280、960\*1280、720\*1280     | 5、8、10 秒 |
+| 1080P | 1808\*1018、1808\*1356、1808\*1808、1356\*1808、1018\*1808 | 5、8 秒    |
+
+## 多镜头模式
+
+**c1 模型**：在 `input.prompt` 中以自然语言描述多个镜头（如 `镜头1：模特向前漫步；镜头2：中景展示面料质感；镜头3：远景捕捉裙摆动态`），模型根据提示词内容自动生成对应镜头运动。
+
+**v6 模型**：将 `parameters.shot_type` 设为 `multi`，模型自动生成多镜头组合视频；设为 `single`（默认）则输出单一连续镜头。
+
+## 使用流程
+
+1. 调用本接口提交文生视频任务，获取 `task_id`。
+2. 调用[查询文生视频任务结果](/api-reference/video-generation/pixverse-text-to-video/query-result)接口，使用 `task_id` 轮询任务状态，直到获取生成的视频 URL。
+
+## 错误码
+
+大模型服务通用状态码请查阅[错误码](/api-reference/preparation/error-messages)。
+
+## OpenAPI
+
+````yaml post /services/aigc/video-generation/video-synthesis
+openapi: 3.1.0
+info:
+  title: 爱诗 PixVerse 文生视频 API
+  description: 爱诗 PixVerse 文生视频模型基于文本提示词，生成一段流畅的视频。API 采用异步调用方式：先 POST 创建任务获取 task_id，再 GET 轮询查询任务状态与结果。
+  version: 1.0.0
+servers:
+  - url: https://dashscope.aliyuncs.com/api/v1
+    description: 千问AI平台
+security:
+  - BearerAuth: []
+paths:
+  /services/aigc/video-generation/video-synthesis:
+    post:
+      operationId: createPixVerseTextToVideo
+      summary: 创建文生视频任务
+      description: 提交文生视频异步任务，返回 task_id 用于后续轮询查询。task_id 有效期为 24 小时，请勿重复创建任务。
+      parameters:
+        - name: X-DashScope-Async
+          in: header
+          required: true
+          description: 异步处理配置参数。HTTP 请求只支持异步，必须设置为 `enable`。缺少此请求头将报错："current user api does not support synchronous calls"。
+          schema:
+            type: string
+            enum:
+              - enable
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PixVerseTextToVideoRequest"
+      responses:
+        "200":
+          description: 任务创建成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AsyncTaskSubmitResponse"
+        "400":
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashScopeErrorResponse"
+      x-codeSamples:
+        - lang: curl
+          label: cURL - 文生视频（c1）
+          source: |-
+            curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \
+              -H 'X-DashScope-Async: enable' \
+              -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+              -H 'Content-Type: application/json' \
+              -d '{
+              "model": "pixverse/pixverse-c1-t2v",
+              "input": {
+                "prompt": "下着雨，赛博城市里，一只浣熊在栏杆上行走。突然他眼睛发出蓝光，变身成一架高科技无人机，快速飞离画面。"
+              },
+              "parameters": {
+                "size": "1280*720",
+                "duration": 5,
+                "watermark": true
+              }
+            }'
+        - lang: curl
+          label: cURL - 文生视频多镜头（c1，prompt 方式）
+          source: |-
+            curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \
+              -H 'X-DashScope-Async: enable' \
+              -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+              -H 'Content-Type: application/json' \
+              -d '{
+              "model": "pixverse/pixverse-c1-t2v",
+              "input": {
+                "prompt": "镜头1：模特面向镜头平稳向前漫步；镜头2：快速切换至中景，展示腰线裁剪与蓝白格纹棉质面料的清爽质感；镜头3：远景捕捉微风吹拂裙摆的自然动态，画面干净明亮。"
+              },
+              "parameters": {
+                "size": "1280*720",
+                "duration": 5,
+                "audio": true,
+                "watermark": true
+              }
+            }'
+        - lang: curl
+          label: cURL - 文生视频多镜头（v6，shot_type 参数）
+          source: |-
+            curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \
+              -H 'X-DashScope-Async: enable' \
+              -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+              -H 'Content-Type: application/json' \
+              -d '{
+              "model": "pixverse/pixverse-v6-t2v",
+              "input": {
+                "prompt": "镜头1：模特面向镜头平稳向前漫步；镜头2：快速切换至中景，展示腰线裁剪与蓝白格纹棉质面料的清爽质感；镜头3：远景捕捉微风吹拂裙摆的自然动态，画面干净明亮。"
+              },
+              "parameters": {
+                "size": "1280*720",
+                "duration": 5,
+                "audio": true,
+                "shot_type": "multi",
+                "watermark": true
+              }
+            }'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+  schemas:
+    PixVerseTextToVideoRequest:
+      type: object
+      required:
+        - model
+        - input
+        - parameters
+      properties:
+        model:
+          type: string
+          description: |-
+            模型名称。可选值：
+            - `pixverse/pixverse-c1-t2v`：针对打斗、法术特效及高速运动等动态场景
+            - `pixverse/pixverse-v6-t2v`：通用场景
+            - `pixverse/pixverse-v5.6-t2v`：建议升级至 v6
+          enum:
+            - pixverse/pixverse-c1-t2v
+            - pixverse/pixverse-v6-t2v
+            - pixverse/pixverse-v5.6-t2v
+          example: pixverse/pixverse-c1-t2v
+        input:
+          type: object
+          required:
+            - prompt
+          description: 输入的基本信息，如提示词等。
+          properties:
+            prompt:
+              type: string
+              description: 文本提示词，用来描述生成视频中期望包含的元素和视觉特点。支持中英文，每个汉字/字母占一个字符。pixverse-c1-t2v 和 pixverse-v6-t2v 不超过 5000 个字符，pixverse-v5.6-t2v 不超过 2048 个字符，超过部分会自动截断。
+              example: 下着雨，赛博城市里，一只浣熊在栏杆上行走。突然他眼睛发出蓝光，变身成一架高科技无人机，快速飞离画面。
+        parameters:
+          $ref: "#/components/schemas/PixVerseTextToVideoParameters"
+    PixVerseTextToVideoParameters:
+      type: object
+      required:
+        - size
+        - duration
+      description: 视频生成参数。如设置视频分辨率、时长、是否生成音频等。
+      properties:
+        size:
+          type: string
+          description: |-
+            生成视频的分辨率，格式为 `宽*高` 的像素值。size 直接影响费用，请在调用前确认模型价格。
+
+            **c1 / v6 模型支持的分辨率**（按档位）：
+            - 360P：640*360、640*480、640*640、480*640、360*640、640*432、432*640、640*288
+            - 540P：1024*576、1024*768、1024*1024、768*1024、576*1024、1024*688、688*1024、1024*448
+            - 720P：1280*720、1108*832、960*960、832*1108、720*1280、1200*800、800*1200、1280*560
+            - 1080P：1920*1080、1664*1248、1440*1440、1248*1664、1080*1920、1776*1184、1184*1776、1920*832
+
+            **v5.6 模型支持的分辨率**：
+            - 360P：640*360、640*480、640*640、480*640、360*640
+            - 540P：1024*576、1024*768、1024*1024、768*1024、576*1024
+            - 720P：1280*720、1280*960、1280*1280、960*1280、720*1280
+            - 1080P：1808*1018、1808*1356、1808*1808、1356*1808、1018*1808
+          example: 1280*720
+        duration:
+          type: integer
+          description: |-
+            生成视频的时长，单位为秒。duration 直接影响费用，按秒计费。
+            - pixverse-c1-t2v 和 pixverse-v6-t2v：取值范围 [1, 15] 之间的整数
+            - pixverse-v5.6-t2v：360P/540P/720P 时取值为 5、8、10；1080P 时取值为 5、8
+          minimum: 1
+          maximum: 15
+        audio:
+          type: boolean
+          description: 是否生成有声视频。开启后模型将根据视频内容自动生成匹配的背景音乐或音效。audio 直接影响费用，请在调用前确认模型价格。
+          default: false
+          enum:
+            - false
+            - true
+        shot_type:
+          type: string
+          description: |-
+            指定生成视频的镜头类型，控制视频是由一个连续镜头还是多镜头组成。仅 pixverse-v6-t2v 模型支持。
+            - `single`：默认值，生成单镜头视频
+            - `multi`：多镜头，系统会进行智能分镜
+
+            使用建议：prompt 参数优先级高于 shot_type。若想稳定输出单镜头，设置 `shot_type="single"` 并在 prompt 中描述单镜头场景；若想稳定输出多镜头，设置 `shot_type="multi"` 并在 prompt 中描述多镜头场景。
+          enum:
+            - single
+            - multi
+          default: single
+        watermark:
+          type: boolean
+          description: 是否添加水印标识，水印位于视频右下角，文案固定为"AI生成"。
+          default: false
+          enum:
+            - false
+            - true
+        seed:
+          type: integer
+          description: 随机数种子，取值范围为 [0, 2147483647]。未指定时系统自动生成随机种子。若需提升生成结果的可复现性，建议固定 seed 值。注意：即使使用相同 seed，也不能保证每次生成结果完全一致。
+          minimum: 0
+          maximum: 2147483647
+    AsyncTaskSubmitResponse:
+      type: object
+      description: 异步任务提交响应。请保存 task_id，用于查询任务状态与结果。
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识。可用于请求明细溯源和问题排查。
+          example: 4909100c-7b5a-9f92-bfe5-xxxxxx
+        output:
+          type: object
+          description: 任务输出信息。
+          properties:
+            task_id:
+              type: string
+              description: 任务 ID。查询有效期 24 小时。
+              example: 0385dc79-5ff8-4d82-bcb6-xxxxxx
+            task_status:
+              type: string
+              description: 任务状态。初始状态通常为 `PENDING`。
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+    PixVerseT2VTaskStatusResponse:
+      type: object
+      description: 任务状态查询响应。
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识。可用于请求明细溯源和问题排查。
+          example: 7df19cf7-d76c-4bb8-b4c5-xxxxxx
+        output:
+          type: object
+          description: 任务输出信息。
+          properties:
+            task_id:
+              type: string
+              description: 任务 ID。查询有效期 24 小时。
+              example: 5abf2c85-ea81-4cbf-8918-xxxxxx
+            task_status:
+              type: string
+              description: 任务状态。状态流转：PENDING（排队中）→ RUNNING（处理中）→ SUCCEEDED（成功）/ FAILED（失败）。CANCELED 表示任务已取消，UNKNOWN 表示任务不存在或状态未知。
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+                - CANCELED
+                - UNKNOWN
+            submit_time:
+              type: string
+              description: 任务提交时间。格式为 YYYY-MM-DD HH:mm:ss.SSS。
+              example: 2026-03-20 11:48:50.499
+            scheduled_time:
+              type: string
+              description: 任务执行时间。格式为 YYYY-MM-DD HH:mm:ss.SSS。
+              example: 2026-03-20 11:48:50.551
+            end_time:
+              type: string
+              description: 任务完成时间。格式为 YYYY-MM-DD HH:mm:ss.SSS。仅在任务状态为 SUCCEEDED 或 FAILED 时返回。
+              example: 2026-03-20 11:49:46.462
+            orig_prompt:
+              type: string
+              description: 原始输入的 prompt，对应请求参数 prompt。
+            video_url:
+              type: string
+              format: uri
+              description: 视频 URL。仅在 task_status 为 SUCCEEDED 时返回。视频格式为 MP4（H.264 编码）。视频链接暂无过期时间，但不建议将其作为长期存储依赖，请及时下载。
+              example: https://media.pixverseai.cn/xxxx.mp4
+            code:
+              type: string
+              description: 请求失败的错误码。请求成功时不会返回此参数。
+            message:
+              type: string
+              description: 请求失败的详细信息。请求成功时不会返回此参数。
+        usage:
+          type: object
+          description: 输出信息统计，只对成功的结果计数。
+          properties:
+            duration:
+              type: integer
+              description: 生成视频的总视频时长，用于计费。
+            shot_type:
+              type: string
+              description: 生成视频的镜头类型。
+            size:
+              type: string
+              description: 生成视频的分辨率。
+              example: 1280*720
+            fps:
+              type: integer
+              description: 生成视频的帧率。
+              example: 24
+            video_count:
+              type: integer
+              description: 生成视频的数量。固定为 1。
+            audio:
+              type: boolean
+              description: 生成视频是否为有声视频。
+            SR:
+              type: string
+              description: 生成视频的分辨率档位。
+              example: "720"
+    DashScopeErrorResponse:
+      type: object
+      description: DashScope API 错误响应。
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识。可用于问题排查。
+        code:
+          type: string
+          description: 错误码。
+          example: InvalidParameter
+        message:
+          type: string
+          description: 错误详情。
+          example: Invalid model name
+````

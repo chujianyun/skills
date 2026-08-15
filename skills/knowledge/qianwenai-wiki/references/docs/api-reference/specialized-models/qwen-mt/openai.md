@@ -1,0 +1,1044 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Qwen-MT 翻译模型
+
+> 通过 OpenAI 兼容接口调用 Qwen-MT 翻译模型。
+
+## OpenAPI
+
+````yaml post /compatible-mode/v1/chat/completions
+openapi: 3.1.0
+info:
+  title: Qwen-MT Translation API
+  description: 通过 OpenAI 兼容接口或 DashScope 原生接口调用 Qwen-MT 翻译模型。支持基础翻译、术语干预、翻译记忆和领域提示。
+  version: 1.0.0
+servers:
+  - url: https://dashscope.aliyuncs.com
+    description: DashScope
+security:
+  - BearerAuth: []
+paths:
+  /compatible-mode/v1/chat/completions:
+    post:
+      operationId: translateOpenAI
+      summary: OpenAI-compatible
+      description: |-
+        通过 OpenAI 兼容的对话补全接口使用 Qwen-MT 模型翻译文本。支持基础翻译、术语干预、翻译记忆和领域提示。
+
+        支持的模型：`qwen-mt-plus`、`qwen-mt-turbo`、`qwen-mt-flash`、`qwen-mt-lite`。
+
+        非标准参数（`top_k`、`repetition_penalty`、`translation_options`）在 Python SDK 中需通过 `extra_body` 传入，在 Node.js SDK 或 HTTP 调用时作为顶级字段传入。
+
+        > **流式输出行为**：`qwen-mt-flash` 和 `qwen-mt-lite` 返回增量输出。`qwen-mt-plus` 和 `qwen-mt-turbo` 返回非增量输出（每个数据块包含截至当前已生成的完整内容）。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TranslationRequest"
+            example:
+              model: qwen-mt-plus
+              messages:
+                - role: user
+                  content: No me reí después de ver este video
+              translation_options:
+                source_lang: auto
+                target_lang: English
+      responses:
+        "200":
+          description: 翻译结果
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OpenAIChatResponse"
+              example:
+                id: chatcmpl-999a5d8a-f646-4039-968a-167743ae0f22
+                choices:
+                  - finish_reason: stop
+                    index: 0
+                    logprobs: null
+                    message:
+                      content: I didn't laugh after watching this video.
+                      refusal: null
+                      role: assistant
+                      annotations: null
+                      audio: null
+                      function_call: null
+                      tool_calls: null
+                created: 1762346157
+                model: qwen-mt-plus
+                object: chat.completion
+                service_tier: null
+                system_fingerprint: null
+                usage:
+                  completion_tokens: 9
+                  prompt_tokens: 53
+                  total_tokens: 62
+                  completion_tokens_details: null
+                  prompt_tokens_details: null
+            text/event-stream:
+              schema:
+                $ref: "#/components/schemas/OpenAIChatChunkResponse"
+              example:
+                id: chatcmpl-d8aa6596-b366-4ed0-9f6d-2e89247f554e
+                choices:
+                  - delta:
+                      content: I
+                      function_call: null
+                      refusal: null
+                      role: null
+                      tool_calls: null
+                    finish_reason: null
+                    index: 0
+                    logprobs: null
+                created: 1762504029
+                model: qwen-mt-flash
+                object: chat.completion.chunk
+                service_tier: null
+                system_fingerprint: null
+                usage: null
+        "400":
+          description: 请求参数无效
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: 鉴权失败——API Key 无效或缺失
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          description: 超出速率限制
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+      x-codeSamples:
+        - lang: python
+          label: 基础用法
+          source: |-
+            import os
+            from openai import OpenAI
+
+            client = OpenAI(
+              # If you have not configured the environment variable, replace the following line with your API key: api_key="sk-xxx",
+              api_key=os.getenv("DASHSCOPE_API_KEY"),
+              base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+            )
+            messages = [
+              {
+                "role": "user",
+                "content": "No me reí después de ver este video"
+              }
+            ]
+            translation_options = {
+              "source_lang": "auto",
+              "target_lang": "English"
+            }
+
+            completion = client.chat.completions.create(
+              model="qwen-mt-plus",
+              messages=messages,
+              extra_body={
+                "translation_options": translation_options
+              }
+            )
+            print(completion.choices[0].message.content)
+        - lang: javascript
+          label: 基础用法
+          source: |-
+            // Node.js v18 or later is required. Run the code in an ES Module environment.
+            import OpenAI from "openai";
+
+            const openai = new OpenAI(
+              {
+                // If you have not configured the environment variable, replace the following line with your API key: apiKey: "sk-xxx",
+                apiKey: process.env.DASHSCOPE_API_KEY,
+                baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+              }
+            );
+            const completion = await openai.chat.completions.create({
+              model: "qwen-mt-plus",
+              messages: [
+                { role: "user", content: "No me reí después de ver este video" }
+              ],
+              translation_options: {
+                source_lang: "auto",
+                target_lang: "English"
+              }
+            });
+            console.log(JSON.stringify(completion));
+        - lang: curl
+          label: 基础用法
+          source: |-
+            curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
+            -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "model": "qwen-mt-plus",
+              "messages": [{"role": "user", "content": "No me reí después de ver este video"}],
+              "translation_options": {
+                  "source_lang": "auto",
+                  "target_lang": "English"
+                  }
+            }'
+        - lang: python
+          label: 术语干预
+          source: |-
+            import os
+            from openai import OpenAI
+
+            client = OpenAI(
+              # If you have not configured the environment variable, replace the following line with your API key: api_key="sk-xxx",
+              api_key=os.getenv("DASHSCOPE_API_KEY"),
+              base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+            )
+            messages = [
+              {
+                "role": "user",
+                "content": "Este conjunto de biosensores utiliza grafeno, un material novedoso. Su objetivo son los elementos químicos. Su agudo «sentido del olfato» le permite reflejar el estado de salud del cuerpo de forma más profunda y precisa."
+              }
+            ]
+            translation_options = {
+              "source_lang": "auto",
+              "target_lang": "English",
+              "terms": [
+                {
+                  "source": "biosensor",
+                  "target": "biological sensor"
+                },
+                {
+                  "source": "grafeno",
+                  "target": "graphene"
+                },
+                {
+                  "source": "elementos químicos",
+                  "target": "chemical elements"
+                },
+                {
+                  "source": "estado de salud del cuerpo",
+                  "target": "health status of the body"
+                }
+              ]
+            }
+
+            completion = client.chat.completions.create(
+              model="qwen-mt-plus",  # This example uses qwen-mt-plus. You can replace the model name as needed.
+              messages=messages,
+              extra_body={
+                "translation_options": translation_options
+              }
+            )
+            print(completion.choices[0].message.content)
+        - lang: javascript
+          label: 术语干预
+          source: |-
+            // Node.js v18 or later is required. Run the code in an ES Module environment.
+            import OpenAI from "openai";
+
+            const openai = new OpenAI(
+              {
+                // If you have not configured the environment variable, replace the following line with your API key: apiKey: "sk-xxx",
+                apiKey: process.env.DASHSCOPE_API_KEY,
+                baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+              }
+            );
+            const completion = await openai.chat.completions.create({
+              model: "qwen-mt-plus",
+              messages: [
+                { role: "user", content: "Este conjunto de biosensores utiliza grafeno, un material novedoso. Su objetivo son los elementos químicos. Su agudo «sentido del olfato» le permite reflejar el estado de salud del cuerpo de forma más profunda y precisa." }
+              ],
+              translation_options: {
+                source_lang: "auto",
+                target_lang: "English",
+                terms: [
+                  {
+                    "source": "biosensor",
+                    "target": "biological sensor"
+                  },
+                  {
+                    "source": "grafeno",
+                    "target": "graphene"
+                  },
+                  {
+                    "source": "elementos químicos",
+                    "target": "chemical elements"
+                  },
+                  {
+                    "source": "estado de salud del cuerpo",
+                    "target": "health status of the body"
+                  }
+                ]
+              }
+            });
+            console.log(JSON.stringify(completion));
+        - lang: curl
+          label: 术语干预
+          source: |-
+            curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
+            -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "model": "qwen-mt-plus",
+              "messages": [
+                {
+                  "role": "user",
+                  "content": "Este conjunto de biosensores utiliza grafeno, un material novedoso. Su objetivo son los elementos químicos. Su agudo «sentido del olfato» le permite reflejar el estado de salud del cuerpo de forma más profunda y precisa."
+                }
+              ],
+              "translation_options": {
+                "source_lang": "auto",
+                "target_lang": "English",
+                "terms": [
+                  {
+                    "source": "biosensor",
+                    "target": "biological sensor"
+                  },
+                  {
+                    "source": "grafeno",
+                    "target": "graphene"
+                  },
+                  {
+                    "source": "elementos químicos",
+                    "target": "chemical elements"
+                  },
+                  {
+                    "source": "estado de salud del cuerpo",
+                    "target": "health status of the body"
+                  }
+                ]
+              }
+            }'
+        - lang: python
+          label: 翻译记忆
+          source: |-
+            import os
+            from openai import OpenAI
+
+            client = OpenAI(
+              # If you have not configured the environment variable, replace the following line with your API key: api_key="sk-xxx",
+              api_key=os.getenv("DASHSCOPE_API_KEY"),
+              base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+            )
+            messages = [
+              {
+                "role": "user",
+                "content": "El siguiente comando muestra la información de la versión de Thrift instalada."
+              }
+            ]
+            translation_options = {
+              "source_lang": "auto",
+              "target_lang": "English",
+              "tm_list": [
+                {
+                  "source": "Puede utilizar uno de los siguientes métodos para consultar la versión del motor de un clúster:",
+                  "target": "You can use one of the following methods to query the engine version of a cluster:"
+                },
+                {
+                  "source": "La versión de Thrift utilizada por nuestro HBase en la nube es la 0.9.0. Por lo tanto, recomendamos que la versión del cliente también sea la 0.9.0. Puede descargar Thrift 0.9.0 desde aquí. El paquete de código fuente descargado se utilizará posteriormente. Primero debe instalar el entorno de compilación de Thrift. Para la instalación desde el código fuente, puede consultar el sitio web oficial de Thrift.",
+                  "target": "The version of Thrift used by ApsaraDB for HBase is 0.9.0. Therefore, we recommend that you use Thrift 0.9.0 to create a client. Click here to download Thrift 0.9.0. The downloaded source code package will be used later. You must install the Thrift compiling environment first. For more information, see Thrift official website."
+                },
+                {
+                  "source": "Puede instalar el SDK a través de PyPI. El comando de instalación es el siguiente:",
+                  "target": "You can run the following command in Python Package Index (PyPI) to install Elastic Container Instance SDK for Python:"
+                }
+              ]
+            }
+
+            completion = client.chat.completions.create(
+              model="qwen-mt-plus",  # This example uses qwen-mt-plus. You can replace the model name as needed.
+              messages=messages,
+              extra_body={
+                "translation_options": translation_options
+              }
+            )
+            print(completion.choices[0].message.content)
+        - lang: javascript
+          label: 翻译记忆
+          source: |-
+            // Node.js v18 or later is required. Run the code in an ES Module environment.
+            import OpenAI from "openai";
+
+            const openai = new OpenAI(
+              {
+                // If you have not configured the environment variable, replace the following line with your API key: apiKey: "sk-xxx",
+                apiKey: process.env.DASHSCOPE_API_KEY,
+                baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+              }
+            );
+            const completion = await openai.chat.completions.create({
+              model: "qwen-mt-plus",
+              messages: [
+                { role: "user", content: "El siguiente comando muestra la información de la versión de Thrift instalada." }
+              ],
+              translation_options: {
+                source_lang: "auto",
+                target_lang: "English",
+                tm_list: [
+                  {
+                    "source": "Puede utilizar uno de los siguientes métodos para consultar la versión del motor de un clúster:",
+                    "target": "You can use one of the following methods to query the engine version of a cluster:"
+                  },
+                  {
+                    "source": "La versión de Thrift utilizada por nuestro HBase en la nube es la 0.9.0. Por lo tanto, recomendamos que la versión del cliente también sea la 0.9.0. Puede descargar Thrift 0.9.0 desde aquí. El paquete de código fuente descargado se utilizará posteriormente. Primero debe instalar el entorno de compilación de Thrift. Para la instalación desde el código fuente, puede consultar el sitio web oficial de Thrift.",
+                    "target": "The version of Thrift used by ApsaraDB for HBase is 0.9.0. Therefore, we recommend that you use Thrift 0.9.0 to create a client. Click here to download Thrift 0.9.0. The downloaded source code package will be used later. You must install the Thrift compiling environment first. For more information, see Thrift official website."
+                  },
+                  {
+                    "source": "Puede instalar el SDK a través de PyPI. El comando de instalación es el siguiente:",
+                    "target": "You can run the following command in Python Package Index (PyPI) to install Elastic Container Instance SDK for Python:"
+                  }
+                ]
+              }
+            });
+            console.log(JSON.stringify(completion));
+        - lang: curl
+          label: 翻译记忆
+          source: |-
+            curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
+            -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "model": "qwen-mt-plus",
+              "messages": [
+                {
+                  "role": "user",
+                  "content": "El siguiente comando muestra la información de la versión de Thrift instalada."
+                }
+              ],
+              "translation_options": {
+                "source_lang": "auto",
+                "target_lang": "English",
+                "tm_list":[
+                      {"source": "Puede utilizar uno de los siguientes métodos para consultar la versión del motor de un clúster:", "target": "You can use one of the following methods to query the engine version of a cluster:"},
+                      {"source": "La versión de Thrift utilizada por nuestro HBase en la nube es la 0.9.0. Por lo tanto, recomendamos que la versión del cliente también sea la 0.9.0. Puede descargar Thrift 0.9.0 desde aquí. El paquete de código fuente descargado se utilizará posteriormente. Primero debe instalar el entorno de compilación de Thrift. Para la instalación desde el código fuente, puede consultar el sitio web oficial de Thrift.", "target": "The version of Thrift used by ApsaraDB for HBase is 0.9.0. Therefore, we recommend that you use Thrift 0.9.0 to create a client. Click here to download Thrift 0.9.0. The downloaded source code package will be used later. You must install the Thrift compiling environment first. For more information, see Thrift official website."},
+                      {"source": "Puede instalar el SDK a través de PyPI. El comando de instalación es el siguiente:", "target": "You can run the following command in Python Package Index (PyPI) to install Elastic Container Instance SDK for Python:"}
+                ]
+              }
+            }'
+        - lang: python
+          label: 领域提示
+          source: |-
+            import os
+            from openai import OpenAI
+
+            client = OpenAI(
+              # If you have not configured the environment variable, replace the following line with your API key: api_key="sk-xxx",
+              api_key=os.getenv("DASHSCOPE_API_KEY"),
+              base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+            )
+            messages = [
+              {
+                "role": "user",
+                "content": "La segunda instrucción SELECT devuelve un número que indica la cantidad de filas que habría devuelto la primera instrucción SELECT si no se hubiera utilizado la cláusula LIMIT."
+              }
+            ]
+            translation_options = {
+              "source_lang": "auto",
+              "target_lang": "English",
+              "domains": "The sentence is from Ali Cloud IT domain. It mainly involves computer-related software development and usage methods, including many terms related to computer software and hardware. Pay attention to professional troubleshooting terminologies and sentence patterns when translating. Translate into this IT domain style."
+            }
+
+            completion = client.chat.completions.create(
+              model="qwen-mt-plus",
+              messages=messages,
+              extra_body={
+                "translation_options": translation_options
+              }
+            )
+            print(completion.choices[0].message.content)
+        - lang: javascript
+          label: 领域提示
+          source: |-
+            // Node.js v18 or later is required. Run the code in an ES Module environment.
+            import OpenAI from "openai";
+
+            const openai = new OpenAI(
+              {
+                // If you have not configured the environment variable, replace the following line with your API key: apiKey: "sk-xxx",
+                apiKey: process.env.DASHSCOPE_API_KEY,
+                baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+              }
+            );
+            const completion = await openai.chat.completions.create({
+
+              model: "qwen-mt-plus",
+              messages: [
+                { role: "user", content: "La segunda instrucción SELECT devuelve un número que indica la cantidad de filas que habría devuelto la primera instrucción SELECT si no se hubiera utilizado la cláusula LIMIT." }
+              ],
+              translation_options: {
+                source_lang: "auto",
+                target_lang: "English",
+                domains: "The sentence is from Ali Cloud IT domain. It mainly involves computer-related software development and usage methods, including many terms related to computer software and hardware. Pay attention to professional troubleshooting terminologies and sentence patterns when translating. Translate into this IT domain style."
+              }
+            });
+            console.log(JSON.stringify(completion));
+        - lang: curl
+          label: 领域提示
+          source: |-
+            curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
+            -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "model": "qwen-mt-plus",
+              "messages": [
+                {
+                  "role": "user",
+                  "content": "La segunda instrucción SELECT devuelve un número que indica la cantidad de filas que habría devuelto la primera instrucción SELECT si no se hubiera utilizado la cláusula LIMIT."
+                }
+              ],
+              "translation_options": {
+                "source_lang": "auto",
+                "target_lang": "English",
+                "domains": "The sentence is from Ali Cloud IT domain. It mainly involves computer-related software development and usage methods, including many terms related to computer software and hardware. Pay attention to professional troubleshooting terminologies and sentence patterns when translating. Translate into this IT domain style."
+              }
+            }'
+        - lang: python
+          label: 流式输出
+          source: |-
+            import os
+            from openai import OpenAI
+
+            client = OpenAI(
+              # If you have not configured the environment variable, replace the following line with your API key: api_key="sk-xxx",
+              api_key=os.getenv("DASHSCOPE_API_KEY"),
+              base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+            )
+            messages = [
+              {
+                "role": "user",
+                "content": "No me reí después de ver este video"
+              }
+            ]
+            translation_options = {
+              "source_lang": "auto",
+              "target_lang": "English"
+            }
+
+            completion = client.chat.completions.create(
+              model="qwen-mt-plus",
+              messages=messages,
+              stream=True,
+              extra_body={
+                "translation_options": translation_options
+              }
+            )
+            for chunk in completion:
+              print(chunk.model_dump_json())
+        - lang: javascript
+          label: 流式输出
+          source: |-
+            // Node.js v18 or later is required. Run the code in an ES Module environment.
+            import OpenAI from "openai";
+
+            const openai = new OpenAI(
+              {
+                // If you have not configured the environment variable, replace the following line with your API key: apiKey: "sk-xxx",
+                apiKey: process.env.DASHSCOPE_API_KEY,
+                baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+              }
+            );
+
+            async function main() {
+              const completion = await openai.chat.completions.create({
+                model: "qwen-mt-plus",
+                messages: [
+                  { role: "user", content: "No me reí después de ver este video" }
+                ],
+                stream: true,
+                translation_options: {
+                  source_lang: "auto",
+                  target_lang: "English"
+                }
+              });
+              for await (const chunk of completion) {
+                console.log(JSON.stringify(chunk));
+              }
+            }
+
+            main();
+        - lang: curl
+          label: 流式输出
+          source: |-
+            curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
+            -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "model": "qwen-mt-plus",
+              "messages": [{"role": "user", "content": "No me reí después de ver este video"}],
+              "stream": true,
+              "translation_options": {
+                  "source_lang": "auto",
+                  "target_lang": "English"
+              }
+            }'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+  schemas:
+    TranslationRequest:
+      type: object
+      required:
+        - model
+        - messages
+        - translation_options
+      properties:
+        model:
+          type: string
+          enum:
+            - qwen-mt-plus
+            - qwen-mt-turbo
+            - qwen-mt-flash
+            - qwen-mt-lite
+          description: 模型名称。
+          example: qwen-mt-plus
+        messages:
+          type: array
+          description: 提供待翻译文本的消息数组。仅支持 user 消息。
+          items:
+            $ref: "#/components/schemas/TranslationMessage"
+        stream:
+          type: boolean
+          default: false
+          description: 是否以流式模式返回响应。为 `true` 时，以服务器发送事件（SSE）数据块形式返回响应。`qwen-mt-flash` 和 `qwen-mt-lite` 返回增量输出；`qwen-mt-plus` 和 `qwen-mt-turbo` 返回非增量输出（每个数据块包含截至当前已生成的完整内容）。
+        stream_options:
+          type: object
+          description: 流式输出配置。仅在 `stream` 为 `true` 时生效。
+          properties:
+            include_usage:
+              type: boolean
+              default: false
+              description: 是否在最后一个数据块中包含 Token 用量信息。
+        max_tokens:
+          type: integer
+          description: 最大生成 Token 数。若输出超过此限制，则截断。默认值为模型的最大输出长度。
+        seed:
+          type: integer
+          description: 用于结果可复现的随机数种子。范围：[0, 2^31-1]。
+        temperature:
+          type: number
+          default: 0.65
+          description: 控制输出多样性的采样温度。值越高，文本越多样。范围：[0, 2)。`temperature` 和 `top_p` 只需设置其一。
+        top_p:
+          type: number
+          default: 0.8
+          description: 核采样概率阈值。值越高，文本越多样。范围：(0, 1.0]。`temperature` 和 `top_p` 只需设置其一。
+        top_k:
+          type: integer
+          default: 1
+          description: 采样候选 Token 集大小。值越大，随机性越强。若为 `None` 或大于 100，则仅 `top_p` 生效。必须 >= 0。**非标准参数**：在 Python SDK 中需通过 `extra_body` 传入。
+        repetition_penalty:
+          type: number
+          default: 1
+          description: 重复序列惩罚系数。值越高，重复越少。1.0 表示不惩罚。必须 > 0。**非标准参数**：在 Python SDK 中需通过 `extra_body` 传入。
+        translation_options:
+          $ref: "#/components/schemas/TranslationOptions"
+          description: 翻译参数。**非标准参数**：在 Python SDK 中需通过 `extra_body` 传入。
+    DashScopeTranslationRequest:
+      type: object
+      required:
+        - model
+        - input
+      properties:
+        model:
+          type: string
+          enum:
+            - qwen-mt-plus
+            - qwen-mt-turbo
+            - qwen-mt-flash
+            - qwen-mt-lite
+          description: 模型名称。
+          example: qwen-mt-plus
+        input:
+          type: object
+          required:
+            - messages
+          description: 包含待翻译消息的输入数据。
+          properties:
+            messages:
+              type: array
+              description: 提供待翻译文本的消息数组。仅支持 user 消息。
+              items:
+                $ref: "#/components/schemas/TranslationMessage"
+        parameters:
+          type: object
+          description: 翻译请求的可选参数。
+          properties:
+            max_tokens:
+              type: integer
+              description: 最大生成 Token 数。若输出超过此限制，则截断。默认值为模型的最大输出长度。
+            seed:
+              type: integer
+              description: 用于结果可复现的随机数种子。范围：[0, 2^31-1]。
+            temperature:
+              type: number
+              default: 0.65
+              description: 控制输出多样性的采样温度。值越高，文本越多样。范围：[0, 2)。`temperature` 和 `top_p` 只需设置其一。
+            top_p:
+              type: number
+              default: 0.8
+              description: 核采样概率阈值。值越高，文本越多样。范围：(0, 1.0]。`temperature` 和 `top_p` 只需设置其一。
+            top_k:
+              type: integer
+              default: 1
+              description: 采样候选 Token 集大小。值越大，随机性越强。若为 `None` 或大于 100，则仅 `top_p` 生效。必须 >= 0。
+            repetition_penalty:
+              type: number
+              default: 1
+              description: 重复序列惩罚系数。值越高，重复越少。1.0 表示不惩罚。必须 > 0。
+            translation_options:
+              $ref: "#/components/schemas/TranslationOptions"
+    TranslationOptions:
+      type: object
+      required:
+        - source_lang
+        - target_lang
+      description: 翻译专用参数。
+      properties:
+        source_lang:
+          type: string
+          description: 源语言的完整英文名称（如 `Spanish`、`Chinese`、`Japanese`）。设为 `auto` 可自动检测语言。完整列表请参阅[支持的语言](#)。
+          example: auto
+        target_lang:
+          type: string
+          description: 目标语言的完整英文名称（如 `English`、`Chinese`、`French`）。完整列表请参阅[支持的语言](#)。
+          example: English
+        terms:
+          type: array
+          description: 术语干预条目。每个条目将源语言术语映射到期望的目标语言译文，以确保术语一致性。
+          items:
+            $ref: "#/components/schemas/TermEntry"
+        tm_list:
+          type: array
+          description: 翻译记忆条目。每个条目将源语言句子与其参考译文配对，以历史翻译指导模型。
+          items:
+            $ref: "#/components/schemas/TranslationMemoryEntry"
+        domains:
+          type: string
+          description: 描述文本主题领域或风格的领域提示。必须使用英文。示例：`"The sentence is from Ali Cloud IT domain. It mainly involves computer-related software development and usage methods."`
+          example: The sentence is from Ali Cloud IT domain. It mainly involves computer-related software development and usage methods, including many terms related to computer software and hardware. Pay attention to professional troubleshooting terminologies and sentence patterns when translating. Translate into this IT domain style.
+    TranslationMessage:
+      type: object
+      required:
+        - role
+        - content
+      description: 包含待翻译文本的用户消息。仅支持 `user` 角色。
+      properties:
+        role:
+          type: string
+          enum:
+            - user
+          description: 消息角色。必须为 `user`。
+          example: user
+        content:
+          type: string
+          description: 待翻译的句子或文本。
+          example: No me reí después de ver este video
+    TermEntry:
+      type: object
+      required:
+        - source
+        - target
+      description: 术语干预条目，将源语言术语映射到目标语言译文。
+      properties:
+        source:
+          type: string
+          description: 源语言中的术语。
+          example: grafeno
+        target:
+          type: string
+          description: 该术语在目标语言中的期望译文。
+          example: graphene
+    TranslationMemoryEntry:
+      type: object
+      required:
+        - source
+        - target
+      description: 翻译记忆条目，将源语言句子与其参考译文配对。
+      properties:
+        source:
+          type: string
+          description: 源语言中的语句。
+          example: "Puede utilizar uno de los siguientes métodos para consultar la versión del motor de un clúster:"
+        target:
+          type: string
+          description: 目标语言中的参考译文。
+          example: "You can use one of the following methods to query the engine version of a cluster:"
+    OpenAIChatResponse:
+      type: object
+      description: 对话补全响应（非流式）。
+      properties:
+        id:
+          type: string
+          description: 请求唯一标识符。
+        choices:
+          type: array
+          description: 模型生成的内容。
+          items:
+            type: object
+            properties:
+              finish_reason:
+                type: string
+                enum:
+                  - stop
+                  - length
+                description: 模型停止生成的原因。`stop`：输出已完成。`length`：达到输出长度限制。
+              index:
+                type: integer
+                description: 该选项在 choices 数组中的索引。
+              logprobs:
+                type: object
+                nullable: true
+                description: 当前固定为 `null`。
+              message:
+                type: object
+                description: 模型输出的消息。
+                properties:
+                  content:
+                    type: string
+                    description: 翻译结果。
+                  refusal:
+                    type: string
+                    nullable: true
+                    description: 当前固定为 `null`。
+                  role:
+                    type: string
+                    description: 固定为 `assistant`。
+                  annotations:
+                    type: object
+                    nullable: true
+                    description: 当前固定为 `null`。
+                  audio:
+                    type: object
+                    nullable: true
+                    description: 当前固定为 `null`。
+                  function_call:
+                    type: object
+                    nullable: true
+                    description: 当前固定为 `null`。
+                  tool_calls:
+                    type: array
+                    nullable: true
+                    description: 当前固定为 `null`。
+        created:
+          type: integer
+          description: 请求创建时的 UNIX 时间戳。
+        model:
+          type: string
+          description: 本次请求使用的模型。
+        object:
+          type: string
+          description: 固定为 `chat.completion`。
+        service_tier:
+          type: string
+          nullable: true
+          description: 当前固定为 `null`。
+        system_fingerprint:
+          type: string
+          nullable: true
+          description: 当前固定为 `null`。
+        usage:
+          type: object
+          description: Token 用量信息。
+          properties:
+            completion_tokens:
+              type: integer
+              description: 模型输出的 Token 数。
+            prompt_tokens:
+              type: integer
+              description: 输入的 Token 数。
+            total_tokens:
+              type: integer
+              description: 总消耗 Token 数（`prompt_tokens` + `completion_tokens`）。
+            completion_tokens_details:
+              type: object
+              nullable: true
+              description: 当前固定为 `null`。
+            prompt_tokens_details:
+              type: object
+              nullable: true
+              description: 当前固定为 `null`。
+    OpenAIChatChunkResponse:
+      type: object
+      description: 对话补全数据块（流式）。`qwen-mt-flash`/`qwen-mt-lite` 返回增量内容；`qwen-mt-plus`/`qwen-mt-turbo` 返回非增量内容（截至当前已生成的完整内容）。
+      properties:
+        id:
+          type: string
+          description: 请求唯一标识符。所有数据块共享同一 ID。
+        choices:
+          type: array
+          description: 生成的内容。当 `include_usage` 为 `true` 时，最后一个数据块中为空。
+          items:
+            type: object
+            properties:
+              delta:
+                type: object
+                description: 流式模式下的增量内容。
+                properties:
+                  content:
+                    type: string
+                    description: 翻译结果片段。
+                  function_call:
+                    type: object
+                    nullable: true
+                    description: 当前固定为 `null`。
+                  refusal:
+                    type: object
+                    nullable: true
+                    description: 当前固定为 `null`。
+                  role:
+                    type: string
+                    nullable: true
+                    description: 消息角色。仅在第一个数据块中设置（`assistant`）。
+              finish_reason:
+                type: string
+                nullable: true
+                enum:
+                  - stop
+                  - length
+                  - null
+                description: 生成过程中为 `null`，生成完成时为 `stop`，达到输出限制时为 `length`。
+              index:
+                type: integer
+                description: 该选项的索引。
+              logprobs:
+                type: object
+                nullable: true
+                description: 当前固定为 `null`。
+        created:
+          type: integer
+          description: UNIX 时间戳。所有数据块共享同一时间戳。
+        model:
+          type: string
+          description: 本次请求使用的模型。
+        object:
+          type: string
+          description: 固定为 `chat.completion.chunk`。
+        service_tier:
+          type: string
+          nullable: true
+          description: 当前固定为 `null`。
+        system_fingerprint:
+          type: string
+          nullable: true
+          description: 当前固定为 `null`。
+        usage:
+          type: object
+          nullable: true
+          description: Token 用量。仅当 `include_usage` 为 `true` 时在最后一个数据块中返回。
+          properties:
+            completion_tokens:
+              type: integer
+              description: 模型输出的 Token 数。
+            prompt_tokens:
+              type: integer
+              description: 输入的 Token 数。
+            total_tokens:
+              type: integer
+              description: 总消耗 Token 数。
+            completion_tokens_details:
+              type: object
+              nullable: true
+              description: 当前固定为 `null`。
+            prompt_tokens_details:
+              type: object
+              nullable: true
+              description: 当前固定为 `null`。
+    DashScopeResponse:
+      type: object
+      description: DashScope API 响应（流式与非流式结构相同）。
+      properties:
+        status_code:
+          type: integer
+          description: 请求状态码。`200` 表示成功。Java SDK 不返回此参数，失败时抛出异常。
+        request_id:
+          type: string
+          description: 请求的唯一标识符。在 Java SDK 中为 `requestId`。
+        code:
+          type: string
+          description: 错误码。成功时为空字符串。仅 Python SDK 返回此参数。
+        message:
+          type: string
+          description: 错误信息。成功时为空字符串。仅 Python SDK 返回此参数。
+        output:
+          type: object
+          description: 模型的输出信息。
+          properties:
+            text:
+              type: string
+              nullable: true
+              description: 当前固定为 `null`。
+            finish_reason:
+              type: string
+              nullable: true
+              enum:
+                - stop
+                - length
+                - null
+              description: 生成过程中为 `null`，模型自然停止时为 `stop`，达到输出限制时为 `length`。
+            choices:
+              type: array
+              description: 模型的输出信息。
+              items:
+                type: object
+                properties:
+                  finish_reason:
+                    type: string
+                    nullable: true
+                    enum:
+                      - stop
+                      - length
+                      - null
+                    description: 生成过程中为 `null`，模型自然停止时为 `stop`，达到输出限制时为 `length`。
+                  message:
+                    type: object
+                    description: 模型输出的消息。
+                    properties:
+                      role:
+                        type: string
+                        description: 固定为 `assistant`。
+                      content:
+                        type: string
+                        description: 翻译结果。
+            model_name:
+              type: string
+              description: 本次请求使用的模型名称。
+        usage:
+          type: object
+          description: Token 用量信息。
+          properties:
+            input_tokens:
+              type: integer
+              description: 输入 Token 数。
+            output_tokens:
+              type: integer
+              description: 输出 Token 数。
+            total_tokens:
+              type: integer
+              description: 总消耗 Token 数（`input_tokens` + `output_tokens`）。
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: 错误信息。
+            type:
+              type: string
+              description: 错误类型。
+            code:
+              type: string
+              description: 错误码。
+            param:
+              type: string
+              nullable: true
+              description: 导致错误的参数。
+````

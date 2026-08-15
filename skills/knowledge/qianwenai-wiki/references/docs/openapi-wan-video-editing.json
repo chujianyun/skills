@@ -1,0 +1,565 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Wan 视频编辑 API",
+    "description": "Wan 统一视频编辑 API，支持多模态输入（文本、图像、视频），提供五大核心能力：多图参考、视频重绘、局部编辑、视频续写和画面扩展。",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dashscope.aliyuncs.com/api/v1",
+      "description": "千问AI平台"
+    }
+  ],
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/services/aigc/video-generation/video-synthesis": {
+      "post": {
+        "operationId": "createVideoEditing",
+        "summary": "创建视频编辑任务",
+        "description": "创建视频编辑任务。",
+        "parameters": [
+          {
+            "name": "X-DashScope-Async",
+            "in": "header",
+            "required": true,
+            "description": "必须设置为 `enable` 以创建异步任务。",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "enable"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VideoEditingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "任务创建成功。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncTaskSubmitResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数无效。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "label": "cURL - 多图参考",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \\\n--header 'X-DashScope-Async: enable' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"wanx2.1-vace-plus\",\n  \"input\": {\n    \"function\": \"image_reference\",\n    \"prompt\": \"In the video, a girl gracefully walks out from a misty, ancient forest. Her steps are light, and the camera captures her every nimble moment. When she stops and looks around at the lush woods, a smile of surprise and joy blossoms on her face. This scene, frozen in a moment of interplay between light and shadow, records her wonderful encounter with nature.\",\n    \"ref_images_url\": [\n      \"http://wanx.alicdn.com/material/20250318/image_reference_2_5_16.png\",\n      \"http://wanx.alicdn.com/material/20250318/image_reference_1_5_16.png\"\n    ]\n  },\n  \"parameters\": {\n    \"prompt_extend\": true,\n    \"obj_or_bg\": [\"obj\",\"bg\"],\n    \"size\": \"1280*720\"\n  }\n}'"
+          },
+          {
+            "lang": "python",
+            "label": "Python - 多图参考",
+            "source": "import os\nimport requests\nimport time\n\nBASE_URL = \"https://dashscope.aliyuncs.com/api/v1\"\nAPI_KEY = os.getenv(\"DASHSCOPE_API_KEY\", \"YOUR_API_KEY\")\nheaders = {\"X-DashScope-Async\": \"enable\", \"Authorization\": f\"Bearer {API_KEY}\", \"Content-Type\": \"application/json\"}\n\ndef create_task():\n  \"\"\"创建视频合成任务，返回 task_id\"\"\"\n  try:\n    resp = requests.post(\n      f\"{BASE_URL}/services/aigc/video-generation/video-synthesis\",\n      headers={\n        \"X-DashScope-Async\": \"enable\",\n        \"Authorization\": f\"Bearer {API_KEY}\",\n        \"Content-Type\": \"application/json\"\n      },\n      json={\n        \"model\": \"wanx2.1-vace-plus\",\n        \"input\": {\n          \"function\": \"image_reference\",\n          \"prompt\": \"In the video, a girl walks out from the depths of an ancient, misty forest. Her steps are light, and the camera captures her every graceful moment. When she stops and looks around at the lush trees, a smile of surprise and joy blossoms on her face. This scene, frozen in a moment of intertwined light and shadow, records her wonderful encounter with nature.\",\n          \"ref_images_url\": [\n            \"http://wanx.alicdn.com/material/20250318/image_reference_2_5_16.png\",\n            \"http://wanx.alicdn.com/material/20250318/image_reference_1_5_16.png\"\n          ]\n        },\n        \"parameters\": {\"prompt_extend\": True, \"obj_or_bg\": [\"obj\", \"bg\"], \"size\": \"1280*720\"}\n      },\n      timeout=30\n    )\n    resp.raise_for_status()\n    return resp.json()[\"output\"][\"task_id\"]\n  except requests.RequestException as e:\n    raise RuntimeError(f\"Failed to create task: {e}\")\n\ndef poll_result(task_id):\n  while True:\n    try:\n      resp = requests.get(\n        f\"{BASE_URL}/tasks/{task_id}\",\n        headers={\"Authorization\": f\"Bearer {API_KEY}\"},\n        timeout=10\n      )\n      resp.raise_for_status()\n      data = resp.json()[\"output\"]\n      status = data[\"task_status\"]\n      print(f\"Status: {status}\")\n\n      if status == \"SUCCEEDED\":\n        return data[\"video_url\"]\n      elif status in (\"FAILED\", \"CANCELLED\"):\n        raise RuntimeError(f\"Task failed: {data.get('message', 'Unknown error')}\")\n      time.sleep(15)\n    except requests.RequestException as e:\n      print(f\"Polling exception: {e}, retrying in 15 seconds...\")\n      time.sleep(15)\n\n\nif __name__ == \"__main__\":\n  task_id = create_task()\n  print(f\"Task ID: {task_id}\")\n  video_url = poll_result(task_id)\n  print(f\"\\nVideo generated successfully: {video_url}\")"
+          },
+          {
+            "lang": "java",
+            "label": "Java - 多图参考",
+            "source": "import org.json.*;\nimport java.io.*;\nimport java.net.*;\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class VideoSynthesis {\n  static final String BASE_URL = \"https://dashscope.aliyuncs.com/api/v1\";\n  static final String API_KEY = System.getenv(\"DASHSCOPE_API_KEY\");\n  private static final Map<String, String> COMMON_HEADERS = new HashMap<>();\n\n  static {\n    if (API_KEY == null || API_KEY.isEmpty()) {\n      throw new IllegalStateException(\"DASHSCOPE_API_KEY is not set\");\n    }\n    COMMON_HEADERS.put(\"Authorization\", \"Bearer \" + API_KEY);\n    System.setProperty(\"http.keepAlive\", \"true\");\n    System.setProperty(\"http.maxConnections\", \"20\");\n  }\n\n  public static boolean isValidUserUrl(String urlString) {\n    try {\n      URL url = new URL(urlString);\n      String protocol = url.getProtocol();\n      if (!\"https\".equalsIgnoreCase(protocol) && !\"http\".equalsIgnoreCase(protocol)) {\n        return false;\n      }\n\n      return true;\n    } catch (Exception e) {\n      System.err.println(\"Invalid URL: \" + e.getMessage());\n      return false;\n    }\n  }\n\n  private static String httpPost(String path, JSONObject body) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"POST\");\n    conn.setRequestProperty(\"Content-Type\", \"application/json\");\n    conn.setDoOutput(true);\n    try (OutputStream os = conn.getOutputStream()) {\n      os.write(body.toString().getBytes(\"UTF-8\"));\n    }\n    return readResponse(conn);\n  }\n\n  private static String httpGet(String path) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"GET\");\n    return readResponse(conn);\n  }\n\n  private static HttpURLConnection createConnection(String path, String method) throws Exception {\n    URL url = new URL(BASE_URL + path);\n    HttpURLConnection conn = (HttpURLConnection) url.openConnection();\n\n    conn.setRequestMethod(method);\n    conn.setConnectTimeout(30000);\n    conn.setReadTimeout(60000);\n    conn.setInstanceFollowRedirects(true);\n\n    for (Map.Entry<String, String> entry : COMMON_HEADERS.entrySet()) {\n      conn.setRequestProperty(entry.getKey(), entry.getValue());\n    }\n\n    if (path.contains(\"video-synthesis\")) {\n      conn.setRequestProperty(\"X-DashScope-Async\", \"enable\");\n    }\n\n    conn.setRequestProperty(\"Accept\", \"application/json\");\n\n    return conn;\n  }\n\n  private static String readResponse(HttpURLConnection conn) throws IOException {\n    InputStream is = (conn.getResponseCode() >= 200 && conn.getResponseCode() < 400)\n        ? conn.getInputStream()\n        : conn.getErrorStream();\n\n    if (is == null) {\n      throw new IOException(\"Cannot get response stream, response code: \" + conn.getResponseCode());\n    }\n\n    try (BufferedReader br = new BufferedReader(new InputStreamReader(is, \"UTF-8\"))) {\n      StringBuilder sb = new StringBuilder();\n      String line;\n      while ((line = br.readLine()) != null) {\n        sb.append(line);\n        sb.append(\"\\n\");\n      }\n      return sb.toString();\n    }\n  }\n\n  public static String createTask() throws Exception {\n    JSONObject body = new JSONObject()\n        .put(\"model\", \"wanx2.1-vace-plus\")\n        .put(\"input\", new JSONObject()\n            .put(\"function\", \"image_reference\")\n            .put(\"prompt\", \"In the video, a girl walks out from the depths of an ancient, misty forest. Her steps are light, and the camera captures her every graceful moment. When she stops and looks around at the lush trees, a smile of surprise and joy blossoms on her face. This scene, frozen in a moment of intertwined light and shadow, records her wonderful encounter with nature.\")\n            .put(\"ref_images_url\", new JSONArray()\n                .put(\"http://wanx.alicdn.com/material/20250318/image_reference_2_5_16.png\")\n                .put(\"http://wanx.alicdn.com/material/20250318/image_reference_1_5_16.png\")))\n        .put(\"parameters\", new JSONObject()\n            .put(\"prompt_extend\", true)\n            .put(\"obj_or_bg\", new JSONArray().put(\"obj\").put(\"bg\"))\n            .put(\"size\", \"1280*720\"));\n\n    String resp = httpPost(\"/services/aigc/video-generation/video-synthesis\", body);\n    JSONObject jsonResponse = new JSONObject(resp);\n\n    if (jsonResponse.has(\"code\") && jsonResponse.getInt(\"code\") != 200) {\n      String errorMessage = jsonResponse.optString(\"message\", \"Unknown error\");\n      throw new RuntimeException(\"Failed to create task: \" + errorMessage + \", details: \" + resp);\n    }\n    JSONObject output = jsonResponse.getJSONObject(\"output\");\n    return output.getString(\"task_id\");\n  }\n\n  public static String pollResult(String taskId) throws Exception {\n    while (true) {\n      String resp = httpGet(\"/tasks/\" + taskId);\n      JSONObject responseJson = new JSONObject(resp);\n\n      if (!responseJson.has(\"output\")) {\n        throw new RuntimeException(\"API response is missing the 'output' field: \" + resp);\n      }\n\n      JSONObject output = responseJson.getJSONObject(\"output\");\n      String status = output.getString(\"task_status\");\n      System.out.println(\"Status: \" + status);\n\n      if (\"SUCCEEDED\".equals(status)) {\n        return output.getString(\"video_url\");\n      } else if (\"FAILED\".equals(status) || \"CANCELLED\".equals(status)) {\n        String message = output.optString(\"message\", \"Unknown error\");\n        throw new RuntimeException(\"Task failed: \" + message + \", Task ID: \" + taskId + \", details: \" + resp);\n      }\n      Thread.sleep(15000);\n    }\n  }\n\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Creating video synthesis task...\");\n      String taskId = createTask();\n      System.out.println(\"Task created successfully, Task ID: \" + taskId);\n      System.out.println(\"Polling for task result...\");\n      String videoUrl = pollResult(taskId);\n      System.out.println(\"Video URL: \" + videoUrl);\n    } catch (Exception e) {\n      System.err.println(\"An error occurred: \" + e.getMessage());\n      e.printStackTrace();\n    }\n  }\n\n}"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 视频重绘",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \\\n--header 'X-DashScope-Async: enable' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"wanx2.1-vace-plus\",\n  \"input\": {\n    \"function\": \"video_repainting\",\n    \"prompt\": \"The video shows a black steampunk-style car driven by a gentleman. The car is decorated with gears and copper pipes. The background features a steam-powered candy factory and retro elements, creating a vintage and playful scene.\",\n    \"video_url\": \"http://wanx.alicdn.com/material/20250318/video_repainting_1.mp4\"\n  },\n  \"parameters\": {\n    \"prompt_extend\": false,\n    \"control_condition\": \"depth\"\n  }\n}'"
+          },
+          {
+            "lang": "python",
+            "label": "Python - 视频重绘",
+            "source": "import os\nimport requests\nimport time\n\nBASE_URL = \"https://dashscope.aliyuncs.com/api/v1\"\nAPI_KEY = os.getenv(\"DASHSCOPE_API_KEY\", \"YOUR_API_KEY\")\n\ndef create_task():\n  \"\"\"创建视频重绘任务，返回 task_id\"\"\"\n  try:\n    resp = requests.post(\n      f\"{BASE_URL}/services/aigc/video-generation/video-synthesis\",\n      headers={\n        \"X-DashScope-Async\": \"enable\",\n        \"Authorization\": f\"Bearer {API_KEY}\",\n        \"Content-Type\": \"application/json\"\n      },\n      json={\n        \"model\": \"wanx2.1-vace-plus\",\n        \"input\": {\n          \"function\": \"video_repainting\",\n          \"prompt\": \"The video shows a black steampunk-style car driven by a gentleman, adorned with gears and copper pipes. The background is a steam-powered candy factory with retro elements, creating a vintage and playful scene.\",\n          \"video_url\": \"http://wanx.alicdn.com/material/20250318/video_repainting_1.mp4\"\n        },\n        \"parameters\": {\n          \"prompt_extend\": False, # 建议视频重绘时关闭提示词改写。\n          \"control_condition\": \"depth\" # 可选：posebodyface、posebody、depth、scribble\n        }\n      },\n      timeout=30\n    )\n    resp.raise_for_status()\n    return resp.json()[\"output\"][\"task_id\"]\n  except requests.RequestException as e:\n    raise RuntimeError(f\"Failed to create task: {e}\")\n\ndef poll_result(task_id):\n  while True:\n    try:\n      resp = requests.get(\n        f\"{BASE_URL}/tasks/{task_id}\",\n        headers={\"Authorization\": f\"Bearer {API_KEY}\"},\n        timeout=10\n      )\n      resp.raise_for_status()\n      data = resp.json()[\"output\"]\n      status = data[\"task_status\"]\n      print(f\"Status: {status}\")\n\n      if status == \"SUCCEEDED\":\n        return data[\"video_url\"]\n      elif status in (\"FAILED\", \"CANCELLED\"):\n        raise RuntimeError(f\"Task failed: {data.get('message', 'Unknown error')}\")\n      time.sleep(15)\n    except requests.RequestException as e:\n      print(f\"Polling exception: {e}, retrying in 15 seconds...\")\n      time.sleep(15)\n\nif __name__ == \"__main__\":\n  task_id = create_task()\n  print(f\"Task ID: {task_id}\")\n  video_url = poll_result(task_id)\n  print(f\"\\nVideo generated successfully: {video_url}\")"
+          },
+          {
+            "lang": "java",
+            "label": "Java - 视频重绘",
+            "source": "import org.json.*;\nimport java.io.*;\nimport java.net.*;\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class VideoRepainting {\n  static final String BASE_URL = \"https://dashscope.aliyuncs.com/api/v1\";\n  static final String API_KEY = System.getenv(\"DASHSCOPE_API_KEY\");\n  private static final Map<String, String> COMMON_HEADERS = new HashMap<>();\n\n  static {\n    if (API_KEY == null || API_KEY.isEmpty()) {\n      throw new IllegalStateException(\"DASHSCOPE_API_KEY is not set\");\n    }\n    COMMON_HEADERS.put(\"Authorization\", \"Bearer \" + API_KEY);\n    System.setProperty(\"http.keepAlive\", \"true\");\n    System.setProperty(\"http.maxConnections\", \"20\");\n  }\n\n  private static String httpPost(String path, JSONObject body) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"POST\");\n    conn.setRequestProperty(\"Content-Type\", \"application/json\");\n    conn.setDoOutput(true);\n    try (OutputStream os = conn.getOutputStream()) {\n      os.write(body.toString().getBytes(\"UTF-8\"));\n    }\n    return readResponse(conn);\n  }\n\n  private static String httpGet(String path) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"GET\");\n    return readResponse(conn);\n  }\n\n  private static HttpURLConnection createConnection(String path, String method) throws Exception {\n    URL url = new URL(BASE_URL + path);\n    HttpURLConnection conn = (HttpURLConnection) url.openConnection();\n    conn.setRequestMethod(method);\n    conn.setConnectTimeout(30000);\n    conn.setReadTimeout(60000);\n    conn.setInstanceFollowRedirects(true);\n    for (Map.Entry<String, String> entry : COMMON_HEADERS.entrySet()) {\n      conn.setRequestProperty(entry.getKey(), entry.getValue());\n    }\n    if (path.contains(\"video-synthesis\")) {\n      conn.setRequestProperty(\"X-DashScope-Async\", \"enable\");\n    }\n    conn.setRequestProperty(\"Accept\", \"application/json\");\n    return conn;\n  }\n\n  private static String readResponse(HttpURLConnection conn) throws IOException {\n    InputStream is = (conn.getResponseCode() >= 200 && conn.getResponseCode() < 400)\n        ? conn.getInputStream()\n        : conn.getErrorStream();\n    if (is == null) throw new IOException(\"Cannot get response stream, response code: \" + conn.getResponseCode());\n    try (BufferedReader br = new BufferedReader(new InputStreamReader(is, \"UTF-8\"))) {\n      StringBuilder sb = new StringBuilder();\n      String line;\n      while ((line = br.readLine()) != null) {\n        sb.append(line).append(\"\\n\");\n      }\n      return sb.toString();\n    }\n  }\n\n  public static String createTask() throws Exception {\n    JSONObject body = new JSONObject()\n        .put(\"model\", \"wanx2.1-vace-plus\")\n        .put(\"input\", new JSONObject()\n            .put(\"function\", \"video_repainting\")\n            .put(\"prompt\", \"The video shows a black steampunk-style car driven by a gentleman, adorned with gears and copper pipes. The background is a steam-powered candy factory with retro elements, creating a vintage and playful scene.\")\n            .put(\"video_url\", \"http://wanx.alicdn.com/material/20250318/video_repainting_1.mp4\"))\n        .put(\"parameters\", new JSONObject()\n            .put(\"prompt_extend\", false)\n            .put(\"control_condition\", \"depth\"));\n\n    String resp = httpPost(\"/services/aigc/video-generation/video-synthesis\", body);\n    JSONObject jsonResponse = new JSONObject(resp);\n\n    if (jsonResponse.has(\"code\") && jsonResponse.getInt(\"code\") != 200) {\n      String errorMessage = jsonResponse.optString(\"message\", \"Unknown error\");\n      throw new RuntimeException(\"Failed to create task: \" + errorMessage);\n    }\n    return jsonResponse.getJSONObject(\"output\").getString(\"task_id\");\n  }\n\n  public static String pollResult(String taskId) throws Exception {\n    while (true) {\n      String resp = httpGet(\"/tasks/\" + taskId);\n      JSONObject output = new JSONObject(resp).getJSONObject(\"output\");\n      String status = output.getString(\"task_status\");\n      System.out.println(\"Status: \" + status);\n\n      if (\"SUCCEEDED\".equals(status)) {\n        return output.getString(\"video_url\");\n      } else if (\"FAILED\".equals(status) || \"CANCELLED\".equals(status)) {\n        throw new RuntimeException(\"Task failed: \" + output.optString(\"message\", \"Unknown error\"));\n      }\n      Thread.sleep(15000);\n    }\n  }\n\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Creating video repainting task...\");\n      String taskId = createTask();\n      System.out.println(\"Task created successfully, Task ID: \" + taskId);\n      System.out.println(\"Polling for task result...\");\n      String videoUrl = pollResult(taskId);\n      System.out.println(\"Video URL: \" + videoUrl);\n    } catch (Exception e) {\n      System.err.println(\"An error occurred: \" + e.getMessage());\n      e.printStackTrace();\n    }\n  }\n}"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 局部编辑",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \\\n--header 'X-DashScope-Async: enable' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"wanx2.1-vace-plus\",\n  \"input\": {\n    \"function\": \"video_edit\",\n    \"prompt\": \"The video shows a Parisian-style French cafe where a lion in a suit is elegantly sipping coffee. It holds a coffee cup in one hand, taking a gentle sip with a relaxed expression. The cafe is tastefully decorated, with soft hues and warm lighting illuminating the area where the lion is.\",\n    \"mask_image_url\": \"http://wanx.alicdn.com/material/20250318/video_edit_1_mask.png\",\n    \"video_url\": \"http://wanx.alicdn.com/material/20250318/video_edit_2.mp4\",\n    \"mask_frame_id\": 1\n  },\n  \"parameters\": {\n    \"prompt_extend\": false,\n    \"mask_type\": \"tracking\",\n    \"expand_ratio\": 0.05\n  }\n}'"
+          },
+          {
+            "lang": "python",
+            "label": "Python - 局部编辑",
+            "source": "import os\nimport requests\nimport time\n\nBASE_URL = \"https://dashscope.aliyuncs.com/api/v1\"\nAPI_KEY = os.getenv(\"DASHSCOPE_API_KEY\", \"YOUR_API_KEY\")\n\ndef create_task():\n  \"\"\"创建局部编辑任务，返回 task_id\"\"\"\n  try:\n    resp = requests.post(\n      f\"{BASE_URL}/services/aigc/video-generation/video-synthesis\",\n      headers={\n        \"X-DashScope-Async\": \"enable\",\n        \"Authorization\": f\"Bearer {API_KEY}\",\n        \"Content-Type\": \"application/json\"\n      },\n      json={\n        \"model\": \"wanx2.1-vace-plus\",\n        \"input\": {\n          \"function\": \"video_edit\",\n          \"prompt\": \"The video shows a Parisian-style French cafe where a lion in a suit is elegantly sipping coffee. It holds a coffee cup in one hand, taking a gentle sip with a relaxed expression. The cafe is tastefully decorated, with soft tones and warm lighting illuminating the area where the lion is.\",\n          \"mask_image_url\": \"http://wanx.alicdn.com/material/20250318/video_edit_1_mask.png\",\n          \"video_url\": \"http://wanx.alicdn.com/material/20250318/video_edit_2.mp4\",\n          \"mask_frame_id\": 1 # 蒙版对应的视频帧索引\n        },\n        \"parameters\": {\n          \"prompt_extend\": False,\n          \"mask_type\": \"tracking\", # 跟踪模式\n          \"expand_ratio\": 0.05\n        }\n      },\n      timeout=30\n    )\n    resp.raise_for_status()\n    return resp.json()[\"output\"][\"task_id\"]\n  except requests.RequestException as e:\n    raise RuntimeError(f\"Failed to create task: {e}\")\n\ndef poll_result(task_id):\n  while True:\n    try:\n      resp = requests.get(\n        f\"{BASE_URL}/tasks/{task_id}\",\n        headers={\"Authorization\": f\"Bearer {API_KEY}\"},\n        timeout=10\n      )\n      resp.raise_for_status()\n      data = resp.json()[\"output\"]\n      status = data[\"task_status\"]\n      print(f\"Status: {status}\")\n\n      if status == \"SUCCEEDED\":\n        return data[\"video_url\"]\n      elif status in (\"FAILED\", \"CANCELLED\"):\n        raise RuntimeError(f\"Task failed: {data.get('message', 'Unknown error')}\")\n      time.sleep(15)\n    except requests.RequestException as e:\n      print(f\"Polling exception: {e}, retrying in 15 seconds...\")\n      time.sleep(15)\n\nif __name__ == \"__main__\":\n  task_id = create_task()\n  print(f\"Task ID: {task_id}\")\n  video_url = poll_result(task_id)\n  print(f\"\\nVideo generated successfully: {video_url}\")"
+          },
+          {
+            "lang": "java",
+            "label": "Java - 局部编辑",
+            "source": "import org.json.*;\nimport java.io.*;\nimport java.net.*;\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class VideoRegionalEdit {\n  static final String BASE_URL = \"https://dashscope.aliyuncs.com/api/v1\";\n  static final String API_KEY = System.getenv(\"DASHSCOPE_API_KEY\");\n  private static final Map<String, String> COMMON_HEADERS = new HashMap<>();\n\n  static {\n    if (API_KEY == null || API_KEY.isEmpty()) {\n      throw new IllegalStateException(\"DASHSCOPE_API_KEY is not set\");\n    }\n    COMMON_HEADERS.put(\"Authorization\", \"Bearer \" + API_KEY);\n    System.setProperty(\"http.keepAlive\", \"true\");\n  }\n\n  private static String httpPost(String path, JSONObject body) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"POST\");\n    conn.setRequestProperty(\"Content-Type\", \"application/json\");\n    conn.setDoOutput(true);\n    try (OutputStream os = conn.getOutputStream()) {\n      os.write(body.toString().getBytes(\"UTF-8\"));\n    }\n    return readResponse(conn);\n  }\n\n  private static String httpGet(String path) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"GET\");\n    return readResponse(conn);\n  }\n\n  private static HttpURLConnection createConnection(String path, String method) throws Exception {\n    URL url = new URL(BASE_URL + path);\n    HttpURLConnection conn = (HttpURLConnection) url.openConnection();\n    conn.setRequestMethod(method);\n    conn.setConnectTimeout(30000);\n    conn.setReadTimeout(60000);\n    for (Map.Entry<String, String> entry : COMMON_HEADERS.entrySet()) {\n      conn.setRequestProperty(entry.getKey(), entry.getValue());\n    }\n    if (path.contains(\"video-synthesis\")) {\n      conn.setRequestProperty(\"X-DashScope-Async\", \"enable\");\n    }\n    return conn;\n  }\n\n  private static String readResponse(HttpURLConnection conn) throws IOException {\n    InputStream is = (conn.getResponseCode() >= 200 && conn.getResponseCode() < 400) ? conn.getInputStream() : conn.getErrorStream();\n    try (BufferedReader br = new BufferedReader(new InputStreamReader(is, \"UTF-8\"))) {\n      StringBuilder sb = new StringBuilder();\n      String line;\n      while ((line = br.readLine()) != null) sb.append(line).append(\"\\n\");\n      return sb.toString();\n    }\n  }\n\n  public static String createTask() throws Exception {\n    JSONObject body = new JSONObject()\n        .put(\"model\", \"wanx2.1-vace-plus\")\n        .put(\"input\", new JSONObject()\n            .put(\"function\", \"video_edit\")\n            .put(\"prompt\", \"The video shows a Parisian-style French cafe where a lion in a suit is elegantly sipping coffee. It holds a coffee cup in one hand, taking a gentle sip with a relaxed expression. The cafe is tastefully decorated, with soft tones and warm lighting illuminating the area where the lion is.\")\n            .put(\"mask_image_url\", \"http://wanx.alicdn.com/material/20250318/video_edit_1_mask.png\")\n            .put(\"video_url\", \"http://wanx.alicdn.com/material/20250318/video_edit_2.mp4\")\n            .put(\"mask_frame_id\", 1))\n        .put(\"parameters\", new JSONObject()\n            .put(\"prompt_extend\", false)\n            .put(\"mask_type\", \"tracking\")\n            .put(\"expand_ratio\", 0.05));\n\n    String resp = httpPost(\"/services/aigc/video-generation/video-synthesis\", body);\n    JSONObject jsonResponse = new JSONObject(resp);\n\n    if (jsonResponse.has(\"code\") && jsonResponse.getInt(\"code\") != 200) {\n      String errorMessage = jsonResponse.optString(\"message\", \"Unknown error\");\n      throw new RuntimeException(\"Failed to create task: \" + errorMessage);\n    }\n    return jsonResponse.getJSONObject(\"output\").getString(\"task_id\");\n  }\n\n  public static String pollResult(String taskId) throws Exception {\n    while (true) {\n      String resp = httpGet(\"/tasks/\" + taskId);\n      JSONObject output = new JSONObject(resp).getJSONObject(\"output\");\n      String status = output.getString(\"task_status\");\n      System.out.println(\"Status: \" + status);\n\n      if (\"SUCCEEDED\".equals(status)) return output.getString(\"video_url\");\n      else if (\"FAILED\".equals(status) || \"CANCELLED\".equals(status))\n        throw new RuntimeException(\"Task failed: \" + output.optString(\"message\"));\n      Thread.sleep(15000);\n    }\n  }\n\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Creating local editing task...\");\n      String taskId = createTask();\n      System.out.println(\"Task created successfully, Task ID: \" + taskId);\n      String videoUrl = pollResult(taskId);\n      System.out.println(\"Video URL: \" + videoUrl);\n    } catch (Exception e) {\n      e.printStackTrace();\n    }\n  }\n}"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 视频续写",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \\\n--header 'X-DashScope-Async: enable' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"wanx2.1-vace-plus\",\n  \"input\": {\n    \"function\": \"video_extension\",\n    \"prompt\": \"A dog wearing sunglasses is skateboarding on the street, 3D cartoon.\",\n    \"first_clip_url\": \"http://wanx.alicdn.com/material/20250318/video_extension_1.mp4\"\n  },\n  \"parameters\": {\n    \"prompt_extend\": false\n  }\n}'"
+          },
+          {
+            "lang": "python",
+            "label": "Python - 视频续写",
+            "source": "import os\nimport requests\nimport time\n\nBASE_URL = \"https://dashscope.aliyuncs.com/api/v1\"\nAPI_KEY = os.getenv(\"DASHSCOPE_API_KEY\", \"YOUR_API_KEY\")\n\ndef create_task():\n  \"\"\"创建视频续写任务，返回 task_id\"\"\"\n  try:\n    resp = requests.post(\n      f\"{BASE_URL}/services/aigc/video-generation/video-synthesis\",\n      headers={\n        \"X-DashScope-Async\": \"enable\",\n        \"Authorization\": f\"Bearer {API_KEY}\",\n        \"Content-Type\": \"application/json\"\n      },\n      json={\n        \"model\": \"wanx2.1-vace-plus\",\n        \"input\": {\n          \"function\": \"video_extension\",\n          \"prompt\": \"A dog wearing sunglasses is skateboarding on the street, 3D cartoon.\",\n          \"first_clip_url\": \"http://wanx.alicdn.com/material/20250318/video_extension_1.mp4\"\n        },\n        \"parameters\": {\n          \"prompt_extend\": False\n        }\n      },\n      timeout=30\n    )\n    resp.raise_for_status()\n    return resp.json()[\"output\"][\"task_id\"]\n  except requests.RequestException as e:\n    raise RuntimeError(f\"Failed to create task: {e}\")\n\ndef poll_result(task_id):\n  while True:\n    try:\n      resp = requests.get(\n        f\"{BASE_URL}/tasks/{task_id}\",\n        headers={\"Authorization\": f\"Bearer {API_KEY}\"},\n        timeout=10\n      )\n      resp.raise_for_status()\n      data = resp.json()[\"output\"]\n      status = data[\"task_status\"]\n      print(f\"Status: {status}\")\n\n      if status == \"SUCCEEDED\":\n        return data[\"video_url\"]\n      elif status in (\"FAILED\", \"CANCELLED\"):\n        raise RuntimeError(f\"Task failed: {data.get('message', 'Unknown error')}\")\n      time.sleep(15)\n    except requests.RequestException as e:\n      print(f\"Polling exception: {e}, retrying in 15 seconds...\")\n      time.sleep(15)\n\nif __name__ == \"__main__\":\n  task_id = create_task()\n  print(f\"Task ID: {task_id}\")\n  video_url = poll_result(task_id)\n  print(f\"\\nVideo generated successfully: {video_url}\")"
+          },
+          {
+            "lang": "java",
+            "label": "Java - 视频续写",
+            "source": "import org.json.*;\nimport java.io.*;\nimport java.net.*;\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class VideoExtension {\n  static final String BASE_URL = \"https://dashscope.aliyuncs.com/api/v1\";\n  static final String API_KEY = System.getenv(\"DASHSCOPE_API_KEY\");\n  private static final Map<String, String> COMMON_HEADERS = new HashMap<>();\n\n  static {\n    if (API_KEY == null || API_KEY.isEmpty()) {\n      throw new IllegalStateException(\"DASHSCOPE_API_KEY is not set\");\n    }\n    COMMON_HEADERS.put(\"Authorization\", \"Bearer \" + API_KEY);\n    System.setProperty(\"http.keepAlive\", \"true\");\n  }\n\n  private static String httpPost(String path, JSONObject body) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"POST\");\n    conn.setRequestProperty(\"Content-Type\", \"application/json\");\n    conn.setDoOutput(true);\n    try (OutputStream os = conn.getOutputStream()) {\n      os.write(body.toString().getBytes(\"UTF-8\"));\n    }\n    return readResponse(conn);\n  }\n\n  private static String httpGet(String path) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"GET\");\n    return readResponse(conn);\n  }\n\n  private static HttpURLConnection createConnection(String path, String method) throws Exception {\n    URL url = new URL(BASE_URL + path);\n    HttpURLConnection conn = (HttpURLConnection) url.openConnection();\n    conn.setRequestMethod(method);\n    conn.setConnectTimeout(30000);\n    conn.setReadTimeout(60000);\n    for (Map.Entry<String, String> entry : COMMON_HEADERS.entrySet()) {\n      conn.setRequestProperty(entry.getKey(), entry.getValue());\n    }\n    if (path.contains(\"video-synthesis\")) {\n      conn.setRequestProperty(\"X-DashScope-Async\", \"enable\");\n    }\n    return conn;\n  }\n\n  private static String readResponse(HttpURLConnection conn) throws IOException {\n    InputStream is = (conn.getResponseCode() >= 200 && conn.getResponseCode() < 400) ? conn.getInputStream() : conn.getErrorStream();\n    try (BufferedReader br = new BufferedReader(new InputStreamReader(is, \"UTF-8\"))) {\n      StringBuilder sb = new StringBuilder();\n      String line;\n      while ((line = br.readLine()) != null) sb.append(line).append(\"\\n\");\n      return sb.toString();\n    }\n  }\n\n  public static String createTask() throws Exception {\n    JSONObject body = new JSONObject()\n        .put(\"model\", \"wanx2.1-vace-plus\")\n        .put(\"input\", new JSONObject()\n            .put(\"function\", \"video_extension\")\n            .put(\"prompt\", \"A dog wearing sunglasses is skateboarding on the street, 3D cartoon.\")\n            .put(\"first_clip_url\", \"http://wanx.alicdn.com/material/20250318/video_extension_1.mp4\"))\n        .put(\"parameters\", new JSONObject()\n            .put(\"prompt_extend\", false));\n\n    String resp = httpPost(\"/services/aigc/video-generation/video-synthesis\", body);\n    JSONObject jsonResponse = new JSONObject(resp);\n\n    if (jsonResponse.has(\"code\") && jsonResponse.getInt(\"code\") != 200) {\n      String errorMessage = jsonResponse.optString(\"message\", \"Unknown error\");\n      throw new RuntimeException(\"Failed to create task: \" + errorMessage);\n    }\n    return jsonResponse.getJSONObject(\"output\").getString(\"task_id\");\n  }\n\n  public static String pollResult(String taskId) throws Exception {\n    while (true) {\n      String resp = httpGet(\"/tasks/\" + taskId);\n      JSONObject output = new JSONObject(resp).getJSONObject(\"output\");\n      String status = output.getString(\"task_status\");\n      System.out.println(\"Status: \" + status);\n\n      if (\"SUCCEEDED\".equals(status)) return output.getString(\"video_url\");\n      else if (\"FAILED\".equals(status) || \"CANCELLED\".equals(status))\n        throw new RuntimeException(\"Task failed: \" + output.optString(\"message\"));\n      Thread.sleep(15000);\n    }\n  }\n\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Creating video extension task...\");\n      String taskId = createTask();\n      System.out.println(\"Task created successfully, Task ID: \" + taskId);\n      String videoUrl = pollResult(taskId);\n      System.out.println(\"Video URL: \" + videoUrl);\n    } catch (Exception e) {\n      e.printStackTrace();\n    }\n  }\n}"
+          },
+          {
+            "lang": "curl",
+            "label": "cURL - 画面扩展",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis' \\\n--header 'X-DashScope-Async: enable' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"wanx2.1-vace-plus\",\n  \"input\": {\n    \"function\": \"video_outpainting\",\n    \"prompt\": \"An elegant lady is passionately playing the violin, with a full symphony orchestra behind her.\",\n    \"video_url\": \"http://wanx.alicdn.com/material/20250318/video_outpainting_1.mp4\"\n  },\n  \"parameters\": {\n    \"prompt_extend\": false,\n    \"top_scale\": 1.5,\n    \"bottom_scale\": 1.5,\n    \"left_scale\": 1.5,\n    \"right_scale\": 1.5\n  }\n}'"
+          },
+          {
+            "lang": "python",
+            "label": "Python - 画面扩展",
+            "source": "import os\nimport requests\nimport time\n\nBASE_URL = \"https://dashscope.aliyuncs.com/api/v1\"\nAPI_KEY = os.getenv(\"DASHSCOPE_API_KEY\", \"YOUR_API_KEY\")\n\ndef create_task():\n  \"\"\"创建视频画面扩展任务，返回 task_id\"\"\"\n  try:\n    resp = requests.post(\n      f\"{BASE_URL}/services/aigc/video-generation/video-synthesis\",\n      headers={\n        \"X-DashScope-Async\": \"enable\",\n        \"Authorization\": f\"Bearer {API_KEY}\",\n        \"Content-Type\": \"application/json\"\n      },\n      json={\n        \"model\": \"wanx2.1-vace-plus\",\n        \"input\": {\n          \"function\": \"video_outpainting\",\n          \"prompt\": \"An elegant lady is passionately playing the violin, with a full symphony orchestra behind her.\",\n          \"video_url\": \"http://wanx.alicdn.com/material/20250318/video_outpainting_1.mp4\"\n        },\n        \"parameters\": {\n          \"prompt_extend\": False,\n          \"top_scale\": 1.5,    # 向上扩展比例\n          \"bottom_scale\": 1.5, # 向下扩展比例\n          \"left_scale\": 1.5,   # 向左扩展比例\n          \"right_scale\": 1.5   # 向右扩展比例\n        }\n      },\n      timeout=30\n    )\n    resp.raise_for_status()\n    return resp.json()[\"output\"][\"task_id\"]\n  except requests.RequestException as e:\n    raise RuntimeError(f\"Failed to create task: {e}\")\n\ndef poll_result(task_id):\n  while True:\n    try:\n      resp = requests.get(\n        f\"{BASE_URL}/tasks/{task_id}\",\n        headers={\"Authorization\": f\"Bearer {API_KEY}\"},\n        timeout=10\n      )\n      resp.raise_for_status()\n      data = resp.json()[\"output\"]\n      status = data[\"task_status\"]\n      print(f\"Status: {status}\")\n\n      if status == \"SUCCEEDED\":\n        return data[\"video_url\"]\n      elif status in (\"FAILED\", \"CANCELLED\"):\n        raise RuntimeError(f\"Task failed: {data.get('message', 'Unknown error')}\")\n      time.sleep(15)\n    except requests.RequestException as e:\n      print(f\"Polling exception: {e}, retrying in 15 seconds...\")\n      time.sleep(15)\n\nif __name__ == \"__main__\":\n  task_id = create_task()\n  print(f\"Task ID: {task_id}\")\n  video_url = poll_result(task_id)\n  print(f\"\\nVideo generated successfully: {video_url}\")"
+          },
+          {
+            "lang": "java",
+            "label": "Java - 画面扩展",
+            "source": "import org.json.*;\nimport java.io.*;\nimport java.net.*;\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class VideoOutpainting {\n  static final String BASE_URL = \"https://dashscope.aliyuncs.com/api/v1\";\n  static final String API_KEY = System.getenv(\"DASHSCOPE_API_KEY\");\n  private static final Map<String, String> COMMON_HEADERS = new HashMap<>();\n\n  static {\n    if (API_KEY == null || API_KEY.isEmpty()) {\n      throw new IllegalStateException(\"DASHSCOPE_API_KEY is not set\");\n    }\n    COMMON_HEADERS.put(\"Authorization\", \"Bearer \" + API_KEY);\n    System.setProperty(\"http.keepAlive\", \"true\");\n  }\n\n  private static String httpPost(String path, JSONObject body) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"POST\");\n    conn.setRequestProperty(\"Content-Type\", \"application/json\");\n    conn.setDoOutput(true);\n    try (OutputStream os = conn.getOutputStream()) {\n      os.write(body.toString().getBytes(\"UTF-8\"));\n    }\n    return readResponse(conn);\n  }\n\n  private static String httpGet(String path) throws Exception {\n    HttpURLConnection conn = createConnection(path, \"GET\");\n    return readResponse(conn);\n  }\n\n  private static HttpURLConnection createConnection(String path, String method) throws Exception {\n    URL url = new URL(BASE_URL + path);\n    HttpURLConnection conn = (HttpURLConnection) url.openConnection();\n    conn.setRequestMethod(method);\n    conn.setConnectTimeout(30000);\n    conn.setReadTimeout(60000);\n    for (Map.Entry<String, String> entry : COMMON_HEADERS.entrySet()) {\n      conn.setRequestProperty(entry.getKey(), entry.getValue());\n    }\n    if (path.contains(\"video-synthesis\")) {\n      conn.setRequestProperty(\"X-DashScope-Async\", \"enable\");\n    }\n    return conn;\n  }\n\n  private static String readResponse(HttpURLConnection conn) throws IOException {\n    InputStream is = (conn.getResponseCode() >= 200 && conn.getResponseCode() < 400) ? conn.getInputStream() : conn.getErrorStream();\n    try (BufferedReader br = new BufferedReader(new InputStreamReader(is, \"UTF-8\"))) {\n      StringBuilder sb = new StringBuilder();\n      String line;\n      while ((line = br.readLine()) != null) sb.append(line).append(\"\\n\");\n      return sb.toString();\n    }\n  }\n\n  public static String createTask() throws Exception {\n    JSONObject body = new JSONObject()\n        .put(\"model\", \"wanx2.1-vace-plus\")\n        .put(\"input\", new JSONObject()\n            .put(\"function\", \"video_outpainting\")\n            .put(\"prompt\", \"An elegant lady is passionately playing the violin, with a full symphony orchestra behind her.\")\n            .put(\"video_url\", \"http://wanx.alicdn.com/material/20250318/video_outpainting_1.mp4\"))\n        .put(\"parameters\", new JSONObject()\n            .put(\"prompt_extend\", false)\n            .put(\"top_scale\", 1.5)\n            .put(\"bottom_scale\", 1.5)\n            .put(\"left_scale\", 1.5)\n            .put(\"right_scale\", 1.5));\n\n    String resp = httpPost(\"/services/aigc/video-generation/video-synthesis\", body);\n    JSONObject jsonResponse = new JSONObject(resp);\n\n    if (jsonResponse.has(\"code\") && jsonResponse.getInt(\"code\") != 200) {\n      String errorMessage = jsonResponse.optString(\"message\", \"Unknown error\");\n      throw new RuntimeException(\"Failed to create task: \" + errorMessage);\n    }\n    return jsonResponse.getJSONObject(\"output\").getString(\"task_id\");\n  }\n\n  public static String pollResult(String taskId) throws Exception {\n    while (true) {\n      String resp = httpGet(\"/tasks/\" + taskId);\n      JSONObject output = new JSONObject(resp).getJSONObject(\"output\");\n      String status = output.getString(\"task_status\");\n      System.out.println(\"Status: \" + status);\n\n      if (\"SUCCEEDED\".equals(status)) return output.getString(\"video_url\");\n      else if (\"FAILED\".equals(status) || \"CANCELLED\".equals(status))\n        throw new RuntimeException(\"Task failed: \" + output.optString(\"message\"));\n      Thread.sleep(15000);\n    }\n  }\n\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Creating video frame expansion task...\");\n      String taskId = createTask();\n      System.out.println(\"Task created successfully, Task ID: \" + taskId);\n      String videoUrl = pollResult(taskId);\n      System.out.println(\"Video URL: \" + videoUrl);\n    } catch (Exception e) {\n      e.printStackTrace();\n    }\n  }\n}"
+          }
+        ]
+      }
+    },
+    "/tasks/{task_id}": {
+      "get": {
+        "operationId": "getVideoEditingTaskStatus",
+        "summary": "查询任务结果",
+        "description": "查询视频编辑任务的状态与结果。",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "description": "视频编辑任务创建接口返回的任务标识符。",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "任务状态获取成功。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskStatusResponse"
+                },
+                "examples": {
+                  "SUCCEEDED": {
+                    "summary": "任务成功",
+                    "value": {
+                      "request_id": "c1209113-8437-424f-a386-xxxxxx",
+                      "output": {
+                        "task_id": "966cebcd-dedc-4962-af88-xxxxxx",
+                        "task_status": "SUCCEEDED",
+                        "video_url": "https://dashscope-result-sh.oss-accelerate.aliyuncs.com/xxx.mp4?Expires=xxx",
+                        "task_metrics": {
+                          "TOTAL": 1,
+                          "SUCCEEDED": 1,
+                          "FAILED": 0
+                        }
+                      },
+                      "usage": {
+                        "video_count": 1,
+                        "video_duration": 5
+                      }
+                    }
+                  },
+                  "FAILED": {
+                    "summary": "任务失败",
+                    "value": {
+                      "request_id": "c1209113-8437-424f-a386-xxxxxx",
+                      "output": {
+                        "task_id": "966cebcd-dedc-4962-af88-xxxxxx",
+                        "task_status": "FAILED",
+                        "code": "InvalidParameter",
+                        "message": "The specified parameter is not valid.",
+                        "task_metrics": {
+                          "TOTAL": 1,
+                          "SUCCEEDED": 0,
+                          "FAILED": 1
+                        }
+                      }
+                    }
+                  },
+                  "RUNNING": {
+                    "summary": "任务运行中",
+                    "value": {
+                      "request_id": "c1209113-8437-424f-a386-xxxxxx",
+                      "output": {
+                        "task_id": "966cebcd-dedc-4962-af88-xxxxxx",
+                        "task_status": "RUNNING",
+                        "task_metrics": {
+                          "TOTAL": 1,
+                          "SUCCEEDED": 0,
+                          "FAILED": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数无效。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "label": "cURL - 查询任务结果",
+            "source": "# 将 {task_id} 替换为提交响应中返回的实际任务 ID\ncurl -X GET 'https://dashscope.aliyuncs.com/api/v1/tasks/{task_id}' \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\""
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。"
+      }
+    },
+    "schemas": {
+      "VideoEditingRequest": {
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "模型名称。",
+            "enum": [
+              "wanx2.1-vace-plus"
+            ],
+            "example": "wanx2.1-vace-plus"
+          },
+          "input": {
+            "$ref": "#/components/schemas/VideoEditingInput"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/VideoEditingParameters"
+          }
+        }
+      },
+      "VideoEditingInput": {
+        "type": "object",
+        "required": [
+          "function",
+          "prompt"
+        ],
+        "description": "视频编辑的输入数据，各功能所需字段不同。",
+        "properties": {
+          "function": {
+            "type": "string",
+            "description": "要使用的视频编辑能力。",
+            "enum": [
+              "image_reference",
+              "video_repainting",
+              "video_edit",
+              "video_extension",
+              "video_outpainting"
+            ],
+            "example": "image_reference"
+          },
+          "prompt": {
+            "type": "string",
+            "description": "对目标视频内容的文字描述。",
+            "example": "In the video, a girl walks out from the depths of an ancient, misty forest."
+          },
+          "ref_images_url": {
+            "type": "array",
+            "description": "参考图像 URL 数组。`image_reference` 功能使用（1-3 张图像），`video_repainting` 和 `video_edit` 可选使用（1 张图像，用于替换主体）。",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "minItems": 1,
+            "maxItems": 3,
+            "example": [
+              "http://wanx.alicdn.com/material/20250318/image_reference_2_5_16.png",
+              "http://wanx.alicdn.com/material/20250318/image_reference_1_5_16.png"
+            ]
+          },
+          "video_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "输入视频的 URL。`video_repainting`、`video_edit` 和 `video_outpainting` 必填。格式须为 MP4，大小不超过 50 MB，时长不超过 5 秒。",
+            "example": "http://wanx.alicdn.com/material/20250318/video_repainting_1.mp4"
+          },
+          "mask_image_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "用于 `video_edit` 的蒙版图像 URL。白色区域将被编辑，黑色区域保持不变。与 `mask_video_url` 二选一。"
+          },
+          "mask_video_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "用于 `video_edit` 的蒙版视频 URL。与 `mask_image_url` 二选一，推荐使用 `mask_image_url`。"
+          },
+          "mask_frame_id": {
+            "type": "integer",
+            "description": "用于带 `mask_image_url` 的 `video_edit`：指定蒙版对应的视频帧索引。默认为第一帧（0）。",
+            "default": 0,
+            "example": 1
+          },
+          "first_clip_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "用于 `video_extension`：第一段视频片段的 URL（不超过 3 秒）。模型将基于此片段生成后续内容。"
+          },
+          "last_clip_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "用于 `video_extension`：最后一段视频片段的 URL（不超过 3 秒）。模型将生成其前面的内容。"
+          },
+          "first_frame_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "用于 `video_extension`：首帧图像的 URL，视频将从该帧向后延伸生成。"
+          },
+          "last_frame_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "用于 `video_extension`：末帧图像的 URL，视频将从该帧向前追溯生成。"
+          }
+        }
+      },
+      "VideoEditingParameters": {
+        "type": "object",
+        "description": "视频编辑的生成参数，可用参数因功能而异。",
+        "properties": {
+          "prompt_extend": {
+            "type": "boolean",
+            "description": "启用提示词改写。`true`（默认）：模型自动优化提示词；`false`：原样使用提示词。`video_repainting` 时建议关闭此项。",
+            "default": true
+          },
+          "size": {
+            "type": "string",
+            "description": "输出分辨率，格式为 `宽*高`。用于 `image_reference` 和 `video_edit`。",
+            "example": "1280*720"
+          },
+          "obj_or_bg": {
+            "type": "array",
+            "description": "用于 `image_reference`：标识每张参考图像为主体（`obj`）或背景（`bg`）。数组长度须与 `ref_images_url` 一致。",
+            "items": {
+              "type": "string",
+              "enum": [
+                "obj",
+                "bg"
+              ]
+            },
+            "example": [
+              "obj",
+              "bg"
+            ]
+          },
+          "control_condition": {
+            "type": "string",
+            "description": "用于 `video_repainting`：视频特征提取方式，决定保留原视频中的哪些特征。",
+            "enum": [
+              "posebodyface",
+              "posebody",
+              "depth",
+              "scribble"
+            ],
+            "example": "depth"
+          },
+          "strength": {
+            "type": "number",
+            "description": "用于 `video_repainting`：控制特征提取强度。值越高，输出越接近原视频；值越低，创意空间越大。",
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "default": 1.0
+          },
+          "mask_type": {
+            "type": "string",
+            "description": "用于 `video_edit`：指定编辑区域的行为。`tracking`（默认）：编辑区域自动跟随目标运动；`fixed`：编辑区域固定不动。",
+            "enum": [
+              "tracking",
+              "fixed"
+            ],
+            "default": "tracking"
+          },
+          "expand_ratio": {
+            "type": "number",
+            "description": "用于带 `mask_type: tracking` 的 `video_edit`：蒙版区域向外扩展的比例。值越小越贴合目标，值越大扩展范围越广。",
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "default": 0.05
+          },
+          "top_scale": {
+            "type": "number",
+            "description": "用于 `video_outpainting`：向上扩展比例。设为 1.5 时，顶部扩展至原高度的 1.5 倍。",
+            "minimum": 1.0,
+            "maximum": 2.0,
+            "default": 1.0
+          },
+          "bottom_scale": {
+            "type": "number",
+            "description": "用于 `video_outpainting`：向下扩展比例。",
+            "minimum": 1.0,
+            "maximum": 2.0,
+            "default": 1.0
+          },
+          "left_scale": {
+            "type": "number",
+            "description": "用于 `video_outpainting`：向左扩展比例。",
+            "minimum": 1.0,
+            "maximum": 2.0,
+            "default": 1.0
+          },
+          "right_scale": {
+            "type": "number",
+            "description": "用于 `video_outpainting`：向右扩展比例。",
+            "minimum": 1.0,
+            "maximum": 2.0,
+            "default": 1.0
+          }
+        }
+      },
+      "AsyncTaskSubmitResponse": {
+        "type": "object",
+        "description": "异步任务创建成功后的响应。",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "唯一请求标识符。"
+          },
+          "output": {
+            "type": "object",
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "description": "任务标识符，可使用 `GET /tasks/{task_id}` 轮询任务结果。"
+              },
+              "task_status": {
+                "type": "string",
+                "description": "初始任务状态，通常为 `PENDING`。",
+                "enum": [
+                  "PENDING"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "TaskStatusResponse": {
+        "type": "object",
+        "description": "包含视频编辑任务当前状态与结果的响应。",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "唯一请求标识符。"
+          },
+          "output": {
+            "type": "object",
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "description": "任务标识符。"
+              },
+              "task_status": {
+                "type": "string",
+                "description": "当前任务状态。",
+                "enum": [
+                  "PENDING",
+                  "RUNNING",
+                  "SUCCEEDED",
+                  "FAILED",
+                  "CANCELLED"
+                ]
+              },
+              "video_url": {
+                "type": "string",
+                "format": "uri",
+                "description": "生成的视频 URL，仅在 `task_status` 为 `SUCCEEDED` 时存在。有效期 24 小时，请及时下载。"
+              },
+              "code": {
+                "type": "string",
+                "description": "错误代码，仅在 `task_status` 为 `FAILED` 时存在。"
+              },
+              "message": {
+                "type": "string",
+                "description": "错误信息，仅在 `task_status` 为 `FAILED` 时存在。"
+              }
+            }
+          },
+          "usage": {
+            "type": "object",
+            "description": "用量统计（仅在任务成功时存在）。",
+            "properties": {
+              "video_count": {
+                "type": "integer",
+                "description": "生成的视频数量。"
+              },
+              "video_duration": {
+                "type": "integer",
+                "description": "生成视频的时长（秒）。"
+              }
+            }
+          }
+        }
+      },
+      "DashScopeErrorResponse": {
+        "type": "object",
+        "description": "DashScope API 错误响应。",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "唯一请求标识符。"
+          },
+          "code": {
+            "type": "string",
+            "description": "错误代码（如 `InvalidParameter`、`Throttling`、`Unauthorized`）。",
+            "example": "InvalidParameter"
+          },
+          "message": {
+            "type": "string",
+            "description": "可读的错误描述。",
+            "example": "Invalid parameter: function"
+          }
+        }
+      }
+    }
+  }
+}

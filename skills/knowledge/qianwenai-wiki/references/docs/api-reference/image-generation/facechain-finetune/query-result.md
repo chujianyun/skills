@@ -1,0 +1,392 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# 人物形象训练 — 查询结果
+
+> 查询 FaceChain 人物形象训练任务的状态和结果
+
+<Note>
+  请先[获取 API Key](/api-reference/preparation/api-key) 并[设置为环境变量](/api-reference/preparation/export-api-key-env)。
+</Note>
+
+## OpenAPI
+
+````yaml get /fine-tunes/{job_id}
+openapi: 3.1.0
+info:
+  title: FaceChain 人物形象训练 API
+  description: 提交 FaceChain 人物形象训练任务，使用 1-10 张人像图片训练专属人像模型。训练完成后，使用 `finetuned_output` 中的模型名称调用人物写真生成 API 生成写真。
+  version: 1.0.0
+servers:
+  - url: https://dashscope.aliyuncs.com/api/v1
+    description: 北京
+security:
+  - BearerAuth: []
+paths:
+  /fine-tunes/{job_id}:
+    get:
+      operationId: getFaceChainFinetuneStatus
+      summary: 查询训练结果
+      description: |-
+        查询 FaceChain 人物形象训练任务的状态和结果。持续轮询直到 `status` 变为 `SUCCEEDED` 或 `FAILED`。
+
+        训练成功后，将 `finetuned_output` 的值作为模型名称，传入人物写真生成 API 调用生成写真。
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          description: 训练任务 ID，由 `POST /fine-tunes` 接口返回。
+          schema:
+            type: string
+          example: ft-202509020951-f8bf
+      responses:
+        "200":
+          description: 成功获取任务状态
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FaceChainFinetuneStatusResponse"
+              examples:
+                SUCCEEDED:
+                  summary: 训练成功
+                  value:
+                    request_id: fcfb99e6-7ae5-48b2-acca-xxxxxx
+                    output:
+                      job_id: ft-202509020951-f8bf
+                      job_name: ft-202509020951-f8bf
+                      status: SUCCEEDED
+                      finetuned_output: facechain-finetune-ft-202509020951-f8bf
+                      model: facechain-finetune
+                      base_model: facechain-finetune
+                      training_file_ids:
+                        - https://dashscope.oss-cn-beijing.aliyuncs.com/samples/fine-tune/facechain/sample1.jpg
+                      validation_file_ids: []
+                      hyper_parameters: {}
+                      training_type: sft
+                      create_time: 2025-09-02 09:51:02
+                      workspace_id: llm-dmt509ikxxxxxxx
+                      user_identity: 1240225868xxxxxx
+                      modifier: 1240225868xxxxxx
+                      creator: 1240225868xxxxxx
+                      end_time: 2025-09-02 09:56:04
+                      group: facechain
+                      usage: 1
+                      model_name: ft-202509020951-f8bf
+                      max_output_cnt: 1
+                      output_cnt: 1
+                FAILED:
+                  summary: 训练失败
+                  value:
+                    request_id: fcfb99e6-7ae5-48b2-acca-xxxxxx
+                    output:
+                      job_id: ft-202509020951-f8bf
+                      job_name: ft-202509020951-f8bf
+                      status: FAILED
+                      finetuned_output: facechain-finetune-ft-202509020951-f8bf
+                      model: facechain-finetune
+                      base_model: facechain-finetune
+                      training_file_ids:
+                        - https://dashscope.oss-cn-beijing.aliyuncs.com/samples/fine-tune/facechain/sample1.jpg
+                      validation_file_ids: []
+                      hyper_parameters: {}
+                      training_type: sft
+                      create_time: 2025-09-02 09:51:02
+                      workspace_id: llm-dmt509ikxxxxxxx
+                      user_identity: 1240225868xxxxxx
+                      modifier: 1240225868xxxxxx
+                      creator: 1240225868xxxxxx
+                      end_time: 2025-09-02 09:56:04
+                      group: facechain
+                      model_name: ft-202509020951-f8bf
+                      max_output_cnt: 1
+                RUNNING:
+                  summary: 训练中
+                  value:
+                    request_id: fcfb99e6-7ae5-48b2-acca-xxxxxx
+                    output:
+                      job_id: ft-202509020951-f8bf
+                      job_name: ft-202509020951-f8bf
+                      status: RUNNING
+                      finetuned_output: facechain-finetune-ft-202509020951-f8bf
+                      model: facechain-finetune
+                      base_model: facechain-finetune
+                      training_file_ids:
+                        - https://dashscope.oss-cn-beijing.aliyuncs.com/samples/fine-tune/facechain/sample1.jpg
+                      validation_file_ids: []
+                      hyper_parameters: {}
+                      training_type: sft
+                      create_time: 2025-09-02 09:51:02
+                      workspace_id: llm-dmt509ikxxxxxxx
+                      user_identity: 1240225868xxxxxx
+                      modifier: 1240225868xxxxxx
+                      creator: 1240225868xxxxxx
+                      group: facechain
+                      model_name: ft-202509020951-f8bf
+                      max_output_cnt: 1
+        "404":
+          description: 任务不存在
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashScopeErrorResponse"
+              examples:
+                NotFound:
+                  summary: 任务不存在
+                  value:
+                    request_id: a4d78a5f-655f-9639-8437-xxxxxx
+                    code: NotFound
+                    message: job {job_id} not found.
+      x-codeSamples:
+        - lang: curl
+          label: cURL
+          source: |-
+            # 将 {job_id} 替换为提交任务时返回的实际 job_id
+            curl -X GET 'https://dashscope.aliyuncs.com/api/v1/fine-tunes/{job_id}' \
+              -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+              -H 'Content-Type: application/json'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+  schemas:
+    FaceChainFinetuneRequest:
+      type: object
+      required:
+        - model
+        - training_file_ids
+      properties:
+        model:
+          type: string
+          description: 模型名称，固定值 `facechain-finetune`。
+          enum:
+            - facechain-finetune
+          example: facechain-finetune
+        training_file_ids:
+          type: array
+          description: |-
+            训练图片 URL 或文件 ID 列表。提供 1-10 张人像图片。
+
+            - 支持公开可访问的图片 URL（例如 `https://dashscope.oss-cn-beijing.aliyuncs.com/...`）
+            - 或通过文件管理 API 上传后获取的 file_id
+            - 建议使用清晰的正脸照片以获得最佳训练效果
+          items:
+            type: string
+          minItems: 1
+          maxItems: 10
+          example:
+            - https://dashscope.oss-cn-beijing.aliyuncs.com/samples/fine-tune/facechain/sample1.jpg
+    FaceChainFinetuneResponse:
+      type: object
+      description: 提交训练任务的响应。
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识符，用于追踪和排查问题。
+          example: b6c9e77d-02a1-4a70-b127-xxxxxx
+        output:
+          type: object
+          description: 训练任务输出信息。
+          properties:
+            job_id:
+              type: string
+              description: 训练任务 ID。通过 `GET /fine-tunes/{job_id}` 查询任务状态。
+              example: ft-202509020951-f8bf
+            job_name:
+              type: string
+              description: 训练任务名称，与 `job_id` 相同。
+              example: ft-202509020951-f8bf
+            status:
+              type: string
+              description: 训练任务当前状态。
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+                - CANCELED
+                - UNKNOWN
+              example: PENDING
+            finetuned_output:
+              type: string
+              description: 微调后的模型名称。训练成功后，将此值作为 `model` 参数传入人物写真生成 API。
+              example: facechain-finetune-ft-202509020951-f8bf
+            model:
+              type: string
+              description: 训练使用的模型。
+              example: facechain-finetune
+            base_model:
+              type: string
+              description: 基础模型名称。
+              example: facechain-finetune
+            training_file_ids:
+              type: array
+              description: 训练图片 URL 或文件 ID 列表。
+              items:
+                type: string
+            validation_file_ids:
+              type: array
+              description: 验证文件 ID 列表（FaceChain 训练为空）。
+              items:
+                type: string
+            hyper_parameters:
+              type: object
+              description: 训练使用的超参数（FaceChain 训练为空）。
+            training_type:
+              type: string
+              description: 训练类型。
+              example: sft
+            create_time:
+              type: string
+              description: 任务创建时间，东八区。格式：`YYYY-MM-DD HH:mm:ss`。
+              example: 2025-09-02 09:51:02
+            workspace_id:
+              type: string
+              description: 工作空间 ID。
+              example: llm-dmt509ikxxxxxx
+            user_identity:
+              type: string
+              description: 用户标识。
+              example: 12402258xxxxxx
+            modifier:
+              type: string
+              description: 最后修改者标识。
+              example: 124022586xxxxxx
+            creator:
+              type: string
+              description: 创建者标识。
+              example: 1240225868xxxxxx
+            group:
+              type: string
+              description: 模型组。
+              example: facechain
+            model_name:
+              type: string
+              description: 模型名称标识符。
+              example: ft-202509020951-f8bf
+            max_output_cnt:
+              type: integer
+              description: 最大输出模型数量。
+              example: 1
+    FaceChainFinetuneStatusResponse:
+      type: object
+      description: 查询训练任务状态的响应。
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识符，用于追踪和排查问题。
+          example: fcfb99e6-7ae5-48b2-acca-xxxxxx
+        output:
+          type: object
+          description: 训练任务输出信息。
+          properties:
+            job_id:
+              type: string
+              description: 训练任务 ID。
+              example: ft-202509020951-f8bf
+            job_name:
+              type: string
+              description: 训练任务名称。
+              example: ft-202509020951-f8bf
+            status:
+              type: string
+              description: 训练任务当前状态。
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+                - CANCELED
+                - UNKNOWN
+            finetuned_output:
+              type: string
+              description: 微调后的模型名称。训练成功后，将此值作为 `model` 参数传入人物写真生成 API。
+              example: facechain-finetune-ft-202509020951-f8bf
+            model:
+              type: string
+              description: 训练使用的模型。
+              example: facechain-finetune
+            base_model:
+              type: string
+              description: 基础模型名称。
+              example: facechain-finetune
+            training_file_ids:
+              type: array
+              description: 训练图片 URL 或文件 ID 列表。
+              items:
+                type: string
+            validation_file_ids:
+              type: array
+              description: 验证文件 ID 列表。
+              items:
+                type: string
+            hyper_parameters:
+              type: object
+              description: 训练使用的超参数。
+            training_type:
+              type: string
+              description: 训练类型。
+              example: sft
+            create_time:
+              type: string
+              description: 任务创建时间，东八区。格式：`YYYY-MM-DD HH:mm:ss`。
+              example: 2025-09-02 09:51:02
+            workspace_id:
+              type: string
+              description: 工作空间 ID。
+              example: llm-dmt509ikxxxxxxx
+            user_identity:
+              type: string
+              description: 用户标识。
+              example: 1240225868xxxxxx
+            modifier:
+              type: string
+              description: 最后修改者标识。
+              example: 1240225868xxxxxx
+            creator:
+              type: string
+              description: 创建者标识。
+              example: 1240225868xxxxxx
+            end_time:
+              type: string
+              description: 任务结束时间，东八区。格式：`YYYY-MM-DD HH:mm:ss`。仅在 `status` 为 `SUCCEEDED` 或 `FAILED` 时返回。
+              example: 2025-09-02 09:56:04
+            group:
+              type: string
+              description: 模型组。
+              example: facechain
+            usage:
+              type: integer
+              description: 训练次数（用于计费）。仅在 `status` 为 `SUCCEEDED` 时返回。
+              example: 1
+            model_name:
+              type: string
+              description: 模型名称标识符。
+              example: ft-202509020951-f8bf
+            max_output_cnt:
+              type: integer
+              description: 最大输出模型数量。
+              example: 1
+            output_cnt:
+              type: integer
+              description: 已生成的模型数量。仅在训练完成后返回。
+              example: 1
+    DashScopeErrorResponse:
+      type: object
+      description: DashScope API 错误响应。
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识符。
+          example: a4d78a5f-655f-9639-8437-xxxxxx
+        code:
+          type: string
+          description: 错误码。可选值包括：`InvalidParameter`、`UnsupportedOperation`、`NotFound`、`Conflict`、`Throttling`、`InternalError`。
+          example: InvalidParameter
+        message:
+          type: string
+          description: 错误详情描述。
+          example: Missing training files.
+````

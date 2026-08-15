@@ -1,0 +1,764 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GUI-Plus OpenAI 兼容 API",
+    "description": "通过 OpenAI 兼容接口调用 GUI-Plus 界面交互专用模型，支持流式输出和多模态输入（图片）。",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dashscope.aliyuncs.com",
+      "description": "中国"
+    }
+  ],
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/compatible-mode/v1/chat/completions": {
+      "post": {
+        "operationId": "guiPlusOpenaiChatCompletions",
+        "summary": "GUI-Plus 对话补全",
+        "description": "通过 OpenAI 兼容接口向 GUI-Plus 界面交互专用模型发送消息并获取生成回复。支持多轮对话和流式输出。\n\nGUI-Plus 模型通过系统提示中嵌入的 `computer_use` 工具函数来控制界面交互，返回包含操作指令的 JSON。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuiPlusChatRequest"
+              },
+              "example": {
+                "model": "gui-plus-2026-02-26",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are a helpful GUI assistant."
+                  },
+                  {
+                    "role": "user",
+                    "content": [
+                      {
+                        "type": "image_url",
+                        "image_url": {
+                          "url": "https://img.alicdn.com/imgextra/i2/O1CN016iJ8ob1C3xP1s2M6z_!!6000000000026-2-tps-3008-1758.png"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "帮我打开浏览器"
+                      }
+                    ]
+                  }
+                ],
+                "vl_high_resolution_images": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuiPlusChatCompletion"
+                },
+                "examples": {
+                  "tool_call_format": {
+                    "summary": "tool_call 格式响应",
+                    "value": {
+                      "choices": [
+                        {
+                          "message": {
+                            "content": "<tool_call>\n{\"name\": \"computer_use\", \"arguments\": {\"action\": \"left_click\", \"coordinate\": [2530, 314]}}\n</tool_call>",
+                            "role": "assistant"
+                          },
+                          "finish_reason": "stop",
+                          "index": 0,
+                          "logprobs": null
+                        }
+                      ],
+                      "object": "chat.completion",
+                      "usage": {
+                        "prompt_tokens": 7750,
+                        "completion_tokens": 36,
+                        "total_tokens": 7786,
+                        "prompt_tokens_details": {
+                          "image_tokens": 6743,
+                          "text_tokens": 1007
+                        },
+                        "completion_tokens_details": {
+                          "text_tokens": 36
+                        }
+                      },
+                      "created": 1773133741,
+                      "system_fingerprint": null,
+                      "model": "gui-plus",
+                      "id": "chatcmpl-8b375016-abb8-9791-856c-74b2825c22d5"
+                    }
+                  },
+                  "action_json_format": {
+                    "summary": "action JSON 格式响应",
+                    "value": {
+                      "id": "chatcmpl-ef17511a-aceb-4c47-8757-13a87af2152d",
+                      "choices": [
+                        {
+                          "finish_reason": "stop",
+                          "index": 0,
+                          "logprobs": null,
+                          "message": {
+                            "content": "```json\n{\"thought\": \"用户想要打开浏览器，我观察到屏幕截图中有一个Google Chrome的图标，其位置在右上角一排的最后一个。因此，下一步操作应该是点击这个Chrome浏览器图标来启动它。\", \"action\": \"click\", \"parameters\": {\"x\": 1086, \"y\": 129}}\n```",
+                            "refusal": null,
+                            "role": "assistant",
+                            "annotations": null,
+                            "audio": null,
+                            "function_call": null,
+                            "tool_calls": null
+                          }
+                        }
+                      ],
+                      "created": 1763451557,
+                      "model": "gui-plus",
+                      "object": "chat.completion",
+                      "service_tier": null,
+                      "system_fingerprint": null,
+                      "usage": {
+                        "completion_tokens": 78,
+                        "prompt_tokens": 2020,
+                        "total_tokens": 2098,
+                        "completion_tokens_details": {
+                          "accepted_prediction_tokens": null,
+                          "audio_tokens": null,
+                          "reasoning_tokens": null,
+                          "rejected_prediction_tokens": null,
+                          "text_tokens": 78
+                        },
+                        "prompt_tokens_details": {
+                          "audio_tokens": null,
+                          "cached_tokens": null,
+                          "image_tokens": 1244,
+                          "text_tokens": 776
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuiPlusChatCompletionChunk"
+                },
+                "example": {
+                  "id": "chatcmpl-9f3c627a-b0fc-4160-a558-3cc2cc7aa988",
+                  "choices": [
+                    {
+                      "delta": {
+                        "content": "```json",
+                        "function_call": null,
+                        "refusal": null,
+                        "role": null,
+                        "tool_calls": null
+                      },
+                      "finish_reason": null,
+                      "index": 0,
+                      "logprobs": null
+                    }
+                  ],
+                  "created": 1763452343,
+                  "model": "gui-plus",
+                  "object": "chat.completion.chunk",
+                  "service_tier": null,
+                  "system_fingerprint": null,
+                  "usage": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "error": {
+                    "message": "you must provide a model parameter.",
+                    "type": "invalid_request_error",
+                    "param": null,
+                    "code": null
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "身份验证失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "error": {
+                    "message": "Incorrect API key provided.",
+                    "type": "invalid_request_error",
+                    "param": null,
+                    "code": "invalid_api_key"
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "超出速率限制",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "error": {
+                    "message": "You have exceeded your current request limit.",
+                    "type": "limit_requests",
+                    "param": null,
+                    "code": "limit_requests"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "python",
+            "label": "非流式",
+            "source": "import os\nfrom openai import OpenAI\n\nsystem_prompt = \"\"\"# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"computer_use\", \"description\": \"Use a mouse and keyboard to interact with a computer, and take screenshots.\\n* This is an interface to a desktop GUI. You do not have access to a terminal or applications menu. You must click on desktop icons to start applications.\\n* Some applications may take time to start or process actions, so you may need to wait and take successive screenshots to see the results of your actions. E.g. if you click on Firefox and a window doesn't open, try wait and taking another screenshot.\\n* The screen's resolution is 1000x1000.\\n* Make sure to click any buttons, links, icons, etc with the cursor tip in the center of the element. Don't click boxes on their edges unless asked.\", \"parameters\": {\"properties\": {\"action\": {\"description\": \"The action to perform. The available actions are:\\n* `key`: Performs key down presses on the arguments passed in order, then performs key releases in reverse order.\\n* `type`: Type a string of text on the keyboard.\\n* `mouse_move`: Move the cursor to a specified (x, y) pixel coordinate on the screen.\\n* `left_click`: Click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\n* `left_click_drag`: Click and drag the cursor to a specified (x, y) pixel coordinate on the screen.\\n* `right_click`: Click the right mouse button at a specified (x, y) pixel coordinate on the screen.\\n* `middle_click`: Click the middle mouse button at a specified (x, y) pixel coordinate on the screen.\\n* `double_click`: Double-click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\n* `triple_click`: Triple-click the left mouse button at a specified (x, y) pixel coordinate on the screen (simulated as double-click since it's the closest action).\\n* `scroll`: Performs a scroll of the mouse scroll wheel.\\n* `hscroll`: Performs a horizontal scroll (mapped to regular scroll).\\n* `wait`: Wait specified seconds for the change to happen.\\n* `terminate`: Terminate the current task and report its completion status.\\n* `answer`: Answer a question.\\n* `interact`: Resolve the blocking window by interacting with the user.\", \"enum\": [\"key\", \"type\", \"mouse_move\", \"left_click\", \"left_click_drag\", \"right_click\", \"middle_click\", \"double_click\", \"triple_click\", \"scroll\", \"hscroll\", \"wait\", \"terminate\", \"answer\", \"interact\"], \"type\": \"string\"}, \"keys\": {\"description\": \"Required only by `action=key`.\", \"type\": \"array\"}, \"text\": {\"description\": \"Required only by `action=type`, `action=answer` and `action=interact`.\", \"type\": \"string\"}, \"coordinate\": {\"description\": \"(x, y): The x (pixels from the left edge) and y (pixels from the top edge) coordinates to move the mouse to. Required only by `action=mouse_move` and `action=left_click_drag`.\", \"type\": \"array\"}, \"pixels\": {\"description\": \"The amount of scrolling to perform. Positive values scroll up, negative values scroll down. Required only by `action=scroll` and `action=hscroll`.\", \"type\": \"number\"}, \"time\": {\"description\": \"The seconds to wait. Required only by `action=wait`.\", \"type\": \"number\"}, \"status\": {\"description\": \"The status of the task. Required only by `action=terminate`.\", \"type\": \"string\", \"enum\": [\"success\", \"failure\"]}}, \"required\": [\"action\"], \"type\": \"object\"}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\n\n# Response format\n\nResponse format for every step:\n1) Action: a short imperative describing what to do in the UI.\n2) A single <tool_call>...</tool_call> block containing only the JSON: {\"name\": <function-name>, \"arguments\": <args-json-object>}.\n\nRules:\n- Output exactly in the order: Action, <tool_call>.\n- Be brief: one for Action.\n- Do not output anything else outside those two parts.\n- If finishing, use action=terminate in the tool call.\"\"\"\n\nmessages = [\n  {\n    \"role\": \"system\",\n    \"content\": system_prompt\n  },\n  {\n    \"role\": \"user\",\n    \"content\": [\n      {\"type\": \"image_url\", \"image_url\": {\"url\": \"https://img.alicdn.com/imgextra/i2/O1CN016iJ8ob1C3xP1s2M6z_!!6000000000026-2-tps-3008-1758.png\"}},\n      {\"type\": \"text\", \"text\": \"帮我打开浏览器\"}\n    ]\n  }\n]\n\nclient = OpenAI(\n  api_key=os.getenv(\"DASHSCOPE_API_KEY\"),\n  base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\",\n)\n\ncompletion = client.chat.completions.create(\n  model=\"gui-plus-2026-02-26\",\n  messages=messages,\n  extra_body={\"vl_high_resolution_images\": True}\n)\n\nprint(completion.choices[0].message.content)"
+          },
+          {
+            "lang": "javascript",
+            "label": "非流式",
+            "source": "import OpenAI from \"openai\";\n\nconst systemPrompt = `# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"computer_use\", \"description\": \"Use a mouse and keyboard to interact with a computer, and take screenshots.\\n* This is an interface to a desktop GUI. You do not have access to a terminal or applications menu. You must click on desktop icons to start applications.\\n* Some applications may take time to start or process actions, so you may need to wait and take successive screenshots to see the results of your actions. E.g. if you click on Firefox and a window doesn't open, try wait and taking another screenshot.\\n* The screen's resolution is 1000x1000.\\n* Make sure to click any buttons, links, icons, etc with the cursor tip in the center of the element. Don't click boxes on their edges unless asked.\", \"parameters\": {\"properties\": {\"action\": {\"description\": \"The action to perform. The available actions are:\\n* \\`key\\`: Performs key down presses on the arguments passed in order, then performs key releases in reverse order.\\n* \\`type\\`: Type a string of text on the keyboard.\\n* \\`mouse_move\\`: Move the cursor to a specified (x, y) pixel coordinate on the screen.\\n* \\`left_click\\`: Click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\n* \\`left_click_drag\\`: Click and drag the cursor to a specified (x, y) pixel coordinate on the screen.\\n* \\`right_click\\`: Click the right mouse button at a specified (x, y) pixel coordinate on the screen.\\n* \\`middle_click\\`: Click the middle mouse button at a specified (x, y) pixel coordinate on the screen.\\n* \\`double_click\\`: Double-click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\n* \\`triple_click\\`: Triple-click the left mouse button at a specified (x, y) pixel coordinate on the screen (simulated as double-click since it's the closest action).\\n* \\`scroll\\`: Performs a scroll of the mouse scroll wheel.\\n* \\`hscroll\\`: Performs a horizontal scroll (mapped to regular scroll).\\n* \\`wait\\`: Wait specified seconds for the change to happen.\\n* \\`terminate\\`: Terminate the current task and report its completion status.\\n* \\`answer\\`: Answer a question.\\n* \\`interact\\`: Resolve the blocking window by interacting with the user.\", \"enum\": [\"key\", \"type\", \"mouse_move\", \"left_click\", \"left_click_drag\", \"right_click\", \"middle_click\", \"double_click\", \"triple_click\", \"scroll\", \"hscroll\", \"wait\", \"terminate\", \"answer\", \"interact\"], \"type\": \"string\"}, \"keys\": {\"description\": \"Required only by \\`action=key\\`.\", \"type\": \"array\"}, \"text\": {\"description\": \"Required only by \\`action=type\\`, \\`action=answer\\` and \\`action=interact\\`.\", \"type\": \"string\"}, \"coordinate\": {\"description\": \"(x, y): The x (pixels from the left edge) and y (pixels from the top edge) coordinates to move the mouse to. Required only by \\`action=mouse_move\\` and \\`action=left_click_drag\\`.\", \"type\": \"array\"}, \"pixels\": {\"description\": \"The amount of scrolling to perform. Positive values scroll up, negative values scroll down. Required only by \\`action=scroll\\` and \\`action=hscroll\\`.\", \"type\": \"number\"}, \"time\": {\"description\": \"The seconds to wait. Required only by \\`action=wait\\`.\", \"type\": \"number\"}, \"status\": {\"description\": \"The status of the task. Required only by \\`action=terminate\\`.\", \"type\": \"string\", \"enum\": [\"success\", \"failure\"]}}, \"required\": [\"action\"], \"type\": \"object\"}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\n\n# Response format\n\nResponse format for every step:\n1) Action: a short imperative describing what to do in the UI.\n2) A single <tool_call>...</tool_call> block containing only the JSON: {\"name\": <function-name>, \"arguments\": <args-json-object>}.\n\nRules:\n- Output exactly in the order: Action, <tool_call>.\n- Be brief: one for Action.\n- Do not output anything else outside those two parts.\n- If finishing, use action=terminate in the tool call.`;\n\nconst client = new OpenAI({\n  apiKey: process.env.DASHSCOPE_API_KEY,\n  baseURL: \"https://dashscope.aliyuncs.com/compatible-mode/v1\",\n});\n\nconst messages = [\n  {\n    role: \"system\",\n    content: systemPrompt,\n  },\n  {\n    role: \"user\",\n    content: [\n      {\n        type: \"image_url\",\n        image_url: {\n          url: \"https://img.alicdn.com/imgextra/i2/O1CN016iJ8ob1C3xP1s2M6z_!!6000000000026-2-tps-3008-1758.png\",\n        },\n      },\n      { type: \"text\", text: \"帮我打开浏览器\" },\n    ],\n  },\n];\n\nconst completion = await client.chat.completions.create({\n  model: \"gui-plus-2026-02-26\",\n  messages: messages,\n  extra_body: { vl_high_resolution_images: true },\n});\n\nconsole.log(completion.choices[0].message.content);"
+          },
+          {
+            "lang": "curl",
+            "label": "非流式",
+            "source": "curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"gui-plus-2026-02-26\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\\n{\\\"type\\\": \\\"function\\\", \\\"function\\\": {\\\"name\\\": \\\"computer_use\\\", \\\"description\\\": \\\"Use a mouse and keyboard to interact with a computer, and take screenshots.\\\\n* This is an interface to a desktop GUI. You do not have access to a terminal or applications menu. You must click on desktop icons to start applications.\\\\n* Some applications may take time to start or process actions, so you may need to wait and take successive screenshots to see the results of your actions. E.g. if you click on Firefox and a window doesn't open, try wait and taking another screenshot.\\\\n* The screen's resolution is 1000x1000.\\\\n* Make sure to click any buttons, links, icons, etc with the cursor tip in the center of the element. Don't click boxes on their edges unless asked.\\\", \\\"parameters\\\": {\\\"properties\\\": {\\\"action\\\": {\\\"description\\\": \\\"The action to perform. The available actions are:\\\\n* `key`: Performs key down presses on the arguments passed in order, then performs key releases in reverse order.\\\\n* `type`: Type a string of text on the keyboard.\\\\n* `mouse_move`: Move the cursor to a specified (x, y) pixel coordinate on the screen.\\\\n* `left_click`: Click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\\\n* `left_click_drag`: Click and drag the cursor to a specified (x, y) pixel coordinate on the screen.\\\\n* `right_click`: Click the right mouse button at a specified (x, y) pixel coordinate on the screen.\\\\n* `middle_click`: Click the middle mouse button at a specified (x, y) pixel coordinate on the screen.\\\\n* `double_click`: Double-click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\\\n* `triple_click`: Triple-click the left mouse button at a specified (x, y) pixel coordinate on the screen (simulated as double-click since it's the closest action).\\\\n* `scroll`: Performs a scroll of the mouse scroll wheel.\\\\n* `hscroll`: Performs a horizontal scroll (mapped to regular scroll).\\\\n* `wait`: Wait specified seconds for the change to happen.\\\\n* `terminate`: Terminate the current task and report its completion status.\\\\n* `answer`: Answer a question.\\\\n* `interact`: Resolve the blocking window by interacting with the user.\\\", \\\"enum\\\": [\\\"key\\\", \\\"type\\\", \\\"mouse_move\\\", \\\"left_click\\\", \\\"left_click_drag\\\", \\\"right_click\\\", \\\"middle_click\\\", \\\"double_click\\\", \\\"triple_click\\\", \\\"scroll\\\", \\\"hscroll\\\", \\\"wait\\\", \\\"terminate\\\", \\\"answer\\\", \\\"interact\\\"], \\\"type\\\": \\\"string\\\"}, \\\"keys\\\": {\\\"description\\\": \\\"Required only by `action=key`.\\\", \\\"type\\\": \\\"array\\\"}, \\\"text\\\": {\\\"description\\\": \\\"Required only by `action=type`, `action=answer` and `action=interact`.\\\", \\\"type\\\": \\\"string\\\"}, \\\"coordinate\\\": {\\\"description\\\": \\\"(x, y): The x (pixels from the left edge) and y (pixels from the top edge) coordinates to move the mouse to. Required only by `action=mouse_move` and `action=left_click_drag`.\\\", \\\"type\\\": \\\"array\\\"}, \\\"pixels\\\": {\\\"description\\\": \\\"The amount of scrolling to perform. Positive values scroll up, negative values scroll down. Required only by `action=scroll` and `action=hscroll`.\\\", \\\"type\\\": \\\"number\\\"}, \\\"time\\\": {\\\"description\\\": \\\"The seconds to wait. Required only by `action=wait`.\\\", \\\"type\\\": \\\"number\\\"}, \\\"status\\\": {\\\"description\\\": \\\"The status of the task. Required only by `action=terminate`.\\\", \\\"type\\\": \\\"string\\\", \\\"enum\\\": [\\\"success\\\", \\\"failure\\\"]}}, \\\"required\\\": [\\\"action\\\"], \\\"type\\\": \\\"object\\\"}}}\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call>\\n\\n# Response format\\n\\nResponse format for every step:\\n1) Action: a short imperative describing what to do in the UI.\\n2) A single <tool_call>...</tool_call> block containing only the JSON: {\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}.\\n\\nRules:\\n- Output exactly in the order: Action, <tool_call>.\\n- Be brief: one for Action.\\n- Do not output anything else outside those two parts.\\n- If finishing, use action=terminate in the tool call.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": [\n          {\n            \"type\": \"image_url\",\n            \"image_url\": {\n              \"url\": \"https://img.alicdn.com/imgextra/i2/O1CN016iJ8ob1C3xP1s2M6z_!!6000000000026-2-tps-3008-1758.png\"\n            }\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"帮我打开浏览器\"\n          }\n        ]\n      }\n    ],\n    \"vl_high_resolution_images\": true\n  }' "
+          },
+          {
+            "lang": "python",
+            "label": "流式输出",
+            "source": "import os\nfrom openai import OpenAI\n\nsystem_prompt = \"\"\"# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"computer_use\", \"description\": \"Use a mouse and keyboard to interact with a computer, and take screenshots.\\n* This is an interface to a desktop GUI. You do not have access to a terminal or applications menu. You must click on desktop icons to start applications.\\n* Some applications may take time to start or process actions, so you may need to wait and take successive screenshots to see the results of your actions. E.g. if you click on Firefox and a window doesn't open, try wait and taking another screenshot.\\n* The screen's resolution is 1000x1000.\\n* Make sure to click any buttons, links, icons, etc with the cursor tip in the center of the element. Don't click boxes on their edges unless asked.\", \"parameters\": {\"properties\": {\"action\": {\"description\": \"The action to perform. The available actions are:\\n* `key`: Performs key down presses on the arguments passed in order, then performs key releases in reverse order.\\n* `type`: Type a string of text on the keyboard.\\n* `mouse_move`: Move the cursor to a specified (x, y) pixel coordinate on the screen.\\n* `left_click`: Click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\n* `left_click_drag`: Click and drag the cursor to a specified (x, y) pixel coordinate on the screen.\\n* `right_click`: Click the right mouse button at a specified (x, y) pixel coordinate on the screen.\\n* `middle_click`: Click the middle mouse button at a specified (x, y) pixel coordinate on the screen.\\n* `double_click`: Double-click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\n* `triple_click`: Triple-click the left mouse button at a specified (x, y) pixel coordinate on the screen (simulated as double-click since it's the closest action).\\n* `scroll`: Performs a scroll of the mouse scroll wheel.\\n* `hscroll`: Performs a horizontal scroll (mapped to regular scroll).\\n* `wait`: Wait specified seconds for the change to happen.\\n* `terminate`: Terminate the current task and report its completion status.\\n* `answer`: Answer a question.\\n* `interact`: Resolve the blocking window by interacting with the user.\", \"enum\": [\"key\", \"type\", \"mouse_move\", \"left_click\", \"left_click_drag\", \"right_click\", \"middle_click\", \"double_click\", \"triple_click\", \"scroll\", \"hscroll\", \"wait\", \"terminate\", \"answer\", \"interact\"], \"type\": \"string\"}, \"keys\": {\"description\": \"Required only by `action=key`.\", \"type\": \"array\"}, \"text\": {\"description\": \"Required only by `action=type`, `action=answer` and `action=interact`.\", \"type\": \"string\"}, \"coordinate\": {\"description\": \"(x, y): The x (pixels from the left edge) and y (pixels from the top edge) coordinates to move the mouse to. Required only by `action=mouse_move` and `action=left_click_drag`.\", \"type\": \"array\"}, \"pixels\": {\"description\": \"The amount of scrolling to perform. Positive values scroll up, negative values scroll down. Required only by `action=scroll` and `action=hscroll`.\", \"type\": \"number\"}, \"time\": {\"description\": \"The seconds to wait. Required only by `action=wait`.\", \"type\": \"number\"}, \"status\": {\"description\": \"The status of the task. Required only by `action=terminate`.\", \"type\": \"string\", \"enum\": [\"success\", \"failure\"]}}, \"required\": [\"action\"], \"type\": \"object\"}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\n\n# Response format\n\nResponse format for every step:\n1) Action: a short imperative describing what to do in the UI.\n2) A single <tool_call>...</tool_call> block containing only the JSON: {\"name\": <function-name>, \"arguments\": <args-json-object>}.\n\nRules:\n- Output exactly in the order: Action, <tool_call>.\n- Be brief: one for Action.\n- Do not output anything else outside those two parts.\n- If finishing, use action=terminate in the tool call.\"\"\"\n\nmessages = [\n  {\n    \"role\": \"system\",\n    \"content\": system_prompt\n  },\n  {\n    \"role\": \"user\",\n    \"content\": [\n      {\"type\": \"image_url\", \"image_url\": {\"url\": \"https://img.alicdn.com/imgextra/i2/O1CN016iJ8ob1C3xP1s2M6z_!!6000000000026-2-tps-3008-1758.png\"}},\n      {\"type\": \"text\", \"text\": \"帮我打开浏览器\"}\n    ]\n  }\n]\n\nclient = OpenAI(\n  api_key=os.getenv(\"DASHSCOPE_API_KEY\"),\n  base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\",\n)\n\ncompletion = client.chat.completions.create(\n  model=\"gui-plus-2026-02-26\",\n  messages=messages,\n  extra_body={\"vl_high_resolution_images\": True},\n  stream=True,\n  stream_options={\"include_usage\": True}\n)\nfor chunk in completion:\n  print(chunk.model_dump_json())"
+          },
+          {
+            "lang": "javascript",
+            "label": "流式输出",
+            "source": "import OpenAI from \"openai\";\n\nconst systemPrompt = `# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"computer_use\", \"description\": \"Use a mouse and keyboard to interact with a computer, and take screenshots.\\n* This is an interface to a desktop GUI. You do not have access to a terminal or applications menu. You must click on desktop icons to start applications.\\n* Some applications may take time to start or process actions, so you may need to wait and take successive screenshots to see the results of your actions. E.g. if you click on Firefox and a window doesn't open, try wait and taking another screenshot.\\n* The screen's resolution is 1000x1000.\\n* Make sure to click any buttons, links, icons, etc with the cursor tip in the center of the element. Don't click boxes on their edges unless asked.\", \"parameters\": {\"properties\": {\"action\": {\"description\": \"The action to perform. The available actions are:\\n* \\`key\\`: Performs key down presses on the arguments passed in order, then performs key releases in reverse order.\\n* \\`type\\`: Type a string of text on the keyboard.\\n* \\`mouse_move\\`: Move the cursor to a specified (x, y) pixel coordinate on the screen.\\n* \\`left_click\\`: Click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\n* \\`left_click_drag\\`: Click and drag the cursor to a specified (x, y) pixel coordinate on the screen.\\n* \\`right_click\\`: Click the right mouse button at a specified (x, y) pixel coordinate on the screen.\\n* \\`middle_click\\`: Click the middle mouse button at a specified (x, y) pixel coordinate on the screen.\\n* \\`double_click\\`: Double-click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\n* \\`triple_click\\`: Triple-click the left mouse button at a specified (x, y) pixel coordinate on the screen (simulated as double-click since it's the closest action).\\n* \\`scroll\\`: Performs a scroll of the mouse scroll wheel.\\n* \\`hscroll\\`: Performs a horizontal scroll (mapped to regular scroll).\\n* \\`wait\\`: Wait specified seconds for the change to happen.\\n* \\`terminate\\`: Terminate the current task and report its completion status.\\n* \\`answer\\`: Answer a question.\\n* \\`interact\\`: Resolve the blocking window by interacting with the user.\", \"enum\": [\"key\", \"type\", \"mouse_move\", \"left_click\", \"left_click_drag\", \"right_click\", \"middle_click\", \"double_click\", \"triple_click\", \"scroll\", \"hscroll\", \"wait\", \"terminate\", \"answer\", \"interact\"], \"type\": \"string\"}, \"keys\": {\"description\": \"Required only by \\`action=key\\`.\", \"type\": \"array\"}, \"text\": {\"description\": \"Required only by \\`action=type\\`, \\`action=answer\\` and \\`action=interact\\`.\", \"type\": \"string\"}, \"coordinate\": {\"description\": \"(x, y): The x (pixels from the left edge) and y (pixels from the top edge) coordinates to move the mouse to. Required only by \\`action=mouse_move\\` and \\`action=left_click_drag\\`.\", \"type\": \"array\"}, \"pixels\": {\"description\": \"The amount of scrolling to perform. Positive values scroll up, negative values scroll down. Required only by \\`action=scroll\\` and \\`action=hscroll\\`.\", \"type\": \"number\"}, \"time\": {\"description\": \"The seconds to wait. Required only by \\`action=wait\\`.\", \"type\": \"number\"}, \"status\": {\"description\": \"The status of the task. Required only by \\`action=terminate\\`.\", \"type\": \"string\", \"enum\": [\"success\", \"failure\"]}}, \"required\": [\"action\"], \"type\": \"object\"}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\n\n# Response format\n\nResponse format for every step:\n1) Action: a short imperative describing what to do in the UI.\n2) A single <tool_call>...</tool_call> block containing only the JSON: {\"name\": <function-name>, \"arguments\": <args-json-object>}.\n\nRules:\n- Output exactly in the order: Action, <tool_call>.\n- Be brief: one for Action.\n- Do not output anything else outside those two parts.\n- If finishing, use action=terminate in the tool call.`;\n\nconst openai = new OpenAI({\n  apiKey: process.env.DASHSCOPE_API_KEY,\n  baseURL: \"https://dashscope.aliyuncs.com/compatible-mode/v1\",\n});\n\nconst messages = [\n  {\n    role: \"system\",\n    content: systemPrompt,\n  },\n  {\n    role: \"user\",\n    content: [\n      {\n        type: \"image_url\",\n        image_url: {\n          url: \"https://img.alicdn.com/imgextra/i2/O1CN016iJ8ob1C3xP1s2M6z_!!6000000000026-2-tps-3008-1758.png\",\n        },\n      },\n      { type: \"text\", text: \"帮我打开浏览器\" },\n    ],\n  },\n];\n\nasync function main() {\n  const response = await openai.chat.completions.create({\n    model: \"gui-plus-2026-02-26\",\n    messages: messages,\n    extra_body: { vl_high_resolution_images: true },\n    stream: true,\n    stream_options: { include_usage: true },\n  });\n\n  for await (const chunk of response) {\n    if (chunk.choices[0] && chunk.choices[0].delta.content != null) {\n      console.log(chunk.choices[0].delta.content);\n    }\n  }\n}\nmain();"
+          },
+          {
+            "lang": "curl",
+            "label": "流式输出",
+            "source": "curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \\\n  -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"gui-plus-2026-02-26\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\\n{\\\"type\\\": \\\"function\\\", \\\"function\\\": {\\\"name\\\": \\\"computer_use\\\", \\\"description\\\": \\\"Use a mouse and keyboard to interact with a computer, and take screenshots.\\\\n* This is an interface to a desktop GUI. You do not have access to a terminal or applications menu. You must click on desktop icons to start applications.\\\\n* Some applications may take time to start or process actions, so you may need to wait and take successive screenshots to see the results of your actions. E.g. if you click on Firefox and a window doesn't open, try wait and taking another screenshot.\\\\n* The screen's resolution is 1000x1000.\\\\n* Make sure to click any buttons, links, icons, etc with the cursor tip in the center of the element. Don't click boxes on their edges unless asked.\\\", \\\"parameters\\\": {\\\"properties\\\": {\\\"action\\\": {\\\"description\\\": \\\"The action to perform. The available actions are:\\\\n* `key`: Performs key down presses on the arguments passed in order, then performs key releases in reverse order.\\\\n* `type`: Type a string of text on the keyboard.\\\\n* `mouse_move`: Move the cursor to a specified (x, y) pixel coordinate on the screen.\\\\n* `left_click`: Click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\\\n* `left_click_drag`: Click and drag the cursor to a specified (x, y) pixel coordinate on the screen.\\\\n* `right_click`: Click the right mouse button at a specified (x, y) pixel coordinate on the screen.\\\\n* `middle_click`: Click the middle mouse button at a specified (x, y) pixel coordinate on the screen.\\\\n* `double_click`: Double-click the left mouse button at a specified (x, y) pixel coordinate on the screen.\\\\n* `triple_click`: Triple-click the left mouse button at a specified (x, y) pixel coordinate on the screen (simulated as double-click since it's the closest action).\\\\n* `scroll`: Performs a scroll of the mouse scroll wheel.\\\\n* `hscroll`: Performs a horizontal scroll (mapped to regular scroll).\\\\n* `wait`: Wait specified seconds for the change to happen.\\\\n* `terminate`: Terminate the current task and report its completion status.\\\\n* `answer`: Answer a question.\\\\n* `interact`: Resolve the blocking window by interacting with the user.\\\", \\\"enum\\\": [\\\"key\\\", \\\"type\\\", \\\"mouse_move\\\", \\\"left_click\\\", \\\"left_click_drag\\\", \\\"right_click\\\", \\\"middle_click\\\", \\\"double_click\\\", \\\"triple_click\\\", \\\"scroll\\\", \\\"hscroll\\\", \\\"wait\\\", \\\"terminate\\\", \\\"answer\\\", \\\"interact\\\"], \\\"type\\\": \\\"string\\\"}, \\\"keys\\\": {\\\"description\\\": \\\"Required only by `action=key`.\\\", \\\"type\\\": \\\"array\\\"}, \\\"text\\\": {\\\"description\\\": \\\"Required only by `action=type`, `action=answer` and `action=interact`.\\\", \\\"type\\\": \\\"string\\\"}, \\\"coordinate\\\": {\\\"description\\\": \\\"(x, y): The x (pixels from the left edge) and y (pixels from the top edge) coordinates to move the mouse to. Required only by `action=mouse_move` and `action=left_click_drag`.\\\", \\\"type\\\": \\\"array\\\"}, \\\"pixels\\\": {\\\"description\\\": \\\"The amount of scrolling to perform. Positive values scroll up, negative values scroll down. Required only by `action=scroll` and `action=hscroll`.\\\", \\\"type\\\": \\\"number\\\"}, \\\"time\\\": {\\\"description\\\": \\\"The seconds to wait. Required only by `action=wait`.\\\", \\\"type\\\": \\\"number\\\"}, \\\"status\\\": {\\\"description\\\": \\\"The status of the task. Required only by `action=terminate`.\\\", \\\"type\\\": \\\"string\\\", \\\"enum\\\": [\\\"success\\\", \\\"failure\\\"]}}, \\\"required\\\": [\\\"action\\\"], \\\"type\\\": \\\"object\\\"}}}\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call>\\n\\n# Response format\\n\\nResponse format for every step:\\n1) Action: a short imperative describing what to do in the UI.\\n2) A single <tool_call>...</tool_call> block containing only the JSON: {\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}.\\n\\nRules:\\n- Output exactly in the order: Action, <tool_call>.\\n- Be brief: one for Action.\\n- Do not output anything else outside those two parts.\\n- If finishing, use action=terminate in the tool call.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": [\n          {\n            \"type\": \"image_url\",\n            \"image_url\": {\n              \"url\": \"https://img.alicdn.com/imgextra/i2/O1CN016iJ8ob1C3xP1s2M6z_!!6000000000026-2-tps-3008-1758.png\"\n            }\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"帮我打开浏览器\"\n          }\n        ]\n      }\n    ],\n    \"vl_high_resolution_images\": true,\n    \"stream\": true,\n    \"stream_options\": {\"include_usage\": true}\n  }' "
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。"
+      }
+    },
+    "schemas": {
+      "GuiPlusChatRequest": {
+        "type": "object",
+        "required": [
+          "model",
+          "messages"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "enum": [
+              "gui-plus",
+              "gui-plus-2026-02-26"
+            ],
+            "description": "模型名称。"
+          },
+          "messages": {
+            "type": "array",
+            "description": "模型的对话历史，按时间顺序排列。",
+            "items": {
+              "$ref": "#/components/schemas/GuiPlusMessage"
+            }
+          },
+          "stream": {
+            "type": "boolean",
+            "default": false,
+            "description": "是否以流式方式输出回复。`false`：等待模型生成完整回复后一次性返回。`true`：模型边生成边返回数据块。"
+          },
+          "stream_options": {
+            "type": "object",
+            "description": "流式输出的配置项，仅在 `stream` 为 `true` 时生效。",
+            "properties": {
+              "include_usage": {
+                "type": "boolean",
+                "default": false,
+                "description": "是否在最后一个数据块中返回 Token 消耗统计。"
+              }
+            }
+          },
+          "max_tokens": {
+            "type": "integer",
+            "description": "限制模型输出的最大 Token 数。若生成内容超过此值，响应将被截断。默认值与最大值均为模型的最大输出长度。"
+          },
+          "vl_high_resolution_images": {
+            "type": "boolean",
+            "default": false,
+            "description": "是否将输入图像的像素上限提升至 16384 Token 对应的像素量。开启后使用固定分辨率策略，像素上限为 12,845,056（忽略 `max_pixels`）。关闭时像素上限由 `max_pixels` 决定。\n\n**此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，通过 `extra_body` 传入：`extra_body={\"vl_high_resolution_images\": True}`。"
+          },
+          "enable_thinking": {
+            "type": "boolean",
+            "description": "是否开启思考模式。仅 `gui-plus-2026-02-26` 支持混合思考。开启后思考内容通过 `reasoning_content` 返回。\n\n**此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，通过 `extra_body` 传入：`extra_body={\"enable_thinking\": True}`。"
+          },
+          "seed": {
+            "type": "integer",
+            "description": "随机数种子，范围 `[0, 2^31-1]`。用于确保在相同输入和参数下生成结果可复现。"
+          },
+          "temperature": {
+            "type": "number",
+            "default": 0.01,
+            "description": "采样温度，控制生成文本的多样性。取值范围 `[0, 2)`。`temperature` 与 `top_p` 二者只需设置其一。"
+          },
+          "top_p": {
+            "type": "number",
+            "default": 0.01,
+            "description": "核采样的概率阈值。取值范围 `(0, 1.0]`。`temperature` 与 `top_p` 二者只需设置其一。"
+          },
+          "top_k": {
+            "type": "integer",
+            "default": 1,
+            "description": "采样候选集的大小。`None` 或大于 100 时将禁用该功能。\n\n**此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，通过 `extra_body` 传入。"
+          },
+          "repetition_penalty": {
+            "type": "number",
+            "default": 1.0,
+            "description": "连续序列中的重复度惩罚。1.0 表示不惩罚。对输出影响较大，建议保持默认值。"
+          },
+          "presence_penalty": {
+            "type": "number",
+            "default": 1.5,
+            "description": "控制生成文本的内容重复度。取值范围 `[-2.0, 2.0]`。正值降低重复度，负值增加重复度。"
+          },
+          "stop": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "description": "停止词。当模型生成的文本中出现指定字符串或 token_id 时，生成立即终止。不支持字符串与 token_id 混合。"
+          }
+        }
+      },
+      "GuiPlusMessage": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GuiPlusSystemMessage"
+          },
+          {
+            "$ref": "#/components/schemas/GuiPlusUserMessage"
+          },
+          {
+            "$ref": "#/components/schemas/GuiPlusAssistantMessage"
+          }
+        ]
+      },
+      "GuiPlusSystemMessage": {
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "system"
+            ],
+            "description": "消息角色，固定为 `system`。"
+          },
+          "content": {
+            "type": "string",
+            "description": "系统消息内容。通常用于设定 `computer_use` 工具函数定义和响应格式。"
+          }
+        }
+      },
+      "GuiPlusUserMessage": {
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user"
+            ],
+            "description": "消息角色，固定为 `user`。"
+          },
+          "content": {
+            "type": "array",
+            "description": "用户消息内容数组。每个元素可以是文本或图片。",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "required": [
+                    "type",
+                    "text"
+                  ],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "text"
+                      ]
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "输入文本。"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "type",
+                    "image_url"
+                  ],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "image_url"
+                      ]
+                    },
+                    "image_url": {
+                      "type": "object",
+                      "required": [
+                        "url"
+                      ],
+                      "properties": {
+                        "url": {
+                          "type": "string",
+                          "description": "图片 URL 或 Base64 Data URL。"
+                        },
+                        "min_pixels": {
+                          "type": "integer",
+                          "description": "最小像素阈值。默认值与最小值均为 3136；低于此值时图片将被放大。"
+                        },
+                        "max_pixels": {
+                          "type": "integer",
+                          "description": "最大像素阈值。超过此值时图片将被缩小。`vl_high_resolution_images=false` 时默认 1,003,520，最大 12,845,056；`vl_high_resolution_images=true` 时忽略此参数，固定上限 12,845,056。"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "GuiPlusAssistantMessage": {
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "assistant"
+            ],
+            "description": "消息角色，固定为 `assistant`。"
+          },
+          "content": {
+            "type": "string",
+            "description": "模型在上一轮生成的回复文本。"
+          }
+        }
+      },
+      "GuiPlusChatCompletion": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "本次请求的唯一标识符。"
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "finish_reason": {
+                  "type": "string",
+                  "enum": [
+                    "stop",
+                    "length"
+                  ],
+                  "description": "模型停止生成的原因。`stop`：自然停止。`length`：超出 `max_tokens`。"
+                },
+                "index": {
+                  "type": "integer",
+                  "description": "生成结果的序号，从 0 开始。"
+                },
+                "logprobs": {
+                  "type": "null"
+                },
+                "message": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "string",
+                      "description": "模型生成的界面操作指令。"
+                    },
+                    "role": {
+                      "type": "string",
+                      "enum": [
+                        "assistant"
+                      ]
+                    },
+                    "refusal": {
+                      "type": "null"
+                    },
+                    "audio": {
+                      "type": "null"
+                    },
+                    "function_call": {
+                      "type": "null"
+                    },
+                    "tool_calls": {
+                      "type": "null"
+                    },
+                    "annotations": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "created": {
+            "type": "integer",
+            "description": "请求创建时的 Unix 时间戳。"
+          },
+          "model": {
+            "type": "string",
+            "description": "本次请求使用的模型。"
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "chat.completion"
+            ]
+          },
+          "service_tier": {
+            "type": "null"
+          },
+          "system_fingerprint": {
+            "type": "null"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/GuiPlusOpenAIUsage"
+          }
+        }
+      },
+      "GuiPlusChatCompletionChunk": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "本次调用的唯一标识符，所有 chunk 共享同一 id。"
+          },
+          "choices": {
+            "type": "array",
+            "description": "设置 `include_usage` 为 `true` 时，最后一个 chunk 中为空数组。",
+            "items": {
+              "type": "object",
+              "properties": {
+                "delta": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "增量文本内容。"
+                    },
+                    "role": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "仅首个 chunk 包含，值为 `assistant`。"
+                    },
+                    "function_call": {
+                      "type": "null"
+                    },
+                    "refusal": {
+                      "type": "null"
+                    },
+                    "tool_calls": {
+                      "type": "null"
+                    }
+                  }
+                },
+                "finish_reason": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "生成结束时为 `stop` 或 `length`，否则为 `null`。"
+                },
+                "index": {
+                  "type": "integer"
+                },
+                "logprobs": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          "created": {
+            "type": "integer"
+          },
+          "model": {
+            "type": "string"
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "chat.completion.chunk"
+            ]
+          },
+          "service_tier": {
+            "type": "null"
+          },
+          "system_fingerprint": {
+            "type": "null"
+          },
+          "usage": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/GuiPlusOpenAIUsage"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "仅在 `include_usage` 为 `true` 时，在最后一个 chunk 中返回。"
+          }
+        }
+      },
+      "GuiPlusOpenAIUsage": {
+        "type": "object",
+        "properties": {
+          "completion_tokens": {
+            "type": "integer",
+            "description": "输出 Token 数。"
+          },
+          "prompt_tokens": {
+            "type": "integer",
+            "description": "输入 Token 数。"
+          },
+          "total_tokens": {
+            "type": "integer",
+            "description": "总 Token 数。"
+          },
+          "completion_tokens_details": {
+            "type": "object",
+            "properties": {
+              "text_tokens": {
+                "type": "integer"
+              },
+              "accepted_prediction_tokens": {
+                "type": "null"
+              },
+              "audio_tokens": {
+                "type": "null"
+              },
+              "reasoning_tokens": {
+                "type": "null"
+              },
+              "rejected_prediction_tokens": {
+                "type": "null"
+              }
+            }
+          },
+          "prompt_tokens_details": {
+            "type": "object",
+            "properties": {
+              "image_tokens": {
+                "type": "integer",
+                "description": "图像内容占用的 Token 数。"
+              },
+              "text_tokens": {
+                "type": "integer",
+                "description": "文本内容占用的 Token 数。"
+              },
+              "audio_tokens": {
+                "type": "null"
+              },
+              "cached_tokens": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "param": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

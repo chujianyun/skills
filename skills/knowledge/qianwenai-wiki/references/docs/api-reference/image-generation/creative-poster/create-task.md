@@ -1,0 +1,341 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# 创意海报 — 创建任务
+
+> 创意海报异步生成
+
+<Warning>
+  wanx-poster-generation-v1 模型当前仅提供**免费体验**，免费额度用完后不可调用且不支持付费。
+</Warning>
+
+<Note>
+  请先[获取 API Key](/api-reference/preparation/api-key) 并[设置为环境变量](/api-reference/preparation/export-api-key-env)。
+</Note>
+
+## 模型信息
+
+免费额度详情请参见[免费额度](/resources/free-quota)，限流信息请在[控制台](https://platform.qianwenai.com/home/benefits)查看。
+
+## 生成模式
+
+| 模式         | 说明                                                      |
+| ---------- | ------------------------------------------------------- |
+| `generate` | 默认模式，生成海报                                               |
+| `sr`       | 超分辨率模式，需要传入 `auxiliary_parameters`（由 `generate` 模式返回）   |
+| `hrf`      | 高分辨率修复模式，需要传入 `auxiliary_parameters`（由 `generate` 模式返回） |
+
+## 海报风格
+
+支持以下 18 种风格（通过 `lora_name` 参数指定）：
+
+2D插画1、2D插画2、浩瀚星云、浓郁色彩、光线粒子、透明玻璃、剪纸工艺、折纸工艺、中国水墨、中国刺绣、真实场景、2D卡通、儿童水彩、赛博背景、浅蓝抽象、深蓝抽象、抽象点线、童话油画
+
+## OpenAPI
+
+````yaml post /services/aigc/text2image/image-synthesis
+openapi: 3.1.0
+info:
+  title: Creative Poster Generation API
+  version: 1.0.0
+  description: 创意海报生成 API
+servers:
+  - url: https://dashscope.aliyuncs.com/api/v1
+    description: DashScope
+security:
+  - BearerAuth: []
+paths:
+  /services/aigc/text2image/image-synthesis:
+    post:
+      summary: 生成海报
+      operationId: createCreativePosterTask
+      parameters:
+        - name: X-DashScope-Async
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - enable
+          description: 启用异步模式。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreativePosterRequest"
+      responses:
+        "200":
+          description: 任务提交成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AsyncTaskSubmitResponse"
+        "400":
+          description: 请求错误
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashScopeErrorResponse"
+      x-codeSamples:
+        - lang: curl
+          label: 生成海报（generate 模式）
+          source: |-
+            curl --location --request POST 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis' \
+            --header 'X-DashScope-Async: enable' \
+            --header 'Content-Type: application/json' \
+            --header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            --data-raw '{
+                "model":"wanx-poster-generation-v1",
+                "input": {
+                    "title":"春节快乐",
+                    "sub_title":"家庭团聚，共享天伦之乐",
+                    "body_text":"春节是中国最重要的传统节日之一，它象征着新的开始和希望",
+                    "prompt_text_zh":"灯笼，小猫，梅花",
+                    "wh_ratios":"竖版",
+                    "lora_name":"童话油画",
+                    "lora_weight":0.8,
+                    "ctrl_ratio":0.7,
+                    "ctrl_step":0.7,
+                    "generate_mode":"generate",
+                    "generate_num":1
+                },
+                "parameters":{}
+            }'
+        - lang: curl
+          label: 生成海报（hrf 模式）
+          source: |-
+            curl --location --request POST 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis' \
+            --header 'X-DashScope-Async: enable' \
+            --header 'Content-Type: application/json' \
+            --header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            --data-raw '{
+                "model":"wanx-poster-generation-v1",
+                "input": {
+                    "title":"春节快乐",
+                    "sub_title":"家庭团聚，共享天伦之乐",
+                    "body_text":"春节是中国最重要的传统节日之一，它象征着新的开始和希望",
+                    "prompt_text_zh":"灯笼，小猫，梅花",
+                    "wh_ratios":"竖版",
+                    "lora_name":"童话油画",
+                    "lora_weight":0.8,
+                    "ctrl_ratio":0.7,
+                    "ctrl_step":0.7,
+                    "generate_mode":"hrf",
+                    "auxiliary_parameters": "WMq4SC4......",
+                    "generate_num":1
+                },
+                "parameters":{}
+            }'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+  schemas:
+    CreativePosterRequest:
+      type: object
+      required:
+        - model
+        - input
+        - parameters
+      properties:
+        model:
+          type: string
+          enum:
+            - wanx-poster-generation-v1
+          description: 模型名称。
+        input:
+          type: object
+          required:
+            - generate_mode
+            - title
+          description: 输入参数。
+          properties:
+            generate_mode:
+              type: string
+              enum:
+                - generate
+                - sr
+                - hrf
+              description: 生成模式。`generate`：默认生成模式；`sr`：超分辨率模式，需要传入 `auxiliary_parameters`（由 generate 模式返回）；`hrf`：高分辨率修复模式，需要传入 `auxiliary_parameters`（由 generate 模式返回）。
+            title:
+              type: string
+              maxLength: 30
+              description: 海报主标题，最多 30 个字符。
+            sub_title:
+              type: string
+              maxLength: 30
+              description: 海报副标题，最多 30 个字符。
+            body_text:
+              type: string
+              maxLength: 50
+              description: 海报正文内容，最多 50 个字符。
+            prompt_text_zh:
+              type: string
+              description: 中文关键词，用于描述海报背景。
+            prompt_text_en:
+              type: string
+              description: 英文关键词，用于描述海报背景。
+            wh_ratios:
+              type: string
+              enum:
+                - 横版
+                - 竖版
+              description: 海报版式。`横版`：横版海报；`竖版`：竖版海报。
+            lora_name:
+              type: string
+              enum:
+                - 2D插画1
+                - 2D插画2
+                - 浩瀚星云
+                - 浓郁色彩
+                - 光线粒子
+                - 透明玻璃
+                - 剪纸工艺
+                - 折纸工艺
+                - 中国水墨
+                - 中国刺绣
+                - 真实场景
+                - 2D卡通
+                - 儿童水彩
+                - 赛博背景
+                - 浅蓝抽象
+                - 深蓝抽象
+                - 抽象点线
+                - 童话油画
+              description: 海报风格。
+            lora_weight:
+              type: number
+              minimum: 0
+              maximum: 1
+              default: 0.8
+              description: 风格权重，取值范围 0~1，默认 0.8。
+            ctrl_ratio:
+              type: number
+              minimum: 0
+              maximum: 1
+              default: 0.7
+              description: 控制比例，取值范围 0~1，默认 0.7。
+            ctrl_step:
+              type: number
+              minimum: 0
+              maximum: 1
+              default: 0.7
+              description: 控制步长，取值范围 0~1，默认 0.7。
+            generate_num:
+              type: integer
+              minimum: 1
+              maximum: 4
+              description: 生成图片数量，取值范围 1~4。
+            auxiliary_parameters:
+              type: string
+              description: 辅助参数，在 `sr` 或 `hrf` 模式下必传。该值由 `generate` 模式的任务结果返回。
+            creative_title_layout:
+              type: boolean
+              default: false
+              description: 是否使用创意标题排版，默认 false。
+        parameters:
+          type: object
+          description: 模型参数，传空对象 `{}`。
+    AsyncTaskSubmitResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识。
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 任务 ID，用于查询任务状态和结果。
+            task_status:
+              type: string
+              enum:
+                - PENDING
+              description: 任务状态。
+    TaskStatusResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: 请求唯一标识。
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 任务 ID。
+            task_status:
+              type: string
+              enum:
+                - PENDING
+                - RUNNING
+                - SUSPENDED
+                - SUCCEEDED
+                - FAILED
+              description: 任务状态。
+            submit_time:
+              type: string
+              description: 任务提交时间。
+            scheduled_time:
+              type: string
+              description: 任务调度时间。
+            end_time:
+              type: string
+              description: 任务结束时间。
+            render_urls:
+              type: array
+              items:
+                type: string
+              description: 渲染后的海报图片 URL 列表。
+            auxiliary_parameters:
+              type: array
+              items:
+                type: string
+              description: 辅助参数列表，用于 `sr` 或 `hrf` 模式的二次生成。
+            bg_urls:
+              type: array
+              items:
+                type: string
+              description: 背景图片 URL 列表。
+            task_metrics:
+              type: object
+              properties:
+                TOTAL:
+                  type: integer
+                  description: 总任务数。
+                SUCCEEDED:
+                  type: integer
+                  description: 成功任务数。
+                FAILED:
+                  type: integer
+                  description: 失败任务数。
+            code:
+              type: string
+              description: 错误码（仅在任务失败时返回）。
+            message:
+              type: string
+              description: 错误信息（仅在任务失败时返回）。
+        usage:
+          type: object
+          properties:
+            image_count:
+              type: integer
+              description: 生成的图片数量。
+    DashScopeErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          description: 错误码。
+        message:
+          type: string
+          description: 错误信息。
+        request_id:
+          type: string
+          description: 请求唯一标识。
+````

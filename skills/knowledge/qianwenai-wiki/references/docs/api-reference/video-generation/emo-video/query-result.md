@@ -1,0 +1,239 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# 悦动人像 EMO — 查询视频生成结果
+
+> 查询悦动人像 EMO 视频生成任务状态，获取生成的视频
+
+查询任务状态并获取生成的视频。
+
+## 轮询策略
+
+1. 调用[提交视频生成任务](/api-reference/video-generation/emo-video/create-task)接口获取 `task_id`。
+2. 每 **15 秒**轮询一次，直到 `task_status` 为 `SUCCEEDED` 或 `FAILED`。
+3. 任务成功后，从 `output.results.video_url` 获取视频。
+
+## 注意事项
+
+- **URL 有效期**：视频 URL 在 **24 小时**后过期，请及时下载保存。
+- **状态流转**：`PENDING` → `RUNNING` → `SUCCEEDED` 或 `FAILED`。`UNKNOWN` 表示任务不存在或已过期。
+
+## OpenAPI
+
+````yaml get /tasks/{task_id}
+openapi: 3.1.0
+info:
+  title: 悦动人像 EMO 视频生成 API
+  version: 1.0.0
+  description: 基于人物肖像图片和音频，生成口型与音频同步的唱演视频。
+servers:
+  - url: https://dashscope.aliyuncs.com/api/v1
+security:
+  - BearerAuth: []
+paths:
+  /tasks/{task_id}:
+    get:
+      summary: 查询视频生成结果
+      operationId: getEmoVideoTask
+      description: 查询悦动人像 EMO 视频生成任务状态，并在任务成功后获取视频 URL。
+      parameters:
+        - name: task_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: 提交任务时返回的 `task_id`。
+      responses:
+        "200":
+          description: 查询成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EmoVideoQueryResponse"
+              examples:
+                SUCCEEDED:
+                  summary: 任务成功
+                  value:
+                    request_id: 8190395f-ca1b-4703-9656-xxxxxx
+                    output:
+                      task_id: a8532587-fa8c-4ef8-82be-xxxxxx
+                      task_status: SUCCEEDED
+                      submit_time: 2025-09-11 14:33:38.716
+                      scheduled_time: 2025-09-11 14:33:53.089
+                      end_time: 2025-09-11 14:35:51.541
+                      results:
+                        video_url: https://xxx/output.mp4
+                    usage:
+                      video_duration: 13.93
+                      video_ratio: 1:1
+                FAILED:
+                  summary: 任务失败
+                  value:
+                    request_id: 4d687387-580a-4b49-a1f8-4691289e09a3
+                    output:
+                      task_id: a8532587-fa8c-4ef8-82be-xxxxxx
+                      task_status: FAILED
+                      code: InvalidURL
+                      message: Required URL is missing or invalid, please check the request URL.
+                RUNNING:
+                  summary: 任务处理中
+                  value:
+                    request_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+                    output:
+                      task_id: a8532587-fa8c-4ef8-82be-xxxxxx
+                      task_status: RUNNING
+                      submit_time: 2025-09-11 14:33:38.716
+                      scheduled_time: 2025-09-11 14:33:53.089
+        "401":
+          description: 认证失败
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashScopeErrorResponse"
+      x-codeSamples:
+        - lang: curl
+          label: cURL
+          source: |-
+            curl --location 'https://dashscope.aliyuncs.com/api/v1/tasks/{task_id}' \
+              --header "Authorization: Bearer $DASHSCOPE_API_KEY"
+components:
+  schemas:
+    EmoVideoRequest:
+      type: object
+      required:
+        - model
+        - input
+      properties:
+        model:
+          type: string
+          enum:
+            - emo-v1
+          description: 模型名称，固定为 `emo-v1`。
+        input:
+          type: object
+          required:
+            - image_url
+            - audio_url
+            - face_bbox
+            - ext_bbox
+          properties:
+            image_url:
+              type: string
+              description: 人物肖像图片公网 URL。模型将根据 EMO 图像检测 API 返回的 `ext_bbox` 参数对原始图片进行裁剪，裁剪后区域的宽高比决定输出视频的画幅比例与分辨率。支持 jpg、png、jpeg、bmp 格式；图像最小边长 >= 400 像素，最大边长 <= 7000 像素。仅支持 HTTP/HTTPS 链接。
+            audio_url:
+              type: string
+              description: 驱动视频的音频公网 URL。支持 wav、mp3 格式；文件大小不超过 15MB；音频时长不超过 60 秒。仅支持 HTTP/HTTPS 链接。
+            face_bbox:
+              type: array
+              items:
+                type: integer
+              minItems: 4
+              maxItems: 4
+              description: 人脸边界框，格式为 `[x1, y1, x2, y2]`，代表人脸区域的左上角和右下角坐标。可通过 [EMO 图像检测](/api-reference/video-generation/emo-detect) 接口获取。
+            ext_bbox:
+              type: array
+              items:
+                type: integer
+              minItems: 4
+              maxItems: 4
+              description: 图片中动态区域 bbox 的像素坐标，应输入 EMO 图像检测 API 出参中同名字段的值。该区域的宽高比为 1:1 或 3:4。坐标格式 `[x1, y1, x2, y2]`，分别对应左上角和右下角两个点的坐标。可通过 [EMO 图像检测](/api-reference/video-generation/emo-detect) 接口获取。
+        parameters:
+          type: object
+          properties:
+            style_level:
+              type: string
+              enum:
+                - normal
+                - calm
+                - active
+              default: normal
+              description: 生成视频的动态程度。`normal`：正常动态幅度；`calm`：较平静，动态幅度更小；`active`：较活跃，动态幅度更大。默认为 `normal`。
+    EmoVideoSubmitResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: 本次请求的唯一 ID。
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 异步任务 ID，用于查询任务状态。
+            task_status:
+              type: string
+              enum:
+                - PENDING
+              description: 任务初始状态，值为 `PENDING`。
+    EmoVideoQueryResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: 本次请求的唯一 ID。
+        output:
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: 异步任务 ID。
+            task_status:
+              type: string
+              enum:
+                - PENDING
+                - RUNNING
+                - SUCCEEDED
+                - FAILED
+                - UNKNOWN
+              description: 任务状态。`PENDING`：排队等待；`RUNNING`：处理中；`SUCCEEDED`：成功；`FAILED`：失败；`UNKNOWN`：任务不存在或已过期。
+            submit_time:
+              type: string
+              description: 任务提交时间。
+            scheduled_time:
+              type: string
+              description: 任务开始调度时间。
+            end_time:
+              type: string
+              description: 任务结束时间（成功或失败时返回）。
+            results:
+              type: object
+              description: 任务成功时返回。
+              properties:
+                video_url:
+                  type: string
+                  description: 生成视频的 URL，有效期 24 小时，请及时下载保存。
+            code:
+              type: string
+              description: 任务失败时的错误码。
+            message:
+              type: string
+              description: 任务失败时的错误信息。
+        usage:
+          type: object
+          description: 任务成功时返回的用量信息。
+          properties:
+            video_duration:
+              type: number
+              description: 生成视频的时长，单位为秒。
+            video_ratio:
+              type: string
+              description: 生成视频的宽高比，例如 `1:1`、`3:4`。
+    DashScopeErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          description: 错误码。
+        message:
+          type: string
+          description: 错误信息。
+        request_id:
+          type: string
+          description: 请求唯一标识。
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+````

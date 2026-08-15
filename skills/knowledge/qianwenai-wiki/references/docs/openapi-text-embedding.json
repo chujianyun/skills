@@ -1,0 +1,566 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "文本向量 API",
+    "description": "文本向量模型 API 参考文档，支持 OpenAI 兼容协议和 DashScope 协议。",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dashscope.aliyuncs.com",
+      "description": "服务端点"
+    }
+  ],
+  "security": [
+    {
+      "bearer": []
+    }
+  ],
+  "paths": {
+    "/compatible-mode/v1/embeddings": {
+      "post": {
+        "operationId": "createEmbeddingsOpenAI",
+        "summary": "创建文本向量（OpenAI 兼容）",
+        "description": "使用 OpenAI 兼容协议创建文本向量。",
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmbeddingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmbeddingResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数有误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "python",
+            "label": "输入字符串",
+            "source": "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n  api_key=os.getenv(\"DASHSCOPE_API_KEY\"),  # 如未配置环境变量，请用您的 API Key 替换此处。\n  base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\"  \n)\n\ncompletion = client.embeddings.create(\n  model=\"text-embedding-v4\",\n  input='The clothes are of good quality and look good, definitely worth the wait. I love them.',\n  dimensions=1024,\n  encoding_format=\"float\"\n)\n\nprint(completion.model_dump_json())\n"
+          },
+          {
+            "lang": "java",
+            "label": "输入字符串",
+            "source": "import java.net.URI;\nimport java.net.http.HttpClient;\nimport java.net.http.HttpRequest;\nimport java.net.http.HttpResponse;\nimport java.util.HashMap;\nimport java.util.Map;\nimport com.alibaba.dashscope.utils.JsonUtils;\n\npublic final class Main {\n  public static void main(String[] args) {\n    String apiKey = System.getenv(\"DASHSCOPE_API_KEY\");\n    if (apiKey == null) {\n      System.out.println(\"DASHSCOPE_API_KEY not found in environment variables\");\n      return;\n    }\n    String baseUrl = \"https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings\";\n    HttpClient client = HttpClient.newHttpClient();\n\n    Map<String, Object> requestBody = new HashMap<>();\n    requestBody.put(\"model\", \"text-embedding-v4\");\n    requestBody.put(\"input\", \"Semantic search finds documents by meaning rather than exact keyword matching. Text embeddings map words and sentences into high-dimensional vector spaces. Retrieval-augmented generation combines search results with language models. Document clustering groups similar texts based on their vector representations.\");\n    requestBody.put(\"dimensions\", 1024);\n    requestBody.put(\"encoding_format\", \"float\");\n\n    try {\n      String requestBodyString = JsonUtils.toJson(requestBody);\n      HttpRequest request = HttpRequest.newBuilder()\n          .uri(URI.create(baseUrl))\n          .header(\"Content-Type\", \"application/json\")\n          .header(\"Authorization\", \"Bearer \" + apiKey)\n          .POST(HttpRequest.BodyPublishers.ofString(requestBodyString))\n          .build();\n          \n      HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());\n      if (response.statusCode() == 200) {\n        System.out.println(\"Response: \" + response.body());\n      } else {\n        System.out.printf(\"Failed to retrieve response, status code: %d, response: %s%n\", response.statusCode(), response.body());\n      }\n    } catch (Exception e) {\n      System.err.println(\"Error: \" + e.getMessage());\n    }\n  }\n}\n"
+          },
+          {
+            "lang": "bash",
+            "label": "输入字符串",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"text-embedding-v4\",\n  \"input\": \"Semantic search finds documents by meaning rather than exact keyword matching. Text embeddings map words and sentences into high-dimensional vector spaces. Retrieval-augmented generation combines search results with language models. Document clustering groups similar texts based on their vector representations.\",\n  \"dimensions\": 1024,\n  \"encoding_format\": \"float\"\n}'\n"
+          },
+          {
+            "lang": "python",
+            "label": "输入字符串列表",
+            "source": "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n  api_key=os.getenv(\"DASHSCOPE_API_KEY\"),  # 如未配置环境变量，请用您的 API Key 替换此处。\n  base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\"  \n)\n\ncompletion = client.embeddings.create(\n  model=\"text-embedding-v4\",\n  input=['Semantic search finds documents by meaning rather than exact keyword matching.', 'Text embeddings map words and sentences into high-dimensional vector spaces.', 'Retrieval-augmented generation combines search results with language models.', 'Document clustering groups similar texts based on their vector representations.'],\n  dimensions=1024,\n  encoding_format=\"float\"\n)\n\nprint(completion.model_dump_json())"
+          },
+          {
+            "lang": "java",
+            "label": "输入字符串列表",
+            "source": "import java.net.URI;\nimport java.net.http.HttpClient;\nimport java.net.http.HttpRequest;\nimport java.net.http.HttpResponse;\nimport java.util.HashMap;\nimport java.util.Map;\nimport java.util.List;\nimport java.util.Arrays;\nimport com.alibaba.dashscope.utils.JsonUtils;\n\npublic final class Main {\n  public static void main(String[] args) {\n    /** 从环境变量中获取 API Key。如未配置，请用您的 API Key 替换此处。 */\n    String apiKey = System.getenv(\"DASHSCOPE_API_KEY\");\n    if (apiKey == null) {\n      System.out.println(\"DASHSCOPE_API_KEY not found in environment variables\");\n      return;\n    }\n    String baseUrl = \"https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings\";\n    HttpClient client = HttpClient.newHttpClient();\n    Map<String, Object> requestBody = new HashMap<>();\n    requestBody.put(\"model\", \"text-embedding-v4\");\n    List<String> inputList = Arrays.asList(\"Semantic search finds documents by meaning rather than exact keyword matching.\", \"Text embeddings map words and sentences into high-dimensional vector spaces.\", \"Retrieval-augmented generation combines search results with language models.\", \"Document clustering groups similar texts based on their vector representations.\");\n    requestBody.put(\"input\", inputList);\n    requestBody.put(\"encoding_format\", \"float\");\n\n    try {\n      /** 将请求体转换为 JSON 字符串。 */\n      String requestBodyString = JsonUtils.toJson(requestBody);\n\n      /** 构建 HTTP 请求。 */\n      HttpRequest request = HttpRequest.newBuilder()\n          .uri(URI.create(baseUrl))\n          .header(\"Content-Type\", \"application/json\")\n          .header(\"Authorization\", \"Bearer \" + apiKey)\n          .POST(HttpRequest.BodyPublishers.ofString(requestBodyString))\n          .build();\n\n      /** 发送请求并接收响应。 */\n      HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());\n      if (response.statusCode() == 200) {\n        System.out.println(\"Response: \" + response.body());\n      } else {\n        System.out.printf(\"Failed to retrieve response, status code: %d, response: %s%n\", response.statusCode(), response.body());\n      }\n    } catch (Exception e) {\n      /** 捕获并打印异常。 */\n      System.err.println(\"Error: \" + e.getMessage());\n    }\n  }\n}\n"
+          },
+          {
+            "lang": "bash",
+            "label": "输入字符串列表",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"text-embedding-v4\",\n  \"input\": [\n    \"Semantic search finds documents by meaning rather than exact keyword matching.\",\n    \"Text embeddings map words and sentences into high-dimensional vector spaces.\",\n    \"Retrieval-augmented generation combines search results with language models.\",\n    \"Document clustering groups similar texts based on their vector representations.\"\n    ],\n  \"dimensions\": 1024,\n  \"encoding_format\": \"float\"\n}'"
+          },
+          {
+            "lang": "python",
+            "label": "输入文件",
+            "source": "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n  api_key=os.getenv(\"DASHSCOPE_API_KEY\"),  # 如未配置环境变量，请用您的 API Key 替换此处。\n  base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\"  \n)\n# 请将 'texts_to_embedding.txt' 替换为您自己的文件名或路径。\nwith open('texts_to_embedding.txt', 'r', encoding='utf-8') as f:\n  completion = client.embeddings.create(\n    model=\"text-embedding-v4\",\n    input=f,\n    encoding_format=\"float\"\n  )\nprint(completion.model_dump_json())\n"
+          },
+          {
+            "lang": "java",
+            "label": "输入文件",
+            "source": "import java.net.URI;\nimport java.net.http.HttpClient;\nimport java.net.http.HttpRequest;\nimport java.net.http.HttpResponse;\nimport java.util.HashMap;\nimport java.util.Map;\nimport java.io.BufferedReader;\nimport java.io.FileReader;\nimport java.io.IOException;\nimport com.alibaba.dashscope.utils.JsonUtils;\n\npublic class Main {\n  public static void main(String[] args) {\n    /** 从环境变量中获取 API Key。如未配置，请用您的 API Key 替换此处。 */\n    String apiKey = System.getenv(\"DASHSCOPE_API_KEY\");\n    if (apiKey == null) {\n      System.out.println(\"DASHSCOPE_API_KEY not found in environment variables\");\n      return;\n    }\n    String baseUrl = \"https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings\";\n    HttpClient client = HttpClient.newHttpClient();\n\n    /** 读取输入文件。 */\n    StringBuilder inputText = new StringBuilder();\n    try (BufferedReader reader = new BufferedReader(new FileReader(\"<path_to_your_content_root>\"))) {\n      String line;\n      while ((line = reader.readLine()) != null) {\n        inputText.append(line).append(\"\\n\");\n      }\n    } catch (IOException e) {\n      System.err.println(\"Error reading input file: \" + e.getMessage());\n      return;\n    }\n\n    Map<String, Object> requestBody = new HashMap<>();\n    requestBody.put(\"model\", \"text-embedding-v4\");\n    requestBody.put(\"input\", inputText.toString().trim());\n    requestBody.put(\"dimensions\", 1024);\n    requestBody.put(\"encoding_format\", \"float\");\n\n    try {\n      String requestBodyString = JsonUtils.toJson(requestBody);\n\n      /** 构建 HTTP 请求。 */\n      HttpRequest request = HttpRequest.newBuilder()\n          .uri(URI.create(baseUrl))\n          .header(\"Content-Type\", \"application/json\")\n          .header(\"Authorization\", \"Bearer \" + apiKey)\n          .POST(HttpRequest.BodyPublishers.ofString(requestBodyString))\n          .build();\n      HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());\n      if (response.statusCode() == 200) {\n        System.out.println(\"Response: \" + response.body());\n      } else {\n        System.out.printf(\"Failed to retrieve response, status code: %d, response: %s%n\", response.statusCode(), response.body());\n      }\n    } catch (Exception e) {\n      System.err.println(\"Error: \" + e.getMessage());\n    }\n  }\n}\n"
+          },
+          {
+            "lang": "bash",
+            "label": "输入文件",
+            "source": "FILE_CONTENT=$(cat texts_to_embedding.txt | jq -Rs .)\ncurl --location 'https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"text-embedding-v4\",\n  \"input\": ['\"$FILE_CONTENT\"'],\n  \"dimensions\": 1024,\n  \"encoding_format\": \"float\"\n}'"
+          }
+        ]
+      }
+    },
+    "/api/v1/services/embeddings/text-embedding/text-embedding": {
+      "post": {
+        "operationId": "createEmbeddingsDashScope",
+        "summary": "创建文本向量（DashScope）",
+        "description": "使用 DashScope 协议创建文本向量。",
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DashScopeEmbeddingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashScopeEmbeddingResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求参数有误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "python",
+            "label": "输入字符串",
+            "source": "import dashscope\nfrom http import HTTPStatus\n\ndashscope.base_http_api_url = 'https://dashscope.aliyuncs.com/api/v1'\n\nresp = dashscope.TextEmbedding.call(\n  model=dashscope.TextEmbedding.Models.text_embedding_v4,\n  input='Semantic search finds documents by meaning rather than exact keyword matching. Text embeddings map words and sentences into high-dimensional vector spaces. Retrieval-augmented generation combines search results with language models. Document clustering groups similar texts based on their vector representations.',\n  dimension=1024,\n  output_type=\"dense&sparse\"\n)\n\nprint(resp) if resp.status_code == HTTPStatus.OK else print(resp)\n"
+          },
+          {
+            "lang": "java",
+            "label": "输入字符串",
+            "source": "import java.util.Arrays;\nimport java.util.concurrent.Semaphore;\nimport com.alibaba.dashscope.common.ResultCallback;\nimport com.alibaba.dashscope.embeddings.TextEmbedding;\nimport com.alibaba.dashscope.embeddings.TextEmbeddingParam;\nimport com.alibaba.dashscope.embeddings.TextEmbeddingResult;\nimport com.alibaba.dashscope.exception.ApiException;\nimport com.alibaba.dashscope.exception.NoApiKeyException;\nimport com.alibaba.dashscope.utils.Constants;\n\npublic final class Main {\n    static {\n        Constants.baseHttpApiUrl=\"https://dashscope.aliyuncs.com/api/v1\";\n    }\n    public static void basicCall() throws ApiException, NoApiKeyException{\n        TextEmbeddingParam param = TextEmbeddingParam\n        .builder()\n        .model(TextEmbedding.Models.TEXT_EMBEDDING_V4)\n        .texts(Arrays.asList(\"Semantic search finds documents by meaning rather than exact keyword matching.\", \"Text embeddings map words and sentences into high-dimensional vector spaces.\", \"Retrieval-augmented generation combines search results with language models.\", \"Document clustering groups similar texts based on their vector representations.\")).build();\n        TextEmbedding textEmbedding = new TextEmbedding();\n        TextEmbeddingResult result = textEmbedding.call(param);\n        System.out.println(result);\n    }\n  \n    public static void callWithCallback() throws ApiException, NoApiKeyException, InterruptedException{\n        TextEmbeddingParam param = TextEmbeddingParam\n        .builder()\n        .model(TextEmbedding.Models.TEXT_EMBEDDING_V4)\n        .texts(Arrays.asList(\"Semantic search finds documents by meaning rather than exact keyword matching.\", \"Text embeddings map words and sentences into high-dimensional vector spaces.\", \"Retrieval-augmented generation combines search results with language models.\", \"Document clustering groups similar texts based on their vector representations.\")).build();\n        TextEmbedding textEmbedding = new TextEmbedding();\n        Semaphore sem = new Semaphore(0);\n        textEmbedding.call(param, new ResultCallback<TextEmbeddingResult>() {\n\n          @Override\n          public void onEvent(TextEmbeddingResult message) {\n            System.out.println(message);\n          }\n          @Override\n          public void onComplete(){\n            sem.release();\n          }\n\n          @Override\n          public void onError(Exception err){\n            System.out.println(err.getMessage());\n            err.printStackTrace();\n            sem.release();\n          }\n          \n        });\n        sem.acquire();\n    }\n\n  public static void main(String[] args){\n    try{\n      callWithCallback();\n    }catch(ApiException|NoApiKeyException|InterruptedException e){\n      e.printStackTrace();\n      System.out.println(e);\n\n    }\n      try {\n        basicCall();\n    } catch (ApiException | NoApiKeyException e) {\n        System.out.println(e.getMessage());\n    }\n    System.exit(0);\n  }\n}"
+          },
+          {
+            "lang": "bash",
+            "label": "输入字符串",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/embeddings/text-embedding/text-embedding' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"text-embedding-v4\",\n  \"input\": {\n    \"texts\": [\n    \"Semantic search finds documents by meaning rather than exact keyword matching. Text embeddings map words and sentences into high-dimensional vector spaces. Retrieval-augmented generation combines search results with language models. Document clustering groups similar texts based on their vector representations.\"\n    ]\n  },\n  \"parameters\": {\n    \"dimension\": 1024,\n    \"output_type\": \"dense\"\n  }\n}'"
+          },
+          {
+            "lang": "python",
+            "label": "输入字符串列表",
+            "source": "import dashscope\nfrom http import HTTPStatus\n\ndashscope.base_http_api_url = 'https://dashscope.aliyuncs.com/api/v1'\nDASHSCOPE_MAX_BATCH_SIZE = 10\n\ninputs = ['Semantic search finds documents by meaning rather than exact keyword matching.', 'Text embeddings map words and sentences into high-dimensional vector spaces.', 'Retrieval-augmented generation combines search results with language models.', 'Document clustering groups similar texts based on their vector representations.']\n\nresult = None\nbatch_counter = 0\nfor i in range(0, len(inputs), DASHSCOPE_MAX_BATCH_SIZE):\n  batch = inputs[i:i + DASHSCOPE_MAX_BATCH_SIZE]\n  resp = dashscope.TextEmbedding.call(\n    model=dashscope.TextEmbedding.Models.text_embedding_v4,\n    input=batch,\n    dimension=1024\n  )\n  if resp.status_code == HTTPStatus.OK:\n    if result is None:\n      result = resp\n    else:\n      for emb in resp.output['embeddings']:\n        emb['text_index'] += batch_counter\n        result.output['embeddings'].append(emb)\n      result.usage['total_tokens'] += resp.usage['total_tokens']\n  else:\n    print(resp)\n  batch_counter += len(batch)\n\nprint(result)\n"
+          },
+          {
+            "lang": "java",
+            "label": "输入字符串列表",
+            "source": "import java.util.Arrays;\nimport java.util.List;\nimport com.alibaba.dashscope.embeddings.TextEmbedding;\nimport com.alibaba.dashscope.embeddings.TextEmbeddingParam;\nimport com.alibaba.dashscope.embeddings.TextEmbeddingResult;\nimport com.alibaba.dashscope.exception.ApiException;\nimport com.alibaba.dashscope.exception.NoApiKeyException;\nimport com.alibaba.dashscope.utils.Constants;\n\npublic final class Main {\n  static {\n    Constants.baseHttpApiUrl=\"https://dashscope.aliyuncs.com/api/v1\";\n  }\n  private static final int DASHSCOPE_MAX_BATCH_SIZE = 10;\n\n  public static void main(String[] args) {\n    List<String> inputs = Arrays.asList(\n        \"Semantic search finds documents by meaning rather than exact keyword matching.\",\n        \"Text embeddings map words and sentences into high-dimensional vector spaces.\",\n        \"Retrieval-augmented generation combines search results with language models.\",\n        \"Document clustering groups similar texts based on their vector representations.\"\n    );\n\n    TextEmbeddingResult result = null;\n    int batchCounter = 0;\n\n    for (int i = 0; i < inputs.size(); i += DASHSCOPE_MAX_BATCH_SIZE) {\n      List<String> batch = inputs.subList(i, Math.min(i + DASHSCOPE_MAX_BATCH_SIZE, inputs.size()));\n      TextEmbeddingParam param = TextEmbeddingParam.builder()\n          .model(TextEmbedding.Models.TEXT_EMBEDDING_V4)\n          .texts(batch)\n          .build();\n\n      TextEmbedding textEmbedding = new TextEmbedding();\n      try {\n        TextEmbeddingResult resp = textEmbedding.call(param);\n        if (resp != null) {\n          if (result == null) {\n            result = resp;\n          } else {\n            for (var emb : resp.getOutput().getEmbeddings()) {\n              emb.setTextIndex(emb.getTextIndex() + batchCounter);\n              result.getOutput().getEmbeddings().add(emb);\n            }\n            result.getUsage().setTotalTokens(result.getUsage().getTotalTokens() + resp.getUsage().getTotalTokens());\n          }\n        } else {\n          System.out.println(resp);\n        }\n      } catch (ApiException | NoApiKeyException e) {\n        e.printStackTrace();\n      }\n      batchCounter += batch.size();\n    }\n\n    System.out.println(result);\n  }\n}\n"
+          },
+          {
+            "lang": "bash",
+            "label": "输入字符串列表",
+            "source": "curl --location 'https://dashscope.aliyuncs.com/api/v1/services/embeddings/text-embedding/text-embedding' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"text-embedding-v4\",\n  \"input\": {\n  \"texts\": [\n          \"Semantic search finds documents by meaning rather than exact keyword matching.\",\n          \"Text embeddings map words and sentences into high-dimensional vector spaces.\",\n          \"Retrieval-augmented generation combines search results with language models.\",\n          \"Document clustering groups similar texts based on their vector representations.\"\n  ]\n  },\n  \"parameters\": {\n    \t  \"dimension\": 1024,\n    \t  \"output_type\": \"dense\"\n  }\n}'"
+          },
+          {
+            "lang": "python",
+            "label": "输入文件",
+            "source": "import dashscope\nfrom http import HTTPStatus\nfrom dashscope import TextEmbedding\n\ndashscope.base_http_api_url = 'https://dashscope.aliyuncs.com/api/v1'\n# 请将 'texts_to_embedding.txt' 替换为您自己的文件名或路径。\nwith open('texts_to_embedding.txt', 'r', encoding='utf-8') as f:\n  resp = TextEmbedding.call(\n    model=TextEmbedding.Models.text_embedding_v4,\n    input=f,\n    dimension=1024\n  )\n\n  if resp.status_code == HTTPStatus.OK:\n    print(resp)\n  else:\n    print(resp)\n"
+          },
+          {
+            "lang": "java",
+            "label": "输入文件",
+            "source": "import java.io.BufferedReader;\nimport java.io.FileReader;\nimport java.io.IOException;\nimport com.alibaba.dashscope.embeddings.TextEmbedding;\nimport com.alibaba.dashscope.embeddings.TextEmbeddingParam;\nimport com.alibaba.dashscope.embeddings.TextEmbeddingResult;\nimport com.alibaba.dashscope.exception.ApiException;\nimport com.alibaba.dashscope.exception.NoApiKeyException;\nimport com.alibaba.dashscope.utils.Constants;\n\npublic final class Main {\n  static {\n    Constants.baseHttpApiUrl=\"https://dashscope.aliyuncs.com/api/v1\";\n  }\n  public static void main(String[] args) {\n    // 请将 'tests_to_embedding.txt' 替换为您文件的完整路径。\n    try (BufferedReader reader = new BufferedReader(new FileReader(\"texts_to_embedding.txt\"))) {\n      StringBuilder content = new StringBuilder();\n      String line;\n      while ((line = reader.readLine()) != null) {\n        content.append(line).append(\"\\n\");\n      }\n\n      TextEmbeddingParam param = TextEmbeddingParam.builder()\n          .model(TextEmbedding.Models.TEXT_EMBEDDING_V4)\n          .text(content.toString())\n          .build();\n\n      TextEmbedding textEmbedding = new TextEmbedding();\n      TextEmbeddingResult result = textEmbedding.call(param);\n\n      if (result != null) {\n        System.out.println(result);\n      } else {\n        System.out.println(\"Failed to get embedding: \" + result);\n      }\n    } catch (IOException | ApiException | NoApiKeyException e) {\n      e.printStackTrace();\n    }\n  }\n}"
+          },
+          {
+            "lang": "bash",
+            "label": "输入文件",
+            "source": "FILE_CONTENT=$(cat texts_to_embedding.txt | jq -Rs .)\ncurl --location 'https://dashscope.aliyuncs.com/api/v1/services/embeddings/text-embedding/text-embedding' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"model\": \"text-embedding-v4\",\n  \"input\": {\n    \"texts\": ['\"$FILE_CONTENT\"']\n  },\n  \"parameters\": {\n    \"dimension\": 1024,\n    \"output_type\": \"dense\"\n  }\n}'\n"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。"
+      }
+    },
+    "schemas": {
+      "EmbeddingRequest": {
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "调用的模型名称，支持 `text-embedding-v4` 和 `text-embedding-v3`。",
+            "example": "text-embedding-v4"
+          },
+          "input": {
+            "description": "待处理的输入文本。支持字符串、字符串数组或文件。单个字符串最多包含 8,192 个 token；字符串列表或文件最多包含 10 条（行），每条最多 8,192 个 token。",
+            "oneOf": [
+              {
+                "type": "string",
+                "description": "单个文本字符串。"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "字符串数组（最多 10 条）。"
+              }
+            ]
+          },
+          "dimensions": {
+            "type": "integer",
+            "description": "向量维度。可选值：2048（仅 text-embedding-v4）、1536（仅 text-embedding-v4）、1024、768、512、256（仅 text-embedding-v4）、128（仅 text-embedding-v4）、64（仅 text-embedding-v4）。默认值：1024。",
+            "default": 1024,
+            "enum": [
+              2048,
+              1536,
+              1024,
+              768,
+              512,
+              256,
+              128,
+              64
+            ]
+          },
+          "encoding_format": {
+            "type": "string",
+            "description": "返回向量的格式，目前仅支持 `float`。",
+            "default": "float",
+            "enum": [
+              "float"
+            ]
+          }
+        }
+      },
+      "EmbeddingResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "description": "任务输出数据。",
+            "items": {
+              "type": "object",
+              "properties": {
+                "embedding": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "description": "向量表示，为浮点数数组。"
+                },
+                "index": {
+                  "type": "integer",
+                  "description": "本结果对应输入数组中的文本索引。"
+                },
+                "object": {
+                  "type": "string",
+                  "description": "调用返回的对象类型，默认为 `embedding`。",
+                  "default": "embedding"
+                }
+              }
+            }
+          },
+          "model": {
+            "type": "string",
+            "description": "调用的模型名称。"
+          },
+          "object": {
+            "type": "string",
+            "description": "返回的数据类型，默认为 `list`。",
+            "default": "list"
+          },
+          "usage": {
+            "type": "object",
+            "description": "Token 用量统计。",
+            "properties": {
+              "prompt_tokens": {
+                "type": "integer",
+                "description": "输入文本的 token 数量。"
+              },
+              "total_tokens": {
+                "type": "integer",
+                "description": "请求中 token 的总数，按模型分词器计算。"
+              }
+            }
+          },
+          "id": {
+            "type": "string",
+            "description": "请求的唯一标识符，可用于追踪和排查问题。"
+          }
+        },
+        "example": {
+          "data": [
+            {
+              "embedding": [
+                -0.0695386752486229,
+                0.030681096017360687
+              ],
+              "index": 0,
+              "object": "embedding"
+            },
+            {
+              "embedding": [
+                -0.06348952651023865,
+                0.060446035116910934
+              ],
+              "index": 5,
+              "object": "embedding"
+            }
+          ],
+          "model": "text-embedding-v4",
+          "object": "list",
+          "usage": {
+            "prompt_tokens": 184,
+            "total_tokens": 184
+          },
+          "id": "73591b79-d194-9bca-8bb5-xxxxxxxxxxxx"
+        }
+      },
+      "DashScopeEmbeddingRequest": {
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "调用的模型名称，支持 `text-embedding-v4` 和 `text-embedding-v3`。",
+            "example": "text-embedding-v4"
+          },
+          "input": {
+            "type": "object",
+            "required": [
+              "texts"
+            ],
+            "description": "包含待向量化文本的输入对象。",
+            "properties": {
+              "texts": {
+                "description": "待处理的输入文本，可以是字符串或字符串数组。单个字符串最多 8,192 个 token；字符串列表最多 10 条，每条最多 8,192 个 token。",
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "description": "单个文本字符串。"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "字符串数组（最多 10 条）。"
+                  }
+                ]
+              }
+            }
+          },
+          "parameters": {
+            "type": "object",
+            "description": "向量化请求的可选参数。",
+            "properties": {
+              "text_type": {
+                "type": "string",
+                "description": "指定文本类型，用于非对称任务。检索场景下区分 `query`（查询词）和 `document`（文档）有助于提升效果；聚类、分类等对称任务使用默认值 `document`。",
+                "default": "document",
+                "enum": [
+                  "query",
+                  "document"
+                ]
+              },
+              "dimension": {
+                "type": "integer",
+                "description": "向量维度。可选值：2048（仅 text-embedding-v4）、1536（仅 text-embedding-v4）、1024、768、512、256（仅 text-embedding-v4）、128（仅 text-embedding-v4）、64（仅 text-embedding-v4）。默认值：1024。",
+                "default": 1024,
+                "enum": [
+                  2048,
+                  1536,
+                  1024,
+                  768,
+                  512,
+                  256,
+                  128,
+                  64
+                ]
+              },
+              "output_type": {
+                "type": "string",
+                "description": "是否输出稀疏向量表示，仅适用于 text-embedding-v3 和 text-embedding-v4。默认值：`dense`（仅返回稠密向量）。",
+                "default": "dense",
+                "enum": [
+                  "dense",
+                  "sparse",
+                  "dense&sparse"
+                ]
+              },
+              "instruct": {
+                "type": "string",
+                "description": "自定义任务描述，仅在 text-embedding-v4 且 `text_type` 为 `query` 时生效，推荐使用英文描述（可提升约 1%~5% 的效果）。"
+              }
+            }
+          }
+        }
+      },
+      "DashScopeEmbeddingResponse": {
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "type": "integer",
+            "description": "状态码，200 表示请求成功。"
+          },
+          "request_id": {
+            "type": "string",
+            "description": "请求的唯一标识符，可用于追踪和排查问题。"
+          },
+          "code": {
+            "type": "string",
+            "description": "请求失败时的错误码，成功时为空。"
+          },
+          "message": {
+            "type": "string",
+            "description": "请求失败时的详细错误信息，成功时为空。"
+          },
+          "output": {
+            "type": "object",
+            "description": "任务输出数据。",
+            "properties": {
+              "embeddings": {
+                "type": "array",
+                "description": "结构体数组，每个结构体包含对应输入文本的向量输出。",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "sparse_embedding": {
+                      "type": "array",
+                      "description": "稀疏向量表示，仅在 `output_type` 包含 `sparse` 时适用于 text-embedding-v3 和 text-embedding-v4。",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "index": {
+                            "type": "integer",
+                            "description": "词或字符在词汇表中的索引。"
+                          },
+                          "value": {
+                            "type": "number",
+                            "description": "该 token 的权重或重要性分数，值越高表示越重要。"
+                          },
+                          "token": {
+                            "type": "string",
+                            "description": "来自词汇表的实际文本单元或词语。"
+                          }
+                        }
+                      }
+                    },
+                    "embedding": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "description": "稠密向量表示（dense embedding）。"
+                    },
+                    "text_index": {
+                      "type": "integer",
+                      "description": "本结果对应输入数组中的文本索引。"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "usage": {
+            "type": "object",
+            "description": "Token 用量统计。",
+            "properties": {
+              "total_tokens": {
+                "type": "integer",
+                "description": "请求中 token 的总数，按模型分词器计算。"
+              }
+            }
+          }
+        },
+        "example": {
+          "status_code": 200,
+          "request_id": "1ba94ac8-e058-99bc-9cc1-7fdb37940a46",
+          "code": "",
+          "message": "",
+          "output": {
+            "embeddings": [
+              {
+                "sparse_embedding": [
+                  {
+                    "index": 7149,
+                    "value": 0.829,
+                    "token": "wind"
+                  },
+                  {
+                    "index": 111290,
+                    "value": 0.9004,
+                    "token": "sorrow"
+                  }
+                ],
+                "embedding": [
+                  -0.006929283495992422,
+                  -0.005336422007530928
+                ],
+                "text_index": 0
+              }
+            ]
+          },
+          "usage": {
+            "total_tokens": 27
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "错误码。"
+          },
+          "message": {
+            "type": "string",
+            "description": "详细错误信息。"
+          },
+          "request_id": {
+            "type": "string",
+            "description": "请求的唯一标识符，可用于追踪和排查问题。"
+          }
+        },
+        "example": {
+          "code": "InvalidParameter",
+          "message": "The model name is invalid. Supported models: text-embedding-v4, text-embedding-v3.",
+          "request_id": "a1b2c3d4-e5f6-7890-abcd-xxxxxxxxxxxx"
+        }
+      }
+    }
+  }
+}

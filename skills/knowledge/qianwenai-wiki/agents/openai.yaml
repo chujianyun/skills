@@ -1,0 +1,4 @@
+interface:
+  display_name: "千问AI平台 Wiki"
+  short_description: "检索千问AI平台官方开发文档、API参考与排障资料"
+  default_prompt: "Use $qianwenai-wiki to answer this 千问AI平台 API question with official documentation."

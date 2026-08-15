@@ -1,0 +1,63 @@
+{
+  "openapi": "3.1.0",
+  "info": { "title": "声音设计 API — 创建设计音色（CosyVoice）", "version": "1.0.0" },
+  "servers": [{ "url": "https://dashscope.aliyuncs.com/api/v1" }],
+  "security": [{ "BearerAuth": [] }],
+  "paths": {
+    "/services/audio/tts/customization": {
+      "post": {
+        "operationId": "createVoiceDesignCosyVoice",
+        "summary": "创建设计音色（CosyVoice）",
+        "description": "通过文字描述创建 CosyVoice 设计音色。",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CreateRequest" } } } },
+        "responses": { "200": { "description": "创建成功", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CreateResponse" } } } } },
+        "x-codeSamples": [{ "lang": "bash", "label": "cURL", "source": "curl -X POST https://dashscope.aliyuncs.com/api/v1/services/audio/tts/customization \\\n-H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\n  \"model\": \"voice-enrollment\",\n  \"input\": {\n    \"action\": \"create_voice\",\n    \"target_model\": \"cosyvoice-v3-plus\",\n    \"prefix\": \"mydesign\",\n    \"voice_prompt\": \"语速适中，音调偏高，充满活力\",\n    \"preview_text\": \"你好，欢迎使用声音设计功能。\"\n  }\n}'" }]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateRequest": {
+        "type": "object",
+        "required": ["model", "input"],
+        "properties": {
+          "model": { "type": "string", "description": "固定为 `voice-enrollment`。", "enum": ["voice-enrollment"], "example": "voice-enrollment" },
+          "input": {
+            "type": "object",
+            "required": ["action", "target_model", "prefix", "voice_prompt", "preview_text"],
+            "properties": {
+              "action": { "type": "string", "description": "固定为 `create_voice`。", "enum": ["create_voice"], "example": "create_voice" },
+              "target_model": { "type": "string", "description": "设计音色绑定的语音合成模型。", "enum": ["cosyvoice-v3-plus", "cosyvoice-v3-flash"], "example": "cosyvoice-v3-plus" },
+              "prefix": { "type": "string", "description": "音色名称前缀，仅限字母和数字，最长 10 个字符。", "maxLength": 10, "example": "mydesign" },
+              "voice_prompt": { "type": "string", "description": "声音描述文本。最大长度 500 个字符。", "maxLength": 500, "example": "语速适中，音调偏高，充满活力" },
+              "preview_text": { "type": "string", "description": "预览文本，用于试听设计效果。最小长度 15 个字符，最大长度 200 个字符。", "minLength": 15, "maxLength": 200, "example": "你好，欢迎使用声音设计功能。" },
+              "language_hints": { "type": "array", "items": { "type": "string" }, "description": "语言提示。仅支持 `zh`、`en`。", "default": ["zh"], "example": ["zh"] }
+            }
+          }
+        }
+      },
+      "CreateResponse": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "object",
+            "properties": {
+              "voice_id": { "type": "string", "description": "生成的音色 ID。", "example": "cosyvoice-v3-plus-mydesign-xxxxxx" },
+              "preview_audio": {
+                "type": "object",
+                "properties": {
+                  "data": { "type": "string", "description": "预览音频 Base64 数据。" },
+                  "sample_rate": { "type": "integer", "description": "采样率。", "example": 24000 },
+                  "response_format": { "type": "string", "description": "音频格式。", "example": "mp3" }
+                }
+              }
+            }
+          },
+          "usage": { "type": "object", "properties": { "count": { "type": "integer", "description": "固定为 `1`。", "example": 1 } } },
+          "request_id": { "type": "string", "description": "请求 ID。", "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" }
+        }
+      }
+    },
+    "securitySchemes": { "BearerAuth": { "type": "http", "scheme": "bearer", "description": "DashScope API Key。前往[获取 API Key](/api-reference/preparation/api-key)。" } }
+  }
+}

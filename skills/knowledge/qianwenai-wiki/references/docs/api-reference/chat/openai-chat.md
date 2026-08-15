@@ -1,0 +1,1414 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://platform.qianwenai.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# OpenAI Chat API 参考
+
+> OpenAI 兼容的 Chat API
+
+## OpenAPI
+
+````yaml post /compatible-mode/v1/chat/completions
+openapi: 3.1.0
+info:
+  title: Qwen OpenAI 兼容对话 API
+  description: 通过 OpenAI 兼容接口调用通义千问模型，支持文本及多模态模型、流式输出、工具调用和结构化输出。
+  version: 1.0.0
+servers:
+  - url: https://dashscope.aliyuncs.com
+    description: 中国
+security:
+  - BearerAuth: []
+paths:
+  /compatible-mode/v1/chat/completions:
+    post:
+      operationId: openaiChatCompletions
+      summary: 对话补全
+      description: 通过 OpenAI 兼容接口向通义千问模型发送消息并获取生成回复。支持多轮对话、流式输出、工具调用、结构化输出、思考模式以及多模态输入（图片、视频、音频）。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChatCompletionRequest"
+            example:
+              model: qwen3.8-max
+              messages:
+                - role: system
+                  content: You are a helpful assistant.
+                - role: user
+                  content: Who are you?
+      responses:
+        "200":
+          description: 请求成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChatCompletion"
+              example:
+                choices:
+                  - message:
+                      role: assistant
+                      content: I am a large-scale language model developed by Alibaba Cloud. My name is Qwen.
+                    finish_reason: stop
+                    index: 0
+                    logprobs: null
+                object: chat.completion
+                usage:
+                  prompt_tokens: 3019
+                  completion_tokens: 104
+                  total_tokens: 3123
+                  prompt_tokens_details:
+                    cached_tokens: 2048
+                created: 1735120033
+                system_fingerprint: null
+                model: qwen3.8-max
+                id: chatcmpl-6ada9ed2-7f33-9de2-8bb0-78bd4035025a
+            text/event-stream:
+              schema:
+                $ref: "#/components/schemas/ChatCompletionChunk"
+              example:
+                id: chatcmpl-9b4f5e3a-5b7d-4c8e-a1f2-3d6e7f8a9b0c
+                choices:
+                  - delta:
+                      content: ""
+                      function_call: null
+                      refusal: null
+                      role: assistant
+                      tool_calls: null
+                    finish_reason: null
+                    index: 0
+                    logprobs: null
+                created: 1735120033
+                model: qwen3.8-max
+                system_fingerprint: null
+                object: chat.completion.chunk
+                usage: null
+        "400":
+          description: 请求参数无效
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                error:
+                  message: you must provide a model parameter.
+                  type: invalid_request_error
+                  param: null
+                  code: null
+        "401":
+          description: 身份验证失败
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                error:
+                  message: Incorrect API key provided.
+                  type: invalid_request_error
+                  param: null
+                  code: invalid_api_key
+        "429":
+          description: 超出速率限制
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                error:
+                  message: You have exceeded your current request limit.
+                  type: limit_requests
+                  param: null
+                  code: limit_requests
+      x-codeSamples:
+        - lang: python
+          label: Text input
+          source: |-
+            import os
+            from openai import OpenAI
+
+            client = OpenAI(
+              # 若未设置环境变量，请将下一行替换为：api_key="sk-xxx"
+              api_key=os.getenv("DASHSCOPE_API_KEY"),
+              base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+            )
+
+            completion = client.chat.completions.create(
+              model="qwen3.8-max",
+              messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": "Who are you?"},
+              ],
+              # extra_body={"enable_thinking": False},
+            )
+            print(completion.model_dump_json())
+        - lang: java
+          label: Text input
+          source: |-
+            // 本示例使用 OpenAI SDK 2.6.0 版本
+            import com.openai.client.OpenAIClient;
+            import com.openai.client.okhttp.OpenAIOkHttpClient;
+            import com.openai.models.chat.completions.ChatCompletion;
+            import com.openai.models.chat.completions.ChatCompletionCreateParams;
+
+            public class Main {
+              public static void main(String[] args) {
+                OpenAIClient client = OpenAIOkHttpClient.builder()
+                    .apiKey(System.getenv("DASHSCOPE_API_KEY"))
+                    .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")
+                    .build();
+
+                ChatCompletionCreateParams params = ChatCompletionCreateParams.builder()
+                    .addUserMessage("Who are you?")
+                    .model("qwen3.8-max")
+                    .build();
+
+                try {
+                  ChatCompletion chatCompletion = client.chat().completions().create(params);
+                  System.out.println(chatCompletion);
+                } catch (Exception e) {
+                  System.err.println("Error occurred: " + e.getMessage());
+                  e.printStackTrace();
+                }
+              }
+            }
+        - lang: javascript
+          label: Text input
+          source: |-
+            import OpenAI from "openai";
+
+            const openai = new OpenAI(
+              {
+                // 若未设置环境变量，请将下一行替换为：apiKey: "sk-xxx",
+                apiKey: process.env.DASHSCOPE_API_KEY,
+                baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+              }
+            );
+
+            async function main() {
+              const completion = await openai.chat.completions.create({
+                model: "qwen3.8-max",
+                messages: [
+                  { role: "system", content: "You are a helpful assistant." },
+                  { role: "user", content: "Who are you?" }
+                ],
+              });
+              console.log(JSON.stringify(completion))
+            }
+
+            main();
+        - lang: go
+          label: Text input
+          source: |-
+            package main
+
+            import (
+              "context"
+              "os"
+
+              "github.com/openai/openai-go"
+              "github.com/openai/openai-go/option"
+            )
+
+            func main() {
+              client := openai.NewClient(
+                option.WithAPIKey(os.Getenv("DASHSCOPE_API_KEY")), // 默认读取 os.LookupEnv("OPENAI_API_KEY")
+                option.WithBaseURL("https://dashscope.aliyuncs.com/compatible-mode/v1/"),
+              )
+              chatCompletion, err := client.Chat.Completions.New(
+                context.TODO(), openai.ChatCompletionNewParams{
+                  Messages: openai.F(
+                    []openai.ChatCompletionMessageParamUnion{
+                      openai.UserMessage("Who are you?"),
+                    },
+                  ),
+                  Model: openai.F("qwen3.8-max"),
+                },
+              )
+
+              if err != nil {
+                panic(err.Error())
+              }
+
+              println(chatCompletion.Choices[0].Message.Content)
+            }
+        - lang: csharp
+          label: Text input
+          source: |-
+            using System.Net.Http.Headers;
+            using System.Text;
+
+            class Program
+            {
+              private static readonly HttpClient httpClient = new HttpClient();
+
+              static async Task Main(string[] args)
+              {
+                // 若未设置环境变量，请将下一行替换为：string? apiKey = "sk-xxx";
+                string? apiKey = Environment.GetEnvironmentVariable("DASHSCOPE_API_KEY");
+
+                if (string.IsNullOrEmpty(apiKey))
+                {
+                  Console.WriteLine("API Key is not set. Make sure the 'DASHSCOPE_API_KEY' environment variable is set.");
+                  return;
+                }
+
+                // 设置请求 URL 和内容
+                string url = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";
+                string jsonContent = @"{
+                  ""model"": ""qwen3.8-max"",
+                  ""messages"": [
+                    {
+                      ""role"": ""system"",
+                      ""content"": ""You are a helpful assistant.""
+                    },
+                    {
+                      ""role"": ""user"",
+                      ""content"": ""Who are you?""
+                    }
+                  ]
+                }";
+
+                // 发送请求并获取响应
+                string result = await SendPostRequestAsync(url, jsonContent, apiKey);
+
+                // 打印结果
+                Console.WriteLine(result);
+              }
+
+              private static async Task<string> SendPostRequestAsync(string url, string jsonContent, string apiKey)
+              {
+                using (var content = new StringContent(jsonContent, Encoding.UTF8, "application/json"))
+                {
+                  // 设置请求头
+                  httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+                  httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                  // 发送请求并获取响应
+                  HttpResponseMessage response = await httpClient.PostAsync(url, content);
+
+                  // 处理响应
+                  if (response.IsSuccessStatusCode)
+                  {
+                    return await response.Content.ReadAsStringAsync();
+                  }
+                  else
+                  {
+                    return $"Request failed: {response.StatusCode}";
+                  }
+                }
+              }
+            }
+        - lang: php
+          label: Text input
+          source: |-
+            <?php
+            // 设置请求 URL
+            $url = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
+            // 若未设置环境变量，请将下一行替换为：$apiKey = "sk-xxx";
+            $apiKey = getenv('DASHSCOPE_API_KEY');
+            // 设置请求头
+            $headers = [
+              'Authorization: Bearer '.$apiKey,
+              'Content-Type: application/json'
+            ];
+            // 设置请求体
+            $data = [
+              "model" => "qwen3.8-max",
+              "messages" => [
+                [
+                  "role" => "system",
+                  "content" => "You are a helpful assistant."
+                ],
+                [
+                  "role" => "user",
+                  "content" => "Who are you?"
+                ]
+              ]
+            ];
+            // 初始化 cURL 会话
+            $ch = curl_init();
+            // 设置 cURL 选项
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            // 执行 cURL 请求
+            $response = curl_exec($ch);
+            // 检查错误
+            if (curl_errno($ch)) {
+              echo 'Curl error: ' . curl_error($ch);
+            }
+            // 关闭 cURL 资源
+            curl_close($ch);
+            // 打印响应
+            echo $response;
+            ?>
+        - lang: curl
+          label: Text input
+          source: |-
+            curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
+            -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "model": "qwen3.8-max",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You are a helpful assistant."
+                },
+                {
+                  "role": "user",
+                  "content": "Who are you?"
+                }
+              ]
+            }'
+        - lang: python
+          label: Streaming
+          source: |-
+            import os
+            from openai import OpenAI
+
+            client = OpenAI(
+              # 若未设置环境变量，请将下一行替换为：api_key="sk-xxx"
+              api_key=os.getenv("DASHSCOPE_API_KEY"),
+              base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+            )
+            completion = client.chat.completions.create(
+              model="qwen3.8-max",
+              messages=[{'role': 'system', 'content': 'You are a helpful assistant.'},
+                    {'role': 'user', 'content': 'Who are you?'},],
+              stream=True,
+              stream_options={"include_usage": True}
+              )
+            for chunk in completion:
+              print(chunk.model_dump_json())
+        - lang: javascript
+          label: Streaming
+          source: |-
+            import OpenAI from "openai";
+
+            const openai = new OpenAI(
+              {
+                apiKey: process.env.DASHSCOPE_API_KEY,
+                baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+              }
+            );
+
+            async function main() {
+              const completion = await openai.chat.completions.create({
+                model: "qwen3.8-max",
+                messages: [
+                  {"role": "system", "content": "You are a helpful assistant."},
+                  {"role": "user", "content": "Who are you?"}
+                ],
+                stream: true,
+              });
+              for await (const chunk of completion) {
+                console.log(JSON.stringify(chunk));
+              }
+            }
+
+            main();
+        - lang: curl
+          label: Streaming
+          source: |-
+            curl --location "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions" \
+            --header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+            --header "Content-Type: application/json" \
+            --data '{
+              "model": "qwen3.8-max",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You are a helpful assistant."
+                },
+                {
+                  "role": "user",
+                  "content": "Who are you?"
+                }
+              ],
+              "stream":true
+            }'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。
+  schemas:
+    ChatCompletionRequest:
+      type: object
+      required:
+        - model
+        - messages
+      properties:
+        model:
+          type: string
+          description: |-
+            使用的模型名称。支持通义千问大语言模型（商业版和开源版）、Qwen-VL、Qwen-Coder、Qwen-Omni、Qwen-Math、DeepSeek（阿里云直供、硅基流动直供、快手万擎直供）、Kimi（阿里云直供、月之暗面直供）、GLM（阿里云直供）、MiniMax（阿里云直供、稀宇科技直供）。
+
+            三方直供模型调用前需先在千问AI平台控制台开通对应服务（以 SiliconFlow DeepSeek 为例：搜索 deepseek -> 找到 SiliconFlow DeepSeek 模型卡片 -> 单击立即开通 -> 确认授权）。
+
+            Qwen-Audio 不支持 OpenAI 兼容协议，仅支持 DashScope 协议。
+
+            具体模型名称及计费信息，请参见千问AI平台控制台。
+        messages:
+          type: array
+          description: 模型的对话历史，按时间顺序排列。
+          items:
+            $ref: "#/components/schemas/Message"
+        stream:
+          type: boolean
+          default: false
+          description: 启用流式输出模式。设置为 `true` 时，模型会边生成边输出，每生成一部分内容就立即返回一个数据块（chunk），您可以实时读取这些数据块拼接完整回复。开启此选项可提升阅读体验并降低超时风险。
+        stream_options:
+          type: object
+          description: 流式输出的配置选项。仅在 `stream` 为 `true` 时生效。
+          properties:
+            include_usage:
+              type: boolean
+              default: false
+              description: 是否在响应的最后一个数据块中返回 Token 用量信息。
+        modalities:
+          type: array
+          items:
+            type: string
+          default:
+            - text
+          description: 指定输出数据的模态。仅适用于 Qwen-Omni 模型。可选值：`["text","audio"]` 或 `["text"]`。
+        audio:
+          type: object
+          description: 输出音频的音色和格式。仅适用于 Qwen-Omni 模型，且需将 `modalities` 参数设置为 `["text","audio"]`。
+          properties:
+            voice:
+              type: string
+              description: 输出音频使用的音色。详细信息请参见[音色列表](#)。
+            format:
+              type: string
+              description: 输出音频的格式。目前仅支持 `wav`。
+          required:
+            - voice
+            - format
+        temperature:
+          type: number
+          description: |-
+            采样温度，控制生成文本的多样性。值越高，输出越多样；值越低，输出越确定。取值范围：大于等于 0 且小于 2。`temperature` 和 `top_p` 均可控制生成多样性，二者只需设置其中一个。QVQ 模型请勿修改默认温度值。
+
+            **默认 `temperature` 值：**
+            - `qwen3.8-max`（仅思考模式）：0.6，传入小于 0.6 的值会自动调整为 0.6
+            - Qwen3.7（非思考模式）、Qwen3.6（非思考模式）、Qwen3.5-Omni、Qwen3.5（非思考模式）、Qwen3（非思考模式）、Qwen3-Instruct 系列、Qwen3-Coder 系列、qwen-max 系列、qwen-plus 系列（非思考模式）、qwen-flash 系列（非思考模式）、qwen-turbo 系列（非思考模式）、qwen 开源系列、qwen-coder 系列、qwen-doc-turbo、Qwen3-VL（非思考模式）：0.7
+            - QVQ 系列：0.5
+            - qwen-audio-turbo 系列：0.00001
+            - qwen-vl 系列、qwen2.5-omni-7b：0.01
+            - qwen-math 系列：0
+            - Qwen3.7（思考模式）、Qwen3.6（思考模式）、Qwen3.5（思考模式）、Qwen3（思考模式）、Qwen3-Thinking、Qwen3-Omni-Captioner、QwQ 系列：0.6
+            - qwen3-max-preview（思考模式）、qwen-long 系列：1.0
+            - qwen-plus-character：0.92
+            - qwen3-omni-flash 系列：0.9
+            - Qwen3-VL（思考模式）：0.8
+
+            **第三方模型默认 `temperature` 值：**
+            - DeepSeek 系列（阿里云直供）：deepseek-v4-pro-0813、deepseek-v4-pro、deepseek-v4-flash、deepseek-v4-flash-0731、deepseek-v3.2（非思考模式）: 1.0；deepseek-v3.2（思考模式）、deepseek-v3.2-exp、deepseek-v3.1、deepseek-r1、deepseek-r1-0528、deepseek-r1-distill-qwen 蒸馏版: 0.6；deepseek-v3: 0.7
+            - DeepSeek 系列（硅基流动直供）：siliconflow/deepseek-v3.2、siliconflow/deepseek-v3.1-terminus、siliconflow/deepseek-r1-0528、siliconflow/deepseek-v3-0324: 1.0
+            - DeepSeek 系列（快手万擎直供）：vanchin/deepseek-v3.2-think（思考模式）: 0.6；vanchin/deepseek-v3.1-terminus: 0.7；vanchin/deepseek-v3.2-speciale、vanchin/deepseek-r1、vanchin/deepseek-v3、vanchin/deepseek-ocr: 1.0
+            - Kimi 系列（阿里云直供）：kimi-k2.7-code、kimi-k2.6（思考模式）、kimi-k2.5（思考模式）、kimi-k2-thinking: 1.0；kimi-k2.6（非思考模式）、kimi-k2.5（非思考模式）、Moonshot-Kimi-K2-Instruct: 0.6
+            - Kimi 系列（月之暗面直供）：kimi/kimi-k3、kimi/kimi-k2.7-code-highspeed、kimi/kimi-k2.7-code、kimi/kimi-k2.6（思考模式）、kimi/kimi-k2.5（思考模式）: 1.0；kimi/kimi-k2.6（非思考模式）、kimi/kimi-k2.5（非思考模式）: 0.6
+            - GLM 系列（阿里云直供）：glm-5.1、glm-5、glm-4.7、glm-4.6: 1.0；glm-4.5、glm-4.5-air: 0.6
+            - GLM 系列（智谱直供）：ZHIPU/GLM-5.1、ZHIPU/GLM-5: 0.6
+            - MiniMax 系列（阿里云直供）：MiniMax-M2.5、MiniMax-M2.1: 1.0
+            - MiniMax 系列（稀宇科技直供）：MiniMax/MiniMax-M3、MiniMax/MiniMax-M2.7、MiniMax/MiniMax-M2.5、MiniMax/MiniMax-M2.1: 1.0
+            - MiMo 系列（小米直供）：mimo-v2.5-pro: 1.0，范围 [0, 1.5]
+        top_p:
+          type: number
+          description: |-
+            核采样的概率阈值。`top_p` 值越高，生成文本越多样；值越低，输出越确定。取值范围：(0, 1.0]。`temperature` 和 `top_p` 均可控制生成多样性，二者只需设置其中一个。QVQ 模型请勿修改默认 `top_p` 值。
+
+            **默认 `top_p` 值：**
+            - Qwen3.7（非思考模式）、Qwen3.6（非思考模式）、Qwen3.5-Omni、Qwen3.5（非思考模式）、Qwen3（非思考模式）、Qwen3-Instruct 系列、Qwen3-Coder 系列、qwen-max 系列、qwen-plus 系列（非思考模式）、qwen-flash 系列（非思考模式）、qwen-turbo 系列（非思考模式）、Qwen 2.5 开源系列、qwen-coder 系列、qwen-long、qwen-doc-turbo、Qwen3-VL（非思考模式）：0.8
+            - qwen-omni-turbo 系列：0.01
+            - qwen-vl-plus 系列、qwen-vl-max、qwen2.5-omni-7b：0.001
+            - QVQ 系列：0.5
+            - qwen3-max-preview（思考模式）、qwen-math 系列、Qwen3-Omni-Flash 系列：1.0
+            - Qwen3.7（非思考模式）、Qwen3.6（思考模式）、Qwen3.5（思考模式）、Qwen3（思考模式）、Qwen3-VL（思考模式）、Qwen3-Thinking、QwQ 系列、Qwen3-Omni-Captioner、qwen-plus-character：0.95
+
+            **第三方模型默认 `top_p` 值：**
+            - DeepSeek 系列（阿里云直供）：deepseek-v4-pro-0813、deepseek-v4-pro、deepseek-v4-flash、deepseek-v4-flash-0731、deepseek-v3.2、deepseek-v3.2-exp、deepseek-v3.1、deepseek-r1、deepseek-r1-0528、deepseek-r1-distill-qwen 蒸馏版: 0.95；deepseek-v3: 0.6
+            - DeepSeek 系列（硅基流动直供）：siliconflow/deepseek-v3.2、siliconflow/deepseek-v3.1-terminus、siliconflow/deepseek-r1-0528、siliconflow/deepseek-v3-0324: 1.0
+            - DeepSeek 系列（快手万擎直供）：vanchin/deepseek-v3.2-think、vanchin/deepseek-v3.1-terminus: 0.95；vanchin/deepseek-v3.2-speciale: 0.9；vanchin/deepseek-r1: 0.8；vanchin/deepseek-v3、vanchin/deepseek-ocr: 1.0
+            - Kimi 系列（阿里云直供）：kimi-k2.7-code、kimi-k2.6、kimi-k2.5、kimi-k2-thinking: 0.95；Moonshot-Kimi-K2-Instruct: 1.0
+            - Kimi 系列（月之暗面直供）：kimi/kimi-k3、kimi/kimi-k2.7-code-highspeed、kimi/kimi-k2.7-code、kimi/kimi-k2.6、kimi/kimi-k2.5: 0.95
+            - GLM 系列（阿里云直供）：0.95
+            - GLM 系列（智谱直供）：ZHIPU/GLM-5.1、ZHIPU/GLM-5: 0.95
+            - MiniMax 系列（阿里云直供）：MiniMax-M2.5、MiniMax-M2.1: 0.95
+            - MiniMax 系列（稀宇科技直供）：MiniMax/MiniMax-M3: 0.95；MiniMax/MiniMax-M2.7、MiniMax/MiniMax-M2.5、MiniMax/MiniMax-M2.1: 0.9
+            - MiMo 系列（小米直供）：xiaomi/mimo-v2.5-pro: 0.95，范围 [0.01, 1.0]
+        top_k:
+          type: integer
+          description: |-
+            生成时用于采样的候选 Token 数量。值越大，输出越随机；值越小，输出越确定。设置为 `null` 或大于 100 时，`top_k` 策略禁用，仅 `top_p` 生效。取值须为大于等于 0 的整数。
+
+            **各模型默认 `top_k` 值：**
+            - QVQ 系列、qwen-vl-plus-2025-07-10 和 qwen-vl-plus-2025-08-15：10
+            - QwQ 系列：40
+            - 其他 qwen-vl-plus 系列、qwen-vl-max-2025-08-13 之前的模型、qwen2.5-omni-7b：1
+            - Qwen3-Omni-Flash 系列：50
+            - GLM 系列（阿里云直供）：20
+            - DeepSeek/Kimi/MiniMax 系列均不支持 top_k 参数
+            - 其他所有模型：20
+
+            QVQ 模型请勿修改默认 `top_k` 值。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"top_k": xxx}`。
+        presence_penalty:
+          type: number
+          description: |-
+            控制模型避免重复内容的强度。取值范围：-2.0 到 2.0。正值降低重复性，负值增加重复性。创意写作或头脑风暴场景可适当提高此值；技术文档或正式文本场景可适当降低此值。
+
+            **各模型默认 `presence_penalty` 值：**
+            - Qwen3.7（思考模式）、Qwen3.6（非思考模式）、Qwen3.5（非思考模式）、qwen3-max-preview（思考模式）、Qwen3（非思考模式）、Qwen3-Instruct 系列、qwen3-0.6b/1.7b/4b（思考模式）、QVQ 系列、qwen-max、qwen-max-latest、qwen2.5-vl 系列、qwen-vl-max 系列、qwen-vl-plus、Qwen3-VL（非思考模式）：1.5
+            - qwen-vl-plus-latest、qwen-vl-plus-2025-08-15：1.2
+            - qwen-vl-plus-2025-01-25：1.0
+            - qwen3-8b/14b/32b/30b-a3b/235b-a22b（思考模式）、qwen-plus/qwen-plus-latest/2025-04-28（思考模式）、qwen-turbo/qwen-turbo/2025-04-28（思考模式）：0.5
+            - DeepSeek 系列（阿里云直供）：deepseek-r1、deepseek-r1-0528、deepseek-r1-distill-qwen 蒸馏版: 1
+            - Kimi 系列（阿里云直供）：kimi-k2.7-code、kimi-k2.6、kimi-k2.5: 0.0
+            - Kimi 系列（月之暗面直供）：0.0
+            - MiniMax 系列（阿里云直供）：MiniMax-M2.5、MiniMax-M2.1: 0.0
+            - 其余 DeepSeek/Kimi/GLM/MiniMax 模型无默认值
+            - 其他所有模型：0.0
+
+            **工作原理：** 当参数值为正时，模型会对已出现在生成文本中的 Token 施加惩罚，惩罚力度与出现次数无关。这会降低这些 Token 再次出现的概率，从而减少重复并增加词汇多样性。
+
+            使用 qwen-vl-plus-2025-01-25 模型进行文字提取时，建议将 `presence_penalty` 设为 1.5。
+
+            QVQ 模型请勿修改默认 `presence_penalty` 值。
+        response_format:
+          type: object
+          description: |-
+            响应内容的格式。默认为 `{"type": "text"}`。
+
+            可选值：
+            - `{"type": "text"}`：返回纯文本响应。
+            - `{"type": "json_object"}`：返回符合标准 JSON 语法的字符串。
+            - `{"type": "json_schema", "json_schema": {...}}`：返回符合自定义 Schema 的 JSON 字符串。
+
+            指定 `{"type": "json_object"}` 时，需在提示词中明确要求模型输出 JSON，例如添加"请以 JSON 格式输出"，否则会报错。
+
+            支持的模型列表，请参见结构化输出文档。
+          properties:
+            type:
+              type: string
+              enum:
+                - text
+                - json_object
+                - json_schema
+              description: 格式类型。`text` 返回纯文本；`json_object` 返回符合标准 JSON 语法的字符串；`json_schema` 返回符合自定义 Schema 的 JSON 字符串。
+            json_schema:
+              type: object
+              description: 结构化输出的配置。当 `type` 为 `json_schema` 时必填。
+              properties:
+                name:
+                  type: string
+                  description: Schema 的唯一名称，只能包含字母、数字、下划线和连字符，最多 64 个字符。
+                description:
+                  type: string
+                  description: Schema 用途的描述，帮助模型理解输出的语义上下文。
+                schema:
+                  type: object
+                  description: 符合 JSON Schema 标准的对象，用于定义输出数据结构。
+                strict:
+                  type: boolean
+                  default: false
+                  description: 是否要求模型严格遵循所有 Schema 约束。`true`（推荐）确保完全合规；`false` 可能导致输出不完全符合规范。
+              required:
+                - name
+          required:
+            - type
+        max_tokens:
+          type: integer
+          description: （即将废弃，新接入请使用 `max_completion_tokens`）响应中的最大 Token 数。达到此限制后停止生成，`finish_reason` 字段将被设置为 `length`。默认值和最大值对应模型的最大输出长度。`max_tokens` 不限制思维链的长度。
+          deprecated: true
+        max_completion_tokens:
+          type: integer
+          description: |-
+            限制模型本次响应中输出的最大 Token 数，包含思维链。达到此限制后停止生成，`finish_reason` 为 `length`。默认值与最大值均为模型的最大输出长度。
+
+            与 `max_tokens` 的区别：`max_completion_tokens` 同时限制思考过程与最终响应的总长度，而 `max_tokens` 不限制思维链长度。思考类模型推荐使用 `max_completion_tokens`。
+
+            **支持以下模型：**
+            - 千问 Max：Qwen3.7-Max 及之后的模型
+            - 千问 Plus：Qwen3.5-Plus 及之后的模型
+            - 千问 Flash：Qwen3.5-Flash 及之后的模型
+            - Kimi：kimi-k2.5 及之后的模型
+            - GLM：glm-5 及其之后推出的GLM系列模型
+            - MiniMax：MiniMax-M2.5 及之后的模型
+            - DeepSeek：deepseek-v3、deepseek-r1、deepseek-r1-0528、deepseek-v3.1、deepseek-v3.2、deepseek-v3.2-exp、deepseek-v4-pro-0813、deepseek-v4-pro、deepseek-v4-flash 及之后的模型
+
+            以上模型均不包含三方直供模型。实际输出 Token 数与设置值之间最多可能存在 10 个 Token 的误差。
+        vl_high_resolution_images:
+          type: boolean
+          default: false
+          description: |-
+            将输入图片的最大像素上限提高至对应 16384 个 Token 的像素值。启用后，采用固定分辨率策略，`max_pixels` 设置将被忽略。若图片超出像素限制，系统会等比缩小至限制范围内。
+
+            **`vl_high_resolution_images` 为 `true` 时的像素上限：**
+            - Qwen3.5 系列、Qwen3-VL 系列、qwen-vl-max、qwen-vl-max-latest、qwen-vl-max-0813、qwen-vl-plus、qwen-vl-plus-latest、qwen-vl-plus-0815：16,777,216（每个 Token 对应 32×32 像素，即 16,384×32×32）
+            - QVQ 系列及其他 Qwen2.5-VL 系列模型：12,845,056（每个 Token 对应 28×28 像素，即 16,384×28×28）
+
+            若 `vl_high_resolution_images` 为 `false`，实际像素上限由 `max_pixels` 决定。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"vl_high_resolution_images": xxx}`。
+        n:
+          type: integer
+          default: 1
+          description: 生成的响应数量，取值范围 1-4 的整数。适用于需要多个候选答案的场景，如创意写作或广告文案生成。仅 Qwen3（非思考模式）模型支持。传入 `tools` 参数时，请将 `n` 设为 1。增大 `n` 会增加输出 Token 消耗，但不影响输入 Token 消耗。
+        enable_thinking:
+          type: boolean
+          description: |-
+            为混合思考模型启用思考模式。支持 Qwen3.7、Qwen3.6、Qwen3.5、Qwen3、Qwen3-Omni-Flash 和 Qwen3-VL 模型，以及 DeepSeek-V4-Pro/V4-Flash 系列（阿里云直供）、DeepSeek-V3.2/V3.2-exp/V3.1 系列（阿里云直供、硅基流动直供、快手万擎直供）、Kimi-K2.6/K2.5 系列（阿里云直供、月之暗面直供）、GLM 系列。qwen3.8-max 默认开启思考模式。DeepSeek-V4 系列默认开启思考，可通过 `reasoning_effort` 参数调整推理力度。启用后，思考内容将在 `reasoning_content` 字段中返回。
+
+            各模型的默认值不同。支持的模型及其默认 `enable_thinking` 值，请参见模型列表。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"enable_thinking": xxx}`。
+        preserve_thinking:
+          type: boolean
+          default: false
+          description: |-
+            是否将对话历史中 assistant 消息的 reasoning_content 拼接至模型输入。适用于需要模型参考历史思考过程的场景。目前支持 qwen3.8-max（默认开启）、qwen3.7-max、qwen3.7-max-2026-05-20以及后续快照、qwen3.6-max-preview、qwen3.7-plus、qwen3.7-plus-2026-05-26、qwen3.6-plus、qwen3.6-plus-2026-04-02、qwen3.7-flash、qwen3.7-flash-2026-07-15、qwen3.6-flash、qwen3.6-flash-2026-04-16、kimi-k2.6（千问AI平台部署）、kimi-k2.7-code（千问AI平台部署，默认开启）、kimi/kimi-k2.7-code-highspeed（月之暗面直供，默认开启）、kimi/kimi-k2.7-code（月之暗面直供，默认开启）。
+
+            - 若历史消息中不包含 reasoning_content，开启此参数不会报错，正常兼容。
+            - 开启后，历史对话中的 reasoning_content 会计入输入 Token 数量并计费。
+
+            **重要：** 使用 qwen3.8-max 时，preserve_thinking 默认为 true，必须将历史对话中所有的 reasoning_content 完整回传。不支持将 reasoning_content 拼接到 content 字段中回传。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"preserve_thinking": True}`。
+        thinking_budget:
+          type: integer
+          description: |-
+            思考过程的最大 Token 数。适用于 Qwen3.7、Qwen3.6、Qwen3.5、Qwen3-VL、Qwen3、GLM（阿里云直供）和 Kimi（阿里云直供）系列模型。默认值为模型的最大思维链长度。详情请参见模型列表。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"thinking_budget": xxx}`。
+        reasoning_effort:
+          type: string
+          enum:
+            - low
+            - medium
+            - high
+            - xhigh
+            - max
+          default: high
+          description: |-
+            控制模型的推理力度。
+
+            **Qwen3.8-Max 与 Qwen3.8-Max-Preview：** 可选值：`low`、`medium`、`xhigh`。默认 `xhigh`。不支持与 thinking_budget 同时设置，同时设置会报错。两者支持互转：未设置 thinking_budget 时，reasoning_effort 自动映射 thinking_budget（`low`→4096，`medium`→16384，`xhigh`→262144）；未设置 reasoning_effort 时，thinking_budget 自动映射回 reasoning_effort（0-4096→`low`，4097-16384→`medium`，16385-262144→`xhigh`）；两者均未设置时，使用默认 thinking_budget（131072），默认 reasoning_effort（`xhigh`）。
+
+            **DeepSeek-V4 与 GLM 系列：** 可选值：`high`（高力度推理）、`max`（最大力度推理）。low 和 medium 映射为 high，xhigh 映射为 max。适用于 glm-5.2、glm-5.1、glm-5、deepseek-v4-pro-0813、deepseek-v4-pro、deepseek-v4-flash（阿里云直供）（deepseek-v4-flash-0731 除外）。
+
+            **deepseek-v4-flash-0731：** 默认值：`xhigh`。可选值：`xhigh`（默认，高力度推理）、`medium`（中力度推理）、`low`（低力度推理）。OpenAI 标准值映射：`max`映射为 xhigh，`high`映射为 xhigh，`minimal`映射为 low，`none`映射为 enable_thinking=False。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"reasoning_effort": "high"}`。
+        clear_thinking:
+          type: boolean
+          default: false
+          description: |-
+            用于控制多轮对话中是否将历史轮次的 reasoning_content（思考过程）作为上下文输入给模型。仅 GLM 系列（glm-5.2、glm-5.1、glm-5、glm-4.7）模型支持。
+
+            - `true`：忽略历史轮次的 reasoning_content，仅使用可见文本、工具调用与结果等非推理内容作为上下文输入，可降低上下文长度与成本。
+            - `false`（默认）：保留历史轮次的 reasoning_content 并随上下文一同提供给模型。若希望启用 Preserved Thinking，必须在 messages 中完整、未修改、按原顺序透传历史 reasoning_content，缺失、裁剪、改写或重排会导致效果下降或无法生效。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"clear_thinking": True}`。
+        tool_stream:
+          type: boolean
+          default: false
+          description: |-
+            仅在 `stream=true` 时生效。当前仅 Qwen 和 GLM 系列支持。
+
+            **Qwen 系列支持列表：**
+            - qwen-max 系列：qwen3.7-max 系列的文本模态
+            - qwen-plus 系列：qwen3.7-plus 系列、qwen3.6-plus 系列的文本模态，以及 qwen3.5-plus 系列的全模态
+            - qwen-flash 系列：qwen3.7-flash 系列、qwen3.6-flash 系列、qwen3.5-flash 系列的全模态
+
+            **Qwen 系列使用参考：**
+            tool_stream 仅影响复杂工具参数的情况。普通工具参数只要开启 `stream=true` 就会流式输出。复杂工具是指工具定义中某些参数类型为 array 或 object。
+            - `tool_stream=false`：复杂工具参数会一次性输出，默认行为，复杂格式会更准确。
+            - `tool_stream=true`：复杂工具参数会流式输出，复杂格式没有超时风险。
+
+            **GLM 系列支持列表：** glm-4.6、glm-4.7、glm-5、glm-5.1（阿里云直供）。
+
+            **GLM 系列使用参考：**
+            - `tool_stream=false`：工具参数会一次性输出，默认行为，复杂格式会更准确。
+            - `tool_stream=true`：工具参数会流式输出，复杂格式没有超时风险。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"tool_stream": true}`。
+        enable_code_interpreter:
+          type: boolean
+          default: false
+          description: |-
+            是否启用代码解释器功能。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"enable_code_interpreter": xxx}`。
+        seed:
+          type: integer
+          description: 随机数种子，用于保证结果可复现。在其他参数不变的情况下使用相同的种子值，模型会尽可能返回相同的结果。取值范围：[0, 2^31-1]。
+        logprobs:
+          type: boolean
+          default: false
+          description: |-
+            是否返回输出 Token 的对数概率。思考阶段生成的内容（`reasoning_content`）不包含对数概率。
+
+            **支持的模型：**
+            - Qwen-plus 系列快照版（不含稳定版）
+            - Qwen-turbo 系列快照版（不含稳定版）
+            - Qwen3-vl-plus 模型（含稳定版）
+            - Qwen3-vl-flash 模型（含稳定版）
+            - Qwen3 开源模型
+        top_logprobs:
+          type: integer
+          default: 0
+          description: 每个生成步骤返回的最可能候选 Token 数量。取值范围：0 到 5。仅在 `logprobs` 为 `true` 时生效。
+        stop:
+          oneOf:
+            - type: string
+            - type: array
+              items:
+                type: string
+          description: 停止词。生成文本中出现 `stop` 指定的字符串或 Token 时，立即停止生成。`stop` 为数组时，不能同时包含 `token_id` 和字符串类型的元素。
+        tools:
+          type: array
+          description: 模型可在函数调用中使用的工具对象数组（支持一个或多个）。设置 `tools` 后，若模型判断需要调用工具，响应会在 `tool_calls` 字段中返回工具信息。使用示例请参见[函数调用指南](/developer-guides/tool-calling/function-calling)。
+          items:
+            type: object
+            required:
+              - type
+              - function
+            properties:
+              type:
+                type: string
+                enum:
+                  - function
+                description: 工具类型。目前仅支持 `function`。
+              function:
+                type: object
+                required:
+                  - name
+                  - description
+                properties:
+                  name:
+                    type: string
+                    description: 工具名称，只能包含字母、数字、下划线和连字符，最多 64 个 Token。
+                  description:
+                    type: string
+                    description: 工具的描述，帮助模型判断何时以及如何调用该工具。
+                  parameters:
+                    type: object
+                    default: {}
+                    description: 使用合法 JSON Schema 描述工具的输入参数。为空时表示该工具无输入参数。
+        tool_choice:
+          oneOf:
+            - type: string
+              enum:
+                - auto
+                - none
+            - type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - function
+                function:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: 要调用的函数名称。
+                  required:
+                    - name
+              required:
+                - type
+                - function
+          default: auto
+          description: '工具选择策略。`auto` 由模型自行决定；`none` 禁用工具调用；传入 `{"type": "function", "function": {"name": "..."}}` 对象可强制指定调用某个工具。处于思考模式的模型不支持强制指定工具。'
+        parallel_tool_calls:
+          type: boolean
+          default: false
+          description: 是否启用并行工具调用。
+        enable_search:
+          type: boolean
+          default: false
+          description: |-
+            启用联网搜索。开启后可能增加 Token 消耗。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"enable_search": True}`。
+        search_options:
+          type: object
+          description: |-
+            联网搜索策略。仅在 `enable_search` 为 `true` 时生效。
+
+            **属性说明：**
+            - `forced_search`（boolean，默认 `false`）：强制联网搜索。`true` 强制开启，`false` 由模型自行决定。
+            - `search_strategy`（string，默认 `turbo`）：搜索规模策略。`turbo` 兼顾速度与效果；`max` 调用多个搜索引擎，策略更全面；`agent` 多次调用搜索和大模型进行多轮检索（仅适用于 qwen3.7-max、qwen3.7-max-2026-06-08、qwen3.7-max-2026-05-20、qwen3.7-max-preview、qwen3.7-max-2026-05-17、qwen3.5-plus、qwen3.5-plus-2026-02-15、qwen3.5-flash、qwen3.5-flash-2026-02-23、qwen3-max、qwen3-max-2026-01-23、qwen3-max-2025-09-23、qwen3.5-omni-plus、qwen3.5-omni-plus-2026-03-15、qwen3.5-omni-flash 和 qwen3.5-omni-flash-2026-03-15）；`agent_max` 在 agent 策略基础上增加网页内容抽取（仅适用于思考模式下的 qwen3.7-max、qwen3.7-max-2026-06-08、qwen3.7-max-2026-05-20、qwen3.7-max-preview、qwen3.7-max-2026-05-17、qwen3-max 和 qwen3-max-2026-01-23）。启用 `agent` 或 `agent_max` 时，仅支持返回搜索来源（`enable_source: true`），其他联网搜索功能不可用。
+            - `enable_search_extension`（boolean，默认 `false`）：启用垂直领域搜索。
+
+            **此参数不是标准 OpenAI 参数。** 使用 Python SDK 时，请通过 `extra_body` 传入：`extra_body={"search_options": xxx}`。
+          properties:
+            forced_search:
+              type: boolean
+              default: false
+              description: 强制联网搜索。`true` 强制开启联网搜索，`false` 由模型自行决定。
+            search_strategy:
+              type: string
+              enum:
+                - turbo
+                - max
+                - agent
+                - agent_max
+              default: turbo
+              description: "搜索规模策略。`turbo`（默认）兼顾速度与效果；`max` 调用多个搜索引擎，策略更全面，响应时间可能较长；`agent` 多次调用联网搜索和大模型进行多轮检索，仅适用于 qwen3.7-max、qwen3.7-max-2026-06-08、qwen3.7-max-2026-05-20、qwen3.7-max-preview、qwen3.7-max-2026-05-17、qwen3.5-plus、qwen3.5-plus-2026-02-15、qwen3.5-flash、qwen3.5-flash-2026-02-23、qwen3-max、qwen3-max-2026-01-23、qwen3-max-2025-09-23、qwen3.5-omni-plus、qwen3.5-omni-plus-2026-03-15、qwen3.5-omni-flash 和 qwen3.5-omni-flash-2026-03-15；`agent_max` 在 agent 策略基础上增加网页内容抽取，仅适用于思考模式下的 qwen3.7-max、qwen3.7-max-2026-06-08、qwen3.7-max-2026-05-20、qwen3.7-max-preview、qwen3.7-max-2026-05-17、qwen3-max 和 qwen3-max-2026-01-23。启用 `agent` 或 `agent_max` 时，仅支持返回搜索来源（`enable_source: true`）。"
+            enable_search_extension:
+              type: boolean
+              default: false
+              description: 启用垂直领域搜索。
+    Message:
+      oneOf:
+        - title: System message
+          type: object
+          description: 系统消息，用于为模型设定角色、语气、任务目标或约束条件。应置于 messages 数组的开头。QwQ 模型请勿设置系统消息；系统消息对 QVQ 模型无效。
+          required:
+            - role
+            - content
+          properties:
+            role:
+              type: string
+              enum:
+                - system
+              description: 系统消息的角色，固定为 `system`。
+            content:
+              type: string
+              description: 系统指令，用于定义模型的角色、行为方式、回复风格和任务约束。
+        - title: User message
+          type: object
+          description: 用户消息，用于向模型传递问题、指令或上下文信息。
+          required:
+            - role
+            - content
+          properties:
+            role:
+              type: string
+              enum:
+                - user
+              description: 用户消息的角色，固定为 `user`。
+            content:
+              description: 消息内容。纯文本输入时为字符串；多模态输入或启用显式缓存时为数组。
+              oneOf:
+                - type: array
+                  description: 内容块数组。用于多模态输入（图片、音频、视频）或启用显式缓存的场景。
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        enum:
+                          - text
+                          - image_url
+                          - input_audio
+                          - video
+                          - video_url
+                        description: 内容类型。`text` 为文本，`image_url` 为图片，`input_audio` 为音频，`video` 为图片列表视频，`video_url` 为视频文件。
+                      text:
+                        type: string
+                        description: 输入文本内容。`type` 为 `text` 时必填。
+                      image_url:
+                        type: object
+                        description: 输入图片信息。`type` 为 `image_url` 时必填。使用示例请参见[视觉理解指南](/developer-guides/multimodal/vision)。
+                        properties:
+                          url:
+                            type: string
+                            description: 图片的 URL 或 Base64 Data URL。
+                        required:
+                          - url
+                      input_audio:
+                        type: object
+                        description: 输入音频信息。`type` 为 `input_audio` 时必填。使用示例请参见[音频理解指南](/developer-guides/text-generation/audio-understanding)。
+                        properties:
+                          data:
+                            type: string
+                            description: 音频的 URL 或 Base64 Data URL。
+                          format:
+                            type: string
+                            description: 输入音频的格式，如 `mp3` 或 `wav`。
+                        required:
+                          - data
+                          - format
+                      video:
+                        type: array
+                        items:
+                          type: string
+                        description: 以图片列表形式表示的视频。`type` 为 `video` 时必填。使用示例请参见[视觉理解指南](/developer-guides/multimodal/vision)。
+                      video_url:
+                        type: object
+                        description: 输入视频文件信息。`type` 为 `video_url` 时必填。使用示例请参见[视觉理解指南](/developer-guides/multimodal/vision)。
+                        properties:
+                          url:
+                            type: string
+                            description: 视频文件的公网 URL 或 Base64 Data URL。
+                        required:
+                          - url
+                      fps:
+                        type: number
+                        description: 每秒提取的帧数。取值范围：[0.1, 10]，默认值为 2.0。
+                      min_pixels:
+                        type: integer
+                        description: |-
+                          设置输入图片或视频帧的最小像素阈值。若图片或视频帧的像素数小于 min_pixels，系统会将其放大直到总像素数超过该阈值。适用于 Qwen-VL 和 QVQ 模型。
+
+                          取值范围：
+                          - 图片输入：
+                            - Qwen3.5 和 Qwen3-VL：默认值和最小值均为 65536。
+                            - qwen-vl-max、qwen-vl-max-latest、qwen-vl-max-0813、qwen-vl-plus、qwen-vl-plus-latest、qwen-vl-plus-0815：默认值和最小值均为 4096。
+                            - 其他 qwen-vl-plus 系列、其他 qwen-vl-max 系列、开源 Qwen2.5-VL 系列和 QVQ 系列：默认值和最小值均为 3136。
+                          - 视频文件或图片列表输入：
+                            - Qwen3.5、Qwen3-VL（含商业版和开源版）、qwen-vl-max、qwen-vl-max-latest、qwen-vl-max-0813、qwen-vl-plus、qwen-vl-plus-latest、qwen-vl-plus-0815：默认值为 65536，最小值为 4096。
+                            - 其他 qwen-vl-plus 系列、其他 qwen-vl-max 系列、开源 Qwen2.5-VL 系列和 QVQ 系列：默认值为 50176，最小值为 3136。
+                      max_pixels:
+                        type: integer
+                        description: |-
+                          设置输入图片或视频帧的最大像素阈值。图片或视频像素数在 [min_pixels, max_pixels] 范围内时，模型直接处理原图；超出 max_pixels 时，系统会将其缩小直到总像素数小于该阈值。适用于 Qwen-VL 和 QVQ 模型。
+
+                          取值范围：
+                          - 图片输入（max_pixels 与 vl_high_resolution_images 参数是否启用有关）：
+                            - 若 vl_high_resolution_images 为 False：
+                              - Qwen3.5 和 Qwen3-VL：默认值为 2621440，最大值为 16777216。
+                              - qwen-vl-max、qwen-vl-max-latest、qwen-vl-max-0813、qwen-vl-plus、qwen-vl-plus-latest、qwen-vl-plus-0815：默认值为 1310720，最大值为 16777216。
+                              - 其他 qwen-vl-plus 系列、其他 qwen-vl-max 系列、开源 Qwen2.5-VL 系列和 QVQ 系列：默认值为 1003520，最大值为 12845056。
+                            - 若 vl_high_resolution_images 为 True：
+                              - Qwen3.5、Qwen3-VL、qwen-vl-max、qwen-vl-max-latest、qwen-vl-max-0813、qwen-vl-plus、qwen-vl-plus-latest、qwen-vl-plus-0815：max_pixels 无效，输入图片最大像素数固定为 16777216。
+                              - 其他 qwen-vl-plus 系列、其他 qwen-vl-max 系列、开源 Qwen2.5-VL 系列和 QVQ 系列：max_pixels 无效，输入图片最大像素数固定为 12845056。
+                          - 视频文件或图片列表输入：
+                            - qwen3.5 系列、qwen3-vl-plus 系列、qwen3-vl-flash 系列、qwen3-vl-235b-a22b-thinking 和 qwen3-vl-235b-a22b-instruct：默认值为 655360，最大值为 2048000。
+                            - 其他 Qwen3-VL 开源模型、qwen-vl-max、qwen-vl-max-latest、qwen-vl-max-0813、qwen-vl-plus、qwen-vl-plus-latest、qwen-vl-plus-0815：默认值为 655360，最大值为 786432。
+                            - 其他 qwen-vl-plus 系列、其他 qwen-vl-max 系列、开源 Qwen2.5-VL 系列和 QVQ 系列：默认值为 501760，最大值为 602112。
+                      total_pixels:
+                        type: integer
+                        description: |-
+                          限制从视频中提取的所有帧的总像素数（每帧像素数 × 总帧数）。若视频总像素数超过此限制，系统会缩减视频帧，同时确保单帧像素数保持在 [min_pixels, max_pixels] 范围内。适用于 Qwen-VL 和 QVQ 模型。对于提取帧数较多的长视频，可降低此值以减少 Token 消耗和处理时间（但可能损失图像细节）。
+
+                          取值范围：
+                          - qwen3.5 系列、qwen3-vl-plus 系列、qwen3-vl-flash 系列、qwen3-vl-235b-a22b-thinking 和 qwen3-vl-235b-a22b-instruct：默认值和最小值均为 134217728，约对应 131072 个图像 Token（1 个图像 Token 对应 32×32 像素）。
+                          - 其他 Qwen3-VL 开源模型、qwen-vl-max、qwen-vl-max-latest、qwen-vl-max-0813、qwen-vl-plus、qwen-vl-plus-latest、qwen-vl-plus-0815：默认值和最小值均为 67108864，约对应 65536 个图像 Token（1 个图像 Token 对应 32×32 像素）。
+                          - 其他 qwen-vl-plus 系列、其他 qwen-vl-max 系列、开源 Qwen2.5-VL 系列和 QVQ 系列：默认值和最小值均为 51380224，约对应 65536 个图像 Token（1 个图像 Token 对应 28×28 像素）。
+                      cache_control:
+                        type: object
+                        description: 启用显式缓存。
+                        properties:
+                          type:
+                            type: string
+                            enum:
+                              - ephemeral
+                            description: 仅支持 `ephemeral`。
+                        required:
+                          - type
+                    required:
+                      - type
+                - type: string
+                  description: 纯文本字符串，适用于仅文本输入的场景。
+        - title: Assistant message
+          type: object
+          description: 模型的回复消息。在多轮对话中通常作为上下文回传给模型。
+          required:
+            - role
+          properties:
+            role:
+              type: string
+              enum:
+                - assistant
+              description: 助手消息的角色，固定为 `assistant`。
+            content:
+              type: string
+              description: 模型回复的文本内容。包含 `tool_calls` 时，`content` 可以为空；否则 `content` 为必填字段。
+            partial:
+              type: boolean
+              default: false
+              description: 是否启用部分模式。
+            tool_calls:
+              type: array
+              description: 发起函数调用后返回的工具及输入参数信息。
+              items:
+                type: object
+                required:
+                  - id
+                  - type
+                  - function
+                  - index
+                properties:
+                  id:
+                    type: string
+                    description: 工具响应的 ID。
+                  type:
+                    type: string
+                    enum:
+                      - function
+                    description: 工具类型。目前仅支持 `function`。
+                  function:
+                    type: object
+                    required:
+                      - name
+                      - arguments
+                    properties:
+                      name:
+                        type: string
+                        description: 工具名称。
+                      arguments:
+                        type: string
+                        description: 输入参数信息，以 JSON 字符串格式表示。
+                  index:
+                    type: integer
+                    description: 当前工具在 `tool_calls` 数组中的索引。
+        - title: Tool message
+          type: object
+          description: 工具的输出信息。
+          required:
+            - role
+            - content
+            - tool_call_id
+          properties:
+            role:
+              type: string
+              enum:
+                - tool
+              description: 固定为 `tool`。
+            content:
+              type: string
+              description: 工具函数的输出内容，必须为字符串。若工具返回结构化数据（如 JSON），请将其序列化为字符串。
+            tool_call_id:
+              type: string
+              description: 发起函数调用后返回的 ID，可从 `completion.choices[0].message.tool_calls[$index].id` 获取。
+    ChatCompletion:
+      type: object
+      description: 对话响应对象（非流式输出）。
+      properties:
+        id:
+          type: string
+          description: 本次请求的唯一标识符。
+        choices:
+          type: array
+          description: 模型生成内容的数组。
+          items:
+            type: object
+            properties:
+              finish_reason:
+                type: string
+                enum:
+                  - stop
+                  - length
+                  - tool_calls
+                description: 模型停止生成的原因。`stop`：自然结束或触发 stop 参数；`length`：达到最大输出长度；`tool_calls`：停止以调用工具。
+              index:
+                type: integer
+                description: 当前对象在 choices 数组中的索引。
+              logprobs:
+                $ref: "#/components/schemas/Logprobs"
+              message:
+                $ref: "#/components/schemas/AssistantResponseMessage"
+        created:
+          type: integer
+          description: 请求创建时的 Unix 时间戳（秒）。
+        model:
+          type: string
+          description: 本次请求使用的模型。
+        object:
+          type: string
+          enum:
+            - chat.completion
+          description: 固定为 `chat.completion`。
+        service_tier:
+          type: string
+          nullable: true
+          description: 目前固定为 `null`。
+        system_fingerprint:
+          type: string
+          nullable: true
+          description: 目前固定为 `null`。
+        usage:
+          $ref: "#/components/schemas/Usage"
+    ChatCompletionChunk:
+      type: object
+      description: 对话响应块对象（流式输出）。
+      properties:
+        id:
+          type: string
+          description: 本次请求的唯一标识符。同一响应的所有数据块共享相同的 id。
+        choices:
+          type: array
+          description: 模型生成内容对象的数组。若 `include_usage` 为 `true`，最后一个数据块中的 `choices` 数组为空。
+          items:
+            type: object
+            properties:
+              delta:
+                type: object
+                description: 当前数据块的增量内容对象。
+                properties:
+                  content:
+                    type: string
+                    description: 增量消息内容。
+                  reasoning_content:
+                    type: string
+                    description: 增量思维链内容。
+                  function_call:
+                    type: object
+                    nullable: true
+                    description: 默认为 `null`，请改用 `tool_calls`。
+                  audio:
+                    type: object
+                    description: Qwen-Omni 生成的响应内容。
+                    properties:
+                      data:
+                        type: string
+                        description: 增量 Base64 编码的音频数据。
+                      expires_at:
+                        type: integer
+                        description: 请求创建时的 UNIX 时间戳。
+                  refusal:
+                    type: object
+                    nullable: true
+                    description: 固定为 `null`。
+                  role:
+                    type: string
+                    description: 角色信息，仅在第一个数据块中出现。
+                  tool_calls:
+                    type: array
+                    description: 函数调用后生成的工具调用信息。
+                    items:
+                      type: object
+                      properties:
+                        index:
+                          type: integer
+                          description: 当前工具在 tool_calls 数组中的索引。
+                        id:
+                          type: string
+                          description: 本次工具响应的唯一 ID。
+                        function:
+                          type: object
+                          properties:
+                            arguments:
+                              type: string
+                              description: 增量输入参数信息，需将所有数据块的内容拼接后使用。
+                            name:
+                              type: string
+                              description: 工具名称，仅在第一个数据块中出现。
+                        type:
+                          type: string
+                          description: 工具类型。目前仅支持 `function`。
+              finish_reason:
+                type: string
+                nullable: true
+                enum:
+                  - stop
+                  - length
+                  - tool_calls
+                  - null
+                description: 生成停止的原因。生成未完成时为 `null`。
+              index:
+                type: integer
+                description: 当前响应在 choices 数组中的索引。
+              logprobs:
+                $ref: "#/components/schemas/Logprobs"
+        created:
+          type: integer
+          description: 本次请求创建时的 UNIX 时间戳。
+        model:
+          type: string
+          description: 本次请求使用的模型。
+        object:
+          type: string
+          enum:
+            - chat.completion.chunk
+          description: 固定为 `chat.completion.chunk`。
+        service_tier:
+          type: string
+          nullable: true
+          description: 目前固定为 `null`。
+        system_fingerprint:
+          type: string
+          nullable: true
+          description: 目前固定为 `null`。
+        usage:
+          $ref: "#/components/schemas/Usage"
+    AssistantResponseMessage:
+      type: object
+      description: 模型生成的消息。
+      properties:
+        content:
+          type: string
+          description: 模型响应的文本内容。
+        reasoning_content:
+          type: string
+          description: 模型思维链推理过程的内容。
+        refusal:
+          type: string
+          nullable: true
+          description: 此字段固定为 `null`。
+        role:
+          type: string
+          enum:
+            - assistant
+          description: 固定为 `assistant`。
+        audio:
+          type: object
+          nullable: true
+          description: 此字段固定为 `null`。
+        function_call:
+          type: object
+          nullable: true
+          description: （已废弃）此字段固定为 `null`，请改用 `tool_calls`。
+        tool_calls:
+          type: array
+          description: 模型发起函数调用后生成的工具及其输入参数信息。
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 本次工具响应的唯一标识符。
+              type:
+                type: string
+                enum:
+                  - function
+                description: 工具类型。目前仅支持 `function`。
+              function:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: 工具名称。
+                  arguments:
+                    type: string
+                    description: 输入参数信息，以 JSON 字符串格式表示。模型输出具有不确定性，调用函数前请先验证参数。
+              index:
+                type: integer
+                description: 当前工具在 `tool_calls` 数组中的索引。
+    Logprobs:
+      type: object
+      nullable: true
+      description: 模型输出 Token 的对数概率信息。
+      properties:
+        content:
+          type: array
+          description: Token 及其对应对数概率的数组。
+          items:
+            type: object
+            properties:
+              token:
+                type: string
+                description: 当前 Token 的文本内容。
+              bytes:
+                type: array
+                items:
+                  type: integer
+                description: 当前 Token 的原始 UTF-8 字节列表。
+              logprob:
+                type: number
+                nullable: true
+                description: 当前 Token 的对数概率。`null` 表示概率极低。
+              top_logprobs:
+                type: array
+                description: 当前位置最可能的候选 Token 列表。
+                items:
+                  type: object
+                  properties:
+                    token:
+                      type: string
+                      description: 候选 Token 的文本内容。
+                    bytes:
+                      type: array
+                      items:
+                        type: integer
+                      description: 该 Token 的原始 UTF-8 字节列表。
+                    logprob:
+                      type: number
+                      nullable: true
+                      description: 该候选 Token 的对数概率。
+    Usage:
+      type: object
+      description: 本次请求的 Token 消耗明细。
+      properties:
+        completion_tokens:
+          type: integer
+          description: 模型输出的 Token 数量。
+        prompt_tokens:
+          type: integer
+          description: 输入的 Token 数量。
+        total_tokens:
+          type: integer
+          description: 总消耗 Token 数量（prompt_tokens + completion_tokens）。
+        completion_tokens_details:
+          type: object
+          description: 输出 Token 的细分明细。
+          properties:
+            audio_tokens:
+              type: integer
+              nullable: true
+              description: 输出中的音频 Token 数量。
+            reasoning_tokens:
+              type: integer
+              nullable: true
+              description: 思考过程中的 Token 数量。
+            text_tokens:
+              type: integer
+              description: 输出中的文本 Token 数量。
+        prompt_tokens_details:
+          type: object
+          description: 输入 Token 的细分明细。
+          properties:
+            audio_tokens:
+              type: integer
+              nullable: true
+              description: 输入音频的 Token 数量。
+            cached_tokens:
+              type: integer
+              description: 命中缓存的 Token 数量。
+            text_tokens:
+              type: integer
+              description: 输入中的文本 Token 数量。
+            image_tokens:
+              type: integer
+              description: 输入中的图片 Token 数量。
+            video_tokens:
+              type: integer
+              description: 输入视频的 Token 数量。
+            cache_creation:
+              type: object
+              description: 显式缓存创建的相关信息。
+              properties:
+                ephemeral_5m_input_tokens:
+                  type: integer
+                  description: 创建显式缓存所消耗的 Token 数量。
+            cache_creation_input_tokens:
+              type: integer
+              description: 创建显式缓存所消耗的 Token 数量。
+            cache_type:
+              type: string
+              description: 使用显式缓存时，值为 `ephemeral`；否则此字段不存在。
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: 可读的错误信息。
+            type:
+              type: string
+              description: 错误类型。
+            param:
+              type:
+                - string
+                - "null"
+              description: 导致错误的参数名称。
+            code:
+              type:
+                - string
+                - "null"
+              description: 错误码。
+````

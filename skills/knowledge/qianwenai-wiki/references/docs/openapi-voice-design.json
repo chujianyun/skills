@@ -1,0 +1,263 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "千问AI平台语音设计 API",
+    "description": "基于文字描述创建和管理自定义音色，供 Qwen TTS 模型使用。",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dashscope.aliyuncs.com/api/v1"
+    }
+  ],
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/services/audio/tts/customization": {
+      "post": {
+        "operationId": "createVoice",
+        "summary": "创建音色",
+        "description": "根据文字描述创建自定义音色，返回音色名称和 Base64 编码的预览音频。可将音色名称用于 [Qwen TTS](/api-reference/speech-synthesis/qwen-tts) 或[实时流式 TTS](/developer-guides/speech/realtime-streaming)。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateVoiceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "音色创建成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateVoiceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "bash",
+            "label": "cURL",
+            "source": "curl -X POST https://dashscope.aliyuncs.com/api/v1/services/audio/tts/customization \\\n-H \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\n  \"model\": \"qwen-voice-design\",\n  \"input\": {\n    \"action\": \"create\",\n    \"target_model\": \"qwen3-tts-vd-realtime-2026-01-15\",\n    \"voice_prompt\": \"语速适中，音调偏高，充满活力\",\n    \"preview_text\": \"你好，欢迎使用声音设计功能。\",\n    \"preferred_name\": \"mydesign\"\n  }\n}'"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateVoiceRequest": {
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "语音设计模型，固定值为 `qwen-voice-design`。",
+            "enum": [
+              "qwen-voice-design"
+            ],
+            "example": "qwen-voice-design"
+          },
+          "input": {
+            "type": "object",
+            "required": [
+              "action",
+              "target_model",
+              "voice_prompt",
+              "preview_text"
+            ],
+            "properties": {
+              "action": {
+                "type": "string",
+                "description": "操作类型，固定值为 `create`。",
+                "enum": [
+                  "create"
+                ],
+                "example": "create"
+              },
+              "target_model": {
+                "type": "string",
+                "description": "音色绑定的合成模型，后续合成调用时需传入相同模型。可选值：`qwen3-tts-vd-realtime-2026-01-15`、`qwen3-tts-vd-realtime-2025-12-16`（实时），`qwen3-tts-vd-2026-01-26`（非实时）。",
+                "enum": [
+                  "qwen3-tts-vd-realtime-2026-01-15",
+                  "qwen3-tts-vd-realtime-2025-12-16",
+                  "qwen3-tts-vd-2026-01-26"
+                ],
+                "example": "qwen3-tts-vd-realtime-2026-01-15"
+              },
+              "voice_prompt": {
+                "type": "string",
+                "description": "音色描述文本，最多 2,048 个字符，仅支持中英文。参见[如何撰写有效的音色描述](/developer-guides/speech/voice-design#编写有效的音色描述)。",
+                "maxLength": 2048,
+                "example": "A composed middle-aged male announcer with a deep, rich and magnetic voice, suitable for news broadcasting."
+              },
+              "preview_text": {
+                "type": "string",
+                "description": "用于生成预览音频的文本，最多 1,024 个字符，须使用[支持的语言](/developer-guides/speech/voice-design#支持的语言)。",
+                "maxLength": 1024,
+                "example": "Dear listeners, hello everyone. Welcome to the evening news."
+              },
+              "preferred_name": {
+                "type": "string",
+                "description": "音色名称关键词（仅支持字母、数字和下划线，最多 16 个字符），会出现在生成的音色名称中。例如传入 `announcer`，生成的名称为 `qwen-tts-vd-announcer-voice-20251201102800-a1b2`。",
+                "maxLength": 16,
+                "pattern": "^[a-zA-Z0-9_]+$",
+                "example": "announcer"
+              },
+              "language": {
+                "type": "string",
+                "description": "生成音色的语言代码，须与 `preview_text` 的语言一致。",
+                "enum": [
+                  "zh",
+                  "en",
+                  "de",
+                  "it",
+                  "pt",
+                  "es",
+                  "ja",
+                  "ko",
+                  "fr",
+                  "ru"
+                ],
+                "default": "zh",
+                "example": "en"
+              }
+            }
+          },
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "sample_rate": {
+                "type": "integer",
+                "description": "预览音频的采样率（Hz）。",
+                "enum": [
+                  8000,
+                  16000,
+                  24000,
+                  48000
+                ],
+                "default": 24000,
+                "example": 24000
+              },
+              "response_format": {
+                "type": "string",
+                "description": "预览音频的输出格式。",
+                "enum": [
+                  "pcm",
+                  "wav",
+                  "mp3",
+                  "opus"
+                ],
+                "default": "wav",
+                "example": "wav"
+              }
+            }
+          }
+        }
+      },
+      "CreateVoiceResponse": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "object",
+            "properties": {
+              "voice": {
+                "type": "string",
+                "description": "生成的音色名称，合成 API 调用时将此值作为 `voice` 参数传入。",
+                "example": "qwen-tts-vd-announcer-voice-20251201102800-a1b2"
+              },
+              "preview_audio": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "string",
+                    "description": "Base64 编码的预览音频，解码后可得到音频文件。",
+                    "example": "{base64_encoded_audio}"
+                  },
+                  "sample_rate": {
+                    "type": "integer",
+                    "description": "预览音频的采样率。",
+                    "example": 24000
+                  },
+                  "response_format": {
+                    "type": "string",
+                    "description": "预览音频的格式。",
+                    "example": "wav"
+                  }
+                }
+              },
+              "target_model": {
+                "type": "string",
+                "description": "与该音色绑定的合成模型。",
+                "example": "qwen3-tts-vd-realtime-2026-01-15"
+              }
+            }
+          },
+          "usage": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "integer",
+                "description": "本次计费的音色创建次数，创建成功固定为 `1`。",
+                "example": 1
+              }
+            }
+          },
+          "request_id": {
+            "type": "string",
+            "description": "请求 ID，用于问题排查。",
+            "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+          },
+          "code": {
+            "type": "string",
+            "description": "错误码。",
+            "example": "BadRequest.VoiceNotFound"
+          },
+          "message": {
+            "type": "string",
+            "description": "错误信息。",
+            "example": "Voice not found: nonexistent-voice"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "千问AI平台 API Key。详见[获取 API Key](/api-reference/preparation/api-key)。"
+      }
+    }
+  }
+}
