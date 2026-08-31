@@ -166,6 +166,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
+| [baize](skills/distribution/baize/SKILL.md) | Pipeline / Generator | 把完整 Wiki 转换为保留目录树、带索引和逐文档哈希、可增量更新并自动安装的 Agent Skill |
 | [claudian-installer](skills/distribution/claudian-installer/SKILL.md) | Pipeline | 安装 Claudian Obsidian 插件，把 Claude Code 接进 Obsidian |
 
 ---

@@ -67,6 +67,7 @@
     "distribution": {
       "description": "安装、同步、分发和技能市场相关能力",
       "skills": [
+        "baize",
         "claudian-installer"
       ]
     }

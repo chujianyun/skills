@@ -39,6 +39,13 @@
       "skills": ["./skills/knowledge/llama-index-wiki"]
     },
     {
+      "name": "baize",
+      "description": "白泽 Wiki Skill 生成器：把完整 Wiki 转换为保留目录树、带索引和逐文档哈希、可无变化跳过更新并自动安装的 Agent Skill",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/distribution/baize"]
+    },
+    {
       "name": "claudian-installer",
       "description": "Install Claudian Obsidian plugin which embeds Claude Code as an AI collaborator in your vault. Your vault becomes Claude's working directory, giving it full agentic capabilities: file read/write, search, bash commands, and multi-step workflows.",
       "source": "./",
