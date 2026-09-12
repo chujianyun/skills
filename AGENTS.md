@@ -54,6 +54,12 @@ If two categories seem plausible, classify by the Skill's primary output, not by
 - `README.md` inside a Skill is optional and human-facing; it must not duplicate the AI execution contract in `SKILL.md`.
 - Include `agents/openai.yaml` when the Skill should have curated UI metadata.
 
+## Skill Optimizer Repository Sync
+
+- Whenever any file under `skills/review/skill-optimizer/` changes, push the completed changes to this repository and also synchronize and push the Skill's own code and supporting files to `https://github.com/chujianyun/skill-optimizer.git`.
+- Sync only the `skill-optimizer` Skill's contents, respecting the standalone repository's layout and preserving unrelated files; do not copy this collection's other Skills or repository-level files.
+- This additional push is part of the authorized Skill-change workflow. A `skill-optimizer` change is complete only after both repository pushes succeed; report any sync or push failure explicitly.
+
 ## New Skill Checklist
 
 Copy this checklist into the task progress before creating a Skill. Complete it from top to bottom; do not mark a later item complete while an earlier item is still open.
