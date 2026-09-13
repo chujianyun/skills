@@ -1,4 +1,4 @@
 interface:
   display_name: "发布照片头像打码"
-  short_description: "保留指定人物，用五款内置表情头像遮挡其他人的正脸，跳过侧脸和背影"
-  default_prompt: "用 $photo-privacy-avatar 处理我提供的照片，保留我指定的人物，用合适的内置头像遮住其他人的正脸，侧脸和背影不用遮挡。"
+  short_description: "保留指定人物，用内置头像遮挡其他人的正脸及可辨认侧脸，统一复查并补齐遗漏"
+  default_prompt: "用 $photo-privacy-avatar 处理我提供的照片，保留我指定的人物，用内置头像遮住其他人的正脸及仍可辨认的侧脸；全部处理后统一复查，发现遗漏就补打码并再次检查，通过后再交付。"

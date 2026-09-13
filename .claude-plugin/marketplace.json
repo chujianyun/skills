@@ -138,7 +138,7 @@
     },
     {
       "name": "photo-privacy-avatar",
-      "description": "发布照片头像打码：保留用户指定人物，用五款内置表情头像遮挡其他人的正脸，跳过明显侧脸和背影，支持单张和多张照片逐张处理。",
+      "description": "发布照片头像打码：保留用户指定人物，用五款内置表情头像遮挡其他人的正脸及可辨认侧脸，支持单张和多张照片处理，完成后统一复查并补齐遗漏。",
       "source": "./",
       "strict": false,
       "skills": ["./skills/media/photo-privacy-avatar"]

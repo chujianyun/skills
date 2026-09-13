@@ -117,7 +117,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 | Skill | 模式 | 适用场景 |
 |---|---|---|
 | [add-photo-certificate-watermarks](skills/media/add-photo-certificate-watermarks/SKILL.md) | Tool Wrapper / Pipeline | 给照片添加版权水印，或给身份证、护照、学历证书、资质文件和 PDF 添加限定用途水印 |
-| [photo-privacy-avatar](skills/media/photo-privacy-avatar/SKILL.md) | Pipeline | 保留指定人物，用五款内置表情头像遮住其他人的正脸，跳过明显侧脸和背影，支持单张及批量照片 |
+| [photo-privacy-avatar](skills/media/photo-privacy-avatar/SKILL.md) | Pipeline | 保留指定人物，用五款内置表情头像遮住其他人的正脸及可辨认侧脸，单张及批量照片处理后统一复查并补齐遗漏 |
 
 ---
 
