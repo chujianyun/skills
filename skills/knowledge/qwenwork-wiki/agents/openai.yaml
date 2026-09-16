@@ -1,0 +1,4 @@
+interface:
+  display_name: "千问办公 Wiki"
+  short_description: "查询千问办公多端使用、扩展自动化、企业管理和排障的官方知识"
+  default_prompt: "使用 $qwenwork-wiki 查询千问办公的使用方法，区分网页端和桌面端，并给出官方来源。"

@@ -25,6 +25,13 @@
       "skills": ["./skills/knowledge/qoder-wiki"]
     },
     {
+      "name": "qwenwork-wiki",
+      "description": "千问办公 QwenWork 官方文档 Wiki，提供常用功能精编知识与官方导航，支持多端使用、扩展、自动化、企业管理和排障查询",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/knowledge/qwenwork-wiki"]
+    },
+    {
       "name": "qianwenai-wiki",
       "description": "千问AI平台官方文档离线知识库，用于回答模型接入、OpenAI 兼容与 DashScope API、多模态生成、Realtime、计费和排障问题",
       "source": "./",

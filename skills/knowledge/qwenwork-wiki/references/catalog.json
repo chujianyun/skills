@@ -1,0 +1,1042 @@
+{
+  "captured_at": "2026-09-16",
+  "source": "https://qwenwork.cn/docs/getting-started/basic-workflow",
+  "coverage": "navigation-links-only; curated notes are stored separately",
+  "pages": [
+    {
+      "title": "通用设置",
+      "url": "https://qwenwork.cn/docs/getting-started/general-settings",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "千问办公简介",
+      "url": "https://qwenwork.cn/docs/product-introduction",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "快速开始2",
+      "url": "https://qwenwork.cn/docs/getting-started/usage-entry",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "Web端使用链路",
+      "url": "https://qwenwork.cn/docs/getting-started/basic-workflow",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "桌面端使用链路",
+      "url": "https://qwenwork.cn/docs/getting-started/desktop-workflow",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "macOS 安装指南",
+      "url": "https://qwenwork.cn/docs/install/macos",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "Windows 安装指南",
+      "url": "https://qwenwork.cn/docs/install/windows",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "HarmonyOS 安装指南",
+      "url": "https://qwenwork.cn/docs/install/harmonyos",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "隐私与安全",
+      "url": "https://qwenwork.cn/docs/getting-started/privacy-security",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "阿里云官网购买",
+      "url": "https://qwenwork.cn/docs/getting-started/source-intro",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "产品权益2",
+      "url": "https://qwenwork.cn/docs/benefits",
+      "section": "权益与订阅"
+    },
+    {
+      "title": "个人版权益",
+      "url": "https://qwenwork.cn/docs/benefits/personal",
+      "section": "权益与订阅"
+    },
+    {
+      "title": "套餐升降级策略",
+      "url": "https://qwenwork.cn/docs/benefits/plan-upgrade-downgrade",
+      "section": "权益与订阅"
+    },
+    {
+      "title": "网页端核心功能6",
+      "url": "https://qwenwork.cn/docs/web",
+      "section": "网页端"
+    },
+    {
+      "title": "平台功能4",
+      "url": "https://qwenwork.cn/docs/web/platform",
+      "section": "网页端"
+    },
+    {
+      "title": "我的网页",
+      "url": "https://qwenwork.cn/docs/web/pages",
+      "section": "网页端"
+    },
+    {
+      "title": "个人网盘",
+      "url": "https://qwenwork.cn/docs/web/drive",
+      "section": "网页端"
+    },
+    {
+      "title": "扩展：专家套件、技能与连接器",
+      "url": "https://qwenwork.cn/docs/features/extensions",
+      "section": "扩展与通用能力"
+    },
+    {
+      "title": "定时任务",
+      "url": "https://qwenwork.cn/docs/web/scheduled-tasks",
+      "section": "网页端"
+    },
+    {
+      "title": "模型选择",
+      "url": "https://qwenwork.cn/docs/features/model-selection",
+      "section": "扩展与通用能力"
+    },
+    {
+      "title": "桌面端核心功能15",
+      "url": "https://qwenwork.cn/docs/desktop",
+      "section": "介绍、入门与安装"
+    },
+    {
+      "title": "系统设置",
+      "url": "https://qwenwork.cn/docs/desktop/settings",
+      "section": "桌面端"
+    },
+    {
+      "title": "意识",
+      "url": "https://qwenwork.cn/docs/desktop/memory",
+      "section": "桌面端"
+    },
+    {
+      "title": "应用快照",
+      "url": "https://qwenwork.cn/docs/desktop/app-snapshots",
+      "section": "桌面端"
+    },
+    {
+      "title": "电脑操控",
+      "url": "https://qwenwork.cn/docs/desktop/computer-use",
+      "section": "桌面端"
+    },
+    {
+      "title": "模型选择",
+      "url": "https://qwenwork.cn/docs/desktop/model-selection",
+      "section": "桌面端"
+    },
+    {
+      "title": "语音输入",
+      "url": "https://qwenwork.cn/docs/features/voice-input",
+      "section": "扩展与通用能力"
+    },
+    {
+      "title": "IM 频道",
+      "url": "https://qwenwork.cn/docs/desktop/im-channels",
+      "section": "桌面端"
+    },
+    {
+      "title": "定时任务",
+      "url": "https://qwenwork.cn/docs/desktop/scheduled-tasks",
+      "section": "桌面端"
+    },
+    {
+      "title": "Hooks",
+      "url": "https://qwenwork.cn/docs/desktop/hooks",
+      "section": "桌面端"
+    },
+    {
+      "title": "连接器",
+      "url": "https://qwenwork.cn/docs/features/connectors",
+      "section": "扩展与通用能力"
+    },
+    {
+      "title": "技能",
+      "url": "https://qwenwork.cn/docs/features/skills",
+      "section": "扩展与通用能力"
+    },
+    {
+      "title": "专家套件",
+      "url": "https://qwenwork.cn/docs/desktop/expert-kits",
+      "section": "桌面端"
+    },
+    {
+      "title": "工作台-设计",
+      "url": "https://qwenwork.cn/docs/workspaces/design",
+      "section": "工作台"
+    },
+    {
+      "title": "工作台-幻灯片",
+      "url": "https://qwenwork.cn/docs/workspaces/slides",
+      "section": "工作台"
+    },
+    {
+      "title": "工作台-写作",
+      "url": "https://qwenwork.cn/docs/workspaces/writing",
+      "section": "工作台"
+    },
+    {
+      "title": "企业管理后台",
+      "url": "https://qwenwork.cn/docs/enterprise/admin",
+      "section": "企业标准版"
+    },
+    {
+      "title": "SSO登录",
+      "url": "https://qwenwork.cn/docs/enterprise/sso",
+      "section": "企业标准版"
+    },
+    {
+      "title": "积分管理",
+      "url": "https://qwenwork.cn/docs/enterprise/credits",
+      "section": "企业标准版"
+    },
+    {
+      "title": "成员管理",
+      "url": "https://qwenwork.cn/docs/enterprise/members",
+      "section": "企业标准版"
+    },
+    {
+      "title": "千问办公-旗舰版管理后台帮助文档",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "开通后操作指引",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/getting-started",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "概览",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/overview",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "Windows AD 用户同步",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/user-sync/windows-ad",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "企业微信用户同步",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/user-sync/wecom",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "OpenLDAP 用户同步",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/user-sync/openldap",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "飞书用户同步",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/user-sync/feishu",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "Microsoft Entra ID 用户同步",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/user-sync/entra-id",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "钉钉用户同步",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/user-sync/dingtalk",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "用户同步",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/user-sync",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "SCIM 用户同步",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/user-sync/scim",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "钉钉 SSO",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/identity-authentication/dingtalk",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "Microsoft Entra ID SSO",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/identity-authentication/azure-ad",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "身份认证",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/identity-authentication",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "企业微信 SSO",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/identity-authentication/wecom",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "OAuth 2.0 SSO",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/identity-authentication/oauth2",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "SAML 2.0 SSO",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/identity-authentication/saml2",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "OIDC SSO",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/identity-authentication/oidc",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "飞书 SSO",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/identity-authentication/feishu",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "用户",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/users",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "用户组",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management/user-groups",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "用户管理",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/user-management",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "导航",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/personalization/navigation",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "登录页",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/personalization/login",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "个性化配置",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/personalization",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "积分不足提示",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/personalization/credit-shortage",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "输入框文案",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/personalization/input-copy",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "首页推荐",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/personalization/home",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "组织信息",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/organization-management/organization-info",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "管理员角色",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/organization-management/admin-roles",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "组织管理",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/organization-management",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "敏感词",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/security-control/sensitive-words",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "可信网络",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/security-control/trusted-network",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "可信设备",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/security-control/trusted-devices",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "IM 频道",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/security-control/im-channels",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "Hooks 规则",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/security-control/hooks",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "安全管控",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/security-control",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "模型目录",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/model-management/model-catalog",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "模型策略组",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/model-management/model-policies",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "模型管理",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/model-management",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "AI 资产管理",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/ai-asset-management",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "专家套件",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/ai-asset-management/expert-suites",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "技能",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/ai-asset-management/skills",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "连接器",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/ai-asset-management/connectors",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "订阅与用量",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/subscription-usage",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "订单记录",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/subscription-usage/orders",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "限额管理",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/subscription-usage/quota-management",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "发票与合同",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/subscription-usage/invoices-contracts",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "订阅管理",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/subscription-usage/subscription-management",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "用量统计",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/analytics/usage",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "综合看板",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/analytics/overview",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "数据统计",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/analytics",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "日志审计",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/audit-logs",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "AI 日志",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/audit-logs/ai",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "管理员日志",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/audit-logs/admin",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "用户日志",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/audit-logs/user",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "开发者文档",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/open-platform/developer-docs",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "开放平台",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/open-platform",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "应用授权",
+      "url": "https://qwenwork.cn/docs/enterprise/flagship/open-platform/app-authorization",
+      "section": "企业旗舰版"
+    },
+    {
+      "title": "接入概览",
+      "url": "https://qwenwork.cn/docs/developer/enterprise",
+      "section": "开发者接口"
+    },
+    {
+      "title": "启动用户同步接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-directory-sync-runs",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除目录数据源配置接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-directory-sync-sources-source-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询目录数据源配置接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-directory-sync-sources",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询同步任务状态接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-directory-sync-runs-run-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "保存目录数据源配置接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/put-directory-sync-sources-source-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除部门接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-departments-department-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新用户接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-users-user-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新部门接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-departments-department-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除用户接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-users-user-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询席位申请接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-seat-requests",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建部门接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-departments",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建用户接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-users",
+      "section": "开发者接口"
+    },
+    {
+      "title": "处理用户加入申请接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-join-requests-request-id-decision",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询部门列表接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-departments",
+      "section": "开发者接口"
+    },
+    {
+      "title": "处理席位申请接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-seat-requests-request-id-decision",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询用户加入申请接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-join-requests",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询用户列表接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-users",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询席位容量与分配接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-seats",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建用户组接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-user-groups",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询用户组接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-user-groups",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新用户组接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-user-groups-group-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除用户组接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-user-groups-group-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "读取管理员登录地址配置接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-organization-access-domain",
+      "section": "开发者接口"
+    },
+    {
+      "title": "读取组织信息接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-organization",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新组织信息接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-organization",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建管理员角色接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-admin-roles",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除管理员角色接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-admin-roles-role-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询管理员角色接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-admin-roles",
+      "section": "开发者接口"
+    },
+    {
+      "title": "读取菜单权限目录接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-admin-menu-permissions",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新管理员角色接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-admin-roles-role-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询可信网段接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-network-ranges",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除可信网段接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-network-ranges-range-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新可信网段接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-network-ranges-range-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建可信网段接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-network-ranges",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建敏感词库接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-sensitive-word-libraries",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除敏感词库接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-sensitive-word-libraries-library-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询敏感词库接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-sensitive-word-libraries",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新敏感词库接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-sensitive-word-libraries-library-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询 IM 频道接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-im-channels",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新 IM 频道接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-im-channels-channel-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "取消待执行下线任务接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-force-logout-tasks-task-id-cancellations",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新可信设备策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-trusted-device-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建可信设备策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-trusted-device-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询可信设备策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-trusted-device-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建强制下线任务接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-force-logout-tasks",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询强制下线任务接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-force-logout-tasks",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除可信设备策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-trusted-device-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新待执行下线任务接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-force-logout-tasks-task-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除 Hooks 规则接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-hook-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新 Hooks 规则接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-hook-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建 Hooks 规则接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-hook-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询 Hooks 规则接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-hook-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新模型策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-model-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除模型策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-model-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询模型策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-model-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建模型策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-model-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询技能分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-skill-categories",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除技能分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-skill-categories-category-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新技能接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-skills-resource-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新技能分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-skill-categories-category-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询技能上架申请接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-skill-upload-reviews",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除技能接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-skills-resource-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除技能开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-skill-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "处理技能上架申请接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-skill-upload-reviews-review-id-decision",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建技能分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-skill-categories",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询技能开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-skill-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新技能开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-skill-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询技能接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-skills",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建技能开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-skill-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建专家套件分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-expert-suite-categories",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除专家套件开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-expert-suite-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询专家套件开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-expert-suite-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建专家套件开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-expert-suite-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询专家套件分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-expert-suite-categories",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询专家套件接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-expert-suites",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除专家套件接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-expert-suites-resource-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新专家套件分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-expert-suite-categories-category-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新专家套件接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-expert-suites-resource-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除专家套件分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-expert-suite-categories-category-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新专家套件开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-expert-suite-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询专家套件上架申请接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-expert-suite-upload-reviews",
+      "section": "开发者接口"
+    },
+    {
+      "title": "处理专家套件上架申请接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-expert-suite-upload-reviews-review-id-decision",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新连接器分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-connector-categories-category-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "读取连接器访问策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-connector-access-policy",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询连接器分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-connector-categories",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建连接器分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-connector-categories",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除连接器开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-connector-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除连接器分类接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-connector-categories-category-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询连接器开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-connector-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新连接器开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-connector-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询连接器接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-connectors",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新连接器访问策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-connector-access-policy",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新连接器接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-connectors-resource-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建连接器开放策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-connector-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除连接器接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-connectors-resource-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新计量设置接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-metering-policy",
+      "section": "开发者接口"
+    },
+    {
+      "title": "更新限额策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/patch-quota-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "删除限额策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/delete-quota-policies-policy-id",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询限额策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-quota-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "读取企业额度接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-quota-balance",
+      "section": "开发者接口"
+    },
+    {
+      "title": "读取计量设置接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-metering-policy",
+      "section": "开发者接口"
+    },
+    {
+      "title": "创建限额策略接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/post-quota-policies",
+      "section": "开发者接口"
+    },
+    {
+      "title": "查询应用接口",
+      "url": "https://qwenwork.cn/docs/developer/enterprise/get-open-platform-apps",
+      "section": "开发者接口"
+    },
+    {
+      "title": "问题反馈1",
+      "url": "https://qwenwork.cn/docs/feedback",
+      "section": "反馈与常见问题"
+    },
+    {
+      "title": "提问指南",
+      "url": "https://qwenwork.cn/docs/feedback/how-to-ask",
+      "section": "反馈与常见问题"
+    },
+    {
+      "title": "常见问题",
+      "url": "https://qwenwork.cn/docs/faq",
+      "section": "反馈与常见问题"
+    },
+    {
+      "title": "千问办公正式上线，多重惊喜福利！",
+      "url": "https://qwenwork.cn/docs/activity/qwen3.8-max-update",
+      "section": "官方公告"
+    }
+  ]
+}
