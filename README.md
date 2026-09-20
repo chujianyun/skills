@@ -33,6 +33,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 | [qianwenai-wiki](skills/knowledge/qianwenai-wiki/SKILL.md) | Tool Wrapper | 检索千问AI平台官方文档，回答模型接入、OpenAI 兼容与 DashScope API、文本/多模态生成、Realtime、计费和排障问题 |
 | [qoder-wiki](skills/knowledge/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |
 | [qwenwork-wiki](skills/knowledge/qwenwork-wiki/SKILL.md) | Tool Wrapper | 查询千问办公网页端、桌面端、技能与连接器、定时任务、IM、企业管理与排障，按需定位官方 API 文档 |
+| [typesafe-wiki](skills/knowledge/typesafe-wiki/SKILL.md) | Tool Wrapper | 查询 TypeSafe AI 官方文档：Jev System One 模型、Choice/Score/Noul 原语、置信度、Patterns、Python/JavaScript SDK、HTTP API 与 Cookbooks |
 
 ---
 

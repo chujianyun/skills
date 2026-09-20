@@ -46,6 +46,13 @@
       "skills": ["./skills/knowledge/llama-index-wiki"]
     },
     {
+      "name": "typesafe-wiki",
+      "description": "TypeSafe AI 官方文档离线 Wiki，覆盖 Jev System One 模型、Choice/Score/Noul 原语、置信度、Patterns、Python/JavaScript SDK、HTTP API 与 Cookbooks",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/knowledge/typesafe-wiki"]
+    },
+    {
       "name": "baize",
       "description": "白泽 Wiki Skill 生成器：把完整 Wiki 转换为保留目录树、带索引和逐文档哈希、可无变化跳过更新并自动安装的 Agent Skill",
       "source": "./",

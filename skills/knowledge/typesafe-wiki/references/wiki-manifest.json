@@ -1,0 +1,1252 @@
+{
+  "assets": {
+    "Pre-parsed_value_extraction_overview.png": {
+      "content_hash": "sha256:eaccee709a0fef9e50b4f60fc7b138984637dbfe439ca8b179dfc35bb2d67974",
+      "local_path": "Pre-parsed_value_extraction_overview.png",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/pre_parsed_value_extraction_cookbook/overview.png?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=4df592e42d251f25fe30c2269f2d182a",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "classification_using_confidence.executed.1.png": {
+      "content_hash": "sha256:8ef6382dd4ec2f314d84318fbe10fdd204dbabd7bc407163a6275050480c8cc1",
+      "local_path": "classification_using_confidence.executed.1.png",
+      "source_url": "https://mintcdn.com/ts-docs/teQYilPCKt0TpDJJ/cookbooks/classification_using_confidence/classification_using_confidence.executed.1.png?fit=max&auto=format&n=teQYilPCKt0TpDJJ&q=85&s=e75ad9c2e17cae7094f30cd0cbb36f53",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "classifying_rag_passages.executed.1.png": {
+      "content_hash": "sha256:ed5a452bc76ef52d80d932d9607ac0debfe5de16b629d71331eff2921a90ff0a",
+      "local_path": "classifying_rag_passages.executed.1.png",
+      "source_url": "https://mintcdn.com/ts-docs/5iZnRWRIxyU5JBux/cookbooks/classifying_rag_passages/classifying_rag_passages.executed.1.png?fit=max&auto=format&n=5iZnRWRIxyU5JBux&q=85&s=9257008675e09b97950eaa31f2eec173",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "codebase_tree.svg": {
+      "content_hash": "sha256:1dfc779fd90eb2a5ac6e2ad717b71a605ed9f8348e726f1cc293346cce055b78",
+      "local_path": "codebase_tree.svg",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/hierarchical_classification/codebase_tree.svg?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=052f2001a9e5f53a2647eb179ebdafd9",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "consistency_choice_cookbook.executed.2.png": {
+      "content_hash": "sha256:bbd31d5ebaa742627dc87adfdd0e6e9b767c63e50923f68850c3d4a2739310c9",
+      "local_path": "consistency_choice_cookbook.executed.2.png",
+      "source_url": "https://mintcdn.com/ts-docs/BBcnWK7wRF0qekMh/cookbooks/consistency_choice_cookbook/consistency_choice_cookbook.executed.2.png?fit=max&auto=format&n=BBcnWK7wRF0qekMh&q=85&s=3bf99796df3faa60d1db45f626a7caee",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "consistency_choice_cookbook.executed.3.png": {
+      "content_hash": "sha256:a22d5ed1c17c895146254b10eb0afdfb1b5ec366873a5e4574e2699d9785da17",
+      "local_path": "consistency_choice_cookbook.executed.3.png",
+      "source_url": "https://mintcdn.com/ts-docs/BBcnWK7wRF0qekMh/cookbooks/consistency_choice_cookbook/consistency_choice_cookbook.executed.3.png?fit=max&auto=format&n=BBcnWK7wRF0qekMh&q=85&s=257663537c99b735f9f07609732d1a69",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "consistency_noul_cookbook.executed.1.png": {
+      "content_hash": "sha256:e0533fb21043566e9daab8de3307016ba97fb3d317ce94cf6fdeb3a0fa91ede8",
+      "local_path": "consistency_noul_cookbook.executed.1.png",
+      "source_url": "https://mintcdn.com/ts-docs/BBcnWK7wRF0qekMh/cookbooks/consistency_noul_cookbook/consistency_noul_cookbook.executed.1.png?fit=max&auto=format&n=BBcnWK7wRF0qekMh&q=85&s=a50edf2fb3abafd64374936a630d57bc",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "cpc_tree.svg": {
+      "content_hash": "sha256:aa761397fa72c2d57252cfc37c89e95f094151983ddce3064b8287cfe796117d",
+      "local_path": "cpc_tree.svg",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/hierarchical_classification/cpc_tree.svg?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=e2e78c257ef946e0e40f49ed0aadddf4",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "entity_alignment.executed.1.png": {
+      "content_hash": "sha256:f6b2dfc17a9e73b427532b5dab94937a2e2b482105a71648f891aafb376a54fd",
+      "local_path": "entity_alignment.executed.1.png",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/entity_alignment/entity_alignment.executed.1.png?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=0a5cc0e7eb280ca54d6bd823fb5d2a43",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "mesh_tree.svg": {
+      "content_hash": "sha256:70cdf9d0dce891f1e0f7500f13992ac8662d198e4cf99cda037ed2371dac59aa",
+      "local_path": "mesh_tree.svg",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/hierarchical_classification/mesh_tree.svg?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=a71b2ce23a81fd3165a67abd09d5e26f",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "mode-collapse-light.webp": {
+      "content_hash": "sha256:f30c14e1dcdc2d6e6381775d2d63e72476a8d127c4a35d5cba4cec61cd3e9e96",
+      "local_path": "mode-collapse-light.webp",
+      "source_url": "https://mintcdn.com/ts-docs/aFVnpmCIX68NpsV1/images/ai-primer/mode-collapse-light.webp?fit=max&auto=format&n=aFVnpmCIX68NpsV1&q=85&s=2896f125ad1a5835b31b088fbc64eff1",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "mode-dropping-light.webp": {
+      "content_hash": "sha256:ef3a23e0789e16f86fbbb51a09b234bc06167ece200e364e69cba189704ff85c",
+      "local_path": "mode-dropping-light.webp",
+      "source_url": "https://mintcdn.com/ts-docs/aFVnpmCIX68NpsV1/images/ai-primer/mode-dropping-light.webp?fit=max&auto=format&n=aFVnpmCIX68NpsV1&q=85&s=d51758a6212b526fc243cc9a81572cc7",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "overview.png": {
+      "content_hash": "sha256:5e0f8238af84d0245ee8e1188402d162f3cd4397927b1f3c60e50c7226728174",
+      "local_path": "overview.png",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/date_extraction_cookbook/overview.png?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=4d1d1d4d446eefafb556505d9834e7a0",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "pareto_100prompts.png": {
+      "content_hash": "sha256:361ee182b4895d4ad3ac6b50b204d684446f0ca19de964f124146af919af7b59",
+      "local_path": "pareto_100prompts.png",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/sde_cascade/pareto_100prompts.png?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=ca6731507e07b501a6627616ba0b767a",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "rerank-diagram.png": {
+      "content_hash": "sha256:d1dfc9e1759e41df62be7f40fcfecf8cbb0df34ead4ac678dab6c56a73441240",
+      "local_path": "rerank-diagram.png",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/rerank_typesafe/rerank-diagram.png?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=f302253df43240e6ad7ea788cf3ba02e",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "rerank_typesafe.executed.2.png": {
+      "content_hash": "sha256:38f553ed97d64c4b81c33f739078dfc61202ccb4642b71fc97d172409ccc817e",
+      "local_path": "rerank_typesafe.executed.2.png",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/rerank_typesafe/rerank_typesafe.executed.2.png?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=46bea6ecf0dbb89f8df634eb6cda16b7",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "semantic-find-hero.gif": {
+      "content_hash": "sha256:83edb45d7654e1e48de1b72b0ef2db43c5c371237d2f15c48097865cab80f2e8",
+      "local_path": "semantic-find-hero.gif",
+      "source_url": "https://mintcdn.com/ts-docs/oDyLjm6qxw13db62/cookbooks/semantic_find/semantic-find-hero.gif?s=60d3456a354bc159ac408e4c1aa8c2d2",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "shopify_tree.svg": {
+      "content_hash": "sha256:2bbe20be7c6d79e6b3539006d652fe2bbdbdd8046b81bc7c6837e8e57c164dcc",
+      "local_path": "shopify_tree.svg",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/hierarchical_classification/shopify_tree.svg?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=eaeffcf7e76e389ffbe3397a1b6c5d8e",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "skill_suggestion.executed.1.png": {
+      "content_hash": "sha256:d72314fe018e63c54166f61712ce11aae3726b9b3a8634512ed063fc4fbd7c44",
+      "local_path": "skill_suggestion.executed.1.png",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/skill_suggestion/skill_suggestion.executed.1.png?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=d367d7f1a110c8d0c7ba970e57203ef1",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "software-architectures-light.webp": {
+      "content_hash": "sha256:1b59a8f41f99adef60a33c07879acc6085ae918892672082fb46e6c7d3ce0653",
+      "local_path": "software-architectures-light.webp",
+      "source_url": "https://mintcdn.com/ts-docs/aFVnpmCIX68NpsV1/images/how-to-build-with-typesafe/software-architectures-light.webp?fit=max&auto=format&n=aFVnpmCIX68NpsV1&q=85&s=35c7622176190d1b1f19dc712f2fbf11",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "this_is_the_way.jpg": {
+      "content_hash": "sha256:96e9c51c60ec7fdb826f272570de813ff16dfe720cd16c6477f6c055826bbb72",
+      "local_path": "this_is_the_way.jpg",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/hierarchical_classification/this_is_the_way.jpg?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=15d390074a4f6a97e45f19e2cf039622",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "training-paths-light.webp": {
+      "content_hash": "sha256:88633c05ffab887d73a7f8b8419f7fcc96c95d9bf5ce21919594543eb8fbdffe",
+      "local_path": "training-paths-light.webp",
+      "source_url": "https://mintcdn.com/ts-docs/aFVnpmCIX68NpsV1/images/ai-primer/training-paths-light.webp?fit=max&auto=format&n=aFVnpmCIX68NpsV1&q=85&s=61898215ac31388d3be15bf583b743ee",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "two-step-search-intro-diagram.svg": {
+      "content_hash": "sha256:8e009619ed8cd102edb0e8e76e581b9a86a33815f9a610b7fce205e1d3020c9e",
+      "local_path": "two-step-search-intro-diagram.svg",
+      "source_url": "https://mintcdn.com/ts-docs/2NirYCl-v96cw05F/cookbooks/rerank_typesafe/two-step-search-intro-diagram.svg?fit=max&auto=format&n=2NirYCl-v96cw05F&q=85&s=796d5d4efd82f8396f380f2e1e14a9de",
+      "updated_at": "2026-09-20T04:15:10Z"
+    }
+  },
+  "coverage": {
+    "captured": 109,
+    "complete": true,
+    "discovered": 109,
+    "excluded": [],
+    "failed": []
+  },
+  "created_at": "2026-09-20T04:15:10Z",
+  "documents": {
+    "API reference.md": {
+      "content_hash": "sha256:450a761000484dabe5863e4430aaa61df0a7afe1418d2af9b0e83dee70e90938",
+      "keywords": [],
+      "local_path": "API reference.md",
+      "source_path": "/api",
+      "source_url": "https://docs.typesafe.ai/api",
+      "summary": "Full HTTP API reference for the TypeSafe evaluation endpoint.",
+      "title": "API reference",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Agent skill.md": {
+      "content_hash": "sha256:b7612143ee33c283ce9f4a321888cc23c7859226ea4a2fe211a0eb76ab3fe909",
+      "keywords": [],
+      "local_path": "Agent skill.md",
+      "source_path": "/agent-skill",
+      "source_url": "https://docs.typesafe.ai/agent-skill",
+      "summary": "Drop-in skill for Claude Code, Codex, and other agent environments.",
+      "title": "Agent skill",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Concepts/Confidence.md": {
+      "content_hash": "sha256:1e61586baa82d44d7a92d3b07d0af4c3e5400cf0b25a6d0d436ea217a85e2cef",
+      "keywords": [],
+      "local_path": "Concepts/Confidence.md",
+      "source_path": "/confidence",
+      "source_url": "https://docs.typesafe.ai/confidence",
+      "summary": "How TypeSafe reports certainty, how it differs from probability, and how to use it to control system behavior.",
+      "title": "Confidence",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Concepts/Example use cases.md": {
+      "content_hash": "sha256:e2bf0a0304eb5acd8a4ce46bf9feb45f103af906aa82feb09f5e8be4be37b3b2",
+      "keywords": [],
+      "local_path": "Concepts/Example use cases.md",
+      "source_path": "/concepts/use-case-map",
+      "source_url": "https://docs.typesafe.ai/concepts/use-case-map",
+      "summary": "Explore TypeSafe use cases by industry and turn promising ideas into software workflows.",
+      "title": "Example use cases",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Concepts/How to build with TypeSafe.md": {
+      "content_hash": "sha256:f5ff6f87782fa8b5227f19499d9f0042255454d61cfb2af21f239f109d327829",
+      "keywords": [],
+      "local_path": "Concepts/How to build with TypeSafe.md",
+      "source_path": "/concepts/how-to-build-with-system-one",
+      "source_url": "https://docs.typesafe.ai/concepts/how-to-build-with-system-one",
+      "summary": "Design AI-powered software by keeping code in control and giving System One narrow, structured decisions.",
+      "title": "How to build with TypeSafe",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Concepts/State.md": {
+      "content_hash": "sha256:20427b5dde6cb7051419565964544667507f5fa0e8e12dcfbd2abad46a8ff0a2",
+      "keywords": [],
+      "local_path": "Concepts/State.md",
+      "source_path": "/concepts/state",
+      "source_url": "https://docs.typesafe.ai/concepts/state",
+      "summary": "What state is, how to structure it, and how to give a System One model the context it needs.",
+      "title": "State",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Concepts/System One.md": {
+      "content_hash": "sha256:db3b4749d992cd9f3c3aefc9f70dba6fd5434e7c206ee9cc31bab80277c34a19",
+      "keywords": [],
+      "local_path": "Concepts/System One.md",
+      "source_path": "/concepts/system-one",
+      "source_url": "https://docs.typesafe.ai/concepts/system-one",
+      "summary": "System One models make fast, structured decisions for software. Jev is TypeSafe's flagship model and the first System One model.",
+      "title": "System One",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Autoresearch feature discovery.md": {
+      "content_hash": "sha256:da8cfe7738a7a79952b3de80c62875fbd94e4bb016a37c0d1d28707037a0b95d",
+      "keywords": [],
+      "local_path": "Cookbooks/Autoresearch feature discovery.md",
+      "source_path": "/cookbooks/autoresearch_feature_discovery",
+      "source_url": "https://docs.typesafe.ai/cookbooks/autoresearch_feature_discovery",
+      "summary": "Runs an autoresearch loop that proposes TypeSafe questions, converts free text into numeric features, and uses model errors to improve a supervised CatBoost regressor.",
+      "title": "Autoresearch feature discovery",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Classification using confidence.md": {
+      "content_hash": "sha256:b4ddb28638708cace5e964071e1794de956b5ae1648fad1990c6c0d6db2b57cf",
+      "keywords": [],
+      "local_path": "Cookbooks/Classification using confidence.md",
+      "source_path": "/cookbooks/classification_using_confidence",
+      "source_url": "https://docs.typesafe.ai/cookbooks/classification_using_confidence",
+      "summary": "Classify SEC annual reports into 75 industry groups with one Choice each, then read the answer's own confidence to decide whether to report that group or the broader division above it.",
+      "title": "Classification using confidence",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Classifying RAG passages.md": {
+      "content_hash": "sha256:c69c9af13dc5168b247b691c94dae0b26487baa4ef956da3360126de6e851d3f",
+      "keywords": [],
+      "local_path": "Cookbooks/Classifying RAG passages.md",
+      "source_path": "/cookbooks/classifying_rag_passages",
+      "source_url": "https://docs.typesafe.ai/cookbooks/classifying_rag_passages",
+      "summary": "Score each retrieved passage with one TypeSafe request, then decide in code which ones reach the answering model. For example, keep and flag ones that contradict the question, and drop ones carrying a hidden instruction or prompt injection.",
+      "title": "Classifying RAG passages",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Date extraction.md": {
+      "content_hash": "sha256:d49d9bdf70ce2749b84656244475d896c1a5ffee1ee2e89ddaea53c6422b4347",
+      "keywords": [],
+      "local_path": "Cookbooks/Date extraction.md",
+      "source_path": "/cookbooks/date_extraction_cookbook",
+      "source_url": "https://docs.typesafe.ai/cookbooks/date_extraction_cookbook",
+      "summary": "Extracts absolute and relative dates by asking TypeSafe for the parts named in a document, then resolving and validating them in code with confidence-based review.",
+      "title": "Date extraction",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Double-checking citations.md": {
+      "content_hash": "sha256:0f12bbf152515173244fe0bb3c857599bb251af9a71a5f302a593032f1c268df",
+      "keywords": [],
+      "local_path": "Cookbooks/Double-checking citations.md",
+      "source_path": "/cookbooks/citation_check",
+      "source_url": "https://docs.typesafe.ai/cookbooks/citation_check",
+      "summary": "Catch wrong or hallucinated citations by checking against the source document. One TypeSafe Choice question decides whether the quote's context supports the claim, and its confidence can flag the citation for human review.",
+      "title": "Double-checking citations",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Function calling.md": {
+      "content_hash": "sha256:aefb912ada8ca18c6b03ede0eaed06d68cce3aa4ea20b8a721e488538a3244bc",
+      "keywords": [],
+      "local_path": "Cookbooks/Function calling.md",
+      "source_path": "/cookbooks/function_calling",
+      "source_url": "https://docs.typesafe.ai/cookbooks/function_calling",
+      "summary": "Turns natural-language trading requests into calls to ordinary typed functions by mapping function names and closed-set arguments to confidence-aware TypeSafe questions.",
+      "title": "Function calling",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Guardrails for LLMs.md": {
+      "content_hash": "sha256:6c596bc63e1330bc95395ef5554326b7df565f3131cdf42ab427570ab33c60ba",
+      "keywords": [],
+      "local_path": "Cookbooks/Guardrails for LLMs.md",
+      "source_path": "/cookbooks/llm_guardrails",
+      "source_url": "https://docs.typesafe.ai/cookbooks/llm_guardrails",
+      "summary": "Screen every message going into and out of an LLM app with one TypeSafe request, describing possible hazards ('is this a jailbreak attempt?') and scoring severity ('how much harm would complying do?'). Threshold the probabilities it hands back and you decide whether to pass, review, block, or route a message to support.",
+      "title": "Guardrails for LLMs",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Hierarchical classification.md": {
+      "content_hash": "sha256:0b4b3937bb975182db404994e86896c1fd230388badec3bd232da38eb5eb248f",
+      "keywords": [],
+      "local_path": "Cookbooks/Hierarchical classification.md",
+      "source_path": "/cookbooks/hierarchical_classification",
+      "source_url": "https://docs.typesafe.ai/cookbooks/hierarchical_classification",
+      "summary": "Classifies documents through deep patent, retail product, biomedical, and source-code hierarchies using parallel beam search over TypeSafe Choice probabilities.",
+      "title": "Hierarchical classification",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Knowledge graph entity alignment.md": {
+      "content_hash": "sha256:bb3b7cdace5b79e272403c2923a4ce26c13aa469a1183758d8bc6bea387af3a9",
+      "keywords": [],
+      "local_path": "Cookbooks/Knowledge graph entity alignment.md",
+      "source_path": "/cookbooks/entity_alignment",
+      "source_url": "https://docs.typesafe.ai/cookbooks/entity_alignment",
+      "summary": "Decides which of 450 candidate pairs from two beer catalogues describe the same product. One TypeSafe Score question carries the whole decision, because its three levels are the three things you can do with a pair: merge it, leave it unlinked, or hand it to a curator. There is no threshold to fit, and three Noul questions ride along in the same request to tell the curator which field the two sources disagree on.",
+      "title": "Knowledge graph entity alignment",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Line-by-line search.md": {
+      "content_hash": "sha256:832d411faea595e73a18d838b045d762f45f3321b0c24c56735c562e80f2515b",
+      "keywords": [],
+      "local_path": "Cookbooks/Line-by-line search.md",
+      "source_path": "/cookbooks/semantic_find",
+      "source_url": "https://docs.typesafe.ai/cookbooks/semantic_find",
+      "summary": "Build semantic search for GitHub's Terms of Service. In one request, score 218 line ids against a plain-language query with a Choice question, and use a Noul question to check whether the document contains an answer.",
+      "title": "Line-by-line search",
+      "updated_at": "2026-09-20T04:19:26Z"
+    },
+    "Cookbooks/Parallel questions.md": {
+      "content_hash": "sha256:d9529c93910fd4ad89d7693e4f5768440734e6df5ee7157e34cf5f01cf945f73",
+      "keywords": [],
+      "local_path": "Cookbooks/Parallel questions.md",
+      "source_path": "/cookbooks/parallel_questions",
+      "source_url": "https://docs.typesafe.ai/cookbooks/parallel_questions",
+      "summary": "Runs a 13-question regulatory briefing over the GDPR Wikipedia article, showing that batching every question into one TypeSafe call is 12.2x cheaper and 10.0x faster with no change in answers.",
+      "title": "Parallel questions",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Pre-parsed value extraction.md": {
+      "content_hash": "sha256:9b8508ceb13916ba8d1754b6a41796316128b0dd591876a19eb33b6c010ffef0",
+      "keywords": [],
+      "local_path": "Cookbooks/Pre-parsed value extraction.md",
+      "source_path": "/cookbooks/pre_parsed_value_extraction_cookbook",
+      "source_url": "https://docs.typesafe.ai/cookbooks/pre_parsed_value_extraction_cookbook",
+      "summary": "Uses regexes to find candidate emails, phone numbers, and amounts, then has TypeSafe select the requested span so code can normalize a verbatim value.",
+      "title": "Pre-parsed value extraction",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Re-ranking.md": {
+      "content_hash": "sha256:9a83bcae0a1167ce40dd95e01463a2a23ed0efddc472b6757e5d75def3cc061c",
+      "keywords": [],
+      "local_path": "Cookbooks/Re-ranking.md",
+      "source_path": "/cookbooks/rerank_typesafe",
+      "source_url": "https://docs.typesafe.ai/cookbooks/rerank_typesafe",
+      "summary": "Builds 30-passage BM25 shortlists for 40 CLERC legal queries, then uses one TypeSafe question per query-candidate pair to raise top-1 accuracy from 5% to 18% and top-10 accuracy from 38% to 62%.",
+      "title": "Re-ranking",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/SDE cascade.md": {
+      "content_hash": "sha256:ff12c563be9ea990ae07c3a918ab01a92ac3bf1e96d77e70ab72ebb3ceb2bf1e",
+      "keywords": [],
+      "local_path": "Cookbooks/SDE cascade.md",
+      "source_path": "/cookbooks/sde_cascade",
+      "source_url": "https://docs.typesafe.ai/cookbooks/sde_cascade",
+      "summary": "Uses a 2-stage structured-data-extraction cascade (mini → verify → reasoning) to get most of the quality of a big reasoning model at a fraction of the cost.",
+      "title": "SDE cascade",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Self-consistency choices.md": {
+      "content_hash": "sha256:5daa0060768acf04d8a9e8eee2217038b2d393a27a3550e159b1ef05b7f718cd",
+      "keywords": [],
+      "local_path": "Cookbooks/Self-consistency choices.md",
+      "source_path": "/cookbooks/consistency_choice_cookbook",
+      "source_url": "https://docs.typesafe.ai/cookbooks/consistency_choice_cookbook",
+      "summary": "Add an uncertain outcome to moderation decisions and compare label agreement with the share of automatic actions.",
+      "title": "Self-consistency: choices",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Self-consistency nouls.md": {
+      "content_hash": "sha256:f030b9325811ea8bd492fedce7941455dbcdd9d3b52ee054c4b50fa981e74f3c",
+      "keywords": [],
+      "local_path": "Cookbooks/Self-consistency nouls.md",
+      "source_path": "/cookbooks/consistency_noul_cookbook",
+      "source_url": "https://docs.typesafe.ai/cookbooks/consistency_noul_cookbook",
+      "summary": "Route uncertain probabilities to human review while keeping the underlying noul values visible.",
+      "title": "Self-consistency: nouls",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Skill suggestion.md": {
+      "content_hash": "sha256:179559662a936e8be6dcad512e59b5a056ba2b15ad18e16912e45376d55418d9",
+      "keywords": [],
+      "local_path": "Cookbooks/Skill suggestion.md",
+      "source_path": "/cookbooks/skill_suggestion",
+      "source_url": "https://docs.typesafe.ai/cookbooks/skill_suggestion",
+      "summary": "Picks at most one skill for an agent turn out of the 182 in Nous Research's Hermes catalog: one TypeSafe request ranks every skill and asks whether the turn needs one at all, a second reads the top three properly and can reject all of them. The winner's name goes into a single line of the agent's system prompt, and both the wrong skills it loads and the ones it loads when nothing fits drop by more than half.",
+      "title": "Skill suggestion",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Cookbooks/Structure recovery.md": {
+      "content_hash": "sha256:e1bae15a8f922047df3bbe5a6d1053da87a8535771b770f99fc5ed986874a791",
+      "keywords": [],
+      "local_path": "Cookbooks/Structure recovery.md",
+      "source_path": "/cookbooks/autoformat",
+      "source_url": "https://docs.typesafe.ai/cookbooks/autoformat",
+      "summary": "Reconstructs Markdown from plain text that lost its formatting in two requests: one stitches hard-wrapped lines back together, one classifies every block (heading, list, code, callout) with companion questions read only when relevant.",
+      "title": "Structure recovery",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Demos/Demos.md": {
+      "content_hash": "sha256:5ae01aac9437ff2ef4d365a9758d7b454daa81a78afdc0c8e3d5ee7199289062",
+      "keywords": [],
+      "local_path": "Demos/Demos.md",
+      "source_path": "/demos",
+      "source_url": "https://docs.typesafe.ai/demos",
+      "summary": "Interactive examples showing what's possible with TypeSafe.",
+      "title": "Demos",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Demos/Smart home assistant demo.md": {
+      "content_hash": "sha256:f7ec480b48d6ca72d754cec089165bb221b7a4a5d1fe3a7457c9dc03b5fdca5d",
+      "keywords": [],
+      "local_path": "Demos/Smart home assistant demo.md",
+      "source_path": "/demos/smart-home",
+      "source_url": "https://docs.typesafe.ai/demos/smart-home",
+      "summary": "Demo code: a smart home assistant that uses TypeSafe to evaluate user requests.",
+      "title": "Smart home assistant demo",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Getting Started/AI primer.md": {
+      "content_hash": "sha256:c070b11f0b75c75d4c13ed17d5f9bb06f9b81d6007a4b4d974f3e9ed33af3087",
+      "keywords": [],
+      "local_path": "Getting Started/AI primer.md",
+      "source_path": "/introduction/machine-learning-primer",
+      "source_url": "https://docs.typesafe.ai/introduction/machine-learning-primer",
+      "summary": "Why TypeSafe trains decision models with calibrated probabilities instead of optimizing for generated text.",
+      "title": "AI primer",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Getting Started/Introduction.md": {
+      "content_hash": "sha256:0b887c81955849f07b846389a16512df6ab4d60a91099e2b5922999eed90c70d",
+      "keywords": [],
+      "local_path": "Getting Started/Introduction.md",
+      "source_path": "/introduction",
+      "source_url": "https://docs.typesafe.ai/introduction",
+      "summary": "Jev is TypeSafe's flagship model and the first System One model. Send state and typed questions; get structured answers your code can use directly.",
+      "title": "Introduction",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Getting Started/Quick start.md": {
+      "content_hash": "sha256:e98626b16d51c807f8ca5ca96f9ae3842b53887af89c5db953bfcad7f4c20774",
+      "keywords": [],
+      "local_path": "Getting Started/Quick start.md",
+      "source_path": "/introduction/quickstart",
+      "source_url": "https://docs.typesafe.ai/introduction/quickstart",
+      "summary": "Prefer to just dive in? Here's everything you need to get started immediately.",
+      "title": "Quick start",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Legal.md": {
+      "content_hash": "sha256:0760a24e94aa76cf701fafb03ca89f5e13af983074214d4eba1ddf04d654cfa0",
+      "keywords": [],
+      "local_path": "Legal.md",
+      "source_path": "/legal",
+      "source_url": "https://docs.typesafe.ai/legal",
+      "summary": "Legal documents and policies for TypeSafe.",
+      "title": "Legal",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Model Jaggedness/Jev 1.13 jaggedness.md": {
+      "content_hash": "sha256:6222686a9c182d3edf7977137126298a9978102c1d55118581d42e9f8228c300",
+      "keywords": [],
+      "local_path": "Model Jaggedness/Jev 1.13 jaggedness.md",
+      "source_path": "/model-jaggedness/jev-1.13",
+      "source_url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+      "summary": "Jev isn't perfect. Here are some jagged edges we are aware of with jev-1.13. Many of these will be fixed in later versions.",
+      "title": "Jev 1.13 jaggedness",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Models.md": {
+      "content_hash": "sha256:b4655a92ba3098e091e34595577ab8d43a906aa56d5c9cca53638ca8b3085a93",
+      "keywords": [],
+      "local_path": "Models.md",
+      "source_path": "/models",
+      "source_url": "https://docs.typesafe.ai/models",
+      "summary": "",
+      "title": "Models",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Patterns/Composite scoring.md": {
+      "content_hash": "sha256:573358b21717335acd1a45d7374f1cef72e0d929d4fa303e3a048372762f4e46",
+      "keywords": [],
+      "local_path": "Patterns/Composite scoring.md",
+      "source_path": "/patterns/composite-scoring",
+      "source_url": "https://docs.typesafe.ai/patterns/composite-scoring",
+      "summary": "Break a complex judgment into atomic scores, combine with weights you control in code.",
+      "title": "Composite scoring",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Patterns/Confidence-gated routing.md": {
+      "content_hash": "sha256:10ce61bec1f88bdf2410ccf912cbe70988b09a682a0dd641b4e6503c07fb4358",
+      "keywords": [],
+      "local_path": "Patterns/Confidence-gated routing.md",
+      "source_path": "/patterns/confidence-routing",
+      "source_url": "https://docs.typesafe.ai/patterns/confidence-routing",
+      "summary": "Use confidence as a second axis. The answer tells you what; confidence tells you whether to act.",
+      "title": "Confidence-gated routing",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Patterns/Intent routing.md": {
+      "content_hash": "sha256:9509799c82838da3cc76dd861a197498575dbd0402e91a0f2ced1a33c873c19a",
+      "keywords": [],
+      "local_path": "Patterns/Intent routing.md",
+      "source_path": "/patterns/intent-routing",
+      "source_url": "https://docs.typesafe.ai/patterns/intent-routing",
+      "summary": "Classify incoming requests and route each to the optimal handler: deterministic logic, a specialist LLM, or a human.",
+      "title": "Intent routing",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Patterns/Patterns.md": {
+      "content_hash": "sha256:36c809bd4ec8030283d926b0a490080fda5c4b659efd3e9fff17312021cf725d",
+      "keywords": [],
+      "local_path": "Patterns/Patterns.md",
+      "source_path": "/patterns",
+      "source_url": "https://docs.typesafe.ai/patterns",
+      "summary": "Architectural patterns for building systems with TypeSafe.",
+      "title": "Patterns",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Patterns/Speculative fan-out.md": {
+      "content_hash": "sha256:875b57b0ff1851e818e30e99840078a8afb073fcb171c8dd3c0c13e1b10c0e61",
+      "keywords": [],
+      "local_path": "Patterns/Speculative fan-out.md",
+      "source_path": "/patterns/fan-out",
+      "source_url": "https://docs.typesafe.ai/patterns/fan-out",
+      "summary": "Send many questions in a single call, including speculative ones, and let your code decide what's relevant.",
+      "title": "Speculative fan-out",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Primitives/Advanced structure.md": {
+      "content_hash": "sha256:814a618f16ca3368529c408601e6b214851de17cfac56b4621e603a3567a9c16",
+      "keywords": [],
+      "local_path": "Primitives/Advanced structure.md",
+      "source_path": "/primitives/advanced",
+      "source_url": "https://docs.typesafe.ai/primitives/advanced",
+      "summary": "Instructions, Choice options, Score levels, and Noul criteria all accept JSON structure.",
+      "title": "Advanced: structure",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Primitives/Choice.md": {
+      "content_hash": "sha256:529ab0ed8f97d1fa7595913c4a1c5a46f44b4d03dbd40e2dd69fe3fb662af15a",
+      "keywords": [],
+      "local_path": "Primitives/Choice.md",
+      "source_path": "/primitives/choice",
+      "source_url": "https://docs.typesafe.ai/primitives/choice",
+      "summary": "A Choice is a System One question type for selecting one option from a defined set. The answer includes the selected option, a probability for each option, and confidence.",
+      "title": "Choice",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Primitives/Noul.md": {
+      "content_hash": "sha256:2cefd4d8028e74017fb43268be9157cd2d07039b3302f05b4f55a8986a0e27aa",
+      "keywords": [],
+      "local_path": "Primitives/Noul.md",
+      "source_path": "/primitives/noul",
+      "source_url": "https://docs.typesafe.ai/primitives/noul",
+      "summary": "A Noul question asks the TypeSafe model to evaluate a yes/no question and return the probability that the answer is yes.",
+      "title": "Noul",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Primitives/Primitives (Questions).md": {
+      "content_hash": "sha256:c2ed053a96d565b8126c4a53498e5ff24c55f8b7cd188ea4fa83f80beee2a0d6",
+      "keywords": [],
+      "local_path": "Primitives/Primitives (Questions).md",
+      "source_path": "/primitives",
+      "source_url": "https://docs.typesafe.ai/primitives",
+      "summary": "The three TypeSafe question types (Choice, Score, Noul), the typed answers they return, how to choose between them, and how to ask several at once.",
+      "title": "Primitives (Questions)",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "Primitives/Score.md": {
+      "content_hash": "sha256:a91f75a622f057d82ee05d647d6cbb8d57d10e06dde666762c09fb98ef01cb67",
+      "keywords": [],
+      "local_path": "Primitives/Score.md",
+      "source_path": "/primitives/score",
+      "source_url": "https://docs.typesafe.ai/primitives/score",
+      "summary": "A Score is a System One question type for rating content against ordered, descriptive levels. The answer includes a score, a probability for each level, and confidence.",
+      "title": "Score",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Client SDKs.md": {
+      "content_hash": "sha256:1ada8daf2f94006cda5df495ecfcd95bf2b4965a2155372b449cde23e60eba87",
+      "keywords": [],
+      "local_path": "SDKs/Client SDKs.md",
+      "source_path": "/sdk",
+      "source_url": "https://docs.typesafe.ai/sdk",
+      "summary": "Install a TypeSafe client SDK and use typed questions and answers in your application.",
+      "title": "Client SDKs",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API reference.md": {
+      "content_hash": "sha256:88c720797ab84d2f9ba683f0faabbd02654f07f52b63b9614fdceef76eaa5f81",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API reference.md",
+      "source_path": "/sdk/javascript/api",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api",
+      "summary": "",
+      "title": "API reference",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class APIConnectionError.md": {
+      "content_hash": "sha256:71adb82af19132ac334b13861136ccdf7f8661cc864d16c69266ec9a0e13aff5",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class APIConnectionError.md",
+      "source_path": "/sdk/javascript/api/classes/APIConnectionError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/APIConnectionError",
+      "summary": "",
+      "title": "Class: APIConnectionError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class APIError.md": {
+      "content_hash": "sha256:a9f086d3fbae07dabfbbdfcec9db8c05962f390489f4329dcffa1c82879ab0f7",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class APIError.md",
+      "source_path": "/sdk/javascript/api/classes/APIError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/APIError",
+      "summary": "",
+      "title": "Class: APIError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class APIPromise T.md": {
+      "content_hash": "sha256:cbc771f37f30ac754da6d728783c85be1432f1518ecedc15875cc6ebe6730bb7",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class APIPromise T.md",
+      "source_path": "/sdk/javascript/api/classes/APIPromise",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/APIPromise",
+      "summary": "",
+      "title": "Class: APIPromise<T>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class APITimeoutError.md": {
+      "content_hash": "sha256:0ea4e9eae97580f1b77635c88b75d6b394fa3ec5e93d97d6abc72d2460aabe2b",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class APITimeoutError.md",
+      "source_path": "/sdk/javascript/api/classes/APITimeoutError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/APITimeoutError",
+      "summary": "",
+      "title": "Class: APITimeoutError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class APIUserAbortError.md": {
+      "content_hash": "sha256:8547596e70d8a12c1a6f0441179896c4bd816bc15ed4d7f421d22f8f49f559ef",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class APIUserAbortError.md",
+      "source_path": "/sdk/javascript/api/classes/APIUserAbortError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/APIUserAbortError",
+      "summary": "",
+      "title": "Class: APIUserAbortError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class AuthenticationError.md": {
+      "content_hash": "sha256:2e639e82fcf0b53cba848e129c7d478c4f4a3a537fb98bd469b3b28d341f3421",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class AuthenticationError.md",
+      "source_path": "/sdk/javascript/api/classes/AuthenticationError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/AuthenticationError",
+      "summary": "",
+      "title": "Class: AuthenticationError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class BadRequestError.md": {
+      "content_hash": "sha256:46c2955bcf6b7420e58e47c791983a9c58a09edfd7280d273000ed9a67960708",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class BadRequestError.md",
+      "source_path": "/sdk/javascript/api/classes/BadRequestError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/BadRequestError",
+      "summary": "",
+      "title": "Class: BadRequestError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class InternalServerError.md": {
+      "content_hash": "sha256:66c166b05f9553299e6f15a609e6b75076bfb9e3fa4fc9f81e1d30d6579ce16b",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class InternalServerError.md",
+      "source_path": "/sdk/javascript/api/classes/InternalServerError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/InternalServerError",
+      "summary": "",
+      "title": "Class: InternalServerError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class NotFoundError.md": {
+      "content_hash": "sha256:2db704623a9d81838597f742697b0cc34fb44769ae9a37d54dadb0d8c8a12db5",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class NotFoundError.md",
+      "source_path": "/sdk/javascript/api/classes/NotFoundError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/NotFoundError",
+      "summary": "",
+      "title": "Class: NotFoundError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class PermissionDeniedError.md": {
+      "content_hash": "sha256:d198185e2500e5150b31663436ad9330ad38c4b681fef75faf8247d1c386dd06",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class PermissionDeniedError.md",
+      "source_path": "/sdk/javascript/api/classes/PermissionDeniedError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/PermissionDeniedError",
+      "summary": "",
+      "title": "Class: PermissionDeniedError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class RateLimitError.md": {
+      "content_hash": "sha256:c3a186cc9d84c5a1fbb652dfcae0fba6cf6c3ca43d3c1a0b03b814eea9f6a825",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class RateLimitError.md",
+      "source_path": "/sdk/javascript/api/classes/RateLimitError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/RateLimitError",
+      "summary": "",
+      "title": "Class: RateLimitError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class TypeSafeClient.md": {
+      "content_hash": "sha256:1ade4bc225c6e25abb56bf7de8c75c41f6395bcf31ed4591effef8b44908827f",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class TypeSafeClient.md",
+      "source_path": "/sdk/javascript/api/classes/TypeSafeClient",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/TypeSafeClient",
+      "summary": "",
+      "title": "Class: TypeSafeClient",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class TypeSafeError.md": {
+      "content_hash": "sha256:5cefff827cee9cd8c031381838d7f9d660a248922789e3cf472cde943643c75e",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class TypeSafeError.md",
+      "source_path": "/sdk/javascript/api/classes/TypeSafeError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/TypeSafeError",
+      "summary": "",
+      "title": "Class: TypeSafeError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Classes/Class UnprocessableEntityError.md": {
+      "content_hash": "sha256:a03ab9cdaafec045a0e7bad28466f0c987d5be500a2a5825b0489cbd38986e45",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Classes/Class UnprocessableEntityError.md",
+      "source_path": "/sdk/javascript/api/classes/UnprocessableEntityError",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/classes/UnprocessableEntityError",
+      "summary": "",
+      "title": "Class: UnprocessableEntityError",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Functions/Function choice().md": {
+      "content_hash": "sha256:c3269e07c62b3032d4e080de00ae67cda000615eeb289c9099626b1641c3b25c",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Functions/Function choice().md",
+      "source_path": "/sdk/javascript/api/functions/choice",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/functions/choice",
+      "summary": "",
+      "title": "Function: choice()",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Functions/Function noul().md": {
+      "content_hash": "sha256:f979ca73df1e9eff9e4128d6a242875a2ed4724f6d42e219cb97e1c2df5c3ed6",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Functions/Function noul().md",
+      "source_path": "/sdk/javascript/api/functions/noul",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/functions/noul",
+      "summary": "",
+      "title": "Function: noul()",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Functions/Function score().md": {
+      "content_hash": "sha256:dd484b742fe8e286b2e0ce616087c25451b7668585949d36f799ed071da85f62",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Functions/Function score().md",
+      "source_path": "/sdk/javascript/api/functions/score",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/functions/score",
+      "summary": "",
+      "title": "Function: score()",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface ChoiceQuestion T.md": {
+      "content_hash": "sha256:9ac429f8d0e3cd332864f401b72223e03a0b2da808e91dc27d2ae280ae834278",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface ChoiceQuestion T.md",
+      "source_path": "/sdk/javascript/api/interfaces/ChoiceQuestion",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/ChoiceQuestion",
+      "summary": "",
+      "title": "Interface: ChoiceQuestion<T>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface ChoiceResponse T.md": {
+      "content_hash": "sha256:2767337e83b49a991706d8bc7235d9ac443bb371edbd09b3ca2fef3160b0c3be",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface ChoiceResponse T.md",
+      "source_path": "/sdk/javascript/api/interfaces/ChoiceResponse",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/ChoiceResponse",
+      "summary": "",
+      "title": "Interface: ChoiceResponse<T>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface Logger.md": {
+      "content_hash": "sha256:71acbea3627be0a089c598d8e51564afcb4c5873bcb6d03f12b46f9aa18b3a50",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface Logger.md",
+      "source_path": "/sdk/javascript/api/interfaces/Logger",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/Logger",
+      "summary": "",
+      "title": "Interface: Logger",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface ModelCard.md": {
+      "content_hash": "sha256:904faf81d55e2477093b5a35ce2dde91b7c3115f4d5a63dfadc319f846993055",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface ModelCard.md",
+      "source_path": "/sdk/javascript/api/interfaces/ModelCard",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/ModelCard",
+      "summary": "",
+      "title": "Interface: ModelCard",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface Models.md": {
+      "content_hash": "sha256:b98d7edd866112460d35b91b57bb6e4075a3ede2c243b5d1c215005ea735ed26",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface Models.md",
+      "source_path": "/sdk/javascript/api/interfaces/Models",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/Models",
+      "summary": "",
+      "title": "Interface: Models",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface NoulQuestion.md": {
+      "content_hash": "sha256:d55a790e7f3957f561785e0778575d3964dd25da8b99a44c62a619788c0aa32f",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface NoulQuestion.md",
+      "source_path": "/sdk/javascript/api/interfaces/NoulQuestion",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/NoulQuestion",
+      "summary": "",
+      "title": "Interface: NoulQuestion",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface NoulResponse.md": {
+      "content_hash": "sha256:3f57bbf91e70328c865556fff1d10acfe37db065d3594cc3157bd5858171a882",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface NoulResponse.md",
+      "source_path": "/sdk/javascript/api/interfaces/NoulResponse",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/NoulResponse",
+      "summary": "",
+      "title": "Interface: NoulResponse",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface Questions.md": {
+      "content_hash": "sha256:7001e37075af8016723dff7446d8d64dab0c7bfba01e29c8362f6a6d8044b692",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface Questions.md",
+      "source_path": "/sdk/javascript/api/interfaces/Questions",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/Questions",
+      "summary": "",
+      "title": "Interface: Questions",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface RequestOptions.md": {
+      "content_hash": "sha256:1ad01855bd4cd9327f5e68e6df29025edeb1bb0901900fb2df2118c350c25ce6",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface RequestOptions.md",
+      "source_path": "/sdk/javascript/api/interfaces/RequestOptions",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/RequestOptions",
+      "summary": "",
+      "title": "Interface: RequestOptions",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface RetryPolicy.md": {
+      "content_hash": "sha256:a92fd2eccb64b9c214573bcb1683ad2f707a24264016c794631a00d27023d670",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface RetryPolicy.md",
+      "source_path": "/sdk/javascript/api/interfaces/RetryPolicy",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/RetryPolicy",
+      "summary": "",
+      "title": "Interface: RetryPolicy",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface ScoreQuestion T.md": {
+      "content_hash": "sha256:5cffd96f3a269106fc1921643f58e9c3a965dee3c7928c2983951b65d22a7a24",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface ScoreQuestion T.md",
+      "source_path": "/sdk/javascript/api/interfaces/ScoreQuestion",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/ScoreQuestion",
+      "summary": "",
+      "title": "Interface: ScoreQuestion<T>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface ScoreResponse T.md": {
+      "content_hash": "sha256:22b345061504f339f4be31fd4fb4aa58d3ec184297cee81b867179c7484f1bd7",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface ScoreResponse T.md",
+      "source_path": "/sdk/javascript/api/interfaces/ScoreResponse",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/ScoreResponse",
+      "summary": "",
+      "title": "Interface: ScoreResponse<T>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface SystemOneRequest Q.md": {
+      "content_hash": "sha256:a85eb4dfb955d0f3934ce10a8902984843e92252f0fce31c72073a9c25741057",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface SystemOneRequest Q.md",
+      "source_path": "/sdk/javascript/api/interfaces/SystemOneRequest",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/SystemOneRequest",
+      "summary": "",
+      "title": "Interface: SystemOneRequest<Q>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface SystemOneRequestPayload.md": {
+      "content_hash": "sha256:61c3801497319d2a37170a8d46047a8b451c52e3ab3b8c583f694aae0144ce66",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface SystemOneRequestPayload.md",
+      "source_path": "/sdk/javascript/api/interfaces/SystemOneRequestPayload",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/SystemOneRequestPayload",
+      "summary": "",
+      "title": "Interface: SystemOneRequestPayload",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface SystemOneResult Q.md": {
+      "content_hash": "sha256:e434f7e02dab284562be424be75dc95384e98473d5c5e81f7c46e49f9fc6b8a4",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface SystemOneResult Q.md",
+      "source_path": "/sdk/javascript/api/interfaces/SystemOneResult",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/SystemOneResult",
+      "summary": "",
+      "title": "Interface: SystemOneResult<Q>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface TypeSafeClientConfig.md": {
+      "content_hash": "sha256:8404119ce24fa05d15e2d2e8a93d989d2ec28141a1a75d282ca99215ee213fab",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface TypeSafeClientConfig.md",
+      "source_path": "/sdk/javascript/api/interfaces/TypeSafeClientConfig",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/TypeSafeClientConfig",
+      "summary": "",
+      "title": "Interface: TypeSafeClientConfig",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface Usage.md": {
+      "content_hash": "sha256:f974004a1dd804ba3cc3fc971afbf08694da45703945e7de7b9e35e0a6951d03",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface Usage.md",
+      "source_path": "/sdk/javascript/api/interfaces/Usage",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/Usage",
+      "summary": "",
+      "title": "Interface: Usage",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Interfaces/Interface WithResponse T.md": {
+      "content_hash": "sha256:302bc55d899d3ba4aa3297a9829c97947ea0e2d5e766d889f35cea1d5fe36582",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Interfaces/Interface WithResponse T.md",
+      "source_path": "/sdk/javascript/api/interfaces/WithResponse",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/WithResponse",
+      "summary": "",
+      "title": "Interface: WithResponse<T>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias ChoiceCriteria.md": {
+      "content_hash": "sha256:629c7727a818edfb1a8dca0a41bf7f6fe76f3a4d2bb7e6479b1f8a99985e36a6",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias ChoiceCriteria.md",
+      "source_path": "/sdk/javascript/api/type-aliases/ChoiceCriteria",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/ChoiceCriteria",
+      "summary": "",
+      "title": "Type Alias: ChoiceCriteria",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias Description.md": {
+      "content_hash": "sha256:429281bd3c6124fc81dc7c1ae15645128ce6f209ba6d1485cd02f559a3d2d5e1",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias Description.md",
+      "source_path": "/sdk/javascript/api/type-aliases/Description",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/Description",
+      "summary": "",
+      "title": "Type Alias: Description",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias EntryType.md": {
+      "content_hash": "sha256:ef234f5ae8a1c6f2b14f22b79968e5d1c83c9020cee8c98a347d927005eac898",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias EntryType.md",
+      "source_path": "/sdk/javascript/api/type-aliases/EntryType",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/EntryType",
+      "summary": "",
+      "title": "Type Alias: EntryType",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias EnvVar.md": {
+      "content_hash": "sha256:48bbe7d6e0dc7a01aadb12b6cbf1c392e348cac0b3e12663eeb0b3d6ee99cb09",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias EnvVar.md",
+      "source_path": "/sdk/javascript/api/type-aliases/EnvVar",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/EnvVar",
+      "summary": "",
+      "title": "Type Alias: EnvVar",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias Fetch.md": {
+      "content_hash": "sha256:20ae05682cc12ce49210d7b5322597c0fd0e9dad495984e8cb1423633c86c6d7",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias Fetch.md",
+      "source_path": "/sdk/javascript/api/type-aliases/Fetch",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/Fetch",
+      "summary": "",
+      "title": "Type Alias: Fetch",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias JsonValue.md": {
+      "content_hash": "sha256:ee4574f23423de0b9d1b6d55eee809528a601bca23262fb9fee58b499d07ae09",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias JsonValue.md",
+      "source_path": "/sdk/javascript/api/type-aliases/JsonValue",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/JsonValue",
+      "summary": "",
+      "title": "Type Alias: JsonValue",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias LogLevel.md": {
+      "content_hash": "sha256:ab43eb5166ca2f1a8b664859cd2b647e3ae4ca0d22f2f81066104159b023421b",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias LogLevel.md",
+      "source_path": "/sdk/javascript/api/type-aliases/LogLevel",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/LogLevel",
+      "summary": "",
+      "title": "Type Alias: LogLevel",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias Question.md": {
+      "content_hash": "sha256:2886fc8999081311c4cb89597ad5a499278d23539ecfacb370c6108c96943c19",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias Question.md",
+      "source_path": "/sdk/javascript/api/type-aliases/Question",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/Question",
+      "summary": "",
+      "title": "Type Alias: Question",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias ResultFor T.md": {
+      "content_hash": "sha256:8b02f1a7abfe8785f50b4c1ca36e922744ab7643b55ac1f9e49b9acfcecb52c0",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias ResultFor T.md",
+      "source_path": "/sdk/javascript/api/type-aliases/ResultFor",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/ResultFor",
+      "summary": "",
+      "title": "Type Alias: ResultFor<T>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias ScoreCriteria.md": {
+      "content_hash": "sha256:a96accfd2f6405da7325220f513158f06b697b17aaab8cae9539229f2eeb2225",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias ScoreCriteria.md",
+      "source_path": "/sdk/javascript/api/type-aliases/ScoreCriteria",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/ScoreCriteria",
+      "summary": "",
+      "title": "Type Alias: ScoreCriteria",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias ScoreLegend T.md": {
+      "content_hash": "sha256:c41c859bd7c5f402e9b23047b53b7e1fa78c6e74c2e22f7bfd22f923fca8652c",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias ScoreLegend T.md",
+      "source_path": "/sdk/javascript/api/type-aliases/ScoreLegend",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/ScoreLegend",
+      "summary": "",
+      "title": "Type Alias: ScoreLegend<T>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Type Aliases/Type Alias ScoreOf T.md": {
+      "content_hash": "sha256:c9097ea1ea88eb377af33ff8ffd88b84ea4d8185ded6d5672fce9d414770b53e",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Type Aliases/Type Alias ScoreOf T.md",
+      "source_path": "/sdk/javascript/api/type-aliases/ScoreOf",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/ScoreOf",
+      "summary": "",
+      "title": "Type Alias: ScoreOf<T>",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Variables/Variable ENV.md": {
+      "content_hash": "sha256:cd9908e0d938352a56f7c6341f6e5c1dda2efa965eb5458e6993d3b00d5cb3e2",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Variables/Variable ENV.md",
+      "source_path": "/sdk/javascript/api/variables/ENV",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/variables/ENV",
+      "summary": "",
+      "title": "Variable: ENV",
+      "updated_at": "2026-09-20T04:19:26Z"
+    },
+    "SDKs/JavaScript/API/Variables/Variable LOG_LEVELS.md": {
+      "content_hash": "sha256:b8fff5a8e41d07f2891e7df598d2fa9fe14939be1120d937c924585a6e1982bf",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Variables/Variable LOG_LEVELS.md",
+      "source_path": "/sdk/javascript/api/variables/LOG_LEVELS",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/variables/LOG_LEVELS",
+      "summary": "",
+      "title": "Variable: LOG_LEVELS",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/API/Variables/Variable VERSION.md": {
+      "content_hash": "sha256:4cf3276c573bbc9b26f81a690b9baf2ac977f8679b418bcb6a6643aaf4677dde",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/API/Variables/Variable VERSION.md",
+      "source_path": "/sdk/javascript/api/variables/VERSION",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/api/variables/VERSION",
+      "summary": "",
+      "title": "Variable: VERSION",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/Changelog.md": {
+      "content_hash": "sha256:ec014d3f09b4a8100d47796d8e5cffbc902e886b113432c132c3d2a5ec641448",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/Changelog.md",
+      "source_path": "/sdk/javascript/changelog",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript/changelog",
+      "summary": "",
+      "title": "Changelog",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/JavaScript/JavaScript SDK.md": {
+      "content_hash": "sha256:00d755dd46f18cf546064e20a3a4d897058ff52ae1643e7460244683157ec5d5",
+      "keywords": [],
+      "local_path": "SDKs/JavaScript/JavaScript SDK.md",
+      "source_path": "/sdk/javascript",
+      "source_url": "https://docs.typesafe.ai/sdk/javascript",
+      "summary": "",
+      "title": "JavaScript SDK",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/API reference.md": {
+      "content_hash": "sha256:85a38a27c894852cf89c31fcbae448161624099889b2663d27006bcfface8885",
+      "keywords": [],
+      "local_path": "SDKs/Python/API reference.md",
+      "source_path": "/sdk/python/api",
+      "source_url": "https://docs.typesafe.ai/sdk/python/api",
+      "summary": "Python clients for the TypeSafe AI API",
+      "title": "API reference",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/API/Clients/Async client.md": {
+      "content_hash": "sha256:72d40426f24b332f61b2b6a0ec9ae6368ff7cfc417c7ebb5db9cb4a2f88fa57a",
+      "keywords": [],
+      "local_path": "SDKs/Python/API/Clients/Async client.md",
+      "source_path": "/sdk/python/api/clients/async",
+      "source_url": "https://docs.typesafe.ai/sdk/python/api/clients/async",
+      "summary": "Use AsyncTypeSafeClient to ask questions, list models, and configure asynchronous TypeSafe API requests.",
+      "title": "Async client",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/API/Clients/Sync client.md": {
+      "content_hash": "sha256:cda0a1255e7565d84442ad79f00c57c05771860c4e04b951048130b8c36861d8",
+      "keywords": [],
+      "local_path": "SDKs/Python/API/Clients/Sync client.md",
+      "source_path": "/sdk/python/api/clients/sync",
+      "source_url": "https://docs.typesafe.ai/sdk/python/api/clients/sync",
+      "summary": "Use TypeSafeClient to ask questions, list models, and configure synchronous TypeSafe API requests.",
+      "title": "Sync client",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/API/Constants.md": {
+      "content_hash": "sha256:c0cec4c2197ff5bf561f0be7167f7e5c7446eccab7310075cdaa036281e41cec",
+      "keywords": [],
+      "local_path": "SDKs/Python/API/Constants.md",
+      "source_path": "/sdk/python/api/constants",
+      "source_url": "https://docs.typesafe.ai/sdk/python/api/constants",
+      "summary": "Default settings and environment variable names for the TypeSafe Python SDK.",
+      "title": "Constants",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/API/Exceptions.md": {
+      "content_hash": "sha256:e8bb53a5ba9255a036b69edf451cbd571e540517bbf018e8bd9df3e47a77ff10",
+      "keywords": [],
+      "local_path": "SDKs/Python/API/Exceptions.md",
+      "source_path": "/sdk/python/api/exceptions",
+      "source_url": "https://docs.typesafe.ai/sdk/python/api/exceptions",
+      "summary": "Handle TypeSafe API errors, rate limits, connection failures, and timeouts.",
+      "title": "Exceptions",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/API/Retries.md": {
+      "content_hash": "sha256:9812ad07339b57597eb8edef2a8ca6e3b6d02140b447c0c83d3dfeac7abcfbeb",
+      "keywords": [],
+      "local_path": "SDKs/Python/API/Retries.md",
+      "source_path": "/sdk/python/api/retries",
+      "source_url": "https://docs.typesafe.ai/sdk/python/api/retries",
+      "summary": "Configure retries with RetryPolicy — attempt count, retryable statuses, backoff, and retry headers handling.",
+      "title": "Retries",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/API/Types/Answers and responses.md": {
+      "content_hash": "sha256:df49742f11720ca306678def1d1d78795d5f2a841c8d3849868418ddc130c2b7",
+      "keywords": [],
+      "local_path": "SDKs/Python/API/Types/Answers and responses.md",
+      "source_path": "/sdk/python/api/types/responses",
+      "source_url": "https://docs.typesafe.ai/sdk/python/api/types/responses",
+      "summary": "Read answers, confidence scores, token usage, and available models returned by the TypeSafe API.",
+      "title": "Answers and responses",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/API/Types/Common types.md": {
+      "content_hash": "sha256:80381cb6a8ddecdedf422e35d82f5ef6085e9b082e949d7b6128230151214aab",
+      "keywords": [],
+      "local_path": "SDKs/Python/API/Types/Common types.md",
+      "source_path": "/sdk/python/api/types/common",
+      "source_url": "https://docs.typesafe.ai/sdk/python/api/types/common",
+      "summary": "Common types for TypeSafe API SDK.",
+      "title": "Common types",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/API/Types/Questions.md": {
+      "content_hash": "sha256:48678e5e520323b937eea5a2dcbdf447922d21b4fff02c7dd1b71ea93bd4d6a2",
+      "keywords": [],
+      "local_path": "SDKs/Python/API/Types/Questions.md",
+      "source_path": "/sdk/python/api/types/questions",
+      "source_url": "https://docs.typesafe.ai/sdk/python/api/types/questions",
+      "summary": "Provide state and ask yes/no, choice, and score questions using objects or dictionaries.",
+      "title": "Questions",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/Changelog.md": {
+      "content_hash": "sha256:e320b764ba5add1a03bf9cd9722b28c05b599cc7f4a01298cbf360bfe5748b3c",
+      "keywords": [],
+      "local_path": "SDKs/Python/Changelog.md",
+      "source_path": "/sdk/python/changelog",
+      "source_url": "https://docs.typesafe.ai/sdk/python/changelog",
+      "summary": "Python clients for the TypeSafe AI API",
+      "title": "Changelog",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/TypeSafe Python SDK.md": {
+      "content_hash": "sha256:26f955c7b27c169010c978b906a16d952d89023b9613ee29d8580d6c501fcb53",
+      "keywords": [],
+      "local_path": "SDKs/Python/TypeSafe Python SDK.md",
+      "source_path": "/sdk/python",
+      "source_url": "https://docs.typesafe.ai/sdk/python",
+      "summary": "Install the TypeSafe Python SDK and get started with asynchronous or synchronous API calls.",
+      "title": "TypeSafe Python SDK",
+      "updated_at": "2026-09-20T04:15:10Z"
+    },
+    "SDKs/Python/Usage.md": {
+      "content_hash": "sha256:cd5cc562ba6ff62577d088b16a75af4ce0beeab4a21116f5903c57ff1e19ce3c",
+      "keywords": [],
+      "local_path": "SDKs/Python/Usage.md",
+      "source_path": "/sdk/python/usage",
+      "source_url": "https://docs.typesafe.ai/sdk/python/usage",
+      "summary": "Guides and patterns for working with the TypeSafe Python SDK.",
+      "title": "Usage",
+      "updated_at": "2026-09-20T04:15:10Z"
+    }
+  },
+  "last_sync_at": "2026-09-20T04:19:26Z",
+  "schema_version": 1,
+  "wiki": {
+    "language": "English",
+    "license": "上游未明确声明文档许可；本 Skill 仅作本地私有检索用途，提交公开仓库或再分发前需先确认许可",
+    "scope": "inventory.json 中盘点的 Wiki 导航范围",
+    "skill_name": "typesafe-wiki",
+    "source_root": "https://docs.typesafe.ai",
+    "title": "TypeSafe AI"
+  }
+}

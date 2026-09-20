@@ -1,0 +1,4 @@
+interface:
+  display_name: "TypeSafe AI Wiki"
+  short_description: "TypeSafe AI 离线 Wiki 检索与有依据问答"
+  default_prompt: "Use $typesafe-wiki to answer my question with documentation-backed guidance."

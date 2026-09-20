@@ -6,7 +6,8 @@
         "llama-index-wiki",
         "qianwenai-wiki",
         "qoder-wiki",
-        "qwenwork-wiki"
+        "qwenwork-wiki",
+        "typesafe-wiki"
       ]
     },
     "review": {

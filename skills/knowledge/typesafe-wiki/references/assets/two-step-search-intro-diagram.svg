@@ -1,0 +1,240 @@
+<svg width="1560" height="560" viewBox="0 0 1560 560" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+
+    .anim-0 { animation: anim-0-move 12s ease-in-out infinite; transform-box: fill-box; transform-origin: top left; }
+    @keyframes anim-0-move {
+      0%   { transform: translate(178px, 150px) scale(1, 1); }
+      18%  { transform: translate(178px, 150px) scale(1, 1); }
+      34%  { transform: translate(648px, 120px) scale(3.3333333333333335, 0.9285714285714286); }
+      60%  { transform: translate(648px, 120px) scale(3.3333333333333335, 0.9285714285714286); }
+      78%  { transform: translate(1106px, 190px) scale(3.3333333333333335, 0.9285714285714286); }
+      100% { transform: translate(1106px, 190px) scale(3.3333333333333335, 0.9285714285714286); }
+    }
+
+
+    .anim-1 { animation: anim-1-move 12s ease-in-out infinite; transform-box: fill-box; transform-origin: top left; }
+    @keyframes anim-1-move {
+      0%   { transform: translate(178px, 226px) scale(1, 1); }
+      18%  { transform: translate(178px, 226px) scale(1, 1); }
+      34%  { transform: translate(648px, 190px) scale(3.3333333333333335, 0.9285714285714286); }
+      60%  { transform: translate(648px, 190px) scale(3.3333333333333335, 0.9285714285714286); }
+      78%  { transform: translate(1106px, 260px) scale(3.3333333333333335, 0.9285714285714286); }
+      100% { transform: translate(1106px, 260px) scale(3.3333333333333335, 0.9285714285714286); }
+    }
+
+
+    .anim-2 { animation: anim-2-move 12s ease-in-out infinite; transform-box: fill-box; transform-origin: top left; }
+    @keyframes anim-2-move {
+      0%   { transform: translate(414px, 226px) scale(1, 1); }
+      18%  { transform: translate(414px, 226px) scale(1, 1); }
+      34%  { transform: translate(648px, 330px) scale(3.3333333333333335, 0.9285714285714286); }
+      60%  { transform: translate(648px, 330px) scale(3.3333333333333335, 0.9285714285714286); }
+      78%  { transform: translate(1106px, 330px) scale(3.3333333333333335, 0.9285714285714286); }
+      100% { transform: translate(1106px, 330px) scale(3.3333333333333335, 0.9285714285714286); }
+    }
+
+
+    .anim-3 { animation: anim-3-move 12s ease-in-out infinite; transform-box: fill-box; transform-origin: top left; }
+    @keyframes anim-3-move {
+      0%   { transform: translate(178px, 302px) scale(1, 1); }
+      18%  { transform: translate(178px, 302px) scale(1, 1); }
+      34%  { transform: translate(648px, 260px) scale(3.3333333333333335, 0.9285714285714286); }
+      60%  { transform: translate(648px, 260px) scale(3.3333333333333335, 0.9285714285714286); }
+      78%  { transform: translate(1106px, 120px) scale(3.3333333333333335, 0.9285714285714286); }
+      100% { transform: translate(1106px, 120px) scale(3.3333333333333335, 0.9285714285714286); }
+    }
+
+
+    .pile-card-1 { animation: pile-fade-1 12s ease-in-out infinite; }
+    @keyframes pile-fade-1 {
+      0%   { opacity: 1; }
+      17%  { opacity: 1; }
+      22%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+
+    .pile-card-5 { animation: pile-fade-5 12s ease-in-out infinite; }
+    @keyframes pile-fade-5 {
+      0%   { opacity: 1; }
+      17%  { opacity: 1; }
+      22%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+
+    .pile-card-7 { animation: pile-fade-7 12s ease-in-out infinite; }
+    @keyframes pile-fade-7 {
+      0%   { opacity: 1; }
+      17%  { opacity: 1; }
+      22%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+
+    .pile-card-9 { animation: pile-fade-9 12s ease-in-out infinite; }
+    @keyframes pile-fade-9 {
+      0%   { opacity: 1; }
+      17%  { opacity: 1; }
+      22%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+
+  .stage-label {
+    font-family: Space Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    fill: #7c7c77;
+  }
+  .stage-1 { animation: stage-1-active 12s ease-in-out infinite; }
+  .stage-2 { animation: stage-2-active 12s ease-in-out infinite; }
+  .stage-3 { animation: stage-3-active 12s ease-in-out infinite; }
+  @keyframes stage-1-active {
+    0% { fill: #34342f; } 14% { fill: #34342f; } 20% { fill: #7c7c77; } 100% { fill: #7c7c77; }
+  }
+  @keyframes stage-2-active {
+    0% { fill: #7c7c77; } 24% { fill: #7c7c77; } 30% { fill: #34342f; } 56% { fill: #34342f; } 62% { fill: #7c7c77; } 100% { fill: #7c7c77; }
+  }
+  @keyframes stage-3-active {
+    0% { fill: #7c7c77; } 66% { fill: #7c7c77; } 74% { fill: #34342f; } 100% { fill: #34342f; }
+  }
+
+    .arrow-1 { animation: arrow-1-fade 12s ease-in-out infinite; }
+    .arrow-2 { animation: arrow-2-fade 12s ease-in-out infinite; }
+    @keyframes arrow-1-fade {
+      0% { opacity: 0.25; } 18% { opacity: 0.25; } 26% { opacity: 1; } 56% { opacity: 1; } 62% { opacity: 0.25; } 100% { opacity: 0.25; }
+    }
+    @keyframes arrow-2-fade {
+      0% { opacity: 0.25; } 62% { opacity: 0.25; } 70% { opacity: 1; } 100% { opacity: 1; }
+    }
+  </style>
+
+  <rect x="0" y="0" width="1560" height="560" fill="#f8f8f2"/>
+
+  
+  <rect x="36" y="126" width="498" height="256" rx="14" fill="none" stroke="#7c7c77" stroke-width="2" stroke-dasharray="6 6" opacity="0.6"/>
+  <text x="285" y="110" text-anchor="middle" class="stage-label stage-1">the pile</text>
+
+  
+  <rect x="624" y="96" width="368" height="310" rx="14" fill="none" stroke="#5d76a2" stroke-width="2.5" opacity="0.9"/>
+  <text x="808" y="80" text-anchor="middle" class="stage-label stage-2">fast search shortlist</text>
+
+  
+  <rect x="1082" y="96" width="368" height="310" rx="14" fill="none" stroke="#6f9b52" stroke-width="2.5" opacity="0.9"/>
+  <text x="1266" y="80" text-anchor="middle" class="stage-label stage-3">re-ranked</text>
+
+  
+  <g class="arrow-1" opacity="0.25">
+    <line x1="550" y1="254" x2="608" y2="254" stroke="#34342f" stroke-width="3" marker-end="url(#arrowHead)"/>
+  </g>
+  <g class="arrow-2" opacity="0.25">
+    <line x1="1008" y1="254" x2="1066" y2="254" stroke="#34342f" stroke-width="3" marker-end="url(#arrowHead)"/>
+  </g>
+
+  <defs>
+    <marker id="arrowHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#34342f"/>
+    </marker>
+  </defs>
+
+  
+
+    <g class="pile-card pile-card-0" data-role="plain">
+      <rect x="60" y="150" width="96" height="56" rx="8" fill="#ececE5" stroke="#d8d8cf" stroke-width="2"/>
+      <line x1="74" y1="170" x2="142" y2="170" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <line x1="74" y1="184" x2="118" y2="184" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+    <g class="pile-card pile-card-1" data-role="shared">
+      <rect x="178" y="150" width="96" height="56" rx="8" fill="#ececE5" stroke="#5d76a2" stroke-width="2"/>
+      <line x1="192" y1="170" x2="260" y2="170" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <line x1="192" y1="184" x2="236" y2="184" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+    </g>
+
+    <g class="pile-card pile-card-2" data-role="plain">
+      <rect x="296" y="150" width="96" height="56" rx="8" fill="#ececE5" stroke="#d8d8cf" stroke-width="2"/>
+      <line x1="310" y1="170" x2="378" y2="170" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <line x1="310" y1="184" x2="354" y2="184" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+    <g class="pile-card pile-card-3" data-role="plain">
+      <rect x="414" y="150" width="96" height="56" rx="8" fill="#ececE5" stroke="#d8d8cf" stroke-width="2"/>
+      <line x1="428" y1="170" x2="496" y2="170" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <line x1="428" y1="184" x2="472" y2="184" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+    <g class="pile-card pile-card-4" data-role="plain">
+      <rect x="60" y="226" width="96" height="56" rx="8" fill="#ececE5" stroke="#d8d8cf" stroke-width="2"/>
+      <line x1="74" y1="246" x2="142" y2="246" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <line x1="74" y1="260" x2="118" y2="260" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+    <g class="pile-card pile-card-5" data-role="shared">
+      <rect x="178" y="226" width="96" height="56" rx="8" fill="#ececE5" stroke="#5d76a2" stroke-width="2"/>
+      <line x1="192" y1="246" x2="260" y2="246" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <line x1="192" y1="260" x2="236" y2="260" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+    </g>
+
+    <g class="pile-card pile-card-6" data-role="plain">
+      <rect x="296" y="226" width="96" height="56" rx="8" fill="#ececE5" stroke="#d8d8cf" stroke-width="2"/>
+      <line x1="310" y1="246" x2="378" y2="246" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <line x1="310" y1="260" x2="354" y2="260" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+    <g class="pile-card pile-card-7" data-role="shared">
+      <rect x="414" y="226" width="96" height="56" rx="8" fill="#ececE5" stroke="#5d76a2" stroke-width="2"/>
+      <line x1="428" y1="246" x2="496" y2="246" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <line x1="428" y1="260" x2="472" y2="260" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+    </g>
+
+    <g class="pile-card pile-card-8" data-role="plain">
+      <rect x="60" y="302" width="96" height="56" rx="8" fill="#ececE5" stroke="#d8d8cf" stroke-width="2"/>
+      <line x1="74" y1="322" x2="142" y2="322" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <line x1="74" y1="336" x2="118" y2="336" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+    <g class="pile-card pile-card-9" data-role="answer">
+      <rect x="178" y="302" width="96" height="56" rx="8" fill="#eef4e8" stroke="#6f9b52" stroke-width="2"/>
+      <line x1="192" y1="322" x2="260" y2="322" stroke="#6f9b52" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <line x1="192" y1="336" x2="236" y2="336" stroke="#6f9b52" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+    </g>
+
+    <g class="pile-card pile-card-10" data-role="plain">
+      <rect x="296" y="302" width="96" height="56" rx="8" fill="#ececE5" stroke="#d8d8cf" stroke-width="2"/>
+      <line x1="310" y1="322" x2="378" y2="322" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <line x1="310" y1="336" x2="354" y2="336" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+    <g class="pile-card pile-card-11" data-role="plain">
+      <rect x="414" y="302" width="96" height="56" rx="8" fill="#ececE5" stroke="#d8d8cf" stroke-width="2"/>
+      <line x1="428" y1="322" x2="496" y2="322" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <line x1="428" y1="336" x2="472" y2="336" stroke="#d8d8cf" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+
+  
+
+    <g class="travel-card anim-0 travel-card-0" data-role="shared">
+      <rect width="96" height="56" rx="8" fill="#ececE5" stroke="#5d76a2" stroke-width="2.5"/>
+      <line x1="14" y1="20" x2="82" y2="20" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <line x1="14" y1="34" x2="58" y2="34" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+    </g>
+    <g class="travel-card anim-1 travel-card-1" data-role="shared">
+      <rect width="96" height="56" rx="8" fill="#ececE5" stroke="#5d76a2" stroke-width="2.5"/>
+      <line x1="14" y1="20" x2="82" y2="20" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <line x1="14" y1="34" x2="58" y2="34" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+    </g>
+    <g class="travel-card anim-2 travel-card-2" data-role="shared">
+      <rect width="96" height="56" rx="8" fill="#ececE5" stroke="#5d76a2" stroke-width="2.5"/>
+      <line x1="14" y1="20" x2="82" y2="20" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <line x1="14" y1="34" x2="58" y2="34" stroke="#5d76a2" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+    </g>
+    <g class="travel-card anim-3 travel-card-3" data-role="answer">
+      <rect width="96" height="56" rx="8" fill="#eef4e8" stroke="#6f9b52" stroke-width="2.5"/>
+      <line x1="14" y1="20" x2="82" y2="20" stroke="#6f9b52" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <line x1="14" y1="34" x2="58" y2="34" stroke="#6f9b52" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+    </g>
+</svg>

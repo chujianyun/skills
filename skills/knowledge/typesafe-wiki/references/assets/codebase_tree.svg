@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2156 1072" width="2156" height="1072" aria-label="CookSafe files taxonomy beam search">
+<style>
+  .bg { fill:#f6f7fb }
+  text { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace }
+  .eyebrow { font-size:14px; font-weight:700; letter-spacing:1.2px; fill:#4f46e5 }
+  .title { font:700 28px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#181b28 }
+  .document-label { font:700 12px system-ui,-apple-system,"Segoe UI",sans-serif; letter-spacing:1px; fill:#777c91 }
+  .document { font:500 17px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#303449 }
+  .copy { font-size:14px; fill:#5c6178 }
+  .result { font-size:14px; font-weight:700 }
+  .greedy-result { fill:#c2410c }
+  .beam-result { fill:#15803d }
+  .edge { fill:none; stroke:#c9cee0; stroke-width:2 }
+  .edge.winner { stroke:#15803d; stroke-width:2.5 }
+  .edge.greedy { stroke:#ea580c; stroke-width:2.5 }
+  .edge.beam { stroke:#4f46e5; stroke-width:2.2 }
+  .edge.alt { opacity:.48 }
+  .prob { font-size:12px; font-weight:600; fill:#5c6178 }
+  .node rect { stroke-width:1.7 }
+  .node text { font-size:13px }
+  .node.root rect { fill:#f0f2f8; stroke:#e2e5f0 }
+  .node.root text { fill:#5c6178 }
+  .node.winner rect { fill:#e4f5ea; stroke:#15803d }
+  .node.winner text { fill:#15803d; font-weight:700 }
+  .node.greedy rect { fill:#fff0e8; stroke:#ea580c }
+  .node.greedy text { fill:#c2410c; font-weight:700 }
+  .node.beam rect { fill:#ecebfd; stroke:#4f46e5 }
+  .node.beam text { fill:#181b28 }
+  .node.alt rect { fill:#fff; stroke:#e2e5f0; stroke-dasharray:3 3 }
+  .node.alt text { fill:#5c6178 }
+</style>
+<rect class="bg" width="2156" height="1072" rx="14"/>
+<text class="eyebrow" x="24" y="32">TYPESAFE · COOKSAFE FILES · SNAPSHOT 2026-08-06 · 125 NODES</text>
+<text class="title" x="24" y="69">Greedy vs parallel beam search</text>
+<text class="document-label" x="24" y="99">DOCUMENT</text>
+<text class="document" x="24" y="124">Developer search: find the experimental Python module under x/eugene that implements BM25, dense, and</text><text class="document" x="24" y="145">fused retrievers for legal RAG.</text>
+<text class="result greedy-result" x="24" y="179">GREEDY TOP-1 → retrievers.py</text>
+<text class="result beam-result" x="24" y="204">BEAM K=3 → retrievers.py</text>
+<text class="copy" x="24" y="233">parallel sibling Choices → keep 3 by geometric mean p → top/second = 2.20×</text>
+<text class="copy" x="24" y="256">orange = greedy   green = beam winner   purple = retained beam   dashed = pruned</text>
+<path class="edge winner" d="M328,838 C465,838 251,838 388,838"/><text class="prob" x="381" y="833" text-anchor="end">1.00</text><path class="edge winner" d="M688,838 C825,838 611,670 748,670"/><text class="prob" x="741" y="664" text-anchor="end">0.63</text><path class="edge winner" d="M1048,670 C1185,670 971,557 1108,557"/><text class="prob" x="1101" y="552" text-anchor="end">0.99</text><path class="edge winner" d="M1408,557 C1545,557 1331,407 1468,407"/><text class="prob" x="1461" y="402" text-anchor="end">0.97</text><path class="edge winner" d="M1768,407 C1905,407 1691,307 1828,307"/><text class="prob" x="1821" y="302" text-anchor="end">0.93</text><path class="edge beam" d="M1768,407 C1905,407 1691,357 1828,357"/><text class="prob" x="1821" y="352" text-anchor="end">0.04</text><path class="edge beam" d="M1768,407 C1905,407 1691,407 1828,407"/><text class="prob" x="1821" y="402" text-anchor="end">0.01</text><path class="edge alt" d="M1768,407 C1905,407 1691,457 1828,457"/><text class="prob" x="1821" y="452" text-anchor="end">0.01</text><path class="edge alt" d="M1768,407 C1905,407 1691,507 1828,507"/><text class="prob" x="1821" y="502" text-anchor="end">0.01</text><path class="edge beam" d="M1408,557 C1545,557 1331,557 1468,557"/><text class="prob" x="1461" y="552" text-anchor="end">0.03</text><path class="edge alt" d="M1408,557 C1545,557 1331,607 1468,607"/><text class="prob" x="1461" y="602" text-anchor="end">0.00</text><path class="edge alt" d="M1408,557 C1545,557 1331,657 1468,657"/><text class="prob" x="1461" y="652" text-anchor="end">0.00</text><path class="edge alt" d="M1408,557 C1545,557 1331,707 1468,707"/><text class="prob" x="1461" y="702" text-anchor="end">0.00</text><path class="edge beam" d="M1048,670 C1185,670 971,782 1108,782"/><text class="prob" x="1101" y="777" text-anchor="end">0.01</text><path class="edge alt" d="M1408,782 C1545,782 1331,757 1468,757"/><text class="prob" x="1461" y="752" text-anchor="end">0.55</text><path class="edge alt" d="M1408,782 C1545,782 1331,807 1468,807"/><text class="prob" x="1461" y="802" text-anchor="end">0.45</text><path class="edge beam" d="M688,838 C825,838 611,857 748,857"/><text class="prob" x="741" y="852" text-anchor="end">0.18</text><path class="edge beam" d="M688,838 C825,838 611,907 748,907"/><text class="prob" x="741" y="902" text-anchor="end">0.05</text><path class="edge alt" d="M688,838 C825,838 611,957 748,957"/><text class="prob" x="741" y="952" text-anchor="end">0.05</text><path class="edge alt" d="M688,838 C825,838 611,1007 748,1007"/><text class="prob" x="741" y="1002" text-anchor="end">0.02</text><g class="node winner"><title>retrievers.py</title><rect x="1828" y="288" width="300" height="38" rx="7"/><text x="1839" y="312">retrievers.py</text></g><g class="node beam"><title>xenc.py</title><rect x="1828" y="338" width="300" height="38" rx="7"/><text x="1839" y="362">xenc.py</text></g><g class="node beam"><title>__init__.py</title><rect x="1828" y="388" width="300" height="38" rx="7"/><text x="1839" y="412">__init__.py</text></g><g class="node alt"><title>eval.py</title><rect x="1828" y="438" width="300" height="38" rx="7"/><text x="1839" y="462">eval.py</text></g><g class="node alt"><title>features.py</title><rect x="1828" y="488" width="300" height="38" rx="7"/><text x="1839" y="512">features.py</text></g><g class="node winner"><title>legal_rag</title><rect x="1468" y="388" width="300" height="38" rx="7"/><text x="1479" y="412">legal_rag</text></g><g class="node beam"><title>pyproject.toml</title><rect x="1468" y="538" width="300" height="38" rx="7"/><text x="1479" y="562">pyproject.toml</text></g><g class="node alt"><title>calibration</title><rect x="1468" y="588" width="300" height="38" rx="7"/><text x="1479" y="612">calibration</text></g><g class="node alt"><title>clerc_bench</title><rect x="1468" y="638" width="300" height="38" rx="7"/><text x="1479" y="662">clerc_bench</text></g><g class="node alt"><title>cookbook-skill-output</title><rect x="1468" y="688" width="300" height="38" rx="7"/><text x="1479" y="712">cookbook-skill-output</text></g><g class="node winner"><title>eugene</title><rect x="1108" y="538" width="300" height="38" rx="7"/><text x="1119" y="562">eugene</text></g><g class="node alt"><title>260706_choice_nonce</title><rect x="1468" y="738" width="300" height="38" rx="7"/><text x="1479" y="762">260706_choice_nonce</text></g><g class="node alt"><title>260707_parallel_questions</title><rect x="1468" y="788" width="300" height="38" rx="7"/><text x="1479" y="812">260707_parallel_questions</text></g><g class="node beam"><title>erik</title><rect x="1108" y="763" width="300" height="38" rx="7"/><text x="1119" y="787">erik</text></g><g class="node winner"><title>x</title><rect x="748" y="650" width="300" height="38" rx="7"/><text x="759" y="674">x</text></g><g class="node beam"><title>main.py</title><rect x="748" y="838" width="300" height="38" rx="7"/><text x="759" y="862">main.py</text></g><g class="node beam"><title>README.md</title><rect x="748" y="888" width="300" height="38" rx="7"/><text x="759" y="912">README.md</text></g><g class="node alt"><title>pyproject.toml</title><rect x="748" y="938" width="300" height="38" rx="7"/><text x="759" y="962">pyproject.toml</text></g><g class="node alt"><title>cookbooks</title><rect x="748" y="988" width="300" height="38" rx="7"/><text x="759" y="1012">cookbooks</text></g><g class="node winner"><title>CookSafe</title><rect x="388" y="819" width="300" height="38" rx="7"/><text x="399" y="843">CookSafe</text></g><g class="node root"><title>CookSafe files</title><rect x="28" y="819" width="300" height="38" rx="7"/><text x="39" y="843">CookSafe files</text></g>
+</svg>
