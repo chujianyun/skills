@@ -39,7 +39,10 @@ def parse_args() -> argparse.Namespace:
 
 def extract_arxiv_id(url: str) -> str:
     parsed = parse.urlparse(url)
-    if "arxiv.org" not in parsed.netloc:
+    hostname = (parsed.hostname or "").lower()
+    if parsed.scheme not in ("http", "https") or not (
+        hostname == "arxiv.org" or hostname.endswith(".arxiv.org")
+    ):
         raise ValueError(f"Unsupported domain: {parsed.netloc or url}")
 
     path = parsed.path.strip("/")
