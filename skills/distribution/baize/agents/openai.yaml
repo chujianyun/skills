@@ -1,0 +1,4 @@
+interface:
+  display_name: "白泽"
+  short_description: "把 Wiki 完整转换为可检索、可增量更新的 Agent Skill"
+  default_prompt: "Use $baize to convert this Wiki into a complete, indexed, incrementally updateable Agent Skill."
