@@ -1,0 +1,246 @@
+{
+  "assets": {},
+  "coverage": {
+    "captured": 18,
+    "complete": true,
+    "discovered": 18,
+    "excluded": [],
+    "failed": []
+  },
+  "created_at": "2026-09-24T02:06:11Z",
+  "documents": {
+    "Cordis教程/01-第一个插件.md": {
+      "content_hash": "sha256:95dbaddd654a2fc8ecd23509244c9ee4d0e30532dcefb5a2349d7470b34bfa81",
+      "keywords": [
+        "编写第一个插件"
+      ],
+      "local_path": "Cordis教程/01-第一个插件.md",
+      "source_path": "/deepseek-harness/develop/cordis-tutorial/01-first-plugin",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/01-first-plugin",
+      "summary": "在本教程使用的 loader 配置中，Cordis 插件模块通过命名导出提供 apply 函数。Cordis 加载模块时，会用一个 上下文 调用 apply；该上下文就是 ctx 对象，插件通过它注册自己贡献的所有内容。",
+      "title": "1. 编写第一个插件",
+      "updated_at": "2026-09-24T02:06:11Z"
+    },
+    "Cordis教程/02-生命周期与副作用.md": {
+      "content_hash": "sha256:4b5ae125a4ac71c0a1c60a39d652cc66120da75396747a3779abd34b97957e84",
+      "keywords": [
+        "effect",
+        "生命周期与"
+      ],
+      "local_path": "Cordis教程/02-生命周期与副作用.md",
+      "source_path": "/deepseek-harness/develop/cordis-tutorial/02-lifecycle-and-effects",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/02-lifecycle-and-effects",
+      "summary": "Cordis 插件可能因修改配置、热重载、显式资源释放或所需服务消失而卸载。通过 Cordis API 建立的注册属于 effect，会在所属插件卸载时撤销；在这些 API 之外管理的资源必须包装在 ctx.effect() 中。",
+      "title": "2. 生命周期与 effect",
+      "updated_at": "2026-09-24T02:06:11Z"
+    },
+    "Cordis教程/03-服务.md": {
+      "content_hash": "sha256:f1f6ac134e56fe616cfe1446ca660a1e3c0dbd531385994e68b94a2e281fa8c9",
+      "keywords": [
+        "服务"
+      ],
+      "local_path": "Cordis教程/03-服务.md",
+      "source_path": "/deepseek-harness/develop/cordis-tutorial/03-services",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/03-services",
+      "summary": "服务是一个插件提供、其他插件通过 ctx 消费的具名能力。在 harness 中，ctx.tools、ctx.llm 和 ctx.agents 都是服务。消费方只指定 'tools' 之类的能力，而不导入其提供方，因此配置可以选择提供方，无需修改消费方。",
+      "title": "3. 服务",
+      "updated_at": "2026-09-24T02:09:24Z"
+    },
+    "Cordis教程/04-事件.md": {
+      "content_hash": "sha256:f02d5453d843b72a54b9c9a3e5bec1fb0f908f9df8dceee3d87451f57879920a",
+      "keywords": [
+        "事件"
+      ],
+      "local_path": "Cordis教程/04-事件.md",
+      "source_path": "/deepseek-harness/develop/cordis-tutorial/04-events",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/04-events",
+      "summary": "服务支持直接调用；事件让插件无需知道有哪些插件正在监听，就能发出通知。harness 使用事件处理工具结果、模型请求和审批决定等交互。",
+      "title": "4. 事件",
+      "updated_at": "2026-09-24T02:09:24Z"
+    },
+    "Cordis教程/05-配置.md": {
+      "content_hash": "sha256:c5b602a1c2fba91014d4f01371413e6eeaeb2e2adbfb0566a9517bd4a803efe6",
+      "keywords": [
+        "配置"
+      ],
+      "local_path": "Cordis教程/05-配置.md",
+      "source_path": "/deepseek-harness/develop/cordis-tutorial/05-config",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/05-config",
+      "summary": "cordis.yml 中的每个 Cordis 配置项都可以携带 config 块，插件则声明一个 schema，在运行 apply 前验证该块。错误配置会导致加载失败，并给出准确的错误：插件绝不会在配置不完整时启动。",
+      "title": "5. 配置",
+      "updated_at": "2026-09-24T02:09:24Z"
+    },
+    "Cordis教程/06-组合与热重载.md": {
+      "content_hash": "sha256:8263e050afeff0182591c017a92b17671fff5b5f5b23ea4e337c9bbcc458bb23",
+      "keywords": [
+        "HMR",
+        "热模块替换",
+        "组合与"
+      ],
+      "local_path": "Cordis教程/06-组合与热重载.md",
+      "source_path": "/deepseek-harness/develop/cordis-tutorial/06-composition-and-hmr",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/06-composition-and-hmr",
+      "summary": "到目前为止构建的每项能力都是插件，cordis.yml 则选择应用的插件树。本章会改变这种组合、热重载一个插件，并诊断始终无法加载的插件。",
+      "title": "6. 组合与 HMR（热模块替换）",
+      "updated_at": "2026-09-24T02:09:24Z"
+    },
+    "Cordis教程/07-进入Harness.md": {
+      "content_hash": "sha256:518acd85c816f26021f74cfaff5420e03f9bfabd70a239b83e910df1227c75a6",
+      "keywords": [
+        "harness",
+        "进入"
+      ],
+      "local_path": "Cordis教程/07-进入Harness.md",
+      "source_path": "/deepseek-harness/develop/cordis-tutorial/07-into-the-harness",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/07-into-the-harness",
+      "summary": "本章会向 harness 的 tools 服务注册一个可由模型调用的工具，通过 harness 工具流水线执行它，并观察结果事件。整个示例无需密钥，也不会调用模型。",
+      "title": "7. 进入 harness",
+      "updated_at": "2026-09-24T02:09:24Z"
+    },
+    "Cordis教程/index.md": {
+      "content_hash": "sha256:4970bcf113828e9b088305c02cb24659eb018ade86a11f35b782794701447889",
+      "keywords": [
+        "Cordis",
+        "教程"
+      ],
+      "local_path": "Cordis教程/index.md",
+      "source_path": "/deepseek-harness/develop/cordis-tutorial/",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/",
+      "summary": "Cordis 是 DeepSeek Harness 底层的插件框架：它是一个小型运行时，其中的每项能力，包括工具、LLM（大语言模型）适配器、文件访问乃至 agent loop（智能体循环）本身，都是挂载到共享上下文中的插件。本教程通过动手实践讲解 Cordis：每一章都是一个可以运行的示例，你将在本仓库内的临时目录中逐步构建它，最后把一个插件接入真实的 h",
+      "title": "Cordis 教程",
+      "updated_at": "2026-09-24T02:09:24Z"
+    },
+    "基础/index.md": {
+      "content_hash": "sha256:4fdffdabb4be4ee0b8bcccbddf96423751a35010d039da6702943846863d5bde",
+      "keywords": [
+        "第一个插件"
+      ],
+      "local_path": "基础/index.md",
+      "source_path": "/deepseek-harness/develop/basic/",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/",
+      "summary": "本教程会创建一个最小的 Harness 插件，并将其加载到 Web UI 中。请从已完成[从源码运行路径](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md#run-from-source)的仓库检出开始。",
+      "title": "第一个插件",
+      "updated_at": "2026-09-24T02:06:11Z"
+    },
+    "基础/开发一个工具.md": {
+      "content_hash": "sha256:3800a29fc8732a80332a63557282f42e8af4dbd186228f24ea75ab91911d1125",
+      "keywords": [
+        "开发一个工具"
+      ],
+      "local_path": "基础/开发一个工具.md",
+      "source_path": "/deepseek-harness/develop/basic/tool",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/tool",
+      "summary": "本教程会在 Web UI 中添加一个 greet 工具。请先完成[第一个插件](index.md)，并保留其中的 scratch-plugin 目录。",
+      "title": "开发一个工具",
+      "updated_at": "2026-09-24T02:09:24Z"
+    },
+    "基础/打包与安装插件.md": {
+      "content_hash": "sha256:2a17a40efffb2482b61f18db35ba15d57190ae19242365f26234d483fe17bb25",
+      "keywords": [
+        "打包与安装插件"
+      ],
+      "local_path": "基础/打包与安装插件.md",
+      "source_path": "/deepseek-harness/develop/basic/publish",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish",
+      "summary": "前几篇教程通过 --patch overlay 加载本地插件。本教程把它打包成可安装的组合包（bundle），用 dsh plugin add 安装进一个 profile，并解释决定组合后配置的层顺序。本文假设 dsh CLI 已安装。请先完成[插件配置](插件配置.md)。",
+      "title": "打包与安装插件",
+      "updated_at": "2026-09-24T02:06:11Z"
+    },
+    "基础/插件配置.md": {
+      "content_hash": "sha256:631f9cc666ab4e1573f0b0519db60bbc106398ce0d88543ed2a1b2df6de6c046",
+      "keywords": [
+        "插件配置"
+      ],
+      "local_path": "基础/插件配置.md",
+      "source_path": "/deepseek-harness/develop/basic/config",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/config",
+      "summary": "让你的插件接受用户在 cordis.yml 中传入的配置。",
+      "title": "插件配置",
+      "updated_at": "2026-09-24T02:06:11Z"
+    },
+    "实战/LLM适配器.md": {
+      "content_hash": "sha256:252f799dc55831bab67c97ae051b6f4b8b20cee4ddfe1dcf6ec251931282b30e",
+      "keywords": [
+        "LLM",
+        "适配器"
+      ],
+      "local_path": "实战/LLM适配器.md",
+      "source_path": "/deepseek-harness/develop/practice/llm-adapter",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/practice/llm-adapter",
+      "summary": "LLM 适配器是一个继承 LlmAdapter 并实现 stream() 方法的类，它会将 Harness 的提供方无关请求转换为具体提供方的 API 调用，并将响应转换回 Harness 分片。",
+      "title": "LLM 适配器",
+      "updated_at": "2026-09-24T02:06:11Z"
+    },
+    "实战/index.md": {
+      "content_hash": "sha256:20c01c1c9f2cd0d13db179d03d74a35b75876aa222ff2221e0bc3243a40e6c68",
+      "keywords": [
+        "能力的三种角色设计"
+      ],
+      "local_path": "实战/index.md",
+      "source_path": "/deepseek-harness/develop/practice/",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/practice/",
+      "summary": "本文分为两部分：先参考三种角色能力模式的概念，再通过高级教程构建一项能力。请先完成[基础插件路径](../基础/index.md)和[服务教程](../框架能力/服务与依赖.md)。",
+      "title": "能力的三种角色设计",
+      "updated_at": "2026-09-24T02:09:24Z"
+    },
+    "实战/运行时Cordis工具.md": {
+      "content_hash": "sha256:13e17e57ec5b5ea22ef042817b8e61284d1e8b5db380f9cfbbcf247e1cebc878",
+      "keywords": [
+        "Cordis",
+        "工具扩展运行中的智能体"
+      ],
+      "local_path": "实战/运行时Cordis工具.md",
+      "source_path": "/deepseek-harness/develop/practice/dynamic-cordis",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/practice/dynamic-cordis",
+      "summary": "本实战指南启用 [@deepseek-ai/dsh-tool-cordis](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/extensions/tool-cordis/README.zh.md)。智能体可以检查当前 Cordis 进程，并在内存中挂载或卸载模型编写的",
+      "title": "用 Cordis 工具扩展运行中的智能体",
+      "updated_at": "2026-09-24T02:06:11Z"
+    },
+    "框架能力/index.md": {
+      "content_hash": "sha256:0ae24b3dff4f0653fd6da73d82b3f5de0a5399593987639be94538e34ebd3c40",
+      "keywords": [
+        "插件与生命周期"
+      ],
+      "local_path": "框架能力/index.md",
+      "source_path": "/deepseek-harness/develop/framework/",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/",
+      "summary": "每个被加载的插件都拥有一个 Fiber 作用域，其状态如下：",
+      "title": "插件与生命周期",
+      "updated_at": "2026-09-24T02:06:11Z"
+    },
+    "框架能力/事件系统.md": {
+      "content_hash": "sha256:7506d3fad938e9343e8cf44319d7409d4fbe490de4cd93bd93f41748fa9f6744",
+      "keywords": [
+        "事件系统"
+      ],
+      "local_path": "框架能力/事件系统.md",
+      "source_path": "/deepseek-harness/develop/framework/events",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/events",
+      "summary": "事件是 Cordis 插件间通信的核心机制。Harness 大量使用事件来实现松耦合的扩展点。",
+      "title": "事件系统",
+      "updated_at": "2026-09-24T02:09:24Z"
+    },
+    "框架能力/服务与依赖.md": {
+      "content_hash": "sha256:845952741d0ccaf1b74de24cc342df279142a4dbc50f066666678c7d2b43eb5f",
+      "keywords": [
+        "服务与依赖"
+      ],
+      "local_path": "框架能力/服务与依赖.md",
+      "source_path": "/deepseek-harness/develop/framework/service",
+      "source_url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/service",
+      "summary": "服务是一个插件向其他插件公开的能力。inject 声明插件需要哪些服务。",
+      "title": "服务与依赖",
+      "updated_at": "2026-09-24T02:09:24Z"
+    }
+  },
+  "last_sync_at": "2026-09-24T02:09:24Z",
+  "schema_version": 1,
+  "wiki": {
+    "language": "简体中文",
+    "license": "MIT；随包提供上游 LICENSE 和版权声明",
+    "scope": "基础入口侧栏所列的基础、框架能力、实战与 Cordis 教程全部 18 页",
+    "skill_name": "deepseek-harness-wiki",
+    "source_root": "https://deepseek-harness.github.io/deepseek-harness/develop/basic",
+    "title": "DeepSeek Harness"
+  }
+}

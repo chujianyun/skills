@@ -53,6 +53,13 @@
       "skills": ["./skills/knowledge/typesafe-wiki"]
     },
     {
+      "name": "deepseek-harness-wiki",
+      "description": "DeepSeek Harness 开发文档离线 Wiki，覆盖插件、工具、配置、生命周期、服务、事件、LLM 适配器、组合包与 Cordis 教程",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/knowledge/deepseek-harness-wiki"]
+    },
+    {
       "name": "baize",
       "description": "白泽 Wiki Skill 生成器：把完整 Wiki 转换为保留目录树、带索引和逐文档哈希、可无变化跳过更新并自动安装的 Agent Skill",
       "source": "./",

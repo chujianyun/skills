@@ -1,0 +1,4 @@
+interface:
+  display_name: "DeepSeek Harness Wiki"
+  short_description: "DeepSeek Harness 离线 Wiki 检索与有依据问答"
+  default_prompt: "Use $deepseek-harness-wiki to answer my question with documentation-backed guidance."

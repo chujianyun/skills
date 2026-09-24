@@ -34,6 +34,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 | [qoder-wiki](skills/knowledge/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |
 | [qwenwork-wiki](skills/knowledge/qwenwork-wiki/SKILL.md) | Tool Wrapper | 查询千问办公网页端、桌面端、技能与连接器、定时任务、IM、企业管理与排障，按需定位官方 API 文档 |
 | [typesafe-wiki](skills/knowledge/typesafe-wiki/SKILL.md) | Tool Wrapper | 查询 TypeSafe AI 官方文档：Jev System One 模型、Choice/Score/Noul 原语、置信度、Patterns、Python/JavaScript SDK、HTTP API 与 Cookbooks |
+| [deepseek-harness-wiki](skills/knowledge/deepseek-harness-wiki/SKILL.md) | Tool Wrapper | 检索 DeepSeek Harness 开发文档，回答插件、工具、配置、生命周期、服务、事件与 Cordis 教程问题 |
 
 ---
 
