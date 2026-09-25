@@ -85,7 +85,7 @@ python3 skills/paper-interpreter/scripts/bootstrap_arxiv_paper.py '<arxiv_url>' 
 - 结构完整，适合长期迭代
 - 不编造论文中不存在的实验、公式或结论
 - 对不确定内容明确写"论文未明确说明"或"需要进一步核对"
-- 在合适位置调用 [`mermaid`](../../visual/mermaid/SKILL.md) skill 生成 Mermaid 图，至少 1 张，通常 2-3 张更合适
+- 在合适位置调用 [`mermaid`](../mermaid/SKILL.md) skill 生成 Mermaid 图，至少 1 张，通常 2-3 张更合适
 - 如果需要产出多份报告，继续沿用标题做前缀，并通过后缀区分，例如 `{论文标题}_报告_复查1.md`、`{论文标题}_报告_分享版.md`
 
 优先使用 [report-outline.md](references/report-outline.md) 中的结构。
@@ -124,13 +124,13 @@ python3 skills/paper-interpreter/scripts/bootstrap_arxiv_paper.py '<arxiv_url>' 
 - 术语解释
 - 复查记录
 
-调用 [`mermaid`](../../visual/mermaid/SKILL.md) skill 时可优先考虑这些图：
+调用 [`mermaid`](../mermaid/SKILL.md) skill 时可优先考虑这些图：
 
 - 方法总览：`flowchart LR` / `flowchart TD`
 - 训练或推理阶段：`sequenceDiagram` 或 `flowchart`
 - 模块关系：`graph TD`
 
-只保留真正能帮助理解的图；调用 [`mermaid`](../../visual/mermaid/SKILL.md) skill 时不要为了凑数量而加图。
+只保留真正能帮助理解的图；调用 [`mermaid`](../mermaid/SKILL.md) skill 时不要为了凑数量而加图。
 
 ### 6. 如需复查，必须先征得用户确认
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate one classified Skill and run the official quick validator."""
+"""Validate one registered Skill and run the official quick validator."""
 
 from __future__ import annotations
 

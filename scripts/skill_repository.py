@@ -1,4 +1,4 @@
-"""Discovery and deterministic validation for classified Agent Skills."""
+"""Discovery and deterministic validation for flat Agent Skills."""
 
 from __future__ import annotations
 
@@ -18,42 +18,33 @@ SECRET_PATTERNS = (
 IGNORED_SCAN_PARTS = {".DS_Store", "__pycache__"}
 
 
-def load_taxonomy(root: Path) -> dict[str, set[str]]:
-    """Load the category-to-Skill mapping and reject ambiguous membership."""
-    path = root / "config" / "skill-categories.json"
+def load_registry(root: Path) -> set[str]:
+    """Load the flat Skill registry and reject duplicate membership."""
+    path = root / "config" / "skills.json"
     data = json.loads(path.read_text(encoding="utf-8"))
-    categories = data.get("categories")
-    if not isinstance(categories, dict) or not categories:
-        raise ValueError("Taxonomy must define a non-empty 'categories' object")
+    skills = data.get("skills")
+    if not isinstance(skills, list) or not skills:
+        raise ValueError("Registry must define a non-empty 'skills' list")
 
-    result: dict[str, set[str]] = {}
-    owners: dict[str, str] = {}
-    for category, definition in categories.items():
-        if not isinstance(definition, dict) or not isinstance(definition.get("skills"), list):
-            raise ValueError(f"Category '{category}' must define a skills list")
-        result[category] = set()
-        for skill in definition["skills"]:
-            if not isinstance(skill, str) or not skill:
-                raise ValueError(f"Category '{category}' contains an invalid Skill name")
-            if skill in owners:
-                raise ValueError(
-                    f"Skill '{skill}' belongs to more than one category: "
-                    f"'{owners[skill]}' and '{category}'"
-                )
-            owners[skill] = category
-            result[category].add(skill)
+    result: set[str] = set()
+    for skill in skills:
+        if not isinstance(skill, str) or not skill:
+            raise ValueError("Registry contains an invalid Skill name")
+        if skill in result:
+            raise ValueError(f"Skill '{skill}' is registered more than once")
+        result.add(skill)
     return result
 
 
 def discover_skills(root: Path) -> dict[str, Path]:
-    """Discover `skills/<category>/<name>/SKILL.md` entries by unique name."""
+    """Discover `skills/<name>/SKILL.md` entries by unique name."""
     skills_root = root / "skills"
     result: dict[str, Path] = {}
     for skill_file in sorted(skills_root.rglob("SKILL.md")):
         relative = skill_file.relative_to(skills_root)
-        if len(relative.parts) != 3:
+        if len(relative.parts) != 2:
             continue
-        name = relative.parts[1]
+        name = relative.parts[0]
         skill_dir = skill_file.parent
         if name in result:
             raise ValueError(
@@ -129,13 +120,13 @@ def _secret_errors(skill_dir: Path) -> list[str]:
     return errors
 
 
-def _marketplace_errors(root: Path, name: str, category: str) -> list[str]:
+def _marketplace_errors(root: Path, name: str) -> list[str]:
     path = root / ".claude-plugin" / "marketplace.json"
     try:
         plugins = json.loads(path.read_text(encoding="utf-8")).get("plugins", [])
     except (OSError, json.JSONDecodeError) as exc:
         return [f"marketplace JSON is invalid: {exc}"]
-    expected = f"./skills/{category}/{name}"
+    expected = f"./skills/{name}"
     matches = [
         plugin
         for plugin in plugins
@@ -153,7 +144,7 @@ def validate_skill(root: Path, name: str) -> list[str]:
     root = root.resolve()
     errors: list[str] = []
     try:
-        taxonomy = load_taxonomy(root)
+        registry = load_registry(root)
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         return [str(exc)]
     try:
@@ -162,13 +153,10 @@ def validate_skill(root: Path, name: str) -> list[str]:
         return [str(exc)]
     skill_dir = discovered.get(name)
     if skill_dir is None:
-        return [f"Skill '{name}' was not found under skills/<category>/<name>"]
+        return [f"Skill '{name}' was not found under skills/<name>"]
 
-    category = skill_dir.parent.name
-    if category not in taxonomy:
-        errors.append(f"unknown category '{category}' for Skill '{name}'")
-    elif name not in taxonomy[category]:
-        errors.append(f"Skill '{name}' is not listed in the taxonomy category '{category}'")
+    if name not in registry:
+        errors.append(f"Skill '{name}' is not listed in the registry")
 
     frontmatter, frontmatter_errors = parse_frontmatter(skill_dir / "SKILL.md")
     errors.extend(frontmatter_errors)
@@ -182,12 +170,11 @@ def validate_skill(root: Path, name: str) -> list[str]:
 
     errors.extend(_local_reference_errors(skill_dir / "SKILL.md"))
     errors.extend(_secret_errors(skill_dir))
-    if category in taxonomy:
-        errors.extend(_marketplace_errors(root, name, category))
+    errors.extend(_marketplace_errors(root, name))
 
     readme = root / "README.md"
     if readme.exists():
-        legacy = re.compile(rf"skills/{re.escape(name)}/SKILL\.md")
+        legacy = re.compile(rf"skills/[^/]+/{re.escape(name)}/SKILL\.md")
         if legacy.search(readme.read_text(encoding="utf-8")):
             errors.append(f"legacy README path remains for Skill '{name}'")
     return errors

@@ -10,7 +10,7 @@ class OptimizerReviewTest(unittest.TestCase):
     def setUp(self):
         self.temp_dir = tempfile.TemporaryDirectory()
         self.root = Path(self.temp_dir.name)
-        self.skill_dir = self.root / "skills" / "knowledge" / "example-skill"
+        self.skill_dir = self.root / "skills" / "example-skill"
         self.skill_dir.mkdir(parents=True)
         (self.skill_dir / "SKILL.md").write_text("example\n", encoding="utf-8")
 
@@ -42,7 +42,6 @@ class OptimizerReviewTest(unittest.TestCase):
         )
         report = json.loads(report_path.read_text(encoding="utf-8"))
         self.assertEqual("example-skill", report["skill"])
-        self.assertEqual("knowledge", report["category"])
         self.assertEqual("passed", report["status"])
         self.assertEqual("skill-optimizer", report["reviewer"])
         self.assertEqual(skill_digest(self.skill_dir), report["digest"])

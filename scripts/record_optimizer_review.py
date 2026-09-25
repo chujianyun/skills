@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Record a content-bound `skill-optimizer` pass for one classified Skill."""
+"""Record a content-bound `skill-optimizer` pass for one registered Skill."""
 
 from __future__ import annotations
 
@@ -48,7 +48,6 @@ def write_optimizer_review(
     report_path = report_dir / f"{name}.optimizer.json"
     report = {
         "skill": name,
-        "category": skill_dir.parent.name,
         "digest": skill_digest(skill_dir),
         "status": status,
         "reviewer": "skill-optimizer",

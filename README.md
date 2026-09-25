@@ -8,20 +8,9 @@
 
 ## Skill 地图
 
-仓库采用 `skills/<category>/<skill-name>/` 三级目录。物理分类由 [`config/skill-categories.json`](config/skill-categories.json) 统一管理：
+仓库采用 `skills/<skill-name>/` 平级目录，不设物理分类；已注册的 Skill 清单由 [`config/skills.json`](config/skills.json) 统一管理。
 
-| 分类 | 主要职责 |
-|---|---|
-| `knowledge` | 产品文档、知识库、领域资料 |
-| `review` | Prompt、Agent、配置和 Skill 审查优化 |
-| `career` | 职级评估、晋升与职业建议 |
-| `content` | 文章、论文、源码解读与文本加工 |
-| `visual` | 图示、视觉资产与二维码 |
-| `media` | 音频、PDF、图片下载与媒体处理 |
-| `operations` | 服务运维、故障排查与平台接入 |
-| `distribution` | 安装、同步、发布与分发 |
-
-README 的能力地图可以按使用场景细分展示，但新 Skill 的物理目录只能选择上述八类之一。
+README 的能力地图按使用场景分组展示，分组只是阅读视角，新 Skill 直接创建在 `skills/<skill-name>/` 并注册到 `config/skills.json` 即可。
 
 ### 1. 文档 / 知识库类（Tool Wrapper）
 
@@ -29,12 +18,12 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [llama-index-wiki](skills/knowledge/llama-index-wiki/SKILL.md) | Tool Wrapper | 检索 LlamaIndex Python 用户文档，回答 RAG、索引、检索、Agent、Workflow、集成、评估、部署与 LlamaParse 问题 |
-| [qianwenai-wiki](skills/knowledge/qianwenai-wiki/SKILL.md) | Tool Wrapper | 检索千问AI平台官方文档，回答模型接入、OpenAI 兼容与 DashScope API、文本/多模态生成、Realtime、计费和排障问题 |
-| [qoder-wiki](skills/knowledge/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |
-| [qwenwork-wiki](skills/knowledge/qwenwork-wiki/SKILL.md) | Tool Wrapper | 查询千问办公网页端、桌面端、技能与连接器、定时任务、IM、企业管理与排障，按需定位官方 API 文档 |
-| [typesafe-wiki](skills/knowledge/typesafe-wiki/SKILL.md) | Tool Wrapper | 查询 TypeSafe AI 官方文档：Jev System One 模型、Choice/Score/Noul 原语、置信度、Patterns、Python/JavaScript SDK、HTTP API 与 Cookbooks |
-| [deepseek-harness-wiki](skills/knowledge/deepseek-harness-wiki/SKILL.md) | Tool Wrapper | 检索 DeepSeek Harness 开发文档，回答插件、工具、配置、生命周期、服务、事件与 Cordis 教程问题 |
+| [llama-index-wiki](skills/llama-index-wiki/SKILL.md) | Tool Wrapper | 检索 LlamaIndex Python 用户文档，回答 RAG、索引、检索、Agent、Workflow、集成、评估、部署与 LlamaParse 问题 |
+| [qianwenai-wiki](skills/qianwenai-wiki/SKILL.md) | Tool Wrapper | 检索千问AI平台官方文档，回答模型接入、OpenAI 兼容与 DashScope API、文本/多模态生成、Realtime、计费和排障问题 |
+| [qoder-wiki](skills/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |
+| [qwenwork-wiki](skills/qwenwork-wiki/SKILL.md) | Tool Wrapper | 查询千问办公网页端、桌面端、技能与连接器、定时任务、IM、企业管理与排障，按需定位官方 API 文档 |
+| [typesafe-wiki](skills/typesafe-wiki/SKILL.md) | Tool Wrapper | 查询 TypeSafe AI 官方文档：Jev System One 模型、Choice/Score/Noul 原语、置信度、Patterns、Python/JavaScript SDK、HTTP API 与 Cookbooks |
+| [deepseek-harness-wiki](skills/deepseek-harness-wiki/SKILL.md) | Tool Wrapper | 检索 DeepSeek Harness 开发文档，回答插件、工具、配置、生命周期、服务、事件与 Cordis 教程问题 |
 
 ---
 
@@ -44,11 +33,11 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [prompt-optimizer](skills/review/prompt-optimizer/SKILL.md) | Reviewer / Generator | 优化 Prompt、改进 AI 指令、为特定任务挑选提示词框架 |
-| [agent-md-advisor](skills/review/agent-md-advisor/SKILL.md) | Advisor / Reviewer / Generator | 回答 AGENTS.md / CLAUDE.md 最佳实践，诊断并优化 AI agent 指令文件 |
-| [claude-config-advisor](skills/review/claude-config-advisor/SKILL.md) | Reviewer / Inversion | 审查或设计 `.claude`、`CLAUDE.md`、Claude Code 项目配置 |
-| [skill-optimizer](skills/review/skill-optimizer/SKILL.md) | Reviewer / Inversion | 审查并优化已有 skill 的触发语义、工作流、确认门槛和资源组织 |
-| [agent-optimizer](skills/review/agent-optimizer/SKILL.md) | Reviewer / Consultant | 基于 12-Factor AgentOps 框架，提供 Agent 设计咨询、审查现有 Agent/Skill/工作流设计，发现问题并给出改进建议 |
+| [prompt-optimizer](skills/prompt-optimizer/SKILL.md) | Reviewer / Generator | 优化 Prompt、改进 AI 指令、为特定任务挑选提示词框架 |
+| [agent-md-advisor](skills/agent-md-advisor/SKILL.md) | Advisor / Reviewer / Generator | 回答 AGENTS.md / CLAUDE.md 最佳实践，诊断并优化 AI agent 指令文件 |
+| [claude-config-advisor](skills/claude-config-advisor/SKILL.md) | Reviewer / Inversion | 审查或设计 `.claude`、`CLAUDE.md`、Claude Code 项目配置 |
+| [skill-optimizer](skills/skill-optimizer/SKILL.md) | Reviewer / Inversion | 审查并优化已有 skill 的触发语义、工作流、确认门槛和资源组织 |
+| [agent-optimizer](skills/agent-optimizer/SKILL.md) | Reviewer / Consultant | 基于 12-Factor AgentOps 框架，提供 Agent 设计咨询、审查现有 Agent/Skill/工作流设计，发现问题并给出改进建议 |
 
 ---
 
@@ -58,10 +47,10 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [five-perspective-analysis](skills/career/five-perspective-analysis/SKILL.md) | Advisor / Reviewer | 从用户、业务、一线执行、技术和公司经营五种角色交叉分析产品、技术、项目、业务与职业问题，形成有取舍的综合判断 |
-| [p7-advisor](skills/career/p7-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P7“团队级专家”能力模型，评估晋升准备度、项目证据、简历表达、面试准备和成长短板 |
-| [p8-advisor](skills/career/p8-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P8“领域级负责人”能力模型，评估领域战略、跨团队影响、机制建设、梯队培养和 P7 到 P8 的差距 |
-| [p9-advisor](skills/career/p9-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P9“业务/组织级负责人”能力模型，评估战略判断、资源整合、组织建设、高层影响力和 P8 到 P9 的差距 |
+| [five-perspective-analysis](skills/five-perspective-analysis/SKILL.md) | Advisor / Reviewer | 从用户、业务、一线执行、技术和公司经营五种角色交叉分析产品、技术、项目、业务与职业问题，形成有取舍的综合判断 |
+| [p7-advisor](skills/p7-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P7“团队级专家”能力模型，评估晋升准备度、项目证据、简历表达、面试准备和成长短板 |
+| [p8-advisor](skills/p8-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P8“领域级负责人”能力模型，评估领域战略、跨团队影响、机制建设、梯队培养和 P7 到 P8 的差距 |
+| [p9-advisor](skills/p9-advisor/SKILL.md) | Advisor / Reviewer | 按一线大厂 P9“业务/组织级负责人”能力模型，评估战略判断、资源整合、组织建设、高层影响力和 P8 到 P9 的差距 |
 
 ---
 
@@ -71,7 +60,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [mermaid](skills/visual/mermaid/SKILL.md) | Generator / Reviewer | 用户要求绘制 Mermaid 流程图、架构图、时序图、状态图、甘特图、ER 图、类图、旅程图等 |
+| [mermaid](skills/mermaid/SKILL.md) | Generator / Reviewer | 用户要求绘制 Mermaid 流程图、架构图、时序图、状态图、甘特图、ER 图、类图、旅程图等 |
 
 ---
 
@@ -81,7 +70,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [remove-ai-flavor](skills/content/remove-ai-flavor/SKILL.md) | Pipeline / Generator / Reviewer | 识别并改写文章、公众号稿、自媒体稿、口播稿、演讲稿、课程稿、产品文案中的 AI 痕迹、模板腔、资料味、翻译腔和内容空心问题 |
+| [remove-ai-flavor](skills/remove-ai-flavor/SKILL.md) | Pipeline / Generator / Reviewer | 识别并改写文章、公众号稿、自媒体稿、口播稿、演讲稿、课程稿、产品文案中的 AI 痕迹、模板腔、资料味、翻译腔和内容空心问题 |
 
 ---
 
@@ -91,10 +80,10 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [article-interpreter](skills/content/article-interpreter/SKILL.md) | Pipeline / Generator | 用户提供文章 URL、Markdown、PDF 或粘贴文本，希望生成包含总览、关键要点、个人启发、批判性思考和延伸思考的结构化解读报告 |
-| [github-code-interpreter](skills/content/github-code-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 GitHub 仓库链接，希望解读源码、分析架构、生成学习报告或快速上手文档 |
-| [paper-interpreter](skills/content/paper-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 arXiv 链接，希望下载论文、解读论文、生成读书笔记或详细报告 |
-| [opendataloader-pdf](skills/media/opendataloader-pdf/SKILL.md) | Tool Wrapper / Pipeline | PDF 提取、PDF 转 Markdown/JSON/HTML、RAG 数据准备、批量 PDF 处理 |
+| [article-interpreter](skills/article-interpreter/SKILL.md) | Pipeline / Generator | 用户提供文章 URL、Markdown、PDF 或粘贴文本，希望生成包含总览、关键要点、个人启发、批判性思考和延伸思考的结构化解读报告 |
+| [github-code-interpreter](skills/github-code-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 GitHub 仓库链接，希望解读源码、分析架构、生成学习报告或快速上手文档 |
+| [paper-interpreter](skills/paper-interpreter/SKILL.md) | Pipeline / Generator | 用户提供 arXiv 链接，希望下载论文、解读论文、生成读书笔记或详细报告 |
+| [opendataloader-pdf](skills/opendataloader-pdf/SKILL.md) | Tool Wrapper / Pipeline | PDF 提取、PDF 转 Markdown/JSON/HTML、RAG 数据准备、批量 PDF 处理 |
 
 **这类 skill 的共同特点：**
 - 默认以本地文件为主交付
@@ -109,7 +98,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [local-audio-transcriber](skills/media/local-audio-transcriber/SKILL.md) | Tool Wrapper / Pipeline | 用户发送已有录音、音频或视频文件，希望本地转写成 Markdown 文稿和 SRT 字幕 |
+| [local-audio-transcriber](skills/local-audio-transcriber/SKILL.md) | Tool Wrapper / Pipeline | 用户发送已有录音、音频或视频文件，希望本地转写成 Markdown 文稿和 SRT 字幕 |
 
 ---
 
@@ -119,8 +108,8 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [add-photo-certificate-watermarks](skills/media/add-photo-certificate-watermarks/SKILL.md) | Tool Wrapper / Pipeline | 给照片添加版权水印，或给身份证、护照、学历证书、资质文件和 PDF 添加限定用途水印 |
-| [photo-privacy-avatar](skills/media/photo-privacy-avatar/SKILL.md) | Pipeline | 保留指定人物，用五款内置表情头像遮住其他人的正脸及可辨认侧脸，单张及批量照片处理后统一复查并补齐遗漏 |
+| [add-photo-certificate-watermarks](skills/add-photo-certificate-watermarks/SKILL.md) | Tool Wrapper / Pipeline | 给照片添加版权水印，或给身份证、护照、学历证书、资质文件和 PDF 添加限定用途水印 |
+| [photo-privacy-avatar](skills/photo-privacy-avatar/SKILL.md) | Pipeline | 保留指定人物，用五款内置表情头像遮住其他人的正脸及可辨认侧脸，单张及批量照片处理后统一复查并补齐遗漏 |
 
 ---
 
@@ -130,8 +119,8 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [alltuu-downloader](skills/media/alltuu-downloader/SKILL.md) | Tool Wrapper / Pipeline | 用户提供 alltuu.com / m.alltuu.com 喔图云摄影相册链接，希望批量下载原图 |
-| [photoplus-downloader](skills/media/photoplus-downloader/SKILL.md) | Tool Wrapper / Pipeline | 用户提供 photoplus.cn/live/ PhotoPlus 相册链接，希望批量下载原图 |
+| [alltuu-downloader](skills/alltuu-downloader/SKILL.md) | Tool Wrapper / Pipeline | 用户提供 alltuu.com / m.alltuu.com 喔图云摄影相册链接，希望批量下载原图 |
+| [photoplus-downloader](skills/photoplus-downloader/SKILL.md) | Tool Wrapper / Pipeline | 用户提供 photoplus.cn/live/ PhotoPlus 相册链接，希望批量下载原图 |
 
 ---
 
@@ -141,7 +130,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [wechat-official-account-qr](skills/visual/wechat-official-account-qr/SKILL.md) | Tool Wrapper / Generator | 根据公众号 ID / `gh_...` 生成关注二维码，并提供微信内获取公众号 ID 的引导图 |
+| [wechat-official-account-qr](skills/wechat-official-account-qr/SKILL.md) | Tool Wrapper / Generator | 根据公众号 ID / `gh_...` 生成关注二维码，并提供微信内获取公众号 ID 的引导图 |
 
 ---
 
@@ -151,12 +140,12 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [openclaw-ops](skills/operations/openclaw-ops/SKILL.md) | Tool Wrapper / Runbook | OpenClaw 状态检查、日志排查、Gateway/渠道/Agent 故障处理 |
-| [openclaw-session-cleaner](skills/operations/openclaw-session-cleaner/SKILL.md) | Tool Wrapper / Runbook | 清理 OpenClaw 膨胀的 session 文件、删除旧 cron session、重建 `sessions.json` 引用 |
-| [will-codex-quota-reset](skills/operations/will-codex-quota-reset/SKILL.md) | Tool Wrapper | 查询 Codex 配额重置预测概率、最近重置时间和距上次重置时长 |
-| [copaw-ops](skills/operations/copaw-ops/SKILL.md) | Tool Wrapper / Runbook | CoPaw 服务状态检查、配置排障、模型问题、cron 异常、渠道故障 |
-| [hermes-ops](skills/operations/hermes-ops/SKILL.md) | Tool Wrapper / Runbook | Hermes Agent 运维、故障排查、gateway 异常、平台掉线、cron 不执行、profile 配置问题 |
-| [hermes-qq](skills/operations/hermes-qq/SKILL.md) | Pipeline | 为 Hermes Agent 正式版 main 分支补充 QQ 平台支持、QQ Bot 接入、QQ 文件发送 |
+| [openclaw-ops](skills/openclaw-ops/SKILL.md) | Tool Wrapper / Runbook | OpenClaw 状态检查、日志排查、Gateway/渠道/Agent 故障处理 |
+| [openclaw-session-cleaner](skills/openclaw-session-cleaner/SKILL.md) | Tool Wrapper / Runbook | 清理 OpenClaw 膨胀的 session 文件、删除旧 cron session、重建 `sessions.json` 引用 |
+| [will-codex-quota-reset](skills/will-codex-quota-reset/SKILL.md) | Tool Wrapper | 查询 Codex 配额重置预测概率、最近重置时间和距上次重置时长 |
+| [copaw-ops](skills/copaw-ops/SKILL.md) | Tool Wrapper / Runbook | CoPaw 服务状态检查、配置排障、模型问题、cron 异常、渠道故障 |
+| [hermes-ops](skills/hermes-ops/SKILL.md) | Tool Wrapper / Runbook | Hermes Agent 运维、故障排查、gateway 异常、平台掉线、cron 不执行、profile 配置问题 |
+| [hermes-qq](skills/hermes-qq/SKILL.md) | Pipeline | 为 Hermes Agent 正式版 main 分支补充 QQ 平台支持、QQ Bot 接入、QQ 文件发送 |
 
 **这类 skill 的共同原则：**
 - 先做状态检查，再决定是否修复
@@ -170,8 +159,8 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
-| [baize](skills/distribution/baize/SKILL.md) | Pipeline / Generator | 把完整 Wiki 转换为保留目录树、带索引和逐文档哈希、可增量更新并自动安装的 Agent Skill |
-| [claudian-installer](skills/distribution/claudian-installer/SKILL.md) | Pipeline | 安装 Claudian Obsidian 插件，把 Claude Code 接进 Obsidian |
+| [baize](skills/baize/SKILL.md) | Pipeline / Generator | 把完整 Wiki 转换为保留目录树、带索引和逐文档哈希、可增量更新并自动安装的 Agent Skill |
+| [claudian-installer](skills/claudian-installer/SKILL.md) | Pipeline | 安装 Claudian Obsidian 插件，把 Claude Code 接进 Obsidian |
 
 ---
 
@@ -209,7 +198,7 @@ README 的能力地图可以按使用场景细分展示，但新 Skill 的物理
 
 团队统一执行这条流水线：
 
-1. 在 `config/skill-categories.json` 选择唯一分类，创建 `skills/<category>/<skill-name>/`，并同步注册 taxonomy、README 和 marketplace。
+1. 创建 `skills/<skill-name>/`，并同步注册 `config/skills.json`、README 和 marketplace。
 2. 使用 `skill-optimizer` 自动审查并修复新 Skill 的触发、流程、异常、安全和资源组织问题，然后运行 `python3 scripts/validate_skill.py <skill-name>` 直到通过。
 3. 只提交新 Skill 及其索引变更，推送当前非主分支到远端。
 

@@ -2,44 +2,31 @@
 
 ## Project
 
-This repository is WuMing's public collection of reusable Agent Skills. Skills are grouped by domain, validated as independent capability folders, and registered in the Claude plugin marketplace.
+This repository is WuMing's public collection of reusable Agent Skills. Skills live flat under `skills/`, validated as independent capability folders, and registered in the Claude plugin marketplace.
 
 ## Commands
 
-- List Skills: `find skills -mindepth 3 -maxdepth 3 -type f -name SKILL.md | sort`
+- List Skills: `find skills -mindepth 2 -maxdepth 2 -type f -name SKILL.md | sort`
 - Validate one Skill: `python3 scripts/validate_skill.py <skill-name>`
 - Run repository tests: `python3 -m unittest discover -s tests -v`
 - Validate marketplace JSON: `python3 -m json.tool .claude-plugin/marketplace.json >/dev/null`
-- Validate taxonomy JSON: `python3 -m json.tool config/skill-categories.json >/dev/null`
+- Validate registry JSON: `python3 -m json.tool config/skills.json >/dev/null`
 
 ## Repository Map
 
-- `skills/<category>/<skill-name>/SKILL.md` — required Skill entry point.
-- `skills/<category>/<skill-name>/references/` — detailed guidance loaded only when needed.
-- `skills/<category>/<skill-name>/scripts/` — deterministic helpers.
-- `skills/<category>/<skill-name>/assets/` — templates and output resources.
-- `skills/<category>/<skill-name>/agents/openai.yaml` — optional Codex UI metadata.
-- `config/skill-categories.json` — category source of truth.
+- `skills/<skill-name>/SKILL.md` — required Skill entry point.
+- `skills/<skill-name>/references/` — detailed guidance loaded only when needed.
+- `skills/<skill-name>/scripts/` — deterministic helpers.
+- `skills/<skill-name>/assets/` — templates and output resources.
+- `skills/<skill-name>/agents/openai.yaml` — optional Codex UI metadata.
+- `config/skills.json` — flat Skill registry, the source of truth.
 - `.claude-plugin/marketplace.json` — public Claude plugin registrations.
 - `scripts/` — validation and repository governance tools.
 - `tests/` — standard-library unit tests for repository governance.
 
-## Category Routing
+## Registration
 
-Choose exactly one existing category before creating a Skill. Do not invent a near-duplicate category without team approval.
-
-| Category | Put the Skill here when its primary responsibility is |
-|---|---|
-| `knowledge` | Product documentation, a knowledge base, or domain reference |
-| `review` | Reviewing or optimizing prompts, Agents, configuration, or Skills |
-| `career` | Career-level evaluation, promotion, or professional coaching |
-| `content` | Interpreting or transforming articles, papers, source code, or prose |
-| `visual` | Producing diagrams, visual assets, or QR codes |
-| `media` | Processing audio, PDFs, images, downloads, or other media |
-| `operations` | Operating services, troubleshooting, cleanup, or platform integration |
-| `distribution` | Installing, synchronizing, packaging, publishing, or distributing Skills |
-
-If two categories seem plausible, classify by the Skill's primary output, not by incidental tools it uses. Update `config/skill-categories.json`, `README.md`, and `.claude-plugin/marketplace.json` together.
+Skills are not grouped into physical categories. When adding or removing a Skill, update `config/skills.json`, `README.md`, and `.claude-plugin/marketplace.json` together.
 
 ## Skill Standard
 
@@ -54,9 +41,16 @@ If two categories seem plausible, classify by the Skill's primary output, not by
 - `README.md` inside a Skill is optional and human-facing; it must not duplicate the AI execution contract in `SKILL.md`.
 - Include `agents/openai.yaml` when the Skill should have curated UI metadata.
 
+## Branch Policy
+
+- Make all changes directly on `main` by default.
+- If a new branch is needed, run the repository tests and all checks applicable to the change. Once they pass, immediately merge the branch into `main`; do not leave tested changes on a separate branch at task completion.
+- If tests or checks fail, fix the failures before merging. Resolve any merge conflicts and rerun the affected checks before considering the merge complete.
+- When a task requires a push, push the completed changes on `main` to `origin/main`.
+
 ## Skill Optimizer Repository Sync
 
-- Whenever any file under `skills/review/skill-optimizer/` changes, push the completed changes to this repository and also synchronize and push the Skill's own code and supporting files to `https://github.com/chujianyun/skill-optimizer.git`.
+- Whenever any file under `skills/skill-optimizer/` changes, push the completed changes to this repository and also synchronize and push the Skill's own code and supporting files to `https://github.com/chujianyun/skill-optimizer.git`.
 - Sync only the `skill-optimizer` Skill's contents, respecting the standalone repository's layout and preserving unrelated files; do not copy this collection's other Skills or repository-level files.
 - This additional push is part of the authorized Skill-change workflow. A `skill-optimizer` change is complete only after both repository pushes succeed; report any sync or push failure explicitly.
 
@@ -64,9 +58,9 @@ If two categories seem plausible, classify by the Skill's primary output, not by
 
 Copy this checklist into the task progress before creating a Skill. Complete it from top to bottom; do not mark a later item complete while an earlier item is still open.
 
-- [ ] **Classify and create** — select exactly one category from `config/skill-categories.json`, add `skills/<category>/<skill-name>/`, and register it in the taxonomy, README, and marketplace.
+- [ ] **Create and register** — add `skills/<skill-name>/` and register it in `config/skills.json`, README, and marketplace.
 - [ ] **Optimize and validate** — use `skill-optimizer` to automatically review and fix triggering, workflow, failure handling, confirmation gates, output contract, progressive disclosure, dependencies, sensitive data, and high-impact operations; then run `python3 scripts/validate_skill.py <skill-name>` until it passes.
-- [ ] **Commit and push** — stage only the new Skill and its taxonomy, README, and marketplace registrations; commit and push the current non-main branch to `origin`.
+- [ ] **Commit and push** — stage only the new Skill and its registry, README, and marketplace registrations; commit on `main`, or immediately merge a new branch into `main` after tests and applicable checks pass, then push `main` to `origin`.
 
 Creating a new Skill authorizes safe, in-scope optimizer fixes plus a path-limited commit and push after validation. High-risk or out-of-scope changes still require approval. For an existing Skill, `skill-optimizer` keeps its normal review → plan → explicit confirmation → modification workflow.
 
@@ -74,13 +68,13 @@ Creating a new Skill authorizes safe, in-scope optimizer fixes plus a path-limit
 
 A Skill change is complete only when:
 
-- It is listed exactly once in the taxonomy and marketplace with its classified path.
-- Its README link uses `skills/<category>/<skill-name>/SKILL.md`.
+- It is listed exactly once in `config/skills.json` and the marketplace with its flat path.
+- Its README link uses `skills/<skill-name>/SKILL.md`.
 - `python3 scripts/validate_skill.py <skill-name>` passes.
 - `python3 -m unittest discover -s tests -v` passes after governance-script changes.
 - `python3 -m json.tool .claude-plugin/marketplace.json >/dev/null` passes.
 - `git diff --check` passes.
-- The scoped commit is pushed successfully to the current non-main branch.
+- The scoped commit is on `main` (with any new branch merged immediately after tests and applicable checks pass) and pushed successfully to `origin/main`.
 
 ## Safety
 

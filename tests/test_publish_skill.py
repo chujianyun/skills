@@ -14,7 +14,7 @@ class PublishSkillTest(unittest.TestCase):
     def setUp(self):
         self.temp_dir = tempfile.TemporaryDirectory()
         self.root = Path(self.temp_dir.name)
-        self.skill_dir = self.root / "skills" / "knowledge" / "example-skill"
+        self.skill_dir = self.root / "skills" / "example-skill"
         self.skill_dir.mkdir(parents=True)
         (self.root / "config").mkdir()
         (self.root / ".claude-plugin").mkdir()
@@ -26,16 +26,9 @@ class PublishSkillTest(unittest.TestCase):
             "# Example\n",
             encoding="utf-8",
         )
-        taxonomy = {
-            "categories": {
-                "knowledge": {
-                    "description": "knowledge",
-                    "skills": ["example-skill"],
-                }
-            }
-        }
-        (self.root / "config" / "skill-categories.json").write_text(
-            json.dumps(taxonomy), encoding="utf-8"
+        registry = {"skills": ["example-skill"]}
+        (self.root / "config" / "skills.json").write_text(
+            json.dumps(registry), encoding="utf-8"
         )
         marketplace = {
             "plugins": [
@@ -44,7 +37,7 @@ class PublishSkillTest(unittest.TestCase):
                     "description": "example",
                     "source": "./",
                     "strict": False,
-                    "skills": ["./skills/knowledge/example-skill"],
+                    "skills": ["./skills/example-skill"],
                 }
             ]
         }
@@ -52,7 +45,7 @@ class PublishSkillTest(unittest.TestCase):
             json.dumps(marketplace), encoding="utf-8"
         )
         (self.root / "README.md").write_text(
-            "[example](skills/knowledge/example-skill/SKILL.md)\n",
+            "[example](skills/example-skill/SKILL.md)\n",
             encoding="utf-8",
         )
         self.publisher = self.root / "publisher"
@@ -192,8 +185,6 @@ class PublishSkillTest(unittest.TestCase):
                 str(self.skill_dir.resolve()),
                 "--name",
                 "example-skill",
-                "--category",
-                "knowledge",
             ],
             arguments,
         )

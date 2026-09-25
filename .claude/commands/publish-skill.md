@@ -1,10 +1,10 @@
-# Publish one classified Skill
+# Publish one registered Skill
 
 Publish the Skill named in `$ARGUMENTS` through the repository's mandatory quality gate.
 
 Execute these steps in order. Do not skip a step and do not represent a stopped or failed run as a successful publication.
 
-1. Read `AGENTS.md` and `config/skill-categories.json`. Resolve exactly one directory at `skills/<category>/$ARGUMENTS/`. Stop if the Skill is missing, duplicated, or in the wrong category.
+1. Read `AGENTS.md` and `config/skills.json`. Resolve exactly one directory at `skills/$ARGUMENTS/`. Stop if the Skill is missing, duplicated, or not registered.
 2. Use the `skill-optimizer` Skill to review only the target Skill. Cover triggering, workflow order, failure handling, confirmation gates, output contract, progressive disclosure, external dependencies, sensitive information, and high-impact actions.
 3. For a newly created Skill, this `/publish-skill` invocation is explicit authorization to apply safe, in-scope optimizer changes automatically. Stop and ask before destructive changes, secret handling, external publication, or changes outside the target Skill. For an existing Skill, retain the optimizer's normal review-plan-confirmation gate.
 4. Apply all approved optimizer fixes. If any required review item remains unresolved, stop before recording a pass.

@@ -49,7 +49,6 @@ def _verify_optimizer_report(
 
     expected = {
         "skill": name,
-        "category": skill_dir.parent.name,
         "status": "passed",
         "reviewer": "skill-optimizer",
     }
@@ -91,7 +90,7 @@ def _git_preflight(root: Path, skill_dir: Path) -> str:
     allowed_exact = {
         "README.md",
         ".claude-plugin/marketplace.json",
-        "config/skill-categories.json",
+        "config/skills.json",
     }
     unrelated: list[str] = []
     for line in status.stdout.splitlines():
@@ -118,8 +117,6 @@ def _run_market(
         str(skill_dir.resolve()),
         "--name",
         name,
-        "--category",
-        skill_dir.parent.name,
     ]
     try:
         result = subprocess.run(command, cwd=root, check=False, timeout=timeout)
@@ -134,7 +131,7 @@ def _commit_and_push(root: Path, name: str, skill_dir: Path, branch: str) -> Non
         skill_dir.relative_to(root).as_posix(),
         "README.md",
         ".claude-plugin/marketplace.json",
-        "config/skill-categories.json",
+        "config/skills.json",
     ]
     add = _git(root, "add", "--", *paths)
     if add.returncode != 0:
