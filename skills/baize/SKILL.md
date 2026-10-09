@@ -94,6 +94,8 @@ python3 <baize-root>/scripts/install_skill.py <skill-root>
 
 已安装同名 Skill 但内容不同时，脚本要求 `--replace`；只有确认它是同一来源的更新，或用户明确同意覆盖，才使用该参数。
 
+需要将白泽自身上传到只允许文本的平台时，按 [纯文本上传包](references/upload-package.md) 生成 ZIP，禁止直接压缩已安装目录，以免包含 PNG 图标、Python 缓存和 macOS 附属文件。
+
 ### 5. 手动或自动更新
 
 用户要求更新时重新抓取完整范围到新的临时目录，再运行同步脚本，不在旧正文上做局部猜改。用户明确要求定期自动更新时，完整阅读 [自动更新规则](references/automatic-updates.md)，使用当前 Agent 提供的调度能力创建任务；未明确提出自动更新时不创建后台任务。
