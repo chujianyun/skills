@@ -24,6 +24,7 @@ README 的能力地图按使用场景分组展示，分组只是阅读视角，�
 | [qwenwork-wiki](skills/qwenwork-wiki/SKILL.md) | Tool Wrapper | 查询千问办公网页端、桌面端、技能与连接器、定时任务、IM、企业管理与排障，按需定位官方 API 文档 |
 | [typesafe-wiki](skills/typesafe-wiki/SKILL.md) | Tool Wrapper | 查询 TypeSafe AI 官方文档：Jev System One 模型、Choice/Score/Noul 原语、置信度、Patterns、Python/JavaScript SDK、HTTP API 与 Cookbooks |
 | [deepseek-harness-wiki](skills/deepseek-harness-wiki/SKILL.md) | Tool Wrapper | 检索 DeepSeek Harness 开发文档，回答插件、工具、配置、生命周期、服务、事件与 Cordis 教程问题 |
+| [folotoy-ai-passport-wiki](skills/folotoy-ai-passport-wiki/SKILL.md) | Tool Wrapper | 查询 FoloToy AI Passport 中文教程：设备首次使用、小程序与身份卡、固件恢复、社区玩法及 AI Agent 玩法开发 |
 
 ---
 

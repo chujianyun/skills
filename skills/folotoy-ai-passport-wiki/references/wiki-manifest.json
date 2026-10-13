@@ -1,0 +1,654 @@
+{
+  "assets": {
+    "guides/agent-made-play/step-01.webp": {
+      "content_hash": "sha256:503374d51d38bd454710dc6958459d5dbf54cd2e4a92b1584e840be33d56a131",
+      "local_path": "guides/agent-made-play/step-01.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/agent-made-play/step-01.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/agent-made-play/step-02.webp": {
+      "content_hash": "sha256:dc87c50532d1de1209f129a6c24f7bdb053807e71ce65031dde81038e2ccfa39",
+      "local_path": "guides/agent-made-play/step-02.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/agent-made-play/step-02.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/agent-made-play/step-03.webp": {
+      "content_hash": "sha256:00e537fa6d388b9ae513c63bebb55a1150a1b91f85cbf896dcf5d30131584daf",
+      "local_path": "guides/agent-made-play/step-03.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/agent-made-play/step-03.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/agent-made-play/step-04.webp": {
+      "content_hash": "sha256:c8ba60bbd4690ec912a558356dd3bc7469928bf9aeaf36ab1e9a0bfca7fdd6fb",
+      "local_path": "guides/agent-made-play/step-04.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/agent-made-play/step-04.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/agent-made-play/step-05.webp": {
+      "content_hash": "sha256:bf07cc323634c85a650595c8b3efaacef339d5cae7647ebe87e86ba0eed25bcb",
+      "local_path": "guides/agent-made-play/step-05.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/agent-made-play/step-05.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/agent-made-play/step-06.webp": {
+      "content_hash": "sha256:7e59e79f300531aa275388ae7670771a6f33ab6ff7a82e5ccee41693b0b23686",
+      "local_path": "guides/agent-made-play/step-06.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/agent-made-play/step-06.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/agent-made-play/step-07.webp": {
+      "content_hash": "sha256:944b323dd3e6e856b631d0472a843f95676807f08f5dfd366b44ae4bfa3e2ea6",
+      "local_path": "guides/agent-made-play/step-07.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/agent-made-play/step-07.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/agent-made-play/step-08.webp": {
+      "content_hash": "sha256:e7df4411b8db938990adcb4c39b7b3c066b6a414c91c1506326201e5b45a6143",
+      "local_path": "guides/agent-made-play/step-08.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/agent-made-play/step-08.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/claude-made-play/step-01.webp": {
+      "content_hash": "sha256:556f95aa4b9142b94fee23186b5ae906167dfb4ff3161247607467f8226b6016",
+      "local_path": "guides/claude-made-play/step-01.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/claude-made-play/step-01.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/claude-made-play/step-02.webp": {
+      "content_hash": "sha256:19afe41058700fd73790a2b178e23a5e638d743b9b2c86c01b932dcd3d0c8ee4",
+      "local_path": "guides/claude-made-play/step-02.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/claude-made-play/step-02.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/claude-made-play/step-03.webp": {
+      "content_hash": "sha256:00e537fa6d388b9ae513c63bebb55a1150a1b91f85cbf896dcf5d30131584daf",
+      "local_path": "guides/claude-made-play/step-03.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/claude-made-play/step-03.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/claude-made-play/step-05.webp": {
+      "content_hash": "sha256:25febdba5bad02f520bd9e0d58ef1297282fa9d5664bef25c1e86e49a4b9c7e0",
+      "local_path": "guides/claude-made-play/step-05.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/claude-made-play/step-05.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/claude-made-play/step-06.webp": {
+      "content_hash": "sha256:e7df4411b8db938990adcb4c39b7b3c066b6a414c91c1506326201e5b45a6143",
+      "local_path": "guides/claude-made-play/step-06.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/claude-made-play/step-06.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/codex-made-play/step-01.webp": {
+      "content_hash": "sha256:00e537fa6d388b9ae513c63bebb55a1150a1b91f85cbf896dcf5d30131584daf",
+      "local_path": "guides/codex-made-play/step-01.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/codex-made-play/step-01.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/codex-made-play/step-02.webp": {
+      "content_hash": "sha256:2d6e067bd2582c5816c79dc92496b496ec1bf84798f23deee4b94a180f55dd83",
+      "local_path": "guides/codex-made-play/step-02.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/codex-made-play/step-02.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/codex-made-play/step-03.webp": {
+      "content_hash": "sha256:bf07cc323634c85a650595c8b3efaacef339d5cae7647ebe87e86ba0eed25bcb",
+      "local_path": "guides/codex-made-play/step-03.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/codex-made-play/step-03.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/codex-made-play/step-04.webp": {
+      "content_hash": "sha256:7e59e79f300531aa275388ae7670771a6f33ab6ff7a82e5ccee41693b0b23686",
+      "local_path": "guides/codex-made-play/step-04.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/codex-made-play/step-04.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/codex-made-play/step-05.webp": {
+      "content_hash": "sha256:944b323dd3e6e856b631d0472a843f95676807f08f5dfd366b44ae4bfa3e2ea6",
+      "local_path": "guides/codex-made-play/step-05.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/codex-made-play/step-05.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/codex-made-play/step-06.webp": {
+      "content_hash": "sha256:30ba3f0c2b719161a357780e2b5fe04359ca1a6626dce1c7f9abd45975c45cbe",
+      "local_path": "guides/codex-made-play/step-06.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/codex-made-play/step-06.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/mote-controls-front.png": {
+      "content_hash": "sha256:577243ef427ca379c866fa799e0b2910301621daf48faf0e17d70e6252407394",
+      "local_path": "guides/mote-controls-front.png",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/mote-controls-front.png",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/mote-controls-side.png": {
+      "content_hash": "sha256:2da0e769026e8f843a0a7258c0580eb92a6bca20d1f50834d1b194ef64f2555a",
+      "local_path": "guides/mote-controls-side.png",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/mote-controls-side.png",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/trae-made-play/step-01.webp": {
+      "content_hash": "sha256:9969819f7600806faf74b012725e9a1a83193c30adbf55c0c48a17e24e07de00",
+      "local_path": "guides/trae-made-play/step-01.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/trae-made-play/step-01.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/trae-made-play/step-02.webp": {
+      "content_hash": "sha256:187e699ed0fa47fbb358117ebda7023026f3849e5ed9166bb528dfb44212d87b",
+      "local_path": "guides/trae-made-play/step-02.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/trae-made-play/step-02.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/trae-made-play/step-03.webp": {
+      "content_hash": "sha256:556f95aa4b9142b94fee23186b5ae906167dfb4ff3161247607467f8226b6016",
+      "local_path": "guides/trae-made-play/step-03.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/trae-made-play/step-03.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/trae-made-play/step-05.webp": {
+      "content_hash": "sha256:944b323dd3e6e856b631d0472a843f95676807f08f5dfd366b44ae4bfa3e2ea6",
+      "local_path": "guides/trae-made-play/step-05.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/trae-made-play/step-05.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/trae-made-play/step-06.webp": {
+      "content_hash": "sha256:d63b5f5b50a81462b05e73c1366fd4e298a19d62c6e91c8b26e4ce717dba29ee",
+      "local_path": "guides/trae-made-play/step-06.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/trae-made-play/step-06.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/wireless-install/device-back.webp": {
+      "content_hash": "sha256:2075e70399beb7c9ac48d53325e0115dc88d2fec674c5ae0055a46d4e1295d95",
+      "local_path": "guides/wireless-install/device-back.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/wireless-install/device-back.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "guides/wireless-install/web-recovery-entry.webp": {
+      "content_hash": "sha256:17fcdabe051bd970469c49476ed568b4b4d649e0839e978a0153b04038a7f970",
+      "local_path": "guides/wireless-install/web-recovery-entry.webp",
+      "source_url": "https://ai-passport.folotoy.cn/assets/guides/wireless-install/web-recovery-entry.webp",
+      "updated_at": "2026-10-13T05:36:43Z"
+    }
+  },
+  "coverage": {
+    "captured": 9,
+    "complete": true,
+    "discovered": 9,
+    "excluded": [
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/accessories/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/device/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/accessories/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/device/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/guides/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/guides/create-a-play-with-agent/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/guides/create-a-play-with-claude-code/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/guides/create-a-play-with-codex/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/guides/create-a-play-with-trae/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/guides/create-your-own-play/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/guides/flash-official-firmware/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/guides/getting-started/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/guides/restore-factory-firmware/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/ai-pixel-pet/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/ai-pixel-pet/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/answer-book/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/answer-book/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/bad-apple-player/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/bad-apple-player/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/boss-pet/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/boss-pet/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/claude-buddy-port/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/claude-buddy-port/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/niulai-interactive-player/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/niulai-interactive-player/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/passport-radar/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/passport-radar/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/pocket-pomodoro/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/pocket-pomodoro/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/pocket-rock-paper-scissors/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/pocket-rock-paper-scissors/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/pocket-tetris/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/pocket-tetris/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/stopwatch/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/stopwatch/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/todays-mood/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/todays-mood/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/word-list/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/word-list/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/xiaozhi-ai-chatbot/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/plays/xiaozhi-ai-chatbot/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/tools/web-flasher/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/en/trae/guide/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/ai-pixel-pet/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/ai-pixel-pet/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/answer-book/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/answer-book/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/bad-apple-player/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/bad-apple-player/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/boss-pet/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/boss-pet/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/claude-buddy-port/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/claude-buddy-port/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/niulai-interactive-player/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/niulai-interactive-player/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/passport-radar/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/passport-radar/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/pocket-pomodoro/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/pocket-pomodoro/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/pocket-rock-paper-scissors/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/pocket-rock-paper-scissors/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/pocket-tetris/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/pocket-tetris/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/stopwatch/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/stopwatch/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/todays-mood/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/todays-mood/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/word-list/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/word-list/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/xiaozhi-ai-chatbot/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/plays/xiaozhi-ai-chatbot/install/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/tools/web-flasher/"
+      },
+      {
+        "reason": "教程区以外：英文版本、玩法社区、工具、法律条款、官网或其他导航",
+        "url": "https://ai-passport.folotoy.cn/trae/guide/"
+      }
+    ],
+    "failed": []
+  },
+  "created_at": "2026-10-13T05:36:43Z",
+  "documents": {
+    "教程中心/index.md": {
+      "content_hash": "sha256:dc4504b62f1c5b2b1a9e3c891f73b0cba0fb117ade93505bd69acfed2ba55155",
+      "keywords": [
+        "创造自己的玩法",
+        "安装社区玩法",
+        "恢复出厂固件",
+        "用 AI Agent 创造专属玩法",
+        "用 Claude Code 创造 AI Passport 玩法",
+        "用 Codex 创造 AI Passport 玩法",
+        "用 TRAE 创造 AI Passport 玩法",
+        "第一次使用 AI Passport"
+      ],
+      "local_path": "教程中心/index.md",
+      "source_path": "/guides/",
+      "source_url": "https://ai-passport.folotoy.cn/guides/",
+      "summary": "从开机、安装社区玩法到使用 AI Agent 创造自己的玩法的中文教程目录。",
+      "title": "教程中心",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "教程中心/创造自己的玩法.md": {
+      "content_hash": "sha256:53bddfe166cd502a3c7a049bdf0361d6934bf03044da8b369d78fdac37703895",
+      "keywords": [
+        "使用本地玩法安装工具",
+        "先在测试设备上验证",
+        "先理解产品能力",
+        "建立可重复的构建流程",
+        "让 AI 编程工具从完整项目开始开发"
+      ],
+      "local_path": "教程中心/创造自己的玩法.md",
+      "source_path": "/guides/create-your-own-play/",
+      "source_url": "https://ai-passport.folotoy.cn/guides/create-your-own-play/",
+      "summary": "跟着官方文档创造玩法，把自己的小游戏和交互真正装进 AI Passport。",
+      "title": "创造自己的玩法",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "教程中心/安装社区玩法.md": {
+      "content_hash": "sha256:14e67cccd6e07353673dfb3dc39e6cda03bb9afcd4731a5f65a6c083f24f6323",
+      "keywords": [
+        "使用 Chrome 或 Edge 浏览器",
+        "在玩法社区选择玩法",
+        "等待安装完成",
+        "连接设备，开始安装"
+      ],
+      "local_path": "教程中心/安装社区玩法.md",
+      "source_path": "/guides/flash-official-firmware/",
+      "source_url": "https://ai-passport.folotoy.cn/guides/flash-official-firmware/",
+      "summary": "在玩法社区发现用户分享的小游戏、工具与创意互动，选择喜欢的安装到设备；安装后会覆盖设备当前的全部内容。",
+      "title": "安装社区玩法",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "教程中心/恢复出厂固件.md": {
+      "content_hash": "sha256:8d70c159e717c68e3e9125d0232fbf0d0da7ed19e9973e8dc5d93e3dee467c4b",
+      "keywords": [
+        "扫描设备背面的二维码",
+        "把完整链接复制到电脑",
+        "用 Type-C 线连接并开机",
+        "等待固件刷入完成",
+        "进入恢复默认固件页面"
+      ],
+      "local_path": "教程中心/恢复出厂固件.md",
+      "source_path": "/guides/restore-factory-firmware/",
+      "source_url": "https://ai-passport.folotoy.cn/guides/restore-factory-firmware/",
+      "summary": "扫描设备二维码后，把专属链接拷贝到电脑上，再用电脑上的 Chrome 或 Edge 浏览器和 Type-C 线恢复默认固件。",
+      "title": "恢复出厂固件",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "教程中心/用 AI Agent 创造专属玩法.md": {
+      "content_hash": "sha256:1e4dea3e7a848aa3c756aa3a9a11a62f6ee74d12f4e73808df09361d9f7099b1",
+      "keywords": [
+        "先决定它要解决什么问题",
+        "先安装一个社区玩法，确认设备可连接",
+        "安装玩法，在真实硬件上验证",
+        "定义专属玩法的最小版本",
+        "把它带进真实场景，再迭代一轮",
+        "把需求说清楚",
+        "让 Agent 完成开发、构建与自检",
+        "选择一个 AI 编程 Agent"
+      ],
+      "local_path": "教程中心/用 AI Agent 创造专属玩法.md",
+      "source_path": "/guides/create-a-play-with-agent/",
+      "source_url": "https://ai-passport.folotoy.cn/guides/create-a-play-with-agent/",
+      "summary": "从一句清晰的需求开始，让 AI 编程 Agent 完成开发与构建，再把玩法安装到真实的 AI Passport。",
+      "title": "用 AI Agent 创造专属玩法",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "教程中心/用 Claude Code 创造 AI Passport 玩法.md": {
+      "content_hash": "sha256:9683bbe779262988a523be148cd6e8b5f466b2d9980ec6f4c7a88c73f3f51ccc",
+      "keywords": [
+        "在 Claude Code 中打开玩法目录",
+        "把玩法安装到开发设备",
+        "用实机反馈继续迭代",
+        "补齐 AI Passport 的硬件约束",
+        "让 Claude Code 修改、构建并总结",
+        "选定专属玩法和最小目标"
+      ],
+      "local_path": "教程中心/用 Claude Code 创造 AI Passport 玩法.md",
+      "source_path": "/guides/create-a-play-with-claude-code/",
+      "source_url": "https://ai-passport.folotoy.cn/guides/create-a-play-with-claude-code/",
+      "summary": "让 Claude Code 理解玩法项目与硬件约束，生成可安装版本，并根据真实设备反馈继续完善。",
+      "title": "用 Claude Code 创造 AI Passport 玩法",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "教程中心/用 Codex 创造 AI Passport 玩法.md": {
+      "content_hash": "sha256:dee4eb486bbd3a69bc61c81c71045b1dc70d7ff3c08a12fa1ee8b0c842413d22",
+      "keywords": [
+        "准备玩法项目和测试设备",
+        "在 Codex 中打开玩法项目",
+        "实机体验，再把反馈交回 Codex",
+        "把构建结果安装到 AI Passport",
+        "把玩法写成可验收任务",
+        "让 Codex 实现、构建并修复错误"
+      ],
+      "local_path": "教程中心/用 Codex 创造 AI Passport 玩法.md",
+      "source_path": "/guides/create-a-play-with-codex/",
+      "source_url": "https://ai-passport.folotoy.cn/guides/create-a-play-with-codex/",
+      "summary": "在 Codex 中打开玩法项目，把想法写成可验收任务，完成构建、安装与实机迭代。",
+      "title": "用 Codex 创造 AI Passport 玩法",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "教程中心/用 TRAE 创造 AI Passport 玩法.md": {
+      "content_hash": "sha256:31c31e52a75d5800c11b0babd981876a1e1ab7786ab067db6b10689b3230c2f3",
+      "keywords": [
+        "在 TRAE Work 中打开玩法项目",
+        "安装玩法并逐项检查",
+        "把它作为随身设备实际使用",
+        "让 TRAE 完成代码、构建和检查",
+        "说明你想做的专属玩法",
+        "连接设备并确认安装基线"
+      ],
+      "local_path": "教程中心/用 TRAE 创造 AI Passport 玩法.md",
+      "source_path": "/guides/create-a-play-with-trae/",
+      "source_url": "https://ai-passport.folotoy.cn/guides/create-a-play-with-trae/",
+      "summary": "在 TRAE Work 中描述玩法、完成代码与构建，再把新体验装进随身的 AI Passport。",
+      "title": "用 TRAE 创造 AI Passport 玩法",
+      "updated_at": "2026-10-13T05:36:43Z"
+    },
+    "教程中心/第一次使用 AI Passport.md": {
+      "content_hash": "sha256:46c9c5857c9e6dfb302060bf64707e79c97ef44fd8cc25950ae328a309020848",
+      "keywords": [
+        "为 AI Passport 充电",
+        "体验内置小游戏",
+        "同步身份内容与全屏图片",
+        "认识按键与开关机",
+        "身份卡只是开始。",
+        "连接微信小程序"
+      ],
+      "local_path": "教程中心/第一次使用 AI Passport.md",
+      "source_path": "/guides/getting-started/",
+      "source_url": "https://ai-passport.folotoy.cn/guides/getting-started/",
+      "summary": "用微信小程序同步名称、头像、简介和全屏图片，了解按键、内置游戏与充电。",
+      "title": "第一次使用 AI Passport",
+      "updated_at": "2026-10-13T05:36:43Z"
+    }
+  },
+  "last_sync_at": "2026-10-13T05:36:43Z",
+  "schema_version": 1,
+  "wiki": {
+    "language": "简体中文；教程区当前线上版本",
+    "license": "Copyright © 2026 FoloToy. All rights reserved.；发布者已明确确认获得本快照教程与图片的再分发授权并授权公开入库及推送。未发现网站通用开放许可证，不将开发项目的 MIT 许可套用于本站教程；保留上游版权与来源。",
+    "scope": "中文 /guides/ 教程区：目录页与 8 篇教程；保留同级导航，不扩展到英文版、玩法社区、刷机工具、法律页面或链接的开发源码。",
+    "skill_name": "folotoy-ai-passport-wiki",
+    "source_root": "https://ai-passport.folotoy.cn/guides",
+    "title": "FoloToy AI Passport 教程"
+  }
+}

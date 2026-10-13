@@ -1,0 +1,4 @@
+interface:
+  display_name: "FoloToy AI Passport Wiki"
+  short_description: "查询 AI Passport 中文教程、设备使用与玩法开发流程"
+  default_prompt: "使用 $folotoy-ai-passport-wiki 回答我的 AI Passport 问题，并附实际使用的本地文档与官方来源。"

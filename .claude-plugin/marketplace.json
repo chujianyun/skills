@@ -324,6 +324,15 @@
       "skills": [
         "./skills/p9-advisor"
       ]
+    },
+    {
+      "name": "folotoy-ai-passport-wiki",
+      "description": "FoloToy AI Passport 中文教程 Wiki，查询设备首次使用、小程序、固件恢复、社区玩法及 AI Agent 玩法开发流程",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/folotoy-ai-passport-wiki"
+      ]
     }
   ]
 }
