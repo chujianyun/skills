@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deep Agents Wiki"
+  short_description: "Deep Agents 离线 Wiki 检索与有依据问答"
+  default_prompt: "Use $deepagents-wiki to answer my question with documentation-backed guidance."

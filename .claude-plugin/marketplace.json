@@ -333,6 +333,15 @@
       "skills": [
         "./skills/folotoy-ai-passport-wiki"
       ]
+    },
+    {
+      "name": "deepagents-wiki",
+      "description": "Deep Agents Python SDK 官方离线 Wiki：44 页文档、20 张配图、本地全文检索和逐页哈希清单，支持增量更新。",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/deepagents-wiki"
+      ]
     }
   ]
 }

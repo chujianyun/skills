@@ -1,0 +1,374 @@
+{
+  "navigation_source": "https://github.com/langchain-ai/docs/blob/f04b70472550aa935a546599c383036d420acf85/src/docs.json",
+  "llms_index": "https://docs.langchain.com/_llms/agent-development-lifecycle/build/python.txt",
+  "sitemap": "https://docs.langchain.com/sitemap.xml",
+  "scope": "Python Deep Agents navigation and Python Deep Agents examples; direct cross-product targets only",
+  "navigation_pages": 40,
+  "example_pages": 4,
+  "sitemap_deepagents_pages": 36,
+  "canonical_pages": 44,
+  "assets": 20,
+  "local_document_links": 474,
+  "pages": [
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/overview",
+      "groups": [],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/overview",
+      "local_path": "Deep Agents overview.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/quickstart",
+      "groups": [
+        "Get started"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/quickstart",
+      "local_path": "Get started/Quickstart.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/customization",
+      "groups": [
+        "Get started"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/customization",
+      "local_path": "Get started/Customize Deep Agents.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/models",
+      "groups": [
+        "Get started"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/models",
+      "local_path": "Get started/Models.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/comparison",
+      "groups": [
+        "Get started"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/comparison",
+      "local_path": "Get started/Comparison with Claude Agent SDK.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/changelog-py",
+      "groups": [
+        "Get started"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/releases/changelog",
+      "local_path": "Get started/Changelog.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/langsmith/python/managed-deep-agents",
+      "groups": [
+        "Deployment"
+      ],
+      "canonical_url": "https://docs.langchain.com/langsmith/python/managed-deep-agents-overview",
+      "local_path": "Deployment/Managed Deep Agents.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/going-to-production",
+      "groups": [
+        "Deployment",
+        "Going to production",
+        "@index"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/going-to-production",
+      "local_path": "Deployment/Going to production/index.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/fault-tolerance",
+      "groups": [
+        "Deployment",
+        "Going to production"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/fault-tolerance",
+      "local_path": "Deployment/Going to production/Fault tolerance.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/tools",
+      "groups": [
+        "Execution environment"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/tools",
+      "local_path": "Execution environment/Tools.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/backends",
+      "groups": [
+        "Execution environment"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/backends",
+      "local_path": "Execution environment/Backends.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/permissions",
+      "groups": [
+        "Execution environment"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/permissions",
+      "local_path": "Execution environment/Permissions.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/multimodal",
+      "groups": [
+        "Execution environment"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/multimodal",
+      "local_path": "Execution environment/Multimodal inputs and outputs.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/sandboxes",
+      "groups": [
+        "Execution environment"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/sandboxes",
+      "local_path": "Execution environment/Sandboxes.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/browser-use",
+      "groups": [
+        "Execution environment"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/browser-use",
+      "local_path": "Execution environment/Browser use.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/interpreters",
+      "groups": [
+        "Execution environment"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/interpreters",
+      "local_path": "Execution environment/Interpreters.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/event-streaming",
+      "groups": [
+        "Execution environment"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/event-streaming",
+      "local_path": "Execution environment/Event streaming.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/streaming",
+      "groups": [
+        "Execution environment"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/streaming",
+      "local_path": "Execution environment/Streaming.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/skills",
+      "groups": [
+        "Context management"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/skills",
+      "local_path": "Context management/Skills.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/memory",
+      "groups": [
+        "Context management"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/memory",
+      "local_path": "Context management/Memory.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/retrieval",
+      "groups": [
+        "Context management"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/retrieval",
+      "local_path": "Context management/Retrieval.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/context-engineering",
+      "groups": [
+        "Context management"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/context-engineering",
+      "local_path": "Context management/Context engineering in Deep Agents.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/profiles",
+      "groups": [
+        "Context management"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/profiles",
+      "local_path": "Context management/Profiles.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/openwiki",
+      "groups": [
+        "Context management"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/openwiki/overview",
+      "local_path": "Context management/OpenWiki.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/subagents",
+      "groups": [
+        "Delegation"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/subagents",
+      "local_path": "Delegation/Subagents.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/dynamic-subagents",
+      "groups": [
+        "Delegation"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/dynamic-subagents",
+      "local_path": "Delegation/Dynamic subagents.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/async-subagents",
+      "groups": [
+        "Delegation"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/async-subagents",
+      "local_path": "Delegation/Async subagents.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/human-in-the-loop",
+      "groups": [
+        "Steering"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/human-in-the-loop",
+      "local_path": "Steering/Human-in-the-loop.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/rubric",
+      "groups": [
+        "Steering"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/rubric",
+      "local_path": "Steering/Grading rubrics.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/langchain/middleware/overview",
+      "groups": [
+        "Middleware"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/langchain/middleware/overview",
+      "local_path": "Middleware/Middleware overview.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "groups": [
+        "Middleware"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "local_path": "Middleware/Prebuilt middleware.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/langchain/middleware/custom",
+      "groups": [
+        "Middleware"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/langchain/middleware/custom",
+      "local_path": "Middleware/Custom middleware.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/frontend/overview",
+      "groups": [
+        "Frontend"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/frontend/overview",
+      "local_path": "Frontend/Overview.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/frontend/subagent-streaming",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/frontend/subagent-streaming",
+      "local_path": "Frontend/Patterns/Subagent streaming.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/frontend/todo-list",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/frontend/todo-list",
+      "local_path": "Frontend/Patterns/Todo list.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/frontend/sandbox",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/frontend/sandbox",
+      "local_path": "Frontend/Patterns/Sandbox.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/acp",
+      "groups": [
+        "Protocols"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/acp",
+      "local_path": "Protocols/Agent Client Protocol (ACP).md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/mcp",
+      "groups": [
+        "Protocols"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/langchain/mcp",
+      "local_path": "Protocols/Model Context Protocol (MCP).md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/a2a",
+      "groups": [
+        "Protocols"
+      ],
+      "canonical_url": "https://docs.langchain.com/langsmith/server-a2a",
+      "local_path": "Protocols/A2A endpoint in Agent Server.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/ag-ui",
+      "groups": [
+        "Protocols"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/ag-ui",
+      "local_path": "Protocols/Agent User Interaction Protocol (AG-UI).md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/data-analysis",
+      "groups": [
+        "Examples",
+        "Deep Agents"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/data-analysis",
+      "local_path": "Examples/Deep Agents/Build a data analysis agent.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/deep-research",
+      "groups": [
+        "Examples",
+        "Deep Agents"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/deep-research",
+      "local_path": "Examples/Deep Agents/Build a deep research agent.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/content-builder",
+      "groups": [
+        "Examples",
+        "Deep Agents"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/content-builder",
+      "local_path": "Examples/Deep Agents/Build a content builder agent.md"
+    },
+    {
+      "navigation_url": "https://docs.langchain.com/oss/python/deepagents/rag",
+      "groups": [
+        "Examples",
+        "Deep Agents"
+      ],
+      "canonical_url": "https://docs.langchain.com/oss/python/deepagents/rag",
+      "local_path": "Examples/Deep Agents/Retrieval Augmented Generation (RAG) with Deep Agents.md"
+    }
+  ]
+}

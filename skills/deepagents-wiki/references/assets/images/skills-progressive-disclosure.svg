@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" role="img" aria-labelledby="skills-disclosure-title skills-disclosure-desc">
+  <title id="skills-disclosure-title">Skills progressive disclosure diagram</title>
+  <desc id="skills-disclosure-desc">Skills load in three layers: metadata at startup, instructions when activated, and resources when referenced.</desc>
+
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#161F34"/>
+      <stop offset="100%" stop-color="#030710"/>
+    </radialGradient>
+
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#7FC8FF"/>
+    </marker>
+
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .label { fill: #CCE9FF; font-size: 12px; font-weight: 500; }
+      .title { fill: #E5F4FF; font-size: 13px; font-weight: 600; }
+      .small { fill: #99D3FF; font-size: 11px; }
+      .edge-label { fill: #99D3FF; font-size: 10px; font-weight: 500; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="460" rx="16" fill="url(#bg)"/>
+  <rect x="1" y="1" width="718" height="458" rx="15" fill="none" stroke="#40668D" stroke-width="1" opacity="0.45"/>
+
+  <!-- Layer 1: Metadata -->
+  <rect x="110" y="36" width="500" height="96" rx="14" fill="#0D1322" stroke="#6E8900" stroke-width="1.5" opacity="0.95"/>
+  <text x="130" y="66" class="mono title">Metadata</text>
+  <text x="130" y="92" class="mono label">name + description</text>
+  <text x="130" y="114" class="mono small">Loaded at startup for all skills</text>
+
+  <!-- Arrow 1 -->
+  <path d="M360 132 L360 182" fill="none" stroke="#7FC8FF" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="382" y="161" class="mono edge-label">Agent determines skill is relevant</text>
+
+  <!-- Layer 2: Instructions -->
+  <rect x="110" y="184" width="500" height="96" rx="14" fill="#0D1322" stroke="#006DDD" stroke-width="1.5" opacity="0.95"/>
+  <text x="130" y="214" class="mono title">Instructions</text>
+  <text x="130" y="240" class="mono label">Full SKILL.md body</text>
+  <text x="130" y="262" class="mono small">Read when the skill is activated</text>
+
+  <!-- Arrow 2 -->
+  <path d="M360 280 L360 330" fill="none" stroke="#7FC8FF" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="382" class="mono edge-label">
+    <tspan x="382" y="299">Instructions reference</tspan>
+    <tspan x="382" dy="14">supporting files</tspan>
+  </text>
+
+  <!-- Layer 3: Resources -->
+  <rect x="110" y="332" width="500" height="96" rx="14" fill="#0D1322" stroke="#40668D" stroke-width="1.5" opacity="0.95"/>
+  <text x="130" y="362" class="mono title">Resources</text>
+  <text x="130" y="388" class="mono label">scripts/, references/, assets/</text>
+  <text x="130" y="410" class="mono small">Loaded only when referenced</text>
+</svg>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" role="img" aria-labelledby="skills-composition-title skills-composition-desc">
+  <title id="skills-composition-title">Skills composition diagram</title>
+  <desc id="skills-composition-desc">Skill descriptions load into the system prompt at startup; the active skill body loads on demand; scripts and references stay on disk until referenced.</desc>
+
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#161F34"/>
+      <stop offset="100%" stop-color="#030710"/>
+    </radialGradient>
+
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#7FC8FF"/>
+    </marker>
+
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .label { fill: #CCE9FF; font-size: 12px; font-weight: 500; }
+      .title { fill: #E5F4FF; font-size: 13px; font-weight: 600; }
+      .small { fill: #99D3FF; font-size: 11px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="500" rx="16" fill="url(#bg)"/>
+  <rect x="1" y="1" width="918" height="498" rx="15" fill="none" stroke="#40668D" stroke-width="1" opacity="0.45"/>
+
+  <!-- Agent context panel -->
+  <rect x="36" y="48" width="340" height="404" rx="14" fill="#0D1322" stroke="#7FC8FF" stroke-width="1.5" opacity="0.95"/>
+  <text x="56" y="78" class="mono title">Agent context (system prompt)</text>
+
+  <!-- Base prompt -->
+  <text x="56" y="105" class="mono small">You are a helpful...</text>
+
+  <!-- Skill descriptions in context -->
+  <rect x="56" y="124" width="300" height="44" rx="10" fill="rgba(229,244,255,0.08)" stroke="#006DDD" stroke-width="1.5"/>
+  <text x="72" y="151" class="mono label">Skill description</text>
+
+  <rect x="56" y="180" width="300" height="44" rx="10" fill="rgba(229,244,255,0.08)" stroke="#006DDD" stroke-width="1.5"/>
+  <text x="72" y="207" class="mono label">Skill description</text>
+
+  <!-- Active skill body (dashed) -->
+  <rect x="56" y="248" width="300" height="52" rx="10" fill="rgba(253,243,255,0.06)" stroke="#7E65AE" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="72" y="279" class="mono label">Skill body</text>
+
+  <!-- Skill A panel -->
+  <rect x="544" y="36" width="340" height="188" rx="14" fill="#0D1322" stroke="#7FC8FF" stroke-width="1.5" opacity="0.95"/>
+  <text x="564" y="66" class="mono title">Skill A</text>
+
+  <rect x="564" y="84" width="300" height="40" rx="10" fill="rgba(229,244,255,0.08)" stroke="#006DDD" stroke-width="1.5"/>
+  <text x="580" y="109" class="mono label">Skill description</text>
+
+  <rect x="564" y="132" width="300" height="40" rx="10" fill="rgba(253,243,255,0.08)" stroke="#7E65AE" stroke-width="1.5"/>
+  <text x="580" y="157" class="mono label">Skill body</text>
+
+  <rect x="564" y="180" width="300" height="32" rx="10" fill="rgba(246,255,219,0.08)" stroke="#6E8900" stroke-width="1.5"/>
+  <text x="580" y="201" class="mono label">Scripts / refs</text>
+
+  <!-- Skill B panel -->
+  <rect x="544" y="276" width="340" height="188" rx="14" fill="#0D1322" stroke="#7FC8FF" stroke-width="1.5" opacity="0.95"/>
+  <text x="564" y="306" class="mono title">Skill B</text>
+
+  <rect x="564" y="324" width="300" height="40" rx="10" fill="rgba(229,244,255,0.08)" stroke="#006DDD" stroke-width="1.5"/>
+  <text x="580" y="349" class="mono label">Skill description</text>
+
+  <rect x="564" y="372" width="300" height="40" rx="10" fill="rgba(253,243,255,0.08)" stroke="#7E65AE" stroke-width="1.5"/>
+  <text x="580" y="397" class="mono label">Skill body</text>
+
+  <rect x="564" y="420" width="300" height="32" rx="10" fill="rgba(246,255,219,0.08)" stroke="#6E8900" stroke-width="1.5"/>
+  <text x="580" y="441" class="mono label">Scripts / refs</text>
+
+  <!-- Arrows: Skill A description -> context description 1 -->
+  <path d="M564 104 C520 104, 420 146, 356 146" fill="none" stroke="#7FC8FF" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+
+  <!-- Skill B description -> context description 2 -->
+  <path d="M564 344 C500 344, 420 202, 356 202" fill="none" stroke="#7FC8FF" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+
+  <!-- Skill B body -> context skill body -->
+  <path d="M564 392 C500 392, 430 274, 356 274" fill="none" stroke="#7FC8FF" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+</svg>

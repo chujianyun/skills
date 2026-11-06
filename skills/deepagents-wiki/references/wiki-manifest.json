@@ -1,0 +1,737 @@
+{
+  "assets": {
+    "images/agent_harness_capabilities.svg": {
+      "content_hash": "sha256:6f1d5887d13f41064f98f2229a8ea184b03352bdc72a38bce69b8a361aab9ec3",
+      "local_path": "images/agent_harness_capabilities.svg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/agent_harness_capabilities.svg",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/auth-layers.png": {
+      "content_hash": "sha256:8c5fc310eb2f223f15ce4a69c59129249e8e4ae84d94cc218cd9c2bcb7edbbfa",
+      "local_path": "images/auth-layers.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/production/auth-layers.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/core_agent_loop.png": {
+      "content_hash": "sha256:bc9a6da6d79b858ffe86bc0190710a5539022b6b7dd5ded4e4983f91638fb59c",
+      "local_path": "images/core_agent_loop.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/core_agent_loop.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/data_analysis_slack_response.png": {
+      "content_hash": "sha256:36f3f251bcf8603adc9462b699047f269f5e2f3ff654c386d927668217654092",
+      "local_path": "images/data_analysis_slack_response.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/images/data_analysis_slack_response.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/dcode-dynamic-subagents-panel.png": {
+      "content_hash": "sha256:04d5cd38e280a41fc344dbe591ec925a42129c03466cd726584f04ba79eca4ce",
+      "local_path": "images/dcode-dynamic-subagents-panel.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/dcode-dynamic-subagents-panel.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/deepagents-deploy-config.png": {
+      "content_hash": "sha256:6235dd138d84c8b11faa1b1745a5bfc50c84730978696a28d22fa2fba9b340f5",
+      "local_path": "images/deepagents-deploy-config.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/production/deepagents-deploy-config.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/deepagents-langsmith.png": {
+      "content_hash": "sha256:8b4e371260505088e74c5d4e071d85fd77cbad44b2313deca67252965d4a55bc",
+      "local_path": "images/deepagents-langsmith.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/deepagents-langsmith.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/deepagents-lc-agent-name-filter.png": {
+      "content_hash": "sha256:5785dc013481916367bf00e7316c00cefec89be4fedf4f9d0beb0f41b3ffc09d",
+      "local_path": "images/deepagents-lc-agent-name-filter.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/langsmith/images/deepagents-lc-agent-name-filter.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/durable-execution.png": {
+      "content_hash": "sha256:406d2a4fd57476fee1e39a2abb5765ec8d567d70cf6fecb3e5b9398e696c8589",
+      "local_path": "images/durable-execution.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/production/durable-execution.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/managed-deep-agents-overview-light.png": {
+      "content_hash": "sha256:372cedaa8f6e6b86ca4d41aee0f2fe6a790f238b10893b08d28a00d10850fe16",
+      "local_path": "images/managed-deep-agents-overview-light.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/images/managed-deep-agents-overview-light.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/memory.png": {
+      "content_hash": "sha256:4737fe578ed2c8a4fecb549da893c725fec92a0c763d71561b7780c7b5220294",
+      "local_path": "images/memory.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/production/memory.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/middleware_final.png": {
+      "content_hash": "sha256:a739d45d22d67f2e87a114fd26908b044aa124b8b0ceb0b625df2a7875d29e1f",
+      "local_path": "images/middleware_final.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/middleware_final.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/offloading-inputs.png": {
+      "content_hash": "sha256:3f4c221571ab6f3efa609c71cd00e4ae320aba754d63529e2b39c2d5ac744476",
+      "local_path": "images/offloading-inputs.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/offloading-inputs.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/offloading-results.png": {
+      "content_hash": "sha256:204235b80a50d4f887c3ecc046adbde0b49f0f6abcdb54daa58552027f0f7671",
+      "local_path": "images/offloading-results.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/offloading-results.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/rag_indexing.png": {
+      "content_hash": "sha256:d24e6b3c8631685e5efd85e0cf7714dce7a7f1e3186655b1e00cbeccb894431b",
+      "local_path": "images/rag_indexing.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/images/rag_indexing.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/rag_retrieval_generation.png": {
+      "content_hash": "sha256:723d38f4c3e9fb1c84eb4fdaa32ff2375b04f2e154692ac117a06028afc610f3",
+      "local_path": "images/rag_retrieval_generation.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/images/rag_retrieval_generation.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/sandbox-auth-proxy.png": {
+      "content_hash": "sha256:b29feb02e9a5a07a9db1199f8d67d3170168abd23695229f6b3c163c4cc488cf",
+      "local_path": "images/sandbox-auth-proxy.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/production/sandbox-auth-proxy.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/skills-composition.svg": {
+      "content_hash": "sha256:95dbc511fb690000fa21ad800f8aa071e04899bc7b7b71e8d0f77b6088bbf26b",
+      "local_path": "images/skills-composition.svg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/skills-composition.svg",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/skills-progressive-disclosure.svg": {
+      "content_hash": "sha256:3f3f1cad12580677fb2d3d7a8349d0019e677cab0170efad87505095c2fd6877",
+      "local_path": "images/skills-progressive-disclosure.svg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/skills-progressive-disclosure.svg",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "images/summarization.png": {
+      "content_hash": "sha256:98cf007ac85005447141d2515c89ee2c893f8d376d121b3a2431f38a1546c7cf",
+      "local_path": "images/summarization.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/f04b70472550aa935a546599c383036d420acf85/src/oss/images/deepagents/summarization.png",
+      "updated_at": "2026-11-06T16:21:38Z"
+    }
+  },
+  "coverage": {
+    "captured": 44,
+    "complete": true,
+    "discovered": 44,
+    "excluded": [
+      {
+        "reason": "Different SDK language: TypeScript/JavaScript",
+        "url": "https://docs.langchain.com/oss/javascript/deepagents/overview"
+      },
+      {
+        "reason": "Separate Deep Agents Code product; not part of the Python SDK navigation",
+        "url": "https://docs.langchain.com/oss/deepagents/code/overview"
+      },
+      {
+        "reason": "Separate generated API Reference site, linked online only",
+        "url": "https://reference.langchain.com/python/deepagents/"
+      }
+    ],
+    "failed": []
+  },
+  "created_at": "2026-11-06T16:21:38Z",
+  "documents": {
+    "Context management/Context engineering in Deep Agents.md": {
+      "content_hash": "sha256:f6e354e48024b918fa1ba845d15110e7628e6298b3d349a8242dcb00e24895a3",
+      "keywords": [
+        "Context management",
+        "context-engineering"
+      ],
+      "local_path": "Context management/Context engineering in Deep Agents.md",
+      "source_path": "/oss/python/deepagents/context-engineering",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/context-engineering",
+      "summary": "Control what context your deep agent has access to and how it is managed across long-running tasks",
+      "title": "Context engineering in Deep Agents",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Context management/Memory.md": {
+      "content_hash": "sha256:325708be750f23ea9bf81fa36af0cdb3a72976e5a582ee3f223f599c2eb498af",
+      "keywords": [
+        "Context management",
+        "memory"
+      ],
+      "local_path": "Context management/Memory.md",
+      "source_path": "/oss/python/deepagents/memory",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/memory",
+      "summary": "Add persistent memory to agents built with Deep Agents so they learn and improve across conversations",
+      "title": "Memory",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Context management/OpenWiki.md": {
+      "content_hash": "sha256:183e05ee9cd8ccf15d8d5702e7c847edc70c8c3ceba5f9da1c6a448391d0c2ea",
+      "keywords": [
+        "Context management",
+        "openwiki"
+      ],
+      "local_path": "Context management/OpenWiki.md",
+      "source_path": "/oss/openwiki/overview",
+      "source_url": "https://docs.langchain.com/oss/openwiki/overview",
+      "summary": "CLI that writes and maintains agent wikis so coding agents work faster",
+      "title": "OpenWiki",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Context management/Profiles.md": {
+      "content_hash": "sha256:ccb1d2a37e30ee421afc768e5bcb4ed53ab72b3e782a4b92fdcd6ec7dd120bbb",
+      "keywords": [
+        "Context management",
+        "profiles"
+      ],
+      "local_path": "Context management/Profiles.md",
+      "source_path": "/oss/python/deepagents/profiles",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/profiles",
+      "summary": "Package per-provider and per-model defaults that Deep Agents applies when a model is selected",
+      "title": "Profiles",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Context management/Retrieval.md": {
+      "content_hash": "sha256:5bc03261a22fc32fde09d502ad126105037b885e5b36a0b9c73e369bbd2b1c93",
+      "keywords": [
+        "Context management",
+        "retrieval"
+      ],
+      "local_path": "Context management/Retrieval.md",
+      "source_path": "/oss/python/deepagents/retrieval",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/retrieval",
+      "summary": "[!NOTE]",
+      "title": "Retrieval",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Context management/Skills.md": {
+      "content_hash": "sha256:87a7b8b8c0af517b0a83805890c25e3df9e1ed52e8f26512907cb8ac3e11332e",
+      "keywords": [
+        "Context management",
+        "skills"
+      ],
+      "local_path": "Context management/Skills.md",
+      "source_path": "/oss/python/deepagents/skills",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/skills",
+      "summary": "Learn how to extend your deep agent's capabilities with skills",
+      "title": "Skills",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Deep Agents overview.md": {
+      "content_hash": "sha256:a13d42a4a77baa0b571a1caf958da1450f35145695c7a802b4c1f11d9707b180",
+      "keywords": [
+        "overview"
+      ],
+      "local_path": "Deep Agents overview.md",
+      "source_path": "/oss/python/deepagents/overview",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/overview",
+      "summary": "Agent harness for planning, subagents, and file-system context, available as Managed Deep Agents or the Deep Agents SDK",
+      "title": "Deep Agents overview",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Delegation/Async subagents.md": {
+      "content_hash": "sha256:515fdfd6615503e58937bf5eb093c01e3ffb2071dc229c908439341c24ae4b89",
+      "keywords": [
+        "Delegation",
+        "async-subagents"
+      ],
+      "local_path": "Delegation/Async subagents.md",
+      "source_path": "/oss/python/deepagents/async-subagents",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/async-subagents",
+      "summary": "Launch background subagents that run concurrently while the supervisor continues interacting with the user",
+      "title": "Async subagents",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Delegation/Dynamic subagents.md": {
+      "content_hash": "sha256:3ed85ce371638bf5595a4c758c9a46a85c5e966aa7441db84918b7555648dded",
+      "keywords": [
+        "Delegation",
+        "dynamic-subagents"
+      ],
+      "local_path": "Delegation/Dynamic subagents.md",
+      "source_path": "/oss/python/deepagents/dynamic-subagents",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/dynamic-subagents",
+      "summary": "Use interpreters to dispatch and orchestrate Deep Agents subagents from code",
+      "title": "Dynamic subagents",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Delegation/Subagents.md": {
+      "content_hash": "sha256:b48fa41a8502332fa48ef9ebb454142c5035d971e56c26214dae6ae4da67e1a8",
+      "keywords": [
+        "Delegation",
+        "subagents"
+      ],
+      "local_path": "Delegation/Subagents.md",
+      "source_path": "/oss/python/deepagents/subagents",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/subagents",
+      "summary": "Learn how to use subagents to delegate work and keep context clean",
+      "title": "Subagents",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Deployment/Going to production/Fault tolerance.md": {
+      "content_hash": "sha256:b71ca61b7bd5af0d948954af904103a83d492950846b50521e77342bbd41d019",
+      "keywords": [
+        "Deployment",
+        "Going to production",
+        "fault-tolerance"
+      ],
+      "local_path": "Deployment/Going to production/Fault tolerance.md",
+      "source_path": "/oss/python/deepagents/fault-tolerance",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/fault-tolerance",
+      "summary": "Make your deep agent resilient with rate limiting, retries, fallbacks, and error handling",
+      "title": "Fault tolerance",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Deployment/Going to production/index.md": {
+      "content_hash": "sha256:ec344e9b81b1fb21f952c674c0aa4f51e639c28bc905ff5ca6aa0203a768ce83",
+      "keywords": [
+        "Deployment",
+        "Going to production",
+        "going-to-production"
+      ],
+      "local_path": "Deployment/Going to production/index.md",
+      "source_path": "/oss/python/deepagents/going-to-production",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/going-to-production",
+      "summary": "Take your deep agent to production with persistent memory, sandboxes, resilience middleware, and deployment options",
+      "title": "Going to production",
+      "updated_at": "2026-11-06T16:28:22Z"
+    },
+    "Deployment/Managed Deep Agents.md": {
+      "content_hash": "sha256:bf816771363042de03e45e8772a549ebc0ed87c824f75743a7c382929b4a0ca6",
+      "keywords": [
+        "Deployment",
+        "managed-deep-agents"
+      ],
+      "local_path": "Deployment/Managed Deep Agents.md",
+      "source_path": "/langsmith/python/managed-deep-agents-overview",
+      "source_url": "https://docs.langchain.com/langsmith/python/managed-deep-agents-overview",
+      "summary": "Build your agent as a directory of files while LangSmith runs the harness and runtime.",
+      "title": "Managed Deep Agents",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Examples/Deep Agents/Build a content builder agent.md": {
+      "content_hash": "sha256:5f5b1f0365a9d8cc5f020f8eb3c1908d9913f92fcf72ac7aa949c2678052c56d",
+      "keywords": [
+        "Deep Agents",
+        "Examples",
+        "content-builder"
+      ],
+      "local_path": "Examples/Deep Agents/Build a content builder agent.md",
+      "source_path": "/oss/python/deepagents/content-builder",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/content-builder",
+      "summary": "Build a content writing agent with brand voice, skills, subagents, and image generation using Managed Deep Agents or the Deep Agents SDK",
+      "title": "Build a content builder agent",
+      "updated_at": "2026-11-06T16:28:22Z"
+    },
+    "Examples/Deep Agents/Build a data analysis agent.md": {
+      "content_hash": "sha256:a1a50f9cd8780a1161b3d47519f1d29b6dd952e0daf4e1e2224cd91c04c93b3b",
+      "keywords": [
+        "Deep Agents",
+        "Examples",
+        "data-analysis"
+      ],
+      "local_path": "Examples/Deep Agents/Build a data analysis agent.md",
+      "source_path": "/oss/python/deepagents/data-analysis",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/data-analysis",
+      "summary": "Build an agent that analyzes data files, generates visualizations, and shares results",
+      "title": "Build a data analysis agent",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Examples/Deep Agents/Build a deep research agent.md": {
+      "content_hash": "sha256:3f3137fca642d4b95025eec0ee5a2099362e5a8af810ee4fbe02c1cd6bc17292",
+      "keywords": [
+        "Deep Agents",
+        "Examples",
+        "deep-research"
+      ],
+      "local_path": "Examples/Deep Agents/Build a deep research agent.md",
+      "source_path": "/oss/python/deepagents/deep-research",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/deep-research",
+      "summary": "Build a multi-step web research agent with subagent delegation using Managed Deep Agents or the Deep Agents SDK",
+      "title": "Build a deep research agent",
+      "updated_at": "2026-11-06T16:28:22Z"
+    },
+    "Examples/Deep Agents/Retrieval Augmented Generation (RAG) with Deep Agents.md": {
+      "content_hash": "sha256:4008229d66c94e85ea08594e69279c50e51f25e306f3d4c8978e75e613e5767c",
+      "keywords": [
+        "Deep Agents",
+        "Examples",
+        "rag"
+      ],
+      "local_path": "Examples/Deep Agents/Retrieval Augmented Generation (RAG) with Deep Agents.md",
+      "source_path": "/oss/python/deepagents/rag",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/rag",
+      "summary": "RAG patterns for Deep Agents, including skills-guided retrieval, rubric grading, and a tutorial that indexes LangChain docs, offloads chunks to the filesystem, and delegates analysis to subagents",
+      "title": "Retrieval Augmented Generation (RAG) with Deep Agents",
+      "updated_at": "2026-11-06T16:28:22Z"
+    },
+    "Execution environment/Backends.md": {
+      "content_hash": "sha256:789ecd69ac86d516d3521908ce84b0085e32b71815a79c29a4ef3391852a45b7",
+      "keywords": [
+        "Execution environment",
+        "backends"
+      ],
+      "local_path": "Execution environment/Backends.md",
+      "source_path": "/oss/python/deepagents/backends",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/backends",
+      "summary": "Choose and configure filesystem backends for Deep Agents. You can specify routes to different backends, implement virtual filesystems, and enforce policies.",
+      "title": "Backends",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Execution environment/Browser use.md": {
+      "content_hash": "sha256:ef1f167efbcf664b0259a0c8ef4f8cdca0813027bbad8a9d3bb02c9ec5084ca1",
+      "keywords": [
+        "Execution environment",
+        "browser-use"
+      ],
+      "local_path": "Execution environment/Browser use.md",
+      "source_path": "/oss/python/deepagents/browser-use",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/browser-use",
+      "summary": "Give a deep agent a browser so it can take actions on websites and test web apps end to end.",
+      "title": "Browser use",
+      "updated_at": "2026-11-06T16:28:22Z"
+    },
+    "Execution environment/Event streaming.md": {
+      "content_hash": "sha256:6ebec41b9315fd5271ed805d4bfb584484095c4e2adfc519956d9ceb1b696780",
+      "keywords": [
+        "Execution environment",
+        "event-streaming"
+      ],
+      "local_path": "Execution environment/Event streaming.md",
+      "source_path": "/oss/python/deepagents/event-streaming",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/event-streaming",
+      "summary": "Stream subagents, messages, tool calls, and final output from Deep Agents.",
+      "title": "Event streaming",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Execution environment/Interpreters.md": {
+      "content_hash": "sha256:0afe120c74028cde110dd3a20422029a8c7389dd4a1bc8f23e1ce15a30ab74bb",
+      "keywords": [
+        "Execution environment",
+        "interpreters"
+      ],
+      "local_path": "Execution environment/Interpreters.md",
+      "source_path": "/oss/python/deepagents/interpreters",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/interpreters",
+      "summary": "Run lightweight code inside Deep Agents to compose tools, orchestrate subagents, and transform structured data",
+      "title": "Interpreters",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Execution environment/Multimodal inputs and outputs.md": {
+      "content_hash": "sha256:cadb58b7f25e4c7c6812bce6b58f2f94371c9b3565d8c80defbd20737029528b",
+      "keywords": [
+        "Execution environment",
+        "multimodal"
+      ],
+      "local_path": "Execution environment/Multimodal inputs and outputs.md",
+      "source_path": "/oss/python/deepagents/multimodal",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/multimodal",
+      "summary": "Use images, audio, video, and documents with Deep Agents when your model supports multimodal inputs and tool results",
+      "title": "Multimodal inputs and outputs",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Execution environment/Permissions.md": {
+      "content_hash": "sha256:a7abe89983196fc6e662a8446ba93179be15009281c746f50edc5d841d97b689",
+      "keywords": [
+        "Execution environment",
+        "permissions"
+      ],
+      "local_path": "Execution environment/Permissions.md",
+      "source_path": "/oss/python/deepagents/permissions",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/permissions",
+      "summary": "Control filesystem access with declarative permission rules for Deep Agents",
+      "title": "Permissions",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Execution environment/Sandboxes.md": {
+      "content_hash": "sha256:a6fccb24fbc12cce4fa6b9ac4e06ebb5d682684567a2ca35e9f2e05382e3ee4e",
+      "keywords": [
+        "Execution environment",
+        "sandboxes"
+      ],
+      "local_path": "Execution environment/Sandboxes.md",
+      "source_path": "/oss/python/deepagents/sandboxes",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/sandboxes",
+      "summary": "Execute code in isolated environments with sandbox backends",
+      "title": "Sandboxes",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Execution environment/Streaming.md": {
+      "content_hash": "sha256:8c6a1fdc9970e5e5901c47cdbabdc5804f91da00477c2c3879e0dea5abff0057",
+      "keywords": [
+        "Execution environment",
+        "streaming"
+      ],
+      "local_path": "Execution environment/Streaming.md",
+      "source_path": "/oss/python/deepagents/streaming",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/streaming",
+      "summary": "Stream real-time updates from deep agent runs and subagent execution",
+      "title": "Streaming",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Execution environment/Tools.md": {
+      "content_hash": "sha256:ad16bd45975e54ef0ede27c886af037cfdcdc6911950b2660f0ffb033ad351ca",
+      "keywords": [
+        "Execution environment",
+        "tools"
+      ],
+      "local_path": "Execution environment/Tools.md",
+      "source_path": "/oss/python/deepagents/tools",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/tools",
+      "summary": "Connect Deep Agents to custom functions, APIs, databases, and any MCP server",
+      "title": "Tools",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Frontend/Overview.md": {
+      "content_hash": "sha256:587b949ba3fe7f66e9801e0e271834bac299632b5b0996005e38febb111231da",
+      "keywords": [
+        "Frontend",
+        "overview"
+      ],
+      "local_path": "Frontend/Overview.md",
+      "source_path": "/oss/python/deepagents/frontend/overview",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/frontend/overview",
+      "summary": "Build UIs that display real-time subagent streams, task progress, and sandbox for Deep Agents",
+      "title": "Overview",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Frontend/Patterns/Sandbox.md": {
+      "content_hash": "sha256:0e16c45415a9657fc010c1d815b821651abcbe09f70988c57c1e690453a046ff",
+      "keywords": [
+        "Frontend",
+        "Patterns",
+        "sandbox"
+      ],
+      "local_path": "Frontend/Patterns/Sandbox.md",
+      "source_path": "/oss/python/deepagents/frontend/sandbox",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/frontend/sandbox",
+      "summary": "Build an IDE-like UI for a coding agent backed by a sandbox environment",
+      "title": "Sandbox",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Frontend/Patterns/Subagent streaming.md": {
+      "content_hash": "sha256:8bff1a8ef2731557b67a27c380c81009b43eea115fc854670b9336721d4d0044",
+      "keywords": [
+        "Frontend",
+        "Patterns",
+        "subagent-streaming"
+      ],
+      "local_path": "Frontend/Patterns/Subagent streaming.md",
+      "source_path": "/oss/python/deepagents/frontend/subagent-streaming",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/frontend/subagent-streaming",
+      "summary": "Display specialist subagents with streaming content, progress tracking, and collapsible cards",
+      "title": "Subagent streaming",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Frontend/Patterns/Todo list.md": {
+      "content_hash": "sha256:0ceee47519635d9582882b8626b88712ee4e1b63e528fa75c15804d0ed49a680",
+      "keywords": [
+        "Frontend",
+        "Patterns",
+        "todo-list"
+      ],
+      "local_path": "Frontend/Patterns/Todo list.md",
+      "source_path": "/oss/python/deepagents/frontend/todo-list",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/frontend/todo-list",
+      "summary": "Track agent progress with a real-time todo list synced from agent state",
+      "title": "Todo list",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Get started/Changelog.md": {
+      "content_hash": "sha256:1c8d10249f2979bc71bd0df5513ba1e00739b7c65853097941158def4a220627",
+      "keywords": [
+        "Get started",
+        "changelog-py"
+      ],
+      "local_path": "Get started/Changelog.md",
+      "source_path": "/oss/python/releases/changelog",
+      "source_url": "https://docs.langchain.com/oss/python/releases/changelog",
+      "summary": "Log of updates and improvements to our Python packages",
+      "title": "Changelog",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Get started/Comparison with Claude Agent SDK.md": {
+      "content_hash": "sha256:be23a4e876636c7b7acb2b4ebe61a99c71c57f3330e65809df5060cc3a123231",
+      "keywords": [
+        "Get started",
+        "comparison"
+      ],
+      "local_path": "Get started/Comparison with Claude Agent SDK.md",
+      "source_path": "/oss/python/deepagents/comparison",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/comparison",
+      "summary": "Compare LangChain Deep Agents and Managed Deep Agents with the Claude Agent SDK to choose the right tool for your use case.",
+      "title": "Comparison with Claude Agent SDK",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Get started/Customize Deep Agents.md": {
+      "content_hash": "sha256:369f7f33ea8bf07280a06c3930d585803e67566ac2f2b12d3c5b2e7470e26e21",
+      "keywords": [
+        "Get started",
+        "customization"
+      ],
+      "local_path": "Get started/Customize Deep Agents.md",
+      "source_path": "/oss/python/deepagents/customization",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/customization",
+      "summary": "Learn how to customize Deep Agents with system prompts, tools, subagents, and more",
+      "title": "Customize Deep Agents",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Get started/Models.md": {
+      "content_hash": "sha256:e5c1cbb6a586a5af3affcb71dd0ab6a3507246a567ed0eb97787608ea3a333fe",
+      "keywords": [
+        "Get started",
+        "models"
+      ],
+      "local_path": "Get started/Models.md",
+      "source_path": "/oss/python/deepagents/models",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/models",
+      "summary": "Configure model providers and parameters for Deep Agents",
+      "title": "Models",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Get started/Quickstart.md": {
+      "content_hash": "sha256:2b1ae38b2ae7041636f203885e360331d2d78aaf318b0acaef68791029e5d0c6",
+      "keywords": [
+        "Get started",
+        "quickstart"
+      ],
+      "local_path": "Get started/Quickstart.md",
+      "source_path": "/oss/python/deepagents/quickstart",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/quickstart",
+      "summary": "Build your first deep agent in minutes",
+      "title": "Quickstart",
+      "updated_at": "2026-11-06T16:28:22Z"
+    },
+    "Middleware/Custom middleware.md": {
+      "content_hash": "sha256:d30a455f4700f17c48f04d30c846b97675c89307b40f618b825e00045396db32",
+      "keywords": [
+        "Middleware",
+        "custom"
+      ],
+      "local_path": "Middleware/Custom middleware.md",
+      "source_path": "/oss/python/langchain/middleware/custom",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/middleware/custom",
+      "summary": "[card] [Node-style hooks](#node-style-hooks)",
+      "title": "Custom middleware",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Middleware/Middleware overview.md": {
+      "content_hash": "sha256:b766c5a47c56f282e2d692831edc0d3b358431a93500b2a59fcb8ddf6ee73cdd",
+      "keywords": [
+        "Middleware",
+        "overview"
+      ],
+      "local_path": "Middleware/Middleware overview.md",
+      "source_path": "/oss/python/langchain/middleware/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/middleware/overview",
+      "summary": "Control and customize agent execution at every step",
+      "title": "Middleware overview",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Middleware/Prebuilt middleware.md": {
+      "content_hash": "sha256:8ac0844f610a024716aedcb6e66f2deecbac0b2427e96ca4fade4c5e8b14ea67",
+      "keywords": [
+        "Middleware",
+        "built-in"
+      ],
+      "local_path": "Middleware/Prebuilt middleware.md",
+      "source_path": "/oss/python/langchain/middleware/built-in",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "summary": "Prebuilt middleware for common agent use cases",
+      "title": "Prebuilt middleware",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Protocols/A2A endpoint in Agent Server.md": {
+      "content_hash": "sha256:0b000f60a9a15e606dd674ceacf524b247d0cf4a13341b0b8bef38b7dfba0770",
+      "keywords": [
+        "Protocols",
+        "a2a"
+      ],
+      "local_path": "Protocols/A2A endpoint in Agent Server.md",
+      "source_path": "/langsmith/server-a2a",
+      "source_url": "https://docs.langchain.com/langsmith/server-a2a",
+      "summary": "Use the A2A protocol to enable agent-to-agent communication with distributed tracing in LangSmith.",
+      "title": "A2A endpoint in Agent Server",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Protocols/Agent Client Protocol (ACP).md": {
+      "content_hash": "sha256:bb2be57fc4cf989d236f56dababb1709a0fa027279f6ca7f3e787332859304f5",
+      "keywords": [
+        "Protocols",
+        "acp"
+      ],
+      "local_path": "Protocols/Agent Client Protocol (ACP).md",
+      "source_path": "/oss/python/deepagents/acp",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/acp",
+      "summary": "Expose Deep Agents over the Agent Client Protocol (ACP) to integrate with code editors and IDEs.",
+      "title": "Agent Client Protocol (ACP)",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Protocols/Agent User Interaction Protocol (AG-UI).md": {
+      "content_hash": "sha256:8b9dffe751ef486f4b7b7ce73ffeacf398ad395f6dff07fb37bf2867e3c5aa69",
+      "keywords": [
+        "Protocols",
+        "ag-ui"
+      ],
+      "local_path": "Protocols/Agent User Interaction Protocol (AG-UI).md",
+      "source_path": "/oss/python/deepagents/ag-ui",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/ag-ui",
+      "summary": "Expose deep agents over the Agent User Interaction Protocol (AG-UI) to stream events to any AG-UI client or frontend.",
+      "title": "Agent User Interaction Protocol (AG-UI)",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Protocols/Model Context Protocol (MCP).md": {
+      "content_hash": "sha256:5db0398ba423863bb965ec240a79cb0ad7cf877b8d2463e79c7c225c44370291",
+      "keywords": [
+        "Protocols",
+        "mcp"
+      ],
+      "local_path": "Protocols/Model Context Protocol (MCP).md",
+      "source_path": "/oss/python/langchain/mcp",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/mcp",
+      "summary": "Connect LangChain agents to MCP servers with MCPAdapter.",
+      "title": "Model Context Protocol (MCP)",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Steering/Grading rubrics.md": {
+      "content_hash": "sha256:d973448d6a5096ac483258ec0f5ae720c56132b6dd59678f10f5b7dff12e5b2a",
+      "keywords": [
+        "Steering",
+        "rubric"
+      ],
+      "local_path": "Steering/Grading rubrics.md",
+      "source_path": "/oss/python/deepagents/rubric",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/rubric",
+      "summary": "LLM-as-a-judge grading for agents that iterate against a rubric until done",
+      "title": "Grading rubrics",
+      "updated_at": "2026-11-06T16:21:38Z"
+    },
+    "Steering/Human-in-the-loop.md": {
+      "content_hash": "sha256:9ae2a56ebb13783787b0583e4335136807ee195120db38501e5ae27c5ef8e1d1",
+      "keywords": [
+        "Steering",
+        "human-in-the-loop"
+      ],
+      "local_path": "Steering/Human-in-the-loop.md",
+      "source_path": "/oss/python/deepagents/human-in-the-loop",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/human-in-the-loop",
+      "summary": "Learn how to configure human approval for sensitive tool operations",
+      "title": "Human-in-the-loop",
+      "updated_at": "2026-11-06T16:21:38Z"
+    }
+  },
+  "last_sync_at": "2026-11-06T16:28:22Z",
+  "schema_version": 1,
+  "wiki": {
+    "language": "英文官方文档；Python SDK 当前在线版本；中文检索与回答入口",
+    "license": "MIT License，Copyright (c) 2025 LangChain；上游 https://github.com/langchain-ai/docs/blob/main/LICENSE，完整许可见 references/UPSTREAM-LICENSE.txt。正文使用官方 Markdown，配图来自官方源码的固定提交。",
+    "scope": "Python Deep Agents 全部导航页面与 4 个 Python 实战示例，合并官方 llms 索引、sitemap 和 docs.json 去重；包含导航直接引用的中间件、部署、OpenWiki、MCP、A2A 和更新日志入口，共 44 页。TypeScript SDK、Deep Agents Code、独立 API Reference 及链接目标子站的递归扩展不在范围内。",
+    "skill_name": "deepagents-wiki",
+    "source_root": "https://docs.langchain.com/oss/python/deepagents",
+    "title": "Deep Agents"
+  }
+}
