@@ -18,6 +18,7 @@ README 的能力地图按使用场景分组展示，分组只是阅读视角，�
 
 | Skill | 模式 | 适用场景 |
 |---|---|---|
+| [langgraph-wiki](skills/langgraph-wiki/SKILL.md) | Tool Wrapper | 检索 LangGraph Python 官方文档，回答 Graph / Functional API、持久化、人工介入、流式输出、子图、部署和排障问题 |
 | [llama-index-wiki](skills/llama-index-wiki/SKILL.md) | Tool Wrapper | 检索 LlamaIndex Python 用户文档，回答 RAG、索引、检索、Agent、Workflow、集成、评估、部署与 LlamaParse 问题 |
 | [qianwenai-wiki](skills/qianwenai-wiki/SKILL.md) | Tool Wrapper | 检索千问AI平台官方文档，回答模型接入、OpenAI 兼容与 DashScope API、文本/多模态生成、Realtime、计费和排障问题 |
 | [qoder-wiki](skills/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |

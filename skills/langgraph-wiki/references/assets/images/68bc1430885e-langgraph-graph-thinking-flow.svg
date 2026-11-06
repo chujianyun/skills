@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" role="img" aria-labelledby="title desc">
+  <title id="title">Graph API email agent control flow</title>
+  <desc id="desc">Flowchart from START through Read Email and Classify Intent, then Command routes to Doc Search, Bug Track, or Draft Reply, then Human Review or Send Reply, ending at END. Solid arrows are fixed edges. Dashed arrows are Command routes.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#40668D"/>
+    </marker>
+    <style>
+      .box { fill: #E5F4FF; stroke: #006DDD; stroke-width: 1.5; }
+      .terminal { fill: #F2FAFF; stroke: #40668D; stroke-width: 1.5; }
+      .label { fill: #030710; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 11px; text-anchor: middle; dominant-baseline: middle; }
+      .edge { fill: #2F4B68; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 9px; text-anchor: middle; }
+      .line { stroke: #40668D; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .line-cmd { stroke: #40668D; stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; marker-end: url(#arrow); }
+      .legend { fill: #2F4B68; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 9px; text-anchor: start; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <!-- Legend -->
+  <line class="line" x1="20" y1="14" x2="48" y2="14"/>
+  <text class="legend" x="54" y="14">Fixed edge</text>
+  <line class="line-cmd" x1="130" y1="14" x2="158" y2="14"/>
+  <text class="legend" x="164" y="14">Command route</text>
+
+  <!-- START -->
+  <rect class="terminal" x="230" y="30" width="100" height="26" rx="13"/>
+  <text class="label" x="280" y="43">START</text>
+  <line class="line" x1="280" y1="56" x2="280" y2="70"/>
+
+  <!-- Read Email -->
+  <rect class="box" x="225" y="70" width="110" height="26" rx="5"/>
+  <text class="label" x="280" y="83">Read Email</text>
+  <line class="line" x1="280" y1="96" x2="280" y2="110"/>
+
+  <!-- Classify Intent -->
+  <rect class="box" x="220" y="110" width="120" height="26" rx="5"/>
+  <text class="label" x="280" y="123">Classify Intent</text>
+
+  <!-- Command routes from Classify Intent -->
+  <path class="line-cmd" d="M 220 123 H 90 V 152"/>
+  <line class="line-cmd" x1="280" y1="136" x2="280" y2="200"/>
+  <path class="line-cmd" d="M 340 123 H 470 V 152"/>
+
+  <!-- Doc Search / Bug Track -->
+  <rect class="box" x="50" y="152" width="80" height="26" rx="5"/>
+  <text class="label" x="90" y="165">Doc Search</text>
+
+  <rect class="box" x="430" y="152" width="80" height="26" rx="5"/>
+  <text class="label" x="470" y="165">Bug Track</text>
+
+  <!-- Solid merge into Draft Reply -->
+  <path class="line" d="M 90 178 V 213 H 225"/>
+  <path class="line" d="M 470 178 V 213 H 335"/>
+
+  <!-- Draft Reply (Command target from Classify, merge target from Doc/Bug) -->
+  <rect class="box" x="225" y="200" width="110" height="26" rx="5"/>
+  <text class="label" x="280" y="213">Draft Reply</text>
+
+  <!-- Command routes from Draft Reply -->
+  <path class="line-cmd" d="M 225 213 H 160 V 250"/>
+  <path class="line-cmd" d="M 335 213 H 400 V 250"/>
+
+  <!-- Human Review / Send Reply -->
+  <rect class="box" x="110" y="250" width="100" height="26" rx="5"/>
+  <text class="label" x="160" y="263">Human Review</text>
+
+  <rect class="box" x="350" y="250" width="100" height="26" rx="5"/>
+  <text class="label" x="400" y="263">Send Reply</text>
+
+  <!-- Human Review -> Send Reply (fixed), both -> END (top center) -->
+  <path class="line" d="M 210 263 H 350"/>
+  <path class="line" d="M 160 276 V 288 H 280 V 300"/>
+  <path class="line" d="M 400 276 V 288 H 280 V 300"/>
+
+  <!-- END -->
+  <rect class="terminal" x="230" y="300" width="100" height="26" rx="13"/>
+  <text class="label" x="280" y="313">END</text>
+</svg>

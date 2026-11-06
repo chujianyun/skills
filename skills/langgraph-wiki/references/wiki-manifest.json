@@ -1,0 +1,940 @@
+{
+  "assets": {
+    "images/0a5ab79ddb15-studio_create-agent.png": {
+      "content_hash": "sha256:50e912e04a192c7088d0b106347eda25c44b496ac4e8fb3a49dabc21ea1b0074",
+      "local_path": "images/0a5ab79ddb15-studio_create-agent.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/studio_create-agent.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/0ca3f961879c-augmented_llm.png": {
+      "content_hash": "sha256:98a1398f3b5b393b99967304122e9bd4605b8b11139ee42fc172da1317cfc11a",
+      "local_path": "images/0ca3f961879c-augmented_llm.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/augmented_llm.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/13c850453e64-agentic-rag-output.png": {
+      "content_hash": "sha256:23e192104524074fb91cb17d8fca7ef0f6777f6c5910deadd30b9ac98ba51c39",
+      "local_path": "images/13c850453e64-agentic-rag-output.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/agentic-rag-output.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/143d8528526a-summary.png": {
+      "content_hash": "sha256:010ca6cdd95a24c16a98121a8fa256113ca4f54df5060d67559ad231dba40c72",
+      "local_path": "images/143d8528526a-summary.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/summary.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/14b079041538-evaluator_optimizer.png": {
+      "content_hash": "sha256:f4808141bc160085a04c2b1afa9c53247277e6479e734e1d3d3a409e508031e7",
+      "local_path": "images/14b079041538-evaluator_optimizer.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/evaluator_optimizer.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/18ad1df7f923-sql-agent-langgraph.png": {
+      "content_hash": "sha256:72cb96ea3b2db9054e076197b69b536e081aa6ef3a11965b900c558d4e5a4755",
+      "local_path": "images/18ad1df7f923-sql-agent-langgraph.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/sql-agent-langgraph.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/26bcd9ccaec3-graph_api_image_10.png": {
+      "content_hash": "sha256:0a7b2f19e8f57dc4a083c7f638f917914c240aa53fda085750f3eac9a45e60bf",
+      "local_path": "images/26bcd9ccaec3-graph_api_image_10.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/graph_api_image_10.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/3647b9122673-langgraph-interrupt-response-schema.png": {
+      "content_hash": "sha256:352ffa45c146a41653d9ef24bd775eaa28d07da5be4a32b7aa693fe5fe838244",
+      "local_path": "images/3647b9122673-langgraph-interrupt-response-schema.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/images/langgraph-interrupt-response-schema.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/3a9bbdf33d4c-checkpoints.jpg": {
+      "content_hash": "sha256:860534fed36c17556f4ef039dd8fc9e4f6b9c905f7c9e5f8303b225f6029770e",
+      "local_path": "images/3a9bbdf33d4c-checkpoints.jpg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/checkpoints.jpg",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/43ef4082674b-shared_state.png": {
+      "content_hash": "sha256:7282198af2ca736b52bd361576636a6a80058c031e9e9af54165c5e9f5720ba7",
+      "local_path": "images/43ef4082674b-shared_state.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/shared_state.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/50b4c36109ec-parallelization.png": {
+      "content_hash": "sha256:5e2bc8ecfbe08e53dc3ea0937bf90e9fd9b6b7ef48104cc106625a43a5213793",
+      "local_path": "images/50b4c36109ec-parallelization.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/parallelization.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/51f8ada861f6-worker.png": {
+      "content_hash": "sha256:fea381ac53c99526731fa7d396aa2bc7a30ca06669b4ab2a71d71307131f80cc",
+      "local_path": "images/51f8ada861f6-worker.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/worker.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/5c23b6227814-routing.png": {
+      "content_hash": "sha256:9c5296f43b985ec391d3260e8a61c12b530e9328e3c04707858111f0e881c78a",
+      "local_path": "images/5c23b6227814-routing.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/routing.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/64c61dabdace-agent.png": {
+      "content_hash": "sha256:a56d00895736cbad467d0cd69bb5a0c66244161e83db5ceec98014c9395f144d",
+      "local_path": "images/64c61dabdace-agent.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/agent.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/67db68eaa8cd-prompt_chain.png": {
+      "content_hash": "sha256:8c573c551899ab71ca5ce4d6253aba82de39e1b5273f3a64e649a8dd23c728ba",
+      "local_path": "images/67db68eaa8cd-prompt_chain.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/prompt_chain.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/68bc1430885e-langgraph-graph-thinking-flow.svg": {
+      "content_hash": "sha256:dfdd551740e1b7788d97df8e4f204e9e2b91ba4cb2285baab478b07a728881d2",
+      "local_path": "images/68bc1430885e-langgraph-graph-thinking-flow.svg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/images/langgraph-graph-thinking-flow.svg",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/6eae6fc2c3f5-langgraph-hybrid-rag-tutorial.png": {
+      "content_hash": "sha256:e8a37e3d1df2e71e724506714acb32da3465a3b6b1c81f3e8ac2283c74b887f4",
+      "local_path": "images/6eae6fc2c3f5-langgraph-hybrid-rag-tutorial.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/images/langgraph-hybrid-rag-tutorial.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/7b3810d15db8-static-interrupt.png": {
+      "content_hash": "sha256:fd6db83277383f4bf3e3ff669d116b856f8b6499cecb9d9648cf02883a7d8d8d",
+      "local_path": "images/7b3810d15db8-static-interrupt.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/static-interrupt.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/91055d9317ce-re_play.png": {
+      "content_hash": "sha256:b36fa162da9f57eed263ec1d451ff59184445f098c0bcea486d67902528b3c6a",
+      "local_path": "images/91055d9317ce-re_play.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/re_play.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/a3b82c6243d6-agent_workflow.png": {
+      "content_hash": "sha256:925160425318d1649b8240b03376c344cb856d4443b37938df1288bf51286034",
+      "local_path": "images/a3b82c6243d6-agent_workflow.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/agent_workflow.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/a5ec80609b4c-get_state.jpg": {
+      "content_hash": "sha256:f2172c7078c499411dbc19f8dd34f364344fe2d4ca69afccb8dd81ef42146c32",
+      "local_path": "images/a5ec80609b4c-get_state.jpg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/get_state.jpg",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/b660daedae06-langgraph-functional-thinking-flow.svg": {
+      "content_hash": "sha256:1d9ee999e75383ac755113923f46bb5e4af75ad90463a819dbd95015147a7a85",
+      "local_path": "images/b660daedae06-langgraph-functional-thinking-flow.svg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/images/langgraph-functional-thinking-flow.svg",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/c1342fcecb3b-checkpoints_full_story.jpg": {
+      "content_hash": "sha256:b1e16607b0656779fd7f006a4e599db2908146ef8d17c4cf09c77c816bda40d9",
+      "local_path": "images/c1342fcecb3b-checkpoints_full_story.jpg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/checkpoints_full_story.jpg",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "images/edf324bb9734-subgraph.png": {
+      "content_hash": "sha256:e07e914b2f224fd7a748f3f6a1fdc87d7f4014a0b49fdb18d07f7ac4a159c271",
+      "local_path": "images/edf324bb9734-subgraph.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/subgraph.png",
+      "updated_at": "2026-11-06T16:23:38Z"
+    }
+  },
+  "coverage": {
+    "captured": 53,
+    "complete": true,
+    "discovered": 53,
+    "excluded": [
+      {
+        "reason": "Different SDK language",
+        "url": "https://docs.langchain.com/oss/javascript/langgraph/overview"
+      },
+      {
+        "reason": "JavaScript-only source variant",
+        "url": "https://docs.langchain.com/oss/python/langgraph/changelog-js"
+      },
+      {
+        "reason": "Separate API reference site outside the requested documentation scope",
+        "url": "https://reference.langchain.com/python/langgraph/"
+      }
+    ],
+    "failed": []
+  },
+  "created_at": "2026-11-06T16:23:38Z",
+  "documents": {
+    "Advanced/Build with the Functional API/Add human-in-the-loop with the Functional API.md": {
+      "content_hash": "sha256:987bd607b2697f4047097eda752da313fc4c62ad8721cbe718806d8b2a492289",
+      "keywords": [
+        "Advanced",
+        "Build with the Functional API",
+        "api",
+        "functional",
+        "human",
+        "in",
+        "loop",
+        "the"
+      ],
+      "local_path": "Advanced/Build with the Functional API/Add human-in-the-loop with the Functional API.md",
+      "source_path": "/oss/python/langgraph/functional-api-human-in-the-loop",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/functional-api-human-in-the-loop",
+      "summary": "Pause Functional API workflows for approval and review tool calls with interrupts.",
+      "title": "Add human-in-the-loop with the Functional API",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Advanced/Build with the Functional API/Add memory with the Functional API.md": {
+      "content_hash": "sha256:723bdd89c5633f0735eb4d0d7a2d8d0a97654174b30f8425dde78232d0eb9d96",
+      "keywords": [
+        "Advanced",
+        "Build with the Functional API",
+        "api",
+        "functional",
+        "memory"
+      ],
+      "local_path": "Advanced/Build with the Functional API/Add memory with the Functional API.md",
+      "source_path": "/oss/python/langgraph/functional-api-memory",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/functional-api-memory",
+      "summary": "Use short-term checkpoints and long-term store memory in Functional API workflows.",
+      "title": "Add memory with the Functional API",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Advanced/Build with the Functional API/Build checklist for the Functional API.md": {
+      "content_hash": "sha256:a972f3197469bbdfe59eb20f06d99447f5769aa50076909c9f6e08841c4fd129",
+      "keywords": [
+        "Advanced",
+        "Build with the Functional API",
+        "api",
+        "functional",
+        "use"
+      ],
+      "local_path": "Advanced/Build with the Functional API/Build checklist for the Functional API.md",
+      "source_path": "/oss/python/langgraph/use-functional-api",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/use-functional-api",
+      "summary": "Decide how to compose entrypoints, tasks, streaming, interrupts, and memory with the Functional API.",
+      "title": "Build checklist for the Functional API",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Advanced/Build with the Functional API/Compose Functional API workflows.md": {
+      "content_hash": "sha256:e4114565fd8e7a20f4c69fe7bc7e6c0387b291d9286d3abf085c7ed11d6b5c4d",
+      "keywords": [
+        "Advanced",
+        "Build with the Functional API",
+        "api",
+        "functional",
+        "workflows"
+      ],
+      "local_path": "Advanced/Build with the Functional API/Compose Functional API workflows.md",
+      "source_path": "/oss/python/langgraph/functional-api-workflows",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/functional-api-workflows",
+      "summary": "Build entrypoints and tasks, run work in parallel, and call graphs or other entrypoints.",
+      "title": "Compose Functional API workflows",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Advanced/Build with the Functional API/Configure Functional API tasks.md": {
+      "content_hash": "sha256:11795b8554ba29f5c6752d0869ecf561426111418207f0c8de1daf5dfbeefaec",
+      "keywords": [
+        "Advanced",
+        "Build with the Functional API",
+        "api",
+        "functional",
+        "tasks"
+      ],
+      "local_path": "Advanced/Build with the Functional API/Configure Functional API tasks.md",
+      "source_path": "/oss/python/langgraph/functional-api-tasks",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/functional-api-tasks",
+      "summary": "Add retries, timeouts, caching, and error recovery to Functional API tasks and entrypoints.",
+      "title": "Configure Functional API tasks",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Advanced/Build with the Functional API/Functional API overview.md": {
+      "content_hash": "sha256:428378470e64d1c164d6d9cc42f0e8b6dd5aea3521e0957abeb509ea33f67fa7",
+      "keywords": [
+        "Advanced",
+        "Build with the Functional API",
+        "api",
+        "functional"
+      ],
+      "local_path": "Advanced/Build with the Functional API/Functional API overview.md",
+      "source_path": "/oss/python/langgraph/functional-api",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/functional-api",
+      "summary": "Learn Functional API entrypoints and tasks, how checkpointing and replay work, and how to avoid common resume pitfalls.",
+      "title": "Functional API overview",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Advanced/Build with the Functional API/Stream with the Functional API.md": {
+      "content_hash": "sha256:0977589c660a51eee14a7d9392c111616f3994ec145bb9a059e263703e00d7b8",
+      "keywords": [
+        "Advanced",
+        "Build with the Functional API",
+        "api",
+        "functional",
+        "streaming"
+      ],
+      "local_path": "Advanced/Build with the Functional API/Stream with the Functional API.md",
+      "source_path": "/oss/python/langgraph/functional-api-streaming",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/functional-api-streaming",
+      "summary": "Emit custom progress from Functional API entrypoints, or read state snapshots from the values stream.",
+      "title": "Stream with the Functional API",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Advanced/Build with the Functional API/Thinking in the Functional API.md": {
+      "content_hash": "sha256:d16326ba5e1ccf7f45e0dd0ac33c5eeb152da9511588455bc48285a475ca0977",
+      "keywords": [
+        "Advanced",
+        "Build with the Functional API",
+        "api",
+        "functional",
+        "in",
+        "thinking"
+      ],
+      "local_path": "Advanced/Build with the Functional API/Thinking in the Functional API.md",
+      "source_path": "/oss/python/langgraph/thinking-in-functional-api",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/thinking-in-functional-api",
+      "summary": "Learn how to design agents with the LangGraph Functional API using entrypoints, tasks, and ordinary control flow.",
+      "title": "Thinking in the Functional API",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Advanced/LangGraph runtime.md": {
+      "content_hash": "sha256:8a5b74f99a28664c725b8722d5723ff094a43f695bc36db22303a4b55e28cb61",
+      "keywords": [
+        "Advanced",
+        "pregel"
+      ],
+      "local_path": "Advanced/LangGraph runtime.md",
+      "source_path": "/oss/python/langgraph/pregel",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/pregel",
+      "summary": "**Note:** The [`Pregel`](https://reference.langchain.com/python/langgraph/pregel/main/Pregel) runtime is named after [Google's Pregel algorithm](https://research.google/pubs/pub37252/), which describes an efficient method for large-scale parallel computation using graphs.",
+      "title": "LangGraph runtime",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Build with the Graph API/Build checklist for the Graph API.md": {
+      "content_hash": "sha256:548c9f44bf9566f608ac6ce729afadafb8bb3a35e78661fbc004ff22e40db01e",
+      "keywords": [
+        "Build with the Graph API",
+        "api",
+        "graph",
+        "use"
+      ],
+      "local_path": "Build with the Graph API/Build checklist for the Graph API.md",
+      "source_path": "/oss/python/langgraph/use-graph-api",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/use-graph-api",
+      "summary": "Decide state, control flow, Send, Command, and node options as you build with the Graph API.",
+      "title": "Build checklist for the Graph API",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Build with the Graph API/Build sequences, branches, and loops.md": {
+      "content_hash": "sha256:18d23760ee21da08a6f84a135317ce401418f067b54bde1db031124a003ecf50",
+      "keywords": [
+        "Build with the Graph API",
+        "api",
+        "control",
+        "flow",
+        "graph"
+      ],
+      "local_path": "Build with the Graph API/Build sequences, branches, and loops.md",
+      "source_path": "/oss/python/langgraph/graph-api-control-flow",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/graph-api-control-flow",
+      "summary": "Compose sequences, parallel branches, conditional edges, and loops with the LangGraph Graph API.",
+      "title": "Build sequences, branches, and loops",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Build with the Graph API/Configure nodes.md": {
+      "content_hash": "sha256:cf96b6d2aab4826bb4f3d5461f3763d6e8a09fddc167adb0d75887cbb2618412",
+      "keywords": [
+        "Build with the Graph API",
+        "api",
+        "graph",
+        "nodes"
+      ],
+      "local_path": "Build with the Graph API/Configure nodes.md",
+      "source_path": "/oss/python/langgraph/graph-api-nodes",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/graph-api-nodes",
+      "summary": "Add runtime configuration, retry policies, timeouts, error handling, defaults, and caching to LangGraph nodes.",
+      "title": "Configure nodes",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Build with the Graph API/Define and update state.md": {
+      "content_hash": "sha256:70f746dad73fc7739fa93dada710646e3c73b4cc4c17211f16032cbdb9a90eed",
+      "keywords": [
+        "Build with the Graph API",
+        "api",
+        "graph",
+        "state"
+      ],
+      "local_path": "Build with the Graph API/Define and update state.md",
+      "source_path": "/oss/python/langgraph/graph-api-state",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/graph-api-state",
+      "summary": "Define graph state schemas, reducers, messages, and private state in the LangGraph Graph API.",
+      "title": "Define and update state",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Build with the Graph API/Graph API overview.md": {
+      "content_hash": "sha256:ff6d52c421ace481bbe2d07839c1dc6d63af2b19cabb11c2ce624f2179127b6e",
+      "keywords": [
+        "Build with the Graph API",
+        "api",
+        "graph"
+      ],
+      "local_path": "Build with the Graph API/Graph API overview.md",
+      "source_path": "/oss/python/langgraph/graph-api",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/graph-api",
+      "summary": "Learn how LangGraph models agent workflows as graphs of shared state, nodes, and edges.",
+      "title": "Graph API overview",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Build with the Graph API/Thinking in the Graph API.md": {
+      "content_hash": "sha256:d4bcd2f39d0716723423edf4af6df571a9e92eee5b6babd9ea9332d10aa7158e",
+      "keywords": [
+        "Build with the Graph API",
+        "api",
+        "graph",
+        "in",
+        "thinking"
+      ],
+      "local_path": "Build with the Graph API/Thinking in the Graph API.md",
+      "source_path": "/oss/python/langgraph/thinking-in-graph-api",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/thinking-in-graph-api",
+      "summary": "Learn how to design agents with the LangGraph Graph API using nodes, edges, and shared state.",
+      "title": "Thinking in the Graph API",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Build with the Graph API/Use Send and Command.md": {
+      "content_hash": "sha256:84f9acff0b836349b809f4825785372db0558861d78f2f0b4661b3fe797fa730",
+      "keywords": [
+        "Build with the Graph API",
+        "api",
+        "command",
+        "graph",
+        "send"
+      ],
+      "local_path": "Build with the Graph API/Use Send and Command.md",
+      "source_path": "/oss/python/langgraph/graph-api-send-command",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/graph-api-send-command",
+      "summary": "Build map-reduce workflows with Send and combine state updates with routing using Command in LangGraph.",
+      "title": "Use Send and Command",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Build with the Graph API/Visualize your graph.md": {
+      "content_hash": "sha256:81e0f44937b910b59b555fe45669070dee8c71ed66470b2c4f7cf72aef6944d7",
+      "keywords": [
+        "Build with the Graph API",
+        "api",
+        "graph",
+        "visualize"
+      ],
+      "local_path": "Build with the Graph API/Visualize your graph.md",
+      "source_path": "/oss/python/langgraph/graph-api-visualize",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/graph-api-visualize",
+      "summary": "Render LangGraph graphs as Mermaid diagrams or PNG images for debugging and documentation.",
+      "title": "Visualize your graph",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Checkpointers.md": {
+      "content_hash": "sha256:c244679a034f241443374fb24ab10908bf1fe18d7ef00998bd405dcf58bcd37f",
+      "keywords": [
+        "Capabilities",
+        "checkpointers"
+      ],
+      "local_path": "Capabilities/Checkpointers.md",
+      "source_path": "/oss/python/langgraph/checkpointers",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/checkpointers",
+      "summary": "LangGraph checkpointers save graph state as checkpoints at each step, enabling persistence, human-in-the-loop, and fault-tolerant execution.",
+      "title": "Checkpointers",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Event streaming.md": {
+      "content_hash": "sha256:e92dccb08954b4dbe50741b83bfa91d6c434333aab11b430777813e88935c82c",
+      "keywords": [
+        "Capabilities",
+        "event",
+        "streaming"
+      ],
+      "local_path": "Capabilities/Event streaming.md",
+      "source_path": "/oss/python/langgraph/event-streaming",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/event-streaming",
+      "summary": "Stream LangGraph runs with typed projections for messages, state, subgraphs, output, and extensions.",
+      "title": "Event streaming",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Fault tolerance.md": {
+      "content_hash": "sha256:db73ba35b858004ee86498842636947101062058f92405e559bb0e0a9a39a602",
+      "keywords": [
+        "Capabilities",
+        "fault",
+        "tolerance"
+      ],
+      "local_path": "Capabilities/Fault tolerance.md",
+      "source_path": "/oss/python/langgraph/fault-tolerance",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/fault-tolerance",
+      "summary": "Configure per-node timeouts, retries, error handlers, and recovery strategies in LangGraph.",
+      "title": "Fault tolerance",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Interrupts.md": {
+      "content_hash": "sha256:1bf3d3df21205270a02050a1d4638eae82bb0f065d5d8b8d1c4e0c99ba9370bd",
+      "keywords": [
+        "Capabilities",
+        "interrupts"
+      ],
+      "local_path": "Capabilities/Interrupts.md",
+      "source_path": "/oss/python/langgraph/interrupts",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+      "summary": "[card] [View example trace](https://smith.langchain.com/public/cd7406ad-294e-4d98-b0ae-d9ed7930e117/r)",
+      "title": "Interrupts",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Memory.md": {
+      "content_hash": "sha256:2ba652b8fa9e58a05e80cb880138556e7bbf96f1345d2b8dd937eb5579857c35",
+      "keywords": [
+        "Capabilities",
+        "add",
+        "memory"
+      ],
+      "local_path": "Capabilities/Memory.md",
+      "source_path": "/oss/python/langgraph/add-memory",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/add-memory",
+      "summary": "[accordion] Example: using Postgres checkpointer",
+      "title": "Memory",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Persistence.md": {
+      "content_hash": "sha256:0b9fc9c7653a25ddad234c33e3f0227aa207d87b45e9c96a11ad58611850ed7b",
+      "keywords": [
+        "Capabilities",
+        "persistence"
+      ],
+      "local_path": "Capabilities/Persistence.md",
+      "source_path": "/oss/python/langgraph/persistence",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "summary": "LangGraph's persistence layer gives agents short-term memory through checkpointers and long-term memory through stores.",
+      "title": "Persistence",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Stores.md": {
+      "content_hash": "sha256:2f65f0635ea4b0513ef4299f4e28ac8389baf6396ebc1ba60c72b54478d87028",
+      "keywords": [
+        "Capabilities",
+        "stores"
+      ],
+      "local_path": "Capabilities/Stores.md",
+      "source_path": "/oss/python/langgraph/stores",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/stores",
+      "summary": "LangGraph stores provide cross-thread long-term memory, complementing per-thread checkpointer persistence.",
+      "title": "Stores",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Streaming.md": {
+      "content_hash": "sha256:500cf8afdf5cf74080633f0c187d8c2c6cb0aa51ee06675eb65797e68498f048",
+      "keywords": [
+        "Capabilities",
+        "streaming"
+      ],
+      "local_path": "Capabilities/Streaming.md",
+      "source_path": "/oss/python/langgraph/streaming",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/streaming",
+      "summary": "[!TIP]",
+      "title": "Streaming",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Subgraphs.md": {
+      "content_hash": "sha256:1c9ca47b0ea3cea7e09e290b2ebcbfa367aaefd5c7b67b1d217851839e6edbcc",
+      "keywords": [
+        "Capabilities",
+        "subgraphs",
+        "use"
+      ],
+      "local_path": "Capabilities/Subgraphs.md",
+      "source_path": "/oss/python/langgraph/use-subgraphs",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/use-subgraphs",
+      "summary": "[!TIP]",
+      "title": "Subgraphs",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Capabilities/Use time-travel.md": {
+      "content_hash": "sha256:0423d337cb2a647bf5af3f87ddff1191157469d674c50036e31b3850a5d67917",
+      "keywords": [
+        "Capabilities",
+        "time",
+        "travel",
+        "use"
+      ],
+      "local_path": "Capabilities/Use time-travel.md",
+      "source_path": "/oss/python/langgraph/use-time-travel",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/use-time-travel",
+      "summary": "Replay past executions and fork to explore alternative paths in LangGraph",
+      "title": "Use time-travel",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Deployment/Agent Chat UI.md": {
+      "content_hash": "sha256:9ff36cfc2b5d973201fcd9b17d1c137ac16c23a1dea58ef3b501f507da1976fc",
+      "keywords": [
+        "Deployment",
+        "ui"
+      ],
+      "local_path": "Deployment/Agent Chat UI.md",
+      "source_path": "/oss/python/langgraph/ui",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/ui",
+      "summary": "[!TIP]",
+      "title": "Agent Chat UI",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Deployment/Application structure.md": {
+      "content_hash": "sha256:bd1911fd531434b4c6baf6f8a31ed2a799c9e4b706a7199536cf25ab7b6ad696",
+      "keywords": [
+        "Deployment",
+        "application",
+        "structure"
+      ],
+      "local_path": "Deployment/Application structure.md",
+      "source_path": "/oss/python/langgraph/application-structure",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/application-structure",
+      "summary": "[!NOTE]",
+      "title": "Application structure",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Deployment/Backward compatibility.md": {
+      "content_hash": "sha256:67732af0cea694e4c385cddab117e3959d74b1002ec5c897189d42257f9af08c",
+      "keywords": [
+        "Deployment",
+        "backward",
+        "compatibility"
+      ],
+      "local_path": "Deployment/Backward compatibility.md",
+      "source_path": "/oss/python/langgraph/backward-compatibility",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/backward-compatibility",
+      "summary": "Update LangGraph graph code in production without breaking in-flight runs.",
+      "title": "Backward compatibility",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Deployment/Deployment.md": {
+      "content_hash": "sha256:8deba1748bb7078739147e4856e432d67feb31aef73a9d473c62a1a9949ba404",
+      "keywords": [
+        "Deployment",
+        "deploy"
+      ],
+      "local_path": "Deployment/Deployment.md",
+      "source_path": "/oss/python/langgraph/deploy",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/deploy",
+      "summary": "Deploy LangGraph agents to production with LangSmith Cloud or JavaScript frameworks and hosting platforms.",
+      "title": "Deployment",
+      "updated_at": "2026-11-06T16:29:01Z"
+    },
+    "Deployment/LangSmith Observability.md": {
+      "content_hash": "sha256:7b6944da7c306282567446f236a3b92ce76c510beefa868ac185e7033c9d82e1",
+      "keywords": [
+        "Deployment",
+        "observability"
+      ],
+      "local_path": "Deployment/LangSmith Observability.md",
+      "source_path": "/oss/python/langgraph/observability",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/observability",
+      "summary": "[!NOTE]",
+      "title": "LangSmith Observability",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Deployment/LangSmith Studio.md": {
+      "content_hash": "sha256:1960b72ee668f44aa8965046910f0aa7bd0beb2232f512954d869fef8cc13e24",
+      "keywords": [
+        "Deployment",
+        "studio"
+      ],
+      "local_path": "Deployment/LangSmith Studio.md",
+      "source_path": "/oss/python/langgraph/studio",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/studio",
+      "summary": "[!NOTE]",
+      "title": "LangSmith Studio",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Deployment/Run a local server.md": {
+      "content_hash": "sha256:0bf74c8976ecec0accdb5f42eda142fb0a43868a9b87988d6929281baa36b36a",
+      "keywords": [
+        "Deployment",
+        "local",
+        "server"
+      ],
+      "local_path": "Deployment/Run a local server.md",
+      "source_path": "/oss/python/langgraph/local-server",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/local-server",
+      "summary": "[!TIP]",
+      "title": "Run a local server",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Deployment/Test.md": {
+      "content_hash": "sha256:bfc41e6e13fb8ac306b256d29aa212f232cd003e1028bd150324ee8042fd5eff",
+      "keywords": [
+        "Deployment",
+        "test"
+      ],
+      "local_path": "Deployment/Test.md",
+      "source_path": "/oss/python/langgraph/test",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/test",
+      "summary": "",
+      "title": "Test",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Frontend/Custom stream channels.md": {
+      "content_hash": "sha256:a57acc45602da4dfbca8e4be9342199041fedec9611eb317c8f07d40ca4e1437",
+      "keywords": [
+        "Frontend",
+        "channels",
+        "custom",
+        "stream"
+      ],
+      "local_path": "Frontend/Custom stream channels.md",
+      "source_path": "/oss/python/langgraph/frontend/custom-stream-channels",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/frontend/custom-stream-channels",
+      "summary": "Stream custom server-side data to the frontend and read it with useExtension and useChannel",
+      "title": "Custom stream channels",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Frontend/Graph execution.md": {
+      "content_hash": "sha256:acd7b7f849101392228298817232b63a67c7f96f5586a2f4a90500d762f5970f",
+      "keywords": [
+        "Frontend",
+        "execution",
+        "graph"
+      ],
+      "local_path": "Frontend/Graph execution.md",
+      "source_path": "/oss/python/langgraph/frontend/graph-execution",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/frontend/graph-execution",
+      "summary": "Visualize multi-step graph pipelines with per-node status and streaming content",
+      "title": "Graph execution",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Frontend/Overview.md": {
+      "content_hash": "sha256:97471a3adcc8f8c015139e6b966ad1a696983ed7c0acc9b854a33f64fd7c4375",
+      "keywords": [
+        "Frontend",
+        "overview"
+      ],
+      "local_path": "Frontend/Overview.md",
+      "source_path": "/oss/python/langgraph/frontend/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/frontend/overview",
+      "summary": "Render LangGraph agents to the frontend",
+      "title": "Overview",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Get started/Changelog.md": {
+      "content_hash": "sha256:8a81eb15f22a3e719f3b0e6caa03d8aa210c800864f422af8bac4334e79ead31",
+      "keywords": [
+        "Get started",
+        "changelog",
+        "py"
+      ],
+      "local_path": "Get started/Changelog.md",
+      "source_path": "/oss/python/langgraph/changelog-py",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/changelog-py",
+      "summary": "Log of updates and improvements to our Python packages",
+      "title": "Changelog",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Get started/Choosing between Graph and Functional APIs.md": {
+      "content_hash": "sha256:6b7cab64ca18ab71d75577763acba77e5a437ff56e16c31a3e1a7d1239139a4f",
+      "keywords": [
+        "Get started",
+        "apis",
+        "choosing"
+      ],
+      "local_path": "Get started/Choosing between Graph and Functional APIs.md",
+      "source_path": "/oss/python/langgraph/choosing-apis",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/choosing-apis",
+      "summary": "Prefer the LangGraph Graph API for new workflows. Use the Functional API when wrapping other frameworks for LangSmith Deployment.",
+      "title": "Choosing between Graph and Functional APIs",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Get started/Quickstart.md": {
+      "content_hash": "sha256:c43cd7d1e4ccb620bc0556feae0e143be05cd65f8cb40558d7a2b5cff0b79b37",
+      "keywords": [
+        "Get started",
+        "quickstart"
+      ],
+      "local_path": "Get started/Quickstart.md",
+      "source_path": "/oss/python/langgraph/quickstart",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/quickstart",
+      "summary": "[!TIP]",
+      "title": "Quickstart",
+      "updated_at": "2026-11-06T16:29:01Z"
+    },
+    "LangGraph overview.md": {
+      "content_hash": "sha256:66e36887fe98d5e38d2caf73c03dbfe17cc20cd12fe2d1750fde13f5609c4f67",
+      "keywords": [
+        "overview"
+      ],
+      "local_path": "LangGraph overview.md",
+      "source_path": "/oss/python/langgraph/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "summary": "Low-level orchestration framework and runtime for long-running, stateful agents",
+      "title": "LangGraph overview",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "LangSmith Studio.md": {
+      "content_hash": "sha256:b85843df69bbc2c64de815262c534458a7b40fd283d4968212563efa1bd41382",
+      "keywords": [
+        "studio"
+      ],
+      "local_path": "LangSmith Studio.md",
+      "source_path": "/oss/python/studio",
+      "source_url": "https://docs.langchain.com/oss/python/studio",
+      "summary": "[!NOTE]",
+      "title": "LangSmith Studio",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Learn/Additional resources/Case studies.md": {
+      "content_hash": "sha256:c072ea8941740b1d4dffd7e2ff1ac52e30549697778b4a5d7795c4ef71d542af",
+      "keywords": [
+        "Additional resources",
+        "Learn",
+        "case",
+        "studies"
+      ],
+      "local_path": "Learn/Additional resources/Case studies.md",
+      "source_path": "/oss/python/langgraph/case-studies",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/case-studies",
+      "summary": "",
+      "title": "Case studies",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Learn/Tutorials/Build a custom RAG agent with LangGraph.md": {
+      "content_hash": "sha256:c9f309f984b34498f302187245df4a679d2b2446b5b68af341627a4a9a0efd45",
+      "keywords": [
+        "Learn",
+        "Tutorials",
+        "agentic",
+        "rag"
+      ],
+      "local_path": "Learn/Tutorials/Build a custom RAG agent with LangGraph.md",
+      "source_path": "/oss/python/langgraph/agentic-rag",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/agentic-rag",
+      "summary": "Build a custom retrieval agent with LangGraph that decides when to search a vector store or respond directly.",
+      "title": "Build a custom RAG agent with LangGraph",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Learn/Tutorials/Build a custom SQL agent.md": {
+      "content_hash": "sha256:153d108b7f349e2c0e09c8b66fb2af4d93a72e18ac9061eb95972bdb405ba22a",
+      "keywords": [
+        "Learn",
+        "Tutorials",
+        "agent",
+        "sql"
+      ],
+      "local_path": "Learn/Tutorials/Build a custom SQL agent.md",
+      "source_path": "/oss/python/langgraph/sql-agent",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/sql-agent",
+      "summary": "[!WARNING]",
+      "title": "Build a custom SQL agent",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Patterns/Workflows and agents.md": {
+      "content_hash": "sha256:922a45519ca929103f884fade0775d27871b33bc6f5f60c74a97ffe7adef9471",
+      "keywords": [
+        "Patterns",
+        "agents",
+        "workflows"
+      ],
+      "local_path": "Patterns/Workflows and agents.md",
+      "source_path": "/oss/python/langgraph/workflows-agents",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents",
+      "summary": "[!TIP]",
+      "title": "Workflows and agents",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Reference/Errors/GRAPH_RECURSION_LIMIT.md": {
+      "content_hash": "sha256:08379af2ac6a023f592b654d11181aca1f0e4bf9170834f106f47b5b8c7edec3",
+      "keywords": [
+        "Errors",
+        "GRAPH_RECURSION_LIMIT",
+        "Reference"
+      ],
+      "local_path": "Reference/Errors/GRAPH_RECURSION_LIMIT.md",
+      "source_path": "/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT",
+      "summary": "",
+      "title": "GRAPH_RECURSION_LIMIT",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Reference/Errors/INVALID_CHAT_HISTORY.md": {
+      "content_hash": "sha256:4bab974d2b7b12808f5070249a27b0ba484ed78c392ce523b0ff8669053bf2fd",
+      "keywords": [
+        "Errors",
+        "INVALID_CHAT_HISTORY",
+        "Reference"
+      ],
+      "local_path": "Reference/Errors/INVALID_CHAT_HISTORY.md",
+      "source_path": "/oss/python/langgraph/errors/INVALID_CHAT_HISTORY",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/errors/INVALID_CHAT_HISTORY",
+      "summary": "",
+      "title": "INVALID_CHAT_HISTORY",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Reference/Errors/INVALID_CONCURRENT_GRAPH_UPDATE.md": {
+      "content_hash": "sha256:22cdbc51f8b6bf8bc90182e047456e91f8d688db6d4eed4c796b7b2dfa360764",
+      "keywords": [
+        "Errors",
+        "INVALID_CONCURRENT_GRAPH_UPDATE",
+        "Reference"
+      ],
+      "local_path": "Reference/Errors/INVALID_CONCURRENT_GRAPH_UPDATE.md",
+      "source_path": "/oss/python/langgraph/errors/INVALID_CONCURRENT_GRAPH_UPDATE",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/errors/INVALID_CONCURRENT_GRAPH_UPDATE",
+      "summary": "",
+      "title": "INVALID_CONCURRENT_GRAPH_UPDATE",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Reference/Errors/INVALID_GRAPH_NODE_RETURN_VALUE.md": {
+      "content_hash": "sha256:9d360a1e14cf6142bbebe770dec3b7d0671192293b7051291841d0cab08f8d2e",
+      "keywords": [
+        "Errors",
+        "INVALID_GRAPH_NODE_RETURN_VALUE",
+        "Reference"
+      ],
+      "local_path": "Reference/Errors/INVALID_GRAPH_NODE_RETURN_VALUE.md",
+      "source_path": "/oss/python/langgraph/errors/INVALID_GRAPH_NODE_RETURN_VALUE",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/errors/INVALID_GRAPH_NODE_RETURN_VALUE",
+      "summary": "",
+      "title": "INVALID_GRAPH_NODE_RETURN_VALUE",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Reference/Errors/MISSING_CHECKPOINTER.md": {
+      "content_hash": "sha256:3b8d9fab7494102cf3693178893927f03cbf8751ce44c9b56937766c299d4f89",
+      "keywords": [
+        "Errors",
+        "MISSING_CHECKPOINTER",
+        "Reference"
+      ],
+      "local_path": "Reference/Errors/MISSING_CHECKPOINTER.md",
+      "source_path": "/oss/python/langgraph/errors/MISSING_CHECKPOINTER",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/errors/MISSING_CHECKPOINTER",
+      "summary": "",
+      "title": "MISSING_CHECKPOINTER",
+      "updated_at": "2026-11-06T16:23:38Z"
+    },
+    "Reference/Errors/MULTIPLE_SUBGRAPHS.md": {
+      "content_hash": "sha256:f31276cbee8bd4927ac47da026d6a257228be809e4adcb7e0725f67411106b5a",
+      "keywords": [
+        "Errors",
+        "MULTIPLE_SUBGRAPHS",
+        "Reference"
+      ],
+      "local_path": "Reference/Errors/MULTIPLE_SUBGRAPHS.md",
+      "source_path": "/oss/python/langgraph/errors/MULTIPLE_SUBGRAPHS",
+      "source_url": "https://docs.langchain.com/oss/python/langgraph/errors/MULTIPLE_SUBGRAPHS",
+      "summary": "",
+      "title": "MULTIPLE_SUBGRAPHS",
+      "updated_at": "2026-11-06T16:23:38Z"
+    }
+  },
+  "last_sync_at": "2026-11-06T16:29:01Z",
+  "schema_version": 1,
+  "wiki": {
+    "language": "英文正文；Python SDK 当前在线文档，不固定包版本；支持中文提问与回答",
+    "license": "LangChain 文档仓库采用 MIT License；保留 references/LICENSE.langchain.txt。上游许可不受本仓库默认许可替代。",
+    "scope": "Python LangGraph 导航、llms 索引、站点地图及官方源码交叉盘点的全部 52 篇产品文档，加导航直接关联的 Studio 页面，共 53 篇；含 Changelog 重定向目标、6 篇错误说明、RAG/SQL 教程与案例；不包含 JavaScript SDK、独立 API Reference 或整个 LangSmith 文档站。",
+    "skill_name": "langgraph-wiki",
+    "source_root": "https://docs.langchain.com/oss/python/langgraph",
+    "title": "LangGraph Python"
+  }
+}

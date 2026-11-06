@@ -342,6 +342,15 @@
       "skills": [
         "./skills/deepagents-wiki"
       ]
+    },
+    {
+      "name": "langgraph-wiki",
+      "description": "LangGraph Python 官方文档离线 Wiki，覆盖 Graph API、Functional API、持久化、流式输出、人工介入、子图、部署与错误排查，支持全文检索和增量更新。",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/langgraph-wiki"
+      ]
     }
   ]
 }

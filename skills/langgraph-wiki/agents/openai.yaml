@@ -1,0 +1,4 @@
+interface:
+  display_name: "LangGraph Python Wiki"
+  short_description: "LangGraph Python 离线 Wiki 检索与有依据问答"
+  default_prompt: "Use $langgraph-wiki to answer my question with documentation-backed guidance."

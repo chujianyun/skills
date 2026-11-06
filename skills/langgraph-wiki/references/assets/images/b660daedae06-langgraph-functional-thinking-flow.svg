@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-labelledby="title desc">
+  <title id="title">Functional API email agent control flow</title>
+  <desc id="desc">Two-column flowchart. Left: gather context and draft. Right: review and send. An arrow connects Draft to review.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#40668D"/>
+    </marker>
+    <style>
+      .box { fill: #E5F4FF; stroke: #006DDD; stroke-width: 1.5; }
+      .decision { fill: #FDF3FF; stroke: #7E65AE; stroke-width: 1.5; }
+      .output { fill: #EBD0F0; stroke: #885270; stroke-width: 1.5; }
+      .label { fill: #030710; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 11px; text-anchor: middle; dominant-baseline: middle; }
+      .edge { fill: #2F4B68; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 9px; text-anchor: middle; }
+      .line { stroke: #40668D; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .col { fill: #2F4B68; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 10px; font-weight: 600; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <text class="col" x="110" y="12">Gather and draft</text>
+  <text class="col" x="430" y="12">Review and finish</text>
+
+  <!-- LEFT: entrypoint -> Read -> Classify -->
+  <rect class="box" x="60" y="22" width="100" height="26" rx="5"/>
+  <text class="label" x="110" y="35">entrypoint</text>
+  <line class="line" x1="110" y1="48" x2="110" y2="58"/>
+
+  <rect class="box" x="55" y="58" width="110" height="26" rx="5"/>
+  <text class="label" x="110" y="71">Read Email</text>
+  <line class="line" x1="110" y1="84" x2="110" y2="94"/>
+
+  <rect class="box" x="50" y="94" width="120" height="26" rx="5"/>
+  <text class="label" x="110" y="107">Classify Intent</text>
+  <line class="line" x1="110" y1="120" x2="110" y2="130"/>
+
+  <!-- intent? -->
+  <polygon class="decision" points="110,130 142,152 110,174 78,152"/>
+  <text class="label" x="110" y="152">intent?</text>
+
+  <!-- question -> Doc Search -->
+  <path class="line" d="M 78 152 H 40 V 186"/>
+  <text class="edge" x="48" y="146">question</text>
+  <rect class="box" x="0" y="186" width="80" height="24" rx="5"/>
+  <text class="label" x="40" y="198">Doc Search</text>
+
+  <!-- bug -> Bug Track -->
+  <path class="line" d="M 142 152 H 180 V 186"/>
+  <text class="edge" x="172" y="146">bug</text>
+  <rect class="box" x="140" y="186" width="80" height="24" rx="5"/>
+  <text class="label" x="180" y="198">Bug Track</text>
+
+  <!-- other -> Draft -->
+  <line class="line" x1="110" y1="174" x2="110" y2="218"/>
+  <text class="edge" x="128" y="196">other</text>
+
+  <!-- merge to Draft -->
+  <path class="line" d="M 40 210 V 218 H 110"/>
+  <path class="line" d="M 180 210 V 218 H 110"/>
+
+  <rect class="box" x="55" y="218" width="110" height="26" rx="5"/>
+  <text class="label" x="110" y="231">Draft Reply</text>
+
+  <!-- Bridge: Draft Reply -> up past Escalated -> top of review? (no kink) -->
+  <path class="line" d="M 165 231 H 250 V 20 H 430 V 32"/>
+  <text class="edge" x="238" y="130">then</text>
+
+  <!-- RIGHT column: extra space under heading -->
+  <polygon class="decision" points="430,32 462,54 430,76 398,54"/>
+  <text class="label" x="430" y="54">review?</text>
+
+  <!-- yes -> Human Review -->
+  <path class="line" d="M 398 54 H 360 V 96"/>
+  <text class="edge" x="375" y="48">yes</text>
+  <rect class="box" x="310" y="96" width="100" height="24" rx="5"/>
+  <text class="label" x="360" y="108">Human Review</text>
+
+  <!-- no -> Send -->
+  <path class="line" d="M 462 54 H 505 V 190"/>
+  <text class="edge" x="490" y="48">no</text>
+  <rect class="box" x="460" y="190" width="90" height="24" rx="5"/>
+  <text class="label" x="505" y="202">Send Reply</text>
+
+  <!-- interrupt -> ok? -->
+  <line class="line" x1="360" y1="120" x2="360" y2="140"/>
+  <polygon class="decision" points="360,140 388,160 360,180 332,160"/>
+  <text class="label" x="360" y="160">ok?</text>
+
+  <!-- ok? no -> Escalated -->
+  <path class="line" d="M 332 160 H 300 V 196"/>
+  <text class="edge" x="312" y="154">no</text>
+  <rect class="output" x="265" y="196" width="70" height="24" rx="5"/>
+  <text class="label" x="300" y="208">Escalated</text>
+
+  <!-- ok? yes -> Send -->
+  <path class="line" d="M 388 160 H 505 V 190"/>
+  <text class="edge" x="430" y="154">yes</text>
+
+  <!-- Send -> Sent -->
+  <line class="line" x1="505" y1="214" x2="505" y2="228"/>
+  <rect class="output" x="470" y="228" width="70" height="26" rx="5"/>
+  <text class="label" x="505" y="241">Sent</text>
+</svg>

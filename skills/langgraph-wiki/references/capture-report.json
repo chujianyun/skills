@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/langchain-ai/docs",
+  "source_tree_sha": "f04b70472550aa935a546599c383036d420acf85",
+  "navigation_pages": 44,
+  "sitemap_pages": 45,
+  "index_pages": 45,
+  "source_pages": 53,
+  "documents": 53,
+  "assets": 24,
+  "canonical_redirects": {
+    "https://docs.langchain.com/oss/python/langgraph/changelog-py": "https://docs.langchain.com/oss/python/releases/changelog",
+    "https://docs.langchain.com/oss/python/studio": "https://docs.langchain.com/langsmith/studio"
+  }
+}
