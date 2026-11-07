@@ -1,0 +1,4678 @@
+{
+  "schema_version": 1,
+  "source_root": "https://docs.dify.ai/zh/cloud",
+  "scope": "中文 Cloud：使用、学习、开发者资源；导航与索引合并",
+  "coverage": {
+    "discovered": 332,
+    "captured": 332,
+    "failed": [],
+    "excluded": [
+      {
+        "url": "https://docs.dify.ai/zh/product",
+        "reason": "Separate self-host product/deployment navigation; outside selected Cloud tabs"
+      },
+      {
+        "url": "https://docs.dify.ai/en",
+        "reason": "Different language"
+      },
+      {
+        "url": "https://docs.dify.ai/ja",
+        "reason": "Different language"
+      }
+    ]
+  },
+  "capture_report": {
+    "indexes": [
+      "https://docs.dify.ai/_llms/zh/cloud.txt",
+      "https://docs.dify.ai/_llms/zh/cloud/tab-a92a2441.txt",
+      "https://docs.dify.ai/_llms/zh/cloud/tab-a92a2441/api.txt"
+    ],
+    "sitemap_crosscheck": 331,
+    "navigation_only_pages": [
+      "https://docs.dify.ai/zh/home"
+    ],
+    "pages": 332,
+    "assets": 512,
+    "embedded_asset_bytes": 125391094,
+    "navigation_crosscheck": {
+      "config_url": "https://raw.githubusercontent.com/langgenius/dify-docs/main/docs.json",
+      "direct_pages": 190,
+      "generated_api_operations": 142,
+      "merged_pages": 332
+    },
+    "branches": {
+      "使用": 108,
+      "学习": 17,
+      "开发者资源": 207
+    }
+  },
+  "pages": [
+    {
+      "title": "Dify API 快速开始",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/get-started",
+      "source_path": "/zh/api-reference/guides/get-started",
+      "local_path": "开发者资源/API/指南/Dify API 快速开始.md",
+      "summary": "获取 API 密钥、发起第一个请求，并找到你的应用类型对应的接口",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "get-started"
+      ]
+    },
+    {
+      "title": "处理流式响应",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/streaming",
+      "source_path": "/zh/api-reference/guides/streaming",
+      "local_path": "开发者资源/API/指南/处理流式响应.md",
+      "summary": "选择响应模式、解析 SSE 流、按事件类型分发处理，并在连接断开后恢复",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "streaming"
+      ]
+    },
+    {
+      "title": "人工介入 API 集成流程",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/human-input-flow",
+      "source_path": "/zh/api-reference/guides/human-input-flow",
+      "local_path": "开发者资源/API/指南/人工介入 API 集成流程.md",
+      "summary": "通过 API 处理暂停中的人工介入表单的端到端流程",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "human-input-flow"
+      ]
+    },
+    {
+      "title": "终端用户身份",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/end-user-identity",
+      "source_path": "/zh/api-reference/guides/end-user-identity",
+      "local_path": "开发者资源/API/指南/终端用户身份.md",
+      "summary": "user 字段标识什么、限定哪些数据，以及为何要在各次调用间保持一致",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "end-user-identity"
+      ]
+    },
+    {
+      "title": "处理错误与速率限制",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/errors",
+      "source_path": "/zh/api-reference/guides/errors",
+      "local_path": "开发者资源/API/指南/处理错误与速率限制.md",
+      "summary": "错误响应的统一结构、各状态码类别的含义，以及哪些失败值得重试",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "errors"
+      ]
+    },
+    {
+      "title": "Chatflow 应用 API",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/chatflow",
+      "source_path": "/zh/api-reference/guides/chatflow",
+      "local_path": "开发者资源/API/指南/API 概览/Chatflow 应用 API.md",
+      "summary": "Chatflow 应用 API，涵盖对话消息、工作流级别流式事件、会话管理、人工介入暂停",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "API 概览",
+        "chatflow"
+      ]
+    },
+    {
+      "title": "Workflow 应用 API",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/workflow",
+      "source_path": "/zh/api-reference/guides/workflow",
+      "local_path": "开发者资源/API/指南/API 概览/Workflow 应用 API.md",
+      "summary": "Workflow 应用 API，涵盖工作流执行、运行控制与流式传输、人工介入暂停、运行历史查询",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "API 概览",
+        "workflow"
+      ]
+    },
+    {
+      "title": "Agent API",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/agent",
+      "source_path": "/zh/api-reference/guides/agent",
+      "local_path": "开发者资源/API/指南/API 概览/Agent API.md",
+      "summary": "面向 Agent 应用的 API，涵盖流式对话消息、会话管理、文件上传及应用配置",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "API 概览",
+        "agent"
+      ]
+    },
+    {
+      "title": "对话型应用 API",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/chat",
+      "source_path": "/zh/api-reference/guides/chat",
+      "local_path": "开发者资源/API/指南/API 概览/对话型应用 API.md",
+      "summary": "面向聊天助手和旧版 Agent 应用的 API，涵盖对话消息、会话管理、文件上传、语音转换及标注管理",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "API 概览",
+        "chat"
+      ]
+    },
+    {
+      "title": "文本生成应用 API",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/completion",
+      "source_path": "/zh/api-reference/guides/completion",
+      "local_path": "开发者资源/API/指南/API 概览/文本生成应用 API.md",
+      "summary": "面向文本生成应用的 API，涵盖文本生成消息、文件上传、语音转换及反馈收集",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "API 概览",
+        "completion"
+      ]
+    },
+    {
+      "title": "知识库 API",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/knowledge-base-api",
+      "source_path": "/zh/api-reference/guides/knowledge-base-api",
+      "local_path": "开发者资源/API/指南/API 概览/知识库/知识库 API.md",
+      "summary": "创建两种知识库 API 通用的 API 密钥并设置访问范围，安全地替换密钥，以及查明调用被拒绝的原因",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "API 概览",
+        "知识库",
+        "knowledge-base-api"
+      ]
+    },
+    {
+      "title": "Agent 知识库 API",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/knowledge-base",
+      "source_path": "/zh/api-reference/guides/knowledge-base",
+      "local_path": "开发者资源/API/指南/API 概览/知识库/Agent 知识库 API.md",
+      "summary": "在自己的代码中查询 Agent 知识库，回查某次运行检索到的内容，并维护知识库的文档、数据源和设置",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "API 概览",
+        "知识库",
+        "knowledge-base"
+      ]
+    },
+    {
+      "title": "经典知识库 API",
+      "source_url": "https://docs.dify.ai/zh/api-reference/guides/knowledge",
+      "source_path": "/zh/api-reference/guides/knowledge",
+      "local_path": "开发者资源/API/指南/API 概览/知识库/经典知识库 API.md",
+      "summary": "用于管理经典知识库、文档、分段、元数据、标签和知识流水线的 API",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "指南",
+        "API 概览",
+        "知识库",
+        "knowledge"
+      ]
+    },
+    {
+      "title": "发送对话消息",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chat-messages/send-chat-message",
+      "source_path": "/zh/api-reference/chat-messages/send-chat-message",
+      "local_path": "开发者资源/API/应用 API/对话消息/发送对话消息.md",
+      "summary": "**适用于**：Chatflow、Agent、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "对话消息",
+        "send-chat-message"
+      ]
+    },
+    {
+      "title": "停止响应",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chat-messages/stop-chat-message-generation",
+      "source_path": "/zh/api-reference/chat-messages/stop-chat-message-generation",
+      "local_path": "开发者资源/API/应用 API/对话消息/停止响应.md",
+      "summary": "**适用于**：Chatflow、Agent、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "对话消息",
+        "stop-chat-message-generation"
+      ]
+    },
+    {
+      "title": "获取下一轮建议问题列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chat-messages/get-next-suggested-questions",
+      "source_path": "/zh/api-reference/chat-messages/get-next-suggested-questions",
+      "local_path": "开发者资源/API/应用 API/对话消息/获取下一轮建议问题列表.md",
+      "summary": "**适用于**：Chatflow、Agent、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "对话消息",
+        "get-next-suggested-questions"
+      ]
+    },
+    {
+      "title": "发送消息",
+      "source_url": "https://docs.dify.ai/zh/api-reference/completion-messages/send-completion-message",
+      "source_path": "/zh/api-reference/completion-messages/send-completion-message",
+      "local_path": "开发者资源/API/应用 API/文本生成消息/发送消息.md",
+      "summary": "**适用于**：文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "文本生成消息",
+        "send-completion-message"
+      ]
+    },
+    {
+      "title": "停止响应",
+      "source_url": "https://docs.dify.ai/zh/api-reference/completion-messages/stop-completion-message-generation",
+      "source_path": "/zh/api-reference/completion-messages/stop-completion-message-generation",
+      "local_path": "开发者资源/API/应用 API/文本生成消息/停止响应.md",
+      "summary": "**适用于**：文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "文本生成消息",
+        "stop-completion-message-generation"
+      ]
+    },
+    {
+      "title": "执行工作流",
+      "source_url": "https://docs.dify.ai/zh/api-reference/workflow-runs/run-workflow",
+      "source_path": "/zh/api-reference/workflow-runs/run-workflow",
+      "local_path": "开发者资源/API/应用 API/工作流运行/执行工作流.md",
+      "summary": "**适用于**：Workflow。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "工作流运行",
+        "run-workflow"
+      ]
+    },
+    {
+      "title": "按 ID 执行工作流",
+      "source_url": "https://docs.dify.ai/zh/api-reference/workflow-runs/run-workflow-by-id",
+      "source_path": "/zh/api-reference/workflow-runs/run-workflow-by-id",
+      "local_path": "开发者资源/API/应用 API/工作流运行/按 ID 执行工作流.md",
+      "summary": "**适用于**：Workflow。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "工作流运行",
+        "run-workflow-by-id"
+      ]
+    },
+    {
+      "title": "停止工作流任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/workflow-runs/stop-workflow-task",
+      "source_path": "/zh/api-reference/workflow-runs/stop-workflow-task",
+      "local_path": "开发者资源/API/应用 API/工作流运行/停止工作流任务.md",
+      "summary": "**适用于**：Workflow。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "工作流运行",
+        "stop-workflow-task"
+      ]
+    },
+    {
+      "title": "获取工作流执行情况",
+      "source_url": "https://docs.dify.ai/zh/api-reference/workflow-runs/get-workflow-run-detail",
+      "source_path": "/zh/api-reference/workflow-runs/get-workflow-run-detail",
+      "local_path": "开发者资源/API/应用 API/工作流运行/获取工作流执行情况.md",
+      "summary": "**适用于**：Chatflow、Workflow。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "工作流运行",
+        "get-workflow-run-detail"
+      ]
+    },
+    {
+      "title": "获取工作流日志",
+      "source_url": "https://docs.dify.ai/zh/api-reference/workflow-runs/list-workflow-logs",
+      "source_path": "/zh/api-reference/workflow-runs/list-workflow-logs",
+      "local_path": "开发者资源/API/应用 API/工作流运行/获取工作流日志.md",
+      "summary": "**适用于**：Chatflow、Workflow。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "工作流运行",
+        "list-workflow-logs"
+      ]
+    },
+    {
+      "title": "流式获取工作流事件",
+      "source_url": "https://docs.dify.ai/zh/api-reference/workflow-runs/stream-workflow-events",
+      "source_path": "/zh/api-reference/workflow-runs/stream-workflow-events",
+      "local_path": "开发者资源/API/应用 API/工作流运行/流式获取工作流事件.md",
+      "summary": "**适用于**：Chatflow、Workflow。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "工作流运行",
+        "stream-workflow-events"
+      ]
+    },
+    {
+      "title": "获取会话列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/conversations/list-conversations",
+      "source_path": "/zh/api-reference/conversations/list-conversations",
+      "local_path": "开发者资源/API/应用 API/会话管理/获取会话列表.md",
+      "summary": "**适用于**：Chatflow、Agent、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "会话管理",
+        "list-conversations"
+      ]
+    },
+    {
+      "title": "获取会话历史消息",
+      "source_url": "https://docs.dify.ai/zh/api-reference/conversations/list-conversation-messages",
+      "source_path": "/zh/api-reference/conversations/list-conversation-messages",
+      "local_path": "开发者资源/API/应用 API/会话管理/获取会话历史消息.md",
+      "summary": "**适用于**：Chatflow、Agent、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "会话管理",
+        "list-conversation-messages"
+      ]
+    },
+    {
+      "title": "获取会话变量",
+      "source_url": "https://docs.dify.ai/zh/api-reference/conversations/list-conversation-variables",
+      "source_path": "/zh/api-reference/conversations/list-conversation-variables",
+      "local_path": "开发者资源/API/应用 API/会话管理/获取会话变量.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "会话管理",
+        "list-conversation-variables"
+      ]
+    },
+    {
+      "title": "重命名会话",
+      "source_url": "https://docs.dify.ai/zh/api-reference/conversations/rename-conversation",
+      "source_path": "/zh/api-reference/conversations/rename-conversation",
+      "local_path": "开发者资源/API/应用 API/会话管理/重命名会话.md",
+      "summary": "**适用于**：Chatflow、Agent、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "会话管理",
+        "rename-conversation"
+      ]
+    },
+    {
+      "title": "更新会话变量",
+      "source_url": "https://docs.dify.ai/zh/api-reference/conversations/update-conversation-variable",
+      "source_path": "/zh/api-reference/conversations/update-conversation-variable",
+      "local_path": "开发者资源/API/应用 API/会话管理/更新会话变量.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "会话管理",
+        "update-conversation-variable"
+      ]
+    },
+    {
+      "title": "删除会话",
+      "source_url": "https://docs.dify.ai/zh/api-reference/conversations/delete-conversation",
+      "source_path": "/zh/api-reference/conversations/delete-conversation",
+      "local_path": "开发者资源/API/应用 API/会话管理/删除会话.md",
+      "summary": "**适用于**：Chatflow、Agent、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "会话管理",
+        "delete-conversation"
+      ]
+    },
+    {
+      "title": "上传文件",
+      "source_url": "https://docs.dify.ai/zh/api-reference/files/upload-file",
+      "source_path": "/zh/api-reference/files/upload-file",
+      "local_path": "开发者资源/API/应用 API/文件操作/上传文件.md",
+      "summary": "**适用于**：Chatflow、Workflow、Agent、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "文件操作",
+        "upload-file"
+      ]
+    },
+    {
+      "title": "下载文件",
+      "source_url": "https://docs.dify.ai/zh/api-reference/files/download-file",
+      "source_path": "/zh/api-reference/files/download-file",
+      "local_path": "开发者资源/API/应用 API/文件操作/下载文件.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "文件操作",
+        "download-file"
+      ]
+    },
+    {
+      "title": "语音转文字",
+      "source_url": "https://docs.dify.ai/zh/api-reference/audio/convert-audio-to-text",
+      "source_path": "/zh/api-reference/audio/convert-audio-to-text",
+      "local_path": "开发者资源/API/应用 API/语音与文字转换/语音转文字.md",
+      "summary": "**适用于**：Chatflow、Workflow、Agent、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "语音与文字转换",
+        "convert-audio-to-text"
+      ]
+    },
+    {
+      "title": "文字转语音",
+      "source_url": "https://docs.dify.ai/zh/api-reference/audio/convert-text-to-audio",
+      "source_path": "/zh/api-reference/audio/convert-text-to-audio",
+      "local_path": "开发者资源/API/应用 API/语音与文字转换/文字转语音.md",
+      "summary": "**适用于**：Chatflow、Workflow、Agent、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "语音与文字转换",
+        "convert-text-to-audio"
+      ]
+    },
+    {
+      "title": "获取应用基本信息",
+      "source_url": "https://docs.dify.ai/zh/api-reference/applications/get-app-info",
+      "source_path": "/zh/api-reference/applications/get-app-info",
+      "local_path": "开发者资源/API/应用 API/应用配置/获取应用基本信息.md",
+      "summary": "**适用于**：Chatflow、Workflow、Agent、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "应用配置",
+        "get-app-info"
+      ]
+    },
+    {
+      "title": "获取应用参数",
+      "source_url": "https://docs.dify.ai/zh/api-reference/applications/get-app-parameters",
+      "source_path": "/zh/api-reference/applications/get-app-parameters",
+      "local_path": "开发者资源/API/应用 API/应用配置/获取应用参数.md",
+      "summary": "**适用于**：Chatflow、Workflow、Agent、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "应用配置",
+        "get-app-parameters"
+      ]
+    },
+    {
+      "title": "获取应用元数据",
+      "source_url": "https://docs.dify.ai/zh/api-reference/applications/get-app-meta",
+      "source_path": "/zh/api-reference/applications/get-app-meta",
+      "local_path": "开发者资源/API/应用 API/应用配置/获取应用元数据.md",
+      "summary": "**适用于**：Chatflow、Workflow、Agent、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "应用配置",
+        "get-app-meta"
+      ]
+    },
+    {
+      "title": "获取应用 WebApp 设置",
+      "source_url": "https://docs.dify.ai/zh/api-reference/applications/get-app-webapp-settings",
+      "source_path": "/zh/api-reference/applications/get-app-webapp-settings",
+      "local_path": "开发者资源/API/应用 API/应用配置/获取应用 WebApp 设置.md",
+      "summary": "**适用于**：Chatflow、Workflow、Agent、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "应用配置",
+        "get-app-webapp-settings"
+      ]
+    },
+    {
+      "title": "提交消息反馈",
+      "source_url": "https://docs.dify.ai/zh/api-reference/feedback/submit-message-feedback",
+      "source_path": "/zh/api-reference/feedback/submit-message-feedback",
+      "local_path": "开发者资源/API/应用 API/消息反馈/提交消息反馈.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "消息反馈",
+        "submit-message-feedback"
+      ]
+    },
+    {
+      "title": "获取应用的消息反馈",
+      "source_url": "https://docs.dify.ai/zh/api-reference/feedback/list-app-feedbacks",
+      "source_path": "/zh/api-reference/feedback/list-app-feedbacks",
+      "local_path": "开发者资源/API/应用 API/消息反馈/获取应用的消息反馈.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "消息反馈",
+        "list-app-feedbacks"
+      ]
+    },
+    {
+      "title": "创建标注",
+      "source_url": "https://docs.dify.ai/zh/api-reference/annotations/create-annotation",
+      "source_path": "/zh/api-reference/annotations/create-annotation",
+      "local_path": "开发者资源/API/应用 API/标注管理/创建标注.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "标注管理",
+        "create-annotation"
+      ]
+    },
+    {
+      "title": "获取标注列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/annotations/list-annotations",
+      "source_path": "/zh/api-reference/annotations/list-annotations",
+      "local_path": "开发者资源/API/应用 API/标注管理/获取标注列表.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "标注管理",
+        "list-annotations"
+      ]
+    },
+    {
+      "title": "更新标注",
+      "source_url": "https://docs.dify.ai/zh/api-reference/annotations/update-annotation",
+      "source_path": "/zh/api-reference/annotations/update-annotation",
+      "local_path": "开发者资源/API/应用 API/标注管理/更新标注.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "标注管理",
+        "update-annotation"
+      ]
+    },
+    {
+      "title": "删除标注",
+      "source_url": "https://docs.dify.ai/zh/api-reference/annotations/delete-annotation",
+      "source_path": "/zh/api-reference/annotations/delete-annotation",
+      "local_path": "开发者资源/API/应用 API/标注管理/删除标注.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "标注管理",
+        "delete-annotation"
+      ]
+    },
+    {
+      "title": "配置标注回复",
+      "source_url": "https://docs.dify.ai/zh/api-reference/annotations/configure-annotation-reply",
+      "source_path": "/zh/api-reference/annotations/configure-annotation-reply",
+      "local_path": "开发者资源/API/应用 API/标注管理/配置标注回复.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "标注管理",
+        "configure-annotation-reply"
+      ]
+    },
+    {
+      "title": "查询标注回复配置任务状态",
+      "source_url": "https://docs.dify.ai/zh/api-reference/annotations/get-annotation-reply-job-status",
+      "source_path": "/zh/api-reference/annotations/get-annotation-reply-job-status",
+      "local_path": "开发者资源/API/应用 API/标注管理/查询标注回复配置任务状态.md",
+      "summary": "**适用于**：Chatflow、聊天助手、旧版 Agent。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "标注管理",
+        "get-annotation-reply-job-status"
+      ]
+    },
+    {
+      "title": "获取终端用户信息",
+      "source_url": "https://docs.dify.ai/zh/api-reference/end-users/get-end-user-info",
+      "source_path": "/zh/api-reference/end-users/get-end-user-info",
+      "local_path": "开发者资源/API/应用 API/终端用户/获取终端用户信息.md",
+      "summary": "**适用于**：Chatflow、Workflow、Agent、聊天助手、旧版 Agent、文本生成应用。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "终端用户",
+        "get-end-user-info"
+      ]
+    },
+    {
+      "title": "获取人工介入表单",
+      "source_url": "https://docs.dify.ai/zh/api-reference/human-input/get-human-input-form",
+      "source_path": "/zh/api-reference/human-input/get-human-input-form",
+      "local_path": "开发者资源/API/应用 API/人工介入/获取人工介入表单.md",
+      "summary": "**适用于**：Chatflow、Workflow。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "人工介入",
+        "get-human-input-form"
+      ]
+    },
+    {
+      "title": "提交人工介入表单",
+      "source_url": "https://docs.dify.ai/zh/api-reference/human-input/submit-human-input-form",
+      "source_path": "/zh/api-reference/human-input/submit-human-input-form",
+      "local_path": "开发者资源/API/应用 API/人工介入/提交人工介入表单.md",
+      "summary": "**适用于**：Chatflow、Workflow。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "应用 API",
+        "人工介入",
+        "submit-human-input-form"
+      ]
+    },
+    {
+      "title": "创建查询令牌",
+      "source_url": "https://docs.dify.ai/zh/api-reference/queries/create-query-token",
+      "source_path": "/zh/api-reference/queries/create-query-token",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/查询/创建查询令牌.md",
+      "summary": "为 [运行查询](/zh/api-reference/queries/run-query) 签发查询令牌，并返回需随令牌一起发送的请求体。详见 [查询知识库](/zh/api-reference/guides/knowledge-base#query-the-knowledge-base)。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "查询",
+        "create-query-token"
+      ]
+    },
+    {
+      "title": "运行查询",
+      "source_url": "https://docs.dify.ai/zh/api-reference/queries/run-query",
+      "source_path": "/zh/api-reference/queries/run-query",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/查询/运行查询.md",
+      "summary": "运行已通过 [创建查询令牌](/zh/api-reference/queries/create-query-token) 获取令牌的查询，并以 Server-Sent Events 流式返回回答。此接口以查询令牌作为凭据，不使用知识库 API 密钥。服务端在受理请求时校验令牌。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "查询",
+        "run-query"
+      ]
+    },
+    {
+      "title": "获取查询记录列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/query-records/list-query-records",
+      "source_path": "/zh/api-reference/query-records/list-query-records",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/查询记录/获取查询记录列表.md",
+      "summary": "列出知识库的查询记录，最新的在前。每次调用 [运行查询](/zh/api-reference/queries/run-query)，流一建立就会保存一条记录，之后失败的运行也不例外；但客户端断开连接，或运行以 `RETRIEVAL_EXECUTION_LEASE_LOST` 失败时，不保存记录。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "查询记录",
+        "list-query-records"
+      ]
+    },
+    {
+      "title": "获取查询记录",
+      "source_url": "https://docs.dify.ai/zh/api-reference/query-records/get-query-record",
+      "source_path": "/zh/api-reference/query-records/get-query-record",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/查询记录/获取查询记录.md",
+      "summary": "返回一条完整的查询记录：查询内容、检索深度、调用方，以及按执行顺序排列的流水线步骤及其元数据。`query.generate` 步骤的元数据内嵌了所有检索分段，因此响应可能较大（最大 2 MiB）。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "查询记录",
+        "get-query-record"
+      ]
+    },
+    {
+      "title": "获取查询分段列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/query-records/list-query-chunks",
+      "source_path": "/zh/api-reference/query-records/list-query-chunks",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/查询记录/获取查询分段列表.md",
+      "summary": "列出一次查询运行检索到的分段，每个分段一条，包含其主引用、分数、时效性和文本。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "查询记录",
+        "list-query-chunks"
+      ]
+    },
+    {
+      "title": "获取查询冲突列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/query-records/list-query-conflicts",
+      "source_path": "/zh/api-reference/query-records/list-query-conflicts",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/查询记录/获取查询冲突列表.md",
+      "summary": "列出一次查询运行所检索分段上记录的全部冲突，每个冲突一条。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "查询记录",
+        "list-query-conflicts"
+      ]
+    },
+    {
+      "title": "获取缺失分段列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/query-records/list-missing-chunks",
+      "source_path": "/zh/api-reference/query-records/list-missing-chunks",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/查询记录/获取缺失分段列表.md",
+      "summary": "列出一次查询运行预期使用但未能使用的分段，每个分段一条。`data` 为空且 `truncated: false` 表示本次运行没有记录此类分段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "查询记录",
+        "list-missing-chunks"
+      ]
+    },
+    {
+      "title": "获取研究任务列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/research-tasks/list-research-tasks",
+      "source_path": "/zh/api-reference/research-tasks/list-research-tasks",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/研究任务/获取研究任务列表.md",
+      "summary": "列出知识库中归属于当前 API 密钥的研究任务，最新的在前。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "研究任务",
+        "list-research-tasks"
+      ]
+    },
+    {
+      "title": "创建研究任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/research-tasks/create-research-task",
+      "source_path": "/zh/api-reference/research-tasks/create-research-task",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/研究任务/创建研究任务.md",
+      "summary": "为一个问题创建研究任务，返回的任务 `stage` 为 `queued`，随后在后台运行。规划、创建、轮询和读取结果的完整流程，详见 [运行研究任务](/zh/api-reference/guides/knowledge-base#run-a-research-task)。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "研究任务",
+        "create-research-task"
+      ]
+    },
+    {
+      "title": "规划研究任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/research-tasks/plan-research-task",
+      "source_path": "/zh/api-reference/research-tasks/plan-research-task",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/研究任务/规划研究任务.md",
+      "summary": "估算研究任务，但不创建任务。返回实际采用的检索深度，以及成本、延迟和工作量的估算，包括是否在拟定的预算之内。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "研究任务",
+        "plan-research-task"
+      ]
+    },
+    {
+      "title": "获取研究任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/research-tasks/get-research-task",
+      "source_path": "/zh/api-reference/research-tasks/get-research-task",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/研究任务/获取研究任务.md",
+      "summary": "返回研究任务的当前状态：`stage`、目前为止的花费、限制、时间戳，以及失败时的错误详情。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "研究任务",
+        "get-research-task"
+      ]
+    },
+    {
+      "title": "取消研究任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/research-tasks/cancel-research-task",
+      "source_path": "/zh/api-reference/research-tasks/cancel-research-task",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/研究任务/取消研究任务.md",
+      "summary": "取消尚未结束的研究任务，返回的任务 `stage` 为 `canceled`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "研究任务",
+        "cancel-research-task"
+      ]
+    },
+    {
+      "title": "获取研究任务结果列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/research-tasks/list-research-task-results",
+      "source_path": "/zh/api-reference/research-tasks/list-research-task-results",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/研究任务/获取研究任务结果列表.md",
+      "summary": "列出研究任务目前已写入的结果，按 `sequence` 升序排列。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "研究任务",
+        "list-research-task-results"
+      ]
+    },
+    {
+      "title": "获取文档列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/list-documents",
+      "source_path": "/zh/api-reference/documents-and-chunks/list-documents",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/获取文档列表.md",
+      "summary": "列出知识库中的文档，最早的在前，包括每个文档的状态、自定义元数据、生效的修订版本和最近一次索引任务。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "list-documents"
+      ]
+    },
+    {
+      "title": "获取文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/get-document",
+      "source_path": "/zh/api-reference/documents-and-chunks/get-document",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/获取文档.md",
+      "summary": "返回一个文档，包括其状态、自定义元数据、`row_version`、生效的修订版本和最近一次索引任务。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "get-document"
+      ]
+    },
+    {
+      "title": "更新文档元数据",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/update-document-metadata",
+      "source_path": "/zh/api-reference/documents-and-chunks/update-document-metadata",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/更新文档元数据.md",
+      "summary": "将键合并到文档的 `user_metadata` 中，并返回更新后的文档。与此路径上的其他操作不同，它接收的是文档 ID，而不是文档文件 ID。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "update-document-metadata"
+      ]
+    },
+    {
+      "title": "删除文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/delete-document",
+      "source_path": "/zh/api-reference/documents-and-chunks/delete-document",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/删除文档.md",
+      "summary": "请求删除一个文档，并返回删除作业。该操作会移除文档本身、其所有修订版本，以及仅由该文档使用的文档文件。作业完成后，该文档不再占用文档配额。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "delete-document"
+      ]
+    },
+    {
+      "title": "按文件获取文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/get-document-by-file",
+      "source_path": "/zh/api-reference/documents-and-chunks/get-document-by-file",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/按文件获取文档.md",
+      "summary": "返回文档 ID，以及由文档文件某个版本构建的修订版本。可用它从引用找到对应的文档：查询记录和研究任务结果通过 `documentAssetId` 和 `documentVersion` 引用文档文件。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "get-document-by-file"
+      ]
+    },
+    {
+      "title": "获取文档文件列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/list-document-files",
+      "source_path": "/zh/api-reference/documents-and-chunks/list-document-files",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/获取文档文件列表.md",
+      "summary": "列出知识库中存储的文档文件。返回的是文档文件 ID，而非文档 ID。如需列出文档，使用 [获取文档列表](/zh/api-reference/documents-and-chunks/list-documents)。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "list-document-files"
+      ]
+    },
+    {
+      "title": "获取文档文件",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/get-document-file",
+      "source_path": "/zh/api-reference/documents-and-chunks/get-document-file",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/获取文档文件.md",
+      "summary": "返回一个文档文件，即文档背后存储的文件，包括其 `version` 和 `parser_status`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "get-document-file"
+      ]
+    },
+    {
+      "title": "删除文档文件",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/delete-document-file",
+      "source_path": "/zh/api-reference/documents-and-chunks/delete-document-file",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/删除文档文件.md",
+      "summary": "请求删除一个文档文件，并返回删除作业。基于该文件构建的所有修订版本都不再通过 [获取分段列表](/zh/api-reference/documents-and-chunks/list-chunks) 返回分段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "delete-document-file"
+      ]
+    },
+    {
+      "title": "获取文档大纲",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/get-document-outline",
+      "source_path": "/zh/api-reference/documents-and-chunks/get-document-outline",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/获取文档大纲.md",
+      "summary": "返回为文档文件当前版本构建的标题树。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "get-document-outline"
+      ]
+    },
+    {
+      "title": "获取文档修订版本列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/list-document-revisions",
+      "source_path": "/zh/api-reference/documents-and-chunks/list-document-revisions",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/获取文档修订版本列表.md",
+      "summary": "列出文档的修订版本，最新的在前。接收的是 [获取文档列表](/zh/api-reference/documents-and-chunks/list-documents) 返回的文档 ID，而不是文档文件 ID。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "list-document-revisions"
+      ]
+    },
+    {
+      "title": "获取分段列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/list-chunks",
+      "source_path": "/zh/api-reference/documents-and-chunks/list-chunks",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/获取分段列表.md",
+      "summary": "列出文档某个修订版本的分段，按分段 ID 排序，而非按在文档中的位置排序。接收 [获取文档列表](/zh/api-reference/documents-and-chunks/list-documents) 返回的文档 ID（而不是文档文件 ID），以及修订版本号。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "list-chunks"
+      ]
+    },
+    {
+      "title": "获取分段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/get-chunk",
+      "source_path": "/zh/api-reference/documents-and-chunks/get-chunk",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/获取分段.md",
+      "summary": "返回文档某个修订版本中的一个分段。接收 [获取文档列表](/zh/api-reference/documents-and-chunks/list-documents) 返回的文档 ID（而不是文档文件 ID），以及修订版本号和分段 ID。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "get-chunk"
+      ]
+    },
+    {
+      "title": "批量删除文档文件",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/delete-document-files-in-batch",
+      "source_path": "/zh/api-reference/documents-and-chunks/delete-document-files-in-batch",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/批量删除文档文件.md",
+      "summary": "一次调用请求删除最多 100 个文档文件，并返回每个文件的处理结果。与 [删除文档文件](/zh/api-reference/documents-and-chunks/delete-document-file) 一样，不要删除生效修订版本的文件。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "delete-document-files-in-batch"
+      ]
+    },
+    {
+      "title": "重新索引文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents-and-chunks/re-index-documents",
+      "source_path": "/zh/api-reference/documents-and-chunks/re-index-documents",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/文档与分段/重新索引文档.md",
+      "summary": "为每个选中的文档排入一个索引任务，根据其当前文件重建索引。返回一个批量任务 ID，用于统一跟踪这些任务。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "文档与分段",
+        "re-index-documents"
+      ]
+    },
+    {
+      "title": "获取索引任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/indexing-tasks/get-indexing-task",
+      "source_path": "/zh/api-reference/indexing-tasks/get-indexing-task",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/索引任务/获取索引任务.md",
+      "summary": "返回一个索引任务的状态。索引任务负责把文档文件的某个版本变成生效的修订版本。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "索引任务",
+        "get-indexing-task"
+      ]
+    },
+    {
+      "title": "取消索引任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/indexing-tasks/cancel-indexing-task",
+      "source_path": "/zh/api-reference/indexing-tasks/cancel-indexing-task",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/索引任务/取消索引任务.md",
+      "summary": "请求取消一个索引任务，并返回更新后的任务。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "索引任务",
+        "cancel-indexing-task"
+      ]
+    },
+    {
+      "title": "重试索引任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/indexing-tasks/retry-indexing-task",
+      "source_path": "/zh/api-reference/indexing-tasks/retry-indexing-task",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/索引任务/重试索引任务.md",
+      "summary": "以同一个任务 ID 重新启动 `run_state` 为 `failed` 或 `canceled` 的索引任务，并返回更新后的任务。之后用同一个 ID 轮询 [获取索引任务](/zh/api-reference/indexing-tasks/get-indexing-task)。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "索引任务",
+        "retry-indexing-task"
+      ]
+    },
+    {
+      "title": "获取批量任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/indexing-tasks/get-bulk-task",
+      "source_path": "/zh/api-reference/indexing-tasks/get-bulk-task",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/索引任务/获取批量任务.md",
+      "summary": "返回批量任务中各索引任务的进度。在此 API 中，批量任务来自 [重新索引文档](/zh/api-reference/documents-and-chunks/re-index-documents)，并且只有启动它的 API 密钥才能读取。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "索引任务",
+        "get-bulk-task"
+      ]
+    },
+    {
+      "title": "获取文档的索引任务列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/indexing-tasks/list-document-indexing-tasks",
+      "source_path": "/zh/api-reference/indexing-tasks/list-document-indexing-tasks",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/索引任务/获取文档的索引任务列表.md",
+      "summary": "列出文档因上传和同步产生的索引任务，最早的在前，每个任务都带有其结果。失败和已取消的任务也包括在内。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "索引任务",
+        "list-document-indexing-tasks"
+      ]
+    },
+    {
+      "title": "获取文档的索引任务",
+      "source_url": "https://docs.dify.ai/zh/api-reference/indexing-tasks/get-document-indexing-task",
+      "source_path": "/zh/api-reference/indexing-tasks/get-document-indexing-task",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/索引任务/获取文档的索引任务.md",
+      "summary": "返回文档的一个索引任务及其进度。轮询直到 `state` 为 `succeeded`、`failed`、`canceled` 或 `superseded`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "索引任务",
+        "get-document-indexing-task"
+      ]
+    },
+    {
+      "title": "获取后台任务列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/indexing-tasks/list-background-tasks",
+      "source_path": "/zh/api-reference/indexing-tasks/list-background-tasks",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/索引任务/获取后台任务列表.md",
+      "summary": "在同一个列表中汇总知识库的后台工作，或按 ID 查找指定任务：",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "索引任务",
+        "list-background-tasks"
+      ]
+    },
+    {
+      "title": "获取删除作业",
+      "source_url": "https://docs.dify.ai/zh/api-reference/deletion-jobs/get-deletion-job",
+      "source_path": "/zh/api-reference/deletion-jobs/get-deletion-job",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/删除作业/获取删除作业.md",
+      "summary": "返回通过 [删除文档](/zh/api-reference/documents-and-chunks/delete-document)、[删除文档文件](/zh/api-reference/documents-and-chunks/delete-document-file) 或 [删除数据源](/zh/api-reference/sources/delete-source) 发起的删除进度，或 [批量删除文档文件](/zh/api-reference/documents-and-chunks/delete-document-files-in-batch) 中单个文件的删除进度。轮询直到 `ru…",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "删除作业",
+        "get-deletion-job"
+      ]
+    },
+    {
+      "title": "获取删除批次",
+      "source_url": "https://docs.dify.ai/zh/api-reference/deletion-jobs/get-deletion-batch",
+      "source_path": "/zh/api-reference/deletion-jobs/get-deletion-batch",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/删除作业/获取删除批次.md",
+      "summary": "返回一次 [批量删除文档文件](/zh/api-reference/documents-and-chunks/delete-document-files-in-batch) 请求，包括每个文件的处理结果，以及每个已受理文件的删除作业当前状态。只有发送该批次的 API 密钥能读取它。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "删除作业",
+        "get-deletion-batch"
+      ]
+    },
+    {
+      "title": "获取数据源连接列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/list-source-connections",
+      "source_path": "/zh/api-reference/sources/list-source-connections",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/获取数据源连接列表.md",
+      "summary": "列出该知识库的连接，最早的在前。将某个连接的 `id` 作为 `connectionId` 传给 [创建数据源](/zh/api-reference/sources/create-source)，即可添加通过该连接读取内容的数据源。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "list-source-connections"
+      ]
+    },
+    {
+      "title": "创建数据源",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/create-source",
+      "source_path": "/zh/api-reference/sources/create-source",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/创建数据源.md",
+      "summary": "添加一个通过现有连接读取内容的数据源，连接可通过 [获取数据源连接列表](/zh/api-reference/sources/list-source-connections) 查找。此操作不会抓取或导入任何内容。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "create-source"
+      ]
+    },
+    {
+      "title": "获取数据源列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/list-sources",
+      "source_path": "/zh/api-reference/sources/list-sources",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/获取数据源列表.md",
+      "summary": "按数据源 ID 升序列出知识库的数据源。每个数据源附带其定时同步设置、最近一次完成的同步或导入，以及当前运行；没有正在进行的运行时，改为附带最近一次同步。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "list-sources"
+      ]
+    },
+    {
+      "title": "获取数据源",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/get-source",
+      "source_path": "/zh/api-reference/sources/get-source",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/获取数据源.md",
+      "summary": "返回一个数据源的存储内容。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "get-source"
+      ]
+    },
+    {
+      "title": "更新数据源",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/update-source",
+      "source_path": "/zh/api-reference/sources/update-source",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/更新数据源.md",
+      "summary": "更新数据源的名称、状态、URI、元数据或提供商参数；配置有变化时，可同时启动一次同步。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "update-source"
+      ]
+    },
+    {
+      "title": "删除数据源",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/delete-source",
+      "source_path": "/zh/api-reference/sources/delete-source",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/删除数据源.md",
+      "summary": "请求删除数据源，并返回删除作业。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "delete-source"
+      ]
+    },
+    {
+      "title": "测试数据源凭据",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/test-source-credentials",
+      "source_path": "/zh/api-reference/sources/test-source-credentials",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/测试数据源凭据.md",
+      "summary": "由数据源提供商验证该数据源的凭据，并返回结果。不会对数据源做任何更改。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "test-source-credentials"
+      ]
+    },
+    {
+      "title": "获取数据源页面列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/list-source-pages",
+      "source_path": "/zh/api-reference/sources/list-source-pages",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/获取数据源页面列表.md",
+      "summary": "列出在线文档数据源在其提供商处可见的页面，按提供商工作空间分组。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "list-source-pages"
+      ]
+    },
+    {
+      "title": "获取数据源文件列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/list-source-files",
+      "source_path": "/zh/api-reference/sources/list-source-files",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/获取数据源文件列表.md",
+      "summary": "列出在线云盘数据源在其提供商处可见的存储桶和文件。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "list-source-files"
+      ]
+    },
+    {
+      "title": "获取同步策略",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/get-sync-policy",
+      "source_path": "/zh/api-reference/sources/get-sync-policy",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/获取同步策略.md",
+      "summary": "返回数据源的定时同步设置，以及 [更新同步策略](/zh/api-reference/sources/update-sync-policy) 所需的 `revision`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "get-sync-policy"
+      ]
+    },
+    {
+      "title": "更新同步策略",
+      "source_url": "https://docs.dify.ai/zh/api-reference/sources/update-sync-policy",
+      "source_path": "/zh/api-reference/sources/update-sync-policy",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源/更新同步策略.md",
+      "summary": "设置数据源的定时同步，替换原有设置，并返回新设置。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源",
+        "update-sync-policy"
+      ]
+    },
+    {
+      "title": "同步数据源",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/sync-source",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/sync-source",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/同步数据源.md",
+      "summary": "立即启动数据源同步，并返回运行。用其 `id` 轮询 [获取数据源运行](/zh/api-reference/source-syncs-and-imports/get-source-run)，直到 `state` 为 `completed`、`failed` 或 `canceled`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "sync-source"
+      ]
+    },
+    {
+      "title": "预览网站抓取",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/preview-website-crawl",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/preview-website-crawl",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/预览网站抓取.md",
+      "summary": "抓取网站数据源，并暂存找到的页面供你挑选，不导入任何内容。返回运行。用其 `id` 轮询 [获取数据源运行](/zh/api-reference/source-syncs-and-imports/get-source-run)，直到 `state` 为 `preview_ready`、`zero_results`、`failed` 或 `canceled`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "preview-website-crawl"
+      ]
+    },
+    {
+      "title": "获取抓取预览页面列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/list-crawl-preview-pages",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/list-crawl-preview-pages",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/获取抓取预览页面列表.md",
+      "summary": "列出抓取预览发现的页面，以及传给 [导入所选页面](/zh/api-reference/source-syncs-and-imports/import-selected-pages) 所需的 `page_id`。不返回页面内容。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "list-crawl-preview-pages"
+      ]
+    },
+    {
+      "title": "导入所选页面",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/import-selected-pages",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/import-selected-pages",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/导入所选页面.md",
+      "summary": "将抓取预览中的页面导入为文档，并返回同一个运行，此时它已排队等待导入。用相同的 `id` 轮询 [获取数据源运行](/zh/api-reference/source-syncs-and-imports/get-source-run)，直到 `state` 为 `completed`、`failed` 或 `canceled`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "import-selected-pages"
+      ]
+    },
+    {
+      "title": "导入网站页面",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/import-website-pages",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/import-website-pages",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/导入网站页面.md",
+      "summary": "将已知 URL 导入网站数据源，并返回运行。用其 `id` 轮询 [获取数据源运行](/zh/api-reference/source-syncs-and-imports/get-source-run)，直到 `state` 为 `completed`、`failed` 或 `canceled`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "import-website-pages"
+      ]
+    },
+    {
+      "title": "导入数据源条目",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/import-source-items",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/import-source-items",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/导入数据源条目.md",
+      "summary": "将在线文档页面或在线云盘文件导入连接器数据源，并返回运行。用其 `id` 轮询 [获取数据源运行](/zh/api-reference/source-syncs-and-imports/get-source-run)，直到 `state` 为 `completed`、`failed` 或 `canceled`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "import-source-items"
+      ]
+    },
+    {
+      "title": "获取数据源运行列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/list-source-runs",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/list-source-runs",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/获取数据源运行列表.md",
+      "summary": "列出知识库的数据源运行（同步、抓取预览和导入），包括由定时同步或在 Dify 中启动的运行。只列出该密钥可读取的数据源的运行。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "list-source-runs"
+      ]
+    },
+    {
+      "title": "获取数据源运行",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/get-source-run",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/get-source-run",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/获取数据源运行.md",
+      "summary": "返回一个数据源运行。可按 ID 跟踪任意运行，包括 [获取数据源列表](/zh/api-reference/sources/list-sources) 不显示的抓取预览，以及从预览发起的导入。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "get-source-run"
+      ]
+    },
+    {
+      "title": "取消数据源运行",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/cancel-source-run",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/cancel-source-run",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/取消数据源运行.md",
+      "summary": "取消尚未结束的数据源运行，并返回该运行。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "cancel-source-run"
+      ]
+    },
+    {
+      "title": "重试数据源运行",
+      "source_url": "https://docs.dify.ai/zh/api-reference/source-syncs-and-imports/retry-source-run",
+      "source_path": "/zh/api-reference/source-syncs-and-imports/retry-source-run",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/数据源同步与导入/重试数据源运行.md",
+      "summary": "以相同的运行 ID，从头重新执行状态为 `failed` 或 `canceled` 的数据源运行，并返回已排队的运行。进度会重置，导入会重新获取每个条目，同步会从头开始。已选定页面的抓取预览会直接重新导入这些页面，不再抓取。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "数据源同步与导入",
+        "retry-source-run"
+      ]
+    },
+    {
+      "title": "获取知识库设置",
+      "source_url": "https://docs.dify.ai/zh/api-reference/settings/get-knowledge-base-settings",
+      "source_path": "/zh/api-reference/settings/get-knowledge-base-settings",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/设置/获取知识库设置.md",
+      "summary": "返回知识库的嵌入模型、检索设置、就绪状态，以及调用 [更新知识库设置](/zh/api-reference/settings/update-knowledge-base-settings) 时需要发送的 `revision`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "设置",
+        "get-knowledge-base-settings"
+      ]
+    },
+    {
+      "title": "更新知识库设置",
+      "source_url": "https://docs.dify.ai/zh/api-reference/settings/update-knowledge-base-settings",
+      "source_path": "/zh/api-reference/settings/update-knowledge-base-settings",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/设置/更新知识库设置.md",
+      "summary": "更改知识库的嵌入模型或检索设置。在内容索引前后如何设置模型，详见 [更换模型或检索设置](/zh/api-reference/guides/knowledge-base#change-models-or-retrieval-settings)。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "设置",
+        "update-knowledge-base-settings"
+      ]
+    },
+    {
+      "title": "获取设置迁移",
+      "source_url": "https://docs.dify.ai/zh/api-reference/settings/get-settings-migration",
+      "source_path": "/zh/api-reference/settings/get-settings-migration",
+      "local_path": "开发者资源/API/知识库 API/Agent 知识库/设置/获取设置迁移.md",
+      "summary": "返回迁移的进度。该迁移由 [更新知识库设置](/zh/api-reference/settings/update-knowledge-base-settings) 在返回 `202` 时启动。轮询直到 `run_state` 为 `succeeded`、`failed` 或 `canceled`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "Agent 知识库",
+        "设置",
+        "get-settings-migration"
+      ]
+    },
+    {
+      "title": "创建空知识库",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-bases/create-an-empty-knowledge-base",
+      "source_path": "/zh/api-reference/knowledge-bases/create-an-empty-knowledge-base",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识库/创建空知识库.md",
+      "summary": "创建一个空知识库。之后用 [从文本创建文档](/zh/api-reference/documents/create-document-by-text) 或 [从文件创建文档](/zh/api-reference/documents/create-document-by-file) 向其中添加文档。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识库",
+        "create-an-empty-knowledge-base"
+      ]
+    },
+    {
+      "title": "获取知识库列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-bases/list-knowledge-bases",
+      "source_path": "/zh/api-reference/knowledge-bases/list-knowledge-bases",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识库/获取知识库列表.md",
+      "summary": "返回工作空间中知识库的分页列表，不按知识库的权限设置过滤，可按关键词或标签筛选。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识库",
+        "list-knowledge-bases"
+      ]
+    },
+    {
+      "title": "获取知识库详情",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-bases/get-knowledge-base",
+      "source_path": "/zh/api-reference/knowledge-bases/get-knowledge-base",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识库/获取知识库详情.md",
+      "summary": "返回知识库的详细信息，包括嵌入模型、检索配置和文档统计信息。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识库",
+        "get-knowledge-base"
+      ]
+    },
+    {
+      "title": "更新知识库",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-bases/update-knowledge-base",
+      "source_path": "/zh/api-reference/knowledge-bases/update-knowledge-base",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识库/更新知识库.md",
+      "summary": "更新知识库。仅更改请求体中包含的字段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识库",
+        "update-knowledge-base"
+      ]
+    },
+    {
+      "title": "删除知识库",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-bases/delete-knowledge-base",
+      "source_path": "/zh/api-reference/knowledge-bases/delete-knowledge-base",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识库/删除知识库.md",
+      "summary": "永久删除知识库、其中的所有文档，以及只绑定了该知识库的 API 密钥。同时绑定了其他知识库的密钥仍可继续访问那些知识库。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识库",
+        "delete-knowledge-base"
+      ]
+    },
+    {
+      "title": "从知识库检索分段 / 测试检索",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-bases/retrieve-chunks-from-a-knowledge-base-test-retrieval",
+      "source_path": "/zh/api-reference/knowledge-bases/retrieve-chunks-from-a-knowledge-base-test-retrieval",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识库/从知识库检索分段 测试检索.md",
+      "summary": "搜索知识库，返回与查询最相关的分段，可用于生产环境检索和测试检索。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识库",
+        "retrieve-chunks-from-a-knowledge-base-test-retrieval"
+      ]
+    },
+    {
+      "title": "从文本创建文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/create-document-by-text",
+      "source_path": "/zh/api-reference/documents/create-document-by-text",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/从文本创建文档.md",
+      "summary": "在知识库中通过纯文本创建文档。索引异步进行；使用返回的 `batch` ID 通过 [获取文档嵌入状态（进度）](/zh/api-reference/documents/get-document-indexing-status) 跟踪。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "create-document-by-text"
+      ]
+    },
+    {
+      "title": "从文件创建文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/create-document-by-file",
+      "source_path": "/zh/api-reference/documents/create-document-by-file",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/从文件创建文档.md",
+      "summary": "在知识库中通过上传文件创建文档。支持 PDF、TXT、DOCX 等常见格式。索引异步进行；使用返回的 `batch` ID 通过 [获取文档嵌入状态（进度）](/zh/api-reference/documents/get-document-indexing-status) 跟踪。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "create-document-by-file"
+      ]
+    },
+    {
+      "title": "获取知识库的文档列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/list-documents",
+      "source_path": "/zh/api-reference/documents/list-documents",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/获取知识库的文档列表.md",
+      "summary": "返回知识库中文档的分页列表。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "list-documents"
+      ]
+    },
+    {
+      "title": "获取文档详情",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/get-document",
+      "source_path": "/zh/api-reference/documents/get-document",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/获取文档详情.md",
+      "summary": "返回单个文档的详细信息。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "get-document"
+      ]
+    },
+    {
+      "title": "删除文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/delete-document",
+      "source_path": "/zh/api-reference/documents/delete-document",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/删除文档.md",
+      "summary": "从知识库中永久删除文档及其所有分段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "delete-document"
+      ]
+    },
+    {
+      "title": "更新文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/update-document",
+      "source_path": "/zh/api-reference/documents/update-document",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/更新文档.md",
+      "summary": "通过上传新文件更新文档，然后重新索引。这是基于文件更新文档的规范端点。使用返回的 `batch` ID 通过 [获取文档嵌入状态（进度）](/zh/api-reference/documents/get-document-indexing-status) 跟踪进度。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "update-document"
+      ]
+    },
+    {
+      "title": "下载文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/download-document",
+      "source_path": "/zh/api-reference/documents/download-document",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/下载文档.md",
+      "summary": "返回用于下载文档原始上传文件的签名 URL。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "download-document"
+      ]
+    },
+    {
+      "title": "获取文档嵌入状态（进度）",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/get-document-indexing-status",
+      "source_path": "/zh/api-reference/documents/get-document-indexing-status",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/获取文档嵌入状态（进度）.md",
+      "summary": "返回批次中每个文档的索引进度：当前阶段和分段完成计数。轮询直到每个 `indexing_status` 变为 `completed` 或 `error`。状态按 `waiting` → `parsing` → `cleaning` → `splitting` → `indexing` → `completed` 推进。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "get-document-indexing-status"
+      ]
+    },
+    {
+      "title": "用文本更新文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/update-document-by-text",
+      "source_path": "/zh/api-reference/documents/update-document-by-text",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/用文本更新文档.md",
+      "summary": "更新文档的文本内容、名称或处理配置。文本变更时会重新索引文档。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "update-document-by-text"
+      ]
+    },
+    {
+      "title": "用文件更新文档",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/update-document-by-file",
+      "source_path": "/zh/api-reference/documents/update-document-by-file",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/用文件更新文档.md",
+      "summary": "已弃用。改用 [更新文档](/zh/api-reference/documents/update-document)。通过上传新文件更新文档，然后重新索引。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "update-document-by-file"
+      ]
+    },
+    {
+      "title": "批量下载文档（ZIP）",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/download-documents-as-zip",
+      "source_path": "/zh/api-reference/documents/download-documents-as-zip",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/批量下载文档（ZIP）.md",
+      "summary": "将一个或多个文档下载为单个 ZIP 压缩包。仅可包含以文件形式上传的文档。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "download-documents-as-zip"
+      ]
+    },
+    {
+      "title": "批量更新文档状态",
+      "source_url": "https://docs.dify.ai/zh/api-reference/documents/update-document-status-in-batch",
+      "source_path": "/zh/api-reference/documents/update-document-status-in-batch",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/文档/批量更新文档状态.md",
+      "summary": "在一次请求中批量启用、禁用、归档或取消归档多个文档。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "文档",
+        "update-document-status-in-batch"
+      ]
+    },
+    {
+      "title": "向文档添加分段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chunks/create-chunks",
+      "source_path": "/zh/api-reference/chunks/create-chunks",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/分段/向文档添加分段.md",
+      "summary": "在文档中创建一个或多个分段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "分段",
+        "create-chunks"
+      ]
+    },
+    {
+      "title": "从文档获取分段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chunks/list-chunks",
+      "source_path": "/zh/api-reference/chunks/list-chunks",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/分段/从文档获取分段.md",
+      "summary": "返回文档内分段的分页列表，可按关键词或索引状态筛选。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "分段",
+        "list-chunks"
+      ]
+    },
+    {
+      "title": "获取文档中的分段详情",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chunks/get-chunk",
+      "source_path": "/zh/api-reference/chunks/get-chunk",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/分段/获取文档中的分段详情.md",
+      "summary": "获取单个分段的完整详情。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "分段",
+        "get-chunk"
+      ]
+    },
+    {
+      "title": "更新文档中的分段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chunks/update-chunk",
+      "source_path": "/zh/api-reference/chunks/update-chunk",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/分段/更新文档中的分段.md",
+      "summary": "更新分段的字段。更新会为该分段重新触发索引。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "分段",
+        "update-chunk"
+      ]
+    },
+    {
+      "title": "删除文档中的分段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chunks/delete-chunk",
+      "source_path": "/zh/api-reference/chunks/delete-chunk",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/分段/删除文档中的分段.md",
+      "summary": "从文档中永久删除一个分段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "分段",
+        "delete-chunk"
+      ]
+    },
+    {
+      "title": "创建子分段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chunks/create-child-chunk",
+      "source_path": "/zh/api-reference/chunks/create-child-chunk",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/分段/创建子分段.md",
+      "summary": "在父分段下创建子分段。适用于使用父子（`hierarchical_model`）分块模式的文档。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "分段",
+        "create-child-chunk"
+      ]
+    },
+    {
+      "title": "获取子分段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chunks/list-child-chunks",
+      "source_path": "/zh/api-reference/chunks/list-child-chunks",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/分段/获取子分段.md",
+      "summary": "返回特定父分段下子分段的分页列表。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "分段",
+        "list-child-chunks"
+      ]
+    },
+    {
+      "title": "更新子分段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chunks/update-child-chunk",
+      "source_path": "/zh/api-reference/chunks/update-child-chunk",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/分段/更新子分段.md",
+      "summary": "更新现有子分段的内容。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "分段",
+        "update-child-chunk"
+      ]
+    },
+    {
+      "title": "删除子分段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/chunks/delete-child-chunk",
+      "source_path": "/zh/api-reference/chunks/delete-child-chunk",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/分段/删除子分段.md",
+      "summary": "从父分段中永久删除一个子分段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "分段",
+        "delete-child-chunk"
+      ]
+    },
+    {
+      "title": "创建元数据字段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/metadata/create-metadata-field",
+      "source_path": "/zh/api-reference/metadata/create-metadata-field",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/元数据/创建元数据字段.md",
+      "summary": "为知识库创建自定义元数据字段，用于给文档标注结构化信息。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "元数据",
+        "create-metadata-field"
+      ]
+    },
+    {
+      "title": "获取元数据字段列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/metadata/list-metadata-fields",
+      "source_path": "/zh/api-reference/metadata/list-metadata-fields",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/元数据/获取元数据字段列表.md",
+      "summary": "返回知识库的所有元数据字段（包括自定义和内置字段），以及使用每个字段的文档数量。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "元数据",
+        "list-metadata-fields"
+      ]
+    },
+    {
+      "title": "更新元数据字段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/metadata/update-metadata-field",
+      "source_path": "/zh/api-reference/metadata/update-metadata-field",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/元数据/更新元数据字段.md",
+      "summary": "重命名自定义元数据字段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "元数据",
+        "update-metadata-field"
+      ]
+    },
+    {
+      "title": "删除元数据字段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/metadata/delete-metadata-field",
+      "source_path": "/zh/api-reference/metadata/delete-metadata-field",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/元数据/删除元数据字段.md",
+      "summary": "永久删除自定义元数据字段。使用过该字段的文档将丢失其对应的值。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "元数据",
+        "delete-metadata-field"
+      ]
+    },
+    {
+      "title": "获取内置元数据字段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/metadata/get-built-in-metadata-fields",
+      "source_path": "/zh/api-reference/metadata/get-built-in-metadata-fields",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/元数据/获取内置元数据字段.md",
+      "summary": "返回系统提供的内置元数据字段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "元数据",
+        "get-built-in-metadata-fields"
+      ]
+    },
+    {
+      "title": "更新内置元数据字段",
+      "source_url": "https://docs.dify.ai/zh/api-reference/metadata/update-built-in-metadata-field",
+      "source_path": "/zh/api-reference/metadata/update-built-in-metadata-field",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/元数据/更新内置元数据字段.md",
+      "summary": "启用或禁用知识库的内置元数据字段。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "元数据",
+        "update-built-in-metadata-field"
+      ]
+    },
+    {
+      "title": "批量更新文档元数据",
+      "source_url": "https://docs.dify.ai/zh/api-reference/metadata/update-document-metadata-in-batch",
+      "source_path": "/zh/api-reference/metadata/update-document-metadata-in-batch",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/元数据/批量更新文档元数据.md",
+      "summary": "在一次请求中批量更新多个文档的元数据值。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "元数据",
+        "update-document-metadata-in-batch"
+      ]
+    },
+    {
+      "title": "创建知识库标签",
+      "source_url": "https://docs.dify.ai/zh/api-reference/tags/create-knowledge-tag",
+      "source_path": "/zh/api-reference/tags/create-knowledge-tag",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/标签/创建知识库标签.md",
+      "summary": "创建用于组织知识库的标签。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "标签",
+        "create-knowledge-tag"
+      ]
+    },
+    {
+      "title": "获取知识库标签列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/tags/list-knowledge-tags",
+      "source_path": "/zh/api-reference/tags/list-knowledge-tags",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/标签/获取知识库标签列表.md",
+      "summary": "返回工作空间中所有的知识库标签。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "标签",
+        "list-knowledge-tags"
+      ]
+    },
+    {
+      "title": "修改知识库标签",
+      "source_url": "https://docs.dify.ai/zh/api-reference/tags/update-knowledge-tag",
+      "source_path": "/zh/api-reference/tags/update-knowledge-tag",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/标签/修改知识库标签.md",
+      "summary": "重命名知识库标签。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "标签",
+        "update-knowledge-tag"
+      ]
+    },
+    {
+      "title": "删除知识库标签",
+      "source_url": "https://docs.dify.ai/zh/api-reference/tags/delete-knowledge-tag",
+      "source_path": "/zh/api-reference/tags/delete-knowledge-tag",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/标签/删除知识库标签.md",
+      "summary": "永久删除知识库标签。不会删除已被标记的知识库。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "标签",
+        "delete-knowledge-tag"
+      ]
+    },
+    {
+      "title": "绑定标签到知识库",
+      "source_url": "https://docs.dify.ai/zh/api-reference/tags/create-tag-binding",
+      "source_path": "/zh/api-reference/tags/create-tag-binding",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/标签/绑定标签到知识库.md",
+      "summary": "将一个或多个标签绑定到知识库。一个知识库可以有多个标签。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "标签",
+        "create-tag-binding"
+      ]
+    },
+    {
+      "title": "解除标签与知识库的绑定",
+      "source_url": "https://docs.dify.ai/zh/api-reference/tags/delete-tag-binding",
+      "source_path": "/zh/api-reference/tags/delete-tag-binding",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/标签/解除标签与知识库的绑定.md",
+      "summary": "从知识库中移除一个或多个标签。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "标签",
+        "delete-tag-binding"
+      ]
+    },
+    {
+      "title": "获取知识库绑定的标签",
+      "source_url": "https://docs.dify.ai/zh/api-reference/tags/get-knowledge-base-tags",
+      "source_path": "/zh/api-reference/tags/get-knowledge-base-tags",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/标签/获取知识库绑定的标签.md",
+      "summary": "返回绑定到知识库的标签。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "标签",
+        "get-knowledge-base-tags"
+      ]
+    },
+    {
+      "title": "获取可用模型",
+      "source_url": "https://docs.dify.ai/zh/api-reference/models/get-available-models",
+      "source_path": "/zh/api-reference/models/get-available-models",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/模型/获取可用模型.md",
+      "summary": "返回指定类型的可用模型。用它查找可配置到知识库的 `text-embedding` 和 `rerank` 模型。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "模型",
+        "get-available-models"
+      ]
+    },
+    {
+      "title": "上传流水线文件",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-pipeline/upload-pipeline-file",
+      "source_path": "/zh/api-reference/knowledge-pipeline/upload-pipeline-file",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识流水线/上传流水线文件.md",
+      "summary": "上传文件以在知识流水线中使用。将返回的 `id` 用作 [运行流水线](/zh/api-reference/knowledge-pipeline/run-pipeline) 中 `local_file` 项的 `reference`。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识流水线",
+        "upload-pipeline-file"
+      ]
+    },
+    {
+      "title": "获取数据源插件列表",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-pipeline/list-datasource-plugins",
+      "source_path": "/zh/api-reference/knowledge-pipeline/list-datasource-plugins",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识流水线/获取数据源插件列表.md",
+      "summary": "返回知识流水线中已配置的数据源节点，每个节点包含其使用的插件，以及运行该节点所需的元数据。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识流水线",
+        "list-datasource-plugins"
+      ]
+    },
+    {
+      "title": "执行数据源节点",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-pipeline/run-datasource-node",
+      "source_path": "/zh/api-reference/knowledge-pipeline/run-datasource-node",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识流水线/执行数据源节点.md",
+      "summary": "运行知识流水线中的单个数据源节点，并流式返回其执行事件。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识流水线",
+        "run-datasource-node"
+      ]
+    },
+    {
+      "title": "运行流水线",
+      "source_url": "https://docs.dify.ai/zh/api-reference/knowledge-pipeline/run-pipeline",
+      "source_path": "/zh/api-reference/knowledge-pipeline/run-pipeline",
+      "local_path": "开发者资源/API/知识库 API/经典知识库/知识流水线/运行流水线.md",
+      "summary": "对一个或多个数据源运行完整的知识流水线。`response_mode` 选择流式或阻塞响应。",
+      "keywords": [
+        "开发者资源",
+        "API",
+        "知识库 API",
+        "经典知识库",
+        "知识流水线",
+        "run-pipeline"
+      ]
+    },
+    {
+      "title": "概述",
+      "source_url": "https://docs.dify.ai/zh/cli/overview",
+      "source_path": "/zh/cli/overview",
+      "local_path": "开发者资源/CLI/概述.md",
+      "summary": "你和编码 Agent 都能用 difyctl 在终端中操作 Dify 应用",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "overview"
+      ]
+    },
+    {
+      "title": "快速开始",
+      "source_url": "https://docs.dify.ai/zh/cli/get-started",
+      "source_path": "/zh/cli/get-started",
+      "local_path": "开发者资源/CLI/快速开始.md",
+      "summary": "安装 difyctl 并登录，用 difyctl Skill 配置编码 Agent，再查找你自己要运行的命令",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "get-started"
+      ]
+    },
+    {
+      "title": "查找并运行命令",
+      "source_url": "https://docs.dify.ai/zh/cli/find-and-run-commands",
+      "source_path": "/zh/cli/find-and-run-commands",
+      "local_path": "开发者资源/CLI/查找并运行命令.md",
+      "summary": "找到完成某项任务的 difyctl 命令，用标志或 JSON 传值，再按结果中的建议运行后续步骤",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "find-and-run-commands"
+      ]
+    },
+    {
+      "title": "构建应用",
+      "source_url": "https://docs.dify.ai/zh/cli/build-apps",
+      "source_path": "/zh/cli/build-apps",
+      "local_path": "开发者资源/CLI/应用操作/构建应用.md",
+      "summary": "让编码 Agent 构建、修改、测试并发布你的 Workflow 和 Chatflow 应用",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "应用操作",
+        "build-apps"
+      ]
+    },
+    {
+      "title": "运行应用",
+      "source_url": "https://docs.dify.ai/zh/cli/run-apps",
+      "source_path": "/zh/cli/run-apps",
+      "local_path": "开发者资源/CLI/应用操作/运行应用.md",
+      "summary": "用 difyctl 运行 Dify 应用，传入变量和文件，流式查看或停止耗时较长的运行，填写人工介入表单，并排查运行失败的原因",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "应用操作",
+        "run-apps"
+      ]
+    },
+    {
+      "title": "通过 DSL 文件创建和更新应用",
+      "source_url": "https://docs.dify.ai/zh/cli/create-and-update-apps-from-dsl-files",
+      "source_path": "/zh/cli/create-and-update-apps-from-dsl-files",
+      "local_path": "开发者资源/CLI/应用操作/通过 DSL 文件创建和更新应用.md",
+      "summary": "用 difyctl 通过 DSL 文件更新 Dify 应用，再发布或回滚，从文件或应用包创建应用，并修改 Web 应用设置",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "应用操作",
+        "create-and-update-apps-from-dsl-files"
+      ]
+    },
+    {
+      "title": "在 CI 和自动化中使用 `difyctl`",
+      "source_url": "https://docs.dify.ai/zh/cli/scripts-and-ci",
+      "source_path": "/zh/cli/scripts-and-ci",
+      "local_path": "开发者资源/CLI/应用操作/在 CI 和自动化中使用 `difyctl`.md",
+      "summary": "在 CI 任务中安装 difyctl、配置登录，并让任务在该停下时停下，另附合并时更新应用的示例",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "应用操作",
+        "scripts-and-ci"
+      ]
+    },
+    {
+      "title": "管理登录",
+      "source_url": "https://docs.dify.ai/zh/cli/manage-sign-in",
+      "source_path": "/zh/cli/manage-sign-in",
+      "local_path": "开发者资源/CLI/管理 difyctl/管理登录.md",
+      "summary": "续期过期的登录，使用多个服务器或账户，切换工作空间，查看令牌的存储位置，并结束不再使用的会话",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "管理 difyctl",
+        "manage-sign-in"
+      ]
+    },
+    {
+      "title": "更新或卸载 difyctl",
+      "source_url": "https://docs.dify.ai/zh/cli/update-or-uninstall",
+      "source_path": "/zh/cli/update-or-uninstall",
+      "local_path": "开发者资源/CLI/管理 difyctl/更新或卸载 difyctl.md",
+      "summary": "Dify 服务器升级到新版本时更新 difyctl，或从机器上卸载 difyctl",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "管理 difyctl",
+        "update-or-uninstall"
+      ]
+    },
+    {
+      "title": "Dify 1.18.0 升级指南",
+      "source_url": "https://docs.dify.ai/zh/cli/upgrade-across-1-18",
+      "source_path": "/zh/cli/upgrade-across-1-18",
+      "local_path": "开发者资源/CLI/管理 difyctl/Dify 1.18.0 升级指南.md",
+      "summary": "Dify 服务器从 1.17.x 或更早版本升级到 1.18.0 或更高版本时，重新登录、清理旧版残留，并逐一更新命令、脚本和编码 Agent",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "管理 difyctl",
+        "upgrade-across-1-18"
+      ]
+    },
+    {
+      "title": "命令索引",
+      "source_url": "https://docs.dify.ai/zh/cli/reference/command-index",
+      "source_path": "/zh/cli/reference/command-index",
+      "local_path": "开发者资源/CLI/参考/命令索引.md",
+      "summary": "按用途分组列出 difyctl 命令，说明每条命令的作用和使用条件",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "参考",
+        "command-index"
+      ]
+    },
+    {
+      "title": "结果、错误与退出码",
+      "source_url": "https://docs.dify.ai/zh/cli/reference/results-errors-and-exit-codes",
+      "source_path": "/zh/cli/reference/results-errors-and-exit-codes",
+      "local_path": "开发者资源/CLI/参考/结果、错误与退出码.md",
+      "summary": "看懂 difyctl 命令输出的内容，判断一次运行是怎样结束的，并处理错误、退出码、重试与限流",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "参考",
+        "results-errors-and-exit-codes"
+      ]
+    },
+    {
+      "title": "配置",
+      "source_url": "https://docs.dify.ai/zh/cli/reference/configuration",
+      "source_path": "/zh/cli/reference/configuration",
+      "local_path": "开发者资源/CLI/参考/配置.md",
+      "summary": "调整 difyctl 的安装方式，设置它读取的环境变量，修改超时时长，并查看它保存的文件",
+      "keywords": [
+        "开发者资源",
+        "CLI",
+        "参考",
+        "configuration"
+      ]
+    },
+    {
+      "title": "Dify 插件",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/getting-started/getting-started-dify-plugin",
+      "source_path": "/zh/develop-plugin/getting-started/getting-started-dify-plugin",
+      "local_path": "开发者资源/插件开发/快速开始/Dify 插件.md",
+      "summary": "模块化组件，通过外部服务、自定义逻辑和专业工具扩展 Dify AI 应用",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "快速开始",
+        "getting-started-dify-plugin"
+      ]
+    },
+    {
+      "title": "选择插件类型",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/getting-started/choose-plugin-type",
+      "source_path": "/zh/develop-plugin/getting-started/choose-plugin-type",
+      "local_path": "开发者资源/插件开发/快速开始/选择插件类型.md",
+      "summary": "一份简明的决策指南，帮助你在工具、模型、Agent 策略、扩展、数据源和触发器插件之间做出选择",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "快速开始",
+        "choose-plugin-type"
+      ]
+    },
+    {
+      "title": "Dify 插件 CLI",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/getting-started/cli",
+      "source_path": "/zh/develop-plugin/getting-started/cli",
+      "local_path": "开发者资源/插件开发/快速开始/Dify 插件 CLI.md",
+      "summary": "安装 Dify 插件 CLI、搭建新插件项目，并在本地开发时将其连接到 Dify 实例运行",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "快速开始",
+        "cli"
+      ]
+    },
+    {
+      "title": "通用规范",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/plugin-types/general-specifications",
+      "source_path": "/zh/develop-plugin/features-and-specs/plugin-types/general-specifications",
+      "local_path": "开发者资源/插件开发/特性与规范/插件类型/通用规范.md",
+      "summary": "各类插件共享的通用数据结构，包括 I18nObject、ProviderConfig、ModelConfig、NodeResponse 和 ToolSelector",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "插件类型",
+        "general-specifications"
+      ]
+    },
+    {
+      "title": "模型规范",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/plugin-types/model-designing-rules",
+      "source_path": "/zh/develop-plugin/features-and-specs/plugin-types/model-designing-rules",
+      "local_path": "开发者资源/插件开发/特性与规范/插件类型/模型规范.md",
+      "summary": "Dify 模型插件相关实体的参考，包括 Provider、AIModelEntity、模型类型、配置方法、参数规则和凭据模式",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "插件类型",
+        "model-designing-rules"
+      ]
+    },
+    {
+      "title": "模型 API 接口",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/plugin-types/model-schema",
+      "source_path": "/zh/develop-plugin/features-and-specs/plugin-types/model-schema",
+      "local_path": "开发者资源/插件开发/特性与规范/插件类型/模型 API 接口.md",
+      "summary": "实现 Dify 模型插件所需的接口和数据结构，涵盖 LLM、TextEmbedding、Rerank、Speech2Text、Text2Speech 和 Moderation 模型",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "插件类型",
+        "model-schema"
+      ]
+    },
+    {
+      "title": "持久化存储",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/plugin-types/persistent-storage-kv",
+      "source_path": "/zh/develop-plugin/features-and-specs/plugin-types/persistent-storage-kv",
+      "local_path": "开发者资源/插件开发/特性与规范/插件类型/持久化存储.md",
+      "summary": "使用内置的键值存储在插件的多次交互间保存数据",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "插件类型",
+        "persistent-storage-kv"
+      ]
+    },
+    {
+      "title": "工具返回",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/plugin-types/tool",
+      "source_path": "/zh/develop-plugin/features-and-specs/plugin-types/tool",
+      "local_path": "开发者资源/插件开发/特性与规范/插件类型/工具返回.md",
+      "summary": "工具插件如何返回消息（文本、链接、图片、文件、JSON）、创建标准变量和流式变量，以及定义输出模式以供工作流引用",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "插件类型",
+        "tool"
+      ]
+    },
+    {
+      "title": "Manifest",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/plugin-types/plugin-info-by-manifest",
+      "source_path": "/zh/develop-plugin/features-and-specs/plugin-types/plugin-info-by-manifest",
+      "local_path": "开发者资源/插件开发/特性与规范/插件类型/Manifest.md",
+      "summary": "插件 manifest 的 YAML schema，用于声明名称、作者、运行时、资源、权限，以及插件附带的工具、模型和端点",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "插件类型",
+        "plugin-info-by-manifest"
+      ]
+    },
+    {
+      "title": "多语言 README",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/plugin-types/multilingual-readme",
+      "source_path": "/zh/develop-plugin/features-and-specs/plugin-types/multilingual-readme",
+      "local_path": "开发者资源/插件开发/特性与规范/插件类型/多语言 README.md",
+      "summary": "添加各语言的 README 文件，让 Dify Marketplace 以用户的首选语言展示插件文档",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "插件类型",
+        "multilingual-readme"
+      ]
+    },
+    {
+      "title": "插件调试",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/plugin-types/remote-debug-a-plugin",
+      "source_path": "/zh/develop-plugin/features-and-specs/plugin-types/remote-debug-a-plugin",
+      "local_path": "开发者资源/插件开发/特性与规范/插件类型/插件调试.md",
+      "summary": "在本地运行开发中的插件，并将其挂载到在线 Dify 工作空间进行端到端测试，无需打包",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "插件类型",
+        "remote-debug-a-plugin"
+      ]
+    },
+    {
+      "title": "输出插件日志",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/plugin-types/plugin-logging",
+      "source_path": "/zh/develop-plugin/features-and-specs/plugin-types/plugin-logging",
+      "local_path": "开发者资源/插件开发/特性与规范/插件类型/输出插件日志.md",
+      "summary": "通过 SDK 的 plugin_logger_handler 输出插件日志，可在远程调试时查看，也会写入守护进程容器日志",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "插件类型",
+        "plugin-logging"
+      ]
+    },
+    {
+      "title": "Bundle 插件包",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/advanced-development/bundle",
+      "source_path": "/zh/develop-plugin/features-and-specs/advanced-development/bundle",
+      "local_path": "开发者资源/插件开发/特性与规范/高级开发/反向调用/Bundle 插件包.md",
+      "summary": "将多个插件打包进一个 Bundle，支持 Marketplace、GitHub 和 Package 三种依赖类型",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "高级开发",
+        "反向调用",
+        "bundle"
+      ]
+    },
+    {
+      "title": "Dify 服务的反向调用",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation",
+      "source_path": "/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation",
+      "local_path": "开发者资源/插件开发/特性与规范/高级开发/反向调用/Dify 服务的反向调用.md",
+      "summary": "在插件中调用 Dify 平台的 App、Model、Tool 和 Node 服务",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "高级开发",
+        "反向调用",
+        "reverse-invocation"
+      ]
+    },
+    {
+      "title": "应用",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation-app",
+      "source_path": "/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation-app",
+      "local_path": "开发者资源/插件开发/特性与规范/高级开发/反向调用/应用.md",
+      "summary": "在插件中调用 Dify 应用的 Chat、Workflow 和 Completion 接口",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "高级开发",
+        "反向调用",
+        "reverse-invocation-app"
+      ]
+    },
+    {
+      "title": "反向调用模型",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation-model",
+      "source_path": "/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation-model",
+      "local_path": "开发者资源/插件开发/特性与规范/高级开发/反向调用/反向调用模型.md",
+      "summary": "在插件中调用 LLM、嵌入、重排序、TTS、语音转文字和内容审核模型",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "高级开发",
+        "反向调用",
+        "reverse-invocation-model"
+      ]
+    },
+    {
+      "title": "工具",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation-tool",
+      "source_path": "/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation-tool",
+      "local_path": "开发者资源/插件开发/特性与规范/高级开发/反向调用/工具.md",
+      "summary": "从插件中调用已安装工具、Workflow as Tool 和自定义工具",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "高级开发",
+        "反向调用",
+        "reverse-invocation-tool"
+      ]
+    },
+    {
+      "title": "集成自定义模型",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/advanced-development/customizable-model",
+      "source_path": "/zh/develop-plugin/features-and-specs/advanced-development/customizable-model",
+      "local_path": "开发者资源/插件开发/特性与规范/高级开发/反向调用/集成自定义模型.md",
+      "summary": "以 Xinference 为例，将自定义模型集成到 Dify",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "高级开发",
+        "反向调用",
+        "customizable-model"
+      ]
+    },
+    {
+      "title": "节点",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation-node",
+      "source_path": "/zh/develop-plugin/features-and-specs/advanced-development/reverse-invocation-node",
+      "local_path": "开发者资源/插件开发/特性与规范/高级开发/反向调用/节点.md",
+      "summary": "从插件中调用参数提取器和问题分类器节点",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "特性与规范",
+        "高级开发",
+        "反向调用",
+        "reverse-invocation-node"
+      ]
+    },
+    {
+      "title": "速查表",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/cheatsheet",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/cheatsheet",
+      "local_path": "开发者资源/插件开发/开发指南与示例/速查表.md",
+      "summary": "Dify 插件开发的快速参考，涵盖环境配置、安装、开发流程和插件类型",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "cheatsheet"
+      ]
+    },
+    {
+      "title": "工具插件",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/tool-plugin",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/tool-plugin",
+      "local_path": "开发者资源/插件开发/开发指南与示例/按插件类型/工具插件.md",
+      "summary": "从初始化到打包，以 Google Search 为示例完整开发一个 Dify 工具插件",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "按插件类型",
+        "tool-plugin"
+      ]
+    },
+    {
+      "title": "Tool OAuth",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/tool-oauth",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/tool-oauth",
+      "local_path": "开发者资源/插件开发/开发指南与示例/按插件类型/Tool OAuth.md",
+      "summary": "用 OAuth 授权流程替代手动输入 API 密钥，让用户一键授权访问第三方服务",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "按插件类型",
+        "tool-oauth"
+      ]
+    },
+    {
+      "title": "模型供应商插件",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/creating-new-model-provider",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/creating-new-model-provider",
+      "local_path": "开发者资源/插件开发/开发指南与示例/按插件类型/模型供应商插件.md",
+      "summary": "构建模型供应商插件，从项目搭建、供应商配置到模型实现、调试与发布。",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "按插件类型",
+        "creating-new-model-provider"
+      ]
+    },
+    {
+      "title": "Agent 策略插件",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/agent-strategy-plugin",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/agent-strategy-plugin",
+      "local_path": "开发者资源/插件开发/开发指南与示例/按插件类型/Agent 策略插件.md",
+      "summary": "从零开始构建一个 Function Calling Agent 策略，通过实战示例展示如何为 LLM 提供工具并让其自主获取当前时间",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "按插件类型",
+        "agent-strategy-plugin"
+      ]
+    },
+    {
+      "title": "数据源插件",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/datasource-plugin",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/datasource-plugin",
+      "local_path": "开发者资源/插件开发/开发指南与示例/按插件类型/数据源插件.md",
+      "summary": "构建 Dify 1.9.0+ 数据源插件，将文档输入知识库管道",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "按插件类型",
+        "datasource-plugin"
+      ]
+    },
+    {
+      "title": "触发器插件",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/trigger-plugin",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/trigger-plugin",
+      "local_path": "开发者资源/插件开发/开发指南与示例/按插件类型/触发器插件.md",
+      "summary": "构建 Dify 1.10.0+ 触发器插件，将第三方 webhook 事件转换为工作流启动信号",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "按插件类型",
+        "trigger-plugin"
+      ]
+    },
+    {
+      "title": "Endpoint 插件",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/endpoint",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/endpoint",
+      "local_path": "开发者资源/插件开发/开发指南与示例/按插件类型/Endpoint 插件.md",
+      "summary": "以 Neko Cat 项目为例，定义、配置并实现 Dify 插件中的 HTTP Endpoint",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "按插件类型",
+        "endpoint"
+      ]
+    },
+    {
+      "title": "Flomo 工具（10分钟）",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/develop-flomo-plugin",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/develop-flomo-plugin",
+      "local_path": "开发者资源/插件开发/开发指南与示例/完整示例/Flomo 工具（10分钟）.md",
+      "summary": "在大约十分钟内端到端构建一个连接 Flomo 笔记服务的功能性 Dify 工具插件",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "完整示例",
+        "develop-flomo-plugin"
+      ]
+    },
+    {
+      "title": "Slack Bot",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/develop-a-slack-bot-plugin",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/develop-a-slack-bot-plugin",
+      "local_path": "开发者资源/插件开发/开发指南与示例/完整示例/Slack Bot.md",
+      "summary": "构建一个将 Dify 应用连接到 Slack 的 Slack Bot 插件，涵盖从项目初始化到调试和打包的完整流程",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "完整示例",
+        "develop-a-slack-bot-plugin"
+      ]
+    },
+    {
+      "title": "Markdown 导出器",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/develop-md-exporter",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/develop-md-exporter",
+      "local_path": "开发者资源/插件开发/开发指南与示例/完整示例/Markdown 导出器.md",
+      "summary": "学习如何创建一个将对话导出为不同文档格式的插件",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "完整示例",
+        "develop-md-exporter"
+      ]
+    },
+    {
+      "title": "多模态工具",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/dev-guides-and-walkthroughs/develop-multimodal-data-processing-tool",
+      "source_path": "/zh/develop-plugin/dev-guides-and-walkthroughs/develop-multimodal-data-processing-tool",
+      "local_path": "开发者资源/插件开发/开发指南与示例/完整示例/多模态工具.md",
+      "summary": "配置工具插件以输出图片、音频或视频，使知识库节点能够将多模态输出与文本一同向量化",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "开发指南与示例",
+        "完整示例",
+        "develop-multimodal-data-processing-tool"
+      ]
+    },
+    {
+      "title": "发布插件",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/publishing/marketplace-listing/release-overview",
+      "source_path": "/zh/develop-plugin/publishing/marketplace-listing/release-overview",
+      "local_path": "开发者资源/插件开发/发布/发布插件.md",
+      "summary": "分发 Dify 插件的三种方式（Marketplace、GitHub 仓库或本地文件）以及如何选择合适的方式",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "发布",
+        "release-overview"
+      ]
+    },
+    {
+      "title": "发布插件到 Marketplace",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/publishing/marketplace-listing/submit-plugin-to-marketplace",
+      "source_path": "/zh/develop-plugin/publishing/marketplace-listing/submit-plugin-to-marketplace",
+      "local_path": "开发者资源/插件开发/发布/发布插件到 Marketplace.md",
+      "summary": "准备并验证 .difypkg，提交 Marketplace 审核，处理 Pull Request，并在创作者中心查看已发布插件的表现和反馈",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "发布",
+        "submit-plugin-to-marketplace"
+      ]
+    },
+    {
+      "title": "常见问题",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/publishing/faq/faq",
+      "source_path": "/zh/develop-plugin/publishing/faq/faq",
+      "local_path": "开发者资源/插件开发/发布/常见问题.md",
+      "summary": "构建、打包、调试和安装 Dify 插件时的常见问题与解决方法",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "发布",
+        "faq"
+      ]
+    },
+    {
+      "title": "插件开发指南",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/publishing/standards/contributor-covenant-code-of-conduct",
+      "source_path": "/zh/develop-plugin/publishing/standards/contributor-covenant-code-of-conduct",
+      "local_path": "开发者资源/插件开发/发布/标准/插件开发指南.md",
+      "summary": "为了确保 Dify Marketplace 中所有插件的质量，并为 Dify Marketplace 用户提供一致的高质量体验，您在提交插件进行审核时必须遵守这些插件开发指南中列出的所有要求。提交插件即表示**您确认已阅读、理解并同意遵守以下所有条款**。遵循这些指南将帮助您的插件更快通过审核。",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "发布",
+        "标准",
+        "contributor-covenant-code-of-conduct"
+      ]
+    },
+    {
+      "title": "隐私政策指南",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/publishing/standards/privacy-protection-guidelines",
+      "source_path": "/zh/develop-plugin/publishing/standards/privacy-protection-guidelines",
+      "local_path": "开发者资源/插件开发/发布/标准/隐私政策指南.md",
+      "summary": "如何声明数据收集行为，并为提交到 Dify Marketplace 的每个插件编写所需的隐私政策",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "发布",
+        "标准",
+        "privacy-protection-guidelines"
+      ]
+    },
+    {
+      "title": "发布到个人 GitHub 仓库",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/publishing/marketplace-listing/release-to-individual-github-repo",
+      "source_path": "/zh/develop-plugin/publishing/marketplace-listing/release-to-individual-github-repo",
+      "local_path": "开发者资源/插件开发/发布/GitHub 仓库/发布到个人 GitHub 仓库.md",
+      "summary": "从自己的 GitHub 仓库分发 Dify 插件，用户通过仓库 URL 直接安装，无需 Marketplace 审核",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "发布",
+        "GitHub 仓库",
+        "release-to-individual-github-repo"
+      ]
+    },
+    {
+      "title": "打包为本地文件并分享",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/publishing/marketplace-listing/release-by-file",
+      "source_path": "/zh/develop-plugin/publishing/marketplace-listing/release-by-file",
+      "local_path": "开发者资源/插件开发/发布/本地文件/打包为本地文件并分享.md",
+      "summary": "将 Dify 插件打包为 `.difypkg` 文件，可直接安装或分发给他人，无需发布到 Marketplace 或 GitHub",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "发布",
+        "本地文件",
+        "release-by-file"
+      ]
+    },
+    {
+      "title": "为第三方签名验证签署插件",
+      "source_url": "https://docs.dify.ai/zh/develop-plugin/publishing/standards/third-party-signature-verification",
+      "source_path": "/zh/develop-plugin/publishing/standards/third-party-signature-verification",
+      "local_path": "开发者资源/插件开发/发布/本地文件/为第三方签名验证签署插件.md",
+      "summary": "在 Dify Community Edition 中启用已签名的 `.difypkg` 安装，无需完全禁用签名验证（生成密钥、签署软件包、分发公钥）",
+      "keywords": [
+        "开发者资源",
+        "插件开发",
+        "发布",
+        "本地文件",
+        "third-party-signature-verification"
+      ]
+    },
+    {
+      "title": "使用 Dify",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/getting-started/introduction",
+      "source_path": "/zh/cloud/use-dify/getting-started/introduction",
+      "local_path": "使用/使用 Dify.md",
+      "summary": "在工作空间中构建、发布并监控 AI 应用",
+      "keywords": [
+        "使用",
+        "introduction"
+      ]
+    },
+    {
+      "title": "应用工具箱",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/additional-features",
+      "source_path": "/zh/cloud/use-dify/build/additional-features",
+      "local_path": "使用/编排/应用工具箱.md",
+      "summary": "让 Dify 应用更实用的可选功能",
+      "keywords": [
+        "使用",
+        "编排",
+        "additional-features"
+      ]
+    },
+    {
+      "title": "全局搜索",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/goto-anything",
+      "source_path": "/zh/cloud/use-dify/build/goto-anything",
+      "local_path": "使用/编排/全局搜索.md",
+      "summary": "通过快捷键快速搜索并跳转到应用、Agent、集成、知识库和工作流节点",
+      "keywords": [
+        "使用",
+        "编排",
+        "goto-anything"
+      ]
+    },
+    {
+      "title": "Workflow 与 Chatflow",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/workflow-chatflow",
+      "source_path": "/zh/cloud/use-dify/build/workflow-chatflow",
+      "local_path": "使用/编排/Workflow 与 Chatflow/Workflow 与 Chatflow.md",
+      "summary": "构建将 AI 模型、工具和逻辑组合为可靠、可重复流程的 Agentic 工作流",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "workflow-chatflow"
+      ]
+    },
+    {
+      "title": "编排逻辑",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/orchestrate-node",
+      "source_path": "/zh/cloud/use-dify/build/orchestrate-node",
+      "local_path": "使用/编排/Workflow 与 Chatflow/编排逻辑.md",
+      "summary": "构建 Workflow 或 Chatflow 时，如何排列、嵌套与复用节点",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "orchestrate-node"
+      ]
+    },
+    {
+      "title": "快捷键",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/shortcut-key",
+      "source_path": "/zh/cloud/use-dify/build/shortcut-key",
+      "local_path": "使用/编排/Workflow 与 Chatflow/快捷键.md",
+      "summary": "使用键盘快捷键更快地构建 Dify 工作流",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "shortcut-key"
+      ]
+    },
+    {
+      "title": "版本控制",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/version-control",
+      "source_path": "/zh/cloud/use-dify/build/version-control",
+      "local_path": "使用/编排/Workflow 与 Chatflow/版本控制.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "version-control"
+      ]
+    },
+    {
+      "title": "Snippets",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/snippet",
+      "source_path": "/zh/cloud/use-dify/build/snippet",
+      "local_path": "使用/编排/Workflow 与 Chatflow/Snippets.md",
+      "summary": "在多个工作流中复用和共享节点组合",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "snippet"
+      ]
+    },
+    {
+      "title": "大语言模型",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/llm",
+      "source_path": "/zh/cloud/use-dify/nodes/llm",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/大语言模型.md",
+      "summary": "调用语言模型进行文本生成和分析",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "llm"
+      ]
+    },
+    {
+      "title": "Agent 知识检索",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/knowledge-retrieval-v2",
+      "source_path": "/zh/cloud/use-dify/nodes/knowledge-retrieval-v2",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/Agent 知识检索.md",
+      "summary": "检索 Agent 知识库，并将相关内容传给后续节点",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "knowledge-retrieval-v2"
+      ]
+    },
+    {
+      "title": "经典知识检索",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/knowledge-retrieval",
+      "source_path": "/zh/cloud/use-dify/nodes/knowledge-retrieval",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/经典知识检索.md",
+      "summary": "从经典知识库中检索相关内容，作为下游节点的上下文",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "knowledge-retrieval"
+      ]
+    },
+    {
+      "title": "直接回复",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/answer",
+      "source_path": "/zh/cloud/use-dify/nodes/answer",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/直接回复.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "answer"
+      ]
+    },
+    {
+      "title": "输出",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/output",
+      "source_path": "/zh/cloud/use-dify/nodes/output",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/输出.md",
+      "summary": "将工作流结果返回给终端用户或 API 调用者",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "output"
+      ]
+    },
+    {
+      "title": "Agent",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/agent",
+      "source_path": "/zh/cloud/use-dify/nodes/agent",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/Agent.md",
+      "summary": "将 Agent 作为工作流中的一步运行，通过推理和调用工具完成任务",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "agent"
+      ]
+    },
+    {
+      "title": "问题分类器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/question-classifier",
+      "source_path": "/zh/cloud/use-dify/nodes/question-classifier",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/问题分类器.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "question-classifier"
+      ]
+    },
+    {
+      "title": "If-Else",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/ifelse",
+      "source_path": "/zh/cloud/use-dify/nodes/ifelse",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/If-Else.md",
+      "summary": "为工作流添加条件逻辑和分支",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "ifelse"
+      ]
+    },
+    {
+      "title": "迭代",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/iteration",
+      "source_path": "/zh/cloud/use-dify/nodes/iteration",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/迭代.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "iteration"
+      ]
+    },
+    {
+      "title": "循环",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/loop",
+      "source_path": "/zh/cloud/use-dify/nodes/loop",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/循环.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "loop"
+      ]
+    },
+    {
+      "title": "代码",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/code",
+      "source_path": "/zh/cloud/use-dify/nodes/code",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/代码.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "code"
+      ]
+    },
+    {
+      "title": "模板转换",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/template",
+      "source_path": "/zh/cloud/use-dify/nodes/template",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/模板转换.md",
+      "summary": "使用 Jinja2 模板转换和格式化数据",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "template"
+      ]
+    },
+    {
+      "title": "变量聚合器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/variable-aggregator",
+      "source_path": "/zh/cloud/use-dify/nodes/variable-aggregator",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/变量聚合器.md",
+      "summary": "将互斥工作流分支汇聚为单一输出",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "variable-aggregator"
+      ]
+    },
+    {
+      "title": "文档提取器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/doc-extractor",
+      "source_path": "/zh/cloud/use-dify/nodes/doc-extractor",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/文档提取器.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "doc-extractor"
+      ]
+    },
+    {
+      "title": "变量赋值器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/variable-assigner",
+      "source_path": "/zh/cloud/use-dify/nodes/variable-assigner",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/变量赋值器.md",
+      "summary": "在 Chatflow 应用中管理持久化会话变量",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "variable-assigner"
+      ]
+    },
+    {
+      "title": "参数提取器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/parameter-extractor",
+      "source_path": "/zh/cloud/use-dify/nodes/parameter-extractor",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/参数提取器.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "parameter-extractor"
+      ]
+    },
+    {
+      "title": "HTTP 请求",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/http-request",
+      "source_path": "/zh/cloud/use-dify/nodes/http-request",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/HTTP 请求.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "http-request"
+      ]
+    },
+    {
+      "title": "列表操作符",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/list-operator",
+      "source_path": "/zh/cloud/use-dify/nodes/list-operator",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/列表操作符.md",
+      "summary": "筛选、排序和选择数组中的元素",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "list-operator"
+      ]
+    },
+    {
+      "title": "工具节点",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/tools",
+      "source_path": "/zh/cloud/use-dify/nodes/tools",
+      "local_path": "使用/编排/Workflow 与 Chatflow/节点/工具节点.md",
+      "summary": "连接外部服务和 API",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "节点",
+        "tools"
+      ]
+    },
+    {
+      "title": "开始节点",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/start",
+      "source_path": "/zh/cloud/use-dify/nodes/start",
+      "local_path": "使用/编排/Workflow 与 Chatflow/开始/开始节点.md",
+      "summary": "选择工作流的启动方式：按需启动或自动运行",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "开始",
+        "start"
+      ]
+    },
+    {
+      "title": "用户输入",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/user-input",
+      "source_path": "/zh/cloud/use-dify/nodes/user-input",
+      "local_path": "使用/编排/Workflow 与 Chatflow/开始/用户输入.md",
+      "summary": "收集用户输入以启动 Workflow 和 Chatflow 应用",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "开始",
+        "user-input"
+      ]
+    },
+    {
+      "title": "触发器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/trigger/overview",
+      "source_path": "/zh/cloud/use-dify/nodes/trigger/overview",
+      "local_path": "使用/编排/Workflow 与 Chatflow/触发器/触发器.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "触发器",
+        "overview"
+      ]
+    },
+    {
+      "title": "定时触发器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/trigger/schedule-trigger",
+      "source_path": "/zh/cloud/use-dify/nodes/trigger/schedule-trigger",
+      "local_path": "使用/编排/Workflow 与 Chatflow/触发器/定时触发器.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "触发器",
+        "schedule-trigger"
+      ]
+    },
+    {
+      "title": "集成触发器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/trigger/plugin-trigger",
+      "source_path": "/zh/cloud/use-dify/nodes/trigger/plugin-trigger",
+      "local_path": "使用/编排/Workflow 与 Chatflow/触发器/集成触发器.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "触发器",
+        "plugin-trigger"
+      ]
+    },
+    {
+      "title": "Webhook 触发器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/trigger/webhook-trigger",
+      "source_path": "/zh/cloud/use-dify/nodes/trigger/webhook-trigger",
+      "local_path": "使用/编排/Workflow 与 Chatflow/触发器/Webhook 触发器.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "触发器",
+        "webhook-trigger"
+      ]
+    },
+    {
+      "title": "人工介入",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/nodes/human-input",
+      "source_path": "/zh/cloud/use-dify/nodes/human-input",
+      "local_path": "使用/编排/Workflow 与 Chatflow/人工介入/人工介入.md",
+      "summary": "暂停工作流以请求人工输入",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "人工介入",
+        "human-input"
+      ]
+    },
+    {
+      "title": "处理错误",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/predefined-error-handling-logic",
+      "source_path": "/zh/cloud/use-dify/build/predefined-error-handling-logic",
+      "local_path": "使用/编排/Workflow 与 Chatflow/调试/处理错误.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "调试",
+        "predefined-error-handling-logic"
+      ]
+    },
+    {
+      "title": "单节点",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/debug/step-run",
+      "source_path": "/zh/cloud/use-dify/debug/step-run",
+      "local_path": "使用/编排/Workflow 与 Chatflow/调试/单节点.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "调试",
+        "step-run"
+      ]
+    },
+    {
+      "title": "变量检查器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/debug/variable-inspect",
+      "source_path": "/zh/cloud/use-dify/debug/variable-inspect",
+      "local_path": "使用/编排/Workflow 与 Chatflow/调试/变量检查器.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "调试",
+        "variable-inspect"
+      ]
+    },
+    {
+      "title": "运行历史",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/debug/history-and-logs",
+      "source_path": "/zh/cloud/use-dify/debug/history-and-logs",
+      "local_path": "使用/编排/Workflow 与 Chatflow/调试/运行历史.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "调试",
+        "history-and-logs"
+      ]
+    },
+    {
+      "title": "错误类型",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/debug/error-type",
+      "source_path": "/zh/cloud/use-dify/debug/error-type",
+      "local_path": "使用/编排/Workflow 与 Chatflow/调试/错误类型.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "编排",
+        "Workflow 与 Chatflow",
+        "调试",
+        "error-type"
+      ]
+    },
+    {
+      "title": "Agent",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/new-agent/overview",
+      "source_path": "/zh/cloud/use-dify/build/new-agent/overview",
+      "local_path": "使用/编排/Agent/Agent.md",
+      "summary": "构建一次 Agent，既可作为独立应用使用，也可嵌入工作流",
+      "keywords": [
+        "使用",
+        "编排",
+        "Agent",
+        "overview"
+      ]
+    },
+    {
+      "title": "构建 Agent",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/new-agent/build",
+      "source_path": "/zh/cloud/use-dify/build/new-agent/build",
+      "local_path": "使用/编排/Agent/构建 Agent.md",
+      "summary": "创建 Agent 并塑造它的能力，可逐项手动配置，也可通过描述需求来构建",
+      "keywords": [
+        "使用",
+        "编排",
+        "Agent",
+        "build"
+      ]
+    },
+    {
+      "title": "Agent",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/agent",
+      "source_path": "/zh/cloud/use-dify/build/agent",
+      "local_path": "使用/编排/基础应用/Agent.md",
+      "summary": "模型能够自主推理、决策并使用工具的对话式应用",
+      "keywords": [
+        "使用",
+        "编排",
+        "基础应用",
+        "agent"
+      ]
+    },
+    {
+      "title": "聊天助手",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/chatbot",
+      "source_path": "/zh/cloud/use-dify/build/chatbot",
+      "local_path": "使用/编排/基础应用/聊天助手.md",
+      "summary": "通过模型和提示词构建对话式应用的最简单方式",
+      "keywords": [
+        "使用",
+        "编排",
+        "基础应用",
+        "chatbot"
+      ]
+    },
+    {
+      "title": "文本生成应用",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/build/text-generator",
+      "source_path": "/zh/cloud/use-dify/build/text-generator",
+      "local_path": "使用/编排/基础应用/文本生成应用.md",
+      "summary": "通过提示词和用户输入生成文本的简单单轮应用",
+      "keywords": [
+        "使用",
+        "编排",
+        "基础应用",
+        "text-generator"
+      ]
+    },
+    {
+      "title": "分享你的 AI 应用",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/publish/README",
+      "source_path": "/zh/cloud/use-dify/publish/README",
+      "local_path": "使用/发布/分享你的 AI 应用.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "发布",
+        "README"
+      ]
+    },
+    {
+      "title": "IP 访问控制",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/publish/ip-access-control",
+      "source_path": "/zh/cloud/use-dify/publish/ip-access-control",
+      "local_path": "使用/发布/IP 访问控制.md",
+      "summary": "使用可复用的 IP 策略，将应用访问范围限制为可信网络",
+      "keywords": [
+        "使用",
+        "发布",
+        "ip-access-control"
+      ]
+    },
+    {
+      "title": "MCP 服务器",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/publish/publish-mcp",
+      "source_path": "/zh/cloud/use-dify/publish/publish-mcp",
+      "local_path": "使用/发布/MCP 服务器.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "发布",
+        "publish-mcp"
+      ]
+    },
+    {
+      "title": "发布应用到 Marketplace",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/publish/publish-to-marketplace",
+      "source_path": "/zh/cloud/use-dify/publish/publish-to-marketplace",
+      "local_path": "使用/发布/发布应用到 Marketplace.md",
+      "summary": "将你的应用发布到 Dify Marketplace，与全世界分享",
+      "keywords": [
+        "使用",
+        "发布",
+        "publish-to-marketplace"
+      ]
+    },
+    {
+      "title": "Workflow Web 应用",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/publish/webapp/workflow-webapp",
+      "source_path": "/zh/cloud/use-dify/publish/webapp/workflow-webapp",
+      "local_path": "使用/发布/Web App/Workflow Web 应用.md",
+      "summary": "通过批处理、结果管理和流畅的使用体验，将工作流转变为强大的 Web 应用",
+      "keywords": [
+        "使用",
+        "发布",
+        "Web App",
+        "workflow-webapp"
+      ]
+    },
+    {
+      "title": "聊天 Web App",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/publish/webapp/chatflow-webapp",
+      "source_path": "/zh/cloud/use-dify/publish/webapp/chatflow-webapp",
+      "local_path": "使用/发布/Web App/聊天 Web App.md",
+      "summary": "将 Chatflow 转变为具备持久化历史记录和交互功能的完整对话界面",
+      "keywords": [
+        "使用",
+        "发布",
+        "Web App",
+        "chatflow-webapp"
+      ]
+    },
+    {
+      "title": "Web App 设置",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/publish/webapp/web-app-settings",
+      "source_path": "/zh/cloud/use-dify/publish/webapp/web-app-settings",
+      "local_path": "使用/发布/Web App/Web App 设置.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "发布",
+        "Web App",
+        "web-app-settings"
+      ]
+    },
+    {
+      "title": "嵌入 Web 应用",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/publish/webapp/embedding-in-websites",
+      "source_path": "/zh/cloud/use-dify/publish/webapp/embedding-in-websites",
+      "local_path": "使用/发布/Web App/嵌入 Web 应用.md",
+      "summary": "通过 iframe、聊天气泡组件或自定义集成，将已发布的 Web 应用部署到任何网站",
+      "keywords": [
+        "使用",
+        "发布",
+        "Web App",
+        "embedding-in-websites"
+      ]
+    },
+    {
+      "title": "仪表盘",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/analysis",
+      "source_path": "/zh/cloud/use-dify/monitor/analysis",
+      "local_path": "使用/监控/仪表盘.md",
+      "summary": "通过 Dify 内置的分析仪表盘监控性能、成本和用户参与度",
+      "keywords": [
+        "使用",
+        "监控",
+        "analysis"
+      ]
+    },
+    {
+      "title": "日志",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/logs",
+      "source_path": "/zh/cloud/use-dify/monitor/logs",
+      "local_path": "使用/监控/日志.md",
+      "summary": "浏览与查看应用的对话和运行日志，了解日志保留规则，并管理已归档的工作流日志",
+      "keywords": [
+        "使用",
+        "监控",
+        "logs"
+      ]
+    },
+    {
+      "title": "标注系统",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/annotation-reply",
+      "source_path": "/zh/cloud/use-dify/monitor/annotation-reply",
+      "local_path": "使用/监控/标注系统.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "监控",
+        "annotation-reply"
+      ]
+    },
+    {
+      "title": "集成 LangSmith",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/integrations/integrate-langsmith",
+      "source_path": "/zh/cloud/use-dify/monitor/integrations/integrate-langsmith",
+      "local_path": "使用/监控/集成/集成 LangSmith.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "监控",
+        "集成",
+        "integrate-langsmith"
+      ]
+    },
+    {
+      "title": "集成 Langfuse",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/integrations/integrate-langfuse",
+      "source_path": "/zh/cloud/use-dify/monitor/integrations/integrate-langfuse",
+      "local_path": "使用/监控/集成/集成 Langfuse.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "监控",
+        "集成",
+        "integrate-langfuse"
+      ]
+    },
+    {
+      "title": "集成 Opik",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/integrations/integrate-opik",
+      "source_path": "/zh/cloud/use-dify/monitor/integrations/integrate-opik",
+      "local_path": "使用/监控/集成/集成 Opik.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "监控",
+        "集成",
+        "integrate-opik"
+      ]
+    },
+    {
+      "title": "集成 W&B Weave",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/integrations/integrate-weave",
+      "source_path": "/zh/cloud/use-dify/monitor/integrations/integrate-weave",
+      "local_path": "使用/监控/集成/集成 W&B Weave.md",
+      "summary": "通过 W&B Weave 实现 Dify 应用的 LLM 可观测性，将追踪数据发送至 W&B Weave",
+      "keywords": [
+        "使用",
+        "监控",
+        "集成",
+        "integrate-weave"
+      ]
+    },
+    {
+      "title": "集成 Arize",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/integrations/integrate-arize",
+      "source_path": "/zh/cloud/use-dify/monitor/integrations/integrate-arize",
+      "local_path": "使用/监控/集成/集成 Arize.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "监控",
+        "集成",
+        "integrate-arize"
+      ]
+    },
+    {
+      "title": "集成 Phoenix",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/integrations/integrate-phoenix",
+      "source_path": "/zh/cloud/use-dify/monitor/integrations/integrate-phoenix",
+      "local_path": "使用/监控/集成/集成 Phoenix.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "监控",
+        "集成",
+        "integrate-phoenix"
+      ]
+    },
+    {
+      "title": "集成阿里云云监控",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/monitor/integrations/integrate-aliyun",
+      "source_path": "/zh/cloud/use-dify/monitor/integrations/integrate-aliyun",
+      "local_path": "使用/监控/集成/集成阿里云云监控.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "监控",
+        "集成",
+        "integrate-aliyun"
+      ]
+    },
+    {
+      "title": "知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/overview",
+      "source_path": "/zh/cloud/use-dify/knowledge/overview",
+      "local_path": "使用/知识库/知识库.md",
+      "summary": "让应用依据你自己的内容作答，并选定要使用哪一类知识库",
+      "keywords": [
+        "使用",
+        "知识库",
+        "overview"
+      ]
+    },
+    {
+      "title": "知识库请求频率限制",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/knowledge-request-rate-limit",
+      "source_path": "/zh/cloud/use-dify/knowledge/knowledge-request-rate-limit",
+      "local_path": "使用/知识库/知识库请求频率限制.md",
+      "summary": "工作空间每分钟可发起多少次知识库请求、两类知识库各有哪些操作计入，以及达到上限后如何处理",
+      "keywords": [
+        "使用",
+        "知识库",
+        "knowledge-request-rate-limit"
+      ]
+    },
+    {
+      "title": "知识库存储与文档配额",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/knowledge-storage-limit",
+      "source_path": "/zh/cloud/use-dify/knowledge/knowledge-storage-limit",
+      "local_path": "使用/知识库/知识库存储与文档配额.md",
+      "summary": "工作空间的知识库最多能容纳多少文档、存储多少索引数据，哪些内容计入各项配额，以及达到上限后如何处理",
+      "keywords": [
+        "使用",
+        "知识库",
+        "knowledge-storage-limit"
+      ]
+    },
+    {
+      "title": "Agent 知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge-base/overview",
+      "source_path": "/zh/cloud/use-dify/knowledge-base/overview",
+      "local_path": "使用/知识库/Agent 知识库/Agent 知识库.md",
+      "summary": "由知识库替你阅读、整理和索引内容，你只需决定放入哪些内容，并检查检索结果",
+      "keywords": [
+        "使用",
+        "知识库",
+        "Agent 知识库",
+        "overview"
+      ]
+    },
+    {
+      "title": "创建 Agent 知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge-base/create-knowledge-base",
+      "source_path": "/zh/cloud/use-dify/knowledge-base/create-knowledge-base",
+      "local_path": "使用/知识库/Agent 知识库/创建 Agent 知识库.md",
+      "summary": "创建 Agent 知识库，从数据源导入或上传文件来添加内容，为测试做好准备",
+      "keywords": [
+        "使用",
+        "知识库",
+        "Agent 知识库",
+        "create-knowledge-base"
+      ]
+    },
+    {
+      "title": "检查已索引的文档",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge-base/review-indexed-documents",
+      "source_path": "/zh/cloud/use-dify/knowledge-base/review-indexed-documents",
+      "local_path": "使用/知识库/Agent 知识库/检查已索引的文档.md",
+      "summary": "查看文档是如何拆分、如何生成摘要的，并修正处理得不理想的内容",
+      "keywords": [
+        "使用",
+        "知识库",
+        "Agent 知识库",
+        "review-indexed-documents"
+      ]
+    },
+    {
+      "title": "测试并调优检索",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge-base/test-and-tune",
+      "source_path": "/zh/cloud/use-dify/knowledge-base/test-and-tune",
+      "local_path": "使用/知识库/Agent 知识库/测试并调优检索.md",
+      "summary": "用真实问题测试知识库，用参考问题衡量检索效果，并在结果不理想时调优检索",
+      "keywords": [
+        "使用",
+        "知识库",
+        "Agent 知识库",
+        "test-and-tune"
+      ]
+    },
+    {
+      "title": "检索设置",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge-base/retrieval-settings",
+      "source_path": "/zh/cloud/use-dify/knowledge-base/retrieval-settings",
+      "local_path": "使用/知识库/Agent 知识库/检索设置.md",
+      "summary": "控制知识库在检索时如何查找分段、如何为分段排序",
+      "keywords": [
+        "使用",
+        "知识库",
+        "Agent 知识库",
+        "retrieval-settings"
+      ]
+    },
+    {
+      "title": "接入应用、Agent 和代码",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge-base/use-knowledge-in-apps",
+      "source_path": "/zh/cloud/use-dify/knowledge-base/use-knowledge-in-apps",
+      "local_path": "使用/知识库/Agent 知识库/接入应用、Agent 和代码.md",
+      "summary": "Agent 知识库可在哪些地方使用，以及如何分别关闭各类访问",
+      "keywords": [
+        "使用",
+        "知识库",
+        "Agent 知识库",
+        "use-knowledge-in-apps"
+      ]
+    },
+    {
+      "title": "多模态检索",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge-base/multimodal-retrieval",
+      "source_path": "/zh/cloud/use-dify/knowledge-base/multimodal-retrieval",
+      "local_path": "使用/知识库/Agent 知识库/多模态检索.md",
+      "summary": "所选模型如何影响知识库中图片的索引与检索",
+      "keywords": [
+        "使用",
+        "知识库",
+        "Agent 知识库",
+        "multimodal-retrieval"
+      ]
+    },
+    {
+      "title": "维护 Agent 知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge-base/maintain-knowledge-base",
+      "source_path": "/zh/cloud/use-dify/knowledge-base/maintain-knowledge-base",
+      "local_path": "使用/知识库/Agent 知识库/维护 Agent 知识库.md",
+      "summary": "知识库上线后，处理概览页面提示的问题，保持数据源同步，并及时更新文档",
+      "keywords": [
+        "使用",
+        "知识库",
+        "Agent 知识库",
+        "maintain-knowledge-base"
+      ]
+    },
+    {
+      "title": "从经典知识库升级到 Agent 知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge-base/upgrade-from-classic",
+      "source_path": "/zh/cloud/use-dify/knowledge-base/upgrade-from-classic",
+      "local_path": "使用/知识库/Agent 知识库/从经典知识库升级到 Agent 知识库.md",
+      "summary": "将经典知识库迁移为 Agent 知识库",
+      "keywords": [
+        "使用",
+        "知识库",
+        "Agent 知识库",
+        "upgrade-from-classic"
+      ]
+    },
+    {
+      "title": "经典知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/readme",
+      "source_path": "/zh/cloud/use-dify/knowledge/readme",
+      "local_path": "使用/知识库/经典知识库/经典知识库.md",
+      "summary": "自己设置分段、索引和检索方式，设计专属的处理流程，或接入你已在运行的外部知识库",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "readme"
+      ]
+    },
+    {
+      "title": "测试检索",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/test-retrieval",
+      "source_path": "/zh/cloud/use-dify/knowledge/test-retrieval",
+      "local_path": "使用/知识库/经典知识库/测试检索.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "test-retrieval"
+      ]
+    },
+    {
+      "title": "在应用内集成知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/integrate-knowledge-within-application",
+      "source_path": "/zh/cloud/use-dify/knowledge/integrate-knowledge-within-application",
+      "local_path": "使用/知识库/经典知识库/在应用内集成知识库.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "integrate-knowledge-within-application"
+      ]
+    },
+    {
+      "title": "创建即用型知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/create-knowledge/introduction",
+      "source_path": "/zh/cloud/use-dify/knowledge/create-knowledge/introduction",
+      "local_path": "使用/知识库/经典知识库/创建即用型知识库/创建即用型知识库.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "创建即用型知识库",
+        "introduction"
+      ]
+    },
+    {
+      "title": "指定分段设置",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/create-knowledge/chunking-and-cleaning-text",
+      "source_path": "/zh/cloud/use-dify/knowledge/create-knowledge/chunking-and-cleaning-text",
+      "local_path": "使用/知识库/经典知识库/创建即用型知识库/指定分段设置.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "创建即用型知识库",
+        "chunking-and-cleaning-text"
+      ]
+    },
+    {
+      "title": "指定索引方式与检索设置",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/create-knowledge/setting-indexing-methods",
+      "source_path": "/zh/cloud/use-dify/knowledge/create-knowledge/setting-indexing-methods",
+      "local_path": "使用/知识库/经典知识库/创建即用型知识库/指定索引方式与检索设置.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "创建即用型知识库",
+        "setting-indexing-methods"
+      ]
+    },
+    {
+      "title": "上传本地文件",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/create-knowledge/import-text-data/readme",
+      "source_path": "/zh/cloud/use-dify/knowledge/create-knowledge/import-text-data/readme",
+      "local_path": "使用/知识库/经典知识库/导入数据/上传本地文件.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "导入数据",
+        "readme"
+      ]
+    },
+    {
+      "title": "从 Notion 导入数据",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/create-knowledge/import-text-data/sync-from-notion",
+      "source_path": "/zh/cloud/use-dify/knowledge/create-knowledge/import-text-data/sync-from-notion",
+      "local_path": "使用/知识库/经典知识库/导入数据/从 Notion 导入数据.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "导入数据",
+        "sync-from-notion"
+      ]
+    },
+    {
+      "title": "从网页导入数据",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/create-knowledge/import-text-data/sync-from-website",
+      "source_path": "/zh/cloud/use-dify/knowledge/create-knowledge/import-text-data/sync-from-website",
+      "local_path": "使用/知识库/经典知识库/导入数据/从网页导入数据.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "导入数据",
+        "sync-from-website"
+      ]
+    },
+    {
+      "title": "构建自定义知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/knowledge-pipeline/readme",
+      "source_path": "/zh/cloud/use-dify/knowledge/knowledge-pipeline/readme",
+      "local_path": "使用/知识库/经典知识库/构建自定义知识库/构建自定义知识库.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "构建自定义知识库",
+        "readme"
+      ]
+    },
+    {
+      "title": "步骤一：创建知识流水线",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/knowledge-pipeline/create-knowledge-pipeline",
+      "source_path": "/zh/cloud/use-dify/knowledge/knowledge-pipeline/create-knowledge-pipeline",
+      "local_path": "使用/知识库/经典知识库/构建自定义知识库/步骤一：创建知识流水线.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "构建自定义知识库",
+        "create-knowledge-pipeline"
+      ]
+    },
+    {
+      "title": "步骤二：编排知识流水线",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/knowledge-pipeline/knowledge-pipeline-orchestration",
+      "source_path": "/zh/cloud/use-dify/knowledge/knowledge-pipeline/knowledge-pipeline-orchestration",
+      "local_path": "使用/知识库/经典知识库/构建自定义知识库/步骤二：编排知识流水线.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "构建自定义知识库",
+        "knowledge-pipeline-orchestration"
+      ]
+    },
+    {
+      "title": "步骤三：发布知识流水线",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/knowledge-pipeline/publish-knowledge-pipeline",
+      "source_path": "/zh/cloud/use-dify/knowledge/knowledge-pipeline/publish-knowledge-pipeline",
+      "local_path": "使用/知识库/经典知识库/构建自定义知识库/步骤三：发布知识流水线.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "构建自定义知识库",
+        "publish-knowledge-pipeline"
+      ]
+    },
+    {
+      "title": "步骤四：上传文件",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/knowledge-pipeline/upload-files",
+      "source_path": "/zh/cloud/use-dify/knowledge/knowledge-pipeline/upload-files",
+      "local_path": "使用/知识库/经典知识库/构建自定义知识库/步骤四：上传文件.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "构建自定义知识库",
+        "upload-files"
+      ]
+    },
+    {
+      "title": "步骤五：管理和使用知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/knowledge-pipeline/manage-knowledge-base",
+      "source_path": "/zh/cloud/use-dify/knowledge/knowledge-pipeline/manage-knowledge-base",
+      "local_path": "使用/知识库/经典知识库/构建自定义知识库/步骤五：管理和使用知识库.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "构建自定义知识库",
+        "manage-knowledge-base"
+      ]
+    },
+    {
+      "title": "数据源授权",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/knowledge-pipeline/authorize-data-source",
+      "source_path": "/zh/cloud/use-dify/knowledge/knowledge-pipeline/authorize-data-source",
+      "local_path": "使用/知识库/经典知识库/构建自定义知识库/数据源授权.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "构建自定义知识库",
+        "authorize-data-source"
+      ]
+    },
+    {
+      "title": "连接外部知识库",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/connect-external-knowledge-base",
+      "source_path": "/zh/cloud/use-dify/knowledge/connect-external-knowledge-base",
+      "local_path": "使用/知识库/经典知识库/连接外部知识库/连接外部知识库.md",
+      "summary": "通过 API 连接将外部知识源集成到 Dify 应用中，以使用自定义 RAG 系统或第三方知识服务",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "连接外部知识库",
+        "connect-external-knowledge-base"
+      ]
+    },
+    {
+      "title": "外部知识库 API",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/external-knowledge-api",
+      "source_path": "/zh/cloud/use-dify/knowledge/external-knowledge-api",
+      "local_path": "使用/知识库/经典知识库/连接外部知识库/外部知识库 API.md",
+      "summary": "外部知识服务必须实现的 API 规范，用于与 Dify 集成",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "连接外部知识库",
+        "external-knowledge-api"
+      ]
+    },
+    {
+      "title": "维护知识库内容",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/manage-knowledge/maintain-knowledge-documents",
+      "source_path": "/zh/cloud/use-dify/knowledge/manage-knowledge/maintain-knowledge-documents",
+      "local_path": "使用/知识库/经典知识库/管理/维护知识库内容.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "管理",
+        "maintain-knowledge-documents"
+      ]
+    },
+    {
+      "title": "管理文档元数据",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/metadata",
+      "source_path": "/zh/cloud/use-dify/knowledge/metadata",
+      "local_path": "使用/知识库/经典知识库/管理/管理文档元数据.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "管理",
+        "metadata"
+      ]
+    },
+    {
+      "title": "调整知识库设置",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/knowledge/manage-knowledge/introduction",
+      "source_path": "/zh/cloud/use-dify/knowledge/manage-knowledge/introduction",
+      "local_path": "使用/知识库/经典知识库/管理/调整知识库设置.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "知识库",
+        "经典知识库",
+        "管理",
+        "introduction"
+      ]
+    },
+    {
+      "title": "集成",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/plugins",
+      "source_path": "/zh/cloud/use-dify/workspace/plugins",
+      "local_path": "使用/集成/集成.md",
+      "summary": "连接 Dify 与模型供应商、工具、数据来源和外部服务",
+      "keywords": [
+        "使用",
+        "集成",
+        "plugins"
+      ]
+    },
+    {
+      "title": "模型供应商",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/model-providers",
+      "source_path": "/zh/cloud/use-dify/workspace/model-providers",
+      "local_path": "使用/集成/模型供应商.md",
+      "summary": "使用你的 AI 消息额度调用模型，或连接你自己的供应商账户和密钥",
+      "keywords": [
+        "使用",
+        "集成",
+        "model-providers"
+      ]
+    },
+    {
+      "title": "Dify 工具",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/tools",
+      "source_path": "/zh/cloud/use-dify/workspace/tools",
+      "local_path": "使用/集成/Dify 工具.md",
+      "summary": "管理使 LLM 能够与外部服务和 API 交互的工具",
+      "keywords": [
+        "使用",
+        "集成",
+        "tools"
+      ]
+    },
+    {
+      "title": "自定义端点",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/api-extension/api-extension",
+      "source_path": "/zh/cloud/use-dify/workspace/api-extension/api-extension",
+      "local_path": "使用/集成/自定义端点/自定义端点.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "集成",
+        "自定义端点",
+        "api-extension"
+      ]
+    },
+    {
+      "title": "外部数据工具",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/api-extension/external-data-tool-api-extension",
+      "source_path": "/zh/cloud/use-dify/workspace/api-extension/external-data-tool-api-extension",
+      "local_path": "使用/集成/自定义端点/外部数据工具.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "集成",
+        "自定义端点",
+        "external-data-tool-api-extension"
+      ]
+    },
+    {
+      "title": "敏感内容审查",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/api-extension/moderation-api-extension",
+      "source_path": "/zh/cloud/use-dify/workspace/api-extension/moderation-api-extension",
+      "local_path": "使用/集成/自定义端点/敏感内容审查.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "集成",
+        "自定义端点",
+        "moderation-api-extension"
+      ]
+    },
+    {
+      "title": "使用 Cloudflare Workers 部署自定义端点",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/api-extension/cloudflare-worker",
+      "source_path": "/zh/cloud/use-dify/workspace/api-extension/cloudflare-worker",
+      "local_path": "使用/集成/自定义端点/使用 Cloudflare Workers 部署自定义端点.md",
+      "summary": "",
+      "keywords": [
+        "使用",
+        "集成",
+        "自定义端点",
+        "cloudflare-worker"
+      ]
+    },
+    {
+      "title": "工作空间",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/readme",
+      "source_path": "/zh/cloud/use-dify/workspace/readme",
+      "local_path": "使用/工作空间/工作空间.md",
+      "summary": "工作空间是 Dify 中的基础组织单位，你的团队所构建、配置和管理的一切都存在于工作空间中",
+      "keywords": [
+        "使用",
+        "工作空间",
+        "readme"
+      ]
+    },
+    {
+      "title": "导出和导入应用",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/export-import-apps",
+      "source_path": "/zh/cloud/use-dify/workspace/export-import-apps",
+      "local_path": "使用/工作空间/导出和导入应用.md",
+      "summary": "导出应用以备份、分享或迁移，导入应用包以创建新应用或更新已有应用",
+      "keywords": [
+        "使用",
+        "工作空间",
+        "export-import-apps"
+      ]
+    },
+    {
+      "title": "管理成员",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/team-members-management",
+      "source_path": "/zh/cloud/use-dify/workspace/team-members-management",
+      "local_path": "使用/工作空间/管理成员.md",
+      "summary": "添加团队成员，并通过角色管理他们的访问权限",
+      "keywords": [
+        "使用",
+        "工作空间",
+        "team-members-management"
+      ]
+    },
+    {
+      "title": "个人设置",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/personal-account-management",
+      "source_path": "/zh/cloud/use-dify/workspace/personal-account-management",
+      "local_path": "使用/工作空间/个人设置.md",
+      "summary": "管理你在所有工作空间中的个人资料和偏好设置",
+      "keywords": [
+        "使用",
+        "工作空间",
+        "personal-account-management"
+      ]
+    },
+    {
+      "title": "计费",
+      "source_url": "https://docs.dify.ai/zh/cloud/use-dify/workspace/subscription-management",
+      "source_path": "/zh/cloud/use-dify/workspace/subscription-management",
+      "local_path": "使用/工作空间/计费.md",
+      "summary": "管理工作空间订阅、计划变更以及 Dify 教育版优惠",
+      "keywords": [
+        "使用",
+        "工作空间",
+        "subscription-management"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "source_url": "https://docs.dify.ai/zh/learn/key-concepts",
+      "source_path": "/zh/learn/key-concepts",
+      "local_path": "学习/核心概念.md",
+      "summary": "Dify 核心概念快速概览",
+      "keywords": [
+        "学习",
+        "key-concepts"
+      ]
+    },
+    {
+      "title": "30 分钟快速入门",
+      "source_url": "https://docs.dify.ai/zh/quick-start",
+      "source_path": "/zh/quick-start",
+      "local_path": "学习/教程/30 分钟快速入门.md",
+      "summary": "通过示例应用深入了解 Dify",
+      "keywords": [
+        "学习",
+        "教程",
+        "quick-start"
+      ]
+    },
+    {
+      "title": "简单聊天机器人",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/simple-chatbot",
+      "source_path": "/zh/learn/tutorials/simple-chatbot",
+      "local_path": "学习/教程/简单聊天机器人.md",
+      "summary": "Hello World",
+      "keywords": [
+        "学习",
+        "教程",
+        "simple-chatbot"
+      ]
+    },
+    {
+      "title": "ChatFlow 实战：搭建 Twitter 账号分析助手",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/twitter-chatflow",
+      "source_path": "/zh/learn/tutorials/twitter-chatflow",
+      "local_path": "学习/教程/ChatFlow 实战：搭建 Twitter 账号分析助手.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "twitter-chatflow"
+      ]
+    },
+    {
+      "title": "使用知识库搭建智能客服机器人",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/customer-service-bot",
+      "source_path": "/zh/learn/tutorials/customer-service-bot",
+      "local_path": "学习/教程/使用知识库搭建智能客服机器人.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "customer-service-bot"
+      ]
+    },
+    {
+      "title": "如何搭建 AI 图片生成应用",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/build-ai-image-generation-app",
+      "source_path": "/zh/learn/tutorials/build-ai-image-generation-app",
+      "local_path": "学习/教程/如何搭建 AI 图片生成应用.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "build-ai-image-generation-app"
+      ]
+    },
+    {
+      "title": "使用文件上传搭建文章理解助手",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/article-reader",
+      "source_path": "/zh/learn/tutorials/article-reader",
+      "local_path": "学习/教程/使用文件上传搭建文章理解助手.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "article-reader"
+      ]
+    },
+    {
+      "title": "第 1 课：什么是工作流",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-01",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-01",
+      "local_path": "学习/教程/工作流 101/第 1 课：什么是工作流.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-01"
+      ]
+    },
+    {
+      "title": "第 2 课：流程的头和尾（开始与输出节点）",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-02",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-02",
+      "local_path": "学习/教程/工作流 101/第 2 课：流程的头和尾（开始与输出节点）.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-02"
+      ]
+    },
+    {
+      "title": "第 3 课：工作流的大脑（LLM 节点）",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-03",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-03",
+      "local_path": "学习/教程/工作流 101/第 3 课：工作流的大脑（LLM 节点）.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-03"
+      ]
+    },
+    {
+      "title": "第 4 课：小抄（知识检索）",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-04",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-04",
+      "local_path": "学习/教程/工作流 101/第 4 课：小抄（知识检索）.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-04"
+      ]
+    },
+    {
+      "title": "第 5 课：工作流的岔路口（分类与执行）",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-05",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-05",
+      "local_path": "学习/教程/工作流 101/第 5 课：工作流的岔路口（分类与执行）.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-05"
+      ]
+    },
+    {
+      "title": "第 6 课：处理多个任务（参数提取 & 迭代）",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-06",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-06",
+      "local_path": "学习/教程/工作流 101/第 6 课：处理多个任务（参数提取 & 迭代）.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-06"
+      ]
+    },
+    {
+      "title": "第 7 课：增强工作流（工具）",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-07",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-07",
+      "local_path": "学习/教程/工作流 101/第 7 课：增强工作流（工具）.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-07"
+      ]
+    },
+    {
+      "title": "第 8 课：Agent 节点",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-08",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-08",
+      "local_path": "学习/教程/工作流 101/第 8 课：Agent 节点.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-08"
+      ]
+    },
+    {
+      "title": "第 9 课：排版设计师（模板）",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-09",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-09",
+      "local_path": "学习/教程/工作流 101/第 9 课：排版设计师（模板）.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-09"
+      ]
+    },
+    {
+      "title": "第 10 课：发布和监控你的 AI 应用",
+      "source_url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-10",
+      "source_path": "/zh/learn/tutorials/workflow-101/lesson-10",
+      "local_path": "学习/教程/工作流 101/第 10 课：发布和监控你的 AI 应用.md",
+      "summary": "",
+      "keywords": [
+        "学习",
+        "教程",
+        "工作流 101",
+        "lesson-10"
+      ]
+    },
+    {
+      "title": "Dify 文档",
+      "source_url": "https://docs.dify.ai/zh/home",
+      "source_path": "/zh/home",
+      "local_path": "使用/Dify 文档.md",
+      "summary": "官方导航中的补充入口",
+      "keywords": [
+        "使用"
+      ]
+    }
+  ]
+}

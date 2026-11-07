@@ -351,6 +351,15 @@
       "skills": [
         "./skills/langgraph-wiki"
       ]
+    },
+    {
+      "name": "dify-wiki",
+      "description": "Dify 中文官方文档离线 Wiki，覆盖使用、学习、difyctl CLI、插件开发与 API；含本地全文检索和增量更新",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/dify-wiki"
+      ]
     }
   ]
 }

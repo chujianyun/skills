@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dify Wiki"
+  short_description: "检索 Dify 中文官方文档，覆盖使用、教程、CLI、插件开发和 API"
+  default_prompt: "使用 $dify-wiki，依据本地官方文档回答我的 Dify 问题，并提供来源。"
