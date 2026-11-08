@@ -1,0 +1,4 @@
+interface:
+  display_name: "Palantir Ontology Wiki"
+  short_description: "Palantir Ontology 离线 Wiki 检索与有依据问答"
+  default_prompt: "Use $palantir-ontology-wiki to answer my question with documentation-backed guidance."

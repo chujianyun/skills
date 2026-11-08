@@ -1,0 +1,287 @@
+{
+  "asset_bytes": 177470815,
+  "assets_captured": 944,
+  "assets_discovered": 1009,
+  "locale_specific_image_aliases": {
+    "/docs/resources/foundry/dynamic-scheduling/setup-puck-conditioned-format.png": "/docs/resources/zh/foundry/dynamic-scheduling/setup-puck-conditioned-format.png",
+    "/docs/resources/foundry/dynamic-scheduling/user-configuration.png": "/docs/resources/zh/foundry/dynamic-scheduling/user-configuration.png",
+    "/docs/resources/foundry/dynamic-scheduling/user-preference-default.png": "/docs/resources/zh/foundry/dynamic-scheduling/user-preference-default.png",
+    "/docs/resources/foundry/functions/python-functions-create-and-start.png": "/docs/resources/zh/foundry/functions/python-functions-create-and-start.png",
+    "/docs/resources/foundry/functions/python-functions-open-ontology-manager.png": "/docs/resources/zh/foundry/functions/python-functions-open-ontology-manager.png",
+    "/docs/resources/foundry/object-link-types/create-new-link-type-configure-a-new-link-type-annotated.png": "/docs/resources/zh/foundry/object-link-types/create-new-link-type-configure-a-new-link-type-annotated.png",
+    "/docs/resources/foundry/object-link-types/edit-link-type-metadata-annotated.png": "/docs/resources/zh/foundry/object-link-types/edit-link-type-metadata-annotated.png",
+    "/docs/resources/foundry/object-views/configuring-workshop-tabs_wsbt-parameters.png": "/docs/resources/zh/foundry/object-views/configuring-workshop-tabs_wsbt-parameters.png",
+    "/docs/resources/foundry/process-mining/action-centric-view.png": "/docs/resources/zh/foundry/process-mining/action-centric-view.png",
+    "/docs/resources/foundry/process-mining/creation-dialog.png": "/docs/resources/zh/foundry/process-mining/creation-dialog.png",
+    "/docs/resources/foundry/process-mining/state-centric-view.png": "/docs/resources/zh/foundry/process-mining/state-centric-view.png"
+  },
+  "media_complete": false,
+  "missing_assets": [
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/action-types/action-metrics.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/action-types/action-metrics.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/action-types/recommended_writeback_setting.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/action-types/recommended_writeback_setting.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/aip-embeddings-visualization.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/aip-embeddings-visualization.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/chunk-string-board.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/chunk-string-board.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/completed-knn-workshop.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/completed-knn-workshop.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/dataset-to-generate-embeddings.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/dataset-to-generate-embeddings.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/drop-unnecessary-columns.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/drop-unnecessary-columns.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/explode-chunks.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/explode-chunks.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/get-chunk-position.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/get-chunk-position.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/get-chunk.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/get-chunk.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/marketplace-add-function-dialog.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/marketplace-add-function-dialog.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/marketplace-add-function-panel.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/marketplace-add-function-panel.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/marketplace-add-function.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/marketplace-add-function.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/python-functions-tag.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/python-functions-tag.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/referenced-object-types-edited.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/referenced-object-types-edited.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/text-extraction.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/text-extraction.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/tsv1-functions-helper-open.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/tsv1-functions-helper-open.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/tsv1-functions-publish.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/tsv1-functions-publish.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/functions/vector-property-in-oma.jpg",
+      "url": "https://www.palantir.com/docs/resources/foundry/functions/vector-property-in-oma.jpg"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/logic/evals-add-parameters.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/logic/evals-add-parameters.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/logic/evals-add-test-case.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/logic/evals-add-test-case.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/logic/evals-add-test-cases.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/logic/evals-add-test-cases.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/logic/evals-logic-metric-dashboard.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/logic/evals-logic-metric-dashboard.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/logic/evals-logic-panel.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/logic/evals-logic-panel.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/logic/evals-logic-side-panel.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/logic/evals-logic-side-panel.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/logic/evals-preview-results.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/logic/evals-preview-results.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/logic/evals-select-function.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/logic/evals-select-function.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/logic/evals-suite-new.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/logic/evals-suite-new.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/map/marketplace-add-map-template.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/map/marketplace-add-map-template.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/map/objects-high-scale.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/map/objects-high-scale.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/map/shape-measurements.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/map/shape-measurements.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-link-types/create-new-link-type-card.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-link-types/create-new-link-type-card.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-link-types/marketplace-add-shared-property.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-link-types/marketplace-add-shared-property.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/edit-object-view-header.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/edit-object-view-header.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/edit-object-view-preview.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/edit-object-view-preview.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/edit-object-view.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/edit-object-view.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/edit-workshop-module.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/edit-workshop-module.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/manage-object-view-versions_add-a-description.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/manage-object-view-versions_add-a-description.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/manage-object-view-versions_change-automatic-publishing.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/manage-object-view-versions_change-automatic-publishing.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/manage-object-view-versions_navigating-to-history.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/manage-object-view-versions_navigating-to-history.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/manage-object-view-versions_publish-version.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/manage-object-view-versions_publish-version.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/manage-object-view-versions_republish-version.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/manage-object-view-versions_republish-version.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/manage-object-view-versions_save-and-publish.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/manage-object-view-versions_save-and-publish.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/manage-object-view-versions_see-full-details.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/manage-object-view-versions_see-full-details.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/marketplace-add-object-view.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/marketplace-add-object-view.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/object-explorer-object.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/object-explorer-object.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/object-view-editor-settings.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/object-view-editor-settings.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/object-view-editor-sidebar.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/object-view-editor-sidebar.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/object-view-editor-tabs.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/object-view-editor-tabs.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/object-view-from-object-explorer.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/object-view-from-object-explorer.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/object-view-overview-example.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/object-view-overview-example.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/object-view-widget-workshop.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/object-view-widget-workshop.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/open-in-object-explores.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/open-in-object-explores.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/private-module.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/private-module.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/object-views/publish-ov-from-workshop.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/object-views/publish-ov-from-workshop.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/ontologies/annotated-topbar.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/ontologies/annotated-topbar.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/ontologies/branch-select-closed.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/ontologies/branch-select-closed.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/ontologies/branch-select-open.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/ontologies/branch-select-open.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/ontologies/changelog.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/ontologies/changelog.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/ontologies/close-proposal.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/ontologies/close-proposal.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/ontologies/oma-user-interface-discover-permission.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/ontologies/oma-user-interface-discover-permission.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/ontologies/oma-user-interface-view-permission.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/ontologies/oma-user-interface-view-permission.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/process-mining/drawing-ux.gif",
+      "url": "https://www.palantir.com/docs/resources/foundry/process-mining/drawing-ux.gif"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/process-mining/process-graph-example.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/process-mining/process-graph-example.png"
+    },
+    {
+      "error": "ValueError: official asset URL returned HTML instead of an image: /docs/resources/foundry/vertex/marketplace-add-graph-template.png",
+      "url": "https://www.palantir.com/docs/resources/foundry/vertex/marketplace-add-graph-template.png"
+    }
+  ],
+  "navigation_pages": 316,
+  "rendered_image_urls_verified": 1009,
+  "rewritten_document_links": 971,
+  "rewritten_media_links": 1375,
+  "sitemap_verified": 316,
+  "source_format": "Official pageProps.markdown from server-rendered __NEXT_DATA__"
+}
