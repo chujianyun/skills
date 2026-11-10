@@ -369,6 +369,15 @@
       "skills": [
         "./skills/palantir-ontology-wiki"
       ]
+    },
+    {
+      "name": "broadband-test",
+      "description": "宽带测试：依次调用中科大、南京大学与测速网，聚合延迟、抖动、下载和上传速度",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/broadband-test"
+      ]
     }
   ]
 }

@@ -148,6 +148,7 @@ README 的能力地图按使用场景分组展示，分组只是阅读视角，�
 | [openclaw-ops](skills/openclaw-ops/SKILL.md) | Tool Wrapper / Runbook | OpenClaw 状态检查、日志排查、Gateway/渠道/Agent 故障处理 |
 | [openclaw-session-cleaner](skills/openclaw-session-cleaner/SKILL.md) | Tool Wrapper / Runbook | 清理 OpenClaw 膨胀的 session 文件、删除旧 cron session、重建 `sessions.json` 引用 |
 | [will-codex-quota-reset](skills/will-codex-quota-reset/SKILL.md) | Tool Wrapper | 查询 Codex 配额重置预测概率、最近重置时间和距上次重置时长 |
+| [broadband-test](skills/broadband-test/SKILL.md) | Tool Wrapper / Runbook | 本机浏览器依次调用中科大、南京大学、测速网，汇总延迟、抖动、下载和上传速度 |
 | [copaw-ops](skills/copaw-ops/SKILL.md) | Tool Wrapper / Runbook | CoPaw 服务状态检查、配置排障、模型问题、cron 异常、渠道故障 |
 | [hermes-ops](skills/hermes-ops/SKILL.md) | Tool Wrapper / Runbook | Hermes Agent 运维、故障排查、gateway 异常、平台掉线、cron 不执行、profile 配置问题 |
 | [hermes-qq](skills/hermes-qq/SKILL.md) | Pipeline | 为 Hermes Agent 正式版 main 分支补充 QQ 平台支持、QQ Bot 接入、QQ 文件发送 |

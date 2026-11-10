@@ -1,0 +1,4 @@
+interface:
+  display_name: "宽带测试"
+  short_description: "依次调用中科大、南京大学和测速网，汇总延迟、抖动及上下行速度"
+  default_prompt: "使用 $broadband-test 测一下我当前的宽带，汇总三个站点的延迟、抖动、下载和上传速度。"
