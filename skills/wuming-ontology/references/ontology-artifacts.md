@@ -36,7 +36,7 @@ python3 -m venv <venv-dir>
 <venv-dir>/bin/python -c "import rdflib; print(rdflib.__version__)"
 ```
 
-检查当前解释器的 `import rdflib` 是否成功且主版本为 7；失败时也可检查已有的专用环境 `~/.local/share/skill-venvs/palantir-ontology-wiki/bin/python`，存在且满足版本时复用。否则在获得安装授权后按上面的命令创建环境。缺少 RDFLib 时，脚本非零退出并说明安装方法，不自动安装。Agent 可以先写 TTL 草稿，但必须标为未解析验证；HTML 生成暂缓，不用正则模拟 Turtle 解析器。浏览器仅用于最终交互验证，HTML 打开无需 Python、服务端、网络或 CDN。
+检查当前解释器的 `import rdflib` 是否成功且主版本为 7；失败时也可检查已有的专用环境 `~/.local/share/skill-venvs/wuming-ontology/bin/python`，存在且满足版本时复用。否则在获得安装授权后按上面的命令创建环境。缺少 RDFLib 时，脚本非零退出并说明安装方法，不自动安装。Agent 可以先写 TTL 草稿，但必须标为未解析验证；HTML 生成暂缓，不用正则模拟 Turtle 解析器。浏览器仅用于最终交互验证，HTML 打开无需 Python、服务端、网络或 CDN。
 
 从 Skill 根目录运行（实际执行时将相对路径换成确定的 Skill 根目录路径）：
 

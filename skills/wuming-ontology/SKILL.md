@@ -1,11 +1,13 @@
 ---
-name: palantir-ontology-wiki
-description: "检索 Palantir Foundry Ontology 中文离线文档，并生成 .ttl（OWL 本体）与 HTML 可视化产物。用于 Palantir 概念解释、建模、配置、排障，或基于其对象、属性、链接建模方法交付领域本体；不用于泛哲学本体论或其他图谱产品的配置与排障。"
+name: wuming-ontology
+description: "基于 Palantir Foundry Ontology 官方文档进行本体建模，生成 .ttl（OWL 本体）与 HTML 可视化，并检索中文离线文档。用于领域本体设计与交付，以及 Palantir 概念解释、配置和排障；不用于泛哲学本体论或其他图谱产品的配置与排障。"
 ---
 
-# Palantir Ontology Wiki
+# wuming-ontology
 
-使用随 Skill 打包的 Wiki 文档回答问题。离线文档是第一依据；只有本地材料不足、用户要求核对最新版或问题超出快照范围时，才补查规范来源。
+核心知识来自 [Palantir Foundry Ontology 官方文档](https://www.palantir.com/docs/foundry/ontology/overview)。本 Skill 在其对象、属性、链接等建模方法上扩展 OWL 本体与 HTML 可视化交付能力；OWL 映射和产物工具是本 Skill 的扩展，不代表 Palantir 官方格式或背书。
+
+使用随 Skill 打包的中文 Wiki 快照回答问题。离线文档是第一依据；只有本地材料不足、用户要求核对最新版或问题超出快照范围时，才补查规范来源。英文核心来源与现有中文快照的语言、抓取范围和时间分别记录，不因更名改写快照来源。
 
 先判断任务：概念、配置与排障走回答工作流；要求“生成、导出、交付本体”或指定 `.ttl` / HTML 时，在检索后走产物工作流。普通问答不强制生成文件。已有 TTL 的校验或可视化可直接走产物工作流，无须检索无关 Wiki。
 

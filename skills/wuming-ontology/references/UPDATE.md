@@ -1,6 +1,8 @@
 # 更新协议
 
-规范来源：<https://www.palantir.com/docs/zh/foundry/ontology/overview>
+核心知识来源：<https://www.palantir.com/docs/foundry/ontology/overview>
+
+本协议更新的是当前中文离线快照，抓取来源仍为 <https://www.palantir.com/docs/zh/foundry/ontology/overview>，与清单中的 `wiki.source_root` 保持一致。技能更名不改变抓取语言；切换到英文或新增英文语料需另行确认范围，不将英文内容混入现有中文快照。
 
 1. 重新盘点来源范围内的完整导航，不沿用旧页面数量猜测新范围。此 Skill 自带官方页面抓取器：
 

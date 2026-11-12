@@ -21,7 +21,7 @@ README 的能力地图按使用场景分组展示，分组只是阅读视角，�
 | [dify-wiki](skills/dify-wiki/SKILL.md) | Tool Wrapper | 检索 Dify 中文 Cloud 全部使用、学习与开发者文档，回答工作流、节点、知识库、CLI、插件与 API 问题 |
 | [langgraph-wiki](skills/langgraph-wiki/SKILL.md) | Tool Wrapper | 检索 LangGraph Python 官方文档，回答 Graph / Functional API、持久化、人工介入、流式输出、子图、部署和排障问题 |
 | [llama-index-wiki](skills/llama-index-wiki/SKILL.md) | Tool Wrapper | 检索 LlamaIndex Python 用户文档，回答 RAG、索引、检索、Agent、Workflow、集成、评估、部署与 LlamaParse 问题 |
-| [palantir-ontology-wiki](skills/palantir-ontology-wiki/SKILL.md) | Tool Wrapper + Generator | 检索 Palantir Foundry Ontology 中文文档，解答建模与配置问题，生成 OWL 本体（.ttl）和离线 HTML 可视化 |
+| [wuming-ontology](skills/wuming-ontology/SKILL.md) | Tool Wrapper + Generator | 基于 Palantir Foundry Ontology 官方文档进行本体建模，生成 OWL 本体（.ttl）和离线 HTML 可视化，附中文离线检索 |
 | [qianwenai-wiki](skills/qianwenai-wiki/SKILL.md) | Tool Wrapper | 检索千问AI平台官方文档，回答模型接入、OpenAI 兼容与 DashScope API、文本/多模态生成、Realtime、计费和排障问题 |
 | [qoder-wiki](skills/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |
 | [qwenwork-wiki](skills/qwenwork-wiki/SKILL.md) | Tool Wrapper | 查询千问办公网页端、桌面端、技能与连接器、定时任务、IM、企业管理与排障，按需定位官方 API 文档 |

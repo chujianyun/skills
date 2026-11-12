@@ -1,4 +1,0 @@
-interface:
-  display_name: "Palantir Ontology Wiki"
-  short_description: "Palantir 本体文档检索、OWL Turtle 生成与离线 HTML 可视化"
-  default_prompt: "Use $palantir-ontology-wiki to answer my ontology question with documentation-backed guidance, or generate OWL Turtle (.ttl) and an offline HTML visualization when I request ontology artifacts."

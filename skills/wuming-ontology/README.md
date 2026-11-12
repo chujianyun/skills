@@ -1,12 +1,14 @@
-# palantir-ontology-wiki
+# wuming-ontology
 
-面向 Agent 的 Palantir Ontology 离线 Wiki Skill，来源为 <https://www.palantir.com/docs/zh/foundry/ontology/overview>。
+面向 Agent 的本体建模与产物生成 Skill，核心内容来自 [Palantir Foundry Ontology 官方文档](https://www.palantir.com/docs/foundry/ontology/overview)。支持交付 OWL Turtle（`.ttl`）和离线 HTML 可视化。
+
+随 Skill 打包的检索语料为该文档的[官方中文版本](https://www.palantir.com/docs/zh/foundry/ontology/overview)快照；OWL 映射及产物工具由本 Skill 扩展，不代表 Palantir 官方导出格式或背书。
 
 文档按原 Wiki 导航层级保存为 Markdown，并配有完整索引、本地全文检索和逐文档 SHA-256 清单。手动或自动同步会先比较内容哈希；没有变化时不会重写正文、索引或清单。
 
 ## 使用
 
-调用 `$palantir-ontology-wiki` 后直接询问 Palantir Ontology 的概念、使用、配置或排障问题。Agent 会先检索少量相关文档，再给出带本地文档路径的回答。
+调用 `$wuming-ontology` 后直接询问 Palantir Ontology 的概念、使用、配置或排障问题。Agent 会先检索少量相关文档，再给出带本地文档路径的回答。
 
 也可以要求生成本体文件，例如：
 

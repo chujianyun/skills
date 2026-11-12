@@ -1,0 +1,4 @@
+interface:
+  display_name: "wuming-ontology"
+  short_description: "基于 Palantir 官方文档的本体建模、OWL 生成与 HTML 可视化"
+  default_prompt: "Use $wuming-ontology to answer my ontology question with documentation-backed guidance, or generate OWL Turtle (.ttl) and an offline HTML visualization when I request ontology artifacts."

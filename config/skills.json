@@ -28,7 +28,6 @@
     "p7-advisor",
     "p8-advisor",
     "p9-advisor",
-    "palantir-ontology-wiki",
     "paper-interpreter",
     "photo-privacy-avatar",
     "photoplus-downloader",
@@ -40,6 +39,7 @@
     "skill-optimizer",
     "typesafe-wiki",
     "wechat-official-account-qr",
-    "will-codex-quota-reset"
+    "will-codex-quota-reset",
+    "wuming-ontology"
   ]
 }
