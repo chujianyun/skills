@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>本体浏览器</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#18343d;background:#f3f7f7;font-size:14px}
+*{box-sizing:border-box}body{margin:0}header{padding:28px 32px;background:#123b46;color:#fff}
+.eyebrow{font-size:11px;letter-spacing:2px;color:#9cd4d9}h1{font-size:26px;margin:10px 0;overflow-wrap:anywhere}h2{font-size:16px;margin:0 0 16px}#summary{overflow-wrap:anywhere}
+p{line-height:1.65;margin:8px 0}#summary{color:#c3e5e7}.stats{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px}.stat strong{display:block;font-size:24px}.stat span{color:#b3d7db;font-size:12px}
+main{padding:24px 32px;max-width:1700px;margin:auto}.notice{background:#fff8de;border:1px solid #e7dba6;padding:12px 16px;border-radius:10px;margin-bottom:20px}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}input,select,button{font:inherit;border:1px solid #c6d9dc;border-radius:7px;background:#fff;color:inherit;padding:9px 12px}
+input{flex:1;min-width:180px}button{cursor:pointer}button:hover{background:#e8f2f3}button:disabled{opacity:.4;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #43a6b8;outline-offset:2px}
+.workspace{display:grid;grid-template-columns:240px minmax(0,1fr) 300px;gap:16px;align-items:start}.panel{border:1px solid #d9e5e6;background:#fff;border-radius:12px;overflow:hidden;min-width:0}.panel-head{padding:16px;border-bottom:1px solid #e3ebec}.panel-body{padding:16px}
+#entities{max-height:550px;overflow:auto;padding:8px}#entities button{display:block;width:100%;text-align:left;border:none;border-radius:6px;margin:2px 0;background:none;overflow-wrap:anywhere}#entities button:hover,#entities button.active{background:#e5f3f3;color:#00697c}.tag{font-size:11px;color:#597981;display:block;margin-top:4px}
+#graph{width:100%;height:430px;background:radial-gradient(circle,#c7dada 1px,transparent 1px);background-size:18px 18px;touch-action:none;cursor:grab}#graph:active{cursor:grabbing}svg text{font-family:inherit;font-size:12px}.edge{stroke:#87a7ad;stroke-width:1.4;fill:none}.edge-label{fill:#496c75;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}.graph-node{cursor:pointer}.graph-node rect{fill:#e1f2f3;stroke:#3296a8;stroke-width:1.5}.graph-node.selected rect{fill:#b9e1e5;stroke:#00677c;stroke-width:3}.graph-node text{fill:#154451}.graph-node:focus rect{stroke:#ed912d;stroke-width:3}
+.muted{color:#607c85;font-size:12px;line-height:1.6}.controls{display:flex;gap:8px;padding:12px 16px;border-top:1px solid #e3ebec;align-items:center;flex-wrap:wrap}.controls .muted{margin-left:auto}#details{max-height:590px;overflow:auto;overflow-wrap:anywhere}#details h2{margin-top:4px}#details code{font-size:11px;display:block;color:#607c85;white-space:normal;overflow-wrap:anywhere}dl{margin:16px 0}dt{font-size:12px;color:#607c85;margin-top:14px}dd{margin:5px 0;white-space:pre-wrap;overflow-wrap:anywhere}dd button{padding:4px 6px;text-align:left;max-width:100%;overflow-wrap:anywhere}
+.triples{margin-top:20px}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #e6eded;padding:11px 16px;overflow-wrap:anywhere}th{font-size:12px;color:#607c85;background:#f8fbfb}td button{border:none;padding:0;text-align:left;background:none;color:#176d83;max-width:100%;overflow-wrap:anywhere}td button:hover{background:none;text-decoration:underline}.table-wrap{overflow:auto;max-height:500px}footer{padding:20px 0;color:#607c85;font-size:11px;overflow-wrap:anywhere}details summary{cursor:pointer}#warnings{padding-left:22px;line-height:1.8}
+@media(max-width:1150px){.workspace{grid-template-columns:210px minmax(0,1fr)}.detail-panel{grid-column:1/-1}#details{max-height:350px}}
+@media(max-width:650px){header{padding:22px 18px}main{padding:18px}.workspace{grid-template-columns:minmax(0,1fr)}.detail-panel{grid-column:auto}#entities{max-height:180px}#graph{height:340px}.stats{gap:16px}h1{font-size:22px}th,td{padding:9px}.controls .muted{margin-left:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">ONTOLOGY / 本体浏览器</div>
+  <h1 id="title">本体可视化</h1>
+  <p id="summary"></p>
+  <div class="stats" id="stats"></div>
+</header>
+<main>
+  <div class="notice"><p id="validation"></p><details id="warning-box" hidden><summary id="warning-title"></summary><ul id="warnings"></ul></details></div>
+  <div class="toolbar"><input id="search" type="search" placeholder="搜索名称、IRI、注释或三元组" aria-label="搜索本体"><select id="kind" aria-label="实体类型"><option value="">全部实体</option><option>类</option><option>对象属性</option><option>数据属性</option><option>注释属性</option><option>实例</option><option>匿名表达式</option><option>资源</option></select></div>
+  <div class="workspace">
+    <section class="panel"><div class="panel-head"><h2>实体索引</h2><span class="muted" id="entity-count"></span></div><div id="entities"></div></section>
+    <section class="panel"><div class="panel-head"><h2>类与关系</h2><p class="muted">类节点 · 箭头表示关系方向 · “是一种”指向父类。展示直接继承及显式 domain → range；并列 domain/range 仍表示交集。匿名限制、实例和其他公理请查看详情及完整三元组。</p></div><svg id="graph" role="img" aria-label="本体类关系图" viewBox="0 0 900 540"><defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="9" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8" fill="#87a7ad"/></marker></defs><g id="viewport"></g></svg><div class="controls"><button id="zoom-in" aria-label="放大关系图">放大 +</button><button id="zoom-out" aria-label="缩小关系图">缩小 −</button><button id="reset">重置视图</button><span class="muted" id="graph-count"></span></div></section>
+    <section class="panel detail-panel"><div class="panel-head"><h2>实体详情与公理</h2></div><div class="panel-body" id="details"><p class="muted">选择左侧实体或图中节点。</p></div></section>
+  </div>
+  <section class="panel triples"><div class="panel-head"><h2>完整三元组</h2><span class="muted" id="triple-count"></span></div><div class="table-wrap"><table><thead><tr><th>Subject / 主体</th><th>Predicate / 谓词</th><th>Object / 客体</th></tr></thead><tbody id="triples"></tbody></table></div><div class="controls"><button id="prev">上一页</button><button id="next">下一页</button><span class="muted" id="page"></span></div></section>
+  <footer id="provenance"></footer>
+</main>
+<script id="ontology-data" type="application/json">__ONTOLOGY_DATA__</script>
+<script>
+"use strict";
+const model = JSON.parse(document.getElementById("ontology-data").textContent);
+const byId = new Map(model.nodes.map(node => [node.id, node]));
+const $ = id => document.getElementById(id);
+const text = (tag, value, className) => { const el = document.createElement(tag); el.textContent = value; if (className) el.className = className; return el; };
+const link = id => { const el = text("button", byId.get(id)?.label || id); el.title = id; el.onclick = () => select(id); return el; };
+const index = model.nodes.filter(node => !node.literal && (node.kinds[0] !== "资源" || model.triples.some(row => row[0] === node.id)));
+const searchable = new Map(model.nodes.map(node => [node.id, [node.id,node.label,node.short].join(" ").toLowerCase()]));
+for (const [subject, predicate, object] of model.triples) {
+  searchable.set(subject, (searchable.get(subject) || "") + " " + (searchable.get(predicate) || predicate) + " " + (byId.get(object)?.label || object).toLowerCase());
+}
+let selected = null, query = "", kind = "", page = 0, zoom = 1, panX = 0, panY = 0;
+const pageSize = 50;
+const svgNS = "http://www.w3.org/2000/svg";
+const svgEl = (tag, attrs = {}) => { const el = document.createElementNS(svgNS, tag); for (const [k,v] of Object.entries(attrs)) el.setAttribute(k, v); return el; };
+$("title").textContent = model.title;
+document.title = model.title + " · 本体浏览器";
+$("summary").textContent = model.ontologies.join(" · ");
+$("validation").textContent = model.validation;
+for (const [key, label] of [["classes","类"],["objectProperties","对象属性"],["dataProperties","数据属性"],["individuals","实例"],["triples","三元组"]]) {
+  const item = text("div", "", "stat"); item.append(text("strong",model.counts[key]),text("span",label)); $("stats").append(item);
+}
+if (model.warnings.length) {
+  $("warning-box").hidden = false; $("warning-title").textContent = model.warnings.length + " 条检查提示";
+  for (const warning of model.warnings) $("warnings").append(text("li", warning));
+}
+$("provenance").textContent = "数据来源：" + model.source + " · SHA-256：" + model.sha256 + " · 独立离线视图；未加载外部本体或执行推理。";
+function select(id) {
+  const node = byId.get(id); if (!node) return;
+  selected = id; $("details").replaceChildren(text("h2", node.label),text("code", node.id),text("p",node.kinds.join(" / "),"muted"));
+  const dl = document.createElement("dl");
+  for (const [s,p,o] of model.triples.filter(row => row[0] === id || row[2] === id)) {
+    const incoming = s !== id; dl.append(text("dt", (incoming ? "← " : "") + (byId.get(p)?.short || p)));
+    const dd = document.createElement("dd"); dd.append(link(incoming ? s : o)); dl.append(dd);
+  }
+  $("details").append(dl); renderEntities();
+  for (const el of $("viewport").querySelectorAll(".graph-node")) el.classList.toggle("selected", el.dataset.id === id);
+}
+function renderEntities() {
+  const matches = index.filter(node => (!kind || node.kinds.includes(kind)) && (!query || searchable.get(node.id).includes(query)));
+  $("entities").replaceChildren(); $("entity-count").textContent = matches.length + " / " + index.length + " 个实体";
+  for (const node of matches) {
+    const button = link(node.id); button.append(text("span", node.kinds.join(" / "),"tag")); button.classList.toggle("active",node.id === selected); $("entities").append(button);
+  }
+  if (!matches.length) $("entities").append(text("p","没有匹配的实体。","muted"));
+}
+function renderTriples() {
+  const rows = model.triples.filter(row => !query || row.some(id => (byId.get(id)?.label + " " + id).toLowerCase().includes(query)));
+  const pages = Math.max(1,Math.ceil(rows.length/pageSize)); page = Math.min(page,pages-1);
+  $("triples").replaceChildren();
+  for (const row of rows.slice(page*pageSize,(page+1)*pageSize)) {
+    const tr = document.createElement("tr"); for (const id of row) { const td = document.createElement("td"); const button = link(id); button.textContent = byId.get(id)?.short || id; td.append(button); tr.append(td); } $("triples").append(tr);
+  }
+  $("triple-count").textContent = rows.length + " / " + model.triples.length + " 条；搜索筛选全部页，不受实体类型筛选影响";
+  $("page").textContent = (page+1) + " / " + pages + " 页 · 每页 " + pageSize + " 条";
+  $("prev").disabled = page === 0; $("next").disabled = page >= pages-1;
+}
+function transform() { $("viewport").setAttribute("transform",`translate(${450+panX} ${270+panY}) scale(${zoom}) translate(-450 -270)`); }
+function renderGraph() {
+  const nodes = model.nodes.filter(node => node.kinds.includes("类") && !node.id.startsWith("_:"));
+  const positions = new Map();
+  nodes.forEach((node,i) => { const angle = (2*Math.PI*i/Math.max(1,nodes.length))-Math.PI/2; positions.set(node.id,{x:450+(nodes.length>1?290:0)*Math.cos(angle),y:270+(nodes.length>1?175:0)*Math.sin(angle)}); });
+  const viewport = $("viewport"); viewport.replaceChildren();
+  const lanes = new Map();
+  for (const edge of model.edges) { const pair = JSON.stringify([edge.source,edge.target].sort()); if (!lanes.has(pair)) lanes.set(pair,[]); lanes.get(pair).push(edge); }
+  model.edges.forEach(edge => {
+    const from = positions.get(edge.source), to = positions.get(edge.target); if (!from || !to) return;
+    const dx = to.x-from.x, dy = to.y-from.y, length = Math.hypot(dx,dy) || 1;
+    const endX = to.x-dx/length*80, endY = to.y-dy/length*28;
+    const self = edge.source === edge.target;
+    const peers = lanes.get(JSON.stringify([edge.source,edge.target].sort()));
+    const lane = peers.indexOf(edge)-(peers.length-1)/2;
+    const bend = lane*64*(edge.source<edge.target?1:-1);
+    const path = svgEl("path",{d:self?`M${from.x+45},${from.y-24} C${from.x+165},${from.y-125} ${from.x-165},${from.y-125} ${from.x-45},${from.y-24}`:`M${from.x},${from.y} Q${(from.x+to.x)/2-dy/length*bend},${(from.y+to.y)/2+dx/length*bend} ${endX},${endY}`,class:"edge","marker-end":"url(#arrow)"});
+    const title = svgEl("title"); title.textContent = edge.label + " · " + edge.property; path.append(title); viewport.append(path);
+    const label = svgEl("text",{x:self?from.x:(from.x+to.x)/2-dy/length*bend/2,y:self?from.y-94:(from.y+to.y)/2+dx/length*bend/2-7,class:"edge-label","text-anchor":"middle"}); label.textContent = edge.label; viewport.append(label);
+  });
+  for (const node of nodes) {
+    const pos = positions.get(node.id); const g = svgEl("g",{class:"graph-node",transform:`translate(${pos.x} ${pos.y})`,tabindex:0,role:"button","aria-label":node.label}); g.dataset.id = node.id;
+    g.append(svgEl("rect",{x:-78,y:-24,width:156,height:48,rx:9})); const label = svgEl("text",{"text-anchor":"middle",y:5}); label.textContent = node.label.length>16?node.label.slice(0,15)+"…":node.label; g.append(label);
+    const title = svgEl("title"); title.textContent = node.label + "\n" + node.id; g.append(title); g.onclick = () => select(node.id); g.onkeydown = event => { if (["Enter"," "].includes(event.key)) { event.preventDefault(); select(node.id); } }; viewport.append(g);
+  }
+  if (!nodes.length) { const empty = svgEl("text",{x:450,y:270,"text-anchor":"middle"}); empty.textContent="没有可投影的命名类，请通过实体索引查看模型。"; viewport.append(empty); }
+  $("graph-count").textContent = nodes.length + " 个命名类 · " + model.edges.length + " 条投影边"; transform();
+}
+$("search").oninput = event => { query = event.target.value.toLowerCase().trim(); page=0; renderEntities(); renderTriples(); };
+$("kind").onchange = event => { kind = event.target.value; renderEntities(); };
+$("prev").onclick = () => { page--; renderTriples(); }; $("next").onclick = () => { page++; renderTriples(); };
+$("zoom-in").onclick = () => { zoom = Math.min(5,zoom*1.25); transform(); }; $("zoom-out").onclick = () => { zoom = Math.max(.2,zoom/1.25); transform(); };
+$("reset").onclick = () => { zoom=1; panX=0; panY=0; transform(); };
+let drag = null;
+$("graph").addEventListener("pointerdown",event => { if (event.target.closest(".graph-node")) return; drag={x:event.clientX,y:event.clientY,panX,panY}; $("graph").setPointerCapture(event.pointerId); });
+$("graph").addEventListener("pointermove",event => { if (!drag) return; const scale=900/$("graph").getBoundingClientRect().width; panX=drag.panX+(event.clientX-drag.x)*scale; panY=drag.panY+(event.clientY-drag.y)*scale; transform(); });
+$("graph").addEventListener("pointerup",() => { drag=null; }); $("graph").addEventListener("pointercancel",() => { drag=null; });
+renderEntities(); renderTriples(); renderGraph();
+const first = index.find(node => node.kinds.includes("本体")); if (first) select(first.id);
+</script>
+</body>
+</html>

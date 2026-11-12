@@ -363,7 +363,7 @@
     },
     {
       "name": "palantir-ontology-wiki",
-      "description": "Palantir Foundry Ontology 中文离线 Wiki，包含 316 篇正文、944 张有效配图、全文检索及增量更新；65 个官方失效配图地址已标注。上游文档与图片权利归 Palantir Technologies Inc. 所有。",
+      "description": "Palantir Foundry Ontology 中文离线 Wiki，支持生成 OWL 本体（.ttl）和离线 HTML 可视化；含 316 篇正文、944 张有效配图、全文检索及增量更新，65 个官方失效配图地址已标注。上游文档与图片权利归 Palantir Technologies Inc. 所有。",
       "source": "./",
       "strict": false,
       "skills": [

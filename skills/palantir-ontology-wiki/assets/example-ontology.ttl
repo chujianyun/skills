@@ -1,0 +1,36 @@
+@prefix ex: <https://example.org/ontology/maintenance#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/ontology/maintenance> a owl:Ontology ;
+    rdfs:label "设备维护本体 · 虚构示例"@zh ;
+    rdfs:comment "演示对象、属性、链接、继承与实例的 OWL 建模；非 Foundry 原生导出。全部实例均为虚构。"@zh .
+
+ex:Asset a owl:Class ; rdfs:label "资产"@zh ;
+    rdfs:comment "需要登记与维护的业务资产。"@zh .
+ex:Equipment a owl:Class ; rdfs:subClassOf ex:Asset ;
+    rdfs:label "设备"@zh ; rdfs:comment "可以执行维护工作的实体设备。"@zh .
+ex:Site a owl:Class ; rdfs:label "场地"@zh ;
+    rdfs:comment "设备所在的业务场地。"@zh .
+ex:WorkOrder a owl:Class ; rdfs:label "工单"@zh ;
+    rdfs:comment "记录针对设备的维护任务；不代表可执行的 Foundry Action。"@zh .
+
+ex:locatedAt a owl:ObjectProperty ; rdfs:label "位于"@zh ;
+    rdfs:domain ex:Equipment ; rdfs:range ex:Site .
+ex:maintains a owl:ObjectProperty ; rdfs:label "维护设备"@zh ;
+    rdfs:domain ex:WorkOrder ; rdfs:range ex:Equipment ; owl:inverseOf ex:hasWorkOrder .
+ex:hasWorkOrder a owl:ObjectProperty ; rdfs:label "关联工单"@zh ;
+    rdfs:domain ex:Equipment ; rdfs:range ex:WorkOrder .
+ex:assetCode a owl:DatatypeProperty ; rdfs:label "资产编号"@zh ;
+    rdfs:domain ex:Asset ; rdfs:range xsd:string ;
+    rdfs:comment "业务标识；此声明不实施必填或唯一性校验。"@zh .
+ex:openedAt a owl:DatatypeProperty ; rdfs:label "创建时间"@zh ;
+    rdfs:domain ex:WorkOrder ; rdfs:range xsd:dateTime .
+
+ex:DemoSite a owl:NamedIndividual, ex:Site ; rdfs:label "示例场地"@zh .
+ex:DemoPump a owl:NamedIndividual, ex:Equipment ; rdfs:label "示例泵"@zh ;
+    ex:assetCode "DEMO-001" ; ex:locatedAt ex:DemoSite .
+ex:DemoOrder a owl:NamedIndividual, ex:WorkOrder ; rdfs:label "示例工单"@zh ;
+    ex:maintains ex:DemoPump ; ex:openedAt "2026-01-01T08:00:00Z"^^xsd:dateTime .
