@@ -378,6 +378,15 @@
       "skills": [
         "./skills/broadband-test"
       ]
+    },
+    {
+      "name": "workbuddy-wiki",
+      "description": "WorkBuddy 官方文档离线 Wiki，覆盖桌面端、手机 App、小程序与企业版概述；用于查询安装、Craft/Plan/Ask 模式、任务管理、Skills/MCP、连接器、知识库、定时任务、模型与计费积分、渠道接入和故障排查",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/workbuddy-wiki"
+      ]
     }
   ]
 }

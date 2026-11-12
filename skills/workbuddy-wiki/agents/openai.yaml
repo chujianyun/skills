@@ -1,0 +1,4 @@
+interface:
+  display_name: "WorkBuddy Wiki"
+  short_description: "WorkBuddy 离线 Wiki 检索与有依据问答"
+  default_prompt: "Use $workbuddy-wiki to answer my question with documentation-backed guidance."

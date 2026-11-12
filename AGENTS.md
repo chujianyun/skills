@@ -54,6 +54,13 @@ Skills are not grouped into physical categories. When adding or removing a Skill
 - Sync only the `skill-optimizer` Skill's contents, respecting the standalone repository's layout and preserving unrelated files; do not copy this collection's other Skills or repository-level files.
 - This additional push is part of the authorized Skill-change workflow. A `skill-optimizer` change is complete only after both repository pushes succeed; report any sync or push failure explicitly.
 
+## Wuming Ontology Repository Sync
+
+- Whenever any file under `skills/wuming-ontology/` changes, also synchronize the updated Skill contents to the standalone repository folder at `../wuming-ontology/` (a sibling of this repository root) and push that repository to its remote.
+- If `../wuming-ontology/` does not exist, skip the synchronization silently and continue the normal workflow in this repository; do not create the folder.
+- Sync only the `wuming-ontology` Skill's contents, respecting the standalone repository's layout and preserving unrelated files there; do not copy this collection's other Skills or repository-level files.
+- This additional push is part of the authorized Skill-change workflow. A `wuming-ontology` change is complete only after the local repository push and the standalone repository push both succeed; report any sync or push failure explicitly.
+
 ## New Skill Checklist
 
 Copy this checklist into the task progress before creating a Skill. Complete it from top to bottom; do not mark a later item complete while an earlier item is still open.

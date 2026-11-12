@@ -29,6 +29,7 @@ README 的能力地图按使用场景分组展示，分组只是阅读视角，�
 | [deepseek-harness-wiki](skills/deepseek-harness-wiki/SKILL.md) | Tool Wrapper | 检索 DeepSeek Harness 开发文档，回答插件、工具、配置、生命周期、服务、事件与 Cordis 教程问题 |
 | [deepagents-wiki](skills/deepagents-wiki/SKILL.md) | Tool Wrapper | 检索 Deep Agents Python SDK 官方文档，回答模型、后端、沙箱、Skills、Memory、子智能体、审批、前端与实战问题；支持全文检索和增量更新 |
 | [folotoy-ai-passport-wiki](skills/folotoy-ai-passport-wiki/SKILL.md) | Tool Wrapper | 查询 FoloToy AI Passport 中文教程：设备首次使用、小程序与身份卡、固件恢复、社区玩法及 AI Agent 玩法开发 |
+| [workbuddy-wiki](skills/workbuddy-wiki/SKILL.md) | Tool Wrapper | 检索 WorkBuddy 官方文档，回答安装、Craft/Plan/Ask 模式、任务管理、Skills/MCP、连接器、知识库、定时任务、模型与计费、渠道接入和排障问题 |
 
 ---
 
@@ -247,7 +248,9 @@ openskills install chujianyun/skills --global
 
 ## Contact
 
-![联系方式二维码](https://mingmingruyue-hz.oss-cn-hangzhou.aliyuncs.com/2025/codex-clipboard-cb9bcaae-e6b9-410f-b50c-088af145c41b.png)
+| AI 实战课 | 我的微信 | 我的公众号 |
+| --- | --- | --- |
+| ![AI 实战课二维码](assets/contact/ai-course-qr.png) | ![我的微信二维码](assets/contact/wechat-qr.png) | ![我的公众号二维码](assets/contact/wechat-official-account-qr.png) |
 
 ---
 

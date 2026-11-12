@@ -1,0 +1,1569 @@
+{
+  "assets": {},
+  "coverage": {
+    "captured": 136,
+    "complete": true,
+    "discovered": 136,
+    "excluded": [
+      {
+        "local_path": "enterprise.md",
+        "reason": "section index redirects to its Overview page (already captured)",
+        "type": "redirect",
+        "url": "https://www.workbuddy.cn/docs/enterprise/"
+      },
+      {
+        "local_path": "enterprise/Login.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/Login"
+      },
+      {
+        "local_path": "enterprise/Overview.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/Overview"
+      },
+      {
+        "local_path": "enterprise/PrivateQuickstart.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/PrivateQuickstart"
+      },
+      {
+        "local_path": "enterprise/SaaSQuickstart.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/SaaSQuickstart"
+      },
+      {
+        "local_path": "enterprise/adminguide/CloudAgent.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/CloudAgent"
+      },
+      {
+        "local_path": "enterprise/adminguide/Connector管理.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/Connector%E7%AE%A1%E7%90%86"
+      },
+      {
+        "local_path": "enterprise/adminguide/Playbook.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/Playbook"
+      },
+      {
+        "local_path": "enterprise/adminguide/Skill管理.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/Skill%E7%AE%A1%E7%90%86"
+      },
+      {
+        "local_path": "enterprise/adminguide/专家管理.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E4%B8%93%E5%AE%B6%E7%AE%A1%E7%90%86"
+      },
+      {
+        "local_path": "enterprise/adminguide/基础设置.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE"
+      },
+      {
+        "local_path": "enterprise/adminguide/安全管理/IP 白名单.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/IP%20%E7%99%BD%E5%90%8D%E5%8D%95"
+      },
+      {
+        "local_path": "enterprise/adminguide/提示词管理.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E6%8F%90%E7%A4%BA%E8%AF%8D%E7%AE%A1%E7%90%86"
+      },
+      {
+        "local_path": "enterprise/adminguide/日志管理.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86"
+      },
+      {
+        "local_path": "enterprise/adminguide/模型管理.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E6%A8%A1%E5%9E%8B%E7%AE%A1%E7%90%86"
+      },
+      {
+        "local_path": "enterprise/adminguide/模型部署管理.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2%E7%AE%A1%E7%90%86"
+      },
+      {
+        "local_path": "enterprise/adminguide/知识库.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E7%9F%A5%E8%AF%86%E5%BA%93"
+      },
+      {
+        "local_path": "enterprise/adminguide/知识库管理.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%AE%A1%E7%90%86"
+      },
+      {
+        "local_path": "enterprise/adminguide/研效度量.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E7%A0%94%E6%95%88%E5%BA%A6%E9%87%8F"
+      },
+      {
+        "local_path": "enterprise/adminguide/自定义指令.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"
+      },
+      {
+        "local_path": "enterprise/adminguide/账号管理/企业微信集成.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E9%9B%86%E6%88%90"
+      },
+      {
+        "local_path": "enterprise/adminguide/账号管理/企业管理员.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86%E5%91%98"
+      },
+      {
+        "local_path": "enterprise/adminguide/账号管理/席位管理.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/%E5%B8%AD%E4%BD%8D%E7%AE%A1%E7%90%86"
+      },
+      {
+        "local_path": "enterprise/adminguide/账号管理/飞书集成.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/adminguide/%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/%E9%A3%9E%E4%B9%A6%E9%9B%86%E6%88%90"
+      },
+      {
+        "local_path": "enterprise/price/Pricing.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/price/Pricing"
+      },
+      {
+        "local_path": "enterprise/price/Purchase.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/price/Purchase"
+      },
+      {
+        "local_path": "enterprise/price/Voucher.md",
+        "reason": "login-gated: public site redirects to enterprise overview; not fetchable without an authorized session",
+        "type": "gated",
+        "url": "https://www.workbuddy.cn/docs/enterprise/price/Voucher"
+      },
+      {
+        "local_path": "workbuddy.md",
+        "reason": "section index redirects to its Overview page (already captured)",
+        "type": "redirect",
+        "url": "https://www.workbuddy.cn/docs/workbuddy/"
+      },
+      {
+        "local_path": "workbuddyapp.md",
+        "reason": "section index redirects to its Overview page (already captured)",
+        "type": "redirect",
+        "url": "https://www.workbuddy.cn/docs/workbuddyapp/"
+      },
+      {
+        "local_path": "workbuddymini.md",
+        "reason": "section index redirects to its Overview page (already captured)",
+        "type": "redirect",
+        "url": "https://www.workbuddy.cn/docs/workbuddymini/"
+      },
+      {
+        "reason": "root docs index redirects to workbuddy/Overview (already captured)",
+        "type": "redirect",
+        "url": "https://www.workbuddy.cn/docs"
+      }
+    ],
+    "failed": []
+  },
+  "created_at": "2026-09-25T15:18:29Z",
+  "documents": {
+    "enterprise/Overview.md": {
+      "content_hash": "sha256:2567e3dfc87659683021d44308624b94857e724eee3df51bd0018ccf051fcc95",
+      "keywords": [],
+      "local_path": "enterprise/Overview.md",
+      "source_path": "/docs/enterprise/Overview",
+      "source_url": "https://www.workbuddy.cn/docs/enterprise/Overview",
+      "summary": "",
+      "title": "产品概述",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Account-Cancellation.md": {
+      "content_hash": "sha256:38801ed3b2a1eb359f661e968319ed976def9d657775d597efb3407694e6dacd",
+      "keywords": [],
+      "local_path": "workbuddy/Account-Cancellation.md",
+      "source_path": "/docs/workbuddy/Account-Cancellation",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Account-Cancellation",
+      "summary": "",
+      "title": "账号注销 [​](#账号注销)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Billing.md": {
+      "content_hash": "sha256:284f0475c6a97b6f223284abd0b2ee9ee45d84e6e948ffbc5c7c1f90d0f60baa",
+      "keywords": [],
+      "local_path": "workbuddy/Billing.md",
+      "source_path": "/docs/workbuddy/Billing",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Billing",
+      "summary": "",
+      "title": "账单 [​](#账单)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.3.14.md": {
+      "content_hash": "sha256:2564e771aebd043745ed6476e2d11d44bb663b9894cb51c85fe6b54727812b8c",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.3.14.md",
+      "source_path": "/docs/workbuddy/Changelog-5.3.14",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.3.14",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.4.0.md": {
+      "content_hash": "sha256:ef65cd5805894af0c1c50e1d67c97f0be1ec9064d1c64231800043fd25e48045",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.4.0.md",
+      "source_path": "/docs/workbuddy/Changelog-5.4.0",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.4.0",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.4.1.md": {
+      "content_hash": "sha256:b4bd1e224d82aefb260b99db93720fc4c0e5023474885d56bf1a2e9671bdc2c6",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.4.1.md",
+      "source_path": "/docs/workbuddy/Changelog-5.4.1",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.4.1",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.4.2.md": {
+      "content_hash": "sha256:3b398ccf069163c3dd560f572d675720700181e01eee15cd9134b80a67ee7d0e",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.4.2.md",
+      "source_path": "/docs/workbuddy/Changelog-5.4.2",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.4.2",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.4.3.md": {
+      "content_hash": "sha256:ab13d4d89b825c5ac0e077d8a406ec5593f081c6216f377e43636a18a6558fb4",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.4.3.md",
+      "source_path": "/docs/workbuddy/Changelog-5.4.3",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.4.3",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.4.4.md": {
+      "content_hash": "sha256:33b5c80851372cb877438eab7d3f22654bf2c4a04ad644e24c8688d2e39ee3ef",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.4.4.md",
+      "source_path": "/docs/workbuddy/Changelog-5.4.4",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.4.4",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.4.5.md": {
+      "content_hash": "sha256:a08d190603541533e940a65dc324a7ea15db5db66a78bcac0583a081ee81f731",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.4.5.md",
+      "source_path": "/docs/workbuddy/Changelog-5.4.5",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.4.5",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.4.7.md": {
+      "content_hash": "sha256:3f77b6e095ef855065b5db0171e06fbe28f82122cd2d21723e5f1e728acccf02",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.4.7.md",
+      "source_path": "/docs/workbuddy/Changelog-5.4.7",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.4.7",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.5.0.md": {
+      "content_hash": "sha256:d4dd4def50414c39514f44ecbb367c9c8ec74cf2717333a70cdc8931fb538e8c",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.5.0.md",
+      "source_path": "/docs/workbuddy/Changelog-5.5.0",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.5.0",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.5.1.md": {
+      "content_hash": "sha256:3c2699e259a3871d8ac6ea574e9fa390facae654a627a15776c92185d35d0418",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.5.1.md",
+      "source_path": "/docs/workbuddy/Changelog-5.5.1",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.5.1",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.5.2.md": {
+      "content_hash": "sha256:11bb122998e19a4d2311242297baed3531c09550451cee31f9862eadf5c38be7",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.5.2.md",
+      "source_path": "/docs/workbuddy/Changelog-5.5.2",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.5.2",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.5.3.md": {
+      "content_hash": "sha256:7b7396b7bccb03e02715c5dff84e32b21f6ef50bd0b9d55f4c3d1f0c1775d5de",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.5.3.md",
+      "source_path": "/docs/workbuddy/Changelog-5.5.3",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.5.3",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.5.4.md": {
+      "content_hash": "sha256:04b0665c95ee4cb3000ddc4e5e805d6ac4917657d137d2a1a6b229cda31458d8",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.5.4.md",
+      "source_path": "/docs/workbuddy/Changelog-5.5.4",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.5.4",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.5.5.md": {
+      "content_hash": "sha256:db0a2042ca477ac8907db8e83efd4de7cee54eecf6049e6ee07bfd46c4c5361d",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.5.5.md",
+      "source_path": "/docs/workbuddy/Changelog-5.5.5",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.5.5",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.5.6.md": {
+      "content_hash": "sha256:34f215f8010d3c54d5c3e7c8f0af8261f605e0abcccddef71121ca5e8da1bf96",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.5.6.md",
+      "source_path": "/docs/workbuddy/Changelog-5.5.6",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.5.6",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.6.0.md": {
+      "content_hash": "sha256:d78cc91de6a8356fcdaafaa14acdf8ed2e01de6504f5243ca5cca1c439418325",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.6.0.md",
+      "source_path": "/docs/workbuddy/Changelog-5.6.0",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.6.0",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog-5.6.2.md": {
+      "content_hash": "sha256:e2035137cd4d92957c443d0dee4769f4129311a0d5c2165141f963dea2db375e",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog-5.6.2.md",
+      "source_path": "/docs/workbuddy/Changelog-5.6.2",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog-5.6.2",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Changelog.md": {
+      "content_hash": "sha256:c633eda1237b99ea2f623fb35f81c857ac3f0766809526ad9fd5e7a9c7845a9b",
+      "keywords": [],
+      "local_path": "workbuddy/Changelog.md",
+      "source_path": "/docs/workbuddy/Changelog",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Changelog",
+      "summary": "",
+      "title": "WorkBuddy 更新日志 [​](#workbuddy-更新日志)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Contact.md": {
+      "content_hash": "sha256:ca799f4f8fa47c3580aa25ea02205ce8b1e62d98238b95d957dcdb2bb272ba07",
+      "keywords": [],
+      "local_path": "workbuddy/Contact.md",
+      "source_path": "/docs/workbuddy/Contact",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Contact",
+      "summary": "",
+      "title": "联系我们 [​](#联系我们)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Conversation.md": {
+      "content_hash": "sha256:291fb4f5346bbf7355900cbf568f0da359ee7ab2c4ef79ffa555b63e2a004ab5",
+      "keywords": [],
+      "local_path": "workbuddy/Conversation.md",
+      "source_path": "/docs/workbuddy/Conversation",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Conversation",
+      "summary": "",
+      "title": "任务对话 [​](#任务对话)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Create-Task.md": {
+      "content_hash": "sha256:154f5133156dff64f5cd638ffd1fd1ba0c3b4364df269b107395b67322651b66",
+      "keywords": [],
+      "local_path": "workbuddy/Create-Task.md",
+      "source_path": "/docs/workbuddy/Create-Task",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Create-Task",
+      "summary": "",
+      "title": "创建任务 [​](#创建任务)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Credits.md": {
+      "content_hash": "sha256:2e5b90772c92bb5ba6fb0328a767e5945a7f91d82b9d657bd45ada17d2741794",
+      "keywords": [],
+      "local_path": "workbuddy/Credits.md",
+      "source_path": "/docs/workbuddy/Credits",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Credits",
+      "summary": "",
+      "title": "积分 [​](#积分)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Dingtalk-Guide.md": {
+      "content_hash": "sha256:b3ff0d62c63e8685597be3e74194c267aeea29d7c5eee64212ea760b02971cd7",
+      "keywords": [],
+      "local_path": "workbuddy/Dingtalk-Guide.md",
+      "source_path": "/docs/workbuddy/Dingtalk-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Dingtalk-Guide",
+      "summary": "",
+      "title": "WorkBuddy 接入钉钉指南 [​](#workbuddy-接入钉钉指南)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Download-History.md": {
+      "content_hash": "sha256:3b98ec7c1ebf306652db50e77e281f83eb6af58ca961855babb843551388e30c",
+      "keywords": [],
+      "local_path": "workbuddy/Download-History.md",
+      "source_path": "/docs/workbuddy/Download-History",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Download-History",
+      "summary": "",
+      "title": "历史版本下载 [​](#历史版本下载)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Feishu-Guide.md": {
+      "content_hash": "sha256:22a96af06219cc61ab17a257a571c279d88e048ca32eb9ca3fc2c24e35f1370e",
+      "keywords": [],
+      "local_path": "workbuddy/Feishu-Guide.md",
+      "source_path": "/docs/workbuddy/Feishu-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Feishu-Guide",
+      "summary": "",
+      "title": "WorkBuddy 接入飞书指南 [​](#workbuddy-接入飞书指南)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/FirstTask.md": {
+      "content_hash": "sha256:f3007bbd24e4e96cfe92f414914427b28900353c6a5a01e2c3e526fdd6774315",
+      "keywords": [],
+      "local_path": "workbuddy/FirstTask.md",
+      "source_path": "/docs/workbuddy/FirstTask",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/FirstTask",
+      "summary": "",
+      "title": "开启你的第一个任务 [​](#开启你的第一个任务)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Efficient-Tips.md": {
+      "content_hash": "sha256:d1eb92bf142bb5b93188b52153c2fe11f3fc89f7235196c6794b98aec1b9b10b",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Efficient-Tips.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Efficient-Tips",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Efficient-Tips",
+      "summary": "",
+      "title": "WorkBuddy 10 个上手技巧 [​](#workbuddy-10-个上手技巧)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Error-Code.md": {
+      "content_hash": "sha256:f58fa6c9afeab995da5a0def4582c39a86afc4ee0edfcfd46939878018fd97b6",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Error-Code.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Error-Code",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Error-Code",
+      "summary": "",
+      "title": "错误码处理说明 [​](#错误码处理说明)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/FAQ.md": {
+      "content_hash": "sha256:3cf7bc282b228c893d7e455a6738eb8cf67ebcc7a67f7fee5b81841ff82e5a3b",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/FAQ.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/FAQ",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/FAQ",
+      "summary": "",
+      "title": "常见问题 [​](#常见问题)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Assistant.md": {
+      "content_hash": "sha256:0b531bf692af0b5b993e66c07a271c3ada8d69bc8a20bd0a2576c71ce7407b26",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Assistant.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Assistant",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Assistant",
+      "summary": "",
+      "title": "助理（远程任务） [​](#助理-远程任务)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Automation-Guide.md": {
+      "content_hash": "sha256:e12b23abd4034e303b1de12c57fca72d03964b62c998c3a78066f37e8d5f456c",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Automation-Guide.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Automation-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Automation-Guide",
+      "summary": "",
+      "title": "自动化 [​](#自动化)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Buddy-App.md": {
+      "content_hash": "sha256:5a509df89818fb58f98972f07e3057e1bd4a76d03edd0e32dc9d5a91a09356bf",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Buddy-App.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Buddy-App",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Buddy-App",
+      "summary": "",
+      "title": "Buddy 应用 [​](#buddy-应用)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/CloudAgent.md": {
+      "content_hash": "sha256:69bd51264d67462a39cda083c2c678c6ace7f8c469435b2266e8cb804585073e",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/CloudAgent.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/CloudAgent",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/CloudAgent",
+      "summary": "",
+      "title": "企业智能体 [​](#企业智能体)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Connector.md": {
+      "content_hash": "sha256:45d9ad124de1d46e975120b70ddd6a2bd19f80dcef9dc60aa04db3979d0316d0",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Connector.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Connector",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Connector",
+      "summary": "",
+      "title": "连接器 [​](#连接器)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Data.md": {
+      "content_hash": "sha256:9e20895cac8d5733edb0bea8e2cb2f3b5f77a9f906189dd752f37fab01315ac2",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Data.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Data",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Data",
+      "summary": "",
+      "title": "数据管理 [​](#数据管理)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Design-Idea.md": {
+      "content_hash": "sha256:6b17478ea39e85b59e2b19f53b6e02845b3a98800a6e8a59e3931beb1787369b",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Design-Idea.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Design-Idea",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Design-Idea",
+      "summary": "",
+      "title": "设计创意（WorkBuddy × Ardot） [​](#设计创意-workbuddy-×-ardot)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Expert-Center.md": {
+      "content_hash": "sha256:ce5ec90141caf3b4d1ef262a1857ddcbf50864269224b28b3aa7513a90fa9de6",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Expert-Center.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Expert-Center",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Expert-Center",
+      "summary": "",
+      "title": "专家 [​](#专家)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Feedback.md": {
+      "content_hash": "sha256:e1a75d2e6aee7425202db3d9b09cd2289440940d37f2404d2240c2cc8972197c",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Feedback.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Feedback",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Feedback",
+      "summary": "",
+      "title": "帮助与反馈 [​](#帮助与反馈)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Ispiration.md": {
+      "content_hash": "sha256:35dd6ef84e7a42000aeee433bdcff64b339087125a2fe5eccda8afaa47e92244",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Ispiration.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Ispiration",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Ispiration",
+      "summary": "",
+      "title": "灵感 [​](#灵感)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Cowriting.md": {
+      "content_hash": "sha256:9dbe2ea37cd751bc509301a7a4cee73f7d5d5f835f27ed2484af79b4599f91d0",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Cowriting.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Cowriting",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Cowriting",
+      "summary": "",
+      "title": "人机双写 [​](#人机双写)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/01-Workbuddy-IMA-Basic-Guide.md": {
+      "content_hash": "sha256:7ef24e73d38fff2d70976873fecc233e7d537edd54880517055446bc3033f727",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/01-Workbuddy-IMA-Basic-Guide.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/01-Workbuddy-IMA-Basic-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA%20Knowledge%20Base/01-Workbuddy-IMA-Basic-Guide",
+      "summary": "",
+      "title": "WorkBuddy × ima 功能指引 [​](#workbuddy-×-ima-功能指引)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/02-Build-Knowledge-Base.md": {
+      "content_hash": "sha256:256d906dc9498df108358863302ca396304110c428cf760357ac9f0f49435ed0",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/02-Build-Knowledge-Base.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/02-Build-Knowledge-Base",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA%20Knowledge%20Base/02-Build-Knowledge-Base",
+      "summary": "",
+      "title": "如何用 WorkBuddy 把 ima 知识库越用越厚 [​](#如何用-workbuddy-把-ima-知识库越用越厚)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/03-OPC-One-Day.md": {
+      "content_hash": "sha256:639b05fc0d372d7e0fc68a080a0a505f384874e2d871aa9639440ffcf35e71f3",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/03-OPC-One-Day.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/03-OPC-One-Day",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA%20Knowledge%20Base/03-OPC-One-Day",
+      "summary": "",
+      "title": "OPC 的一天：如何用 WorkBuddy × ima 形成专属团队 [​](#opc-的一天-如何用-workbuddy-×-ima-形成专属团队)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/04-Creator-Strategy.md": {
+      "content_hash": "sha256:09a2eba26d98b905b70f980a6d874b3955cb51668b1326167a4027181592e0e6",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/04-Creator-Strategy.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/04-Creator-Strategy",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA%20Knowledge%20Base/04-Creator-Strategy",
+      "summary": "",
+      "title": "创作者攻略：从\"通用 AI 写手\"到\"专属编辑助理\" [​](#创作者攻略-从-通用-ai-写手-到-专属编辑助理)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/05-Study-Assistant.md": {
+      "content_hash": "sha256:c5e7eecc5e2746ca78e6205fa40bf3121f2aee00dfb3cd4bb109c5684e854b3d",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/05-Study-Assistant.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/05-Study-Assistant",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA%20Knowledge%20Base/05-Study-Assistant",
+      "summary": "",
+      "title": "学业助手攻略：期末忙不过来？你的 24 小时学伴已上线 [​](#学业助手攻略-期末忙不过来-你的-24-小时学伴已上线)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/06-Job-Hunting-Showcase.md": {
+      "content_hash": "sha256:e2ebdf72d38e410375fd59b2e5b7494d55d4dafd36608d9016f442bf5ad6781f",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/06-Job-Hunting-Showcase.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA Knowledge Base/06-Job-Hunting-Showcase",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/IMA%20Knowledge%20Base/06-Job-Hunting-Showcase",
+      "summary": "",
+      "title": "求职展示攻略：用 ima × WorkBuddy 搭建个人介绍网站 [​](#求职展示攻略-用-ima-×-workbuddy-搭建个人介绍网站)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Lexiang.md": {
+      "content_hash": "sha256:9ceb11402474dd2dfbe76bf0c0aec304fa5aab46ee3a65fbda3caefee2804d0c",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Lexiang.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Lexiang",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Lexiang",
+      "summary": "",
+      "title": "乐享知识库 [​](#乐享知识库)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Tencent-Doc.md": {
+      "content_hash": "sha256:e613de5fcb9d71259671ef4d51f78a232bb1a4d9137987f62bfaf60f0c0ebd32",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Tencent-Doc.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Tencent-Doc",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Knowledge-Base/Tencent-Doc",
+      "summary": "",
+      "title": "腾讯文档 [​](#腾讯文档)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library.md": {
+      "content_hash": "sha256:610033f4463f981395c8669e9370f41cffd239387186e92bff9fdb1cc20b1bb9",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library",
+      "summary": "",
+      "title": "资料库 [​](#资料库)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Collaboration.md": {
+      "content_hash": "sha256:02a7e32a93edb58cd121157159c93c26c74ffd3989dd9ceb1810eef1cb53d215",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Collaboration.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Collaboration",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Collaboration",
+      "summary": "",
+      "title": "多人多 Agent 协作 [​](#多人多-agent-协作)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Content-Management.md": {
+      "content_hash": "sha256:b1af5dfcf6d6f190a3ddb80d49f217db38c6cd05640fa0c85c227b87104b7348",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Content-Management.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Content-Management",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Content-Management",
+      "summary": "",
+      "title": "内容管理 [​](#内容管理)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Lightweight-Publish.md": {
+      "content_hash": "sha256:6b4ccf2c37912754c39432e4ba8311d6790b7425d9d821d6744412de4c549273",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Lightweight-Publish.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Lightweight-Publish",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Library/Lightweight-Publish",
+      "summary": "",
+      "title": "轻量发布 [​](#轻量发布)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/MCP-Guide.md": {
+      "content_hash": "sha256:6935974a0ad4ebbddecc3c93b7715a10c7bfe0318c589d6592cc33ee83a5c849",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/MCP-Guide.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/MCP-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/MCP-Guide",
+      "summary": "",
+      "title": "MCP [​](#mcp)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Mailbox.md": {
+      "content_hash": "sha256:7e09377445fc0748171fa8e6d95635d360b1af6903318354f05fc4a633302f02",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Mailbox.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Mailbox",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Mailbox",
+      "summary": "",
+      "title": "我的邮箱 [​](#我的邮箱)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Memory.md": {
+      "content_hash": "sha256:8cae141cf219e334306cbf792b03633004966df7201654372a95697f32af0e99",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Memory.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Memory",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Memory",
+      "summary": "",
+      "title": "记忆 [​](#记忆)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Model.md": {
+      "content_hash": "sha256:d53fef5a11a6ede1e0ff37fb631fbeb638dc3054ab97f3e0e1ed631bfa2519ad",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Model.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Model",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Model",
+      "summary": "",
+      "title": "模型配置 [​](#模型配置)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Permission-Modes.md": {
+      "content_hash": "sha256:cca3106558ec081209c3bb474845cffa5b0cdc8b1b708a6e1d187ad90a1d9016",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Permission-Modes.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Permission-Modes",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Permission-Modes",
+      "summary": "",
+      "title": "默认权限与安全沙箱 [​](#默认权限与安全沙箱)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Plug-In.md": {
+      "content_hash": "sha256:8f9785ccd7e24d167043599e2949b20e9ef2db899c1694881106530290510aa0",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Plug-In.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Plug-In",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Plug-In",
+      "summary": "",
+      "title": "插件 [​](#插件)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Project.md": {
+      "content_hash": "sha256:8abb597dfed739847e97312307ad0e86c67569a93a7207b900f6c05494b300ef",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Project.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Project",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Project",
+      "summary": "",
+      "title": "项目 [​](#项目)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Right-Sidebar.md": {
+      "content_hash": "sha256:4d08f31d1786076e07facc7a743ed2d69efb20e86c9728d63243d53ad6f84bc5",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Right-Sidebar.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Right-Sidebar",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Right-Sidebar",
+      "summary": "",
+      "title": "右侧边栏 [​](#右侧边栏)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Setting.md": {
+      "content_hash": "sha256:d56991a6386987bf2d213886ddf2151474e60ffbe90e5b75177d91d93e115a02",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Setting.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Setting",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Setting",
+      "summary": "",
+      "title": "系统设置 [​](#系统设置)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market.md": {
+      "content_hash": "sha256:6b5c176f12e4c2944a80d93fd0964af6abe12e12500fbada96716b345dcc9381",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market",
+      "summary": "",
+      "title": "技能 [​](#技能)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Task-Bar.md": {
+      "content_hash": "sha256:6ad1523be72b7e6ee377aa25d9f0cbddccc00aaf4afff45d1dc5c98aab309be8",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Task-Bar.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Task-Bar",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Task-Bar",
+      "summary": "",
+      "title": "新建任务栏（本地 AI 工作台） [​](#新建任务栏-本地-ai-工作台)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Worktree-Task.md": {
+      "content_hash": "sha256:bacd4c66463bf1839486b2e034310a621d17d75495a2437deee3e930981364f5",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Worktree-Task.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Worktree-Task",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Worktree-Task",
+      "summary": "",
+      "title": "Git 集成和并行开发 [​](#git-集成和并行开发)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Installation-Mac-Guide.md": {
+      "content_hash": "sha256:2591178ed7f2fd2e351e8f667ea723be23b8d679a579b4c921a17bd17254edb2",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Installation-Mac-Guide.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Installation-Mac-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Installation-Mac-Guide",
+      "summary": "",
+      "title": "Mac 系统安装指南 [​](#mac-系统安装指南)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Installation-Win-Guide.md": {
+      "content_hash": "sha256:e7357b065f1c5a2a6f999c2011884d6f14025aaf65ea5c56c84a638dc719415b",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Installation-Win-Guide.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Installation-Win-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Installation-Win-Guide",
+      "summary": "",
+      "title": "Windows 系统安装指南 [​](#windows-系统安装指南)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Eight.md": {
+      "content_hash": "sha256:350866f83c7694329309151d6327984070cccd3d6656cf8cb358735be9ed91e0",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Eight.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Eight",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Eight",
+      "summary": "",
+      "title": "实践八：自我进化—创建自己的Skills（技能） [​](#实践八-自我进化—创建自己的skills-技能)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Eleven.md": {
+      "content_hash": "sha256:49ba33d5edcbcdbb375e203466e501ea18f294d625eb1efa051c1054f7961ead",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Eleven.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Eleven",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Eleven",
+      "summary": "",
+      "title": "实践十一：一句话，管理你的腾讯文档 [​](#实践十一-一句话-管理你的腾讯文档)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Five.md": {
+      "content_hash": "sha256:f7a3f08051953aed94efeff64b4115f05fa2e74c2b6416f382be94e44926f463",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Five.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Five",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Five",
+      "summary": "",
+      "title": "实践五：每日自动推送资讯简报 [​](#实践五-每日自动推送资讯简报)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Four.md": {
+      "content_hash": "sha256:33e174ab110b6607a37556442b103be533e4bd9a098fcc056ed50123dce3e595",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Four.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Four",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Four",
+      "summary": "",
+      "title": "实践四：自媒体运营 [​](#实践四-自媒体运营)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Nine.md": {
+      "content_hash": "sha256:2e8d8380f1aa4e76755525dbf449154ecab37b92f574e623365427d8e5227baf",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Nine.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Nine",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Nine",
+      "summary": "",
+      "title": "实践九：AI自驱动 [​](#实践九-ai自驱动)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-One.md": {
+      "content_hash": "sha256:33e03e5022b1574d7c40601434b7d9378a8cdc10c537a4a414a5c541648b1a11",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-One.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-One",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-One",
+      "summary": "",
+      "title": "实践一：文件内容识别与处理 [​](#实践一-文件内容识别与处理)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Seven.md": {
+      "content_hash": "sha256:b0c032f5d9ae551d7e76bbfc9d193cade3eab3edfa819d57de7162b2f5ce9c3c",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Seven.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Seven",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Seven",
+      "summary": "",
+      "title": "实践七：零代码制作本地应用 [​](#实践七-零代码制作本地应用)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Six.md": {
+      "content_hash": "sha256:a872adb2102fc091e17aea76438e6cf8e6b9048f7a86dff0c5666746bfab9cde",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Six.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Six",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Six",
+      "summary": "",
+      "title": "实践六：远程遥控 WorkBuddy [​](#实践六-远程遥控-workbuddy)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Ten.md": {
+      "content_hash": "sha256:3363409330dd7f18400a16a8baf72c02f0b66d5d2439b74364a560607fec7096",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Ten.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Ten",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Ten",
+      "summary": "",
+      "title": "实践十：一句话，管理你的所有会议 [​](#实践十-一句话-管理你的所有会议)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Three.md": {
+      "content_hash": "sha256:e886a1f01d91b851f36d6292c78907e39009701903499fdc7c61cfdae5f8c113",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Three.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Three",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Three",
+      "summary": "",
+      "title": "实践三：数据分析并可视化 [​](#实践三-数据分析并可视化)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Two.md": {
+      "content_hash": "sha256:697db3b6f4eca030a34e1b5ad9c274a80d4dba6caef5284f2a5caf6c9286f526",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Two.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Two",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Two",
+      "summary": "",
+      "title": "实践二：文档生成与编辑 [​](#实践二-文档生成与编辑)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/Product-Guide.md": {
+      "content_hash": "sha256:8dfe59a56b0446bb104a93bf17482709818670cbc413d306e2931e83fe909183",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/Product-Guide.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/Product-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Product-Guide",
+      "summary": "",
+      "title": "产品介绍 [​](#产品介绍)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Agent-Browser.md": {
+      "content_hash": "sha256:320db1ceb83df47e16d7f308947247ee976b55638c6fff81897947d3f5faa61c",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Agent-Browser.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Agent-Browser",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Agent-Browser",
+      "summary": "",
+      "title": "Agent Browser [​](#agent-browser)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Find-Skills.md": {
+      "content_hash": "sha256:2c63f0669988d86bf127fc1b65476a753e21eaeb12725b17b6c2785c9d7575d4",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Find-Skills.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Find-Skills",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Find-Skills",
+      "summary": "",
+      "title": "Find Skills [​](#find-skills)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Frontend-Design.md": {
+      "content_hash": "sha256:d648b05c54a2d5ad276e17dc215d771acb2122c4cf78877ecfaf3e763844e03f",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Frontend-Design.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Frontend-Design",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Frontend-Design",
+      "summary": "",
+      "title": "Frontend Design [​](#frontend-design)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Local-Whisper.md": {
+      "content_hash": "sha256:506e5b0f4ccbd9a3b4b537e5e1a80d37577661a1575f4e89e00328eec841ed87",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Local-Whisper.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Local-Whisper",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Local-Whisper",
+      "summary": "",
+      "title": "Local Whisper [​](#local-whisper)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Obsidian.md": {
+      "content_hash": "sha256:de895c67cfb2811f9efed5f827abcdd754f550fdb21ebd4826b0ec3f3123bf6e",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Obsidian.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Obsidian",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Obsidian",
+      "summary": "",
+      "title": "Obsidian [​](#obsidian)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Office-Document-Suite.md": {
+      "content_hash": "sha256:cdd22bf6702af971ec70a087c5280ca0634a8cc6372684bf14b2bed8ff577a36",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Office-Document-Suite.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Office-Document-Suite",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Office-Document-Suite",
+      "summary": "",
+      "title": "办公文档四件套 [​](#办公文档四件套)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Skill-Scanner.md": {
+      "content_hash": "sha256:40ef1859d1af5ff08783aaa3810e3632ee9f2fc8477769f84fdb8bac994d2e71",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Skill-Scanner.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Skill-Scanner",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Skill-Scanner",
+      "summary": "",
+      "title": "Skill Scanner [​](#skill-scanner)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Web-Search.md": {
+      "content_hash": "sha256:fd558504477c2d2d303c4f97e2140c267421bef329d84580f719dda16a62322a",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Web-Search.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Web-Search",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/Web-Search",
+      "summary": "",
+      "title": "Web Search [​](#web-search)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/self-improvement.md": {
+      "content_hash": "sha256:5a15a34f9b4627a55798d08b421c33cb53035ee08e2700e1f7fea3cacffcf3a6",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/self-improvement.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/self-improvement",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/self-improvement",
+      "summary": "",
+      "title": "self-improvement [​](#self-improvement)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/tl_video_downloader.md": {
+      "content_hash": "sha256:327ff593142218bb8f8568ac52841dfc737f756b9da1fa1e63bab086d953a9db",
+      "keywords": [],
+      "local_path": "workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/tl_video_downloader.md",
+      "source_path": "/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/tl_video_downloader",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/WorkBuddy-Zero-Cost-Skill-Top-10/tl_video_downloader",
+      "summary": "",
+      "title": "tl_video_downloader [​](#tl-video-downloader)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Invoice.md": {
+      "content_hash": "sha256:e08467f980f3517841fa990c7315d846e04ff417a17ccfa588dc00e329c83cb7",
+      "keywords": [],
+      "local_path": "workbuddy/Invoice.md",
+      "source_path": "/docs/workbuddy/Invoice",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Invoice",
+      "summary": "",
+      "title": "发票 [​](#发票)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Overview.md": {
+      "content_hash": "sha256:6462959ff2b726854381c67bf8d558f0ee3c1a118707ce7b2ad906ec3594a207",
+      "keywords": [],
+      "local_path": "workbuddy/Overview.md",
+      "source_path": "/docs/workbuddy/Overview",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Overview",
+      "summary": "",
+      "title": "WorkBuddy 简介 [​](#workbuddy-简介)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Plan.md": {
+      "content_hash": "sha256:1ce5d429bb9eb3a75caccdaa4c8967f11dd7fa49c39e9aedc9f885f44a39b20d",
+      "keywords": [],
+      "local_path": "workbuddy/Plan.md",
+      "source_path": "/docs/workbuddy/Plan",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Plan",
+      "summary": "",
+      "title": "套餐管理 [​](#套餐管理)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Plugins.md": {
+      "content_hash": "sha256:112ece5bb52d5074c7c600b2ad19586866ef0f9228f7c42285e037fb036304cd",
+      "keywords": [],
+      "local_path": "workbuddy/Plugins.md",
+      "source_path": "/docs/workbuddy/Plugins",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Plugins",
+      "summary": "",
+      "title": "插件系统 [​](#插件系统)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Pricing.md": {
+      "content_hash": "sha256:925674502a3b5f885b4f625cb31291bf9c2af644dd9997aae1a4a6d305d42222",
+      "keywords": [],
+      "local_path": "workbuddy/Pricing.md",
+      "source_path": "/docs/workbuddy/Pricing",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Pricing",
+      "summary": "",
+      "title": "定价 [​](#定价)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/QQ-Guide.md": {
+      "content_hash": "sha256:834699a692127616f143f65c58a8f0a04c868759ad1fbc85cbd8f227ea2629a4",
+      "keywords": [],
+      "local_path": "workbuddy/QQ-Guide.md",
+      "source_path": "/docs/workbuddy/QQ-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/QQ-Guide",
+      "summary": "",
+      "title": "WorkBuddy 接入 QQ 指南 [​](#workbuddy-接入-qq-指南)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Quickstart.md": {
+      "content_hash": "sha256:7d7fe014e4a5c09d4a83f22afb01652e4ea88a972368ee8dca75f14baef53ec6",
+      "keywords": [],
+      "local_path": "workbuddy/Quickstart.md",
+      "source_path": "/docs/workbuddy/Quickstart",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Quickstart",
+      "summary": "",
+      "title": "快速开始 [​](#快速开始)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Results.md": {
+      "content_hash": "sha256:4efda71b7e938f5124fdf3df374d07a5fe60b740df443202acbcb92603264673",
+      "keywords": [],
+      "local_path": "workbuddy/Results.md",
+      "source_path": "/docs/workbuddy/Results",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Results",
+      "summary": "",
+      "title": "结果查看 [​](#结果查看)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Task-Management.md": {
+      "content_hash": "sha256:0053a57c6d2e87ffe310761dabff628de43ef6d20625aea05cdea2bdc602971c",
+      "keywords": [],
+      "local_path": "workbuddy/Task-Management.md",
+      "source_path": "/docs/workbuddy/Task-Management",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Task-Management",
+      "summary": "",
+      "title": "任务管理 [​](#任务管理)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Usage.md": {
+      "content_hash": "sha256:856c5899d6e2d5b1a9ce93aefd82f9d261e990af4c1fd29534059b6333c0125e",
+      "keywords": [],
+      "local_path": "workbuddy/Usage.md",
+      "source_path": "/docs/workbuddy/Usage",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Usage",
+      "summary": "",
+      "title": "查看积分使用情况 [​](#查看积分使用情况)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Wechat-Guide.md": {
+      "content_hash": "sha256:73051d74011100f18a65f908931508ae1cce7f297616298b64e9e54527e3a658",
+      "keywords": [],
+      "local_path": "workbuddy/Wechat-Guide.md",
+      "source_path": "/docs/workbuddy/Wechat-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Wechat-Guide",
+      "summary": "",
+      "title": "WorkBuddy 接入微信客服号指南 [​](#workbuddy-接入微信客服号指南)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/Wecom-Guide.md": {
+      "content_hash": "sha256:2da75274368f8c9b9d9cc6e3c65780cd37589e5c86f13bcef56248f5bfda811c",
+      "keywords": [],
+      "local_path": "workbuddy/Wecom-Guide.md",
+      "source_path": "/docs/workbuddy/Wecom-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/Wecom-Guide",
+      "summary": "",
+      "title": "WorkBuddy 接入企业微信指南 [​](#workbuddy-接入企业微信指南)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/WeixinBot-Guide.md": {
+      "content_hash": "sha256:7fd26003a86b7632a5fad779136ebce7429dd2020ff051f38af5832d523a2ab3",
+      "keywords": [],
+      "local_path": "workbuddy/WeixinBot-Guide.md",
+      "source_path": "/docs/workbuddy/WeixinBot-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/WeixinBot-Guide",
+      "summary": "",
+      "title": "WorkBuddy 接入微信助理指南 [​](#workbuddy-接入微信助理指南)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddy/YuanBaoPai-Guide.md": {
+      "content_hash": "sha256:0d00bc5e197c17e31f77142993e541468849029213be978b9e764acd68b3baf5",
+      "keywords": [],
+      "local_path": "workbuddy/YuanBaoPai-Guide.md",
+      "source_path": "/docs/workbuddy/YuanBaoPai-Guide",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddy/YuanBaoPai-Guide",
+      "summary": "",
+      "title": "WorkBuddy 接入元宝派指南 [​](#workbuddy-接入元宝派指南)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/Overview.md": {
+      "content_hash": "sha256:457abdd0e40ec02503ad6678a3f38400394863d3eefca14776ea4745be4037eb",
+      "keywords": [],
+      "local_path": "workbuddyapp/Overview.md",
+      "source_path": "/docs/workbuddyapp/Overview",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/Overview",
+      "summary": "",
+      "title": "简介 [​](#简介)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/Quickstart.md": {
+      "content_hash": "sha256:3e807cae09db844986631661dda5fc8bf13133bd3e5974e7acc87665a72ab3cb",
+      "keywords": [],
+      "local_path": "workbuddyapp/Quickstart.md",
+      "source_path": "/docs/workbuddyapp/Quickstart",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/Quickstart",
+      "summary": "",
+      "title": "快速开始 [​](#快速开始)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/Settings.md": {
+      "content_hash": "sha256:9956055e234caac4d56644ba88161cf22a36a7a5e84adab1d81b7ececbdff33f",
+      "keywords": [],
+      "local_path": "workbuddyapp/Settings.md",
+      "source_path": "/docs/workbuddyapp/Settings",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/Settings",
+      "summary": "",
+      "title": "设置 [​](#设置)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Attachments-and-Skills.md": {
+      "content_hash": "sha256:68360bc1390ba274fa3a0a3b28ac0e1807724792b31e3d688ccaae16d0a97c37",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Attachments-and-Skills.md",
+      "source_path": "/docs/workbuddyapp/features/Attachments-and-Skills",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Attachments-and-Skills",
+      "summary": "",
+      "title": "添加附件与更多功能 [​](#添加附件与更多功能)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Auto.md": {
+      "content_hash": "sha256:b4e63861e1ad7a2bcd68a3b065aa8951c281cb2e3bb7f330fa63f3d6c1fd1d32",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Auto.md",
+      "source_path": "/docs/workbuddyapp/features/Auto",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Auto",
+      "summary": "",
+      "title": "自动化 [​](#自动化)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Create-Task.md": {
+      "content_hash": "sha256:3975094beb883b2bd249980158e55ee204a00cbae6adc2cd16e47a65ae51b7e9",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Create-Task.md",
+      "source_path": "/docs/workbuddyapp/features/Create-Task",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Create-Task",
+      "summary": "",
+      "title": "发起任务 [​](#发起任务)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Expert.md": {
+      "content_hash": "sha256:4b85f71d696aa496ca8120c5c62322b9fa1bb5841df905904736ef2448700fab",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Expert.md",
+      "source_path": "/docs/workbuddyapp/features/Expert",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Expert",
+      "summary": "",
+      "title": "专家 [​](#专家)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Homepage.md": {
+      "content_hash": "sha256:c8712bed7ce1631cd4a50eaf28f452cc7a5dda22f12e1ce7d2060471daccf78c",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Homepage.md",
+      "source_path": "/docs/workbuddyapp/features/Homepage",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Homepage",
+      "summary": "",
+      "title": "主页与导航 [​](#主页与导航)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Model.md": {
+      "content_hash": "sha256:13560d8f0575e5a46155ad866cdf45d4bb05487ef6839708844e3722a12f9717",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Model.md",
+      "source_path": "/docs/workbuddyapp/features/Model",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Model",
+      "summary": "",
+      "title": "选择模型 [​](#选择模型)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Multidevice.md": {
+      "content_hash": "sha256:211222d88e57ef82ce8e8fd54b81f1c852a70639812633fdb7794758f9457c22",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Multidevice.md",
+      "source_path": "/docs/workbuddyapp/features/Multidevice",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Multidevice",
+      "summary": "",
+      "title": "多端协同（连接电脑） [​](#多端协同-连接电脑)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Share.md": {
+      "content_hash": "sha256:8f2a617c21bb270c4bf9eb4f24a0eb95b32c217cb58f33ba8479e2b9e1a77ae2",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Share.md",
+      "source_path": "/docs/workbuddyapp/features/Share",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Share",
+      "summary": "",
+      "title": "产物查看与分享 [​](#产物查看与分享)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Sidebar.md": {
+      "content_hash": "sha256:6be5b8800777707de088d4d92868421d5264b85cd2fbfa0524e57e4d5a8857ec",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Sidebar.md",
+      "source_path": "/docs/workbuddyapp/features/Sidebar",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Sidebar",
+      "summary": "",
+      "title": "侧边栏 [​](#侧边栏)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/Task-Execution.md": {
+      "content_hash": "sha256:9e9c1388d639568f4fa3bd6be7141495bfd0f1f1f08e7686355e461e8e177626",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/Task-Execution.md",
+      "source_path": "/docs/workbuddyapp/features/Task-Execution",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/Task-Execution",
+      "summary": "",
+      "title": "任务执行与对话 [​](#任务执行与对话)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddyapp/features/WeChat-Open.md": {
+      "content_hash": "sha256:24e7a7686ec0b2a7c7faa6d64e14933836a8c94c6f0b4a23377fd9d96d57c42f",
+      "keywords": [],
+      "local_path": "workbuddyapp/features/WeChat-Open.md",
+      "source_path": "/docs/workbuddyapp/features/WeChat-Open",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddyapp/features/WeChat-Open",
+      "summary": "",
+      "title": "微信文件打开 [​](#微信文件打开)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Attachments-and-Skills.md": {
+      "content_hash": "sha256:a63a58b0ac33bb00dca4530f5138c0830fac55122a2866a6d4a45718fdae2829",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Attachments-and-Skills.md",
+      "source_path": "/docs/workbuddymini/features/Attachments-and-Skills",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Attachments-and-Skills",
+      "summary": "",
+      "title": "添加附件与技能 [​](#添加附件与技能)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Auto.md": {
+      "content_hash": "sha256:52054afbde786e2a700356044b693645f12c9524eee16c87269135c91ccb8d87",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Auto.md",
+      "source_path": "/docs/workbuddymini/features/Auto",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Auto",
+      "summary": "",
+      "title": "自动化 [​](#自动化)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Create-Task.md": {
+      "content_hash": "sha256:948d65fe6b7b32d8fb73b492b7062177cf3df2b47b8abc98b1ca1d0b67d27356",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Create-Task.md",
+      "source_path": "/docs/workbuddymini/features/Create-Task",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Create-Task",
+      "summary": "",
+      "title": "发起任务 [​](#发起任务)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Expert.md": {
+      "content_hash": "sha256:57338a2350d0e2c396d469de4274e46aabd52006f418092a7232644777a87000",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Expert.md",
+      "source_path": "/docs/workbuddymini/features/Expert",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Expert",
+      "summary": "",
+      "title": "专家中心 [​](#专家中心)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Homepage.md": {
+      "content_hash": "sha256:d8ed1d00d9b4f888bc39060d2754a987e1a5e2d73deb892a7bf91b34e99db13b",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Homepage.md",
+      "source_path": "/docs/workbuddymini/features/Homepage",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Homepage",
+      "summary": "",
+      "title": "主页 [​](#主页)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Multidevice.md": {
+      "content_hash": "sha256:923c393cd825af1a6c89f5d7c74fb8e54ebcf0a8adac0de8c9b34d2522bf136a",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Multidevice.md",
+      "source_path": "/docs/workbuddymini/features/Multidevice",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Multidevice",
+      "summary": "",
+      "title": "多端协同（连接电脑） [​](#多端协同-连接电脑)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Select-Model.md": {
+      "content_hash": "sha256:3f90a6d6ef0b459ff0f9696e5447db2da2a2f42be9aace9818b807d8e5096792",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Select-Model.md",
+      "source_path": "/docs/workbuddymini/features/Select-Model",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Select-Model",
+      "summary": "",
+      "title": "选择模型 [​](#选择模型)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Settings.md": {
+      "content_hash": "sha256:117132de85429d7917c6f3c4036b6f2e1808b05843237d2ca2bb393765961dda",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Settings.md",
+      "source_path": "/docs/workbuddymini/features/Settings",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Settings",
+      "summary": "",
+      "title": "设置 [​](#设置)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Share.md": {
+      "content_hash": "sha256:aaef734abb5272f088aff64df568de48ad057b052cb28952b274c20edd995eff",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Share.md",
+      "source_path": "/docs/workbuddymini/features/Share",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Share",
+      "summary": "",
+      "title": "产物分享 [​](#产物分享)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Sidebar.md": {
+      "content_hash": "sha256:df12bddee4b13721ace061372dd5b314537099ec0895932303feea66027b7bb5",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Sidebar.md",
+      "source_path": "/docs/workbuddymini/features/Sidebar",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Sidebar",
+      "summary": "",
+      "title": "侧边栏 [​](#侧边栏)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/Task-Execution.md": {
+      "content_hash": "sha256:a3c784cf76355c8cb78a953c15e0b0299b5f32d4139be5d4c29eba299d96448c",
+      "keywords": [],
+      "local_path": "workbuddymini/features/Task-Execution.md",
+      "source_path": "/docs/workbuddymini/features/Task-Execution",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/Task-Execution",
+      "summary": "",
+      "title": "任务执行与对话 [​](#任务执行与对话)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/features/WeChat-Open.md": {
+      "content_hash": "sha256:e396c8e687290ee0b33e355414cf37b9f7eb2cbbb8f2aef73bed4f8f73659c8f",
+      "keywords": [],
+      "local_path": "workbuddymini/features/WeChat-Open.md",
+      "source_path": "/docs/workbuddymini/features/WeChat-Open",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/features/WeChat-Open",
+      "summary": "",
+      "title": "微信文件打开 [​](#微信文件打开)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/quick-start/Overview.md": {
+      "content_hash": "sha256:914c4bf28e31c3f2f1f4ef1382605aa8b5a1ccb759191f89b312d6abdf923444",
+      "keywords": [],
+      "local_path": "workbuddymini/quick-start/Overview.md",
+      "source_path": "/docs/workbuddymini/quick-start/Overview",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/quick-start/Overview",
+      "summary": "",
+      "title": "WorkBuddy 小程序简介 [​](#workbuddy-小程序简介)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/quick-start/Quickstart.md": {
+      "content_hash": "sha256:cc1245787e404242fdeefa30acd5eade5101715b2b7f106eb38eb75d9d6628a4",
+      "keywords": [],
+      "local_path": "workbuddymini/quick-start/Quickstart.md",
+      "source_path": "/docs/workbuddymini/quick-start/Quickstart",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/quick-start/Quickstart",
+      "summary": "",
+      "title": "快速开始 [​](#快速开始)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/use-cases/Cases-One.md": {
+      "content_hash": "sha256:c4c023ab05fb9c013183c2101bb13555801deaee4fbb8f532eecbfffab2d2281",
+      "keywords": [],
+      "local_path": "workbuddymini/use-cases/Cases-One.md",
+      "source_path": "/docs/workbuddymini/use-cases/Cases-One",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/use-cases/Cases-One",
+      "summary": "",
+      "title": "拍照生成笔记 [​](#拍照生成笔记)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/use-cases/Cases-Three.md": {
+      "content_hash": "sha256:86f1a3c135cb9600097010b229d3574c21488a5a5cb7827faceed3d8ac42a443",
+      "keywords": [],
+      "local_path": "workbuddymini/use-cases/Cases-Three.md",
+      "source_path": "/docs/workbuddymini/use-cases/Cases-Three",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/use-cases/Cases-Three",
+      "summary": "",
+      "title": "三、云端定时任务 [​](#三、云端定时任务)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    },
+    "workbuddymini/use-cases/Cases-Two.md": {
+      "content_hash": "sha256:2ec0d12c98674170170ee562e1f17c97c75dcefb255198f4392fb6ef815689b7",
+      "keywords": [],
+      "local_path": "workbuddymini/use-cases/Cases-Two.md",
+      "source_path": "/docs/workbuddymini/use-cases/Cases-Two",
+      "source_url": "https://www.workbuddy.cn/docs/workbuddymini/use-cases/Cases-Two",
+      "summary": "",
+      "title": "微信文件跨端处理 [​](#微信文件跨端处理)",
+      "updated_at": "2026-09-25T15:18:29Z"
+    }
+  },
+  "last_sync_at": "2026-09-25T15:18:29Z",
+  "schema_version": 1,
+  "wiki": {
+    "language": "与来源链接一致",
+    "license": "未确认；仅限本地使用，公开分发前必须核对",
+    "scope": "inventory.json 中盘点的 Wiki 导航范围",
+    "skill_name": "workbuddy-wiki",
+    "source_root": "https://www.workbuddy.cn/docs",
+    "title": "WorkBuddy"
+  }
+}
