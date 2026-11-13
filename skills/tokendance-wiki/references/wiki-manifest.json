@@ -1,0 +1,1255 @@
+{
+  "assets": {
+    "docs/integrations/alice/alice-1.png": {
+      "content_hash": "sha256:13b4878cb5b7b763dd2561a93a9dd3f1f8026af27858e03db08a4fb915019ccd",
+      "local_path": "docs/integrations/alice/alice-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/alice/alice-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/alice/alice-2.png": {
+      "content_hash": "sha256:13b4878cb5b7b763dd2561a93a9dd3f1f8026af27858e03db08a4fb915019ccd",
+      "local_path": "docs/integrations/alice/alice-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/alice/alice-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/alice/alice-3.png": {
+      "content_hash": "sha256:8c718291d46df18b8026591ff208e9f309b5be9f37b3a7d48ecdee72aa38df37",
+      "local_path": "docs/integrations/alice/alice-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/alice/alice-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/cc-switch/cc-switch-1.png": {
+      "content_hash": "sha256:831eba0adc23e5ef0484cb441fb00498b6df33d57d0d69034be4f1e268c5b92f",
+      "local_path": "docs/integrations/cc-switch/cc-switch-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/cc-switch/cc-switch-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/cc-switch/cc-switch-2.png": {
+      "content_hash": "sha256:63d3d1bf0b332ddd02d7f83204bb06d9b28370769da2e7dce8918b6362fec5fe",
+      "local_path": "docs/integrations/cc-switch/cc-switch-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/cc-switch/cc-switch-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/cherry-studio/cherry-studio-1.png": {
+      "content_hash": "sha256:e4101f90ac5428d25c84736e621bf8fc3e2d7112c278295200d67278487c1a5f",
+      "local_path": "docs/integrations/cherry-studio/cherry-studio-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/cherry-studio/cherry-studio-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/cherry-studio/cherry-studio-2.png": {
+      "content_hash": "sha256:ba877625f77a29085e3b1cf458ea4a5eceb9286d791483885e58d028aafbf859",
+      "local_path": "docs/integrations/cherry-studio/cherry-studio-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/cherry-studio/cherry-studio-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/cherry-studio/cherry-studio-3.png": {
+      "content_hash": "sha256:07c0f04ee2856c852a81527ce09e3680057b9bc30b0589af352e827de9c1f7ce",
+      "local_path": "docs/integrations/cherry-studio/cherry-studio-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/cherry-studio/cherry-studio-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/cline/cline-1.png": {
+      "content_hash": "sha256:9bc7a12b8c2d7139b117446dfeb5866413ca19dc85141421107d008136650afa",
+      "local_path": "docs/integrations/cline/cline-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/cline/cline-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/cline/cline-2.png": {
+      "content_hash": "sha256:ead405d647c13d6469968365f3fe3f7d7125e0d0dc1f69b56fa3f2f034b3a4a5",
+      "local_path": "docs/integrations/cline/cline-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/cline/cline-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/deepseek-harness/deepseek-harness-1.png": {
+      "content_hash": "sha256:dc0ed56067f282871379221c220c401a5eb1d123dd4b2a3528baf42b9c38d545",
+      "local_path": "docs/integrations/deepseek-harness/deepseek-harness-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/deepseek-harness/deepseek-harness-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/deepseek-harness/deepseek-harness-2.png": {
+      "content_hash": "sha256:4d691918eaf18ee9c56b75ceb2d7692900e948eb8981645cb513e7b0d09391ea",
+      "local_path": "docs/integrations/deepseek-harness/deepseek-harness-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/deepseek-harness/deepseek-harness-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/deepseek-harness/deepseek-harness-3.png": {
+      "content_hash": "sha256:22e0c03671d968cb5befdd3d16e3446571d7b364e7daa6455e9832a4c13b32ff",
+      "local_path": "docs/integrations/deepseek-harness/deepseek-harness-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/deepseek-harness/deepseek-harness-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/deepseek-harness/deepseek-harness-4.png": {
+      "content_hash": "sha256:532ff928e503d70cb90cd1ef308df0b6fb02d5c452cdd803bc30307199d63969",
+      "local_path": "docs/integrations/deepseek-harness/deepseek-harness-4.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/deepseek-harness/deepseek-harness-4.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/github-copilot/github-copilot-1.png": {
+      "content_hash": "sha256:5a7a814c807b180ae0cb7e66055a57722fb496cdc6988f2d59dbf4f910b556ed",
+      "local_path": "docs/integrations/github-copilot/github-copilot-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/github-copilot/github-copilot-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/github-copilot/github-copilot-2.png": {
+      "content_hash": "sha256:27d80f33c5d0eaecae6cdcbffb7389eba60a04a025e0eca11bab771d03a7cd05",
+      "local_path": "docs/integrations/github-copilot/github-copilot-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/github-copilot/github-copilot-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/github-copilot/github-copilot-3.png": {
+      "content_hash": "sha256:cc13c4ac16a87ca9f1b2917be449d08f161061c04f2d87651e449145a6ce7258",
+      "local_path": "docs/integrations/github-copilot/github-copilot-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/github-copilot/github-copilot-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/hermes-agent/hermes-agent-1.png": {
+      "content_hash": "sha256:f94ea293653462818305a9bd0f35faaf5e343b8570c1253a8b122c1dbfaca3b6",
+      "local_path": "docs/integrations/hermes-agent/hermes-agent-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/hermes-agent/hermes-agent-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/ima/ima-1.png": {
+      "content_hash": "sha256:d5f74e36dbf694397916e68050edd70589ba330775653037051c79b0785bd64a",
+      "local_path": "docs/integrations/ima/ima-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/ima/ima-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/ima/ima-2.png": {
+      "content_hash": "sha256:d32b0e58faf0e40e701c47ceb5ea8b542e15ce62b1ec543a2ec1e1e5d89d442d",
+      "local_path": "docs/integrations/ima/ima-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/ima/ima-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/ima/ima-3.png": {
+      "content_hash": "sha256:c48445ee6ae4e75ee260447f508e5ef7af5a86c21294c31ec8e4bcdf0337edd3",
+      "local_path": "docs/integrations/ima/ima-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/ima/ima-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/ima/ima-4.png": {
+      "content_hash": "sha256:6f101f14cfdc77bdba27aec9a92bcd60226d38db3d36f09009be385d5eaec896",
+      "local_path": "docs/integrations/ima/ima-4.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/ima/ima-4.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/neovate/neovate-1.png": {
+      "content_hash": "sha256:2494da512a9c32094479307de3b4ae607e69150794056da43de2bdb1a207a3c0",
+      "local_path": "docs/integrations/neovate/neovate-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/neovate/neovate-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/obsidian/obsidian-1.png": {
+      "content_hash": "sha256:81217505bfb03b29419282e2bee1efccc1d9b57ad25d699a8c2c8ffaa508a655",
+      "local_path": "docs/integrations/obsidian/obsidian-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/obsidian/obsidian-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/obsidian/obsidian-2.png": {
+      "content_hash": "sha256:78052a44c5b1fb413942bb2f13d2b44a328363f683d1145842b3b45ebdc29ce6",
+      "local_path": "docs/integrations/obsidian/obsidian-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/obsidian/obsidian-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/obsidian/obsidian-3.png": {
+      "content_hash": "sha256:f590c9b5a4446a175af76ddacfba42702fc18073c63c1984b44482d2ff429638",
+      "local_path": "docs/integrations/obsidian/obsidian-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/obsidian/obsidian-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/opencode/opencode-1.png": {
+      "content_hash": "sha256:b65b09f6af298a63a335f3819643263d1f439aa0289cdfd66ca07c72215fdc98",
+      "local_path": "docs/integrations/opencode/opencode-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/opencode/opencode-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/qclaw/qclaw-1.png": {
+      "content_hash": "sha256:3df9b5c2dfb176ea0f7d5f9e19ba9d2a986262602c96da1cc020b01068575624",
+      "local_path": "docs/integrations/qclaw/qclaw-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/qclaw/qclaw-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/qclaw/qclaw-2.png": {
+      "content_hash": "sha256:f1bd0bcdac349ced2299071e0695ad29cda49f6f47091775be784aafdbf95c37",
+      "local_path": "docs/integrations/qclaw/qclaw-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/qclaw/qclaw-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/qclaw/qclaw-3.png": {
+      "content_hash": "sha256:ec7a96191f9e727bddfaa784b3765bc752a3b56ff2c032332a6a2a1b3a048a8a",
+      "local_path": "docs/integrations/qclaw/qclaw-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/qclaw/qclaw-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/rikkahub/rikkahub-1.png": {
+      "content_hash": "sha256:2c2488fd1d5532e7c72edf0874cc4756ac890acddcbac76c004688efccf265da",
+      "local_path": "docs/integrations/rikkahub/rikkahub-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/rikkahub/rikkahub-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/rikkahub/rikkahub-2.png": {
+      "content_hash": "sha256:160d2a90b9278cdbf47b97eeb9bd97bc8e83b547f8b569c556803c68b79919f4",
+      "local_path": "docs/integrations/rikkahub/rikkahub-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/rikkahub/rikkahub-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/rikkahub/rikkahub-3.png": {
+      "content_hash": "sha256:1b78258e2c41b5c139455e672d79b5f103365a30d3e548efe9da387c4a1eb359",
+      "local_path": "docs/integrations/rikkahub/rikkahub-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/rikkahub/rikkahub-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/rikkahub/rikkahub-4.jpg": {
+      "content_hash": "sha256:badc689a5ccf59280319f51a556dba8da50cec1b491f36060757453a1f79d3ab",
+      "local_path": "docs/integrations/rikkahub/rikkahub-4.jpg",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/rikkahub/rikkahub-4.jpg",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "docs/integrations/rikkahub/rikkahub-5.png": {
+      "content_hash": "sha256:894c97085782b0e982ae777a728ab309a0b0aed3d622be868a727d359fcfb964",
+      "local_path": "docs/integrations/rikkahub/rikkahub-5.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/rikkahub/rikkahub-5.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/rikkahub/rikkahub-6.jpg": {
+      "content_hash": "sha256:aa579b65078ce59c0fba75dc649b43029e94ebe3590bb6d7ccf1fd0454b6db28",
+      "local_path": "docs/integrations/rikkahub/rikkahub-6.jpg",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/rikkahub/rikkahub-6.jpg",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/rikkahub/rikkahub-7.jpg": {
+      "content_hash": "sha256:eaeafd4bf9bc7a1b8ceaaf695c72275ca7ceeac59a528ce95334ec3be970523d",
+      "local_path": "docs/integrations/rikkahub/rikkahub-7.jpg",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/rikkahub/rikkahub-7.jpg",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "docs/integrations/trae-ide/trae-ide-1.png": {
+      "content_hash": "sha256:ddab55717b108c5f108de086e0157f9d356200c5e7397e3a295fd6489d2e7d94",
+      "local_path": "docs/integrations/trae-ide/trae-ide-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/trae-ide/trae-ide-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/trae-ide/trae-ide-2.png": {
+      "content_hash": "sha256:d8468a1637ca8ded8453aa0f20762452bdde36f06806bf2abbef0d671f98c3eb",
+      "local_path": "docs/integrations/trae-ide/trae-ide-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/trae-ide/trae-ide-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/trae-work/trae-work-1.png": {
+      "content_hash": "sha256:21e080385937e7a4381e137ba3fba9142300623bdbb555de4c097bb4ecc58b7c",
+      "local_path": "docs/integrations/trae-work/trae-work-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/trae-work/trae-work-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/trae-work/trae-work-2.png": {
+      "content_hash": "sha256:d909e301e45bc425ebc33718c8ddeabb21af7cd724674008eb4474c273d202cf",
+      "local_path": "docs/integrations/trae-work/trae-work-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/trae-work/trae-work-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/trae-work/trae-work-3.png": {
+      "content_hash": "sha256:ba7d09a5b467f8fbc8b42bdac93d4458a345a30775463b72baa2632abb0845b9",
+      "local_path": "docs/integrations/trae-work/trae-work-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/trae-work/trae-work-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/trae-work/trae-work-4.png": {
+      "content_hash": "sha256:b7b20531da041c70015aac4f3322bb35d0cae9172197722252e849eb9cd3c167",
+      "local_path": "docs/integrations/trae-work/trae-work-4.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/trae-work/trae-work-4.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/trae-work/trae-work-5.png": {
+      "content_hash": "sha256:ed730b254cc9462d9203cbf3abf5e7a39f6d9e8d2a5fdf5e6890944f8a593215",
+      "local_path": "docs/integrations/trae-work/trae-work-5.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/trae-work/trae-work-5.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/trae-work/trae-work-6.png": {
+      "content_hash": "sha256:167d7db80b12b72f8a224dfa40110e7c97941af2fdf88565f0bd3afeadcc6a33",
+      "local_path": "docs/integrations/trae-work/trae-work-6.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/trae-work/trae-work-6.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/workbuddy/workbuddy-1.png": {
+      "content_hash": "sha256:e159f331ff82f4423c577313e62d88578ebc395701d5be14a50b35d11b7e6b56",
+      "local_path": "docs/integrations/workbuddy/workbuddy-1.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/workbuddy/workbuddy-1.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/workbuddy/workbuddy-2.png": {
+      "content_hash": "sha256:5659391fd47a860b891a689b014b81e143b0e4a57322e725b69182671a792733",
+      "local_path": "docs/integrations/workbuddy/workbuddy-2.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/workbuddy/workbuddy-2.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/workbuddy/workbuddy-3.png": {
+      "content_hash": "sha256:3d6b57034b6b5c0cb5be69f3290bd3646b20d6c729928fafc467b3459c65cd75",
+      "local_path": "docs/integrations/workbuddy/workbuddy-3.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/workbuddy/workbuddy-3.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/workbuddy/workbuddy-4.png": {
+      "content_hash": "sha256:b435329ea882349d889c8faee8e7a31b7572e94942137033886851ffb5d37531",
+      "local_path": "docs/integrations/workbuddy/workbuddy-4.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/workbuddy/workbuddy-4.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "docs/integrations/workbuddy/workbuddy-5.png": {
+      "content_hash": "sha256:354bc2edb31263d22669eb6a37b20ef6bcc922e449102a55aa27a53242576b36",
+      "local_path": "docs/integrations/workbuddy/workbuddy-5.png",
+      "source_url": "https://watcha.tos-cn-beijing.volces.com/docs/integrations/workbuddy/workbuddy-5.png",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "tokendance.space/feishu.png": {
+      "content_hash": "sha256:2758279f519ddbfb45767b43505cb0f9afb24e8836bf935eedf2fb01f699907c",
+      "local_path": "tokendance.space/feishu.png",
+      "source_url": "https://tokendance.space/feishu.png",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "tos.watcha.cn/public/images/TokenBD.png": {
+      "content_hash": "sha256:fd35969e5448f9b4146042ca5d01e3485fb4156a897ee7f1b6e64844ca1b66c6",
+      "local_path": "tos.watcha.cn/public/images/TokenBD.png",
+      "source_url": "https://tos.watcha.cn/public/images/TokenBD.png",
+      "updated_at": "2026-11-13T08:45:49Z"
+    }
+  },
+  "coverage": {
+    "captured": 91,
+    "complete": true,
+    "discovered": 91,
+    "excluded": [
+      {
+        "reason": "hidden draft in browser registry; absent from public index and export",
+        "url": "https://tokendance.space/docs/minimax-video-prompt.md"
+      },
+      {
+        "reason": "hidden draft in browser registry; absent from public index and export",
+        "url": "https://tokendance.space/docs/protocol-qwen-audio-asr.md"
+      }
+    ],
+    "failed": []
+  },
+  "created_at": "2026-11-13T08:44:26Z",
+  "documents": {
+    "开始使用/应用与开放能力/Agent 支付.md": {
+      "content_hash": "sha256:71d6d06bb80de8291a4644137c9f184755ba44eda4d12a3e6a2fd2ff31f60486",
+      "keywords": [],
+      "local_path": "开始使用/应用与开放能力/Agent 支付.md",
+      "source_path": "/docs/agent-payment.md",
+      "source_url": "https://tokendance.space/docs/agent-payment.md",
+      "summary": "使用 API Key 创建充值会话，并在支付成功后继续调用",
+      "title": "Agent 支付",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "开始使用/应用与开放能力/webhook.md": {
+      "content_hash": "sha256:ec9470dca3b6235a30b9a71e7d2c5ea164253872a99e40f148f7347f9be7a0c2",
+      "keywords": [],
+      "local_path": "开始使用/应用与开放能力/webhook.md",
+      "source_path": "/docs/async-webhook.md",
+      "source_url": "https://tokendance.space/docs/async-webhook.md",
+      "summary": "在异步任务结束时获取来自词元跳动的回调通知",
+      "title": "webhook",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "开始使用/应用与开放能力/应用归因.md": {
+      "content_hash": "sha256:1095526b1b9432c632ca98af9cf150fc9db61bdc2527ad314b3849814c88538a",
+      "keywords": [],
+      "local_path": "开始使用/应用与开放能力/应用归因.md",
+      "source_path": "/docs/app-attribution.md",
+      "source_url": "https://tokendance.space/docs/app-attribution.md",
+      "summary": "通过 API Key 或单次请求将调用关联到你的应用",
+      "title": "应用归因",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "开始使用/应用与开放能力/开放平台 API.md": {
+      "content_hash": "sha256:6f3334259a3257e031d3f89745511d03b60b813e8c4c090e11ba22a4190f5150",
+      "keywords": [],
+      "local_path": "开始使用/应用与开放能力/开放平台 API.md",
+      "source_path": "/docs/open-api.md",
+      "source_url": "https://tokendance.space/docs/open-api.md",
+      "summary": "通过 API Key 以编程方式管理账户",
+      "title": "开放平台 API",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "开始使用/快速入门/平台介绍.md": {
+      "content_hash": "sha256:b21672c1c65dfbc5b38ef8c650a12157ff5da55c93ffa9ae51322e47c8e3c055",
+      "keywords": [],
+      "local_path": "开始使用/快速入门/平台介绍.md",
+      "source_path": "/docs/principles.md",
+      "source_url": "https://tokendance.space/docs/principles.md",
+      "summary": "一个 URL 调用所有大模型",
+      "title": "平台介绍",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "开始使用/快速入门/快速开始.md": {
+      "content_hash": "sha256:7214e04d2d2bbba798a27b7ba3ac9e8b80b3d98b28fd5d2171b602a58ff1bc58",
+      "keywords": [],
+      "local_path": "开始使用/快速入门/快速开始.md",
+      "source_path": "/docs/quickstart.md",
+      "source_url": "https://tokendance.space/docs/quickstart.md",
+      "summary": "三步即可通过词元跳动调用所有主流大模型",
+      "title": "快速开始",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "开始使用/快速入门/用 AI 接入.md": {
+      "content_hash": "sha256:6609e730bb863db7b8033d263a7914aa7dad161f85790c3915985317bf089321",
+      "keywords": [],
+      "local_path": "开始使用/快速入门/用 AI 接入.md",
+      "source_path": "/docs/ai-integration.md",
+      "source_url": "https://tokendance.space/docs/ai-integration.md",
+      "summary": "一键把接入任务交给 coding agent，并让 AI 自动发现所需文档",
+      "title": "用 AI 接入",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "开始使用/访问与认证/API 密钥.md": {
+      "content_hash": "sha256:df7f8dc77a94521098663371a48238da71b9782a84b67a417a15454ecef55e73",
+      "keywords": [],
+      "local_path": "开始使用/访问与认证/API 密钥.md",
+      "source_path": "/docs/api-keys.md",
+      "source_url": "https://tokendance.space/docs/api-keys.md",
+      "summary": "创建、使用和管理你的 API Key",
+      "title": "API 密钥",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "开始使用/访问与认证/OAuth 式 API Key 授权.md": {
+      "content_hash": "sha256:7522addc0e40ac6e06c7ae806259d599718cc9f7a607c992ab387cfaca7c0c32",
+      "keywords": [],
+      "local_path": "开始使用/访问与认证/OAuth 式 API Key 授权.md",
+      "source_path": "/docs/api-key-oauth.md",
+      "source_url": "https://tokendance.space/docs/api-key-oauth.md",
+      "summary": "通过 Authorization Code + S256 PKCE 让应用获得新 Key",
+      "title": "OAuth 式 API Key 授权",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "开始使用/路由与可用性/会话粘滞.md": {
+      "content_hash": "sha256:70e7fc7f28de720749c460d5af9ef0acf4a43773ae251f43cdad75fefcecd1c5",
+      "keywords": [],
+      "local_path": "开始使用/路由与可用性/会话粘滞.md",
+      "source_path": "/docs/session-affinity.md",
+      "source_url": "https://tokendance.space/docs/session-affinity.md",
+      "summary": "多轮对话优先回到命中缓存的供应商端点，降低输入成本",
+      "title": "会话粘滞",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "开始使用/路由与可用性/供应商路由.md": {
+      "content_hash": "sha256:1e0920305b8f383f7294bb0721ded1283964c1aa52fce02cd8c659a1929ef400",
+      "keywords": [],
+      "local_path": "开始使用/路由与可用性/供应商路由.md",
+      "source_path": "/docs/provider-routing.md",
+      "source_url": "https://tokendance.space/docs/provider-routing.md",
+      "summary": "同一模型的多供应商智能路由、自动容错与显式偏好控制",
+      "title": "供应商路由",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "开始使用/路由与可用性/模型降级.md": {
+      "content_hash": "sha256:92c6883784c4d0d80d937521df26c91110bc6b5d1750e1e5931238c0b894f208",
+      "keywords": [],
+      "local_path": "开始使用/路由与可用性/模型降级.md",
+      "source_path": "/docs/model-fallbacks.md",
+      "source_url": "https://tokendance.space/docs/model-fallbacks.md",
+      "summary": "当首选模型不可用时自动切换到备选模型",
+      "title": "模型降级",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "开始使用/路由与可用性/请求限流.md": {
+      "content_hash": "sha256:852a5493b7fd0194f640b3ff9f26bc8552c270be6020f673fcbb2f0a6d8d1054",
+      "keywords": [],
+      "local_path": "开始使用/路由与可用性/请求限流.md",
+      "source_path": "/docs/rate-limits.md",
+      "source_url": "https://tokendance.space/docs/rate-limits.md",
+      "summary": "了解词元跳动的限流机制以及如何应对限流",
+      "title": "请求限流",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "更新与支持/产品更新/文档更新记录.md": {
+      "content_hash": "sha256:93d06c3233895694766f79b2495ece10e965f9a82b98554bc848992387d6a322",
+      "keywords": [],
+      "local_path": "更新与支持/产品更新/文档更新记录.md",
+      "source_path": "/docs/docs-updates.md",
+      "source_url": "https://tokendance.space/docs/docs-updates.md",
+      "summary": "查看厂商与模型实践文档的撰写时间和时效说明",
+      "title": "文档更新记录",
+      "updated_at": "2026-11-13T08:44:26Z"
+    },
+    "更新与支持/产品更新/更新日志.md": {
+      "content_hash": "sha256:8ca337b0f8582f9e692036fca08e0a759771ecb23ae67a7debc74d44ab114c1f",
+      "keywords": [],
+      "local_path": "更新与支持/产品更新/更新日志.md",
+      "source_path": "/docs/changelog.md",
+      "source_url": "https://tokendance.space/docs/changelog.md",
+      "summary": "了解模型、API、控制台和计费等产品变化",
+      "title": "更新日志",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "更新与支持/帮助与支持/常见问题.md": {
+      "content_hash": "sha256:91f9c323a55750b88b00d80742da14c0b4575141893d4dbc9ac2e0858f89dd4f",
+      "keywords": [],
+      "local_path": "更新与支持/帮助与支持/常见问题.md",
+      "source_path": "/docs/faq.md",
+      "source_url": "https://tokendance.space/docs/faq.md",
+      "summary": "关于词元跳动的常见问题与解答",
+      "title": "常见问题",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "更新与支持/帮助与支持/联系我们.md": {
+      "content_hash": "sha256:ef6ebdda2562d18911211db3d244d034083ba0c4ca29e077f80e7d3ae3c63342",
+      "keywords": [],
+      "local_path": "更新与支持/帮助与支持/联系我们.md",
+      "source_path": "/docs/contact.md",
+      "source_url": "https://tokendance.space/docs/contact.md",
+      "summary": "如有任何问题或建议，欢迎加入交流群",
+      "title": "联系我们",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "模型与协议/厂商与模型实践/Kimi/Kimi 使用指南.md": {
+      "content_hash": "sha256:aa03405c5f6f57234538580ad640b4b370b553b92296b6311b4fb7033bab9c43",
+      "keywords": [],
+      "local_path": "模型与协议/厂商与模型实践/Kimi/Kimi 使用指南.md",
+      "source_path": "/docs/kimi-thinking-models.md",
+      "source_url": "https://tokendance.space/docs/kimi-thinking-models.md",
+      "summary": "思考参数、采样约束、工具调用与多轮消息处理",
+      "title": "Kimi 使用指南",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/厂商与模型实践/MiniMax/MiniMax H3 使用指南.md": {
+      "content_hash": "sha256:edf6eed08b9f2ffdbcaffdf3e973fa3bfae32797e4e784d16401a20adf8ca44c",
+      "keywords": [],
+      "local_path": "模型与协议/厂商与模型实践/MiniMax/MiniMax H3 使用指南.md",
+      "source_path": "/docs/minimax-video-generation.md",
+      "source_url": "https://tokendance.space/docs/minimax-video-generation.md",
+      "summary": "任务输入、参数联动、异步轮询与错误排查",
+      "title": "MiniMax H3 使用指南",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/厂商与模型实践/可灵/Kling 使用指南.md": {
+      "content_hash": "sha256:1fef497bbe81a953459976a65e541c399738275756b58ba8ae827cd293aa1a4e",
+      "keywords": [],
+      "local_path": "模型与协议/厂商与模型实践/可灵/Kling 使用指南.md",
+      "source_path": "/docs/kling.md",
+      "source_url": "https://tokendance.space/docs/kling.md",
+      "summary": "模型选择、调用差异与官方资料",
+      "title": "Kling 使用指南",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "模型与协议/厂商与模型实践/字节/Seedance 使用指南.md": {
+      "content_hash": "sha256:2eecccdbf2ae24dfe2c5f46189de7890e05c35db5c269f2a133289100f2e854f",
+      "keywords": [],
+      "local_path": "模型与协议/厂商与模型实践/字节/Seedance 使用指南.md",
+      "source_path": "/docs/seedance-generations.md",
+      "source_url": "https://tokendance.space/docs/seedance-generations.md",
+      "summary": "Seedance 常用参数、任务类型、异步轮询与错误排查",
+      "title": "Seedance 使用指南",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/厂商与模型实践/字节/Seedream 使用指南.md": {
+      "content_hash": "sha256:7bf19c17943d8f0bd8eba4f6312dc9439ed652097527e2711d72c65ff2252955",
+      "keywords": [],
+      "local_path": "模型与协议/厂商与模型实践/字节/Seedream 使用指南.md",
+      "source_path": "/docs/ark-image-generations.md",
+      "source_url": "https://tokendance.space/docs/ark-image-generations.md",
+      "summary": "调用 Seedream 系列图像生成模型",
+      "title": "Seedream 使用指南",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/Grok 视频生成.md": {
+      "content_hash": "sha256:d8dc3e9b5aef6ec88173e124791cfc809e127827cfedc75dbc3a6cdf64e7a793",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/Grok 视频生成.md",
+      "source_path": "/docs/protocol-xai-video-generations.md",
+      "source_url": "https://tokendance.space/docs/protocol-xai-video-generations.md",
+      "summary": "文生视频、单图图生、异步查询与下载",
+      "title": "Grok 视频生成",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/Grsai 图片生成与编辑.md": {
+      "content_hash": "sha256:9a91b5608dc5dfcb6a9547eb7a668b0ca00d46979f16195401968a8861732ff6",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/Grsai 图片生成与编辑.md",
+      "source_path": "/docs/protocol-grsai-generate.md",
+      "source_url": "https://tokendance.space/docs/protocol-grsai-generate.md",
+      "summary": "异步提交图片任务、参考图编辑与结果查询",
+      "title": "Grsai 图片生成与编辑",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/HappyHorse 视频合成.md": {
+      "content_hash": "sha256:b7bc23a5516a5a964642182bfcb301dee54c436f6fb26ddfb047394beb8e8bd7",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/HappyHorse 视频合成.md",
+      "source_path": "/docs/protocol-happyhorse-video-synthesis.md",
+      "source_url": "https://tokendance.space/docs/protocol-happyhorse-video-synthesis.md",
+      "summary": "通义万相视频生成与编辑",
+      "title": "HappyHorse 视频合成",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/MiniMax 视频生成 v2.md": {
+      "content_hash": "sha256:bbd44d1ab012736677498829df363d7788c6fcf3d20ee4c1d8d31b4818a3ddca",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/MiniMax 视频生成 v2.md",
+      "source_path": "/docs/protocol-minimax-video-generation-v2.md",
+      "source_url": "https://tokendance.space/docs/protocol-minimax-video-generation-v2.md",
+      "summary": "MiniMax 新版视频生成协议",
+      "title": "MiniMax 视频生成 v2",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/OpenAI Image Edits.md": {
+      "content_hash": "sha256:0b735de4cf435f4ca50e769e7a56cda009e95843e6a94dad2698827df079a157",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/OpenAI Image Edits.md",
+      "source_path": "/docs/protocol-openai-image-edits.md",
+      "source_url": "https://tokendance.space/docs/protocol-openai-image-edits.md",
+      "summary": "使用 OpenAI 图像编辑协议修改图片",
+      "title": "OpenAI Image Edits",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/OpenAI Image Generations.md": {
+      "content_hash": "sha256:95527fe79c6d33b8d436e246e340251d1c96facb9cf47e495e797c92bc50fe93",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/OpenAI Image Generations.md",
+      "source_path": "/docs/protocol-openai-image-generations.md",
+      "source_url": "https://tokendance.space/docs/protocol-openai-image-generations.md",
+      "summary": "使用 OpenAI 图像生成协议创建图片",
+      "title": "OpenAI Image Generations",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/Vidu 参考生视频.md": {
+      "content_hash": "sha256:eb11d428bc4101c1adbb5dd5b0ac16807358d0e14b23c74b649a7817e35888d0",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/Vidu 参考生视频.md",
+      "source_path": "/docs/protocol-vidu-reference2video.md",
+      "source_url": "https://tokendance.space/docs/protocol-vidu-reference2video.md",
+      "summary": "使用参考图保持主体一致性",
+      "title": "Vidu 参考生视频",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/Vidu 图生视频.md": {
+      "content_hash": "sha256:24866095dd0ea472b86db43461fff7aac1d0b6bc97d03c9c61601812d266b250",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/Vidu 图生视频.md",
+      "source_path": "/docs/protocol-vidu-img2video.md",
+      "source_url": "https://tokendance.space/docs/protocol-vidu-img2video.md",
+      "summary": "通过图片和提示词生成视频",
+      "title": "Vidu 图生视频",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/Vidu 文生视频.md": {
+      "content_hash": "sha256:ff2870b9ee1a8e4b440a983c1b41614f13ffd916691404a7bac5985f9031d329",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/Vidu 文生视频.md",
+      "source_path": "/docs/protocol-vidu-text2video.md",
+      "source_url": "https://tokendance.space/docs/protocol-vidu-text2video.md",
+      "summary": "通过文本提示生成视频",
+      "title": "Vidu 文生视频",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/Vidu 首尾帧视频.md": {
+      "content_hash": "sha256:40777a2c412760ef2c1925a93510cc763a33e9bbc4496e1bb672fa42a94bd3c9",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/Vidu 首尾帧视频.md",
+      "source_path": "/docs/protocol-vidu-start-end2video.md",
+      "source_url": "https://tokendance.space/docs/protocol-vidu-start-end2video.md",
+      "summary": "根据首帧和尾帧生成视频",
+      "title": "Vidu 首尾帧视频",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/可灵 Omni Video.md": {
+      "content_hash": "sha256:33d2b0d83bbfcef613c1a9b8d77502d37665dee9ce0ee1cc68f45109dbbf562e",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/可灵 Omni Video.md",
+      "source_path": "/docs/protocol-kling-omni-video.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-omni-video.md",
+      "summary": "可灵多模态视频生成协议",
+      "title": "可灵 Omni Video",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/可灵Omni V2.md": {
+      "content_hash": "sha256:25a83b86a1a6d3b34bcb57ac1ce2e1316b3b9a3dcbee314e6cb4d05bf003d7c1",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/可灵Omni V2.md",
+      "source_path": "/docs/protocol-kling-omni-video-v2.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-omni-video-v2.md",
+      "summary": "Kling 4.0 Omni与输入视频计费",
+      "title": "可灵Omni V2",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/可灵动作控制.md": {
+      "content_hash": "sha256:d90d950b0b737540daa592c281a457dcdc20f7899aa35e316168664ec85efb33",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/可灵动作控制.md",
+      "source_path": "/docs/protocol-kling-motion-control.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-motion-control.md",
+      "summary": "把动作参考视频中的人物动作与表情迁移到参考图片",
+      "title": "可灵动作控制",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/可灵图生视频 V2.md": {
+      "content_hash": "sha256:5d783f29cece8908309179d6e3ac240096bd5082eefd812a2d3728c19fc6083e",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/可灵图生视频 V2.md",
+      "source_path": "/docs/protocol-kling-image2video-v2.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-image2video-v2.md",
+      "summary": "Kling 4.0 图生视频与输入视频计费",
+      "title": "可灵图生视频 V2",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/可灵图生视频.md": {
+      "content_hash": "sha256:0d4b6b6490010b326f5e7e131120f087d25090d8449470b50bdd715d22dc1a33",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/可灵图生视频.md",
+      "source_path": "/docs/protocol-kling-image2video.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-image2video.md",
+      "summary": "通过图片创建可灵视频任务",
+      "title": "可灵图生视频",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/可灵数字人.md": {
+      "content_hash": "sha256:fee09354199166be3020740f0fbab19f26312479ed9ae91edf31dcaef7c1c2ed",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/可灵数字人.md",
+      "source_path": "/docs/protocol-kling-avatar.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-avatar.md",
+      "summary": "通过人物图片和音频生成数字人视频",
+      "title": "可灵数字人",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/可灵文生视频 V2.md": {
+      "content_hash": "sha256:62cb5c0d65e34d332fc7f33d56ab926c6dbebceecd2370feb69c5ad54392ffd1",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/可灵文生视频 V2.md",
+      "source_path": "/docs/protocol-kling-text2video-v2.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-text2video-v2.md",
+      "summary": "Kling 4.0 文生视频与输入视频计费",
+      "title": "可灵文生视频 V2",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/可灵文生视频.md": {
+      "content_hash": "sha256:c0912393ab6b59bef7783c1f8e22111a7f322c36ddf724f5a5e7f93ddcd63649",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/可灵文生视频.md",
+      "source_path": "/docs/protocol-kling-text2video.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-text2video.md",
+      "summary": "通过文本提示创建可灵视频任务",
+      "title": "可灵文生视频",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/可灵视频特效.md": {
+      "content_hash": "sha256:5c6de8c843d9b5b1effb87721bc161209d4cbbf1bf03a292613af5d2d33f551a",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/可灵视频特效.md",
+      "source_path": "/docs/protocol-kling-video-effects.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-video-effects.md",
+      "summary": "按特效模板提交素材并生成视频",
+      "title": "可灵视频特效",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/字节 Ark Image Generations.md": {
+      "content_hash": "sha256:9d3ed383f2b36abf16c767796b2b6c247f69710bbe80ec1561d6ec4ab3d39c83",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/字节 Ark Image Generations.md",
+      "source_path": "/docs/protocol-ark-image-generations.md",
+      "source_url": "https://tokendance.space/docs/protocol-ark-image-generations.md",
+      "summary": "火山引擎原生图像生成协议",
+      "title": "字节 Ark Image Generations",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/字节 Seedance Generations.md": {
+      "content_hash": "sha256:641eb1c19b5b07d0b8b7bf00b9617961708fea4030c4fd4667b4d8a1f0c8bbcf",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/字节 Seedance Generations.md",
+      "source_path": "/docs/protocol-seedance-generations.md",
+      "source_url": "https://tokendance.space/docs/protocol-seedance-generations.md",
+      "summary": "Seedance 2.0、2.5 系列视频生成",
+      "title": "字节 Seedance Generations",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/百炼多模态生成.md": {
+      "content_hash": "sha256:699aa2216e68ed740df4dd6d751853f4537d8c9a8bd1a0a850a0847364d40550",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/百炼多模态生成.md",
+      "source_path": "/docs/protocol-dashscope-multimodal-generation.md",
+      "source_url": "https://tokendance.space/docs/protocol-dashscope-multimodal-generation.md",
+      "summary": "Qwen/Wan 图像生成、参考图编辑与短音频识别",
+      "title": "百炼多模态生成",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/视频超分.md": {
+      "content_hash": "sha256:b882a9742f82d3ea8767fb4055e1ad280ed6c0e59207de629192b4eca397801a",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/视频超分.md",
+      "source_path": "/docs/protocol-video-enhance.md",
+      "source_url": "https://tokendance.space/docs/protocol-video-enhance.md",
+      "summary": "把视频画质增强并超分到 720p、1080p 或 4k",
+      "title": "视频超分",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/视频超分（Seedance 协议）.md": {
+      "content_hash": "sha256:e50a5308331582c276d72d205892c88f5b1dac9862528906c8028a536c461f1e",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/视频超分（Seedance 协议）.md",
+      "source_path": "/docs/protocol-video-enhance-seedance.md",
+      "source_url": "https://tokendance.space/docs/protocol-video-enhance-seedance.md",
+      "summary": "用支持火山方舟 seedance 协议的客户端把视频超分到 720p、1080p 或 4k",
+      "title": "视频超分（Seedance 协议）",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/图像与视频/阿里云 Wan3.0 视频生成.md": {
+      "content_hash": "sha256:58b1b0957a5424410d42379b55db3d01b2ade2c3177682556828d1afffd77ea9",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/图像与视频/阿里云 Wan3.0 视频生成.md",
+      "source_path": "/docs/protocol-wan3-video-synthesis.md",
+      "source_url": "https://tokendance.space/docs/protocol-wan3-video-synthesis.md",
+      "summary": "文生、图生、多模态参考和视频编辑",
+      "title": "阿里云 Wan3.0 视频生成",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/语音/MiniMax T2A WebSocket.md": {
+      "content_hash": "sha256:7e48f48c3d70b4e399293b6e29861a12e4e9757b83dcf9b215c45ffffc555903",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/语音/MiniMax T2A WebSocket.md",
+      "source_path": "/docs/protocol-minimax-t2a-v2-ws.md",
+      "source_url": "https://tokendance.space/docs/protocol-minimax-t2a-v2-ws.md",
+      "summary": "WebSocket 流式文本转语音",
+      "title": "MiniMax T2A WebSocket",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/语音/MiniMax T2A v2.md": {
+      "content_hash": "sha256:5e832f1b843310de7e1c3fd27a312ef6b10cc5c806e7e1e0adaef4d74a9ee11c",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/语音/MiniMax T2A v2.md",
+      "source_path": "/docs/protocol-minimax-t2a-v2.md",
+      "source_url": "https://tokendance.space/docs/protocol-minimax-t2a-v2.md",
+      "summary": "同步文本转语音与 SSE 音频流",
+      "title": "MiniMax T2A v2",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/语音/MiniMax 声音复刻.md": {
+      "content_hash": "sha256:d55e710219892286ed23cb3c8e6e8bf93cf481232859589fc0f6836d7c84b6ba",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/语音/MiniMax 声音复刻.md",
+      "source_path": "/docs/protocol-minimax-voice-clone.md",
+      "source_url": "https://tokendance.space/docs/protocol-minimax-voice-clone.md",
+      "summary": "上传音频并创建可复用音色",
+      "title": "MiniMax 声音复刻",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/语音/Qwen-Audio-3.0-ASR-Flash-Streaming.md": {
+      "content_hash": "sha256:d7ff91d680d0040704a4aa84a4fc409439f90a8a2a36bf16a020b83737906d5e",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/语音/Qwen-Audio-3.0-ASR-Flash-Streaming.md",
+      "source_path": "/docs/protocol-qwen-audio-asr-streaming.md",
+      "source_url": "https://tokendance.space/docs/protocol-qwen-audio-asr-streaming.md",
+      "summary": "通过 WebSocket 实时识别音频",
+      "title": "Qwen-Audio-3.0-ASR-Flash-Streaming",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/语音/Qwen3-ASR-Flash-Realtime.md": {
+      "content_hash": "sha256:5c4ca032cc7bd226d7f7283959d78ec571c5e28f19923d45052557bddaf46d6c",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/语音/Qwen3-ASR-Flash-Realtime.md",
+      "source_path": "/docs/protocol-qwen-asr-realtime.md",
+      "source_url": "https://tokendance.space/docs/protocol-qwen-asr-realtime.md",
+      "summary": "通过 WebSocket 实时识别音频",
+      "title": "Qwen3-ASR-Flash-Realtime",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/语音/Qwen3-ASR-Flash.md": {
+      "content_hash": "sha256:5809254781b98813f8215cbb0885cd22dfe2e585702dd9f012acdf8e91850884",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/语音/Qwen3-ASR-Flash.md",
+      "source_path": "/docs/protocol-qwen3-asr-flash.md",
+      "source_url": "https://tokendance.space/docs/protocol-qwen3-asr-flash.md",
+      "summary": "通过 Chat Completions 识别短音频",
+      "title": "Qwen3-ASR-Flash",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/语音/可灵语音合成.md": {
+      "content_hash": "sha256:48eaf7145be9c6c9c0ce9ee0c9adae0db70db408a59944c403b9c47cfbb8e1b9",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/语音/可灵语音合成.md",
+      "source_path": "/docs/protocol-kling-tts.md",
+      "source_url": "https://tokendance.space/docs/protocol-kling-tts.md",
+      "summary": "将文本转换为音频，并供数字人视频引用",
+      "title": "可灵语音合成",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/语音/豆包语音合成 WebSocket.md": {
+      "content_hash": "sha256:e67389a48ea92bc5c3aa9d07276eabe2d333ca0dc3f2bd320570754172330962",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/语音/豆包语音合成 WebSocket.md",
+      "source_path": "/docs/protocol-ark-tts-ws.md",
+      "source_url": "https://tokendance.space/docs/protocol-ark-tts-ws.md",
+      "summary": "双向流式输入文本，实时接收二进制音频",
+      "title": "豆包语音合成 WebSocket",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/语音/豆包语音合成.md": {
+      "content_hash": "sha256:b1b9e5307e4985494236880fe08f64a708acba655e86bcb23785318527b1318f",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/语音/豆包语音合成.md",
+      "source_path": "/docs/protocol-ark-tts.md",
+      "source_url": "https://tokendance.space/docs/protocol-ark-tts.md",
+      "summary": "单向流式语音合成，SSE 音频流",
+      "title": "豆包语音合成",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/音乐/音潮歌曲生成.md": {
+      "content_hash": "sha256:eb233f19a3d3043b1478f25c57fab8f33db5af85e0ad3f0c7f9c7d71f47b4b11",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/音乐/音潮歌曲生成.md",
+      "source_path": "/docs/protocol-yinchao-song.md",
+      "source_url": "https://tokendance.space/docs/protocol-yinchao-song.md",
+      "summary": "提示词生歌、仿写、扩写、纯音乐与生成中播放",
+      "title": "音潮歌曲生成",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/多模态协议/音乐/音潮歌词生成.md": {
+      "content_hash": "sha256:8023fb987c6be760dc272dfaaf18754a11ea0efccc8274b70fb4a83b688342d9",
+      "keywords": [],
+      "local_path": "模型与协议/多模态协议/音乐/音潮歌词生成.md",
+      "source_path": "/docs/protocol-yinchao-lyric-generate.md",
+      "source_url": "https://tokendance.space/docs/protocol-yinchao-lyric-generate.md",
+      "summary": "同步生成歌名与结构化歌词",
+      "title": "音潮歌词生成",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/检索与内容处理/搜索与网页读取/DeepSeek 网页抓取.md": {
+      "content_hash": "sha256:23869fd6e19cbbc8c49c5679633ce5ed909882948f79a4f63b8c048f89486c75",
+      "keywords": [],
+      "local_path": "模型与协议/检索与内容处理/搜索与网页读取/DeepSeek 网页抓取.md",
+      "source_path": "/docs/protocol-deepseek-web-fetch.md",
+      "source_url": "https://tokendance.space/docs/protocol-deepseek-web-fetch.md",
+      "summary": "抓取单个网页，返回标题与 Markdown 正文",
+      "title": "DeepSeek 网页抓取",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/检索与内容处理/搜索与网页读取/DeepSeek 网页搜索.md": {
+      "content_hash": "sha256:bf4c05369c8ec3f22253230d9c04162d0e3ee2018a1903bf52cdf58f7a2916dc",
+      "keywords": [],
+      "local_path": "模型与协议/检索与内容处理/搜索与网页读取/DeepSeek 网页搜索.md",
+      "source_path": "/docs/protocol-deepseek-web-search.md",
+      "source_url": "https://tokendance.space/docs/protocol-deepseek-web-search.md",
+      "summary": "实时搜索网页，返回结构化结果与可选正文",
+      "title": "DeepSeek 网页搜索",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/检索与内容处理/搜索与网页读取/UniFuncs 实时搜索.md": {
+      "content_hash": "sha256:3bc33eec37133ede44e395ae09cf55e408347965ae57699a5cc1362c8a4a9d95",
+      "keywords": [],
+      "local_path": "模型与协议/检索与内容处理/搜索与网页读取/UniFuncs 实时搜索.md",
+      "source_path": "/docs/protocol-unifuncs-web-search.md",
+      "source_url": "https://tokendance.space/docs/protocol-unifuncs-web-search.md",
+      "summary": "执行实时联网搜索",
+      "title": "UniFuncs 实时搜索",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/检索与内容处理/搜索与网页读取/UniFuncs 网页阅读.md": {
+      "content_hash": "sha256:8fbf27ee4d1ad196c87fb74fa3b67fc24992db01e51e39bc2319bcd49bb544d6",
+      "keywords": [],
+      "local_path": "模型与协议/检索与内容处理/搜索与网页读取/UniFuncs 网页阅读.md",
+      "source_path": "/docs/protocol-unifuncs-web-reader.md",
+      "source_url": "https://tokendance.space/docs/protocol-unifuncs-web-reader.md",
+      "summary": "读取网页与文档正文",
+      "title": "UniFuncs 网页阅读",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/检索与内容处理/搜索与网页读取/博查联网搜索.md": {
+      "content_hash": "sha256:7485d1ca39ccffb53a8febb9d47096ce91ae76eb8b7f7beb66c58c103b2240e4",
+      "keywords": [],
+      "local_path": "模型与协议/检索与内容处理/搜索与网页读取/博查联网搜索.md",
+      "source_path": "/docs/protocol-bocha-web-search.md",
+      "source_url": "https://tokendance.space/docs/protocol-bocha-web-search.md",
+      "summary": "查询网页、图片和视频搜索结果",
+      "title": "博查联网搜索",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/检索与内容处理/文本重排/阿里云 Qwen 文本重排.md": {
+      "content_hash": "sha256:0a1dc99d62c1d67404322f27bf8a27fe365d8642e7d57b55192fc3823f895b50",
+      "keywords": [],
+      "local_path": "模型与协议/检索与内容处理/文本重排/阿里云 Qwen 文本重排.md",
+      "source_path": "/docs/protocol-qwen-text-rerank.md",
+      "source_url": "https://tokendance.space/docs/protocol-qwen-text-rerank.md",
+      "summary": "使用阿里云百炼原生协议重排候选文本",
+      "title": "阿里云 Qwen 文本重排",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/检索与内容处理/文档解析/智谱文档解析.md": {
+      "content_hash": "sha256:fc76e642dd89436837c8d9e6a3d73fcfe4fc6dfb517e3a7773fe97dc4a92e73d",
+      "keywords": [],
+      "local_path": "模型与协议/检索与内容处理/文档解析/智谱文档解析.md",
+      "source_path": "/docs/protocol-zai-layout-parsing.md",
+      "source_url": "https://tokendance.space/docs/protocol-zai-layout-parsing.md",
+      "summary": "将 PDF 或图片解析成结构化内容",
+      "title": "智谱文档解析",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/结构化评估/TypeSafe Jev 结构化评估.md": {
+      "content_hash": "sha256:3a0f087183cedd84dc2107264d5a59ccca4b4c83736dd541e1ef1c9ce10cc26c",
+      "keywords": [],
+      "local_path": "模型与协议/结构化评估/TypeSafe Jev 结构化评估.md",
+      "source_path": "/docs/protocol-typesafe-systemone.md",
+      "source_url": "https://tokendance.space/docs/protocol-typesafe-systemone.md",
+      "summary": "一次请求评估 Noul、Choice、Score 等结构化问题",
+      "title": "TypeSafe Jev 结构化评估",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/选择模型与协议/协议总览.md": {
+      "content_hash": "sha256:1f31e50b07cdd8d9f6b9280933a2e51f1d5de72b7831293062623e6777dae79b",
+      "keywords": [],
+      "local_path": "模型与协议/选择模型与协议/协议总览.md",
+      "source_path": "/docs/multi-protocol.md",
+      "source_url": "https://tokendance.space/docs/multi-protocol.md",
+      "summary": "选择协议并查看全部独立调用文档",
+      "title": "协议总览",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "模型与协议/选择模型与协议/模型与协议概览.md": {
+      "content_hash": "sha256:2225606b313c6c70f08c4bb914b4494169ee070d2dc4d460a8d3e28a47ac5807",
+      "keywords": [],
+      "local_path": "模型与协议/选择模型与协议/模型与协议概览.md",
+      "source_path": "/docs/models.md",
+      "source_url": "https://tokendance.space/docs/models.md",
+      "summary": "一个 API 访问所有主流大模型",
+      "title": "模型与协议概览",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "模型与协议/通用模型协议/Anthropic/Anthropic Messages.md": {
+      "content_hash": "sha256:89f9e8f2c0fcb0d822d13378078b2133fb48bee71968801692fc129d338147f4",
+      "keywords": [],
+      "local_path": "模型与协议/通用模型协议/Anthropic/Anthropic Messages.md",
+      "source_path": "/docs/protocol-anthropic-messages.md",
+      "source_url": "https://tokendance.space/docs/protocol-anthropic-messages.md",
+      "summary": "Claude 对话、视觉输入和工具调用",
+      "title": "Anthropic Messages",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/通用模型协议/Google/Google GenerateContent.md": {
+      "content_hash": "sha256:f4cd8558e2b1eb5a67b520454b06c3ed42906bd47b48d724b8c80fab8aaf2a31",
+      "keywords": [],
+      "local_path": "模型与协议/通用模型协议/Google/Google GenerateContent.md",
+      "source_path": "/docs/protocol-gemini-generate-content.md",
+      "source_url": "https://tokendance.space/docs/protocol-gemini-generate-content.md",
+      "summary": "Gemini 文本与多模态调用",
+      "title": "Google GenerateContent",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/通用模型协议/OpenAI/OpenAI Chat Completions.md": {
+      "content_hash": "sha256:a9e9fe2c7bf77dad7c9a89c1e7868157d90c45245c35b9bb04c7d3f6999825db",
+      "keywords": [],
+      "local_path": "模型与协议/通用模型协议/OpenAI/OpenAI Chat Completions.md",
+      "source_path": "/docs/protocol-openai-chat-completions.md",
+      "source_url": "https://tokendance.space/docs/protocol-openai-chat-completions.md",
+      "summary": "文本对话、流式输出和工具调用",
+      "title": "OpenAI Chat Completions",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/通用模型协议/OpenAI/OpenAI Embeddings.md": {
+      "content_hash": "sha256:0004f6f697b8e8ec37a6146f54cdb6d4c821798fd51d0730b1ad3c18eb5bdcea",
+      "keywords": [],
+      "local_path": "模型与协议/通用模型协议/OpenAI/OpenAI Embeddings.md",
+      "source_path": "/docs/protocol-openai-embeddings.md",
+      "source_url": "https://tokendance.space/docs/protocol-openai-embeddings.md",
+      "summary": "文本向量化与批量嵌入",
+      "title": "OpenAI Embeddings",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "模型与协议/通用模型协议/OpenAI/OpenAI Responses.md": {
+      "content_hash": "sha256:6aa596a5773f82f1b3037395b6deb07d06a2f34079a5619d36f72981f6ad8bbe",
+      "keywords": [],
+      "local_path": "模型与协议/通用模型协议/OpenAI/OpenAI Responses.md",
+      "source_path": "/docs/protocol-openai-responses.md",
+      "source_url": "https://tokendance.space/docs/protocol-openai-responses.md",
+      "summary": "Responses API 对话、推理和工具调用",
+      "title": "OpenAI Responses",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "集成指南/客户端与平台/Alice.md": {
+      "content_hash": "sha256:1298c1bb875323756b765c62400d7502942f80f37efa9a21b75fd0a061c17986",
+      "keywords": [],
+      "local_path": "集成指南/客户端与平台/Alice.md",
+      "source_path": "/docs/alice.md",
+      "source_url": "https://tokendance.space/docs/alice.md",
+      "summary": "在 Alice 中接入词元跳动",
+      "title": "Alice",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/客户端与平台/Cherry Studio.md": {
+      "content_hash": "sha256:383ee0899e3d5bf8e64422a14cff014e38d761500142daecfe280b4dd057d21c",
+      "keywords": [],
+      "local_path": "集成指南/客户端与平台/Cherry Studio.md",
+      "source_path": "/docs/cherry-studio.md",
+      "source_url": "https://tokendance.space/docs/cherry-studio.md",
+      "summary": "在 Cherry Studio 中接入词元跳动",
+      "title": "Cherry Studio",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/客户端与平台/Obsidian.md": {
+      "content_hash": "sha256:f18431f163e4c6df1cc0ae89ff059c2e0d7b5a8dd30ecbb10f899f2a5c0c079b",
+      "keywords": [],
+      "local_path": "集成指南/客户端与平台/Obsidian.md",
+      "source_path": "/docs/obsidian.md",
+      "source_url": "https://tokendance.space/docs/obsidian.md",
+      "summary": "在 Obsidian 中接入词元跳动",
+      "title": "Obsidian",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/客户端与平台/QClaw.md": {
+      "content_hash": "sha256:287d4703ca3ddb4688393c3b1db2984e4730f44ce5c4ffc4cc8d0cad873ea0f7",
+      "keywords": [],
+      "local_path": "集成指南/客户端与平台/QClaw.md",
+      "source_path": "/docs/qclaw.md",
+      "source_url": "https://tokendance.space/docs/qclaw.md",
+      "summary": "在 QClaw 中接入词元跳动",
+      "title": "QClaw",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/客户端与平台/RikkaHub.md": {
+      "content_hash": "sha256:34dc93ea4a93e5a48782455133ec0f0d842a8eda108709ac7ea2b9bbc2f227e4",
+      "keywords": [],
+      "local_path": "集成指南/客户端与平台/RikkaHub.md",
+      "source_path": "/docs/rikkahub.md",
+      "source_url": "https://tokendance.space/docs/rikkahub.md",
+      "summary": "在 RikkaHub 中接入词元跳动",
+      "title": "RikkaHub",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/客户端与平台/TRAE Work.md": {
+      "content_hash": "sha256:eaf8bf81c2f67beecf8a1448a0eb1a4de7f75b2eeac0a77ad8a7a08c18cc9b7d",
+      "keywords": [],
+      "local_path": "集成指南/客户端与平台/TRAE Work.md",
+      "source_path": "/docs/trae-work.md",
+      "source_url": "https://tokendance.space/docs/trae-work.md",
+      "summary": "在 TRAE Work 中接入词元跳动",
+      "title": "TRAE Work",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/客户端与平台/Workbuddy 系列.md": {
+      "content_hash": "sha256:fe82b2fc582834c5796e557cbe41261bc17ad98417b008a41c5196f173e66bf4",
+      "keywords": [],
+      "local_path": "集成指南/客户端与平台/Workbuddy 系列.md",
+      "source_path": "/docs/workbuddy.md",
+      "source_url": "https://tokendance.space/docs/workbuddy.md",
+      "summary": "在 Workbuddy 系列工具中接入词元跳动",
+      "title": "Workbuddy 系列",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/客户端与平台/ima.copilot.md": {
+      "content_hash": "sha256:8faf1fb6ab4e2e2137a4b23d3ba8425cef482e6660c494d11ac2ccdf029a817f",
+      "keywords": [],
+      "local_path": "集成指南/客户端与平台/ima.copilot.md",
+      "source_path": "/docs/ima.md",
+      "source_url": "https://tokendance.space/docs/ima.md",
+      "summary": "在 ima.copilot 中接入词元跳动",
+      "title": "ima.copilot",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/编程与 Agent 工具/CC-Switch.md": {
+      "content_hash": "sha256:315cd98145964199f45ab49a0de8613831654e555944da9b7458bf795d679f8f",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/CC-Switch.md",
+      "source_path": "/docs/cc-switch.md",
+      "source_url": "https://tokendance.space/docs/cc-switch.md",
+      "summary": "在 CC-Switch 中接入词元跳动",
+      "title": "CC-Switch",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "集成指南/编程与 Agent 工具/Claude Code.md": {
+      "content_hash": "sha256:c3ce1fc44198e92f13e8ea39bfb7c8b91accf6835b62422430feb9898ed46a52",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/Claude Code.md",
+      "source_path": "/docs/claude-code.md",
+      "source_url": "https://tokendance.space/docs/claude-code.md",
+      "summary": "在 Claude Code 中接入词元跳动",
+      "title": "Claude Code",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "集成指南/编程与 Agent 工具/Cline.md": {
+      "content_hash": "sha256:200af41e5fd75339284f08fe84efd49c58374d2dc182c6423e01ed4ad9fc93cd",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/Cline.md",
+      "source_path": "/docs/cline.md",
+      "source_url": "https://tokendance.space/docs/cline.md",
+      "summary": "在 Cline 中接入词元跳动",
+      "title": "Cline",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/编程与 Agent 工具/Codex.md": {
+      "content_hash": "sha256:1ab371df1f0084474ee769b304302e4c393a8047db990588a6d7e31266f9db8e",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/Codex.md",
+      "source_path": "/docs/codex.md",
+      "source_url": "https://tokendance.space/docs/codex.md",
+      "summary": "通过 Responses API 在 Codex 中接入词元跳动",
+      "title": "Codex",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/编程与 Agent 工具/DeepSeek Harness.md": {
+      "content_hash": "sha256:aba3712e82bb8632c9700840e07c31652cc9cce07a9b637890f7e08c5e24366e",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/DeepSeek Harness.md",
+      "source_path": "/docs/deepseek-harness.md",
+      "source_url": "https://tokendance.space/docs/deepseek-harness.md",
+      "summary": "在 DeepSeek Harness 中接入词元跳动",
+      "title": "DeepSeek Harness",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "集成指南/编程与 Agent 工具/GitHub Copilot.md": {
+      "content_hash": "sha256:8c573d12e81d56afc365debf4eaa152645757e493791596cc345abbd3766f3d4",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/GitHub Copilot.md",
+      "source_path": "/docs/github-copilot.md",
+      "source_url": "https://tokendance.space/docs/github-copilot.md",
+      "summary": "在 GitHub Copilot 中接入词元跳动",
+      "title": "GitHub Copilot",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/编程与 Agent 工具/Hermes Agent.md": {
+      "content_hash": "sha256:f62179011f46f327280b87a5a209582fd285081efa033ac707698e4f82dc99bd",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/Hermes Agent.md",
+      "source_path": "/docs/hermes-agent.md",
+      "source_url": "https://tokendance.space/docs/hermes-agent.md",
+      "summary": "在 Hermes Agent 中接入词元跳动",
+      "title": "Hermes Agent",
+      "updated_at": "2026-11-13T08:45:49Z"
+    },
+    "集成指南/编程与 Agent 工具/Neovate.md": {
+      "content_hash": "sha256:eaf3b739faa0d9ed8bcc2d9a8bb5a97254a5eb37df3e6a80b98bb0f00d3d7329",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/Neovate.md",
+      "source_path": "/docs/neovate.md",
+      "source_url": "https://tokendance.space/docs/neovate.md",
+      "summary": "在 Neovate 中接入词元跳动",
+      "title": "Neovate",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "集成指南/编程与 Agent 工具/OpenCode.md": {
+      "content_hash": "sha256:20671d79bd76f9e9861d486ba510b7901607d8abdf64357127d4587f3ae45479",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/OpenCode.md",
+      "source_path": "/docs/opencode.md",
+      "source_url": "https://tokendance.space/docs/opencode.md",
+      "summary": "在 OpenCode 中接入词元跳动",
+      "title": "OpenCode",
+      "updated_at": "2026-11-13T08:46:33Z"
+    },
+    "集成指南/编程与 Agent 工具/TRAE IDE.md": {
+      "content_hash": "sha256:95ba271326a5bbef8dd49ca3bc7a87eceeec5f9e40118985eb1342713e9a069d",
+      "keywords": [],
+      "local_path": "集成指南/编程与 Agent 工具/TRAE IDE.md",
+      "source_path": "/docs/trae-ide.md",
+      "source_url": "https://tokendance.space/docs/trae-ide.md",
+      "summary": "在 TRAE IDE 中接入词元跳动",
+      "title": "TRAE IDE",
+      "updated_at": "2026-11-13T08:45:49Z"
+    }
+  },
+  "last_sync_at": "2026-11-13T08:46:33Z",
+  "schema_version": 1,
+  "wiki": {
+    "language": "中文；官方当前公开文档，无固定版本号",
+    "license": "未发现明示的文档再分发许可证；原文与截图版权归 TokenDance 及各权利人所有，不将本仓库许可证视为上游授权。",
+    "scope": "公开导航全部四部分：开始使用、集成指南、模型与协议、更新与支持；91 篇，排除 2 篇官方隐藏草稿",
+    "skill_name": "tokendance-wiki",
+    "source_root": "https://tokendance.space/docs",
+    "title": "TokenDance 词元跳动"
+  }
+}

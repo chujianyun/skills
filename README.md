@@ -25,6 +25,7 @@ README 的能力地图按使用场景分组展示，分组只是阅读视角，�
 | [qianwenai-wiki](skills/qianwenai-wiki/SKILL.md) | Tool Wrapper | 检索千问AI平台官方文档，回答模型接入、OpenAI 兼容与 DashScope API、文本/多模态生成、Realtime、计费和排障问题 |
 | [qoder-wiki](skills/qoder-wiki/SKILL.md) | Tool Wrapper | 用户询问 Qoder 的安装、使用、功能、定价、MCP、快捷键、Quest Mode、Repo Wiki 等 |
 | [qwenwork-wiki](skills/qwenwork-wiki/SKILL.md) | Tool Wrapper | 查询千问办公网页端、桌面端、技能与连接器、定时任务、IM、企业管理与排障，按需定位官方 API 文档 |
+| [tokendance-wiki](skills/tokendance-wiki/SKILL.md) | Tool Wrapper | 检索 TokenDance（词元跳动）全部公开文档：开始使用、集成指南、模型与协议、更新与支持；保留截图、来源和增量同步能力 |
 | [typesafe-wiki](skills/typesafe-wiki/SKILL.md) | Tool Wrapper | 查询 TypeSafe AI 官方文档：Jev System One 模型、Choice/Score/Noul 原语、置信度、Patterns、Python/JavaScript SDK、HTTP API 与 Cookbooks |
 | [deepseek-harness-wiki](skills/deepseek-harness-wiki/SKILL.md) | Tool Wrapper | 检索 DeepSeek Harness 开发文档，回答插件、工具、配置、生命周期、服务、事件与 Cordis 教程问题 |
 | [deepagents-wiki](skills/deepagents-wiki/SKILL.md) | Tool Wrapper | 检索 Deep Agents Python SDK 官方文档，回答模型、后端、沙箱、Skills、Memory、子智能体、审批、前端与实战问题；支持全文检索和增量更新 |

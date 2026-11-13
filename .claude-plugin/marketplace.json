@@ -387,6 +387,15 @@
       "skills": [
         "./skills/workbuddy-wiki"
       ]
+    },
+    {
+      "name": "tokendance-wiki",
+      "description": "TokenDance（词元跳动）官方文档离线 Wiki，覆盖开始使用、集成指南、模型与协议、更新与支持，支持本地检索与增量同步",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/tokendance-wiki"
+      ]
     }
   ]
 }

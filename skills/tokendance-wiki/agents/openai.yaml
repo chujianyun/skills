@@ -1,0 +1,4 @@
+interface:
+  display_name: "TokenDance 词元跳动 Wiki"
+  short_description: "TokenDance 词元跳动 离线 Wiki 检索与有依据问答"
+  default_prompt: "Use $tokendance-wiki to answer my question with documentation-backed guidance."
