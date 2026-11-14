@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="diagram" style="color-scheme: light" width="1380" height="980" viewBox="215 90 1380 980" role="img" aria-labelledby="title desc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  <title id="title">SmithDB and LangSmith architecture</title>
+  <desc id="desc">LangSmith services and SmithDB services, the dependencies between them, and their storage.</desc>
+
+    <defs>
+      <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#006DDD" stroke-width="1.8"/></marker>
+    </defs>
+
+    <rect x="215" y="90" width="1380" height="980" rx="20" fill="#FFFFFF"/>
+
+    <!-- ============ LangSmith container ============ -->
+    <rect x="250" y="130" width="520" height="790" fill="none" stroke="#006DDD" stroke-width="2"/>
+    <line x1="250" y1="178" x2="770" y2="178" stroke="#006DDD" stroke-width="2"/>
+    <text x="510" y="160" text-anchor="middle" font-size="14" fill="#030710">LangSmith Services</text>
+
+    <!-- frontend -->
+    <rect x="290" y="200" width="270" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="290" y1="228" x2="560" y2="228" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="425" y="219" text-anchor="middle" font-size="14" fill="#030710">Frontend</text>
+    <text x="302" y="250" font-size="12.5" fill="#2F4B68">LangSmith UI</text>
+    <text x="302" y="272" font-size="11" fill="#5B7590">langsmith-frontend</text>
+
+    <!-- backend -->
+    <rect x="290" y="310" width="270" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="290" y1="338" x2="560" y2="338" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="425" y="329" text-anchor="middle" font-size="14" fill="#030710">Backend</text>
+    <text x="302" y="360" font-size="12.5" fill="#2F4B68">API (most routes)</text>
+    <text x="302" y="382" font-size="11" fill="#5B7590">langsmith-backend</text>
+
+    <!-- platform-backend -->
+    <rect x="290" y="420" width="270" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="290" y1="448" x2="560" y2="448" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="425" y="439" text-anchor="middle" font-size="14" fill="#030710">Platform Backend</text>
+    <text x="302" y="470" font-size="12.5" fill="#2F4B68">API (ingestion, trace reads)</text>
+    <text x="302" y="492" font-size="11" fill="#5B7590">langsmith-platform-backend</text>
+
+    <!-- Redis -->
+    <rect x="605" y="530" width="145" height="90" rx="10" fill="#F6FFDB" stroke="#6E8900" stroke-width="2"/>
+    <text x="677" y="561" text-anchor="middle" font-size="14" fill="#2E3900">Redis</text>
+    <text x="677" y="583" text-anchor="middle" font-size="12.5" fill="#2E3900">(task queues)</text>
+
+    <!-- queue -->
+    <rect x="290" y="640" width="270" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="290" y1="668" x2="560" y2="668" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="425" y="659" text-anchor="middle" font-size="14" fill="#030710">Queue</text>
+    <text x="302" y="690" font-size="12.5" fill="#2F4B68">workers (automation rules)</text>
+    <text x="302" y="712" font-size="11" fill="#5B7590">langsmith-queue</text>
+
+    <!-- ingest-queue -->
+    <rect x="290" y="760" width="270" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="290" y1="788" x2="560" y2="788" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="425" y="779" text-anchor="middle" font-size="14" fill="#030710">Ingest Queue</text>
+    <text x="302" y="810" font-size="12.5" fill="#2F4B68">workers (runs, feedback, deletes)</text>
+    <text x="302" y="832" font-size="11" fill="#5B7590">langsmith-ingest-queue</text>
+
+    <text x="290" y="885" font-size="11" fill="#5B7590">Also deployed: playground, ace-backend,</text>
+    <text x="290" y="900" font-size="11" fill="#5B7590">host-backend, … (not on the trace path)</text>
+
+    <!-- ============ Cluster manager ============ -->
+    <rect x="930" y="108" width="300" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="930" y1="136" x2="1230" y2="136" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="1080" y="127" text-anchor="middle" font-size="14" fill="#030710">SmithDB Cluster Manager</text>
+    <text x="942" y="158" font-size="12.5" fill="#2F4B68">routing (key slices to pods)</text>
+    <text x="942" y="180" font-size="11" fill="#5B7590">langsmith-smithdb-cluster-manager</text>
+
+    <!-- ============ SmithDB container ============ -->
+    <rect x="880" y="235" width="400" height="685" fill="none" stroke="#006DDD" stroke-width="2"/>
+    <line x1="880" y1="283" x2="1280" y2="283" stroke="#006DDD" stroke-width="2"/>
+    <text x="1080" y="265" text-anchor="middle" font-size="14" fill="#030710">SmithDB Services</text>
+
+    <!-- query group -->
+    <rect x="905" y="303" width="350" height="272" fill="none" stroke="#006DDD" stroke-width="2"/>
+    <line x1="905" y1="331" x2="1255" y2="331" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="1080" y="322" text-anchor="middle" font-size="14" fill="#030710">SmithDB Query</text>
+    <text x="917" y="564" font-size="12.5" fill="#2F4B68">disk cache (each pool)</text>
+    <rect x="917" y="341" width="326" height="46" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <text x="929" y="360" font-size="12.5" fill="#2F4B68"><tspan fill="#030710">query</tspan> (UI and API reads)</text>
+    <text x="929" y="378" font-size="11" fill="#5B7590">langsmith-smithdb-query</text>
+    <rect x="917" y="393" width="326" height="46" fill="#E5F4FF" stroke="#006DDD" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="929" y="412" font-size="12.5" fill="#2F4B68"><tspan fill="#030710">stats-query</tspan> (run statistics)</text>
+    <text x="1233" y="412" text-anchor="end" font-size="11" fill="#5B7590">optional</text>
+    <text x="929" y="430" font-size="11" fill="#5B7590">langsmith-smithdb-stats-query</text>
+    <rect x="917" y="445" width="326" height="46" fill="#E5F4FF" stroke="#006DDD" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="929" y="464" font-size="12.5" fill="#2F4B68"><tspan fill="#030710">run-rules</tspan> (automation rules)</text>
+    <text x="1233" y="464" text-anchor="end" font-size="11" fill="#5B7590">optional</text>
+    <text x="929" y="482" font-size="11" fill="#5B7590">langsmith-smithdb-run-rules</text>
+    <rect x="917" y="497" width="326" height="46" fill="#E5F4FF" stroke="#006DDD" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="929" y="516" font-size="12.5" fill="#2F4B68"><tspan fill="#030710">mutations</tspan> (feedback and deletes)</text>
+    <text x="1233" y="516" text-anchor="end" font-size="11" fill="#5B7590">optional</text>
+    <text x="929" y="534" font-size="11" fill="#5B7590">langsmith-smithdb-mutations</text>
+
+    <!-- ingestion -->
+    <rect x="905" y="591" width="350" height="96" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="905" y1="619" x2="1255" y2="619" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="1080" y="610" text-anchor="middle" font-size="14" fill="#030710">SmithDB Ingestion</text>
+    <text x="917" y="640" font-size="12.5" fill="#2F4B68">run writes (new segments)</text>
+    <text x="917" y="658" font-size="12.5" fill="#2F4B68">disk cache</text>
+    <text x="917" y="676" font-size="11" fill="#5B7590">langsmith-smithdb-ingestion</text>
+
+    <!-- compaction scheduler -->
+    <rect x="905" y="700" width="350" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="905" y1="728" x2="1255" y2="728" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="1080" y="719" text-anchor="middle" font-size="14" fill="#030710">SmithDB Compaction Scheduler</text>
+    <text x="917" y="750" font-size="12.5" fill="#2F4B68">scheduler (jobs, GC, retention)</text>
+    <text x="917" y="772" font-size="11" fill="#5B7590">langsmith-smithdb-compaction</text>
+
+    <!-- compaction worker -->
+    <rect x="905" y="812" width="350" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="905" y1="840" x2="1255" y2="840" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="1080" y="831" text-anchor="middle" font-size="14" fill="#030710">SmithDB Compaction Worker</text>
+    <text x="917" y="862" font-size="12.5" fill="#2F4B68">compaction jobs (segment rewrites)</text>
+    <text x="917" y="884" font-size="11" fill="#5B7590">langsmith-smithdb-compaction-worker</text>
+
+    <!-- ============ SmithDB storage ============ -->
+    <rect x="1365" y="420" width="200" height="96" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <text x="1465" y="455" text-anchor="middle" font-size="14" fill="#030710">SmithDB</text>
+    <text x="1465" y="475" text-anchor="middle" font-size="14" fill="#030710">Metastore</text>
+    <text x="1465" y="500" text-anchor="middle" font-size="11" fill="#5B7590">(segment metadata)</text>
+
+    <circle cx="1465" cy="720" r="95" fill="#F6FFDB" stroke="#6E8900" stroke-width="2"/>
+    <text x="1465" y="712" text-anchor="middle" font-size="14" fill="#2E3900">Object</text>
+    <text x="1465" y="732" text-anchor="middle" font-size="14" fill="#2E3900">Storage</text>
+    <text x="1465" y="756" text-anchor="middle" font-size="11" fill="#5B7590">(segments)</text>
+
+    <!-- ============ LangSmith dependencies ============ -->
+    <rect x="250" y="975" width="150" height="56" rx="10" fill="#F6FFDB" stroke="#6E8900" stroke-width="2"/>
+    <text x="325" y="1008" text-anchor="middle" font-size="12.5" fill="#2E3900">PostgreSQL</text>
+    <rect x="415" y="975" width="190" height="56" rx="10" fill="#F6FFDB" stroke="#6E8900" stroke-width="2"/>
+    <text x="510" y="999" text-anchor="middle" font-size="12.5" fill="#2E3900">ClickHouse</text>
+    <text x="510" y="1019" text-anchor="middle" font-size="11" fill="#5B7590">optional with SmithDB</text>
+    <rect x="620" y="975" width="150" height="56" rx="10" fill="#F6FFDB" stroke="#6E8900" stroke-width="2"/>
+    <text x="695" y="1008" text-anchor="middle" font-size="12.5" fill="#2E3900">Blob Storage</text>
+
+    <!-- ============ Dependencies (A → B: A depends on B) ============ -->
+    <!-- frontend → backend, platform-backend; backend → platform-backend -->
+    <path d="M425 284 V308" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="435" y="301" font-size="12" fill="#5B7590">API</text>
+    <path d="M290 268 H268 V462 H288" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="263" y="365" text-anchor="middle" transform="rotate(-90 263 365)" font-size="12" fill="#5B7590">ingestion, v2 API</text>
+    <path d="M425 394 V418" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="435" y="411" font-size="12" fill="#5B7590">trace reads</text>
+
+    <!-- platform-backend → query -->
+    <path d="M560 440 H830 V362 H903" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="700" y="430" text-anchor="middle" font-size="12" fill="#5B7590">query</text>
+
+    <!-- queue → query (rules, deletes) -->
+    <path d="M560 705 H810" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <circle cx="810" cy="705" r="3" fill="#006DDD"/>
+    <text x="675" y="725" text-anchor="middle" font-size="12" fill="#5B7590">automation rules</text>
+
+    <!-- platform-backend, queue, ingest-queue → Redis -->
+    <path d="M560 462 H677 V528" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="572" y="480" font-size="12" fill="#5B7590">enqueue</text>
+    <path d="M560 682 H640 V622" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="568" y="675" font-size="12" fill="#5B7590">consume</text>
+    <path d="M290 800 H258 V575 H603" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="430" y="568" text-anchor="middle" font-size="12" fill="#5B7590">consume</text>
+
+    <!-- ingest-queue → query (mutations) -->
+    <path d="M560 780 H810 V520 H903" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="655" y="773" text-anchor="middle" font-size="12" fill="#5B7590">feedback, deletes</text>
+
+    <!-- ingest-queue → ingestion -->
+    <path d="M560 822 H850 V639 H903" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="700" y="842" text-anchor="middle" font-size="12" fill="#5B7590">runs</text>
+
+    <!-- LangSmith, SmithDB → cluster manager -->
+    <path d="M770 150 H928" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <path d="M1080 235 V194" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="849" y="140" text-anchor="middle" font-size="12" fill="#5B7590">assignments</text>
+    <text x="1092" y="219" font-size="12" fill="#5B7590">assignments</text>
+
+    <!-- query → ingestion (fresh data) -->
+    <path d="M1255 372 H1269 V639 H1257" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+
+    <!-- compaction worker → scheduler -->
+    <path d="M1080 812 V786" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="1092" y="803" font-size="12" fill="#5B7590">jobs</text>
+
+    <!-- SmithDB → metastore, object storage -->
+    <path d="M1280 468 H1363" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="1322" y="458" text-anchor="middle" font-size="12" fill="#5B7590">metadata</text>
+    <path d="M1280 720 H1368" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="1324" y="710" text-anchor="middle" font-size="12" fill="#5B7590">segments</text>
+
+    <!-- LangSmith → its dependencies -->
+    <path d="M510 920 V972" marker-end="url(#a)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <text x="520" y="952" font-size="12" fill="#5B7590">storage</text>
+
+  
+</svg>

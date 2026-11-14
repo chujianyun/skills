@@ -396,6 +396,15 @@
       "skills": [
         "./skills/tokendance-wiki"
       ]
+    },
+    {
+      "name": "langsmith-wiki",
+      "description": "LangSmith 官方文档离线 Wiki。用于查询 LangSmith Evaluation、数据集与实验、评估器（测评器）、LLM-as-judge、在线与离线评估、标注队列、Playground、Studio、追踪与可观测性、Prompt、部署、自托管和 REST API；不用于替代 LangChain 或 LangGraph SDK 的独立文档。",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/langsmith-wiki"
+      ]
     }
   ]
 }

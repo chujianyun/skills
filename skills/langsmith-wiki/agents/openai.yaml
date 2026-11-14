@@ -1,0 +1,4 @@
+interface:
+  display_name: "LangSmith Wiki"
+  short_description: "LangSmith 离线文档检索：数据集、实验、评估器、追踪与部署"
+  default_prompt: "使用 $langsmith-wiki 查找 LangSmith 官方文档，并给出有来源依据的做法。"

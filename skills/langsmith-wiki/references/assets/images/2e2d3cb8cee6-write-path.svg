@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="diagram" style="color-scheme: light" width="1380" height="340" viewBox="0 0 1380 340" role="img" aria-labelledby="title desc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  <title id="title">SmithDB write path</title>
+  <desc id="desc">The platform backend adds a task to Redis. An ingest queue worker writes the runs to SmithDB ingestion, which writes segments to object storage and segment rows to the metastore, then acknowledges the write.</desc>
+
+    <defs>
+      <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#006DDD" stroke-width="1.8"/></marker>
+    </defs>
+    <rect x="0" y="0" width="1380" height="340" rx="16" fill="#FFFFFF"/>
+
+    <rect x="30" y="100" width="210" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="30" y1="128" x2="240" y2="128" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="135" y="119" text-anchor="middle" font-size="14" fill="#030710">Platform Backend</text>
+    <text x="42" y="150" font-size="12.5" fill="#2F4B68">API (run ingestion)</text>
+    <text x="42" y="172" font-size="11" fill="#5B7590">langsmith-platform-backend</text>
+
+    <rect x="300" y="100" width="170" height="84" rx="10" fill="#F6FFDB" stroke="#6E8900" stroke-width="2"/>
+    <text x="385" y="132" text-anchor="middle" font-size="14" fill="#2E3900">Redis</text>
+    <text x="385" y="154" text-anchor="middle" font-size="12.5" fill="#2E3900">(ingestion queue)</text>
+    <text x="385" y="215" text-anchor="middle" font-size="11" fill="#5B7590">task waits here</text>
+
+    <rect x="530" y="100" width="210" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="530" y1="128" x2="740" y2="128" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="635" y="119" text-anchor="middle" font-size="14" fill="#030710">Ingest Queue</text>
+    <text x="542" y="150" font-size="12.5" fill="#2F4B68">workers (runs)</text>
+    <text x="542" y="172" font-size="11" fill="#5B7590">langsmith-ingest-queue</text>
+
+    <rect x="800" y="100" width="250" height="84" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <line x1="800" y1="128" x2="1050" y2="128" stroke="#006DDD" stroke-width="1.5"/>
+    <text x="925" y="119" text-anchor="middle" font-size="14" fill="#030710">SmithDB Ingestion</text>
+    <text x="812" y="150" font-size="12.5" fill="#2F4B68">run writes (segments)</text>
+    <text x="812" y="172" font-size="11" fill="#5B7590">langsmith-smithdb-ingestion</text>
+    <text x="925" y="215" text-anchor="middle" font-size="11" fill="#5B7590">rows in memory</text>
+    <text x="925" y="231" text-anchor="middle" font-size="11" fill="#5B7590">segment copies on disk cache</text>
+
+    <circle cx="1270" cy="110" r="72" fill="#F6FFDB" stroke="#6E8900" stroke-width="2"/>
+    <text x="1270" y="104" text-anchor="middle" font-size="14" fill="#2E3900">Object</text>
+    <text x="1270" y="124" text-anchor="middle" font-size="14" fill="#2E3900">Storage</text>
+    <text x="1270" y="144" text-anchor="middle" font-size="11" fill="#5B7590">(segments)</text>
+
+    <rect x="1170" y="235" width="200" height="74" fill="#E5F4FF" stroke="#006DDD" stroke-width="2"/>
+    <text x="1270" y="266" text-anchor="middle" font-size="14" fill="#030710">SmithDB Metastore</text>
+    <text x="1270" y="288" text-anchor="middle" font-size="11" fill="#5B7590">(segment rows)</text>
+
+    <path d="M240 142 H298" marker-end="url(#f)" stroke="#006DDD" stroke-width="2" fill="none"/>
+    <circle cx="269" cy="122" r="11" fill="#FFFFFF" stroke="#006DDD" stroke-width="1.5"/><text x="269" y="126" text-anchor="middle" font-size="12" fill="#006DDD">1</text>
+    <path d="M470 142 H528" marker-end="url(#f)" stroke="#006DDD" stroke-width="2" fill="none"/>
+    <circle cx="499" cy="122" r="11" fill="#FFFFFF" stroke="#006DDD" stroke-width="1.5"/><text x="499" y="126" text-anchor="middle" font-size="12" fill="#006DDD">2</text>
+    <path d="M740 135 H798" marker-end="url(#f)" stroke="#006DDD" stroke-width="2" fill="none"/>
+    <circle cx="769" cy="115" r="11" fill="#FFFFFF" stroke="#006DDD" stroke-width="1.5"/><text x="769" y="119" text-anchor="middle" font-size="12" fill="#006DDD">3</text>
+    <path d="M1050 135 H1196" marker-end="url(#f)" stroke="#006DDD" stroke-width="2" fill="none"/>
+    <text x="1123" y="155" text-anchor="middle" font-size="12" fill="#5B7590">segment</text>
+    <circle cx="1123" cy="115" r="11" fill="#FFFFFF" stroke="#006DDD" stroke-width="1.5"/><text x="1123" y="119" text-anchor="middle" font-size="12" fill="#006DDD">4</text>
+    <path d="M1050 165 H1110 V272 H1168" marker-end="url(#f)" stroke="#006DDD" stroke-width="2" fill="none"/>
+    <text x="1139" y="264" text-anchor="middle" font-size="12" fill="#5B7590">row</text>
+    <circle cx="1110" cy="215" r="11" fill="#FFFFFF" stroke="#006DDD" stroke-width="1.5"/><text x="1110" y="219" text-anchor="middle" font-size="12" fill="#006DDD">5</text>
+    <path d="M800 170 H742" marker-end="url(#f)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
+    <circle cx="769" cy="192" r="11" fill="#FFFFFF" stroke="#006DDD" stroke-width="1.5"/><text x="769" y="196" text-anchor="middle" font-size="12" fill="#006DDD">6</text>
+    <text x="769" y="225" text-anchor="middle" font-size="12" fill="#5B7590">ack</text>
+  
+</svg>
