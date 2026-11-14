@@ -405,6 +405,15 @@
       "skills": [
         "./skills/langsmith-wiki"
       ]
+    },
+    {
+      "name": "langchain-wiki",
+      "description": "LangChain Python 官方文档离线 Wiki，覆盖 Agent、模型、工具、中间件、记忆、MCP、多智能体、RAG、测试部署与排障，支持全文检索和增量同步",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/langchain-wiki"
+      ]
     }
   ]
 }

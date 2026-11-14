@@ -1,0 +1,1040 @@
+{
+  "source_revision": "04d4d4a45cb57537c3d6e977f25333f2c5a4881b",
+  "source_file_count": 77,
+  "navigation_count": 70,
+  "sitemap_count": 68,
+  "python_index_count": 68,
+  "pages": [
+    {
+      "source_path": "/oss/python/deepagents/retrieval",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/retrieval",
+      "groups": [
+        "Advanced usage"
+      ],
+      "discovered_by": [
+        "navigation",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/agents",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/agents",
+      "groups": [
+        "Core components"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/component-architecture",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/component-architecture",
+      "groups": [
+        "Learn",
+        "Conceptual overviews"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/context-engineering",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/context-engineering",
+      "groups": [
+        "Advanced usage"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/deep-agent-from-scratch",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/deep-agent-from-scratch",
+      "groups": [
+        "Learn",
+        "Tutorials",
+        "LangChain"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/deploy",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/deploy",
+      "groups": [
+        "Production"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/errors/INVALID_PROMPT_INPUT",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT",
+      "groups": [
+        "Error reference"
+      ],
+      "discovered_by": [
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/errors/INVALID_TOOL_RESULTS",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/INVALID_TOOL_RESULTS",
+      "groups": [
+        "Error reference"
+      ],
+      "discovered_by": [
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/errors/MESSAGE_COERCION_FAILURE",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/MESSAGE_COERCION_FAILURE",
+      "groups": [
+        "Error reference"
+      ],
+      "discovered_by": [
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/errors/MODEL_AUTHENTICATION",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/MODEL_AUTHENTICATION",
+      "groups": [
+        "Error reference"
+      ],
+      "discovered_by": [
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/errors/MODEL_NOT_FOUND",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/MODEL_NOT_FOUND",
+      "groups": [
+        "Error reference"
+      ],
+      "discovered_by": [
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/errors/MODEL_RATE_LIMIT",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/MODEL_RATE_LIMIT",
+      "groups": [
+        "Error reference"
+      ],
+      "discovered_by": [
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE",
+      "groups": [
+        "Error reference"
+      ],
+      "discovered_by": [
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/event-streaming",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/event-streaming",
+      "groups": [
+        "Core components"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/branching-chat",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/branching-chat",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/controlled-generative-ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/controlled-generative-ui",
+      "groups": [
+        "Frontend",
+        "Patterns",
+        "Generative UI"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/declarative-generative-ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/declarative-generative-ui",
+      "groups": [
+        "Frontend",
+        "Patterns",
+        "Generative UI"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/generative-ui-overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/generative-ui-overview",
+      "groups": [
+        "Frontend",
+        "Patterns",
+        "Generative UI"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/headless-tools",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/headless-tools",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/human-in-the-loop",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/human-in-the-loop",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/integrations/ai-elements",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/ai-elements",
+      "groups": [
+        "Frontend",
+        "Integrations"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/integrations/assistant-ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/assistant-ui",
+      "groups": [
+        "Frontend",
+        "Integrations"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/integrations/copilotkit",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/copilotkit",
+      "groups": [
+        "Frontend",
+        "Integrations"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/integrations/openui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/openui",
+      "groups": [
+        "Frontend",
+        "Integrations"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/integrations/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/overview",
+      "groups": [
+        "Frontend",
+        "Integrations"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/join-rejoin",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/join-rejoin",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/markdown-messages",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/markdown-messages",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/message-queues",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/message-queues",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/open-ended-generative-ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/open-ended-generative-ui",
+      "groups": [
+        "Frontend",
+        "Patterns",
+        "Generative UI"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/overview",
+      "groups": [
+        "Frontend"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/reasoning-tokens",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/reasoning-tokens",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/structured-output",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/structured-output",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/time-travel",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/time-travel",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/frontend/tool-calling",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/tool-calling",
+      "groups": [
+        "Frontend",
+        "Patterns"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/get-help",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/get-help",
+      "groups": [
+        "Learn",
+        "Additional resources"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/guardrails",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/guardrails",
+      "groups": [
+        "Advanced usage"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/human-in-the-loop",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/human-in-the-loop",
+      "groups": [
+        "Advanced usage"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/install",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/install",
+      "groups": [
+        "Get started"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/knowledge-base",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/knowledge-base",
+      "groups": [
+        "Learn",
+        "Tutorials",
+        "LangChain"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/long-term-memory",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/long-term-memory",
+      "groups": [
+        "Advanced usage"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/mcp",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/mcp",
+      "groups": [
+        "Advanced usage",
+        "MCP"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/mcp/auth",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/mcp/auth",
+      "groups": [
+        "Advanced usage",
+        "MCP"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/mcp/connections",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/mcp/connections",
+      "groups": [
+        "Advanced usage",
+        "MCP"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/mcp/tools",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/mcp/tools",
+      "groups": [
+        "Advanced usage",
+        "MCP"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/messages",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/messages",
+      "groups": [
+        "Core components"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/middleware/built-in",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "groups": [
+        "Middleware"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/middleware/custom",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/middleware/custom",
+      "groups": [
+        "Middleware"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/middleware/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/middleware/overview",
+      "groups": [
+        "Middleware"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/models",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/models",
+      "groups": [
+        "Core components"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent",
+      "groups": [
+        "Advanced usage",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent/custom-workflow",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/custom-workflow",
+      "groups": [
+        "Advanced usage",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent/handoffs",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs",
+      "groups": [
+        "Advanced usage",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent/handoffs-customer-support",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs-customer-support",
+      "groups": [
+        "Learn",
+        "Tutorials",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent/router",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/router",
+      "groups": [
+        "Advanced usage",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent/router-knowledge-base",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/router-knowledge-base",
+      "groups": [
+        "Learn",
+        "Tutorials",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent/skills",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/skills",
+      "groups": [
+        "Advanced usage",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent/skills-sql-assistant",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/skills-sql-assistant",
+      "groups": [
+        "Learn",
+        "Tutorials",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent/subagents",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents",
+      "groups": [
+        "Advanced usage",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/multi-agent/subagents-personal-assistant",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents-personal-assistant",
+      "groups": [
+        "Learn",
+        "Tutorials",
+        "Multi-agent"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/observability",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/observability",
+      "groups": [
+        "Production"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/overview",
+      "groups": [
+        "Overview"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/philosophy",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/philosophy",
+      "groups": [
+        "Get started"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/quickstart",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/quickstart",
+      "groups": [
+        "Get started"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/runtime",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/runtime",
+      "groups": [
+        "Advanced usage"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/short-term-memory",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/short-term-memory",
+      "groups": [
+        "Core components"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/sql-agent",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/sql-agent",
+      "groups": [
+        "Learn",
+        "Tutorials",
+        "LangChain"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/streaming",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/streaming",
+      "groups": [
+        "Core components"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/structured-output",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/structured-output",
+      "groups": [
+        "Core components"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/studio",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/studio",
+      "groups": [
+        "Agent development"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/test",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/test",
+      "groups": [
+        "Agent development",
+        "Test"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/test/evals",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/test/evals",
+      "groups": [
+        "Agent development",
+        "Test"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/test/integration-testing",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/test/integration-testing",
+      "groups": [
+        "Agent development",
+        "Test"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/test/unit-testing",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/test/unit-testing",
+      "groups": [
+        "Agent development",
+        "Test"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/tools",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/tools",
+      "groups": [
+        "Core components"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/ui",
+      "groups": [
+        "Agent development"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/langchain/voice-agent",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/voice-agent",
+      "groups": [
+        "Learn",
+        "Tutorials",
+        "LangChain"
+      ],
+      "discovered_by": [
+        "navigation",
+        "sitemap",
+        "python-index",
+        "official-source"
+      ]
+    },
+    {
+      "source_path": "/oss/python/releases/changelog",
+      "source_url": "https://docs.langchain.com/oss/python/releases/changelog",
+      "groups": [
+        "Get started"
+      ],
+      "discovered_by": [
+        "navigation",
+        "official-source"
+      ]
+    }
+  ]
+}

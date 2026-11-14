@@ -1,0 +1,40 @@
+<svg width="1060" height="760" viewBox="0 0 1060 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#62B7FF" />
+    </marker>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1060" height="760" fill="#000914" />
+  <g transform="translate(40 0)">
+
+  <rect x="420" y="70" width="220" height="72" rx="36" stroke="#9B7BDB" stroke-width="4" fill="#1A1334" filter="url(#glow)" />
+  <text x="530" y="116" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="40">request</text>
+
+  <rect x="395" y="250" width="270" height="110" rx="16" stroke="#9B7BDB" stroke-width="4" fill="#201940" filter="url(#glow)" />
+  <text x="530" y="318" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="48">model</text>
+
+  <rect x="90" y="560" width="300" height="116" rx="16" stroke="#9B7BDB" stroke-width="4" fill="#201940" filter="url(#glow)" />
+  <text x="240" y="632" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="48">tools</text>
+
+  <rect x="670" y="580" width="300" height="82" rx="40" stroke="#9B7BDB" stroke-width="4" fill="#1A1334" filter="url(#glow)" />
+  <text x="820" y="631" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="45">result</text>
+
+  <line x1="530" y1="142" x2="530" y2="245" stroke="#62B7FF" stroke-width="3" marker-end="url(#arrow)" />
+
+  <path d="M460 336 H220 C175 336, 150 360, 150 405 V548" stroke="#62B7FF" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" fill="none" marker-end="url(#arrow)" />
+  <text x="-6" y="430" fill="#D7C9FF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="40">action</text>
+
+  <path d="M240 560 V500 C240 455, 300 442, 355 442 H530 V360" stroke="#62B7FF" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+  <text x="318" y="492" fill="#D7C9FF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="40">observation</text>
+
+  <path d="M600 336 H850 C895 336, 920 360, 920 405 V576" stroke="#62B7FF" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" fill="none" marker-end="url(#arrow)" />
+  </g>
+</svg>

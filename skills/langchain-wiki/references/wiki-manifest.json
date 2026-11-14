@@ -1,0 +1,1290 @@
+{
+  "assets": {
+    "agent_harness_capabilities-f6bb1766f758.svg": {
+      "content_hash": "sha256:6f1d5887d13f41064f98f2229a8ea184b03352bdc72a38bce69b8a361aab9ec3",
+      "local_path": "agent_harness_capabilities-f6bb1766f758.svg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/agent_harness_capabilities.svg",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "agent_model_harness-165dcc69f041.svg": {
+      "content_hash": "sha256:a8285bf89f9426251815bee5870b20f56a749bd624cd58bd007fdc5628b48093",
+      "local_path": "agent_model_harness-165dcc69f041.svg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/agent_model_harness.svg",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "core_agent_loop-0b1a4c984988.svg": {
+      "content_hash": "sha256:c6faeeee74636071213471fb68ba5fcbad11d92f8320ffff981cda9c121460f6",
+      "local_path": "core_agent_loop-0b1a4c984988.svg",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/core_agent_loop.svg",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "core_agent_loop-966e52cb0411.png": {
+      "content_hash": "sha256:bc9a6da6d79b858ffe86bc0190710a5539022b6b7dd5ded4e4983f91638fb59c",
+      "local_path": "core_agent_loop-966e52cb0411.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/core_agent_loop.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "middleware_final-45795fcb3d12.png": {
+      "content_hash": "sha256:a739d45d22d67f2e87a114fd26908b044aa124b8b0ceb0b625df2a7875d29e1f",
+      "local_path": "middleware_final-45795fcb3d12.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/middleware_final.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "multidomain-handoffs-02676c9f383b.png": {
+      "content_hash": "sha256:8ed497cb35a9f31c1abde9d63ee0de2614c95256e60156ef4c07edd401a95276",
+      "local_path": "multidomain-handoffs-02676c9f383b.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/multidomain-handoffs.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "multidomain-router-ce6e0067384f.png": {
+      "content_hash": "sha256:c0a615bfd7e6e570d9336999e6d3597a58d08289f4f92b9361c1734f22874455",
+      "local_path": "multidomain-router-ce6e0067384f.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/multidomain-router.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "multidomain-skills-4b04e47fee41.png": {
+      "content_hash": "sha256:fccc45c9ef393eaf7a4ad4cb9faad88c58ca72789468e24f777a9ece860df73f",
+      "local_path": "multidomain-skills-4b04e47fee41.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/multidomain-skills.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "multidomain-subagents-d64bf2ea4b18.png": {
+      "content_hash": "sha256:d9376092dc504fd1090f89d5af3bcc539f635f63ac905ddfcfb589c957bca8dc",
+      "local_path": "multidomain-subagents-d64bf2ea4b18.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/multidomain-subagents.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "oneshot-handoffs-2581e29e2883.png": {
+      "content_hash": "sha256:474952e3901b84bbeb2cc7aa35180809df1113334f174821fcff212154514704",
+      "local_path": "oneshot-handoffs-2581e29e2883.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/oneshot-handoffs.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "oneshot-router-615e2bf7435e.png": {
+      "content_hash": "sha256:665e00400e534a29a7a67eeb5ce7d0b90977cc854338ed9cf261869c3e12ef6c",
+      "local_path": "oneshot-router-615e2bf7435e.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/oneshot-router.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "oneshot-skills-51a3b1492034.png": {
+      "content_hash": "sha256:0a434552f30245b4fe4adee7dfe620c09d9a57cea2e853b8352a2d76aa89a53f",
+      "local_path": "oneshot-skills-51a3b1492034.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/oneshot-skills.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "oneshot-subagents-c6ec4ce537ef.png": {
+      "content_hash": "sha256:64d04b6ac6ede6e345b62c3fdf1c3b5975fa129224a11c632103fa9d58f2ea2f",
+      "local_path": "oneshot-subagents-c6ec4ce537ef.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/oneshot-subagents.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "pattern-handoffs-221a4b9ea3bc.png": {
+      "content_hash": "sha256:827899650aecf11e7972f36b160193282db93cfccd3f8d560c24cbba29bbf6f8",
+      "local_path": "pattern-handoffs-221a4b9ea3bc.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/pattern-handoffs.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "pattern-router-e75d275fdd4c.png": {
+      "content_hash": "sha256:9606a98b2fed5e00f91c784ae474cdb93a4c03c5fdec3befe0b9992ce868c025",
+      "local_path": "pattern-router-e75d275fdd4c.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/pattern-router.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "pattern-skills-d0adc379d258.png": {
+      "content_hash": "sha256:132197380eb41a59061ac7f60a0de1dec603777659df0359195728c4d363b476",
+      "local_path": "pattern-skills-d0adc379d258.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/pattern-skills.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "pattern-subagents-2adcd61ea2c7.png": {
+      "content_hash": "sha256:8660259ec66f5cfc9d12fd78da0eee4df272c46897aa69503ef84f1c7db96228",
+      "local_path": "pattern-subagents-2adcd61ea2c7.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/langchain/multi-agent/images/pattern-subagents.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "studio_create-agent-0a5ab79ddb15.png": {
+      "content_hash": "sha256:50e912e04a192c7088d0b106347eda25c44b496ac4e8fb3a49dabc21ea1b0074",
+      "local_path": "studio_create-agent-0a5ab79ddb15.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/studio_create-agent.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "summary-143d8528526a.png": {
+      "content_hash": "sha256:010ca6cdd95a24c16a98121a8fa256113ca4f54df5060d67559ad231dba40c72",
+      "local_path": "summary-143d8528526a.png",
+      "source_url": "https://raw.githubusercontent.com/langchain-ai/docs/main/src/oss/images/summary.png",
+      "updated_at": "2026-11-14T06:34:48Z"
+    }
+  },
+  "coverage": {
+    "captured": 77,
+    "complete": true,
+    "discovered": 77,
+    "excluded": [
+      {
+        "reason": "Different language / SDK",
+        "url": "https://docs.langchain.com/oss/javascript"
+      },
+      {
+        "reason": "External course catalog (academy.langchain.com), not a documentation page",
+        "url": "https://docs.langchain.com/oss/python/langchain/academy"
+      },
+      {
+        "reason": "Separate Deep Agents documentation, except the Retrieval page shared in LangChain navigation",
+        "url": "https://docs.langchain.com/oss/python/deepagents"
+      },
+      {
+        "reason": "Separate LangGraph documentation",
+        "url": "https://docs.langchain.com/oss/python/langgraph"
+      },
+      {
+        "reason": "Separate LangSmith product documentation",
+        "url": "https://docs.langchain.com/langsmith"
+      },
+      {
+        "reason": "Separate generated API reference",
+        "url": "https://reference.langchain.com/python/"
+      },
+      {
+        "reason": "Separate provider integration catalog outside the LangChain subtree",
+        "url": "https://docs.langchain.com/oss/python/integrations"
+      }
+    ],
+    "failed": []
+  },
+  "created_at": "2026-11-14T06:34:48Z",
+  "documents": {
+    "Advanced usage/Context engineering in agents.md": {
+      "content_hash": "sha256:069c7f5e01217c61ffe61162c0ee1dfd360f05c62afa8f19ce7265e287f888a5",
+      "keywords": [
+        "Advanced usage",
+        "Context engineering in agents",
+        "context-engineering"
+      ],
+      "local_path": "Advanced usage/Context engineering in agents.md",
+      "source_path": "/oss/python/langchain/context-engineering",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/context-engineering",
+      "summary": "[!TIP]",
+      "title": "Context engineering in agents",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Guardrails.md": {
+      "content_hash": "sha256:70fe161f7055f6442cadc42357697a1194a5222c9ef09660c55c7017bf6d4353",
+      "keywords": [
+        "Advanced usage",
+        "Guardrails",
+        "guardrails"
+      ],
+      "local_path": "Advanced usage/Guardrails.md",
+      "source_path": "/oss/python/langchain/guardrails",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/guardrails",
+      "summary": "Implement safety checks and content filtering for your agents",
+      "title": "Guardrails",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Human-in-the-loop.md": {
+      "content_hash": "sha256:3c0eff5a5de9476c8e16fb6bc46460ba0d67a4fb4fce41fd12a6d32ceb4db9bd",
+      "keywords": [
+        "Advanced usage",
+        "Human-in-the-loop",
+        "human-in-the-loop"
+      ],
+      "local_path": "Advanced usage/Human-in-the-loop.md",
+      "source_path": "/oss/python/langchain/human-in-the-loop",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/human-in-the-loop",
+      "summary": "[!TIP]",
+      "title": "Human-in-the-loop",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Long-term memory.md": {
+      "content_hash": "sha256:c5c0be25485dc2da1eb5de02fd634aef68406edfeef5f70563575ef3bd8ab794",
+      "keywords": [
+        "Advanced usage",
+        "Long-term memory",
+        "long-term-memory"
+      ],
+      "local_path": "Advanced usage/Long-term memory.md",
+      "source_path": "/oss/python/langchain/long-term-memory",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/long-term-memory",
+      "summary": "Add long-term memory to LangChain agents to store and recall data across conversations and sessions",
+      "title": "Long-term memory",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/MCP/Authentication.md": {
+      "content_hash": "sha256:b49f454ea8330b9ac3e5f2bd2f37ab5dfb0911bfef689b3fc30d657c38c11394",
+      "keywords": [
+        "Advanced usage",
+        "Authentication",
+        "MCP",
+        "auth"
+      ],
+      "local_path": "Advanced usage/MCP/Authentication.md",
+      "source_path": "/oss/python/langchain/mcp/auth",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/mcp/auth",
+      "summary": "Authenticate MCP connections with bearer tokens, OAuth 2.1, or per-user credentials in LangChain.",
+      "title": "Authentication",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/MCP/Connections.md": {
+      "content_hash": "sha256:04773c52e0e4a58460a508b50ff6856e1c560e9c5c13fe683af7770545e8dfcf",
+      "keywords": [
+        "Advanced usage",
+        "Connections",
+        "MCP",
+        "connections"
+      ],
+      "local_path": "Advanced usage/MCP/Connections.md",
+      "source_path": "/oss/python/langchain/mcp/connections",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/mcp/connections",
+      "summary": "Connection lifecycle, multiple servers, deployment scaling, protocol eras, and caching for MCP in LangChain.",
+      "title": "Connections",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/MCP/Model Context Protocol (MCP).md": {
+      "content_hash": "sha256:f08fe3e9a58761e34bc0bbc9bd8d5b58ff46caa52e79014e3cda16c901f4c46a",
+      "keywords": [
+        "Advanced usage",
+        "MCP",
+        "Model Context Protocol (MCP)",
+        "mcp"
+      ],
+      "local_path": "Advanced usage/MCP/Model Context Protocol (MCP).md",
+      "source_path": "/oss/python/langchain/mcp",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/mcp",
+      "summary": "Connect LangChain agents to MCP servers with MCPAdapter.",
+      "title": "Model Context Protocol (MCP)",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/MCP/Tools.md": {
+      "content_hash": "sha256:969e3ab1e86c9c3628760e395537569855cfe9e8c829f6573c7dd2a6ab5023ee",
+      "keywords": [
+        "Advanced usage",
+        "MCP",
+        "Tools",
+        "tools"
+      ],
+      "local_path": "Advanced usage/MCP/Tools.md",
+      "source_path": "/oss/python/langchain/mcp/tools",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/mcp/tools",
+      "summary": "Load MCP tools into LangChain agents, control their execution, and handle server results and requests.",
+      "title": "Tools",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Multi-agent/Custom workflow.md": {
+      "content_hash": "sha256:b6eeb0a74b4aa89220c6db462833951bfe15d9bd056bbd1e2bc31f4d1f255e7e",
+      "keywords": [
+        "Advanced usage",
+        "Custom workflow",
+        "Multi-agent",
+        "custom-workflow"
+      ],
+      "local_path": "Advanced usage/Multi-agent/Custom workflow.md",
+      "source_path": "/oss/python/langchain/multi-agent/custom-workflow",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/custom-workflow",
+      "summary": "[card] [Tutorial: Build a multi-source knowledge base with routing](https://docs.langchain.com/oss/python/langchain/multi-agent/router-knowledge-base.md)",
+      "title": "Custom workflow",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Multi-agent/Handoffs.md": {
+      "content_hash": "sha256:63ea988b1b1391113c232166d015ffe7b51b5445cdd6c19d31b8d920583f584d",
+      "keywords": [
+        "Advanced usage",
+        "Handoffs",
+        "Multi-agent",
+        "handoffs"
+      ],
+      "local_path": "Advanced usage/Multi-agent/Handoffs.md",
+      "source_path": "/oss/python/langchain/multi-agent/handoffs",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs",
+      "summary": "[!TIP]",
+      "title": "Handoffs",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Multi-agent/Multi-agent.md": {
+      "content_hash": "sha256:38c142823ec8800cb6082d43207f6e3ca20051414b6b272ec5db583b274c43ea",
+      "keywords": [
+        "Advanced usage",
+        "Multi-agent",
+        "multi-agent"
+      ],
+      "local_path": "Advanced usage/Multi-agent/Multi-agent.md",
+      "source_path": "/oss/python/langchain/multi-agent",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent",
+      "summary": "[!TIP]",
+      "title": "Multi-agent",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Multi-agent/Router.md": {
+      "content_hash": "sha256:1d7a1d5f26ccf9135a5a630dd7d5cd2299dbe19daeae1308204704357d135474",
+      "keywords": [
+        "Advanced usage",
+        "Multi-agent",
+        "Router",
+        "router"
+      ],
+      "local_path": "Advanced usage/Multi-agent/Router.md",
+      "source_path": "/oss/python/langchain/multi-agent/router",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/router",
+      "summary": "[tab] Single agent",
+      "title": "Router",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Multi-agent/Skills.md": {
+      "content_hash": "sha256:c247853f702863e10481c8ece652cb1d7f709d244742ef29dc774bb3d902f1f6",
+      "keywords": [
+        "Advanced usage",
+        "Multi-agent",
+        "Skills",
+        "skills"
+      ],
+      "local_path": "Advanced usage/Multi-agent/Skills.md",
+      "source_path": "/oss/python/langchain/multi-agent/skills",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/skills",
+      "summary": "[!TIP]",
+      "title": "Skills",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Multi-agent/Subagents.md": {
+      "content_hash": "sha256:5739007e923322654488b298efd9d23df6e7c0c685d799cff732826d00018663",
+      "keywords": [
+        "Advanced usage",
+        "Multi-agent",
+        "Subagents",
+        "subagents"
+      ],
+      "local_path": "Advanced usage/Multi-agent/Subagents.md",
+      "source_path": "/oss/python/langchain/multi-agent/subagents",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents",
+      "summary": "[!NOTE]",
+      "title": "Subagents",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Retrieval.md": {
+      "content_hash": "sha256:c74097eae70116385e912fa0dc76de0754375c929f6306ec9e6ff1b734e32183",
+      "keywords": [
+        "Advanced usage",
+        "Retrieval",
+        "retrieval"
+      ],
+      "local_path": "Advanced usage/Retrieval.md",
+      "source_path": "/oss/python/deepagents/retrieval",
+      "source_url": "https://docs.langchain.com/oss/python/deepagents/retrieval",
+      "summary": "[!NOTE]",
+      "title": "Retrieval",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Advanced usage/Runtime.md": {
+      "content_hash": "sha256:948e2addcec72942f9d4910555516e73344d8c587b4255f9f503739aadc88576",
+      "keywords": [
+        "Advanced usage",
+        "Runtime",
+        "runtime"
+      ],
+      "local_path": "Advanced usage/Runtime.md",
+      "source_path": "/oss/python/langchain/runtime",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/runtime",
+      "summary": "[!TIP]",
+      "title": "Runtime",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Agent development/Agent Chat UI.md": {
+      "content_hash": "sha256:4c3e75be2d3dd209c2232050c6b5bda7c4ba3162036bd959f9b25ef8f99f1c35",
+      "keywords": [
+        "Agent Chat UI",
+        "Agent development",
+        "ui"
+      ],
+      "local_path": "Agent development/Agent Chat UI.md",
+      "source_path": "/oss/python/langchain/ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/ui",
+      "summary": "[!TIP]",
+      "title": "Agent Chat UI",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Agent development/LangSmith Studio.md": {
+      "content_hash": "sha256:173683ca146809db55ee2379c90649f8763b117d1c4f6f9d1eaddb9d82bc6a58",
+      "keywords": [
+        "Agent development",
+        "LangSmith Studio",
+        "studio"
+      ],
+      "local_path": "Agent development/LangSmith Studio.md",
+      "source_path": "/oss/python/langchain/studio",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/studio",
+      "summary": "[!NOTE]",
+      "title": "LangSmith Studio",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Agent development/Test/Agent Evals.md": {
+      "content_hash": "sha256:e4f763ac770cadb5a5d0895445608a80618a8240081dc5b6eca7fe3b32994d2f",
+      "keywords": [
+        "Agent Evals",
+        "Agent development",
+        "Test",
+        "evals"
+      ],
+      "local_path": "Agent development/Test/Agent Evals.md",
+      "source_path": "/oss/python/langchain/test/evals",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/test/evals",
+      "summary": "Evaluate agent trajectories using deterministic matching or LLM-as-judge evaluators with AgentEvals and LangSmith.",
+      "title": "Agent Evals",
+      "updated_at": "2026-11-14T06:35:43Z"
+    },
+    "Agent development/Test/Integration testing.md": {
+      "content_hash": "sha256:963713d011a61bf66f8d03a8b64fad7100ab0b4315981f648e52bde1065247d6",
+      "keywords": [
+        "Agent development",
+        "Integration testing",
+        "Test",
+        "integration-testing"
+      ],
+      "local_path": "Agent development/Test/Integration testing.md",
+      "source_path": "/oss/python/langchain/test/integration-testing",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/test/integration-testing",
+      "summary": "Test agents with real LLM APIs by organizing tests, managing keys, handling flakiness, and controlling costs.",
+      "title": "Integration testing",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Agent development/Test/Test.md": {
+      "content_hash": "sha256:129be0deb602580279107534697ca4dcca9edced9bbac7632696edff39b83299",
+      "keywords": [
+        "Agent development",
+        "Test",
+        "test"
+      ],
+      "local_path": "Agent development/Test/Test.md",
+      "source_path": "/oss/python/langchain/test",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/test",
+      "summary": "Strategies for testing LangChain agents, including unit tests, integration tests, and trajectory evaluations.",
+      "title": "Test",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Agent development/Test/Unit testing.md": {
+      "content_hash": "sha256:5a6eef511ee4fe9bf8c33d9f6fc9dfe69fffcaa55caa4f0021faec27405389fa",
+      "keywords": [
+        "Agent development",
+        "Test",
+        "Unit testing",
+        "unit-testing"
+      ],
+      "local_path": "Agent development/Test/Unit testing.md",
+      "source_path": "/oss/python/langchain/test/unit-testing",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/test/unit-testing",
+      "summary": "Test agent logic without API calls using fake chat models and in-memory persistence.",
+      "title": "Unit testing",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Core components/Agents.md": {
+      "content_hash": "sha256:95d66b7b34ad63759ad6b2cce002c541ffc2bd476cf18287392efbd09a2dc657",
+      "keywords": [
+        "Agents",
+        "Core components",
+        "agents"
+      ],
+      "local_path": "Core components/Agents.md",
+      "source_path": "/oss/python/langchain/agents",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/agents",
+      "summary": "Build a LangChain agent: a model calling tools in a loop until a task is complete, shaped by a harness of prompt, tools, and middleware.",
+      "title": "Agents",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Core components/Event streaming.md": {
+      "content_hash": "sha256:75030dc4a25a1c411afdf4e2880d2e7eb1f7513911f4b9799c407aa93be84a5d",
+      "keywords": [
+        "Core components",
+        "Event streaming",
+        "event-streaming"
+      ],
+      "local_path": "Core components/Event streaming.md",
+      "source_path": "/oss/python/langchain/event-streaming",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/event-streaming",
+      "summary": "Stream real-time updates from LangChain agent runs",
+      "title": "Event streaming",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Core components/Messages.md": {
+      "content_hash": "sha256:1f80b46a6041fb2a5cc9bbf7ae6c59dd14c328a76782e6e8ab63999323e3ddb4",
+      "keywords": [
+        "Core components",
+        "Messages",
+        "messages"
+      ],
+      "local_path": "Core components/Messages.md",
+      "source_path": "/oss/python/langchain/messages",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/messages",
+      "summary": "[!TIP]",
+      "title": "Messages",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Core components/Models.md": {
+      "content_hash": "sha256:f051cdca68a7fa6b265c8cf0fd0dfff0dba73a04d4ae464ad702cbb88fac8dd2",
+      "keywords": [
+        "Core components",
+        "Models",
+        "models"
+      ],
+      "local_path": "Core components/Models.md",
+      "source_path": "/oss/python/langchain/models",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/models",
+      "summary": "Initialize and configure chat models, the reasoning engine of LangChain agents, with support for tool calling, structured output, and multimodal inputs.",
+      "title": "Models",
+      "updated_at": "2026-11-14T06:35:43Z"
+    },
+    "Core components/Short-term memory.md": {
+      "content_hash": "sha256:597cd7d198e8fa98ce1b1c5fcb5fd7665d8cb8ba33e9e6cdd8c3f7fb81572c5f",
+      "keywords": [
+        "Core components",
+        "Short-term memory",
+        "short-term-memory"
+      ],
+      "local_path": "Core components/Short-term memory.md",
+      "source_path": "/oss/python/langchain/short-term-memory",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/short-term-memory",
+      "summary": "[!NOTE]",
+      "title": "Short-term memory",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Core components/Streaming.md": {
+      "content_hash": "sha256:4831dd91eeaa28e677378d8a12795148771680ccc5c95fc5120295b80917d4da",
+      "keywords": [
+        "Core components",
+        "Streaming",
+        "streaming"
+      ],
+      "local_path": "Core components/Streaming.md",
+      "source_path": "/oss/python/langchain/streaming",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/streaming",
+      "summary": "Stream real-time updates from agent runs",
+      "title": "Streaming",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Core components/Structured output.md": {
+      "content_hash": "sha256:d6047c18d1e12b8beff84947a2afccceefff69a236eec871d5983acce7c46b0a",
+      "keywords": [
+        "Core components",
+        "Structured output",
+        "structured-output"
+      ],
+      "local_path": "Core components/Structured output.md",
+      "source_path": "/oss/python/langchain/structured-output",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/structured-output",
+      "summary": "[!TIP]",
+      "title": "Structured output",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Core components/Tools.md": {
+      "content_hash": "sha256:8b23d269d384e7cd877c1ba54fc5e0fa302c1893564771aa1e4717027074ee58",
+      "keywords": [
+        "Core components",
+        "Tools",
+        "tools"
+      ],
+      "local_path": "Core components/Tools.md",
+      "source_path": "/oss/python/langchain/tools",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/tools",
+      "summary": "Define tools that let LangChain agents fetch real-time data, execute code, query external databases, and take actions.",
+      "title": "Tools",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Error reference/INVALID_PROMPT_INPUT.md": {
+      "content_hash": "sha256:bab31e68e2916da4fb03cdea9a327ca08eec5c74f9d56e22e3652de9bee4203f",
+      "keywords": [
+        "Error reference",
+        "INVALID_PROMPT_INPUT"
+      ],
+      "local_path": "Error reference/INVALID_PROMPT_INPUT.md",
+      "source_path": "/oss/python/langchain/errors/INVALID_PROMPT_INPUT",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT",
+      "summary": "INVALID_PROMPT_INPUT",
+      "title": "INVALID_PROMPT_INPUT",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Error reference/INVALID_TOOL_RESULTS.md": {
+      "content_hash": "sha256:28e046f02dd62061a0131020a9ba5cdf9f8600e485e70ca36c9dde2f56a25958",
+      "keywords": [
+        "Error reference",
+        "INVALID_TOOL_RESULTS"
+      ],
+      "local_path": "Error reference/INVALID_TOOL_RESULTS.md",
+      "source_path": "/oss/python/langchain/errors/INVALID_TOOL_RESULTS",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/INVALID_TOOL_RESULTS",
+      "summary": "[!NOTE]",
+      "title": "INVALID_TOOL_RESULTS",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Error reference/MESSAGE_COERCION_FAILURE.md": {
+      "content_hash": "sha256:a3ca9500e60ed253b991f82ecb086f9a52d2fb3c600e97be065901d7e6a4d7e4",
+      "keywords": [
+        "Error reference",
+        "MESSAGE_COERCION_FAILURE"
+      ],
+      "local_path": "Error reference/MESSAGE_COERCION_FAILURE.md",
+      "source_path": "/oss/python/langchain/errors/MESSAGE_COERCION_FAILURE",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/MESSAGE_COERCION_FAILURE",
+      "summary": "MESSAGE_COERCION_FAILURE",
+      "title": "MESSAGE_COERCION_FAILURE",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Error reference/MODEL_AUTHENTICATION.md": {
+      "content_hash": "sha256:3fb2fe0c852e9d0f26d27abbc1194a5f23c12fe4c48751191146c818d8c7c869",
+      "keywords": [
+        "Error reference",
+        "MODEL_AUTHENTICATION"
+      ],
+      "local_path": "Error reference/MODEL_AUTHENTICATION.md",
+      "source_path": "/oss/python/langchain/errors/MODEL_AUTHENTICATION",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/MODEL_AUTHENTICATION",
+      "summary": "[!NOTE]",
+      "title": "MODEL_AUTHENTICATION",
+      "updated_at": "2026-11-14T06:35:43Z"
+    },
+    "Error reference/MODEL_NOT_FOUND.md": {
+      "content_hash": "sha256:580904af5db9b98b2d8ecb3c319580acf991144cc09e086b5ec9b92b032a42a4",
+      "keywords": [
+        "Error reference",
+        "MODEL_NOT_FOUND"
+      ],
+      "local_path": "Error reference/MODEL_NOT_FOUND.md",
+      "source_path": "/oss/python/langchain/errors/MODEL_NOT_FOUND",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/MODEL_NOT_FOUND",
+      "summary": "[!NOTE]",
+      "title": "MODEL_NOT_FOUND",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Error reference/MODEL_RATE_LIMIT.md": {
+      "content_hash": "sha256:53ebd9d207150bca82ab644de4339ebe4c798bed05ababd8057b76db734f3337",
+      "keywords": [
+        "Error reference",
+        "MODEL_RATE_LIMIT"
+      ],
+      "local_path": "Error reference/MODEL_RATE_LIMIT.md",
+      "source_path": "/oss/python/langchain/errors/MODEL_RATE_LIMIT",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/MODEL_RATE_LIMIT",
+      "summary": "[!NOTE]",
+      "title": "MODEL_RATE_LIMIT",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Error reference/OUTPUT_PARSING_FAILURE.md": {
+      "content_hash": "sha256:e93bd14f43e21f5728327c95b17a6e5c9f9c712057a6e3a81ed832f70660b86b",
+      "keywords": [
+        "Error reference",
+        "OUTPUT_PARSING_FAILURE"
+      ],
+      "local_path": "Error reference/OUTPUT_PARSING_FAILURE.md",
+      "source_path": "/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE",
+      "summary": "[!NOTE]",
+      "title": "OUTPUT_PARSING_FAILURE",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Integrations/AI Elements.md": {
+      "content_hash": "sha256:224d308dbe14ad372c49b3e17b27c29a62179c90a979b9a8e9817becddd537c9",
+      "keywords": [
+        "AI Elements",
+        "Frontend",
+        "Integrations",
+        "ai-elements"
+      ],
+      "local_path": "Frontend/Integrations/AI Elements.md",
+      "source_path": "/oss/python/langchain/frontend/integrations/ai-elements",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/ai-elements",
+      "summary": "Composable shadcn/ui-based components for AI chat interfaces with useStream",
+      "title": "AI Elements",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Integrations/CopilotKit.md": {
+      "content_hash": "sha256:a3eb8258c4125e53493661c88b22e49dcfb3acf6998959843959846f54cbc30f",
+      "keywords": [
+        "CopilotKit",
+        "Frontend",
+        "Integrations",
+        "copilotkit"
+      ],
+      "local_path": "Frontend/Integrations/CopilotKit.md",
+      "source_path": "/oss/python/langchain/frontend/integrations/copilotkit",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/copilotkit",
+      "summary": "Use CopilotKit with LangGraph, Deep Agents, and React with custom endpoints, the Python AG-UI bridge, structured generative UI, and messaging-platform channels",
+      "title": "CopilotKit",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Integrations/OpenUI.md": {
+      "content_hash": "sha256:fad4ce0126c5701d51a6a8524bd562ec53cdc2a9c172eac74e3ea4bc929efe1c",
+      "keywords": [
+        "Frontend",
+        "Integrations",
+        "OpenUI",
+        "openui"
+      ],
+      "local_path": "Frontend/Integrations/OpenUI.md",
+      "source_path": "/oss/python/langchain/frontend/integrations/openui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/openui",
+      "summary": "Generate complete, interactive dashboards and reports using the OpenUI component library and openui-lang",
+      "title": "OpenUI",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Integrations/Overview.md": {
+      "content_hash": "sha256:6e89049a175cd55501309c35c7c3328222b013b1b654429000553385f6cbb54e",
+      "keywords": [
+        "Frontend",
+        "Integrations",
+        "Overview",
+        "overview"
+      ],
+      "local_path": "Frontend/Integrations/Overview.md",
+      "source_path": "/oss/python/langchain/frontend/integrations/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/overview",
+      "summary": "Connect useStream to any React UI component library or generative UI framework",
+      "title": "Overview",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Integrations/assistant-ui.md": {
+      "content_hash": "sha256:7529f26403f62e5234c987820c540a8ab69f78d1ba9906dc368defe34bd8d4d4",
+      "keywords": [
+        "Frontend",
+        "Integrations",
+        "assistant-ui"
+      ],
+      "local_path": "Frontend/Integrations/assistant-ui.md",
+      "source_path": "/oss/python/langchain/frontend/integrations/assistant-ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/integrations/assistant-ui",
+      "summary": "Headless React AI chat framework with a full runtime layer, bridged to useStream",
+      "title": "assistant-ui",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Overview.md": {
+      "content_hash": "sha256:36cbaae9cbda40db7f8850bc0a12a5ccc46f6594acfcecb3d9c30ad2f8df5c19",
+      "keywords": [
+        "Frontend",
+        "Overview",
+        "overview"
+      ],
+      "local_path": "Frontend/Overview.md",
+      "source_path": "/oss/python/langchain/frontend/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/overview",
+      "summary": "Build generative UIs with real-time streaming from LangChain agents",
+      "title": "Overview",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Branching chat.md": {
+      "content_hash": "sha256:0ff860efc52e32983512faa01e3ceaa4584b5026cbc34026dcd94ad73b6335a1",
+      "keywords": [
+        "Branching chat",
+        "Frontend",
+        "Patterns",
+        "branching-chat"
+      ],
+      "local_path": "Frontend/Patterns/Branching chat.md",
+      "source_path": "/oss/python/langchain/frontend/branching-chat",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/branching-chat",
+      "summary": "Edit messages and regenerate responses by forking from checkpoints",
+      "title": "Branching chat",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Generative UI/Controlled generative UI.md": {
+      "content_hash": "sha256:1f5581685004c56aff8a24858ff9348122498b8c8559cdd27634285cc5170b12",
+      "keywords": [
+        "Controlled generative UI",
+        "Frontend",
+        "Generative UI",
+        "Patterns",
+        "controlled-generative-ui"
+      ],
+      "local_path": "Frontend/Patterns/Generative UI/Controlled generative UI.md",
+      "source_path": "/oss/python/langchain/frontend/controlled-generative-ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/controlled-generative-ui",
+      "summary": "Render agent output with components you author using components as tools, tool-call rendering, state rendering, and reasoning",
+      "title": "Controlled generative UI",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Generative UI/Declarative generative UI.md": {
+      "content_hash": "sha256:e2e710cfd0b9c3139939feac86d599423c99ad7953f40f0a4799e012104b3da7",
+      "keywords": [
+        "Declarative generative UI",
+        "Frontend",
+        "Generative UI",
+        "Patterns",
+        "declarative-generative-ui"
+      ],
+      "local_path": "Frontend/Patterns/Generative UI/Declarative generative UI.md",
+      "source_path": "/oss/python/langchain/frontend/declarative-generative-ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/declarative-generative-ui",
+      "summary": "Compose agent-generated interfaces from a registered component catalog using json-render and A2UI",
+      "title": "Declarative generative UI",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Generative UI/Generative UI overview.md": {
+      "content_hash": "sha256:b63ba7ec589423996dee70db787ed7551da4716725160a3bed890f2c15007bb4",
+      "keywords": [
+        "Frontend",
+        "Generative UI",
+        "Generative UI overview",
+        "Patterns",
+        "generative-ui-overview"
+      ],
+      "local_path": "Frontend/Patterns/Generative UI/Generative UI overview.md",
+      "source_path": "/oss/python/langchain/frontend/generative-ui-overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/generative-ui-overview",
+      "summary": "Understand the generative UI spectrum from controlled to declarative to open-ended interfaces",
+      "title": "Generative UI overview",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Generative UI/Open-ended generative UI.md": {
+      "content_hash": "sha256:82c5e1c4503ee788b63fcb70ecc40e93121ca0be247bc8afa649431cae6f15f6",
+      "keywords": [
+        "Frontend",
+        "Generative UI",
+        "Open-ended generative UI",
+        "Patterns",
+        "open-ended-generative-ui"
+      ],
+      "local_path": "Frontend/Patterns/Generative UI/Open-ended generative UI.md",
+      "source_path": "/oss/python/langchain/frontend/open-ended-generative-ui",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/open-ended-generative-ui",
+      "summary": "Render UI created outside your application, such as sandboxed MCP Apps, at the open end of the generative UI spectrum",
+      "title": "Open-ended generative UI",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Headless tools.md": {
+      "content_hash": "sha256:96d879f9a73094a17972383f9e0e1787d386b9825abd725806771c85de639adb",
+      "keywords": [
+        "Frontend",
+        "Headless tools",
+        "Patterns",
+        "headless-tools"
+      ],
+      "local_path": "Frontend/Patterns/Headless tools.md",
+      "source_path": "/oss/python/langchain/frontend/headless-tools",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/headless-tools",
+      "summary": "Run browser and device APIs on the client with headless tool implementations",
+      "title": "Headless tools",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Human-in-the-Loop.md": {
+      "content_hash": "sha256:f56039038620eb502f3339beb6e1ecd5a04b441fde6b013e7146c4c48973e85b",
+      "keywords": [
+        "Frontend",
+        "Human-in-the-Loop",
+        "Patterns",
+        "human-in-the-loop"
+      ],
+      "local_path": "Frontend/Patterns/Human-in-the-Loop.md",
+      "source_path": "/oss/python/langchain/frontend/human-in-the-loop",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/human-in-the-loop",
+      "summary": "Add approval workflows with interrupt-based human review",
+      "title": "Human-in-the-Loop",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Join & rejoin streams.md": {
+      "content_hash": "sha256:624bc20e29c177820b8e61dc078655730461635ed64c20cabfbffc46cd3fee21",
+      "keywords": [
+        "Frontend",
+        "Join & rejoin streams",
+        "Patterns",
+        "join-rejoin"
+      ],
+      "local_path": "Frontend/Patterns/Join & rejoin streams.md",
+      "source_path": "/oss/python/langchain/frontend/join-rejoin",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/join-rejoin",
+      "summary": "Disconnect from and reconnect to running agent streams",
+      "title": "Join & rejoin streams",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Markdown messages.md": {
+      "content_hash": "sha256:ea91998e0aeff613159a7458415b2201e02cb32344750cf61f9fbba874f94917",
+      "keywords": [
+        "Frontend",
+        "Markdown messages",
+        "Patterns",
+        "markdown-messages"
+      ],
+      "local_path": "Frontend/Patterns/Markdown messages.md",
+      "source_path": "/oss/python/langchain/frontend/markdown-messages",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/markdown-messages",
+      "summary": "Render LLM responses as rich, formatted markdown with proper streaming support",
+      "title": "Markdown messages",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Message queues.md": {
+      "content_hash": "sha256:9b00d50c3079bd8f4d222c402943899a9131af9e51d72afe406ff1d12a468cce",
+      "keywords": [
+        "Frontend",
+        "Message queues",
+        "Patterns",
+        "message-queues"
+      ],
+      "local_path": "Frontend/Patterns/Message queues.md",
+      "source_path": "/oss/python/langchain/frontend/message-queues",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/message-queues",
+      "summary": "Queue multiple messages and manage them while the agent processes sequentially",
+      "title": "Message queues",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Reasoning tokens.md": {
+      "content_hash": "sha256:48fd33572538cd55afcc1aac07d768d3a1b3b7065b66552c343bf941d36647f4",
+      "keywords": [
+        "Frontend",
+        "Patterns",
+        "Reasoning tokens",
+        "reasoning-tokens"
+      ],
+      "local_path": "Frontend/Patterns/Reasoning tokens.md",
+      "source_path": "/oss/python/langchain/frontend/reasoning-tokens",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/reasoning-tokens",
+      "summary": "Display model thinking and reasoning processes in collapsible blocks",
+      "title": "Reasoning tokens",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Structured output.md": {
+      "content_hash": "sha256:3e5d95365e6976c210fba04d0eaaf8b004e8a4f0a841d06c3fd41be0d2456083",
+      "keywords": [
+        "Frontend",
+        "Patterns",
+        "Structured output",
+        "structured-output"
+      ],
+      "local_path": "Frontend/Patterns/Structured output.md",
+      "source_path": "/oss/python/langchain/frontend/structured-output",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/structured-output",
+      "summary": "Render structured agent responses with custom UI components instead of plain text",
+      "title": "Structured output",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Time travel.md": {
+      "content_hash": "sha256:90e9c67f08d57f35362e1857cf5e53d463243c949ab5553a31ee07dafd27fe6f",
+      "keywords": [
+        "Frontend",
+        "Patterns",
+        "Time travel",
+        "time-travel"
+      ],
+      "local_path": "Frontend/Patterns/Time travel.md",
+      "source_path": "/oss/python/langchain/frontend/time-travel",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/time-travel",
+      "summary": "Inspect, navigate, and resume from any checkpoint in the conversation history",
+      "title": "Time travel",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Frontend/Patterns/Tool calling.md": {
+      "content_hash": "sha256:33a3ca3bd6cad6aea7c11f02867d9bcd5fa218f9e4f47beb397031f35ecd773f",
+      "keywords": [
+        "Frontend",
+        "Patterns",
+        "Tool calling",
+        "tool-calling"
+      ],
+      "local_path": "Frontend/Patterns/Tool calling.md",
+      "source_path": "/oss/python/langchain/frontend/tool-calling",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/frontend/tool-calling",
+      "summary": "Display agent tool calls with rich, type-safe UI cards",
+      "title": "Tool calling",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Get started/Changelog.md": {
+      "content_hash": "sha256:6ece4660a366c2736b3aeb43b024ab69088c9f37f3f41d6b53a25032d32c0cb4",
+      "keywords": [
+        "Changelog",
+        "Get started",
+        "changelog"
+      ],
+      "local_path": "Get started/Changelog.md",
+      "source_path": "/oss/python/releases/changelog",
+      "source_url": "https://docs.langchain.com/oss/python/releases/changelog",
+      "summary": "Log of updates and improvements to our Python packages",
+      "title": "Changelog",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Get started/Install LangChain.md": {
+      "content_hash": "sha256:035eb017a91fa90f15ff1649c9beaf7fb7b14b2fdfbc72004164ce6781960183",
+      "keywords": [
+        "Get started",
+        "Install LangChain",
+        "install"
+      ],
+      "local_path": "Get started/Install LangChain.md",
+      "source_path": "/oss/python/langchain/install",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/install",
+      "summary": "Install the LangChain package and the independent provider packages for the models and integrations you use.",
+      "title": "Install LangChain",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Get started/Philosophy.md": {
+      "content_hash": "sha256:8ebd7caffffd0853085ed5775755124b11c442b07822d2532b729cde2ca251aa",
+      "keywords": [
+        "Get started",
+        "Philosophy",
+        "philosophy"
+      ],
+      "local_path": "Get started/Philosophy.md",
+      "source_path": "/oss/python/langchain/philosophy",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/philosophy",
+      "summary": "LangChain exists to be the easiest place to start building with LLMs, while also being flexible and production-ready.",
+      "title": "Philosophy",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Get started/Quickstart.md": {
+      "content_hash": "sha256:10a8d56ef329a3abab8cfbda4614157796924e7abdc029038a701207ebcafad4",
+      "keywords": [
+        "Get started",
+        "Quickstart",
+        "quickstart"
+      ],
+      "local_path": "Get started/Quickstart.md",
+      "source_path": "/oss/python/langchain/quickstart",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/quickstart",
+      "summary": "Build your first agent in minutes",
+      "title": "Quickstart",
+      "updated_at": "2026-11-14T06:35:43Z"
+    },
+    "Learn/Additional resources/Get help.md": {
+      "content_hash": "sha256:db215fddd2211fa3f07e2f7b7f8dbe332acb760af57b770c9dc24c05414ec3b3",
+      "keywords": [
+        "Additional resources",
+        "Get help",
+        "Learn",
+        "get-help"
+      ],
+      "local_path": "Learn/Additional resources/Get help.md",
+      "source_path": "/oss/python/langchain/get-help",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/get-help",
+      "summary": "Get help",
+      "title": "Get help",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Learn/Conceptual overviews/Component architecture.md": {
+      "content_hash": "sha256:4b0c2c245dc7ff4212330561fc16c213e674fed2e3fe8fe80c57075f50e95187",
+      "keywords": [
+        "Component architecture",
+        "Conceptual overviews",
+        "Learn",
+        "component-architecture"
+      ],
+      "local_path": "Learn/Conceptual overviews/Component architecture.md",
+      "source_path": "/oss/python/langchain/component-architecture",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/component-architecture",
+      "summary": "Component architecture",
+      "title": "Component architecture",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Learn/Tutorials/LangChain/Build a SQL agent.md": {
+      "content_hash": "sha256:16c9bd831c0e3c37f9951b227194f0b5d658e3257b970c35c3614e10d40c115a",
+      "keywords": [
+        "Build a SQL agent",
+        "LangChain",
+        "Learn",
+        "Tutorials",
+        "sql-agent"
+      ],
+      "local_path": "Learn/Tutorials/LangChain/Build a SQL agent.md",
+      "source_path": "/oss/python/langchain/sql-agent",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/sql-agent",
+      "summary": "[!WARNING]",
+      "title": "Build a SQL agent",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Learn/Tutorials/LangChain/Build a data analysis agent from scratch.md": {
+      "content_hash": "sha256:0dcc777227df0ea9a25ae0cc2adfc354d93d37bf2d7956251dd024bdec653a0c",
+      "keywords": [
+        "Build a data analysis agent from scratch",
+        "LangChain",
+        "Learn",
+        "Tutorials",
+        "deep-agent-from-scratch"
+      ],
+      "local_path": "Learn/Tutorials/LangChain/Build a data analysis agent from scratch.md",
+      "source_path": "/oss/python/langchain/deep-agent-from-scratch",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/deep-agent-from-scratch",
+      "summary": "Build a data analysis agent step by step using create_agent and Deep Agents middleware.",
+      "title": "Build a data analysis agent from scratch",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Learn/Tutorials/LangChain/Build a semantic search engine with LangChain.md": {
+      "content_hash": "sha256:42dcecb205bdc59509f4f8590931d9cefcb98d2a5dffd95b698eef4e5e5b138d",
+      "keywords": [
+        "Build a semantic search engine with LangChain",
+        "LangChain",
+        "Learn",
+        "Tutorials",
+        "knowledge-base"
+      ],
+      "local_path": "Learn/Tutorials/LangChain/Build a semantic search engine with LangChain.md",
+      "source_path": "/oss/python/langchain/knowledge-base",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/knowledge-base",
+      "summary": "[tab] OpenAI",
+      "title": "Build a semantic search engine with LangChain",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Learn/Tutorials/LangChain/Build a voice agent with LangChain.md": {
+      "content_hash": "sha256:dbd12156c2cc24a2fd065061e82e7537b0753992fb238069eb64ea934828db9b",
+      "keywords": [
+        "Build a voice agent with LangChain",
+        "LangChain",
+        "Learn",
+        "Tutorials",
+        "voice-agent"
+      ],
+      "local_path": "Learn/Tutorials/LangChain/Build a voice agent with LangChain.md",
+      "source_path": "/oss/python/langchain/voice-agent",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/voice-agent",
+      "summary": "[accordion] AssemblyAI Client",
+      "title": "Build a voice agent with LangChain",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Learn/Tutorials/Multi-agent/Build a SQL assistant with on-demand skills.md": {
+      "content_hash": "sha256:73ffddde4da2cade59af7258f57a749118f648939b9734c6c19d4cb693f9f423",
+      "keywords": [
+        "Build a SQL assistant with on-demand skills",
+        "Learn",
+        "Multi-agent",
+        "Tutorials",
+        "skills-sql-assistant"
+      ],
+      "local_path": "Learn/Tutorials/Multi-agent/Build a SQL assistant with on-demand skills.md",
+      "source_path": "/oss/python/langchain/multi-agent/skills-sql-assistant",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/skills-sql-assistant",
+      "summary": "[!NOTE]",
+      "title": "Build a SQL assistant with on-demand skills",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Learn/Tutorials/Multi-agent/Build a multi-source knowledge base with routing.md": {
+      "content_hash": "sha256:afe602cacd2d3027e0b5328ccd03cf8cb0c9b843aa756a7df3cfecba102d9354",
+      "keywords": [
+        "Build a multi-source knowledge base with routing",
+        "Learn",
+        "Multi-agent",
+        "Tutorials",
+        "router-knowledge-base"
+      ],
+      "local_path": "Learn/Tutorials/Multi-agent/Build a multi-source knowledge base with routing.md",
+      "source_path": "/oss/python/langchain/multi-agent/router-knowledge-base",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/router-knowledge-base",
+      "summary": "[!TIP]",
+      "title": "Build a multi-source knowledge base with routing",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Learn/Tutorials/Multi-agent/Build a personal assistant with subagents.md": {
+      "content_hash": "sha256:61d8cf73d814693dc7c3d0629394e7f22b125b98a3a45aa7757f109c5a6e0b1a",
+      "keywords": [
+        "Build a personal assistant with subagents",
+        "Learn",
+        "Multi-agent",
+        "Tutorials",
+        "subagents-personal-assistant"
+      ],
+      "local_path": "Learn/Tutorials/Multi-agent/Build a personal assistant with subagents.md",
+      "source_path": "/oss/python/langchain/multi-agent/subagents-personal-assistant",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents-personal-assistant",
+      "summary": "[!NOTE]",
+      "title": "Build a personal assistant with subagents",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Learn/Tutorials/Multi-agent/Build customer support with handoffs.md": {
+      "content_hash": "sha256:b2b05af6ecdb55b3dd9d7113541e26d4642136e55d5c05ae0343151f77278e6e",
+      "keywords": [
+        "Build customer support with handoffs",
+        "Learn",
+        "Multi-agent",
+        "Tutorials",
+        "handoffs-customer-support"
+      ],
+      "local_path": "Learn/Tutorials/Multi-agent/Build customer support with handoffs.md",
+      "source_path": "/oss/python/langchain/multi-agent/handoffs-customer-support",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs-customer-support",
+      "summary": "[tab] OpenAI",
+      "title": "Build customer support with handoffs",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Middleware/Custom middleware.md": {
+      "content_hash": "sha256:769737ebbd3fb52269199e05be783ede2099360619bce68f7d87e87e02626569",
+      "keywords": [
+        "Custom middleware",
+        "Middleware",
+        "custom"
+      ],
+      "local_path": "Middleware/Custom middleware.md",
+      "source_path": "/oss/python/langchain/middleware/custom",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/middleware/custom",
+      "summary": "[card] [Node-style hooks](#node-style-hooks)",
+      "title": "Custom middleware",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Middleware/Middleware overview.md": {
+      "content_hash": "sha256:63b5c5a77f95676987ba21c854cfb07773bd3b4ab7a0fd7a36aa5316d5e31ff4",
+      "keywords": [
+        "Middleware",
+        "Middleware overview",
+        "overview"
+      ],
+      "local_path": "Middleware/Middleware overview.md",
+      "source_path": "/oss/python/langchain/middleware/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/middleware/overview",
+      "summary": "Control and customize agent execution at every step",
+      "title": "Middleware overview",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Middleware/Prebuilt middleware.md": {
+      "content_hash": "sha256:9e93baaa7e24dd672ab1fd3aa4ba8bb54d22dc249c4a89b35d18f6620e658a25",
+      "keywords": [
+        "Middleware",
+        "Prebuilt middleware",
+        "built-in"
+      ],
+      "local_path": "Middleware/Prebuilt middleware.md",
+      "source_path": "/oss/python/langchain/middleware/built-in",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "summary": "Prebuilt middleware for common agent use cases",
+      "title": "Prebuilt middleware",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Overview/LangChain overview.md": {
+      "content_hash": "sha256:d7f12be5e4cc2592f4cd730c9364ba8e5b0a2f799bd4fbdeccecbcafaf13ea09",
+      "keywords": [
+        "LangChain overview",
+        "Overview",
+        "overview"
+      ],
+      "local_path": "Overview/LangChain overview.md",
+      "source_path": "/oss/python/langchain/overview",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/overview",
+      "summary": "LangChain provides create_agent: a minimal, highly configurable agent harness. Compose exactly the agent your use case needs from model, tools, prompt, and middleware.",
+      "title": "LangChain overview",
+      "updated_at": "2026-11-14T06:34:48Z"
+    },
+    "Production/Deployment.md": {
+      "content_hash": "sha256:7715d4bced71ad28a8f95d56ab2ce8da40f72035dd7a69dbcb0f4f9f707de9d8",
+      "keywords": [
+        "Deployment",
+        "Production",
+        "deploy"
+      ],
+      "local_path": "Production/Deployment.md",
+      "source_path": "/oss/python/langchain/deploy",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/deploy",
+      "summary": "Deploy LangChain agents to production with LangSmith Cloud or JavaScript frameworks and hosting platforms.",
+      "title": "Deployment",
+      "updated_at": "2026-11-14T06:35:43Z"
+    },
+    "Production/LangSmith Observability.md": {
+      "content_hash": "sha256:9e0d4d80e56e96d64fdf7bd6f1f6eeb7575673252522fcad808c2a84d867a45e",
+      "keywords": [
+        "LangSmith Observability",
+        "Production",
+        "observability"
+      ],
+      "local_path": "Production/LangSmith Observability.md",
+      "source_path": "/oss/python/langchain/observability",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/observability",
+      "summary": "[!NOTE]",
+      "title": "LangSmith Observability",
+      "updated_at": "2026-11-14T06:34:48Z"
+    }
+  },
+  "last_sync_at": "2026-11-14T06:35:43Z",
+  "schema_version": 1,
+  "wiki": {
+    "language": "英文原文；Python SDK 当前官方文档，快照 2026-11-14",
+    "license": "MIT；langchain-ai/docs，版权 (c) 2025 LangChain；完整许可见 LICENSE-UPSTREAM.txt",
+    "scope": "LangChain Python 主文档、Learn 中的 LangChain 教程、7 篇错误参考，以及 LangChain 导航共用的 Retrieval 和 Python Changelog；不含独立 LangGraph、Deep Agents、LangSmith、JavaScript、供应商集成目录及独立 API Reference",
+    "skill_name": "langchain-wiki",
+    "source_root": "https://docs.langchain.com/oss/python/langchain/overview",
+    "title": "LangChain Python"
+  }
+}

@@ -1,0 +1,47 @@
+<svg width="1500" height="360" viewBox="0 0 1500 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1500" height="360" fill="#000914" />
+
+  <text x="38" y="52" text-anchor="start" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">EXECUTION ENVIRONMENT</text>
+  <text x="810" y="52" text-anchor="start" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">DELEGATION</text>
+  <text x="1208" y="52" text-anchor="start" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">STEERING</text>
+
+  <rect x="38" y="86" width="285" height="52" rx="12" fill="#251A49" stroke="#62B7FF" stroke-width="3" />
+  <text x="180" y="119" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">Code Interpreter</text>
+
+  <rect x="342" y="86" width="210" height="52" rx="12" fill="#251A49" stroke="#62B7FF" stroke-width="3" />
+  <text x="447" y="119" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">Sandbox</text>
+
+  <rect x="571" y="86" width="210" height="52" rx="12" fill="#251A49" stroke="#62B7FF" stroke-width="3" />
+  <text x="676" y="119" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">Filesystem</text>
+
+  <rect x="810" y="86" width="160" height="52" rx="12" fill="#251A49" stroke="#DA9A91" stroke-width="3" />
+  <text x="890" y="119" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">Planning</text>
+
+  <rect x="988" y="86" width="182" height="52" rx="12" fill="#251A49" stroke="#DA9A91" stroke-width="3" />
+  <text x="1079" y="119" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">Subagents</text>
+
+  <rect x="1208" y="86" width="258" height="52" rx="12" fill="#251A49" stroke="#D9CB72" stroke-width="3" />
+  <text x="1337" y="119" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">Human-in-the-loop</text>
+
+  <path d="M676 138 V164 Q676 176 664 176 H110 Q98 176 98 188 V196" stroke="#62B7FF" stroke-width="3" fill="none" />
+  <path d="M676 138 V164 Q676 176 664 176 H255 Q243 176 243 188 V196" stroke="#62B7FF" stroke-width="3" fill="none" />
+  <path d="M676 138 V164 Q676 176 664 176 H459 Q447 176 447 188 V196" stroke="#62B7FF" stroke-width="3" fill="none" />
+  <path d="M676 138 V164 Q676 176 688 176 H711 Q723 176 723 188 V196" stroke="#62B7FF" stroke-width="3" fill="none" />
+
+  <rect x="39" y="196" width="118" height="50" rx="10" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="98" y="228" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">Skills</text>
+
+  <rect x="175" y="196" width="136" height="50" rx="10" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="243" y="228" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">Memory</text>
+
+  <rect x="329" y="196" width="236" height="50" rx="10" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="447" y="228" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">Summarization</text>
+
+  <rect x="583" y="196" width="280" height="50" rx="10" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="723" y="228" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">Context offloading</text>
+
+  <rect x="881" y="196" width="218" height="50" rx="10" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="990" y="228" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">Prompt caching</text>
+
+  <text x="39" y="334" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">CONTEXT MANAGEMENT</text>
+</svg>

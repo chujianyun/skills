@@ -1,0 +1,30 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#000914" />
+
+  <rect x="56" y="30" width="470" height="74" rx="10" fill="#1A1334" stroke="#9B7BDB" stroke-width="3" />
+  <text x="291" y="78" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="32">agent = model + harness</text>
+  <ellipse cx="600" cy="400" rx="450" ry="220" stroke="#62B7FF" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" fill="none" opacity="0.9" />
+
+  <rect x="505" y="338" width="190" height="86" rx="16" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="600" y="393" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="46">model</text>
+
+  <rect x="55" y="390" width="190" height="96" rx="24" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="150" y="448" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34">memory</text>
+
+  <rect x="280" y="178" width="160" height="92" rx="22" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="360" y="235" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="36">skills</text>
+
+  <rect x="760" y="178" width="160" height="92" rx="22" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="840" y="235" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="36">tools</text>
+
+  <rect x="955" y="390" width="190" height="96" rx="24" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="1050" y="448" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34">context</text>
+
+  <rect x="715" y="530" width="220" height="102" rx="24" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="825" y="592" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34">subagents</text>
+
+  <rect x="285" y="520" width="220" height="122" rx="24" fill="#251A49" stroke="#C7AEFF" stroke-width="3" />
+  <text x="395" y="570" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34">system</text>
+  <text x="395" y="608" text-anchor="middle" fill="#E5DBFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34">prompt</text>
+
+</svg>

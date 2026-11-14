@@ -19,6 +19,7 @@ README 的能力地图按使用场景分组展示，分组只是阅读视角，�
 | Skill | 模式 | 适用场景 |
 |---|---|---|
 | [dify-wiki](skills/dify-wiki/SKILL.md) | Tool Wrapper | 检索 Dify 中文 Cloud 全部使用、学习与开发者文档，回答工作流、节点、知识库、CLI、插件与 API 问题 |
+| [langchain-wiki](skills/langchain-wiki/SKILL.md) | Tool Wrapper | 检索 LangChain Python 官方文档，回答 Agent、模型、工具、中间件、记忆、MCP、多智能体、RAG、测试部署与排障问题；支持全文检索和增量更新 |
 | [langgraph-wiki](skills/langgraph-wiki/SKILL.md) | Tool Wrapper | 检索 LangGraph Python 官方文档，回答 Graph / Functional API、持久化、人工介入、流式输出、子图、部署和排障问题 |
 | [langsmith-wiki](skills/langsmith-wiki/SKILL.md) | Tool Wrapper | 检索 LangSmith 完整官方文档，覆盖 Evaluation、数据集与实验、评估器、标注队列、追踪、Prompt、部署、自托管与 REST API |
 | [llama-index-wiki](skills/llama-index-wiki/SKILL.md) | Tool Wrapper | 检索 LlamaIndex Python 用户文档，回答 RAG、索引、检索、Agent、Workflow、集成、评估、部署与 LlamaParse 问题 |

@@ -1,0 +1,4 @@
+interface:
+  display_name: "LangChain Python Wiki"
+  short_description: "LangChain Python 离线 Wiki 检索与有依据问答"
+  default_prompt: "Use $langchain-wiki to answer my question with documentation-backed guidance."
