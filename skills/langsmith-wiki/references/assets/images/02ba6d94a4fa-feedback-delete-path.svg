@@ -60,5 +60,5 @@
     <circle cx="1100" cy="215" r="11" fill="#FFFFFF" stroke="#006DDD" stroke-width="1.5"/><text x="1100" y="219" text-anchor="middle" font-size="12" fill="#006DDD">6</text>
     <path d="M1070 300 H1194" marker-end="url(#h)" stroke="#006DDD" stroke-width="2" fill="none"/>
     <circle cx="1133" cy="280" r="11" fill="#FFFFFF" stroke="#006DDD" stroke-width="1.5"/><text x="1133" y="284" text-anchor="middle" font-size="12" fill="#006DDD">7</text>
-  
+
 </svg>

@@ -56,5 +56,5 @@
     <path d="M800 170 H742" marker-end="url(#f)" stroke="#006DDD" stroke-width="1.75" fill="none" stroke-dasharray="6 6"/>
     <circle cx="769" cy="192" r="11" fill="#FFFFFF" stroke="#006DDD" stroke-width="1.5"/><text x="769" y="196" text-anchor="middle" font-size="12" fill="#006DDD">6</text>
     <text x="769" y="225" text-anchor="middle" font-size="12" fill="#5B7590">ack</text>
-  
+
 </svg>

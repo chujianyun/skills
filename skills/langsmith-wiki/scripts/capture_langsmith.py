@@ -286,6 +286,8 @@ def capture(staging: Path, workers: int) -> None:
             cache_path.write_bytes(data)
         if not data or 'text/html' in content_type:
             raise ValueError(f'Empty or HTML asset: {url}')
+        if urllib.parse.urlsplit(url).path.lower().endswith('.svg'):
+            data = re.sub(rb'(?m)[ \t]+$', b'', data)
         basename = safe(urllib.parse.unquote(urllib.parse.urlsplit(url).path.rsplit('/', 1)[-1]))
         local = 'images/' + hashlib.sha256(url.encode()).hexdigest()[:12] + '-' + basename
         return url, local, data
