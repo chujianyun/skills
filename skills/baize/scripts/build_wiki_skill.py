@@ -12,7 +12,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from sync_wiki_docs import SyncError, load_staged_corpus, print_summary, sync_skill, utc_now
+from sync_wiki_docs import SyncError, load_staged_corpus, print_summary, sync_skill, utc_now, validate_input_urls
 
 
 def normalized_name(raw: str) -> str:
@@ -70,6 +70,7 @@ description: {quoted(description)}
 ## 资源
 
 - [文档索引](references/INDEX.md)：浏览完整主题结构或搜索词不确定时读取。
+- [用户来源链接](references/INPUT-URLS.md)：刷新前读取用户最初提供的入口、语言、版本和子目录。
 - [来源与范围](references/SOURCE.md)：回答版本、许可证、完整性或时效性问题时读取。
 - [更新协议](references/UPDATE.md)：用户要求刷新、同步或自动更新本 Wiki Skill 时读取。
 - `references/docs/`：保持 Wiki 导航层级的 Markdown 正文；只读取与问题直接相关的文件。
@@ -154,10 +155,11 @@ def generated_update_md(source_url: str) -> str:
     return f"""# 更新协议
 
 规范来源：<{source_url}>
+用户原始入口见 [来源链接](INPUT-URLS.md)，机器可读列表位于 `wiki-manifest.json` 的 `wiki.input_urls`。
 
-1. 重新盘点来源范围内的完整导航，不沿用旧页面数量猜测新范围。
+1. 先读取原始入口、规范根和已记录范围，保留语言、版本和子目录限制。重定向不替换原始入口；新增链接不自动扩大授权范围。再重新盘点来源范围内的完整导航，不沿用旧页面数量猜测新范围。
 2. 使用 `mktemp -d` 创建 staging，写入 `docs/`、可选 `assets/` 和 `inventory.json`。
-3. `inventory.json` 使用 `schema_version: 1`，包含 `source_root`、`coverage`、`pages` 和可选 `assets`。每个 page 记录 `title`、`source_url`、`source_path`、`local_path`，可选 `summary` 与 `keywords`。
+3. `inventory.json` 使用 `schema_version: 1`，包含 `source_root`、`input_urls`、`coverage`、`pages` 和可选 `assets`。每个 page 记录 `title`、`source_url`、`source_path`、`local_path`，可选 `summary` 与 `keywords`。
 4. `coverage.discovered` 必须等于成功页数加失败页数，`coverage.captured` 必须等于 pages 数量。失败列表非空时默认停止。
 5. 先预演：
 
@@ -169,7 +171,8 @@ def generated_update_md(source_url: str) -> str:
    ```
 
 6. 预演完整且没有未授权删页后去掉 `--dry-run`。上游删页或改路径时，只有获得授权才加 `--prune`；旧文件会移到 `references/.baize-trash/`。
-7. `UNCHANGED` 表示成功且零文件写入。`CHANGED` 后重新验证本地搜索和安装副本。
+7. 本次用户新增入口写入 `inventory.input_urls`，脚本会去重追加并保留旧入口；旧清单没有原始入口时不猜测，用规范根及已记录范围更新。带凭据或签名的链接不落盘，先取得可长期使用的安全地址。
+8. `UNCHANGED` 表示成功且零文件写入。`CHANGED` 后重新验证本地搜索和安装副本。
 
 若当前 Agent 安装了 `$baize`，优先用它完成抓取、覆盖率核对、位置判断和自动化配置。没有可用调度器时不要私自修改系统 cron。
 """
@@ -186,6 +189,7 @@ def scaffold(
     scope: str,
     license_text: str,
     complete: bool,
+    input_urls: list[str],
 ) -> None:
     for relative in ("agents", "references/docs", "references/assets", "scripts"):
         (root / relative).mkdir(parents=True, exist_ok=True)
@@ -218,6 +222,7 @@ def scaffold(
             "skill_name": name,
             "title": title,
             "source_root": source_url,
+            "input_urls": input_urls,
             "language": language,
             "scope": scope,
             "license": license_text,
@@ -252,6 +257,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--name", required=True)
     parser.add_argument("--title", required=True)
     parser.add_argument("--source-url", required=True)
+    parser.add_argument(
+        "--input-url", action="append", default=[],
+        help="Original user-provided entry URL; repeat for multiple URLs (also accepted in inventory.input_urls)",
+    )
     parser.add_argument("--description", required=True)
     parser.add_argument("--language", default="与来源链接一致")
     parser.add_argument("--scope", default="inventory.json 中盘点的 Wiki 导航范围")
@@ -282,6 +291,12 @@ def main() -> int:
         if corpus.source_root.rstrip("/") != source_url:
             raise SyncError("--source-url must match inventory.source_root")
 
+        input_urls = validate_input_urls(
+            corpus.input_urls + args.input_url, "input_urls"
+        )
+        if not input_urls:
+            raise SyncError("record user entry URLs in inventory.input_urls or --input-url")
+
         target_parent = args.target_parent.expanduser().resolve()
         target_parent.mkdir(parents=True, exist_ok=True)
         target = target_parent / name
@@ -302,6 +317,7 @@ def main() -> int:
                 scope=args.scope.strip(),
                 license_text=args.license.strip(),
                 complete=bool(corpus.coverage["complete"]),
+                input_urls=input_urls,
             )
             summary = sync_skill(
                 temporary,

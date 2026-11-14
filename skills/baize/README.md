@@ -10,6 +10,7 @@
 - 面向 Agent 的 `SKILL.md` 和全文检索脚本
 - 列出全部文档、路径和来源的 `references/INDEX.md`
 - 记录每篇文档 SHA-256 的 `references/wiki-manifest.json`
+- 保存用户原始入口的 `references/INPUT-URLS.md` 与清单 `wiki.input_urls`，后续更新可恢复语言、版本和范围
 - 支持手动或定期同步的增量更新流程
 - 自动安装到当前 Agent；目标本来就在当前 Agent Skills 目录时不重复复制
 

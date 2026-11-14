@@ -64,6 +64,7 @@ class Asset:
 @dataclass
 class StagedCorpus:
     source_root: str
+    input_urls: list[str]
     coverage: dict[str, Any]
     pages: list[Page]
     assets: list[Asset]
@@ -142,6 +143,24 @@ def validate_url(raw: Any, label: str) -> str:
     return value
 
 
+def validate_input_urls(raw: Any, label: str) -> list[str]:
+    if not isinstance(raw, list):
+        raise SyncError(f"{label} must be an array of URLs")
+    return sorted({validate_url(value, f"{label}[{index}]") for index, value in enumerate(raw)})
+
+
+def render_input_urls(urls: list[str]) -> bytes:
+    lines = [
+        "# 用户提供的来源链接", "",
+        "这些链接用于后续更新时恢复用户指定的入口、语言、版本和子目录；规范根地址及抓取范围见 SOURCE.md。",
+        "机器可读记录以 wiki-manifest.json 的 wiki.input_urls 为准。链接重定向后仍保留安全的原始入口；新增入口不自动扩大已授权范围。", "",
+    ]
+    lines.extend(f"- <{url}>" for url in urls)
+    if not urls:
+        lines.append("未记录原始入口；更新时使用 SOURCE.md 和清单中的 source_root，不从根地址推测用户原始链接。")
+    return ("\n".join(lines) + "\n").encode("utf-8")
+
+
 def read_json(path: Path) -> dict[str, Any]:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -194,6 +213,7 @@ def load_staged_corpus(staging_dir: Path, allow_partial: bool = False) -> Staged
     if inventory.get("schema_version") != 1:
         raise SyncError("inventory.schema_version must be 1")
     source_root = validate_url(inventory.get("source_root"), "inventory.source_root")
+    input_urls = validate_input_urls(inventory.get("input_urls", []), "inventory.input_urls")
     raw_pages = inventory.get("pages")
     raw_assets = inventory.get("assets", [])
     if not isinstance(raw_pages, list) or not raw_pages:
@@ -280,6 +300,7 @@ def load_staged_corpus(staging_dir: Path, allow_partial: bool = False) -> Staged
     assets.sort(key=lambda item: item.local_path)
     return StagedCorpus(
         source_root=source_root,
+        input_urls=input_urls,
         coverage=coverage,
         pages=pages,
         assets=assets,
@@ -438,6 +459,12 @@ def sync_skill(
             "inventory.source_root does not match the generated Skill manifest"
         )
 
+    previous_urls = validate_input_urls(wiki.get("input_urls", []), "wiki.input_urls")
+    # Missing input_urls in older inventories must never erase recorded entry URLs.
+    input_urls = sorted(set(previous_urls + corpus.input_urls))
+    if input_urls or "input_urls" in wiki:
+        wiki = {**wiki, "input_urls": input_urls}
+
     old_documents = manifest.get("documents", {})
     old_assets = manifest.get("assets", {})
     if not isinstance(old_documents, dict) or not isinstance(old_assets, dict):
@@ -525,6 +552,12 @@ def sync_skill(
     current_index = skill_root / "references" / "INDEX.md"
     index_changed = not current_index.is_file() or current_index.read_bytes() != index_bytes
 
+    input_urls_path = skill_root / "references" / "INPUT-URLS.md"
+    input_urls_bytes = render_input_urls(input_urls)
+    input_urls_changed = (
+        not input_urls_path.is_file() or input_urls_path.read_bytes() != input_urls_bytes
+    )
+
     manifest_comparable = {
         key: value for key, value in manifest.items() if key != "last_sync_at"
     }
@@ -535,6 +568,7 @@ def sync_skill(
         or stale_documents
         or stale_assets
         or index_changed
+        or input_urls_changed
         or semantic_change
     )
     if not any_change:
@@ -587,6 +621,8 @@ def sync_skill(
     manifest_bytes = (
         json.dumps(new_manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     ).encode("utf-8")
+    if input_urls_changed:
+        atomic_write(input_urls_path, input_urls_bytes)
     atomic_write(current_index, index_bytes)
     atomic_write(manifest_path, manifest_bytes)
     return SyncSummary(

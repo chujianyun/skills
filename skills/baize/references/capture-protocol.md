@@ -6,6 +6,7 @@
 
 先记录：
 
+- 用户提供的全部安全原始链接（`input_urls`），保留语言、版本、子目录和锚点，与规范根和重定向终点分开记录
 - Wiki 的规范根 URL、产品或知识域名称、目标语言
 - 用户明确包含或排除的子站、版本、语言、API Reference、博客、更新日志
 - 访问方式和许可证；需要登录时只使用用户已有的授权会话，不导出 Cookie、Token 或签名 URL
@@ -65,6 +66,7 @@
 {
   "schema_version": 1,
   "source_root": "https://docs.example.com/zh",
+  "input_urls": ["https://docs.example.com/zh/getting-started#install"],
   "coverage": {
     "discovered": 2,
     "captured": 2,
@@ -100,6 +102,8 @@
   ]
 }
 ```
+
+`input_urls` 是用户提供的原始入口数组，不是抓取过程中发现的全部页面 URL。新建时必须提供，可通过构建命令重复 `--input-url` 补充；更新时新入口去重追加，省略字段或空数组不会清除历史入口。链接不允许含凭据、签名或临时授权参数；先获取安全且可长期访问的替代入口，不把敏感原链接写入 inventory 或 Skill。
 
 `captured` 必须等于 `pages` 数量，`discovered` 必须等于成功页数加失败页数。`failed` 中记录 URL、错误类型和最后一次尝试结果；`excluded` 只记录明确在范围外的页面及理由。资产不计入页面覆盖数。
 

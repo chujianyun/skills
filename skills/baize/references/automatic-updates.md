@@ -2,7 +2,7 @@
 
 ## 手动更新
 
-1. 读取现有 `references/wiki-manifest.json`，锁定来源根、语言、版本和本地路径映射。
+1. 读取现有 `references/INPUT-URLS.md` 和 `references/wiki-manifest.json` 中的 `wiki.input_urls`，结合规范根，锁定来源根、语言、版本和本地路径映射。
 2. 按抓取协议重新盘点完整导航，抓到全新的临时目录；不要在现有文档上局部修改。
 3. 运行 `sync_wiki_docs.py --dry-run`。
 4. 覆盖率完整且没有未授权删页时正式同步。
@@ -24,7 +24,7 @@
 优先使用当前 Agent 提供的自动化/调度能力。任务提示应是可读的完整指令，至少包含：
 
 ```text
-使用 $baize 更新 <absolute skill path>。从清单中的 source_root 重新盘点并抓取完整 Wiki 到临时目录，先运行同步 dry-run；只有覆盖率完整且通过安全边界时才应用。内容与元数据无变化时报告 UNCHANGED，不写入正文、索引或清单。未经持续授权不要 prune、提交、推送或发布。
+使用 $baize 更新 <absolute skill path>。先读取清单中的 wiki.input_urls 和 references/INPUT-URLS.md，结合 source_root 与已记录的语言、版本和范围重新盘点并抓取完整 Wiki 到临时目录，先运行同步 dry-run；只有覆盖率完整且通过安全边界时才应用。内容与元数据无变化时报告 UNCHANGED，不写入正文、索引或清单。未经持续授权不要 prune、提交、推送或发布。
 ```
 
 若调度器需要项目 ID，先从当前 Agent 的项目列表选择与目标路径对应的项目，不编造。没有可用调度能力时，交付手动更新命令并说明限制；不要私自改系统 cron 或创建常驻进程。

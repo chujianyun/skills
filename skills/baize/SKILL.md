@@ -17,7 +17,7 @@ description: 将公开或用户有权访问的 Wiki 完整转换为面向 Agent 
 
 ```text
 白泽进度：
-- [ ] 1. Scope：确认来源、访问权限、语言与完整范围
+- [ ] 1. Scope：记录用户原始链接、确认来源、访问权限、语言与完整范围
 - [ ] 2. Map：盘点 Wiki 导航树和预期页面数
 - [ ] 3. Capture：逐页转换到临时目录并生成 inventory.json
 - [ ] 4. Build/Sync：预演哈希差异，再创建或增量更新 Skill
@@ -28,9 +28,10 @@ description: 将公开或用户有权访问的 Wiki 完整转换为面向 Agent 
 ### 1. 确定模式、名称与落点
 
 1. 新建时根据 Wiki 的产品名或知识域起一个简短、贴切的 lowercase-hyphen 名称，默认以 `-wiki` 结尾，例如 `qoder-wiki`。不要直接使用完整域名、`docs`、`help-center` 等泛名。
-2. 更新时先定位已有 Skill，读取 `references/wiki-manifest.json`，沿用名称、来源范围和路径映射；不要把更新做成第二份 Skill。
-3. 按 [位置与安装规则](references/location-and-installation.md) 选择目标：显式路径优先，其次是当前选中的 Skills 仓库或工作目录；没有选中目录时才直接写入当前 Agent 的 Skills 目录。
-4. 若同名目录已存在但没有白泽清单，停止并请用户决定新名称或是否接管，不能覆盖。
+2. 新建和更新都将用户提供的全部安全来源链接记录到 `inventory.json` 的 `input_urls`，保留路径、语言、版本、普通查询参数和锚点；规范根与重定向终点另记，不能代替原始入口。带凭据、签名或临时授权的链接不得保存，先取得可长期使用的安全地址；不能只删除参数后假定地址有效。
+3. 更新时先定位已有 Skill，读取 `references/INPUT-URLS.md` 和 `references/wiki-manifest.json` 的 `wiki.input_urls`，沿用名称、来源范围和路径映射。新增链接去重追加，不抹掉旧入口，也不自动扩大授权范围；旧 Skill 没有原始入口时沿用已记录范围，不伪造历史链接。不要把更新做成第二份 Skill。
+4. 按 [位置与安装规则](references/location-and-installation.md) 选择目标：显式路径优先，其次是当前选中的 Skills 仓库或工作目录；没有选中目录时才直接写入当前 Agent 的 Skills 目录。
+5. 若同名目录已存在但没有白泽清单，停止并请用户决定新名称或是否接管，不能覆盖。
 
 ### 2. 盘点并抓取 Wiki
 
@@ -58,6 +59,7 @@ python3 <baize-root>/scripts/build_wiki_skill.py \
   --name <product-wiki> \
   --title "<Wiki title>" \
   --source-url "<canonical wiki root>" \
+  --input-url "<用户提供的原始安全链接；多个链接重复此参数>" \
   --description "<包含知识范围和真实触发词的 description>"
 ```
 
@@ -81,7 +83,7 @@ python3 <skill-root>/scripts/sync_wiki_docs.py \
 1. `inventory.json` 的发现数、成功数、失败列表与实际文件一致。
 2. `references/docs/` 的每一级目录都能对应到 Wiki 导航节点，内部链接能落到本地 Markdown。
 3. `references/INDEX.md` 能按目录定位全部页面，`scripts/search_docs.py` 能命中 2–3 个代表性问题。
-4. `references/wiki-manifest.json` 为每篇文档记录来源 URL、相对路径和 `sha256:` 哈希。
+4. `references/wiki-manifest.json` 为每篇文档记录来源 URL、相对路径和 `sha256:` 哈希；`wiki.input_urls` 和 `references/INPUT-URLS.md` 必须包含用户提供的全部安全入口，生成的 `SKILL.md` 与更新协议能直接定位它们。
 5. `SKILL.md` 只保留检索流程，详细知识位于 `references/docs/`；运行环境自带的 Skill 校验器存在时必须通过。
 6. 若目标位于受治理的 Skills 仓库，按仓库规则完成分类注册与校验，不替用户跳过其确认和发布边界。
 
@@ -98,7 +100,7 @@ python3 <baize-root>/scripts/install_skill.py <skill-root>
 
 ### 5. 手动或自动更新
 
-用户要求更新时重新抓取完整范围到新的临时目录，再运行同步脚本，不在旧正文上做局部猜改。用户明确要求定期自动更新时，完整阅读 [自动更新规则](references/automatic-updates.md)，使用当前 Agent 提供的调度能力创建任务；未明确提出自动更新时不创建后台任务。
+用户要求更新时先读取目标 Skill 中保存的用户入口链接、规范根及范围，再重新抓取完整范围到新的临时目录，再运行同步脚本，不在旧正文上做局部猜改。用户明确要求定期自动更新时，完整阅读 [自动更新规则](references/automatic-updates.md)，使用当前 Agent 提供的调度能力创建任务；未明确提出自动更新时不创建后台任务。
 
 ## 常见陷阱
 
@@ -111,4 +113,4 @@ python3 <baize-root>/scripts/install_skill.py <skill-root>
 
 ## 输出契约
 
-完成后向用户报告：Skill 名称与路径、来源和页面数、覆盖率、创建/变更/未变数量、索引与清单路径、安装位置、验证结果，以及未解决的抓取或许可证风险。若没有变化，明确报告 `UNCHANGED`，并说明没有文件被重写。
+完成后向用户报告：Skill 名称与路径、来源和页面数、原始链接保存位置、覆盖率、创建/变更/未变数量、索引与清单路径、安装位置、验证结果，以及未解决的抓取或许可证风险。若没有变化，明确报告 `UNCHANGED`，并说明没有文件被重写。

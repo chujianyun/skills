@@ -9,6 +9,7 @@
 ├── agents/openai.yaml
 ├── references/
 │   ├── INDEX.md
+│   ├── INPUT-URLS.md
 │   ├── SOURCE.md
 │   ├── UPDATE.md
 │   ├── wiki-manifest.json
@@ -21,6 +22,7 @@
 
 - `SKILL.md` 是 Agent 的检索与回答入口，不复制整个目录索引。
 - `INDEX.md` 列出目录概览、全部页面、路径和来源，供浏览定位。
+- `INPUT-URLS.md` 由脚本从清单生成，记录用户提供的安全原始链接，供后续更新恢复入口；生成的 `SKILL.md` 和 `UPDATE.md` 直接链接它。
 - `SOURCE.md` 记录来源根、范围、语言、许可证和快照边界。
 - `UPDATE.md` 记录独立更新协议；生成后的 Skill 不依赖白泽仍可同步。
 - `wiki-manifest.json` 是更新状态的唯一事实来源。
@@ -28,7 +30,9 @@
 
 ## 清单语义
 
-清单使用 `schema_version: 1`，`documents` 以本地 Markdown 相对路径为 key。每个文档至少记录：
+清单使用 `schema_version: 1`。`wiki.source_root` 是规范根，`wiki.input_urls` 是去重排序的用户原始入口数组；两者不可混用。重定向不能替换原始入口。更新合并新旧入口，旧 inventory 缺字段时保留已有入口；旧 Skill 没有记录时不猜测，并生成缺失说明。入口或其展示文件变化属于元数据变化；重复同步仍须零写入。
+
+`documents` 以本地 Markdown 相对路径为 key。每个文档至少记录：
 
 ```json
 {
